@@ -1,6 +1,7 @@
 # Project-repo
 
 Web application that allows users to:
+
 * Create an account
 * Log In
 * Analize the League, Teams, Players
@@ -11,4 +12,4 @@ Web application that allows users to:
 * Access all Players()
 * Access a single player(View Stats)
 * Post predictions about an event ()
-* Chat about the event () 
+* Chat about the event ()

@@ -1,7 +1,12 @@
 import sqlite3
 import os
 
-def schema(dbpath = "soccerchat.db"):
+
+PATH = os.path.dirname(__file__)
+DATAPATH = os.path.join(PATH, "soccerchat.db")
+print(DATAPATH)
+
+def schema(dbpath = DATAPATH):
     with sqlite3.connect(dbpath) as conn:
         cursor = conn.cursor()
 
@@ -24,19 +29,8 @@ def schema(dbpath = "soccerchat.db"):
             league_id INTEGER,
             league VARCHAR
         );""")
-
-        # cursor.execute("""
-        # CREATE TABLE game (
-        #     pk INTEGER PRIMARY KEY AUTOINCREMENT,
-        #     event_date INTEGER,
-        #     event_timestamp VARCHAR,
-        #     team_id INTEGER, 
-        #     team_id INTEGER,
-        #     venue_name VARCHAR,
-        #     venue_capacity INTEGER,
-        #     venue_city VARCHAR                
-        # );""")
-            
+        # Have the home team and away team as columns for the games table
+        # Chats foregn key should reference the games    
 
         
 
