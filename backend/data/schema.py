@@ -11,6 +11,14 @@ def schema(dbpath = DATAPATH):
         cursor = conn.cursor()
 
         cursor.execute("""
+        CREATE TABLE accounts(
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            username VARCHAR(16)UNIQUE NOT NULL,
+            password_hash VARCHAR(128),
+
+        )""")
+
+        cursor.execute("""
         CREATE TABLE teams (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             team_id INTEGER,
@@ -27,8 +35,21 @@ def schema(dbpath = DATAPATH):
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             fixture_id INTEGER,
             league_id INTEGER,
-            league VARCHAR
+            game_date VARCHAR,
+            game_time TIMESTAMP,
+            home_team VARCHAR,
+            away_team VARCHAR
         );""")
+
+        cursor.execute("""
+        CREATE TABLE chats(
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            username VARCHAR,
+            team_id,
+
+        );""")
+
+        
         # Have the home team and away team as columns for the games table
         # Chats foregn key should reference the games    
 
