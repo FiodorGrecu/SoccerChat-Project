@@ -11,3 +11,13 @@
 # print(shuffled)
 # random = "wdd"
 # random_string = "".join([str(random.randint(1,10)) for i in range(25)])
+
+
+# from datetime import datetime
+# now = datetime.now()
+# print (now.strftime("%Y-%m-%d %H:%M:%S"))
+
+# import time
+# timer_length = float(input("How many seconds would you like you're timer to be set for? "))
+# time.sleep(timer_length)
+# print("Done!")

@@ -10,17 +10,16 @@ class Team:
     dbpath = DATAPATH
     tablename = "teams"
 
-    def __init__(self, team_id, name, logo="", year_founded="", venue_name="", venue_capacity="", venue_city="", pk=None):
+    def __init__(self, team_id, name, logo="", year_founded="", pk=None):
         self.pk = pk        
         self.team_id = team_id
         self.name = name
         self.logo = logo
         self.year_founded = year_founded
-        self.venue_name = venue_name
-        self.venue_capacity = venue_capacity
-        self.venue_city = venue_city
+
     # make a save function for permanent storage in the db
     # a load function that can load by id (Show_one func)
+
     def save(self):
         """Call _insert if the row does not exist in the database, otherwise
         call _update
@@ -36,12 +35,10 @@ class Team:
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""INSERT INTO {self.tablename} (
-                team_id, name, logo, year_founded, 
-                venue_name, venue_capacity, 
-                venue_city) VALUES (?,?,?,?,?,?,?);"""
+                team_id, name, logo, year_founded,  
+                ) VALUES (?,?,?,?);"""
             values = (self.team_id, self.name, self.logo, 
-                    self.year_founded, self.venue_name, self.venue_capacity, 
-                    self.venue_city)
+                    self.year_founded )
             cursor.execute(sql, values)
             self.pk = cursor.lastrowid
 
@@ -51,11 +48,10 @@ class Team:
         """
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
-            sql= f"""UPDATE {self.tablename} SET team_id=?, name=?, logo=?, 
-                    year_founded=?, venue_name=?, venue_capacity=?, venue_city=?
-                     WHERE pk=?;"""
+            sql = f"""UPDATE {self.tablename} SET team_id=?, name=?, logo=?, 
+                    year_founded=? WHERE pk=?;"""
             values = (self.team_id, self.name, self.logo, self.year_founded, 
-                     self.venue_name, self.venue_capacity, self.venue_city, self.pk)
+                      self.pk)
             cursor.execute(sql, values)
     
     @classmethod

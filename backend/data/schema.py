@@ -11,43 +11,73 @@ def schema(dbpath = DATAPATH):
         cursor = conn.cursor()
 
         cursor.execute("""
-        CREATE TABLE accounts(
-            pk INTEGER PRIMARY KEY AUTOINCREMENT,
-            username VARCHAR(16)UNIQUE NOT NULL,
-            password_hash VARCHAR(128),
-
-        )""")
-
-        cursor.execute("""
         CREATE TABLE teams (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             team_id INTEGER,
             name VARCHAR,
             logo VARCHAR,
             year_founded INTEGER,
-            venue_name VARCHAR,
-            venue_capacity INTEGER,
-            venue_city VARCHAR               
+            FOREIGN KEY (team_id) REFERENCES teams(team_id)
         );""")
 
         cursor.execute("""
         CREATE TABLE games (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
-            fixture_id INTEGER,
+            game_schedule DATETIME,
             league_id INTEGER,
-            game_date VARCHAR,
-            game_time TIMESTAMP,
-            home_team VARCHAR,
-            away_team VARCHAR
+            teams VARCHAR,
+            round VARCHAR,
+            home_team_id VARCHAR,
+            away_team_id VARCHAR,
+            FOREIGN KEY (team_id) REFERENCES teams(team_id)
         );""")
 
-        cursor.execute("""
-        CREATE TABLE chats(
+        cursor.execute ("""
+        CREATE TABLE event (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
-            username VARCHAR,
-            team_id,
-
+            team_id INTEGER,
+            game_id INTEGER,
+            date DATETIME,
+            timestamp STRING,
+            league-id INTEGER,
+            time_elapsed INTEGER,
+            FOREIGN KEY (team_id) REFERENCES teams(team_id)
         );""")
+
+        cursor.execute ("""
+        CREATE TABLE players (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            player_id INTEGER,
+            name VARCHAR,
+            jersey_num INTEGER,
+            position VARCHAR,
+            team_id INTEGER,
+            FOREIGN KEY (team_id) REFERENCES teams(team_id)
+        );""")
+
+        cursor.execute ("""
+        CREATE TABLE venue (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            venue_id INTEGER,
+            name VARCHAR,
+            address VARCHAR,
+            city VARCHAR,
+            capacity INTEGER,
+            surface VARCHAR,
+            image VARCHAR,
+            team_id INTEGER,
+            FOREIGN KEY (team_id) REFERENCES teams(team_id)
+        );""")
+
+        cursor.execute ("""
+        CREATE TABLE lineups (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            team_id INTEGER,
+            game_id INTEGER,
+            player_id INTEGER,
+            FOREIGN KEY (team_id) REFERENCES teams(team_id)
+        );""")
+        
 
         
         # Have the home team and away team as columns for the games table
