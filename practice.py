@@ -21,3 +21,11 @@
 # timer_length = float(input("How many seconds would you like you're timer to be set for? "))
 # time.sleep(timer_length)
 # print("Done!")
+# import schedule
+# import time
+
+# def job():
+#     print("I'm working...")
+
+# schedule.every(1).seconds.do(job)
+# schedule.every().hour.do(job)

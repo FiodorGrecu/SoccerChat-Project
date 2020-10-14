@@ -50,7 +50,7 @@ class Team:
             cursor = conn.cursor()
             sql = f"""UPDATE {self.tablename} SET team_id=?, name=?, logo=?, 
                     year_founded=? WHERE pk=?;"""
-            values = (self.team_id, self.name, self.logo, self.year_founded, 
+            values = (self.team_id, self.name, self.logo, self.year_founded,
                       self.pk)
             cursor.execute(sql, values)
     

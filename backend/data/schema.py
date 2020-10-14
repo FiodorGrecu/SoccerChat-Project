@@ -29,7 +29,9 @@ def schema(dbpath = DATAPATH):
             round VARCHAR,
             home_team_id VARCHAR,
             away_team_id VARCHAR,
-            FOREIGN KEY (team_id) REFERENCES teams(team_id)
+            FOREIGN KEY (home_team_id) REFERENCES teams(pk)
+            FOREIGN KEY (away_team_id) REFERENCES teams(pk)
+
         );""")
 
         cursor.execute ("""
@@ -39,7 +41,7 @@ def schema(dbpath = DATAPATH):
             game_id INTEGER,
             date DATETIME,
             timestamp STRING,
-            league-id INTEGER,
+            league_id INTEGER,
             time_elapsed INTEGER,
             FOREIGN KEY (team_id) REFERENCES teams(team_id)
         );""")
@@ -81,9 +83,7 @@ def schema(dbpath = DATAPATH):
 
         
         # Have the home team and away team as columns for the games table
-        # Chats foregn key should reference the games    
-
-        
+        # Chats foregn key should reference the games           
 
 
 if __name__ == "__main__":
