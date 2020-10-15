@@ -35,7 +35,7 @@ class Team:
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""INSERT INTO {self.tablename} (
-                team_id, name, logo, year_founded,  
+                team_id, name, logo, year_founded  
                 ) VALUES (?,?,?,?);"""
             values = (self.team_id, self.name, self.logo, 
                     self.year_founded )

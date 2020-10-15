@@ -6,6 +6,7 @@ DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
 print(DATAPATH)
 
 class Game:
+    
     dbpath = DATAPATH
     tablename = "games"
 
@@ -45,6 +46,7 @@ class Game:
                       self.round, self.home_team_id, self.away_team_id)
             cursor.execute(sql, values)
             self.pk = cursor.lastrowid
+
     def _update(self):
         """Update this row in the database by primary key, to reflect
         all new attribtues
@@ -57,8 +59,7 @@ class Game:
                     teams=?,
                     round=?,
                     home_team_id=?,
-                    away_team_id=?
-                    WHERE pk=?;"""
+                    away_team_id=? WHERE pk=?;"""
             values = (self.game_schedule, self.league_id, self.teams,
                       self.round, self.home_team_id, self.away_team_id, 
                       self.pk)
