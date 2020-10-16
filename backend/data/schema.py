@@ -68,7 +68,7 @@ def schema(dbpath = DATAPATH):
             surface VARCHAR,
             image VARCHAR,
             team_id INTEGER,
-            FOREIGN KEY (team_id) REFERENCES teams(team_id)
+            FOREIGN KEY (team_id) REFERENCES teams(event)
         );""")
 
         cursor.execute ("""
@@ -79,7 +79,25 @@ def schema(dbpath = DATAPATH):
             player_id INTEGER,
             FOREIGN KEY (team_id) REFERENCES teams(team_id)
         );""")
+
+        cursor.execute(""" 
+        CREATE TABLE accounts (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            username VARCHAR(16) UNIQUE NOT NULL,
+            password_hash VARCHAR(128),
+            user_key VARCHAR 
+        );""")
         
+        cursor.execute("""
+        CREATE TABLE messages (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp FLOAT,
+            contents VARCHAR,
+            account_id INTEGER,
+            game_id INTEGER,
+            FOREIGN KEY (account_id) REFERENCES accounts(pk)
+            FOREIGN KEY (game_id) REFERENCES games(pk)
+        );""")
 
         
         # Have the home team and away team as columns for the games table

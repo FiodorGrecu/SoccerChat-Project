@@ -66,12 +66,12 @@ class Game:
             cursor.execute(sql, values)
 
     @classmethod
-    def select_all(cls):
+    def select_all(cls, where_clause):
     ## get all entries from our database
     ## SELECT * FROM tablename WHERE
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()          
-            sql = f""" SELECT * FROM {cls.tablename};"""  
+            sql = f""" SELECT * FROM {cls.tablename} WHERE {where_clause};"""  
             cursor.execute(sql)
             return cursor.fetchall()
     
