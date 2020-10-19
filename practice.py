@@ -29,3 +29,9 @@
 
 # schedule.every(1).seconds.do(job)
 # schedule.every().hour.do(job)
+
+# def square(numbers):
+#     return numbers ** 2
+# numbers=[1,2,3,4]
+# squared = map(square, numbers)
+# print(list(squared))

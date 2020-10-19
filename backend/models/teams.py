@@ -4,6 +4,9 @@ import os
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
 print(DATAPATH)
+API_BASE = "https://api-football-beta.p.rapidapi.com"
+API_KEY = "804b1594a5msh69900911a788156p125a69jsna7c589797665"
+
 
 class Team:
 
@@ -79,3 +82,12 @@ class Team:
             row = row[1:] + row[:1]
             # create the t=return object
             return cls(*row)
+    @classmethod
+    def lookup_team(cls, league_id, season):
+        with sqlite3.connect(cls.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""SELECT * FROM {cls.tablename} WHERE league_id=?, season=?;"""
+            values = (league_id, season)
+            cursor.execute(sql, values)
+            return cursor.fetchone()
+            

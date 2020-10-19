@@ -30,10 +30,10 @@ class Account:
             cursor.execute(sql, values)
             return cursor.lastrowid
 
-    def my_messages(self):
-        """Look up all Messages a User has executed
-        """
-        return Message.all_for_user(self.pk)
+    # def my_messages(self):
+    #     """Look up all Messages a User has executed
+    #     """
+    #     return Message.all_for_user(self.pk)
 
     def _update(self):
         with sqlite3.connect(self.dbpath) as conn:

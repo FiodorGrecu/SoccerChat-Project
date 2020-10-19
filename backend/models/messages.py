@@ -5,12 +5,13 @@ PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
 
 
+
 class Message:
 
     dbpath = DATAPATH
     tablename = "messages"
 
-    def __init__(self,timestamp, contents, account_id, game_id, pk):
+    def __init__(self,timestamp, contents, account_id=0, game_id=0, pk=None):
        self.pk = pk 
        self.timestamp = timestamp
        self.contents = contents
