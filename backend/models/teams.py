@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import requests
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
@@ -13,7 +14,7 @@ class Team:
     dbpath = DATAPATH
     tablename = "teams"
 
-    def __init__(self, team_id, name, logo="", year_founded="", pk=None):
+    def __init__(self, team_id, name, logo="", year_founded=None, pk=None):
         self.pk = pk        
         self.team_id = team_id
         self.name = name
@@ -58,6 +59,16 @@ class Team:
             cursor.execute(sql, values)
     
     @classmethod
+    def delete_team(cls, pk):
+        with sqlite3.connect(cls.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""DELETE FROM teams WHERE pk =?;"""
+            values = (pk,)
+            cursor.execute(sql, values)
+            return True
+        return False
+    
+    @classmethod
     def select_all(cls):
     ## get all entries from our database
     ## SELECT * FROM tablename WHERE
@@ -83,11 +94,39 @@ class Team:
             # create the t=return object
             return cls(*row)
     @classmethod
-    def lookup_team(cls, league_id, season):
+    def lookup_team(cls, team_id, name):
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""SELECT * FROM {cls.tablename} WHERE league_id=?, season=?;"""
-            values = (league_id, season)
+            values = (team_id, name)
             cursor.execute(sql, values)
             return cursor.fetchone()
+
+    @classmethod
+    def team_for_league(cls, team_id, league_id, season):
+        url = "https://rapidapi.p.rapidapi.com/teams/statistics" 
+        querystring = {"team":team_id, "league": league_id,"season":season}
+        headers = {
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com",
+            'x-rapidapi-key': "804b1594a5msh69900911a788156p125a69jsna7c589797665"
+            }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        print(data)
+        team = cls(team_id, data["response"]["team"]["name"], logo=data["response"]["team"]["logo"])
+        # name, logo="", year_founded="", pk=None)
+        team.save()
             
+    @classmethod
+    def teams_for_league(cls, league_id, season):
+        url = "https://rapidapi.p.rapidapi.com/teams/" 
+        querystring = {"league": league_id,"season":season}
+        headers = {
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com",
+            'x-rapidapi-key': "804b1594a5msh69900911a788156p125a69jsna7c589797665"
+            }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return data['response']
+
+    

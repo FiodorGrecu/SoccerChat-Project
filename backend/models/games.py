@@ -87,3 +87,13 @@ class Game:
             row = row[1:] + row[:1]
             # create the t=return object
             return cls(*row)
+
+    @classmethod
+    def delete_game(cls, pk):
+        with sqlite3.connect(cls.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""DELETE FROM games WHERE pk =?;"""
+            values = (pk,)
+            cursor.execute(sql, values)
+            return True
+        return False

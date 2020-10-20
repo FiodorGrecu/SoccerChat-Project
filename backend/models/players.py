@@ -1,14 +1,17 @@
 import sqlite3
 import os
+import requests
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "soccerchat.db")
 print(DATAPATH)
+API_BASE = "https://api-football-beta.p.rapidapi.com"
+API_KEY = "804b1594a5msh69900911a788156p125a69jsna7c589797665"
 
 class Player:
 
     dbpath = DATAPATH
-    tablename = "player"
+    tablename = "players"
 
     def __init__(self, player_id, name, jersey_num=0, position="", 
                  team_id=0, pk=None):
@@ -82,4 +85,14 @@ class Player:
             cursor = conn.cursor()          
             sql = f""" SELECT * FROM {cls.tablename};"""  
             cursor.execute(sql)
-            return cursor.fetchall()                 
+            return cursor.fetchall()  
+
+    @classmethod
+    def delete_player(cls, pk):
+        with sqlite3.connect(cls.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""DELETE FROM teams WHERE pk =?;"""
+            values = (pk,)
+            cursor.execute(sql, values)
+            return True
+        return False               
