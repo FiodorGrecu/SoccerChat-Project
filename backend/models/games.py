@@ -1,5 +1,8 @@
 import sqlite3
 import os
+import requests
+from pprint import pprint
+
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
@@ -97,3 +100,39 @@ class Game:
             cursor.execute(sql, values)
             return True
         return False
+
+    @classmethod
+    def lookup_game(cls, league_id):
+        with sqlite3.connect(cls.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""SELECT * FROM {cls.tablename} WHERE league_id=?;"""
+            values = (league_id)
+            cursor.execute(sql, values)
+            return cursor.fetchone()
+
+    @classmethod
+    def game_by_id(cls, game_id):
+        url = f"https://rapidapi.p.rapidapi.com/v2/fixtures/id/{game_id}"
+        querystring = {"timezone":"Europe/London"}
+        headers = {
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
+            'x-rapidapi-key': "804b1594a5msh69900911a788156p125a69jsna7c589797665"
+            }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        pprint(data)
+                
+
+    @classmethod
+    def games_by_date(cls, date, league_id=2):
+        url = f"https://rapidapi.p.rapidapi.com/v2/fixtures/league/2/{date}"
+        querystring = {"timezone":"Europe/London"}
+        headers = {
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"
+            }
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        pprint(data)
+        # return data
+        

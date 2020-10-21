@@ -35,3 +35,7 @@
 # numbers=[1,2,3,4]
 # squared = map(square, numbers)
 # print(list(squared))
+
+# from datetime import datetime
+
+# datetime.today().strftime('%Y-%m-%d')
