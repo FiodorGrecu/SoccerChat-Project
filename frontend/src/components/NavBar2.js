@@ -57,11 +57,11 @@ export default function ProminentAppBar() {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
             <Typography className={classes.links} variant="h6" noWrap edge="left">
-                    <Link  style={{ padding: 25,  color:"white"}} component={RouterLink} to="/HomePage">Home</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/Fixtures_Games">Fixtures</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/Game">Game</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/Scores">Scores</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/Chat">Chat</Link>
+                    <Link  style={{ padding: 25,  color:"white"}} component={RouterLink} to="/home">Home</Link>
+                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/fixtures">Matches</Link>
+                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/game">Game</Link>
+                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/scores">Scores</Link>
+                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/chat">Chat</Link>
 
             </Typography>
             {/* <Typography className={classes.signin} variant="h8" noWrap edge="end">
