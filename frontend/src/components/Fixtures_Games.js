@@ -3,6 +3,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import {games as fixtures} from "./teams";
+import { Link } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,9 +22,32 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid() {
   const classes = useStyles();
 
+  const output = fixtures.map(fixture => (
+   <React.Fragment>
+
+        <Grid item xs={6} >
+            <Link > 
+                <Paper className={classes.paper} >{fixture.home.name }</Paper>
+            </Link>
+        </Grid>
+        <Grid item xs={6}>
+            <Link >  
+                <Paper className={classes.paper}>{fixture.away.name}</Paper>  
+            </Link>
+        </Grid>
+
+   </React.Fragment>
+  ));
+  
+    
+
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
+    <Grid className={classes.root}>
+        <Grid container spacing={3}>
+
+        {output}
+        </Grid>
+      {/* <Grid container spacing={3}>
     
         <Grid item xs={6}>
           <Paper className={classes.paper}>Team1</Paper>
@@ -51,20 +77,7 @@ export default function CenteredGrid() {
           <Paper className={classes.paper}>Team2</Paper>  
         </Grid>
 
-        {/* <Grid item xs={3}>
-          <Paper className={classes.paper}>Starting XI</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Substitutions</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Starting XI</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Substitutions</Paper>
-        </Grid> */}
-
-      </Grid>
-    </div>
+      </Grid> */}
+    </Grid>
   );
 }

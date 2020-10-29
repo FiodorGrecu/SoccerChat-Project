@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import games from "./components/games";
+import games from "Teamgames";
 
 export default function App() {
   const [fixtures, setFixtures] = useState(games);

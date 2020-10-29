@@ -12,6 +12,7 @@ export default function Router () {
             <Route path="/home" component={HomePage}/>
             <Route path="/fixtures" component={FixturesGames}/>
             <Route path="/game" component={Game}/>
+            <Route path="/games" component={Example}/>
         </div>
         )
         

@@ -1,6 +1,8 @@
-export default games = [
+
+export const games = [
   {
     "game_id": 12,
+    // "event_date": '2020-02-11T13:00:00+00:00',
       "home": {
         "team_id": 33,
         "name": "Manchester United",

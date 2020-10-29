@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import games from "./teams";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +30,7 @@ export default function CenteredGrid() {
           <Paper className={classes.paper}>xs=12</Paper>
         </Grid> */}
         <Grid item xs={5}>
-          <Paper className={classes.paper}>Team1</Paper>
+    <Paper className={classes.paper}>Team1</Paper>
         </Grid>
         <Grid>
             <Paper className={classes.paper}>vs</Paper>
