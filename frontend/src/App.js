@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/HomePage';
 import Game from './components/Game';
 import FixtureGames from './components/Fixtures_Games';
+import Scores from './components/Scores';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <NavBar2/>
           </div>
         </header>
-        
+
         <Route path='/home'>
           <HomePage/>
         </Route>
@@ -29,7 +30,12 @@ function App() {
         </Route>
 
         <Route path='/fixtures'>
-          <FixtureGames/>
+          {/* Matches COMPONENT */}
+          <FixtureGames/>  
+        </Route>
+
+        <Route path='/scores'>
+          <Scores/>
         </Route>
 
       </BrowserRouter>

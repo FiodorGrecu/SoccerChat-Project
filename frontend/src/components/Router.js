@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import HomePage from '.components/HomePage';
 import FixturesGames from '.components/Fixtures_Games';
 import Game from '.components/Game';
-// import App from './App';
+import Sores from '.components/Sores';
 
 
 export default function Router () {
@@ -13,6 +13,7 @@ export default function Router () {
             <Route path="/fixtures" component={FixturesGames}/>
             <Route path="/game" component={Game}/>
             <Route path="/games" component={Example}/>
+            <Route path="/scores" component={Scores}/>
         </div>
         )
         

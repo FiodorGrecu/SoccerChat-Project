@@ -26,9 +26,9 @@ export default function CenteredGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        {/* <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid> */}
+        <Grid item xs={12} style={{ backgroundColor: ("lightgrey"),}}>
+          <Paper className={classes.paper}>Date</Paper>
+        </Grid>
         <Grid item xs={5}>
     <Paper className={classes.paper}>Team1</Paper>
         </Grid>
