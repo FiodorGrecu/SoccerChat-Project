@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import games from "./teams";
+import {games as fixtures} from "./teams";
+import { Link } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,38 +22,48 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid() {
   const classes = useStyles();
 
-  const games = {
-      
-  }
+  const homePlayers = fixtures[0].home.players.map(player =>(
+
+    <Grid item xs={5}>
+        <Paper className={classes.paper}>{player.name} {player.number}</Paper>
+    </Grid>
+    
+  )) 
+
+  
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} style={{ backgroundColor: ("lightgrey"),}}>
-          <Paper className={classes.paper}>Date</Paper>
-        </Grid>
-        <Grid item xs={5}>
-    <Paper className={classes.paper}>Team1</Paper>
-        </Grid>
-        <Grid>
-            <Paper className={classes.paper}>vs</Paper>
-        </Grid>
-        <Grid item xs={5}>
-          <Paper className={classes.paper}>Team2</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Starting XI</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Substitutions</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Starting XI</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>Substitutions</Paper>
-        </Grid>
-      </Grid>
+    
+        <React.Fragment>
+          
+          <Grid item xs={12} style={{ backgroundColor: ("lightgrey"),}}>
+              <Paper className={classes.paper}>Date</Paper>
+          </Grid>
+          <Grid item xs={5}>
+  <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
+          </Grid>
+          <Grid>
+              <Paper className={classes.paper}>vs</Paper>
+          </Grid>
+          <Grid item xs={5}>
+  <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
+          </Grid>
+          {homePlayers}
+          
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>Substitutions</Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>Starting XI</Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper className={classes.paper}>Substitutions</Paper>
+          </Grid>
+        
+  
+        </React.Fragment>
+    
     </div>
   );
 }

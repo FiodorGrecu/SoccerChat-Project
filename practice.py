@@ -39,3 +39,17 @@
 # from datetime import datetime
 
 # datetime.today().strftime('%Y-%m-%d')
+
+list_of_dics = [
+  {"name":"Paul"},
+  {"name":"Wan"},
+  {"name":"Brian"},
+  {"name":"David"},
+  {"name":"Victor"}
+]
+  
+print(list_of_dics[0]["name"])
+print(list_of_dics[1]["name"])
+print(list_of_dics[2]["name"])
+print(list_of_dics[3]["name"])
+print(list_of_dics[4]["name"])
