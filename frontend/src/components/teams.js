@@ -203,74 +203,8 @@ export const games = [
               'number': 12,
               'pos': None,
             }
-              
+        ]          
+      },        
             
-            
-            
-            
-          ]
-          
-      },      
-            
-            
-            
-            
-            
-      
-            
-    
-            
-          },
-
-          {
-            "game_id": 13,
-            "home": {
-              "team_id": 34,
-              "name": "Newcastle",
-              "players": [
-                {"name": "Callum Wilson", 
-                "number": 13
-              },
-              {"name": "Jeff Hendrick", 
-              "number": 16
-            },
-            {"name":"Miguel Almirón",
-            "number":24
-          }
-        ],
-        "subs": [
-             {"name": "Jamal Lewis", 
-              "number": 15
-             },
-             {"name": "Joelinton", 
-              "number": 9
-              }
-            ] 
-        },
-
-      "away": {
-        "team_id": 46,
-        "name": "Leicester",
-        "players": [
-              {"name": "Jamie Vardy", 
-               "number": 9
-              },
-              {"name": "James Madison", 
-               "number": 10
-              },
-              {"name": "james Justin", 
-               "number": 2
-              }
-            ],
-        "subs": [
-              {"name": "Harvey Barnes", 
-               "number": 15
-              },
-              {"name": "Timothy Castagne", 
-               "number": 27
-                }
-            ]
-        }
-  }
-
+  },      
 ];
