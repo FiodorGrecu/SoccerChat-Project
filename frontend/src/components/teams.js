@@ -96,22 +96,22 @@ export const games = [
               "pos": "D"
               },
 
-              {
-                "name": "S. McTominay",
+              {"name": "S. McTominay",
                 "number": 39,
                 "pos": "M"
               }
             ] 
-        },
+        },        
         
-        "away": {
+        
+      "away": {
         "team_id": 46,
         "name": "Leichester",
          "players": [
         
            {'name': 'K. Schmeichel',
-           'number': 1,
-              'pos': 'G'
+             'number': 1,
+             'pos': 'G'
             },
             
             {'name': 'J. Evans',
@@ -129,87 +129,94 @@ export const games = [
               'pos': 'M'
             },   
               
-            {'player': 'Ç. Söyüncü',
+            {'name': 'Ç. Söyüncü',
               'number': 4,
               'pos': 'D',
             },
 
-            {'player': 'J. Justin',
+            {'name': 'J. Justin',
               'number': 2,
               'pos': 'M',
             },  
             
+            {'name': 'N. Mendy',
+              'number': 24,
+              'pos': 'M',
+            },
+              
+            {'name': 'Y. Tielemans',
+              'number': 8,
+              'pos': 'M',
+            },
+                  
+            {'name': 'H. Barnes',
+              'number': 15,
+              'pos': 'F',
+            },
+              
+            {'name': 'J. Vardy',
+              'number': 9,
+              'pos': 'F',
+            },  
+            
+            {'name': 'Ayoze Pérez',
+              'number': 17,
+              'pos': 'F',
+            }
+              
+          ],    
+      'subs': [      
+            
+            {'name': 'C. Ünder',
+              'number': 19,
+              'pos': 'M',
+            },
+               
+            {'name': 'K. Iheanacho',
+              'number': 14,
+              'pos': 'F',
+            },
+              
+            {'name': 'H. Choudhury',
+              'number': 20,
+              'pos': 'M',
+            },
+            
+            {'name': 'M. Albrighton',
+              'number': 11,
+              'pos': 'M',
+            },
+                
+      
+            {'name': 'C. Fuchs',
+              'number': 28,
+              'pos': 'D',
+            },
               
             
+            {'name': 'W. Fofana',
+              'number': 3,
+              'pos': 'D',
+            },
+              
+            {'name': 'D. Ward',
+              'number': 12,
+              'pos': None,
+            }
               
             
-
             
             
             
-            
-            {'number': 24,
-            'player': 'N. Mendy',
-            'player_id': 18785,
-            'pos': 'M',
-            'team_id': 46},
-            {'number': 8,
-            'player': 'Y. Tielemans',
-            'player_id': 2926,
-            'pos': 'M',
-            'team_id': 46},
-            {'number': 15,
-            'player': 'H. Barnes',
-            'player_id': 18778,
-            'pos': 'F',
-            'team_id': 46},
-            {'number': 9,
-            'player': 'J. Vardy',
-            'player_id': 18788,
-            'pos': 'F',
-            'team_id': 46},
-            {'number': 17,
-            'player': 'Ayoze Pérez',
-            'player_id': 18906,
-            'pos': 'F',
-            'team_id': 46}],
-            'substitutes': [{'number': 19,
-            'player': 'C. Ünder',
-            'player_id': 785,
-            'pos': 'M',
-            'team_id': 46},
-            {'number': 14,
-            'player': 'K. Iheanacho',
-            'player_id': 2778,
-            'pos': 'F',
-            'team_id': 46},
-            {'number': 20,
-            'player': 'H. Choudhury',
-            'player_id': 18779,
-            'pos': 'M',
-            'team_id': 46},
-            {'number': 11,
-            'player': 'M. Albrighton',
-            'player_id': 18777,
-            'pos': 'M',
-            'team_id': 46},
-            {'number': 28,
-            'player': 'C. Fuchs',
-            'player_id': 18773,
-            'pos': 'D',
-            'team_id': 46},
-            {'number': 3,
-            'player': 'W. Fofana',
-            'player_id': 22094,
-            'pos': 'D',
-            'team_id': 46},
-            {'number': 12,
-            'player': 'D. Ward',
-            'player_id': 18146,
-            'pos': None,
-            'team_id': 46}]
+          ]
           
-      },
+      },      
+            
+            
+            
+            
+            
+      
             
     
             
