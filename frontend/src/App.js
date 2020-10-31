@@ -8,6 +8,7 @@ import HomePage from './components/HomePage';
 import Game from './components/Game';
 import FixtureGames from './components/Fixtures_Games';
 import Scores from './components/Scores';
+import LogIn from './components/LogIn'
 
 
 function App() {
@@ -36,6 +37,10 @@ function App() {
 
         <Route path='/scores'>
           <Scores/>
+        </Route>
+
+        <Route path='/login'>
+          <LogIn/>
         </Route>
 
       </BrowserRouter>

@@ -201,7 +201,7 @@ export const games = [
               
             {'name': 'D. Ward',
               'number': 12,
-              'pos': None,
+              'pos': 'G',
             }
         ]          
       },        

@@ -3,7 +3,7 @@ import { MDBIcon } from "mdbreact";
  
 
 
-function Login(props) {
+function LogIn(props) {
 
     const [inputCheck, setInputCheck] = useState("undefined");
 
@@ -30,12 +30,12 @@ function Login(props) {
             <input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="password"></input>
             <br/>
             <button onClick={e => checkOnLogin(props.username, props.password)} >Login</button>
-            <h3>Login Feed</h3>
-            {inputCheck !== "undefined" &&<p>Your login result is: {inputCheck.toString()}<br/><br/>
+            
+            {inputCheck !== "undefined" &&<p>Your login result is: {inputCheck.toString()}
             {inputCheck && <MDBIcon icon="heart" size="2x" className="indigo-text pr-3" /> }
             {!inputCheck && <MDBIcon icon="heart-broken" size="2x" className="indigo-text pr-3" /> }</p>}
         </div>
     );
 
 }
-export default Login;
+export default LogIn;

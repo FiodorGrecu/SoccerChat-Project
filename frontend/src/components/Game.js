@@ -41,13 +41,13 @@ export default function CenteredGrid() {
               <Paper className={classes.paper}>Date</Paper>
           </Grid>
           <Grid item xs={5}>
-  <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
+            <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
           </Grid>
           <Grid>
               <Paper className={classes.paper}>vs</Paper>
           </Grid>
           <Grid item xs={5}>
-  <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
+            <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
           </Grid>
           {homePlayers}
           
