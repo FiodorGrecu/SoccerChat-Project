@@ -8,7 +8,8 @@ import HomePage from './components/HomePage';
 import Game from './components/Game';
 import FixtureGames from './components/Fixtures_Games';
 import Scores from './components/Scores';
-import LogIn from './components/LogIn'
+import LogIn from './components/LogIn';
+import SignUp from './components/SignUp';
 
 
 function App() {
@@ -43,7 +44,11 @@ function App() {
           <LogIn/>
         </Route>
 
+        <Route path='/signup'>
+          <SignUp/>
+        </Route>
       </BrowserRouter>
+      
     </div>
   );
 }

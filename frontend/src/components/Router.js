@@ -5,6 +5,7 @@ import FixturesGames from '.components/Fixtures_Games';
 import Game from '.components/Game';
 import Sores from '.components/Sores';
 import LogIn from '.components/LogIn';
+import SignUp from '.components/SignUp'
 
 
 export default function Router () {
@@ -16,6 +17,7 @@ export default function Router () {
             <Route path="/games" component={ExampleCompnents}/>
             <Route path="/scores" component={Scores}/>
             <Route path="/login" component={LogIn}/>
+            <Route path="/signup" component={SignUp}/>
         </div>
         )
         
