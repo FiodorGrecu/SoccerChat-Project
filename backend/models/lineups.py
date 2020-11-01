@@ -69,3 +69,8 @@ class Lineups:
             sql = f""" SELECT * FROM {cls.tablename};"""  
             cursor.execute(sql)
             return cursor.fetchall()
+
+
+    @classmethod
+    def lineups_from_game_by_date(cls, lineups, date, league_id):
+        pass

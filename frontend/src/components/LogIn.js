@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { MDBIcon } from "mdbreact";
-import { Paper } from '@material-ui/core';
+import { Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
  
@@ -19,6 +19,14 @@ function LogIn(props) {
         },
         paper: {
             padding: theme.spacing (4),
+            margin: theme.spacing (15),
+            alignItems:'center',
+            justifyContent: "center"
+
+        },
+        box: {
+            alignItems:'center',
+            justifyContent: "center"
         }
     }));
     const classes = useStyles();
@@ -43,17 +51,18 @@ function LogIn(props) {
     return (
         <React.Fragment justify="center">
             <Paper className={classes.paper}> 
-            {/* <p> Welcome User!</p> */}
-            <h3 class="1"> Sign In </h3>
-            <input id="username" onChange={e => props.setUsername(e.target.value)} placeholder="username"></input>
-            <br/>
-            <input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="password"></input>
-            <br/>
-            <button onClick={e => checkOnLogin(props.username, props.password)} >Login</button>
+
+           <Box>
+
+                <h3 class="1"> Sign In </h3>
+                <input id="username" onChange={e => props.setUsername(e.target.value)} placeholder="username"></input>
+                <br/>
+                <input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="password"></input>
+                <br/>
+                <button onClick={e => checkOnLogin(props.username, props.password)} >Login</button>
+           </Box>
             </Paper>
-            {inputCheck !== "undefined" &&<p>Your login result is: {inputCheck.toString()}
-            {inputCheck && <MDBIcon icon="heart" size="2x" className="indigo-text pr-3" /> }
-            {!inputCheck && <MDBIcon icon="heart-broken" size="2x" className="indigo-text pr-3" /> }</p>}
+           
         </React.Fragment>
     );
 
