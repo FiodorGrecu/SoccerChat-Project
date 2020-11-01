@@ -18,15 +18,20 @@ function LogIn(props) {
             flexGrow: 1,
         },
         paper: {
-            padding: theme.spacing (4),
-            margin: theme.spacing (15),
+            padding: theme.spacing (5),
+            margin: theme.spacing (5),
             alignItems:'center',
-            justifyContent: "center"
+            justifyContent: "center",
+            width: 300,
+            height: 400
 
         },
         box: {
+            padding: theme.spacing (5),
+            margin: theme.spacing (5),
             alignItems:'center',
-            justifyContent: "center"
+            justifyContent: "center",
+            textAlign: "center"
         }
     }));
     const classes = useStyles();
@@ -52,7 +57,7 @@ function LogIn(props) {
         <React.Fragment justify="center">
             <Paper className={classes.paper}> 
 
-           <Box>
+           <Box className={classes.box}>
 
                 <h3 class="1"> Sign In </h3>
                 <input id="username" onChange={e => props.setUsername(e.target.value)} placeholder="username"></input>
