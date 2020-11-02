@@ -10,6 +10,7 @@ import FixtureGames from './components/Fixtures_Games';
 import Scores from './components/Scores';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
+import Chat from './components/Chat';
 
 
 function App() {
@@ -47,6 +48,11 @@ function App() {
         <Route path='/signup'>
           <SignUp/>
         </Route>
+        
+        <Route path='/chat'>
+          <Chat/>
+        </Route>
+
       </BrowserRouter>
       
     </div>

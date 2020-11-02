@@ -23,8 +23,10 @@ const useStyles = makeStyles((theme) => ({
     
   },
   paper: {
-        width: theme.spacing(70),
+        width: theme.spacing(50),
+        height: theme.spacing(20),
         padding: 20,
+        backgroundColor: "#F0E4C8"
     },
    
 }));
@@ -36,7 +38,7 @@ export default function SimplePaper() {
       <React.Fragment >
           <Grid>
               <Link>
-                <Paper elevation={3}> {  fixture.home.name  }
+                <Paper elevation={3} className={classes.paper}> {  fixture.home.name  }
                                         <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
                                        {  fixture.away.name  }
                 </Paper>                 
@@ -44,7 +46,7 @@ export default function SimplePaper() {
           </Grid>
           <Grid>
               <Link>
-                <Paper elevation={3}> 
+                <Paper elevation={3} className={classes.paper}> 
                         {  fixture.home.name  } 
                         <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
                         {  fixture.away.name  }         
