@@ -106,7 +106,7 @@ export const games = [
         
       "away": {
         "team_id": 46,
-        "name": "Leichester",
+        "name": "Leicester",
          "players": [
         
            {'name': 'K. Schmeichel',

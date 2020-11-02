@@ -98,9 +98,9 @@ import TwitterIcon from '@material-ui/icons/Twitter';
                 <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="primary">Sign Up</Button>
                 <br></br>
                 
-                <p className={classes.or}>or sign up using</p>
-                <FacebookIcon className={classes.facebookIcon}></FacebookIcon>
-                <TwitterIcon className={classes.twitterIcon}></TwitterIcon>
+                {/* <p className={classes.or}>or sign up using</p> */}
+                {/* <FacebookIcon className={classes.facebookIcon}></FacebookIcon> */}
+                {/* <TwitterIcon className={classes.twitterIcon}></TwitterIcon> */}
             </Box>             
             </Paper>           
         </React.Fragment>
