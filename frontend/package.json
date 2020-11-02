@@ -15,6 +15,7 @@
     "bootstrap": "^4.5.3",
     "mdbreact": "^4.27.0",
     "react": "^16.13.1",
+    "react-awesome-modal": "^2.0.5",
     "react-bootstrap": "^1.4.0",
     "react-browser-router": "^2.1.2",
     "react-dom": "^16.13.1",
