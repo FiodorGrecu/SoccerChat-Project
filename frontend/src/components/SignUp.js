@@ -5,8 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import { green } from '@material-ui/core/colors';
-// import IconButton from 'material-ui/icons'
-// import FacebookIcon from '@material-ui/icons';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+
 
  function LogIn(props) {
 
@@ -18,6 +19,10 @@ import { green } from '@material-ui/core/colors';
             flexDirection: "column"
 
         },
+        reactfragment: {
+            justifyContent: "center",
+        },
+
         paper: {
             padding: theme.spacing (5),
             margin: theme.spacing (5),
@@ -25,6 +30,7 @@ import { green } from '@material-ui/core/colors';
             justifyContent: "center",
             width: 400,
             height: 500,
+            backgroundColor: "#F0E4C8"
         },
         box: {
             padding: theme.spacing (5),
@@ -34,16 +40,23 @@ import { green } from '@material-ui/core/colors';
             textAlign: "center"
         },
         or: {
-            fontSize: 19,
-            color: 'blue'
+            fontSize: 15,
+            color: 'grey',
+
         },
         button: {
             // fontSize: 10,
         },
         signin: {
-           fontSize: 40, 
+           fontSize: 30, 
            fontFamily: 'Apple',
                      
+        }, 
+        facebookIcon: {
+            color: "blue"
+        }, 
+        twitterIcon: {
+            color: "#1A91DA"
         }
     }));
     const classes = useStyles();
@@ -64,25 +77,24 @@ import { green } from '@material-ui/core/colors';
         inputPassword.value = "";
     }
     return (
-        <React.Fragment justify="center">
+        <React.Fragment className={classes.reactfragment}>
             <Paper elevation={10} className={classes.paper}>           
             <Box className={classes.box}>
                 <h3 className={classes.signin} > Sign Up </h3>
-                <Input id="username" onChange={e => props.setUsername(e.target.value)} placeholder="Username or Email">Hey</Input>
+                <Input id="firstname" onChange={e => props.setFirstname(e.target.value)} placeholder="First Name*"></Input>
+                <br/>
+                <Input id="lastname" onChange={e => props.setLastname(e.target.value)} placeholder="Last Name*"></Input>
+                <br/>
+                <Input id="emailaddress" onChange={e => props.setEmailaddres(e.target.value)} placeholder="Email Address"></Input>
                 <br/>
                 <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
                 <br/>
                 <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="primary">Sign Up</Button>
                 <br></br>
                 
-                <p className={classes.or}>or</p>
-               <Link>
-               Sign Up With 
-                <Link ></Link>
-
-               </Link>
-
-               
+                <p className={classes.or}>or sign up using</p>
+                <FacebookIcon className={classes.facebookIcon}></FacebookIcon>
+                <TwitterIcon className={classes.twitterIcon}></TwitterIcon>
             </Box>             
             </Paper>           
         </React.Fragment>

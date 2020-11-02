@@ -5,6 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import { green } from '@material-ui/core/colors';
+import Avatar from '@material-ui/core/Avatar';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
+
 
 
 function LogIn(props) {
@@ -42,9 +46,16 @@ function LogIn(props) {
             // fontSize: 10,
         },
         signin: {
-           fontSize: 40, 
+           fontSize: 30, 
            fontFamily: 'Apple',          
-        }
+        },
+        avatar: {
+            margin: theme.spacing(2),
+            marginLeft: 59,
+            backgroundColor: theme.palette.secondary.main,
+            justifyContent: 'center',
+            fontSize: 40,
+          },
     }));
     const classes = useStyles();
 
@@ -67,6 +78,9 @@ function LogIn(props) {
         <React.Fragment justify="center">
             <Paper elevation={10} className={classes.paper}>           
             <Box className={classes.box}>
+                <Avatar className={classes.avatar}>
+                <LockOutlinedIcon />
+                </Avatar>
                 <h3 className={classes.signin} > Sign In </h3>
                 <Input id="username" onChange={e => props.setUsername(e.target.value)} placeholder="Username or Email">Hey</Input>
                 <br/>
