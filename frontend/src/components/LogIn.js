@@ -28,6 +28,7 @@ function LogIn(props) {
             justifyContent: "center",
             width: 400,
             height: 500,
+            backgroundColor: "#F0E4C8"
         
 
         },
@@ -39,11 +40,20 @@ function LogIn(props) {
             textAlign: "center"
         },
         or: {
-            fontSize: 10,
+            fontSize: 14,
             color: 'blue'
         },
         button: {
             // fontSize: 10,
+            color: 'blue',
+            marginTop: theme.spacing(1),
+            marginBottom: theme.spacing(1),
+            padding: '6px 32px',
+            // width: "40px",
+            backgroundColor: "#1A91DA"
+            
+
+            
         },
         signin: {
            fontSize: 30, 
@@ -86,11 +96,11 @@ function LogIn(props) {
                 <br/>
                 <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
                 <br/>
-                <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="primary">Log In</Button>
+                <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="#1A91DA" variant="contained">Log In</Button>
                 <br></br>
                 <Link>Forgot Password?</Link>
                 <p className={classes.or}>or</p>
-               <Link>Sign Up Here?</Link>
+               <Link>Sign Up Here</Link>
             </Box>             
             </Paper>           
         </React.Fragment>

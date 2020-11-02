@@ -46,6 +46,12 @@ import TwitterIcon from '@material-ui/icons/Twitter';
         },
         button: {
             // fontSize: 10,
+            color: 'blue',
+            marginTop: theme.spacing(1),
+            marginBottom: theme.spacing(1),
+            padding: '6px 32px',
+            // width: "40px",
+            backgroundColor: "#1A91DA"
         },
         signin: {
            fontSize: 30, 

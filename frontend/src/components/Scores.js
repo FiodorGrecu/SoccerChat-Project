@@ -8,8 +8,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     "& > *": {
       margin: theme.spacing(3),
-      width: theme.spacing(39),
-      height: theme.spacing(19)
+        width: theme.spacing(39),
+      height: theme.spacing(15),
+      backgroundColor: "#F0E4C8"
+
     }
   }
 }));
@@ -20,6 +22,7 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
       <Paper elevation={4}>Team1 vs  Team2</Paper>
+      <Paper elevation={4}/>
       <Paper elevation={4}/>
       <Paper elevation={4}/>
       <Paper elevation={4}/>
