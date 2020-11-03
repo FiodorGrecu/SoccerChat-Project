@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    backgroundColor: '#F5F5F5'
+    backgroundColor: "#F0E4C8"
   },
 }));
 
@@ -36,31 +36,31 @@ export default function CenteredGrid() {
     <div className={classes.root}>
     
         <React.Fragment>
-          
-          <Grid item xs={12} style={{ backgroundColor: ("lightgrey"),}}>
-              <Paper className={classes.paper}>Date</Paper>
+          <Grid container spacing={3}>
+            <Grid item xs={12} style={{ backgroundColor: ('grey'),}}>
+                <Paper className={classes.paper}>Date</Paper>
+            </Grid>
+            <Grid item xs={5}>
+              <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
+            </Grid>
+            <Grid item xs={1}>
+                {/* <Paper className={classes.paper}>vs</Paper> */}
+            </Grid>
+            <Grid item xs={5}>
+              <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
+            </Grid>
+            {homePlayers}
+            
+            <Grid item xs={2}>
+              <Paper className={classes.paper}>Substitutions</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>Starting XI</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>Substitutions</Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={5}>
-            <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
-          </Grid>
-          <Grid>
-              <Paper className={classes.vs}>vs</Paper>
-          </Grid>
-          <Grid item xs={5}>
-            <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
-          </Grid>
-          {homePlayers}
-          
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>Substitutions</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>Starting XI</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>Substitutions</Paper>
-          </Grid>
-        
   
         </React.Fragment>
     

@@ -2,8 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
-import {games as fixtures} from "./teams";
-import { Grid } from '@material-ui/core';
+import { games as fixtures } from "./teams";
+import { Box, Grid } from '@material-ui/core';
+import { spacing } from '@material-ui/system';
 
 
 
@@ -23,11 +24,18 @@ const useStyles = makeStyles((theme) => ({
     
   },
   paper: {
-        width: theme.spacing(50),
+        width: theme.spacing(90),
         height: theme.spacing(20),
-        padding: 20,
+        padding: 30,
+        marginRight: (20),
+        textAlign: 'center',
         backgroundColor: "#F0E4C8"
     },
+    box: {
+        padding: 150,
+        paddingLeft: 290,
+        
+    }
    
 }));
 
@@ -35,7 +43,8 @@ export default function SimplePaper() {
   const classes = useStyles();
 
   const output = fixtures.map(fixture =>(
-      <React.Fragment >
+      <React.Fragment className={classes.reactFragment}>
+          <Box className={classes.box}>
           <Grid>
               <Link>
                 <Paper elevation={3} className={classes.paper}> {  fixture.home.name  }
@@ -53,6 +62,7 @@ export default function SimplePaper() {
                 </Paper>                 
               </Link>
           </Grid>
+          </Box>
       </React.Fragment>
   ));
 
