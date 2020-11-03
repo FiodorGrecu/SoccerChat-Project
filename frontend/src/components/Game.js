@@ -28,10 +28,14 @@ export default function CenteredGrid() {
         <Paper className={classes.paper}>{player.name} {player.number}</Paper>
     </Grid>
     
-  )) 
-
+  ));
   
-
+  const awayPlayers = fixtures[0].away.players.map(player => (
+    <Grid item xs={5}>
+        <Paper className={classes.paper}>{player.name} {player.number}</Paper>
+    </Grid>
+  ));
+  
   return (
     <div className={classes.root}>
     
@@ -42,24 +46,32 @@ export default function CenteredGrid() {
             </Grid>
             <Grid item xs={5}>
               <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
+              <Grid item xs={5}>
+                <Paper className={classes.paper}>Starting XI</Paper>
+              </Grid>
+              {homePlayers}
             </Grid>
+            
             <Grid item xs={1}>
                 {/* <Paper className={classes.paper}>vs</Paper> */}
             </Grid>
             <Grid item xs={5}>
               <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
+              <Grid item xs={5}>
+                <Paper className={classes.paper}>Starting XI</Paper>
+              </Grid>
+              {awayPlayers}
             </Grid>
-            {homePlayers}
             
-            <Grid item xs={2}>
+             <Grid item xs={3}>
               <Paper className={classes.paper}>Substitutions</Paper>
             </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>Starting XI</Paper>
-            </Grid>
-            <Grid item xs={3}>
+            
+           <Grid item xs={3}>
               <Paper className={classes.paper}>Substitutions</Paper>
             </Grid>
+            
+            
           </Grid>
   
         </React.Fragment>
