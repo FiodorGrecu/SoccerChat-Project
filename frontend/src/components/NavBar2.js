@@ -40,14 +40,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     paddingRight: theme.spacing(10),
     marginTop: theme.spacing(2),
-    color: 'white', 
-       
+    color: 'white',      
   },
   
 }));
-
-
-
 
 export default function ProminentAppBar() {
   const classes = useStyles();
@@ -56,32 +52,14 @@ export default function ProminentAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-            <Typography className={classes.links} variant="h6" noWrap edge="left">
-                    <Link  style={{ padding: 25,  color:"white"}} component={RouterLink} to="/home">Home</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/fixtures">Matches</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/game">Game</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/scores">Scores</Link>
-                    <Link  style={{ padding: 70,  color:"white"}} component={RouterLink} to="/chat">Chat</Link>
-
-            </Typography>
-            {/* <Typography className={classes.signin} variant="h8" noWrap edge="end">
-                    <Link style={{ padding: 20,  color:"gray"}} component={RouterLink} to="/Login">Log In</Link>
-                    <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/Signup">Sign Up</Link>
-                  
-            </Typography> */}
+          <Typography className={classes.links} variant="h6" noWrap edge="left">
+            <Link  style={{ padding: 25, color:"white"}} component={RouterLink} to="/home">Home</Link>
+            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/fixtures">Matches</Link>
+            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/game">Game</Link>
+            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/scores">Scores</Link>
+            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/chat">Chat</Link>
+          </Typography>
             <Divider className={classes.divider} orientation="vertical" />
-
-          {/* <IconButton aria-label="search" color="inherit">
-            <SearchIcon />
-            <InputBase 
-              placeholder="Search…"
-              classes={{}}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </IconButton> */}
-          {/* <IconButton aria-label="display more actions" edge="end" color="inherit">
-            <MoreIcon />
-          </IconButton> */}
         </Toolbar>
       </AppBar>
     </div>

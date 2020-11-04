@@ -81,41 +81,14 @@ export default function ProminentAppBar() {
             <Typography className={classes.title} variant="h3" noWrap>
                 Soccer Chat
             </Typography>
-            {/* <Typography className={classes.links} variant="h6" noWrap edge="left">
-                    <Link style={{ padding: 20,  color:"white"}} component={RouterLink} to="/HomePage">Home</Link>
-                    <Link style={{ padding: 20,  color:"white"}} component={RouterLink} to="/Fixtures_Games">Fixtures</Link>
-                    <Link style={{ padding: 20,  color:"white"}} component={RouterLink} to="/Game">Game</Link>
-                    <Link style={{ padding: 20,  color:"white"}} component={RouterLink} to="/chat">Ghat</Link>
 
-            </Typography> */}
             <Typography className={classes.signin} variant="h8" noWrap edge="end">
                     <Link style={{ padding: 20,  color:"gray"}} component={RouterLink} to="/login">Log In</Link>
-                    <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link>
-                  
+                    <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link>        
             </Typography>
             <Divider className={classes.divider} orientation="vertical" />
-
-          {/* <IconButton aria-label="search" color="inherit">
-            <SearchIcon />
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-                color:"white"
-                
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </IconButton> */}
-          {/* <IconButton aria-label="display more actions" edge="end" color="inherit">
-            <MoreIcon />
-          </IconButton> */}
         </Toolbar>
       </AppBar>
     </div>
-    // <div>
-                
-    // </div>
   );
 }
