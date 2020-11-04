@@ -34,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
     box: {
         padding: 150,
         paddingLeft: 290,
+        marginTop: 10,
+        
         
     }
    
@@ -45,22 +47,24 @@ export default function SimplePaper() {
   const output = fixtures.map(fixture =>(
       <React.Fragment className={classes.reactFragment}>
           <Box className={classes.box}>
-          <Grid>
-              <Link>
-                <Paper elevation={3} className={classes.paper}> {  fixture.home.name  }
-                                        <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
-                                       {  fixture.away.name  }
-                </Paper>                 
-              </Link>
-          </Grid>
-          <Grid>
-              <Link>
-                <Paper elevation={3} className={classes.paper}> 
-                        {  fixture.home.name  } 
-                        <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
-                        {  fixture.away.name  }         
-                </Paper>                 
-              </Link>
+          <Grid container spacing={5}>
+            <Grid sitem xs={12}>
+                <Link>
+                  <Paper elevation={3} className={classes.paper}> {  fixture.home.name  }
+                                          <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
+                                        {  fixture.away.name  }
+                  </Paper>                 
+                </Link>
+            </Grid>
+            <Grid>
+                <Link>
+                  <Paper elevation={3} className={classes.paper}> 
+                          {  fixture.home.name  } 
+                          <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
+                          {  fixture.away.name  }         
+                  </Paper>                 
+                </Link>
+            </Grid>
           </Grid>
           </Box>
       </React.Fragment>
@@ -69,10 +73,6 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
         {output}
-      {/* <Paper elevation={3} />
-      <Paper elevation={3} />
-      <Paper elevation={3} />
-      <Paper elevation={3} /> */}
     </div>
   );
 }
