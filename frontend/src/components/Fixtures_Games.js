@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     //   width: theme.spacing(100),
       height: theme.spacing(16),
       textAlign: 'center',
-    //   backgroundColor: '#F5F5F5',
     },
     
   },
