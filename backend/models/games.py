@@ -134,5 +134,4 @@ class Game:
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
         pprint(data)
-        # return data
         

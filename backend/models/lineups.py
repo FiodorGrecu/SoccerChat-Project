@@ -1,19 +1,22 @@
 import sqlite3
 import os
+import requests
+from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
 print(DATAPATH)
 
-class Lineups:
+class Lineup:
     dbpath = DATAPATH
     tablename = "lineups"
 
-    def __init__(self, team_id, game_id, player_id=0, pk=None):
+    def __init__(self, team_id, game_id, player_id=0, fixture_id=0, pk=None):
         self.pk = pk
         self.team_id = team_id
         self.game_id = game_id
         self.player_id = player_id
+        self.fixture_id = fixture_id
 
     def save(self):
         """Call _insert if the row does not exist in the database, otherwise
@@ -72,5 +75,11 @@ class Lineups:
 
 
     @classmethod
-    def lineups_from_game_by_date(cls, lineups, date, league_id):
-        pass
+    def lineups_from_game_by_date(cls, lineups, fixture_id):
+        url = "https://rapidapi.p.rapidapi.com/v2/lineups/{fixture_id}"
+        headers = {
+            'x-rapidapi-key': "804b1594a5msh69900911a788156p125a69jsna7c589797665",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+        response = requests.request("GET", url, headers=headers)
+        pprint(response.text)
