@@ -88,19 +88,15 @@ import TwitterIcon from '@material-ui/icons/Twitter';
             <Paper elevation={10} className={classes.paper}>           
                 <h3 className={classes.signin} > Sign Up </h3>
                 <Input id="firstname" onChange={e => props.setFirstname(e.target.value)} placeholder="First Name*"></Input>
-                <br/>
-                <Input id="lastname" onChange={e => props.setLastname(e.target.value)} placeholder="Last Name*"></Input>
-                <br/>
-                <Input id="emailaddress" onChange={e => props.setEmailaddres(e.target.value)} placeholder="Email Address"></Input>
-                <br/>
-                <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
-                <br/>
-                <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="primary">Sign Up</Button>
-                <br></br>
                 
-                {/* <p className={classes.or}>or sign up using</p> */}
-                {/* <FacebookIcon className={classes.facebookIcon}></FacebookIcon> */}
-                {/* <TwitterIcon className={classes.twitterIcon}></TwitterIcon> */}
+                <Input id="lastname" onChange={e => props.setLastname(e.target.value)} placeholder="Last Name*"></Input>
+                
+                <Input id="emailaddress" onChange={e => props.setEmailaddres(e.target.value)} placeholder="Email Address"></Input>
+                
+                <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
+               
+                <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="primary">Sign Up</Button>
+               
             </Paper>           
             </Box>             
         </React.Fragment>
