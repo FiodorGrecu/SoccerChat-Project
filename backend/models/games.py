@@ -122,6 +122,20 @@ class Game:
         data = response.json()
         pprint(data)
                 
+    @classmethod
+    def game_h2h(cls):
+        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/33/45"
+
+        querystring = {"timezone":"Europe/London"}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        pprint(data)
 
     @classmethod
     def games_by_date(cls, date, league_id=2):
@@ -150,7 +164,9 @@ class Game:
 
         data = response.json()
         pprint(data)
+
+
 if __name__=='__main__':
-    Game.games_by_date('2')
+    Game.game_h2h()
 
  
