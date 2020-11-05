@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
     
     '& > *': {
       margin: theme.spacing(3),
-      width: theme.spacing(170),
-    //   width: theme.spacing(100),
+      width: theme.spacing(10),
       height: theme.spacing(16),
       textAlign: 'center',
     },
@@ -27,11 +26,12 @@ const useStyles = makeStyles((theme) => ({
   paper: {
         width: theme.spacing(90),
         height: theme.spacing(20),
-        padding: 30,
+        padding: 60,
+        paddingRight: 50,
         marginRight: (20),
         marginTop: theme.spacing(2),
         textAlign: 'center',
-        fontWeight: "fontWeightBold",
+        fontWeight: (700),
         fontSize: theme.spacing(3),
         backgroundColor: "#F0E4C8"
     },
