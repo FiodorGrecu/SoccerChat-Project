@@ -10,8 +10,6 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import InputBase from '@material-ui/core/InputBase';
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
-// import { Gradient } from 'react-gradient';
-// import { spacing } from '@material-ui/system';
 import Divider from '@material-ui/core/Divider';
 
 

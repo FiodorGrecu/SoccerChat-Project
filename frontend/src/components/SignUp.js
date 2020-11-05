@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { MDBIcon } from "mdbreact";
 import { Box, Button, Link, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import { green } from '@material-ui/core/colors';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
 
 
- function LogIn(props) {
+ function SignUp(props) {
 
     const [inputCheck, setInputCheck] = useState("undefined");
 
@@ -24,9 +20,10 @@ import TwitterIcon from '@material-ui/icons/Twitter';
         },
 
         paper: {
-            padding: theme.spacing (5),
+            padding: theme.spacing (5),    
             margin: theme.spacing (5),
-            marginTop: 20,
+            marginTop: 30,
+            paddingTop: 75,
             alignItems:'center',
             justifyContent: "center",
             width: 350,
@@ -38,7 +35,9 @@ import TwitterIcon from '@material-ui/icons/Twitter';
             margin: theme.spacing (5),
             alignItems:'center',
             justifyContent: "center",
-            textAlign: "center"
+            textAlign: "center",
+            paddingRight: 100,
+            paddingLeft: 400
         },
         or: {
             fontSize: 15,
@@ -46,7 +45,6 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 
         },
         button: {
-            // fontSize: 10,
             color: 'blue',
             marginTop: theme.spacing(1),
             marginBottom: theme.spacing(1),
@@ -67,7 +65,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
     }));
     const classes = useStyles();
 
-    function checkOnLogin(username, password) {
+    function checkOnSignUp(username, password) {
         
         if (username.length >= 2 && password.length >= 2){
           setInputCheck(true);
@@ -95,7 +93,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
                 
                 <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
                
-                <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="primary">Sign Up</Button>
+                <Button  className={classes.button} onClick={e => checkOnSignUp(props.username, props.password)} color="primary">Sign Up</Button>
                
             </Paper>           
             </Box>             
@@ -103,4 +101,4 @@ import TwitterIcon from '@material-ui/icons/Twitter';
     );
 
 }
-export default LogIn;
+export default SignUp;
