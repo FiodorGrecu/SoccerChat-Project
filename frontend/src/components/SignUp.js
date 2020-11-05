@@ -26,11 +26,12 @@ import TwitterIcon from '@material-ui/icons/Twitter';
         paper: {
             padding: theme.spacing (5),
             margin: theme.spacing (5),
+            marginTop: 20,
             alignItems:'center',
             justifyContent: "center",
-            width: 400,
-            height: 500,
-            backgroundColor: "#F0E4C8"
+            width: 350,
+            height: 450,
+            backgroundColor: "#F0E4C8",
         },
         box: {
             padding: theme.spacing (5),
@@ -49,8 +50,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
             color: 'blue',
             marginTop: theme.spacing(1),
             marginBottom: theme.spacing(1),
-            padding: '6px 32px',
-            // width: "40px",
+            padding: '7px 32px',
             backgroundColor: "#1A91DA"
         },
         signin: {
@@ -84,8 +84,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
     }
     return (
         <React.Fragment className={classes.reactfragment}>
-            <Paper elevation={10} className={classes.paper}>           
             <Box className={classes.box}>
+            <Paper elevation={10} className={classes.paper}>           
                 <h3 className={classes.signin} > Sign Up </h3>
                 <Input id="firstname" onChange={e => props.setFirstname(e.target.value)} placeholder="First Name*"></Input>
                 <br/>
@@ -101,8 +101,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
                 {/* <p className={classes.or}>or sign up using</p> */}
                 {/* <FacebookIcon className={classes.facebookIcon}></FacebookIcon> */}
                 {/* <TwitterIcon className={classes.twitterIcon}></TwitterIcon> */}
-            </Box>             
             </Paper>           
+            </Box>             
         </React.Fragment>
     );
 

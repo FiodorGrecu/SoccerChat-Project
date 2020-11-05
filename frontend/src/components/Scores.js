@@ -8,12 +8,15 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center ",
+    // this weird symbols arethe paper for some reason
     "& > *": {
       margin: theme.spacing(3),
       width: theme.spacing(39),
       height: theme.spacing(25),
       textAlign: "center",     
-      backgroundColor: "#F0E4C8"
+      backgroundColor: "#F0E4C8",
+      padding: 70,
+      fontWeight: (700),
 
     },
     paper: {

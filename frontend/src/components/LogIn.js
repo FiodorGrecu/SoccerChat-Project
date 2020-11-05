@@ -26,9 +26,10 @@ function LogIn(props) {
             margin: theme.spacing (5),
             alignItems:'center',
             justifyContent: "center",
-            width: 400,
-            height: 500,
-            backgroundColor: "#F0E4C8"
+            width: 350,
+            height: 450,
+            backgroundColor: "#F0E4C8",
+            // paddingLeft:
         
 
         },
@@ -37,7 +38,9 @@ function LogIn(props) {
             margin: theme.spacing (5),
             alignItems:'center',
             justifyContent: "center",
-            textAlign: "center"
+            textAlign: "center", 
+            paddingRight: 100,
+            paddingLeft: 400,
         },
         or: {
             fontSize: 14,
@@ -86,8 +89,8 @@ function LogIn(props) {
     }
     return (
         <React.Fragment justify="center">
-            <Paper elevation={10} className={classes.paper}>           
             <Box className={classes.box}>
+            <Paper elevation={10} className={classes.paper}>           
                 <Avatar className={classes.avatar}>
                 <LockOutlinedIcon />
                 </Avatar>
@@ -101,8 +104,8 @@ function LogIn(props) {
                 <Link>Forgot Password?</Link>
                 <p className={classes.or}>or</p>
                <Link>Sign Up Here</Link>
-            </Box>             
             </Paper>           
+            </Box>             
         </React.Fragment>
     );
 }
