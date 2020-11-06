@@ -40,8 +40,16 @@ export default function CenteredGrid() {
     <Grid item xs={5}>
         <Paper className={classes.paper}>{subs.name} {subs.number}</Paper>
     </Grid>
-  ));
+
   
+  ));
+
+  const awaySubs = fixtures[0].away.subs.map(subs =>(
+    <Grid item xs={5}>
+      <Paper className={classes.paper}>{subs.name} {subs.number}</Paper>
+    </Grid>
+  ));
+
   return (
     <div className={classes.root}>
     
@@ -81,7 +89,16 @@ export default function CenteredGrid() {
            <Grid item xs={3}>
               <Paper className={classes.paper}>Substitutions</Paper>
             </Grid>
-            
+            <Grid>
+               {awaySubs}
+            </Grid>
+
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>Stats</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>Stats</Paper>
+            </Grid>
             
           </Grid>
   
