@@ -28,9 +28,7 @@ function LogIn(props) {
             justifyContent: "center",
             width: 350,
             height: 450,
-            backgroundColor: "#F0E4C8",
-            // paddingLeft:
-        
+            backgroundColor: "#F0E4C8",        
 
         },
         box: {
