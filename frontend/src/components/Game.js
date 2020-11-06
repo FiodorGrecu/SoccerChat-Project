@@ -55,8 +55,10 @@ export default function CenteredGrid() {
     
         <React.Fragment>
           <Grid container spacing={3}>
-            <Grid item xs={12} style={{ backgroundColor: ('grey'),}}>
+            <Grid item xs={12} style={{ backgroundColor: ('gray'), justifyContent: 100}}>
                 <Paper className={classes.paper}>Date</Paper>
+                <Link style={{color:"white", padding:200}}>Home_Stats</Link>
+                <Link style={{color:"white", padding:400}}>Away_Stats</Link>
             </Grid>
             <Grid item xs={5}>
               <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
@@ -92,13 +94,7 @@ export default function CenteredGrid() {
             <Grid>
                {awaySubs}
             </Grid>
-
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>Stats</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>Stats</Paper>
-            </Grid>
+          
             
           </Grid>
   
