@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import games from "./teams";
 import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
+import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,8 +54,10 @@ export default function CenteredGrid() {
 
   return (
     <div className={classes.root}>
+    <img src={Background_pic} className="Background" alt="Stadium picture" />
     
         <React.Fragment>
+
           <Grid container spacing={3}>
             <Grid item xs={12} style={{ backgroundColor: ('gray'), justifyContent: 100}}>
                 <Paper className={classes.paper}>Date</Paper>
