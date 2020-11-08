@@ -129,4 +129,6 @@ class Team:
         data = response.json()
         return data['response']
 
-    
+    @classmethod
+    def team_stat_by_date(cls, date):
+        pass
