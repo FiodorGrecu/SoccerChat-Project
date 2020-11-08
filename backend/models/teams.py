@@ -131,4 +131,13 @@ class Team:
 
     @classmethod
     def team_stat_by_date(cls, date):
-        pass
+        url = "https://api-football-v1.p.rapidapi.com/v2/statistics/2/33/2020-11-07"
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        pprint(response.text)
