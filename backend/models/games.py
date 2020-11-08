@@ -124,7 +124,7 @@ class Game:
                 
     @classmethod
     def game_h2h(cls):
-        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/33/45"
+        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/33/40"
 
         querystring = {"timezone":"Europe/London"}
 
@@ -165,6 +165,9 @@ class Game:
         data = response.json()
         pprint(data)
 
+    @classmethod
+    def game_stats(cls):
+        pass
 
 if __name__=='__main__':
     Game.game_h2h()
