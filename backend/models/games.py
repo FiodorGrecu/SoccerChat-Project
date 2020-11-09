@@ -123,8 +123,8 @@ class Game:
         pprint(data)
                 
     @classmethod
-    def game_h2h(cls):
-        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/33/40"
+    def game_h2h(cls, team_id_1=0, team_id_2=0):
+        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/34/41"
 
         querystring = {"timezone":"Europe/London"}
 
@@ -170,6 +170,6 @@ class Game:
         pass
 
 if __name__=='__main__':
-    Game.game_h2h()
+    Game.game_h2h("33","44")
 
  
