@@ -1,6 +1,7 @@
 import sqlite3
 import os
 import requests
+from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
@@ -130,7 +131,7 @@ class Team:
         return data['response']
 
     @classmethod
-    def team_stat_by_date(cls, date):
+    def team_stat_by_date(cls,league_id, team_id, date):
         url = "https://api-football-v1.p.rapidapi.com/v2/statistics/2/33/2020-11-07"
 
         headers = {
@@ -140,4 +141,7 @@ class Team:
 
         response = requests.request("GET", url, headers=headers)
         data = response.json()
-        pprint(response.text)
+        pprint(data)
+
+if __name__=='__main__':
+    Team.team_stat_by_date('2','40','2020-11-7')
