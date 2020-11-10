@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: 'rgb(238, 238, 240)',          /
     
     '& > *': {
-      margin: theme.spacing(3),
+      margin: theme.spacing(1),
       width: theme.spacing(10),
       height: theme.spacing(16),
       textAlign: 'center',
@@ -27,24 +27,27 @@ const useStyles = makeStyles((theme) => ({
     
   },
   paper: {
-        width: theme.spacing(90),
-        height: theme.spacing(20),
+        width: theme.spacing(130),
+        height: theme.spacing(5),
         padding: 60,
-        paddingRight: 60,
+        paddingRight: 85,
         marginRight: (20),
-        marginTop: theme.spacing(2),
+      
+        marginTop: theme.spacing(0.5),
         textAlign: 'center',
-        fontWeight: (700),
-        fontSize: theme.spacing(3),
+        fontWeight: (500),
+        fontSize: theme.spacing(2),
         backgroundColor: "#F0E4C8"
     },
     box: {
-        padding: 150,
-        paddingLeft: 290,
-        marginTop: 10,
-        
-        
-    }
+        padding: 10,
+        paddingLeft: 200,
+        marginTop: 10,    
+    },
+    logo: {
+        padding: 10,
+
+    },
    
 }));
 
@@ -59,7 +62,9 @@ export default function SimplePaper() {
             <Grid sitem xs={12}>
                 <Link>
                   <Paper elevation={3} className={classes.paper}> {  fixture.home.name  }
-                                          <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
+                                          <span className={classes.logo}>{"(Logo)"}</span>
+                                          <span style={{marginLeft:40, marginRight:40}}>{"  Time   "}</span>
+                                          <span className={classes.logo}>{"(Logo)"}</span>
                                         {  fixture.away.name  }
                   </Paper>                 
                 </Link>
@@ -68,7 +73,9 @@ export default function SimplePaper() {
                 <Link>
                   <Paper elevation={3} className={classes.paper}> 
                           {  fixture.home.name  } 
-                          <span style={{marginLeft:40, marginRight:40}}>{"  VS   "}</span> 
+                          <span className={classes.logo}>{"(Logo)"}</span>
+                          <span style={{marginLeft:40, marginRight:40}}>{"  Time   "}</span> 
+                          <span className={classes.logo}>{"(Logo)"}</span>
                           {  fixture.away.name  }         
                   </Paper>                 
                 </Link>
@@ -84,60 +91,3 @@ export default function SimplePaper() {
     </div>
   );
 }
-
-
-
-
-
-
-// import React from 'react';
-
-// import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
-// import {games as fixtures} from "./teams";
-// import { Link } from 'react-router-dom';
-
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   paper: {
-//     padding: theme.spacing(4),
-//     margin: theme.spacing(2),
-//     width: theme.spacing(70),
-//     textAlign: 'center',
-//     color: theme.palette.text.secondary,
-//     backgroundColor: '#F5F5F5',
-//     fontWeight: "bold",
-//   },
-// }));
-
-// export default function CenteredGrid() {
-//   const classes = useStyles();
-
-//   const output = fixtures.map(fixture => (
-//    <React.Fragment>
-
-//         <Grid item xs={6} >
-//             <Link > 
-//                 <Paper className={classes.paper} >{fixture.home.name }</Paper>
-//             </Link>
-//         </Grid>
-
-
-//    </React.Fragment>
-//   ));
-  
-    
-
-//   return (
-//     <Grid className={classes.root}>
-//         <Grid container spacing={1}>
-
-//         {output}
-//         </Grid>
-//     </Grid>
-//   );
-// }
