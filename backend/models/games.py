@@ -124,7 +124,7 @@ class Game:
                 
     @classmethod
     def game_h2h(cls, team_id_1=0, team_id_2=0):
-        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/31/41"
+        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/31/41H2"
 
         querystring = {"timezone":"Europe/London"}
 
