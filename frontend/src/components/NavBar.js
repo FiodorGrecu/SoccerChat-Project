@@ -12,6 +12,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // import { Gradient } from 'react-gradient';
 import Divider from '@material-ui/core/Divider';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+import { Box } from '@material-ui/core';
 
 
 
@@ -31,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'red', 
 
   },
+
+  appdiscription: {
+    alignItems: 'flex-start',
+    color: 'rgb(208, 202, 255)',
+    marginTop: -80,
+    alignSelf: 'flex-start',
+    marginRight: -300,
+  },
+
   title: {
     flexGrow: 1,
     alignSelf: 'flex-end',
@@ -50,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(2)
     
   },
+
  
   
 }));
@@ -62,8 +73,15 @@ export default function ProminentAppBar() {
 
   return (
     <div className={classes.root}>
+      
       <AppBar position="static">
+        
         <Toolbar className={classes.toolbar}>
+          <Box className={classes.appdiscription}>   
+          <Typography>
+              Scores, Soccer Results Standings and Chat
+          </Typography>
+          </Box>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -78,8 +96,10 @@ export default function ProminentAppBar() {
             <SportsSoccerIcon />            
           </IconButton>
 
+            
+
             <Typography className={classes.title} variant="h3" noWrap>
-                Soccer Chat
+                SoccerChat
             </Typography>
 
             <Typography className={classes.signin} variant="h8" noWrap edge="end">
