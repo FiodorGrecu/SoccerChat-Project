@@ -49,15 +49,15 @@ function App() {
         <Route path='/signup'>
           <SignUp/>
         </Route>
-        
-        <Route path='/chat'>
-          <Chat/>
-        </Route>
 
         <Route path='/table'>
           <Table/>
         </Route>
 
+        <Route path='/chat'>
+          <Chat/>
+        </Route>
+        
       </BrowserRouter>
       
     </div>

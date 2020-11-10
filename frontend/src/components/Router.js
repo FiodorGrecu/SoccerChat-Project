@@ -6,8 +6,8 @@ import Game from '.components/Game';
 import Sores from '.components/Sores';
 import LogIn from '.components/LogIn';
 import SignUp from '.components/SignUp';
-import Chat from '.components/Chat';
 import Table from '.components/Table';
+import Chat from '.components/Chat';
 
 
 export default function Router () {
@@ -20,8 +20,8 @@ export default function Router () {
             <Route path="/scores" component={Scores}/>
             <Route path="/login" component={LogIn}/>
             <Route path="/signup" component={SignUp}/>
-            <Route path="/chat" component={Chat}/>
             <Route path="/table" component={Table}/>
+            <Route path="/chat" component={Chat}/>
         </div>
         )
         

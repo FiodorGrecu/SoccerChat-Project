@@ -5,14 +5,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-
-// import InputBase from '@material-ui/core/InputBase';s
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
 // import { Gradient } from 'react-gradient';
 import Divider from '@material-ui/core/Divider';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { Box } from '@material-ui/core';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 
 
@@ -22,14 +21,14 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(5),
-    color: 'black'
+    color: 'grey'
   },
   toolbar: {
     minHeight: 130,
     alignItems: 'flex-start',
     paddingTop: theme.spacing(11),
     paddingBottom: theme.spacing(1),
-    backgroundColor: 'red', 
+    backgroundColor: '#D61400', 
 
   },
 
@@ -93,7 +92,7 @@ export default function ProminentAppBar() {
           </IconButton>
 
           <IconButton  style={{ padding: 5,  color:"gray"}}>
-            <SportsSoccerIcon />            
+            {/* <SportsSoccerIcon />             */}
           </IconButton>
 
             
@@ -103,8 +102,12 @@ export default function ProminentAppBar() {
             </Typography>
 
             <Typography className={classes.signin} variant="h8" noWrap edge="end">
+                    
                     <Link style={{ padding: 20,  color:"gray"}} component={RouterLink} to="/login">Log In</Link>
-                    <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link>        
+                    <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link> 
+                     <IconButton style={{fontSize:"large", color:"gray"}}> 
+                      <PersonOutlineIcon></PersonOutlineIcon>
+                    </IconButton>      
             </Typography>
             <Divider className={classes.divider} orientation="vertical" />
         </Toolbar>
