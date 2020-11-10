@@ -7,6 +7,7 @@ import Sores from '.components/Sores';
 import LogIn from '.components/LogIn';
 import SignUp from '.components/SignUp';
 import Chat from '.components/Chat';
+import Table from '.components/Table';
 
 
 export default function Router () {
@@ -20,6 +21,7 @@ export default function Router () {
             <Route path="/login" component={LogIn}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/chat" component={Chat}/>
+            <Route path="/table" component={Table}/>
         </div>
         )
         

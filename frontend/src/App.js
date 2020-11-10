@@ -11,6 +11,7 @@ import Scores from './components/Scores';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import Chat from './components/Chat';
+import Table from './components/Table';
 
 
 function App() {
@@ -51,6 +52,10 @@ function App() {
         
         <Route path='/chat'>
           <Chat/>
+        </Route>
+
+        <Route path='/table'>
+          <Table/>
         </Route>
 
       </BrowserRouter>

@@ -12,6 +12,8 @@ import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/component
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: 'rgb(238, 238, 240)',
+
   },
   paper: {
     padding: theme.spacing(2),
@@ -54,7 +56,7 @@ export default function CenteredGrid() {
 
   return (
     <div className={classes.root}>
-    <img src={Background_pic} className="Background" alt="Stadium picture" />
+    {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
     
         <React.Fragment>
 

@@ -14,12 +14,15 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    // backgroundColor: 'rgb(238, 238, 240)',          /
     
     '& > *': {
       margin: theme.spacing(3),
       width: theme.spacing(10),
       height: theme.spacing(16),
       textAlign: 'center',
+      // backgroundColor: 'rgb(238, 238, 240)',
+
     },
     
   },
@@ -51,6 +54,7 @@ export default function SimplePaper() {
   const output = fixtures.map(fixture =>(
       <React.Fragment className={classes.reactFragment}>
           <Box className={classes.box} >
+          <p>Calendar</p>
           <Grid container spacing={5}>
             <Grid sitem xs={12}>
                 <Link>
