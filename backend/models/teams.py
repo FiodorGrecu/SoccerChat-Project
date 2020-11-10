@@ -142,9 +142,10 @@ class Team:
         response = requests.request("GET", url, headers=headers)
         data = response.json()
         pprint(data)
+        
     @classmethod
     def team_by_id(cls):
-        url = "https://api-football-v1.p.rapidapi.com/v2/teams/team/33"
+        url = "https://api-football-v1.p.rapidapi.com/v2/teams/team/34"
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
@@ -154,6 +155,20 @@ class Team:
         response = requests.request("GET", url, headers=headers)
         data = response.json()
         pprint(data)
+
+    @classmethod
+    def lookup_logo(cls, team_id):
+        # url = "https://api-football-v1.p.rapidapi.com/v2/teams/team/34"
+        url = f'https://api-football-v1.p.rapidapi.com/v2/teams/team/{team_id}'
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        pprint(data['api']['teams'][0]['logo'])
+    
 
 if __name__=='__main__':
     Team.team_by_id()

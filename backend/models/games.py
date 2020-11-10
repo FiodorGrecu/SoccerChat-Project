@@ -168,8 +168,8 @@ class Game:
     @classmethod
     def game_by_fixture_id(cls, fixture_id):
 
-        url = "https://api-football-v1.p.rapidapi.com/fixtures/id/592195"
-
+        # a fixture id example 592195
+        url = f"https://api-football-v1.p.rapidapi.com/fixtures/id/{fixture_id}"
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
             'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
