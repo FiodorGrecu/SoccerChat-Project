@@ -142,6 +142,18 @@ class Team:
         response = requests.request("GET", url, headers=headers)
         data = response.json()
         pprint(data)
+    @classmethod
+    def team_by_id(cls):
+        url = "https://api-football-v1.p.rapidapi.com/v2/teams/team/33"
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        pprint(data)
 
 if __name__=='__main__':
-    Team.team_stat_by_date('2','40','2020-11-7')
+    Team.team_by_id()
