@@ -73,7 +73,7 @@ export default function SimplePaper() {
                 <Link>
                   <Paper elevation={3} className={classes.paper}> 
                           {  fixture.home.name  } 
-                          <span className={classes.logo}>{"(Logo)"}</span>
+                          <span className={classes.logo}>{"(Logo)"}</span>T
                           <span style={{marginLeft:40, marginRight:40}}>{"  Time   "}</span> 
                           <span className={classes.logo}>{"(Logo)"}</span>
                           {  fixture.away.name  }         
