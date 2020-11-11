@@ -110,6 +110,7 @@ class Game:
             cursor.execute(sql, values)
             return cursor.fetchone()
 
+    # I need an Endpoint that gives me one game
     @classmethod
     def game_by_id(cls, game_id):
         url = f"https://rapidapi.p.rapidapi.com/v2/fixtures/id/{game_id}"
