@@ -11,6 +11,10 @@ app = Flask(__name__)
 def home():
     return jsonify({"hey": "Hey you!"})
 
+@app.route('/hey_back', methods=["GET"])
+def reply_home():
+    return jsonify({"hey": "Hey the Horse!"})
+
 
 if __name__ == "__main__":
     app.run()#debug=True)

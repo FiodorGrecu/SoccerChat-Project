@@ -99,6 +99,17 @@ def schema(dbpath = DATAPATH):
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
 
+        cursor.execute("""
+        CREATE TABLE table (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            team_id INTEGER,
+            contents VARCHAR,
+            account_id INTEGER,
+            game_id INTEGER,
+            FOREIGN KEY (account_id) REFERENCES accounts(pk)
+            FOREIGN KEY (game_id) REFERENCES games(pk)
+        );""")
+        
         
         # Have the home team and away team as columns for the games table
         # Chats foregn key should reference the games           
