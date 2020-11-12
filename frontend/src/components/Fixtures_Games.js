@@ -11,11 +11,10 @@ import Typography from '@material-ui/core/Typography';
 
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
-    // backgroundColor: 'rgb(238, 238, 240)',          /
-    
+    flexWrap: 'wrap',        
     '& > *': {
       margin: theme.spacing(1),
       width: theme.spacing(10),
@@ -73,7 +72,7 @@ export default function SimplePaper() {
                 <Link>
                   <Paper elevation={3} className={classes.paper}> 
                           {  fixture.home.name  } 
-                          <span className={classes.logo}>{"(Logo)"}</span>T
+                          <span className={classes.logo}>{"(Logo)"}</span>
                           <span style={{marginLeft:40, marginRight:40}}>{"  Time   "}</span> 
                           <span className={classes.logo}>{"(Logo)"}</span>
                           {  fixture.away.name  }         
@@ -81,6 +80,8 @@ export default function SimplePaper() {
                 </Link>
             </Grid>
           </Grid>
+
+
           </Box>
       </React.Fragment>
   ));
