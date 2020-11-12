@@ -167,7 +167,8 @@ class Team:
 
         response = requests.request("GET", url, headers=headers)
         data = response.json()
-        pprint(data['api']['teams'][0]['logo'])
+        logo = data['api']['teams'][0]['logo']
+        pprint(logo)
     
 
 if __name__=='__main__':

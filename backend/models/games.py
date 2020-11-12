@@ -136,7 +136,22 @@ class Game:
 
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
-        pprint(data)
+        # team1_name = data['api']['teams'][0]['name']
+        # round = data['api']['teams'][0]
+        # round = data['api']['teams']
+        home_team = data['api']['fixtures'][28]['homeTeam']['team_name']
+        h_t_logo = data['api']['fixtures'][28]['homeTeam']['logo']
+        away_team = data['api']['fixtures'][28]['awayTeam']['team_name']
+        a_t_logo = data['api']['fixtures'][28]['awayTeam']['logo']
+        
+        game1 = f'{home_team}  {h_t_logo}   {away_team} {a_t_logo}'
+        # game2 = data['api']['fixtures'][2]
+        # game3 = data['api']['fixtures'][3]
+        # game4 = data['api']['fixtures'][4]
+        # game5 = data['api']['fixtures'][5]
+        # pprint(data)
+        pprint((game1))
+        # pprint(((home_team, h_t_logo), (a_t_logo, away_team)))
     
     @classmethod
     def games_by_date(cls, date, league_id=2):
@@ -186,6 +201,6 @@ class Game:
         pass
 
 if __name__=='__main__':
-    Game.games_by_date('2018-08-11')
+    Game.game_h2h(40,50)
 
  
