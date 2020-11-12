@@ -112,18 +112,6 @@ class Game:
 
     # I need an Endpoint that gives me one game
     @classmethod
-    def game_by_id(cls, game_id):
-        url = f"https://rapidapi.p.rapidapi.com/v2/fixtures/id/{game_id}"
-        querystring = {"timezone":"Europe/London"}
-        headers = {
-            'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
-            'x-rapidapi-key': "804b1594a5msh69900911a788156p125a69jsna7c589797665"
-            }
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        data = response.json()
-        pprint(data)
-                
-    @classmethod
     def game_h2h(cls, team_id_1=0, team_id_2=0):
         url = f"https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/{team_id_1}/{team_id_2}"
 
@@ -139,18 +127,18 @@ class Game:
         # team1_name = data['api']['teams'][0]['name']
         # round = data['api']['teams'][0]
         # round = data['api']['teams']
+        # pprint(data)
         home_team = data['api']['fixtures'][28]['homeTeam']['team_name']
         h_t_logo = data['api']['fixtures'][28]['homeTeam']['logo']
         away_team = data['api']['fixtures'][28]['awayTeam']['team_name']
         a_t_logo = data['api']['fixtures'][28]['awayTeam']['logo']
         
-        game1 = f'{home_team}  {h_t_logo}   {away_team} {a_t_logo}'
-        # game2 = data['api']['fixtures'][2]
-        # game3 = data['api']['fixtures'][3]
-        # game4 = data['api']['fixtures'][4]
-        # game5 = data['api']['fixtures'][5]
+        game1 = {"team_id": home_team, 
+                "home_logo": h_t_logo,  
+                "team_id": away_team, 
+                "away_logo": a_t_logo}
         # pprint(data)
-        pprint((game1))
+        return((game1))
         # pprint(((home_team, h_t_logo), (a_t_logo, away_team)))
     
     @classmethod
@@ -180,27 +168,32 @@ class Game:
 
         data = response.json()
         pprint(data)
-    
-    @classmethod
-    def game_by_fixture_id(cls, fixture_id):
-
-        # a fixture id example 592195
-        url = f"https://api-football-v1.p.rapidapi.com/fixtures/id/{fixture_id}"
-        headers = {
-            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
-            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
-            }
-
-        response = requests.request("GET", url, headers=headers)
-        data = response.json()
-        pprint(data)
 
 
     @classmethod
     def game_stats(cls):
         pass
 
+    @classmethod
+    def last_5(cls):
+        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2/last/5"
+
+        querystring = {"timezone":"Europe/London"}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
+
 if __name__=='__main__':
-    Game.game_h2h(40,50)
+
+    # game = Game.game_h2h(40,50)
+    last5 = Game.last_5()
+    pprint(last5)
+   
 
  

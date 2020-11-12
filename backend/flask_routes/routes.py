@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from games import Game
+from models.games import Game
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
@@ -12,12 +12,15 @@ app = Flask(__name__)
 def home():
     return jsonify({"hey": "Hey you!"})
 
-@app.route('/api/fixtures/<game_h2h>', methods=["GET"])
-def fixtures(game_h2h):
-    game = Game.game_h2h(game_h2h)
-    return jsonify("fixtures": game['homeTeam'])
+@app.route('/api/fixtures/', methods=["GET"])
+def fixtures():
+    game = Game.game_h2h(40,50)
+    return jsonify({"fixtures": game})
 
-
+@app.route('/api/last5/', methods=["GET"])
+def last5():
+    last5 = Game.last_5()
+    return jsonify({'fixtures': last5})
 
 if __name__ == "__main__":
     app.run()#debug=True)
