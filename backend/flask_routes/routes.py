@@ -22,5 +22,10 @@ def last5():
     last5 = Game.last_5()
     return jsonify({'fixtures': last5})
 
+@app.route('/api/games_by_date/<date>', methods=["GET"])
+def games_by_date(date):
+    date = Game.games_by_date(date)
+    return jsonify({'fixtures': date})
+
 if __name__ == "__main__":
     app.run()#debug=True)

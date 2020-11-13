@@ -205,7 +205,7 @@ class Game:
 
 if __name__=='__main__':
 
-    games_by_date = Game.games_by_date("2020-11-22")
+    games_by_date = Game.games_by_date(date)
     # game = Game.game_h2h(40,50)
     # last5 = Game.last_5()
     pprint(games_by_date)
