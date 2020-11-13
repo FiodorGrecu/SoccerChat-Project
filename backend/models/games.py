@@ -214,13 +214,30 @@ class Game:
         data = response.json()
         return(data)
 
+    @classmethod
+    def last_10(cls, num_games):
+
+        url = "https://api-football-beta.p.rapidapi.com/fixtures/rounds"
+
+        querystring = {"season":"2020","league":"39"}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
+
 if __name__=='__main__':
 
     # games_by_date = Game.games_by_date("2020-11-07")
     # h2h = Game.game_h2h(40,50)
-    # last5 = Game.last_5(10)
-    game_stats = Game.game_stats('592215')
-    pprint(game_stats)
+    last10 = Game.last_10(10)
+    # game_stats = Game.game_stats('592215')
+
+    pprint(last10)
    
 
  

@@ -156,10 +156,24 @@ class Team:
         data = response.json()
         return (data)
 
-    
+    @classmethod
+    def league_table(cls, league_id):
+        url = "https://api-football-beta.p.rapidapi.com/standings"
+
+        querystring = {"season":"2020","league": league_id}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
 
 if __name__=='__main__':
 
     # team = Team.team_by_id('34')
-    stat = Team.team_stat_by_date(2,33,"2019-12-19")
-    pprint(stat)
+    # stat = Team.team_stat_by_date(2,33,"2019-12-19")
+    table = Team.league_table('39')
+    pprint(table)
