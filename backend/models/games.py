@@ -128,30 +128,44 @@ class Game:
         # round = data['api']['teams'][0]
         # round = data['api']['teams']
         # pprint(data)
-        home_team = data['api']['fixtures'][28]['homeTeam']['team_name']
-        h_t_logo = data['api']['fixtures'][28]['homeTeam']['logo']
-        away_team = data['api']['fixtures'][28]['awayTeam']['team_name']
-        a_t_logo = data['api']['fixtures'][28]['awayTeam']['logo']
+        # home_team = data['api']['fixtures'][28]['homeTeam']['team_name']
+        # h_t_logo = data['api']['fixtures'][28]['homeTeam']['logo']
+        # away_team = data['api']['fixtures'][28]['awayTeam']['team_name']
+        # a_t_logo = data['api']['fixtures'][28]['awayTeam']['logo']
         
-        game1 = {"team_id": home_team, 
-                "home_logo": h_t_logo,  
-                "team_id": away_team, 
-                "away_logo": a_t_logo}
+        # game1 = {"team_id": home_team, 
+        #         "home_logo": h_t_logo,  
+        #         "team_id": away_team, 
+        #         "away_logo": a_t_logo}
         # pprint(data)
-        return((game1))
+        return((data))
         # pprint(((home_team, h_t_logo), (a_t_logo, away_team)))
     
     @classmethod
-    def games_by_date(cls, date, league_id=2):
-        url = f"https://rapidapi.p.rapidapi.com/v2/fixtures/league/2/2018-08-11"
-        querystring = {"timezone":"Europe/London"}
+    def games_by_date(cls, date):
+        url = "https://api-football-beta.p.rapidapi.com/fixtures"
+
+        querystring = {"league":"39","season":"2020","date":{date}}
+
         headers = {
-            'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
-            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
             }
+
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
-        pprint(data)
+        return(data)
+
+
+        # url = f"https://rapidapi.p.rapidapi.com/v2/fixtures/league/2/2018-08-11"
+        # querystring = {"timezone":"Europe/London"}
+        # headers = {
+        #     'x-rapidapi-host': "api-football-v1.p.rapidapi.com",
+        #     'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"
+        #     }
+        # response = requests.request("GET", url, headers=headers, params=querystring)
+        # data = response.json()
+        # pprint(data)
 
     @classmethod
     def next_fixtures(cls): 
@@ -191,9 +205,10 @@ class Game:
 
 if __name__=='__main__':
 
+    games_by_date = Game.games_by_date("2020-11-22")
     # game = Game.game_h2h(40,50)
-    last5 = Game.last_5()
-    pprint(last5)
+    # last5 = Game.last_5()
+    pprint(games_by_date)
    
 
  

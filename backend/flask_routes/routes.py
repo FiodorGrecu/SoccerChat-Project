@@ -12,8 +12,8 @@ app = Flask(__name__)
 def home():
     return jsonify({"hey": "Hey you!"})
 
-@app.route('/api/fixtures/', methods=["GET"])
-def fixtures():
+@app.route('/api/one_game/', methods=["GET"])
+def one_game():
     game = Game.game_h2h(40,50)
     return jsonify({"fixtures": game})
 
