@@ -27,3 +27,18 @@
 #         pprint(data)
 
 # if __name__=='__main__':
+
+
+#  @classmethod
+#     def lookup_logo(cls, team_id):
+#         # url = "https://api-football-v1.p.rapidapi.com/v2/teams/team/34"
+#         url = f'https://api-football-v1.p.rapidapi.com/v2/teams/team/{team_id}'
+#         headers = {
+#             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+#             'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+#             }
+
+#         response = requests.request("GET", url, headers=headers)
+#         data = response.json()
+#         logo = data['api']['teams'][0]['logo']
+#         pprint(logo)

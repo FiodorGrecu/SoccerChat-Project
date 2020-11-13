@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from models.games import Game
+from models.teams import Team
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
@@ -26,6 +27,11 @@ def last5():
 def games_by_date(date):
     date = Game.games_by_date(date)
     return jsonify({'fixtures': date})
+
+@app.route('/api/team_by_id/<team_id>', methods=["GET"])
+def team_by_id(team_id):
+    team = Team.team_by_id(team_id)
+    return jsonify({'teams': team})
 
 if __name__ == "__main__":
     app.run()#debug=True)
