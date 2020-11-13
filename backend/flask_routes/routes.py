@@ -18,10 +18,10 @@ def game_h2h(team_id_1, team_id_2):
     h2h = Game.game_h2h(team_id_1, team_id_2)
     return jsonify({"fixtures": h2h})
 
-@app.route('/api/last5/', methods=["GET"])
-def last5():
-    last5 = Game.last_5()
-    return jsonify({'fixtures': last5})
+@app.route('/api/last/<num_games>', methods=["GET"])
+def last_5(num_games):
+    last_5 = Game.last_5(num_games)
+    return jsonify({'fixtures': last_5})
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
 def games_by_date(date):

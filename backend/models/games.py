@@ -189,8 +189,8 @@ class Game:
         pass
 
     @classmethod
-    def last_5(cls):
-        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2/last/5"
+    def last_5(cls, num_games):
+        url = f"https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2/last/{num_games}"
 
         querystring = {"timezone":"Europe/London"}
 
@@ -206,9 +206,9 @@ class Game:
 if __name__=='__main__':
 
     # games_by_date = Game.games_by_date("2020-11-07")
-    h2h = Game.game_h2h(40,50)
-    # last5 = Game.last_5()
-    pprint(h2h)
+    # h2h = Game.game_h2h(40,50)
+    # last5 = Game.last_5(10)
+    pprint(last5)
    
 
  
