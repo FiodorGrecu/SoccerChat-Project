@@ -13,11 +13,6 @@ app = Flask(__name__)
 def home():
     return jsonify({"Welcome": "Welcome to Premier League"})
 
-@app.route('/api/h2h/<team_id_1>/<team_id_2>', methods=["GET"])
-def game_h2h(team_id_1, team_id_2):
-    h2h = Game.game_h2h(team_id_1, team_id_2)
-    return jsonify({"fixtures": h2h})
-
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
     last_5 = Game.last_5(num_games)
@@ -28,10 +23,22 @@ def games_by_date(date):
     date = Game.games_by_date(date)
     return jsonify({'fixtures': date})
 
+@app.route('/api/game_stats/<fixture_id>', methods=["GET"])
+def game_stats(fixture_id):
+    stats = Game.game_stats(fixture_id)
+    return jsonify({"fixtures": stats})
+
+@app.route('/api/h2h/<team_id_1>/<team_id_2>', methods=["GET"])
+def game_h2h(team_id_1, team_id_2):
+    h2h = Game.game_h2h(team_id_1, team_id_2)
+    return jsonify({"fixtures": h2h})    
+
 @app.route('/api/team_by_id/<team_id>', methods=["GET"])
 def team_by_id(team_id):
     team = Team.team_by_id(team_id)
     return jsonify({'teams': team})
+
+
 
 if __name__ == "__main__":
     app.run()#debug=True)
