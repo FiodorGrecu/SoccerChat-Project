@@ -89,10 +89,10 @@ def schema(dbpath = DATAPATH):
         );""")
         
         cursor.execute("""
-        CREATE TABLE messages (
+        CREATE TABLE chats (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp FLOAT,
-            contents VARCHAR,
+            text VARCHAR,
             account_id INTEGER,
             game_id INTEGER,
             FOREIGN KEY (account_id) REFERENCES accounts(pk)
@@ -100,7 +100,7 @@ def schema(dbpath = DATAPATH):
         );""")
 
         cursor.execute("""
-        CREATE TABLE table (
+        CREATE TABLE tables (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             team_id INTEGER,
             contents VARCHAR,

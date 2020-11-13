@@ -13,14 +13,15 @@ API_KEY = "804b1594a5msh69900911a788156p125a69jsna7c589797665"
 class  Chat:
 
     dbpath = DATAPATH
-    tabename = "chats"
+    tablename = "chats"
 
 
-    def __init__(self, username, text=None, timestamp=None, pk=None):
+    def __init__(self, timestamp, text, account_id, game_id, pk=None):
         self.pk = pk
-        self.username = username
-        self.text = text
         self.timestamp = timestamp 
+        self.text = text
+        self.account_id = account_id
+        self.game_id = game_id
 
  # make a save function for permanent storage in the db
     # a load function that can load by id (Show_one func)
@@ -40,10 +41,10 @@ class  Chat:
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""INSERT INTO {self.tablename} (
-                team_id, name, logo, year_founded  
+                timestamp, text, account_id, game_id
                 ) VALUES (?,?,?,?);"""
-            values = (self.team_id, self.name, self.logo, 
-                    self.year_founded )
+            values = (self.timestamp, self.text, self.account_id, 
+                      self.game_id)
             cursor.execute(sql, values)
             self.pk = cursor.lastrowid
 
@@ -53,9 +54,10 @@ class  Chat:
         """
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
-            sql = f"""UPDATE {self.tablename} SET team_id=?, name=?, logo=?, 
-                    year_founded=? WHERE pk=?;"""
-            values = (self.team_id, self.name, self.logo, self.year_founded,
+            sql = f"""UPDATE {self.tablename} SET timestamp=?, text=?, 
+                    account_id=?, game_id=? WHERE pk=?;"""
+                    
+            values = (self.timestamp, self.text, self.account_id, self.game_id,
                       self.pk)
             cursor.execute(sql, values)
 
