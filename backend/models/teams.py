@@ -132,7 +132,7 @@ class Team:
 
     @classmethod
     def team_stat_by_date(cls,league_id, team_id, date):
-        url = "https://api-football-v1.p.rapidapi.com/v2/statistics/2/33/2020-11-07"
+        url = f"https://api-football-v1.p.rapidapi.com/v2/statistics/{league_id}/{team_id}/{date}"
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
@@ -141,7 +141,7 @@ class Team:
 
         response = requests.request("GET", url, headers=headers)
         data = response.json()
-        pprint(data)
+        return(data)
         
     @classmethod
     def team_by_id(cls, team_id):
@@ -156,22 +156,10 @@ class Team:
         data = response.json()
         return (data)
 
-    @classmethod
-    def lookup_logo(cls, team_id):
-        # url = "https://api-football-v1.p.rapidapi.com/v2/teams/team/34"
-        url = f'https://api-football-v1.p.rapidapi.com/v2/teams/team/{team_id}'
-        headers = {
-            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
-            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
-            }
-
-        response = requests.request("GET", url, headers=headers)
-        data = response.json()
-        logo = data['api']['teams'][0]['logo']
-        pprint(logo)
     
 
 if __name__=='__main__':
 
-    team = Team.team_by_id('34')
-    pprint(team)
+    # team = Team.team_by_id('34')
+    stat = Team.team_stat_by_date(2,33,"2019-12-19")
+    pprint(stat)
