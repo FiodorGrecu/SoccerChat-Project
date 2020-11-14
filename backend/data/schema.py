@@ -117,8 +117,9 @@ def schema(dbpath = DATAPATH):
         CREATE TABLE leagues (
             league_id INTEGER,
             name VARCHAR,
-            type VARCHAR,
-            logo VARCHAR
+            competition_type VARCHAR,
+            logo VARCHAR,
+            country VARCHAR
             FOREIGN KEY ()
             FOREIGN KEY ()
         );""")
