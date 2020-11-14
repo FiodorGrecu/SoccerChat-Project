@@ -38,7 +38,10 @@ def team_by_id(team_id):
     team = Team.team_by_id(team_id)
     return jsonify({'teams': team})
 
-
+@app.route('/api/game_events/<fixture_id>', methods=["GET"])
+def game_events(fixture_id):
+    events = Game.events_fixture_id(fixture_id)
+    return jsonify({"fixtures/events": events})
 
 
 if __name__ == "__main__":

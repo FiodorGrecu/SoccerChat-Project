@@ -98,7 +98,7 @@ def schema(dbpath = DATAPATH):
             FOREIGN KEY (account_id) REFERENCES accounts(pk)
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
-
+# Not sure the FOREIGN KEY FOR "standing/table" table can be
         cursor.execute("""
         CREATE TABLE tables (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -106,10 +106,31 @@ def schema(dbpath = DATAPATH):
             contents VARCHAR,
             account_id INTEGER,
             game_id INTEGER,
+        
             FOREIGN KEY (account_id) REFERENCES accounts(pk)
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
+
+# Not sure the FOREIGN KEY FOR "leagues" table can be
+
+        cursor.execute("""
+        CREATE TABLE leagues (
+            league_id INTEGER,
+            name VARCHAR,
+            type VARCHAR,
+            logo VARCHAR
+            FOREIGN KEY ()
+            FOREIGN KEY ()
+        );""")
         
+# Not sure the FOREIGN KEY FOR "countries" table can be
+
+        cursor.execute("""
+        CREATE TABLE countries (
+            name VARCHAR,
+            code VARCHAR,
+            flag VARCHAR
+        );""")
         
         # Have the home team and away team as columns for the games table
         # Chats foregn key should reference the games           
