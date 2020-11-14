@@ -120,8 +120,7 @@ def schema(dbpath = DATAPATH):
             competition_type VARCHAR,
             logo VARCHAR,
             country VARCHAR
-            FOREIGN KEY ()
-            FOREIGN KEY ()
+            FOREIGN KEY (league_id) REFERENCES accounts(pk)
         );""")
         
 # Not sure the FOREIGN KEY FOR "countries" table can be
@@ -131,6 +130,7 @@ def schema(dbpath = DATAPATH):
             name VARCHAR,
             code VARCHAR,
             flag VARCHAR
+            FOREIGN KEY (league_id) REFERENCES accounts(pk)
         );""")
         
         # Have the home team and away team as columns for the games table
