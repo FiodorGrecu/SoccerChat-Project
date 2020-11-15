@@ -84,3 +84,22 @@ class Country:
             cursor.execute(sql, values)
             return True
         return False
+
+    @classmethod
+    def all_countries(cls):
+        url = "https://api-football-v1.p.rapidapi.com/v2/countries"
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        return(data)
+
+if __name__=='__main__':
+     
+
+     countries = Country.all_countries()
+     pprint(countries)
