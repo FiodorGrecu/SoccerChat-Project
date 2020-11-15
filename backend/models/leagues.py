@@ -109,8 +109,21 @@ class League:
         return(data)
 
     @classmethod
-    def leagues_from_country(cls):
-        url = "https://api-football-v1.p.rapidapi.com/v2/leagues/country/england/2020"
+    def leagues_from_all_countries(cls, country, season):
+        url = f"https://api-football-v1.p.rapidapi.com/v2/leagues/country/{country}/{season}"
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        return(data)
+    
+    @classmethod
+    def world_competitions(cls, country, season):
+        url = f"https://api-football-v1.p.rapidapi.com/v2/leagues/country/{country}/{season}"
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
@@ -126,5 +139,7 @@ if __name__=='__main__':
 
 
     # all_leagues = League.all_leagues()
-    country_leagues = League.leagues_from_country()
-    pprint(country_leagues)
+    # all_country_leagues = League.leagues_from_all_countries("italy", "2020")
+    world_competitions = League.world_competitions("world", "2020")
+    # pprint(all_country_leagues)
+    pprint(world_competitions)
