@@ -92,3 +92,39 @@ class League:
             cursor.execute(sql, values)
             return True
         return False
+
+    @classmethod
+    def all_leagues(cls):
+        url = "https://api-football-v1.p.rapidapi.com/v2/leagues"
+
+        querystring = {"season": "2020", "country": "England"}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
+
+    @classmethod
+    def leagues_from_country(cls):
+        url = "https://api-football-v1.p.rapidapi.com/v2/leagues/country/england/2020"
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        return(data)
+
+
+if __name__=='__main__':
+
+
+    # all_leagues = League.all_leagues()
+    country_leagues = League.leagues_from_country()
+    pprint(country_leagues)
