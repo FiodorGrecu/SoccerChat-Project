@@ -1,6 +1,7 @@
 import sqlite3
 import os
 import requests
+from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "soccerchat.db")
@@ -96,3 +97,22 @@ class Player:
             cursor.execute(sql, values)
             return True
         return False               
+
+    @classmethod
+    def lineups_from_fixture(cls, fixture):
+        url = f"https://api-football-v1.p.rapidapi.com/v2/lineups/{fixture}"
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers)
+        data = response.json()
+        return(data)
+
+if __name__=='__main__':
+
+
+    lineups = Player.lineups_from_fixture('592215')
+    pprint(lineups)

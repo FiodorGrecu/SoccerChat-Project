@@ -1,5 +1,8 @@
 import sqlite3
 import os
+import requests
+from pprint import pprint
+
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
@@ -8,7 +11,7 @@ print(DATAPATH)
 class Event:
 
     dbpath = DATAPATH
-    tablename = "event"
+    tablename = "events"
 
     def __init__(self, team_id, game_id, date="", 
                  timestamp="", league_id=0, time_elapsed=0, pk=None):
@@ -86,3 +89,23 @@ class Event:
             sql = f""" SELECT * FROM {cls.tablename};"""  
             cursor.execute(sql)
             return cursor.fetchall()
+
+    @classmethod
+    def events_fixture_id(cls, fixture_id):
+        url = "https://api-football-beta.p.rapidapi.com/fixtures/events"
+
+        querystring = {"fixture": fixture_id}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
+
+if __name__=='__main__':
+
+    events = Event.events_fixture_id('592215')
+    pprint(events)
