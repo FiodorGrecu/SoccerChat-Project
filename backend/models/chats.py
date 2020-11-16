@@ -70,3 +70,17 @@ class  Chat:
             cursor.execute(sql, values)
             return True
         return False
+
+
+
+    @classmethod  
+    def get_chat(cls, game_id):
+        # Perform a select staement WHERE game_id = provided game_id
+        with sqlite3.connect(cls.dbpath) as conn:
+            cursor = conn.cursor()
+            sql = f"""SELECT * FROM {cls.tablename} WHERE game_id=?;"""
+            values = (game_id,)
+            cursor.execute(sql, values)
+        # cursor = method to fetch one or all
+            return cursor.fetchall()
+            # return cursor.fetchone()I
