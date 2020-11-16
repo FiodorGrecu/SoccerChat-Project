@@ -3,6 +3,7 @@ from models.games import Game
 from models.teams import Team
 from models.countries import Country
 from models.leagues import League
+from models.players import Player
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
@@ -63,6 +64,11 @@ def game_events(fixture_id):
     events = Game.events_fixture_id(fixture_id)
     return jsonify({"fixtures/events": events})
 
+# PLAYERS 
 
+@app.route('/api/lineups/<fixture_id>', methods=['GET'])
+def fixture_lineups(fixture_id):
+    lineups = Player.lineups_from_fixture(fixture_id)
+    return jsonify({"lineUps": lineups})
 if __name__ == "__main__":
     app.run()#debug=True)
