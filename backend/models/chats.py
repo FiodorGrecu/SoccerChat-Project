@@ -83,4 +83,10 @@ class  Chat:
             cursor.execute(sql, values)
         # cursor = method to fetch one or all
             return cursor.fetchall()
-            # return cursor.fetchone()I
+            # return cursor.fetchone()
+
+if __name__ == '__main__':
+
+
+    chat = Chat.get_chat('592215')
+    pprint(chat)
