@@ -63,7 +63,7 @@ class Team:
     def delete_team(cls, pk):
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()
-            sql = f"""DELETE FROM teams WHERE pk =?;"""
+            sql = f"""DELETE FROM teams WHERE pk=?;"""
             values = (pk,)
             cursor.execute(sql, values)
             return True
