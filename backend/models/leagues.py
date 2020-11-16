@@ -139,7 +139,7 @@ if __name__=='__main__':
 
 
     # all_leagues = League.all_leagues()
-    # all_country_leagues = League.leagues_from_all_countries("italy", "2020")
-    world_competitions = League.world_competitions("world", "2020")
-    # pprint(all_country_leagues)
-    pprint(world_competitions)
+    all_country_leagues = League.leagues_from_all_countries("italy", "2020")
+    # world_competitions = League.world_competitions("world", "2020")
+    pprint(all_country_leagues)
+    # pprint(world_competitions)

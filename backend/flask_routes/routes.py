@@ -26,6 +26,10 @@ def world_competitions(country, season):
     world_competitions = League.world_competitions(country, season)
     return jsonify({'leagues': world_competitions})
 
+@app.route('/api/leagues_by_country/<country>/<season>', methods=["GET"])
+def leagues(country, season):
+    leagues_by_country = League.leagues_from_all_countries(country, season)
+    return jsonify({'leagues': leagues_by_country})
 
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
