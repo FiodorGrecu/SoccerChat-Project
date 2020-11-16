@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from models.games import Game
 from models.teams import Team
 from models.countries import Country
+from models.leagues import League
+
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
@@ -18,6 +20,12 @@ def home():
 def display_countries():
     all_countries = Country.all_countries()
     return jsonify({'countries':all_countries})
+
+@app.route('/api/world_competitions/<country>/<season>', methods=["GET"])
+def world_competitions(country, season):
+    world_competitions = League.world_competitions(country, season)
+    return jsonify({'leagues': world_competitions})
+
 
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
