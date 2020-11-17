@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,9 @@ import { games as fixtures } from "./teams";
 import { Box, Grid } from '@material-ui/core';
 import { spacing } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography';
+// import { useState } from 'react';
 // import { typography } from '@material-ui/system';
+
 
 
 
@@ -50,8 +52,27 @@ const useStyles = makeStyles((theme) => ({
    
 }));
 
+
+
 export default function SimplePaper() {
   const classes = useStyles();
+
+  // api/last/<num_games>
+
+  const [fixtures, setFixtures] = useState([]);
+  const numberGames = 5;
+
+  useEffect(() => {
+
+    async function getFixtures() {
+      const response = await fetch(`http://localhost:5000/api/last/${numberGames}`);
+      const data =  await response.json();
+      console.log(data.fixtures.api.fixtures)
+      setFixtures(data.fixtures.api.fixtures)
+    }
+    getFixtures();
+  }, [] )
+
 
   const output = fixtures.map(fixture =>(
       <React.Fragment className={classes.reactFragment}>
