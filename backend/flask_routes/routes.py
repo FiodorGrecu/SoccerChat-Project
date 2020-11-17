@@ -5,6 +5,7 @@ from models.countries import Country
 from models.leagues import League
 from models.players import Player
 from models.chats import Chat
+from models.accounts import Account
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
@@ -17,6 +18,22 @@ app = Flask(__name__)
 @app.route('/', methods=["GET"])
 def home():
     return jsonify({"Welcome": "Welcome to Premier League"})
+
+
+@app.route('/api/login', methods=["POST"])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    account = Account.login(username, password)
+    if account:
+        account.api_authenticate = Account.random_api_key()
+        account.save()
+        return jsonify({'session_id': account.api_authenticate,
+                        'username': account.username})
+    return jsonify({'session_id': None,
+                       'username': ""})
+
 
 @app.route('/api/countries', methods=["GET"])
 def display_countries():
