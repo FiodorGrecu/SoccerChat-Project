@@ -2,7 +2,7 @@ import sqlite3
 import os 
 from hashlib import sha256
 import random 
-from messages import Message
+# from models.messages import Message
 
 
 PATH = os.path.dirname(__file__)

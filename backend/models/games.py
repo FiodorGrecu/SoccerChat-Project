@@ -229,10 +229,10 @@ if __name__=='__main__':
 
     # games_by_date = Game.games_by_date("2020-11-07")
     # h2h = Game.game_h2h(40,50)
-    # last10 = Game.last_10(10)
-    game_stats = Game.game_stats('592215')
+    last5 = Game.last_5(5)
+    # game_stats = Game.game_stats('592215')
     
-    pprint(game_stats)
+    pprint(last5)
    
 
  

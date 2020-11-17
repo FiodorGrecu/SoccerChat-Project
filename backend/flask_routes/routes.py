@@ -6,13 +6,20 @@ from models.leagues import League
 from models.players import Player
 from models.chats import Chat
 from models.accounts import Account
+from flask_cors import CORS
+from models.last5 import last5
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
-key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
+key =  "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"
+
+
+# key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
+
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/', methods=["GET"])
@@ -63,7 +70,8 @@ def leagues(country, season):
 
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
-    last_5 = Game.last_5(num_games)
+    # last_5 = Game.last_5(num_games)
+    last_5 = last5
     return jsonify({'fixtures': last_5})
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
