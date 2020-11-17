@@ -4,6 +4,7 @@ from models.teams import Team
 from models.countries import Country
 from models.leagues import League
 from models.players import Player
+from models.chats import Chat
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
@@ -70,5 +71,20 @@ def game_events(fixture_id):
 def fixture_lineups(fixture_id):
     lineups = Player.lineups_from_fixture(fixture_id)
     return jsonify({"lineUps": lineups})
+
+@app.route('/api/save_chat', methods=['POST'])
+def save_chat():
+    data = request.get_json()
+    chat = Chat(data.get('time'), data.get('text'), data.get('account_id'), data.get('game_id'))
+    chat.save()
+    return jsonify({"chat": data})
+
+@app.route('/api/get_chat/<fixture_id>', methods=['POST'])
+def get_chat(fixture_id):
+    data = request.get_json()
+    user_chat = Chat.get_chat(fixture_id)
+    return jsonify({"chat": user_chat})
+
+
 if __name__ == "__main__":
     app.run()#debug=True)

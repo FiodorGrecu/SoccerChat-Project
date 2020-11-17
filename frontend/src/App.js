@@ -54,9 +54,9 @@ function App() {
           <Table/>
         </Route>
 
-        <Route path='/chat'>
+        {/* <Route path='/chat'>
           <Chat/>
-        </Route>
+        </Route> */}
         
       </BrowserRouter>
       

@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         padding: 60,
         paddingRight: 85,
         marginRight: (20),
-      
+        color: '#323232',
         marginTop: theme.spacing(0.5),
         textAlign: 'center',
         fontWeight: (500),

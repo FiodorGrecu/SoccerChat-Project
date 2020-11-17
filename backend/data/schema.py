@@ -92,9 +92,9 @@ def schema(dbpath = DATAPATH):
         CREATE TABLE chats (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp FLOAT,
-            text VARCHAR,
-            account_id INTEGER,
             game_id INTEGER,
+            account_id INTEGER,
+            text VARCHAR,
             FOREIGN KEY (account_id) REFERENCES accounts(pk)
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
