@@ -34,8 +34,8 @@ def login():
     return jsonify({'session_id': None,
                        'username': ""})
 
-# USER SIGNUP
 
+# USER SIGNUP
 @app.route('/api/sign_up', methods=["POST"])
 def new_user():
     data = request.get_json()
@@ -44,7 +44,7 @@ def new_user():
     new_account._insert()
     return jsonify({'session_id': new_account.api_authenticate,
                         'username': new_account.username})
-                        
+
 
 @app.route('/api/countries', methods=["GET"])
 def display_countries():
