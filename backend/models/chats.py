@@ -89,4 +89,4 @@ if __name__ == '__main__':
 
 
     user_chat = Chat.get_chat('592215')
-    pprint(chat)
+    pprint(user_chat)

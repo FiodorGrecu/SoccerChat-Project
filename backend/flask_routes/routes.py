@@ -19,7 +19,7 @@ app = Flask(__name__)
 def home():
     return jsonify({"Welcome": "Welcome to Premier League"})
 
-
+# USER LOGIN 
 @app.route('/api/login', methods=["POST"])
 def login():
     data = request.get_json()
@@ -34,6 +34,17 @@ def login():
     return jsonify({'session_id': None,
                        'username': ""})
 
+# USER SIGNUP
+
+@app.route('/api/sign_up', methods=["POST"])
+def new_user():
+    data = request.get_json()
+    key = Account.random_api_key()
+    new_account = Account(data.get('username'), data.get('password'), key, data.get('email'))
+    new_account._insert()
+    return jsonify({'session_id': new_account.api_authenticate,
+                        'username': new_account.username})
+                        
 
 @app.route('/api/countries', methods=["GET"])
 def display_countries():
