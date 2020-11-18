@@ -75,11 +75,18 @@ class Lineup:
 
 
     @classmethod
-    def lineups_from_game_by_date(cls, lineups, fixture_id):
-        url = "https://rapidapi.p.rapidapi.com/v2/lineups/{fixture_id}"
+    def lineups_from_game_by_date(cls, fixture_id):
+        url = f"https://rapidapi.p.rapidapi.com/v2/lineups/{fixture_id}"
         headers = {
             'x-rapidapi-key': "804b1594a5msh69900911a788156p125a69jsna7c589797665",
             'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
             }
         response = requests.request("GET", url, headers=headers)
-        pprint(response.text)
+        data = response.json()
+        return(data)
+
+if __name__=='__main__':
+
+
+    lineups = Lineup.lineups_from_game_by_date("592211")
+    pprint(lineups)

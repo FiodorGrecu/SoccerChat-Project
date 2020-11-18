@@ -110,9 +110,27 @@ class Player:
         response = requests.request("GET", url, headers=headers)
         data = response.json()
         return(data)
+    
+    @classmethod
+    def top_scorers(cls, season, league):
+        url = f"https://api-football-beta.p.rapidapi.com/players/topscorers"
+
+        querystring = {"season": season,"league": league}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
+
+
 
 if __name__=='__main__':
 
 
-    lineups = Player.lineups_from_fixture('592215')
-    pprint(lineups)
+    # lineups = Player.lineups_from_fixture('592215')
+    topscorers = Player.top_scorers('2020','39')
+    pprint(topscorers)

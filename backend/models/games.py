@@ -158,7 +158,7 @@ class Game:
 
     @classmethod
     def next_fixtures(cls): 
-        url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2/next/10"
+        url = f"https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2/next/10"
 
         querystring = {"timezone":"Europe/London"}
 
@@ -170,7 +170,7 @@ class Game:
         response = requests.request("GET", url, headers=headers, params=querystring)
 
         data = response.json()
-        pprint(data)
+        return(data)
 
 
     @classmethod
@@ -219,20 +219,31 @@ class Game:
         data = response.json()
         return(data)
 
-# GAMES  BY LEAGUEA  (FIXTURE/GAMES ARE USED INTERCHANGABLY)
+# GAME  BY FiXTURE ID  (FIXTURE/GAMES ARE USED INTERCHANGABLY)
     @classmethod
-    def fixtures_by_league(cls):
-        pass
+    def game_by_fixture_id(cls, fixture_id):
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures"
+
+        querystring = {"id": fixture_id}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+        return(data)
 
 if __name__=='__main__':
     
 
     # games_by_date = Game.games_by_date("2020-11-07")
     # h2h = Game.game_h2h(40,50)
-    last5 = Game.last_5(5)
+    # last5 = Game.last5(5)
     # game_stats = Game.game_stats('592215')
-    
-    pprint(last5)
+    game = Game.game_by_fixture_id("592215") 
+    pprint(game)
    
 
  
