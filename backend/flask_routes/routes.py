@@ -34,9 +34,9 @@ def login():
     password = data.get('password')
     account = Account.login(username, password)
     if account:
-        account.api_authenticate = Account.random_api_key()
+        account.user_key = Account.random_api_key()
         account.save()
-        return jsonify({'session_id': account.api_authenticate,
+        return jsonify({'session_id': account.user_key,
                         'username': account.username})
     return jsonify({'session_id': None,
                        'username': ""})
@@ -49,7 +49,7 @@ def new_user():
     key = Account.random_api_key()
     new_account = Account(data.get('username'), data.get('password'), key, data.get('email'))
     new_account._insert()
-    return jsonify({'session_id': new_account.api_authenticate,
+    return jsonify({'session_id': new_account.user_key,
                         'username': new_account.username})
 
 
@@ -68,6 +68,8 @@ def leagues(country, season):
     leagues_by_country = League.leagues_from_all_countries(country, season)
     return jsonify({'leagues': leagues_by_country})
 
+
+#### GAMES/GAME
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
     # last_5 = Game.last_5(num_games)
@@ -78,6 +80,12 @@ def last_5(num_games):
 def games_by_date(date):
     date = Game.games_by_date(date)
     return jsonify({'fixtures': date})
+
+
+@app.route('/api/one_game/<fixture_id>', methods=['GET'])
+def one_game(fixture_id):
+    game = Game.game_by_fixture_id(fixture_id)
+    return jsonify({'fixtures': game})
 
 @app.route('/api/game_stats/<fixture_id>', methods=["GET"])
 def game_stats(fixture_id):
