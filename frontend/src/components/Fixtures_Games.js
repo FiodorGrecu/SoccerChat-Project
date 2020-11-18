@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',        
     '& > *': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(40),
       width: theme.spacing(10),
-      height: theme.spacing(16),
+      height: theme.spacing(1),
       textAlign: 'center',
       // backgroundColor: 'rgb(238, 238, 240)',
 
@@ -28,27 +28,25 @@ const useStyles = makeStyles((theme) => ({
     
   },
   paper: {
-        width: theme.spacing(130),
-        height: theme.spacing(5),
-        padding: 60,
-        paddingRight: 85,
-        marginRight: (20),
+        width: theme.spacing(88),
+        height: theme.spacing(15),
+        padding: 30,
+        paddingRight: 1,
+        marginRight: (10),
         color: '#323232',
-        marginTop: theme.spacing(0.5),
+        marginTop: 5,
         textAlign: 'center',
         fontWeight: (500),
         fontSize: theme.spacing(2),
         backgroundColor: "#F0E4C8"
     },
     box: {
-        padding: 10,
-        paddingLeft: 200,
+        padding: 1,
+        paddingLeft:10,
         marginTop: 10,    
     },
-    logo: {
-        padding: 10,
-
-    },
+    
+  
    
 }));
 
@@ -76,30 +74,31 @@ export default function SimplePaper() {
 
   const output = fixtures.map(fixture =>(
       <React.Fragment className={classes.reactFragment}>
+          {/* <p>Calendar</p> */}
           <Box className={classes.box} >
-          <p>Calendar</p>
-          <Grid container spacing={5}>
-            <Grid sitem xs={12}>
+          <Grid container spacing={10}>
+            <Grid sitem xs={3}>
                 <Link>
-                  <Paper elevation={3} className={classes.paper}> {  fixture.home.name  }
-                                          <span className={classes.logo}>{"(Logo)"}</span>
-                                          <span style={{marginLeft:40, marginRight:40}}>{"  Time   "}</span>
-                                          <span className={classes.logo}>{"(Logo)"}</span>
-                                        {  fixture.away.name  }
+                  <Paper elevation={1} className={classes.paper}> 
+                                          {  fixture.homeTeam.team_name }
+                        <span className={classes.logo}>{  fixture.homeTeam.logo  }</span>
+                                          <span >{  fixture.event_date  }</span>
+                                          {  fixture.awayTeam.logo  }
+                                        {  fixture.awayTeam.team_name  }
                   </Paper>                 
                 </Link>
             </Grid>
-            <Grid>
+            {/* <Grid>
                 <Link>
                   <Paper elevation={3} className={classes.paper}> 
-                          {  fixture.home.name  } 
-                          <span className={classes.logo}>{"(Logo)"}</span>
-                          <span style={{marginLeft:40, marginRight:40}}>{"  Time   "}</span> 
-                          <span className={classes.logo}>{"(Logo)"}</span>
-                          {  fixture.away.name  }         
+                          {  fixture.homeTeam.team_name  } 
+                          <span className={fixture.logo}>{"(Logo)"}</span>
+                          <span style={{marginLeft:10, marginRight:10}}>{"  Time   "}</span> 
+                          <span className={fixture.logo}>{"(Logo)"}</span>
+                          {  fixture.awayTeam.team_name  }         
                   </Paper>                 
                 </Link>
-            </Grid>
+            </Grid> */}
           </Grid>
 
 
