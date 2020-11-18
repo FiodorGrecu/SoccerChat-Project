@@ -80,11 +80,13 @@ export default function SimplePaper() {
             <Grid sitem xs={3}>
                 <Link>
                   <Paper elevation={1} className={classes.paper}> 
-                                          {  fixture.homeTeam.team_name }
-                        <span className={classes.logo}>{  fixture.homeTeam.logo  }</span>
-                                          <span >{  fixture.event_date  }</span>
-                                          {  fixture.awayTeam.logo  }
-                                        {  fixture.awayTeam.team_name  }
+                        { fixture.homeTeam.team_name }
+                        <span>{ fixture.homeTeam.logo }</span>
+                        <span>{ fixture.goalsAwayTeam }</span>
+                        <span>{ fixture.event_date }</span>
+                        <span>{ fixture.goalsHomeTeam }</span>
+                        <span>{ fixture.awayTeam.logo }</span>
+                      { fixture.awayTeam.team_name }
                   </Paper>                 
                 </Link>
             </Grid>
