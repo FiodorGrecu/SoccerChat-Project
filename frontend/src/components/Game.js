@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -26,21 +26,36 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid() {
   const classes = useStyles();
 
-  const homePlayers = fixtures[0].home.players.map(player =>(
+  // api/one_game/<fixture_id>
+
+  const [fixture, setFixture] = useState({});
+  const fixture_id = 592215;
+
+  useEffect(() => {
+    async function gameDetails() {
+      const response = await fetch(`http://localhost:5000/api/one_game/${fixture_id}`);
+      const data = await response.json();
+      console.log(data.fixtures.response[0])
+      setFixture(data.fixtures.response[0])
+    }
+    gameDetails();
+  }, [] )
+
+  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
 
     <Grid item xs={5}>
-        <Paper className={classes.paper}>{player.name} {player.number}</Paper>
+        <Paper className={classes.paper}>{player.player.name} {player.player.number}</Paper>
     </Grid>
     
   ));
   
-  const awayPlayers = fixtures[0].away.players.map(player => (
+  const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
     <Grid item xs={5}>
         <Paper className={classes.paper}>{player.name} {player.number}</Paper>
     </Grid>
   ));
 
-  const homeSubs = fixtures[0].home.subs.map(subs => (
+  const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(subs => (
     <Grid item xs={5}>
         <Paper className={classes.paper}>{subs.name} {subs.number}</Paper>
     </Grid>
@@ -48,7 +63,7 @@ export default function CenteredGrid() {
   
   ));
 
-  const awaySubs = fixtures[0].away.subs.map(subs =>(
+  const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(subs =>(
     <Grid item xs={5}>
       <Paper className={classes.paper}>{subs.name} {subs.number}</Paper>
     </Grid>

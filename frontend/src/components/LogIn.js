@@ -9,13 +9,7 @@ import Avatar from '@material-ui/core/Avatar';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
-
-
-function LogIn(props) {
-
-    const [inputCheck, setInputCheck] = useState("undefined");
-
-    const useStyles = makeStyles((theme) => ({
+ const useStyles = makeStyles((theme) => ({
         root: {
             flexGrow: 1,
             flexDirection: "column"
@@ -67,23 +61,21 @@ function LogIn(props) {
             justifyContent: 'center',
             fontSize: 40,
           },
-    }));
-    const classes = useStyles();
-
-    function checkOnLogin(username, password) {
+        }));
         
-        if (username.length >= 2 && password.length >= 2){
-          setInputCheck(true);
-          console.log(inputCheck)   
-        }
-        else{
-            setInputCheck(false);
-            console.log(inputCheck)
-        }
-        let inputUsername = document.getElementById("username");
-        let inputPassword = document.getElementById('password');
-        inputUsername.value = "";
-        inputPassword.value = "";
+function LogIn(props) {
+    const classes = useStyles();
+    const [inputCheck, setInputCheck] = useState("undefined");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+   
+
+    // api/login
+
+    async function sendLogin() {
+        const data = JSON.stringify({'username': username, 'password': password})
+ 
     }
     return (
         <React.Fragment justify="center">
@@ -93,11 +85,11 @@ function LogIn(props) {
                 <LockOutlinedIcon />
                 </Avatar>
                 <h3 className={classes.signin} > Sign In </h3>
-                <Input id="username" onChange={e => props.setUsername(e.target.value)} placeholder="Username or Email">Hey</Input>
+                <Input id="username" onChange={e => setUsername(e.target.value)} placeholder="Username or Email">Hey</Input>
                 <br/>
-                <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
+                <Input id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
                 <br/>
-                <Button  className={classes.button} onClick={e => checkOnLogin(props.username, props.password)} color="#1A91DA" variant="contained">Log In</Button>
+                <Button  className={classes.button} onClick={e => LogIn(props.username, props.password)} color="#1A91DA" variant="contained">Log In</Button>
                 <br></br>
                 <Link>Forgot Password?</Link>
                 <p className={classes.or}>or</p>
