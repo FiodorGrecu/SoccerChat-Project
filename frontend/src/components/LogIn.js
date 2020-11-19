@@ -71,7 +71,7 @@ function LogIn(props) {
 
    
 
-    // api/login
+    // api/login/
 
     async function sendLogin() {
         const data = JSON.stringify({'username': username, 'password': password})

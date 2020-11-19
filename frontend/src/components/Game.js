@@ -37,15 +37,17 @@ export default function CenteredGrid() {
       const data = await response.json();
       console.log(data.fixtures.response[0])
       setFixture(data.fixtures.response[0])
+    
     }
     gameDetails();
   }, [] )
 
-  // const gameDate = fixture.date && fixture.date.map(date => (
-  //     <div className={classes.gameDate} {date}/>
-  // ));
+  const gameDate = fixture.fixture && fixture.fixture.date;
+  
+  const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
 
-  const homePlayers = fixture.lineups && fixture.lineups[1].startXI.map(player =>(
+
+  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
 
     <Grid item xs={5}>
         <Paper className={classes.paper}>{player.player.name} {player.player.number}</Paper>
@@ -53,13 +55,13 @@ export default function CenteredGrid() {
     
   ));
   
-  const awayPlayers = fixture.lineups && fixture.lineups[0].startXI.map(player => (
+  const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
     <Grid item xs={5}>
         <Paper className={classes.paper}>{player.player.name} {player.number}</Paper>
     </Grid>
   ));
 
-  const homeSubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
+  const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
     <Grid item xs={15}>
         <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
     </Grid>
@@ -67,11 +69,16 @@ export default function CenteredGrid() {
   
   ));
 
-  const awaySubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes =>(
+  const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
     <Grid item xs={15}>
       <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
     </Grid>
   ));
+
+  // const awayCoach = fixture.lineups && fixture.lineups.coach.map(coach => (
+  //   <Paper>{coach.name} </Paper>
+  // ));
+ 
 
   return (
     <div className={classes.root}>
@@ -81,12 +88,12 @@ export default function CenteredGrid() {
 
           <Grid container spacing={1}>
             <Grid item xs={20} style={{ backgroundColor: ('gray'), justifyContent: 100}}>
-                {/* <Paper className={classes.paper}>Date</Paper> */}
-                <Link style={{color:"white", padding:200}}>Home_Stats</Link>
-                <Link style={{color:"white", padding:400}}>Away_Stats</Link>
+                <div className={classes.paper}>{gameDate}</div>
+                {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
+                <Link style={{color:"white", padding:400}}>Stats</Link>
             </Grid>
             <Grid item xs={5}>
-              <Paper className={classes.paper}>{fixtures[0].home.name }</Paper>
+                <div>{hometeamName}</div>
               <Grid item xs={5}>
                 <Paper className={classes.paper}>Starting XI</Paper>
                 <div className={classes.homeplayers}>
@@ -105,7 +112,9 @@ export default function CenteredGrid() {
               </Grid>
               {awayPlayers}
             </Grid>
-            
+            {/* <Grid item xs={5}>
+                  <Paper>{awayCoach}</Paper>
+            </Grid> */}
              <Grid item xs={5}>
               <Paper className={classes.paper}>Substitutions</Paper>
             </Grid>
