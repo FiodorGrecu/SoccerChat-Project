@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    color: '#525252',
     backgroundColor: "#F0E4C8"
   },
 }));
@@ -41,7 +41,7 @@ export default function CenteredGrid() {
     gameDetails();
   }, [] )
 
-  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
+  const homePlayers = fixture.lineups && fixture.lineups[1].startXI.map(player =>(
 
     <Grid item xs={5}>
         <Paper className={classes.paper}>{player.player.name} {player.player.number}</Paper>
@@ -49,9 +49,9 @@ export default function CenteredGrid() {
     
   ));
   
-  const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
+  const awayPlayers = fixture.lineups && fixture.lineups[0].startXI.map(player => (
     <Grid item xs={5}>
-        <Paper className={classes.paper}>{player.name} {player.number}</Paper>
+        <Paper className={classes.paper}>{player.player.name} {player.number}</Paper>
     </Grid>
   ));
 
@@ -109,7 +109,7 @@ export default function CenteredGrid() {
                   {homeSubs}
                 </Grid>
             
-           <Grid item xs={3}>
+           <Grid item xs={5}>
               <Paper className={classes.paper}>Substitutions</Paper>
             </Grid>
             <Grid>

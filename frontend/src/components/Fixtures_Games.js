@@ -33,11 +33,12 @@ const useStyles = makeStyles((theme) => ({
         padding: 30,
         paddingRight: 1,
         marginRight: (10),
-        color: '#323232',
-        marginTop: 5,
+        color: '#525252',
+        marginTop: 10,
         textAlign: 'center',
-        fontWeight: (500),
+        fontWeight: (400),
         fontSize: theme.spacing(2),
+        fontFamily: "Helvetica",
         backgroundColor: "#F0E4C8"
     },
     box: {
@@ -45,6 +46,14 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft:10,
         marginTop: 10,    
     },
+    goalsHomeTeam: {
+      paddingLeft:110,
+      paddingRight:10,
+    },
+    goalsAwayTeam:{
+      paddingLeft:10,
+      paddingRight:110,
+    }
     
   
    
@@ -81,11 +90,12 @@ export default function SimplePaper() {
                 <Link>
                   <Paper elevation={1} className={classes.paper}> 
                         { fixture.homeTeam.team_name }
-                        <img src={ fixture.homeTeam.logo } style={{}}/>
-                        <span >{ fixture.goalsAwayTeam }</span>
-                        <span>{ fixture.event_date }</span>
-                        <span>{ fixture.goalsHomeTeam }</span>
-                        <span>{ fixture.awayTeam.logo }</span>
+                        <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:2, paddingRight:2}}/>
+                        <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
+                        {/* { fixture.event_date } */}
+                        {'  -  '}
+                        <strong className={classes.goalsAwayTeam}>{ fixture.goalsHomeTeam }</strong>
+                        <img src={ fixture.awayTeam.logo } style={{width:26, height:26, }}/>
                       { fixture.awayTeam.team_name }
                   </Paper>                 
                 </Link>
