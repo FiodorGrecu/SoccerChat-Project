@@ -41,6 +41,10 @@ export default function CenteredGrid() {
     gameDetails();
   }, [] )
 
+  // const gameDate = fixture.date && fixture.date.map(date => (
+  //     <div className={classes.gameDate} {date}/>
+  // ));
+
   const homePlayers = fixture.lineups && fixture.lineups[1].startXI.map(player =>(
 
     <Grid item xs={5}>
@@ -55,29 +59,29 @@ export default function CenteredGrid() {
     </Grid>
   ));
 
-  const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(subs => (
-    <Grid item xs={5}>
-        <Paper className={classes.paper}>{subs.name} {subs.number}</Paper>
+  const homeSubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
+    <Grid item xs={15}>
+        <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
     </Grid>
 
   
   ));
 
-  const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(subs =>(
-    <Grid item xs={5}>
-      <Paper className={classes.paper}>{subs.name} {subs.number}</Paper>
+  const awaySubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes =>(
+    <Grid item xs={15}>
+      <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
     </Grid>
   ));
 
   return (
     <div className={classes.root}>
-    {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
+    <img src={Background_pic} className="Background" alt="Stadium picture" />
     
         <React.Fragment>
 
-          <Grid container spacing={3}>
-            <Grid item xs={12} style={{ backgroundColor: ('gray'), justifyContent: 100}}>
-                <Paper className={classes.paper}>Date</Paper>
+          <Grid container spacing={1}>
+            <Grid item xs={20} style={{ backgroundColor: ('gray'), justifyContent: 100}}>
+                {/* <Paper className={classes.paper}>Date</Paper> */}
                 <Link style={{color:"white", padding:200}}>Home_Stats</Link>
                 <Link style={{color:"white", padding:400}}>Away_Stats</Link>
             </Grid>
@@ -92,7 +96,7 @@ export default function CenteredGrid() {
             </Grid>
             
             <Grid item xs={1}>
-                {/* <Paper className={classes.paper}>vs</Paper> */}
+                <Paper className={classes.paper}>vs</Paper>
             </Grid>
             <Grid item xs={5}>
               <Paper className={classes.paper}>{fixtures[0].away.name}</Paper>
