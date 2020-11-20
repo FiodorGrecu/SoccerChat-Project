@@ -20,6 +20,12 @@ class Account:
         self.password_hash = password_hash
         self.user_key = user_key      
 
+    def save(self):
+        if self.pk:
+            self._update()
+        else:
+            self._insert()
+
     def _insert(self):
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
@@ -54,7 +60,8 @@ class Account:
             cursor.execute(sql,(username, cls.hash_password(password)))
             account = cursor.fetchone()
             if  account:
-                return Account(*account[:1], account[0])
+                print(account)
+                return Account(*account[1:], account[0])
             return None
 
     @classmethod
@@ -87,3 +94,6 @@ class Account:
         hasher = sha256()
         hasher.update(random_string.encode())
         return hasher.hexdigest()[:length]
+
+if __name__ == "__main__":
+    print(Account.hash_password("password"))

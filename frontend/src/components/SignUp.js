@@ -13,7 +13,6 @@ import { green } from '@material-ui/core/colors';
         root: {
             flexGrow: 1,
             flexDirection: "column"
-
         },
         reactfragment: {
             justifyContent: "center",

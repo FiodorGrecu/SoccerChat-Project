@@ -41,7 +41,6 @@ def login():
     return jsonify({'session_id': None,
                        'username': ""})
 
-
 # USER SIGNUP
 @app.route('/api/sign_up', methods=["POST"])
 def new_user():

@@ -107,7 +107,7 @@ def schema(dbpath = DATAPATH):
             account_id INTEGER,
             game_id INTEGER,
         
-            FOREIGN KEY (account_id) REFERENCES accounts(pk)
+            FOREIGN KEY (account_id) REFERENCES accounts(pk),
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
 
@@ -119,19 +119,19 @@ def schema(dbpath = DATAPATH):
             name VARCHAR,
             competition_type VARCHAR,
             logo VARCHAR,
-            country VARCHAR
+            country VARCHAR,
             FOREIGN KEY (league_id) REFERENCES accounts(pk)
         );""")
         
 # Not sure the FOREIGN KEY FOR "countries" table can be
 
-        cursor.execute("""
-        CREATE TABLE countries (
-            name VARCHAR,
-            code VARCHAR,
-            flag VARCHAR
-            FOREIGN KEY (league_id) REFERENCES accounts(pk)
-        );""")
+        # cursor.execute("""
+        # CREATE TABLE countries (
+        #     name VARCHAR,
+        #     code VARCHAR,
+        #     flag VARCHAR,
+        #     FOREIGN KEY (league_id) REFERENCES accounts(pk)
+        # );""")
         
         # Have the home team and away team as columns for the games table
         # Chats foregn key should reference the games           
