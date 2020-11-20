@@ -5,15 +5,17 @@ import Grid from '@material-ui/core/Grid';
 import games from "./teams";
 import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
-import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
+// import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
 import Date from 'react-moment';
 import Timestamp from 'react-moment';
+// import background from '/public.background.png';
+// import url from 'resources/url';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'rgb(238, 238, 240)',
+    backgroundColor: 'aliceblue',
 
   },
   paper: {
@@ -111,7 +113,7 @@ export default function CenteredGrid() {
         <React.Fragment>
 
           <Grid container spacing={1}>
-               
+                {/* <img src={background} alt="Background" />; */}
                 <div className={classes.leagueName}>{leagueName}</div>
                 <Moment unix>{unixTimestamp}</Moment>
                 {/* <Moment unix>{time}</Moment> */}
@@ -137,7 +139,7 @@ export default function CenteredGrid() {
             <Grid item xs={2}>
                 <Paper className={classes.paper}>vs</Paper>
             </Grid>
-            
+
             <Grid item xs={5}>
                 <div>{awayteamName}</div>
                 <img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>

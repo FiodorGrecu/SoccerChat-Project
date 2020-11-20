@@ -56,7 +56,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
         },
         avatar: {
             margin: theme.spacing(2),
-            marginLeft: 59,
+            marginLeft: 109,
             backgroundColor: theme.palette.secondary.main,
             justifyContent: 'center',
             fontSize: 40,
@@ -82,7 +82,7 @@ function LogIn(props) {
             <Box className={classes.box}>
             <Paper elevation={10} className={classes.paper}>           
                 <Avatar className={classes.avatar}>
-                <LockOutlinedIcon />
+                {/* <LockOutlinedIcon /> */}
                 </Avatar>
                 <h3 className={classes.signin} > Sign In </h3>
                 <Input id="username" onChange={e => setUsername(e.target.value)} placeholder="Username or Email">Hey</Input>
