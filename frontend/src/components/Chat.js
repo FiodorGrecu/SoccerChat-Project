@@ -1,26 +1,39 @@
-// import React from 'react';
-import React, { Component } from 'react'
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@material-ui/core/Icon';
+import { MdSend } from "react-icons/md";
 
-class Chat extends Component {
- constructor(props) {
-    super(props);
- }
- render() {
- return (
-   <div className="Chat-container">
-      <div className="Chat-row">
-        <div className="Chat-column">
-          <div className="Chat-card">
-            <div className="Chat-body">
-                  <div className="Chat-title">Financial React Based Chatbot</div>
-                  <div className="Chat-messages"> Message output div </div>
-            </div>
-            <div className="Chat-footer"> Submit button div  </div>
-          </div>
-        </div>
-      </div>
-   </div>
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: 'aliceblue'
+  },
+
+  button: {
+    margin: theme.spacing(1),
+  },
+  
+}));
+
+export default function IconLabelButtons() {
+  const classes = useStyles();
+
+  return (
+    <div>
+      
+      {/* This Button uses a Font Icon, see the installation instructions in the Icon component docs. */}
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        endIcon={<MdSend>send</MdSend>}
+      >
+        
+      </Button>
+      
+    </div>
   );
- }
 }
-export default Chat;
