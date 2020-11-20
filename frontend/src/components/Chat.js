@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
 export default function IconLabelButtons() {
   const classes = useStyles();
 
+  session_id = sessionStorage.getItem("session_id");
+
   return (
     <div>
       

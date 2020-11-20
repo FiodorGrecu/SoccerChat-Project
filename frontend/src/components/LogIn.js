@@ -65,18 +65,36 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
         
 function LogIn(props) {
     const classes = useStyles();
-    const [inputCheck, setInputCheck] = useState("undefined");
+    // const [inputCheck, setInputCheck] = useState("undefined");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-   
 
     // api/login/
 
     async function sendLogin() {
-        const data = JSON.stringify({'username': username, 'password': password})
- 
+        const data = JSON.stringify({'username': username, 'password': password});
+        // create & send a POST request
+        const configs = {
+            method: "POST",
+            body: data,
+            headers: {"Content-Type": "application/json"}
+        };
+        const response = await fetch("http://localhost:5000/api/login", configs);
+        const userData = await response.json();
+        // {"session_id":"9b74fea21bf01ef","username":"greg"}
+        // save our session id in sessionStorage
+        if (userData.session_id) {
+            sessionStorage.setItem("session_id", session_id);
+            // can access these values any time in our app
+            // through value = sessionStorage.getItem("session_id"); function
+        } else {
+            // show the user a message saying login failed
+            // will involve saving an error state
+            // and having a <p> tag render if there's an error
+            // something like loginError && <p>Login error</p>
+        }
     }
+
     return (
         <React.Fragment justify="center">
             <Box className={classes.box}>
@@ -85,11 +103,16 @@ function LogIn(props) {
                 {/* <LockOutlinedIcon /> */}
                 </Avatar>
                 <h3 className={classes.signin} > Sign In </h3>
-                <Input id="username" onChange={e => setUsername(e.target.value)} placeholder="Username or Email">Hey</Input>
+                <Input id="username" onChange={e => setUsername(e.target.value)} 
+                       placeholder="Username or Email"
+                >Hey</Input>
                 <br/>
-                <Input id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
+                <Input id="password" type="password" 
+                       onChange={e => setPassword(e.target.value)} 
+                       placeholder="Password"
+                ></Input>
                 <br/>
-                <Button  className={classes.button} onClick={e => LogIn(props.username, props.password)} color="#1A91DA" variant="contained">Log In</Button>
+                <Button  className={classes.button} onClick={e => sendLogin()} color="#1A91DA" variant="contained">Log In</Button>
                 <br></br>
                 <Link>Forgot Password?</Link>
                 <p className={classes.or}>or</p>
