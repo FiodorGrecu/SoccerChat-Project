@@ -4,12 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import { green } from '@material-ui/core/colors';
 
-
- function SignUp(props) {
-
-    const [inputCheck, setInputCheck] = useState("undefined");
-
-    const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
         root: {
             flexGrow: 1,
             flexDirection: "column"
@@ -62,7 +57,13 @@ import { green } from '@material-ui/core/colors';
             color: "#1A91DA"
         }
     }));
+
+ function SignUp(props) {
+
     const classes = useStyles();
+    
+    const [inputCheck, setInputCheck] = useState("undefined");
+    
 
     function checkOnSignUp(username, password) {
         
