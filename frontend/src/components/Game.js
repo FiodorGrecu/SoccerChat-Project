@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 20,
     paddingRight: 20,
     fontSize: 40,
-    color: 'purple',
+    color: '#F0F8FF',
   }
 
 }));

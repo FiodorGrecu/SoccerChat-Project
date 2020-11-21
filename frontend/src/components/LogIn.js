@@ -4,7 +4,7 @@ import { Box, Button, Link, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
-import { green } from '@material-ui/core/colors';
+// import { green } from '@material-ui/core/colors';
 import Avatar from '@material-ui/core/Avatar';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
@@ -33,6 +33,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
             textAlign: "center", 
             paddingRight: 100,
             paddingLeft: 400,
+            border: 30
         },
         or: {
             fontSize: 14,
@@ -84,7 +85,7 @@ function LogIn(props) {
         // {"session_id":"9b74fea21bf01ef","username":"greg"}
         // save our session id in sessionStorage
         if (userData.session_id) {
-            sessionStorage.setItem("session_id", session_id);
+            sessionStorage.setItem("session_id", userData.session_id);
             // can access these values any time in our app
             // through value = sessionStorage.getItem("session_id"); function
         } else {
@@ -92,6 +93,7 @@ function LogIn(props) {
             // will involve saving an error state
             // and having a <p> tag render if there's an error
             // something like loginError && <p>Login error</p>
+            // sessionStorage.setState(userData.session_id)
         }
     }
 

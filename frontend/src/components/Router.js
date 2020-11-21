@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import HomePage from '.components/HomePage';
 import FixturesGames from '.components/Fixtures_Games';
 import Game from '.components/Game';
-import Sores from '.components/Sores';
+import Scores from '.components/Scores';
 import LogIn from '.components/LogIn';
 import SignUp from '.components/SignUp';
 import Table from '.components/Table';
