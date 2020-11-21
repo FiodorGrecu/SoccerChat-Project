@@ -62,38 +62,51 @@ const useStyles = makeStyles((theme) => ({
 
     const classes = useStyles();
     
-    const [inputCheck, setInputCheck] = useState("undefined");
-    
+    // const [inputCheck, setInputCheck] = useState("undefined");
+    const [firstname, setFirstName] = useState("");
+    const [lastname, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    // const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [isError, setIsError] = useState(false);
 
-    function checkOnSignUp(username, password) {
-        
-        if (username.length >= 2 && password.length >= 2){
-          setInputCheck(true);
-          console.log(inputCheck)   
+    async function sendSignUp() {
+
+        const data = JSON.stringify({'firstname': firstname, 'lastname': lastname, 'email': email, 'password': password})
+        const configs = {
+            methods: "POST",
+            body: data,
+            headers: {"Content-Type": "application/json"}
+        };
+        const response = await fetch("http://localhost5000/api/sign_up", configs)
+        const userData = await response.json();
+
+        if (userData.session_id) {
+          sessionStorage.setItem("session_id", userData.session_id)  
         }
         else{
-            setInputCheck(false);
-            console.log(inputCheck)
+            setIsError(true);
+            console.log(isError)
         }
-        let inputUsername = document.getElementById("username");
-        let inputPassword = document.getElementById('password');
-        inputUsername.value = "";
-        inputPassword.value = "";
+        // let inputUsername = document.getElementById("username");
+        // let inputPassword = document.getElementById('password');
+        // inputUsername.value = "";
+        // inputPassword.value = "";
     }
     return (
         <React.Fragment className={classes.reactfragment}>
             <Box className={classes.box}>
             <Paper elevation={10} className={classes.paper}>           
-                <h3 className={classes.signin} > Sign Up </h3>
-                <Input id="firstname" onChange={e => props.setFirstname(e.target.value)} placeholder="First Name*"></Input>
+                <h3 className={classes.signup} > Sign Up </h3>
+                <Input id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
                 
-                <Input id="lastname" onChange={e => props.setLastname(e.target.value)} placeholder="Last Name*"></Input>
+                <Input id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
                 
-                <Input id="emailaddress" onChange={e => props.setEmailaddres(e.target.value)} placeholder="Email Address"></Input>
+                <Input id="emailaddress" onChange={e => setEmail(e.target.value)} placeholder="Email Address"></Input>
                 
-                <Input id="password" onChange={e => props.setPassword(e.target.value)} placeholder="Password"></Input>
+                <Input id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
                
-                <Button  className={classes.button} onClick={e => checkOnSignUp(props.username, props.password)} color="primary">Sign Up</Button>
+                <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
                
             </Paper>           
             </Box>             
