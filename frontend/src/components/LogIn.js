@@ -94,7 +94,7 @@ function LogIn(props) {
             // through value = sessionStorage.getItem("session_id"); function
         } else {
             setIsError(true);
-            console.log(isError)
+            console.log(setIsError)
             // show the user a message saying login failed
             // will involve saving an error state
             // and having a <p> tag render if there's an error
