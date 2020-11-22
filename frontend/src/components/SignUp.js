@@ -3,6 +3,10 @@ import { Box, Button, Link, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import { green } from '@material-ui/core/colors';
+import { Redirect } from 'react-router-dom';
+// import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link as RouterLink } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
         root: {
@@ -107,6 +111,10 @@ const useStyles = makeStyles((theme) => ({
                 <Input id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
                
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
+                <br></br>
+                <p>Have an account ? <Link component={RouterLink} to="login">Sign In</Link></p>
+               
+
                
             </Paper>           
             </Box>             
