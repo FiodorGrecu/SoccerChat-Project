@@ -16,7 +16,9 @@ export default function Router () {
         <div>
             <Route path="/home" component={HomePage}/>
             <Route path="/fixtures" component={FixturesGames}/>
-            <Route path="/game" component={Game}/>
+            {/* <Route path="/game" component={Game}/> */}
+            {/* Line 21 */}
+            <Route path="/game/:gameNum" component={Game}/>
             <Route path="/games" component={ExampleCompnents}/>
             <Route path="/scores" component={Scores}/>
             <Route path="/login" component={LogIn}/>

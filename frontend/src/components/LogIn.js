@@ -7,6 +7,8 @@ import Input from '@material-ui/core/Input';
 // import { green } from '@material-ui/core/colors';
 import Avatar from '@material-ui/core/Avatar';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 
  const useStyles = makeStyles((theme) => ({
@@ -94,7 +96,7 @@ function LogIn(props) {
             // through value = sessionStorage.getItem("session_id"); function
         } else {
             setIsError(true);
-            console.log(setIsError)
+            console.log()
             // show the user a message saying login failed
             // will involve saving an error state
             // and having a <p> tag render if there's an error
@@ -125,7 +127,7 @@ function LogIn(props) {
                 <br></br>
                 <Link>Forgot Password?</Link>
                 <p className={classes.or}>or</p>
-               <Link>Sign Up Here</Link>
+               <Link component={RouterLink} to='/signup'>Sign Up Here</Link>
             </Paper>           
             </Box>             
         </React.Fragment>

@@ -87,18 +87,18 @@ export default function SimplePaper() {
           <Box className={classes.box} >
           <Grid container spacing={10}>
             <Grid sitem xs={3}>
-                <Link>
-                  <Paper elevation={1} className={classes.paper}> 
-                        { fixture.homeTeam.team_name }
-                        <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:2, paddingRight:2}}/>
-                        <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
-                        {/* { fixture.event_date } */}
-                        {'  -  '}
-                        <strong className={classes.goalsAwayTeam}>{ fixture.goalsHomeTeam }</strong>
-                        <img src={ fixture.awayTeam.logo } style={{width:26, height:26, }}/>
-                      { fixture.awayTeam.team_name }
-                  </Paper>                 
-                </Link>
+              <Link to={`/game/${fixture.fixture_id}`}>
+                <Paper elevation={1} className={classes.paper}> 
+                      { fixture.homeTeam.team_name }
+                      <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:2, paddingRight:2}}/>
+                      <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
+                      {/* { fixture.event_date } */}
+                      {'  -  '}
+                      <strong className={classes.goalsAwayTeam}>{ fixture.goalsHomeTeam }</strong>
+                      <img src={ fixture.awayTeam.logo } style={{width:26, height:26, }}/>
+                    { fixture.awayTeam.team_name }
+                </Paper>                 
+              </Link>
             </Grid>
             {/* <Grid>
                 <Link>

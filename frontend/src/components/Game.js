@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -33,13 +34,16 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function CenteredGrid() {
+export default function CenteredGrid(props) {
   const classes = useStyles();
 
   // api/one_game/<fixture_id>
 
   const [fixture, setFixture] = useState({});
-  const fixture_id = 592215;
+  // const {gameNum} = useParams();
+  // let test = useParams();
+  const gameNum = 436;
+  // console.log(test);
   const unixTimestamp = 1604752200;
 
   // const date = new Date(1604752200).toLocaleDateString("en-US");
@@ -51,14 +55,20 @@ export default function CenteredGrid() {
 
   useEffect(() => {
     async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/one_game/${fixture_id}`);
+      const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
       const data = await response.json();
+      console.log(data);
       console.log(data.fixtures.response[0])
-      setFixture(data.fixtures.response[0])
+      setFixture(data.fixtures.response[0] || {})
     
     }
-    gameDetails();
-  }, [] )
+    if (gameNum) {
+      gameDetails();
+      
+    }
+    // gameDetails();
+
+  }, [gameNum] )
 
   const gameDate = fixture.fixture && fixture.fixture.date;
   

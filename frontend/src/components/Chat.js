@@ -44,11 +44,7 @@ export default function Chat() {
   return (
     <div>
         <input  className={classes.textbox}>
-            {/* <React.Fragment>
-                <Typography>
-                    {'–– D0'}
-                </Typography>
-            </React.Fragment> */}
+          
         </input>
         <br></br>
       {/* <input onChange={event => setTextInput(event.target.value)}/> */}
