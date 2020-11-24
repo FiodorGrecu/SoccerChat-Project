@@ -64,9 +64,9 @@ export default function CenteredGrid(props) {
   // api/one_game/<fixture_id>
 
   const [fixture, setFixture] = useState({});
-  // const {gameNum} = useParams();
+  const { gameNum } = useParams();
   // let test = useParams();
-  const gameNum = 436;
+  // const gameNum = 436;
   // console.log(test);
   const unixTimestamp = 1604752200;
 
@@ -82,17 +82,18 @@ export default function CenteredGrid(props) {
       const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
       const data = await response.json();
       console.log(data);
-      console.log(data.fixtures.response[0])
-      setFixture(data.fixtures.response[0] || {})
-    
+      if (data.fixtures.response) {
+        console.log(data.fixtures.response || null)
+        setFixture(data.fixtures.response[0] || {})
+      };
     }
-    if (gameNum) {
-      gameDetails();
+    // if (gameNum) {
+    //   gameDetails();
       
-    }
-    // gameDetails();
+    // }
+    gameDetails();
 
-  }, [gameNum] )
+  }, [] )
 
   const gameDate = fixture.fixture && fixture.fixture.date;
   
@@ -194,3 +195,21 @@ export default function CenteredGrid(props) {
     </div>
   );
 }
+
+// export default function Game() {
+//   // let { gameNum } = useParams();
+//   const params = useParams();
+
+//   useEffect(() => {
+//     console.log(params);
+//   }, [params])
+
+//   console.log(params)
+//   // console.log(gameNum)
+//   return (
+//     <React.Fragment>
+//       <p>{params.id}</p>
+//       {/* { params.gameNum && <CenteredGrid gameNum={params.gameNum} /> } */}
+//     </React.Fragment>
+//   )
+// }

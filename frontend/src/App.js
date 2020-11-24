@@ -31,7 +31,7 @@ function App() {
           <HomePage/>
         </Route>
 
-        <Route path='/game'>
+        <Route path='/game/:gameNum'>
           <Game/>
         </Route>
 

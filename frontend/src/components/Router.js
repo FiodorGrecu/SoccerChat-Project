@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useParams } from 'react-router-dom';
 import HomePage from '.components/HomePage';
 import FixturesGames from '.components/Fixtures_Games';
-import Game from '.components/Game';
+import Game from './Game';
 import Scores from '.components/Scores';
 import LogIn from '.components/LogIn';
 import SignUp from '.components/SignUp';
@@ -20,7 +20,7 @@ export default function Router () {
             {/* <Route path="/game" component={Game}/> */}
             {/* Line 21 */}
             {/* <Route path="/matches" component={Matches}/> */}
-            <Route path="/game/:gameNum" component={Game}/>
+            <Route path="/game/:id" component={Game}/>
             <Route path="/games" component={ExampleCompnents}/>
             <Route path="/scores" component={Scores}/>
             <Route path="/login" component={LogIn}/>
