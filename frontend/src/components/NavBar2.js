@@ -57,6 +57,7 @@ export default function ProminentAppBar() {
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/scores">Scores</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/table">Table</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/chat">Chat</Link>
+            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/matches">Matches1</Link>
           </Typography>
             <Divider className={classes.divider} orientation="vertical" />
         </Toolbar>

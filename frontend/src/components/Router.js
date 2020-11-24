@@ -8,6 +8,7 @@ import LogIn from '.components/LogIn';
 import SignUp from '.components/SignUp';
 import Table from '.components/Table';
 import Chat from '.components/Chat';
+import Matches from '.components/Matches';
 
 
 
@@ -25,6 +26,7 @@ export default function Router () {
             <Route path="/signup" component={SignUp}/>
             <Route path="/table" component={Table}/>
             <Route path="/chat" component={Chat}/>
+            <Route path="/matches" component={Matches}/>
         </div>
         )
         

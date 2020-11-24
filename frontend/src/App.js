@@ -12,6 +12,8 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import Chat from './components/Chat';
 import Table from './components/Table';
+import Matches from './components/Matches';
+
 
 
 function App() {
@@ -57,6 +59,11 @@ function App() {
         <Route path='/chat'>
           <Chat/>
         </Route>
+
+        <Route path='/matches'>
+          <Matches/>
+        </Route>
+
         
       </BrowserRouter>
       
