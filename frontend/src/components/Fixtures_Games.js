@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     goalsHomeTeam: {
       // paddingLeft:110,
       paddingLeft: theme.spacing(19),
+      // alignSelf: 'flex-end',
       paddingRight: theme.spacing(2),
       // paddingRight:10,
     },
@@ -98,7 +99,7 @@ export default function SimplePaper() {
                 {/* <Divider/> */}
             <Grid sitem xs={3}>
               <Link to={`/game/${fixture.fixture_id}`}>
-                <Paper elevation={1} className={classes.paper}> 
+                <Paper elevation={1} className={classes.paper} style={{alignSelf: 'flex-end'}}> 
                       { fixture.homeTeam.team_name }
                       <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:3, paddingRight:3}}/>
                       <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
