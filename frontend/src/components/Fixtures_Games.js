@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#F0E4C8"
     },
     box: {
-        padding: 10,
+        padding: theme.spacing(1.2),
+        // padding: 10,
         // paddingLeft:220,
         paddingLeft:theme.spacing(30),
         marginTop: theme.spacing(-2.3),    
