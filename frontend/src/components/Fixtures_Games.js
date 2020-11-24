@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { games as fixtures } from "./teams";
-import { Box, Grid } from '@material-ui/core';
+import { Box, Divider, Grid } from '@material-ui/core';
 import { spacing } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography';
 // import { useState } from 'react';
@@ -15,36 +15,39 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
 
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',        
+    // display: 'flex',
+    // flexWrap: 'no-wrap',        
     '& > *': {
-      margin: theme.spacing(40),
-      width: theme.spacing(10),
-      height: theme.spacing(1),
-      textAlign: 'center',
+      // margin: ,
+      // justifyContent: 'center',
+      // paddingTop: theme.spacing(1),
+      // width: theme.spacing(11),
+      // height: theme.spacing(10),
+      // textAlign: 'center',
       // backgroundColor: 'rgb(238, 238, 240)',
 
     },
     
   },
   paper: {
-        width: theme.spacing(88),
-        height: theme.spacing(15),
-        padding: 30,
-        paddingRight: 1,
-        marginRight: (10),
+        width: theme.spacing(100),
+        height: theme.spacing(5),
+        padding: theme.spacing(1),
+        paddingRight: theme.spacing(2),
+        marginRight: theme.spacing(1),
         color: '#525252',
-        marginTop: 10,
+        marginTop: theme.spacing(1),
         textAlign: 'center',
-        fontWeight: (400),
+        fontWeight: (500),
         fontSize: theme.spacing(2),
         fontFamily: "Helvetica",
         backgroundColor: "#F0E4C8"
     },
     box: {
-        padding: 1,
-        paddingLeft:10,
-        marginTop: 10,    
+        padding: 10,
+        // paddingLeft:220,
+        paddingLeft:theme.spacing(30),
+        marginTop: theme.spacing(-2.3),    
     },
     goalsHomeTeam: {
       paddingLeft:110,
@@ -53,8 +56,10 @@ const useStyles = makeStyles((theme) => ({
     goalsAwayTeam:{
       paddingLeft:10,
       paddingRight:110,
-    }
-    
+    },
+    // reactFragment: {
+    //   paddingRight:110,
+    // }
   
    
 }));
@@ -85,7 +90,8 @@ export default function SimplePaper() {
       <React.Fragment className={classes.reactFragment}>
           {/* <p>Calendar</p> */}
           <Box className={classes.box} >
-          <Grid container spacing={10}>
+          <Grid container spacing={1}>
+                {/* <Divider/> */}
             <Grid sitem xs={3}>
               <Link to={`/game/${fixture.fixture_id}`}>
                 <Paper elevation={1} className={classes.paper}> 

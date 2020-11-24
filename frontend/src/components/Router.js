@@ -19,6 +19,7 @@ export default function Router () {
             <Route path="/fixtures" component={FixturesGames}/>
             {/* <Route path="/game" component={Game}/> */}
             {/* Line 21 */}
+            <Route path="/matches" component={Matches}/>
             <Route path="/game/:gameNum" component={Game}/>
             <Route path="/games" component={ExampleCompnents}/>
             <Route path="/scores" component={Scores}/>
@@ -26,7 +27,6 @@ export default function Router () {
             <Route path="/signup" component={SignUp}/>
             <Route path="/table" component={Table}/>
             <Route path="/chat" component={Chat}/>
-            <Route path="/matches" component={Matches}/>
         </div>
         )
         
