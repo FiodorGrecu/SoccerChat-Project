@@ -60,9 +60,9 @@ function App() {
           <Chat/>
         </Route>
 
-        <Route path='/matches'>
+        {/* <Route path='/matches'>
           <Matches/>
-        </Route>
+        </Route> */}
 
         
       </BrowserRouter>

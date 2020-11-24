@@ -15,21 +15,45 @@ import Timestamp from 'react-moment';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
     backgroundColor: 'aliceblue',
 
   },
   paper: {
     padding: theme.spacing(2),
+    paddingTop: theme.spacing(2),
     textAlign: 'center',
     color: '#525252',
-    backgroundColor: "#F0E4C8"
+    // backgroundColor: "#F0E4C8"
   },
-  leagueName: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    fontSize: 40,
+  homePlayerName: {
+    paddingLeft: theme.spacing(10),
+    width: theme.spacing(30),
+    height: theme.spacing(10),
+    paddingRight: 2,
+    fontSize: 1,
     color: '#F0F8FF',
+  },
+  awayPlayerName: {
+    paddingLeft: theme.spacing(10),
+    width: theme.spacing(30),
+    height: theme.spacing(10),
+    paddingRight: theme.spacing(2),
+    fontSize: 1,
+    color: '#F0F8FF',
+  },
+
+
+  awaystartingXI: {
+    width: theme.spacing(10),
+
+  },
+  homestartingXI: {
+    width: theme.spacing(30),
+
+  },
+  score: {
+    color: 'purple'
   }
 
 }));
@@ -84,37 +108,31 @@ export default function CenteredGrid(props) {
   const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
   const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
 
-  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
 
-    <Grid item xs={50}>
-        <Paper className={classes.paper}>{player.player.name} {player.player.number}</Paper>
-    </Grid>
+  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
+    // <Grid item xs={5}>
+        <Paper className={classes.homePlayerName}>{player.player.name} {player.player.number}</Paper>
+    // </Grid>
     
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-    <Grid item xs={50}>
-        <Paper className={classes.awayPlayers}>{player.player.name} {player.number}</Paper>
-    </Grid>
+    // <Grid item xs={5}>
+        <Paper className={classes.awayPlayersName}>{player.player.name} {player.player.number}</Paper>
+    // </Grid>
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-    <Grid item xs={150}>
+    // <Grid item xs={5}>
         <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
-    </Grid>
-
-  
+    // </Grid>
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-
-    <Grid item xs={150}>
+    // <Grid item xs={5}>
       <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
-    </Grid>
+    // </Grid>
   ));
-
-  
- 
 
   return (
     <div className={classes.root}>
@@ -125,7 +143,7 @@ export default function CenteredGrid(props) {
           <Grid container spacing={1}>
                 {/* <img src={background} alt="Background" />; */}
                 <div className={classes.leagueName}>{leagueName}</div>
-                <Moment unix>{unixTimestamp}</Moment>
+                {/* <Moment unix>{unixTimestamp}</Moment> */}
                 {/* <Moment unix>{time}</Moment> */}
                 {/* <Moment unix>{date}</Moment> */}
 
@@ -137,53 +155,40 @@ export default function CenteredGrid(props) {
                 {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
                 
             
-            <Grid item xs={5}>
-                <div>{hometeamName}</div>
-                <img src={hometeamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>
-              <Grid item xs={5}>
-                <Paper className={classes.paper}>Starting XI</Paper>
-                  <div>{homePlayers}</div> 
-              </Grid>
-            </Grid>
-            
-            <Grid item xs={2}>
-                <Paper className={classes.paper}>vs</Paper>
-            </Grid>
-
-            <Grid item xs={5}>
-                <div>{awayteamName}</div>
-                <img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>
+            {/* <Grid item xs={5}>     */}
               <Grid item xs={15}>
-                <Paper className={classes.paper}>Starting XI</Paper>
-              <div>{awayPlayers}</div>
+                <Paper className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI{homePlayers}</Paper>
               </Grid>
-            </Grid>
+            {/* </Grid> */}
             
-            <Grid item xs={5}>
-              <Paper className={classes.paper}>Coach<div>{hometeamCoach}</div></Paper>
+            {/* <Grid item xs={2}>
+                <Paper className={classes.score}>Score</Paper>
+            </Grid> */}
+
+            {/* <Grid item xs={5}>                 */}
+              <Grid item xs={15}>
+                <Paper className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI{awayPlayers}</Paper>   
+              </Grid>
+            {/* </Grid> */}
+            
+            <Grid item xs={15}>
+              <Paper className={classes.homeCoach}>Coach<br/>{hometeamCoach}</Paper>
                   
             </Grid>
             
-             <Grid item xs={5}>
-              <Paper className={classes.subs}>Substitutions<div>{homeSubs}</div></Paper>
+             <Grid item xs={15}>
+              <Paper className={classes.subsHome}>Substitutions{homeSubs}</Paper>
             </Grid>
-                <Grid >
+                {/* <Grid >
                   
-                </Grid>
-                <Grid item xs={5}>
-              <Paper className={classes.paper}>Coach<div>{awayteamCoach}</div></Paper>
-                  
+                </Grid> */}
+            <Grid item xs={15}>
+              <Paper className={classes.awayCoach}>Coach<br/>{awayteamCoach}</Paper>      
             </Grid>
-           <Grid item xs={5}>
-              <Paper className={classes.subs}>Substitutions{awaySubs}</Paper>
-            </Grid>
-            <Grid>
-               
-            </Grid>
-          
-            
+           <Grid item xs={15}>
+              <Paper className={classes.subsAway}>Substitutions{awaySubs}</Paper>
+            </Grid>           
           </Grid>
-  
         </React.Fragment>
     
     </div>
