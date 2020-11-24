@@ -11,4 +11,4 @@ export default function HomePage() {
             {/* <img style={{backgroundColor: 'transparent'}} src={Background_pic} className="Background" alt="Stadium picture" /> */}
         </div>
     )
-}
+};

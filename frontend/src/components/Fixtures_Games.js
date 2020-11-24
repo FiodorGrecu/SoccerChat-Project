@@ -53,13 +53,13 @@ const useStyles = makeStyles((theme) => ({
     },
     goalsHomeTeam: {
       // paddingLeft:110,
-      paddingLeft: theme.spacing(19),
+      paddingLeft: theme.spacing(20),
       // alignSelf: 'flex-end',
       paddingRight: theme.spacing(2),
       // paddingRight:10,
     },
     goalsAwayTeam:{
-      paddingLeft: theme.spacing(1),
+      paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(20),
     },
     // reactFragment: {
