@@ -75,8 +75,12 @@ const useStyles = makeStyles((theme) => ({
     const [isError, setIsError] = useState(false);
 
     async function sendSignUp() {
-
-        const data = JSON.stringify({'firstname': firstname, 'lastname': lastname, 'email': email, 'password': password})
+        const data = JSON.stringify({
+            'firstname': firstname, 
+            'lastname': lastname, 
+            'email': email, 
+            'password': password
+        })
         const configs = {
             methods: "POST",
             body: data,
@@ -87,8 +91,7 @@ const useStyles = makeStyles((theme) => ({
 
         if (userData.session_id) {
           sessionStorage.setItem("session_id", userData.session_id)  
-        }
-        else{
+        } else {
             setIsError(true);
             console.log(isError)
         }
@@ -113,9 +116,7 @@ const useStyles = makeStyles((theme) => ({
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
                 <br></br>
                 <p style={{color: grey[500]}}>Already registered? <Link component={RouterLink} to="login">Sign In</Link></p>
-               
-
-               
+                { isError && <p>Sign Up Error.</p> }
             </Paper>           
             </Box>             
         </React.Fragment>
