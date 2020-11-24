@@ -44,19 +44,22 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#F0E4C8"
     },
     box: {
-        padding: theme.spacing(1.2),
+        paddingTop: theme.spacing(1.4),
+        padding: theme.spacing(1.4),
         // padding: 10,
         // paddingLeft:220,
         paddingLeft:theme.spacing(30),
         marginTop: theme.spacing(-2.3),    
     },
     goalsHomeTeam: {
-      paddingLeft:110,
-      paddingRight:10,
+      // paddingLeft:110,
+      paddingLeft: theme.spacing(19),
+      paddingRight: theme.spacing(2),
+      // paddingRight:10,
     },
     goalsAwayTeam:{
-      paddingLeft:10,
-      paddingRight:110,
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(20),
     },
     // reactFragment: {
     //   paddingRight:110,
@@ -97,12 +100,12 @@ export default function SimplePaper() {
               <Link to={`/game/${fixture.fixture_id}`}>
                 <Paper elevation={1} className={classes.paper}> 
                       { fixture.homeTeam.team_name }
-                      <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:2, paddingRight:2}}/>
+                      <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:3, paddingRight:3}}/>
                       <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
                       {/* { fixture.event_date } */}
                       {'  -  '}
                       <strong className={classes.goalsAwayTeam}>{ fixture.goalsHomeTeam }</strong>
-                      <img src={ fixture.awayTeam.logo } style={{width:26, height:26, }}/>
+                      <img src={ fixture.awayTeam.logo } style={{width:26, height:26, paddingLeft:3, paddingRight:3}}/>
                     { fixture.awayTeam.team_name }
                 </Paper>                 
               </Link>
