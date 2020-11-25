@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
 // import { Gradient } from 'react-gradient';
-import Divider from '@material-ui/core/Divider';
+// import Divider from '@material-ui/core/Divider';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { Box } from '@material-ui/core';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
@@ -78,9 +78,9 @@ export default function ProminentAppBar() {
         <Toolbar className={classes.toolbar}>
           <Box className={classes.appdiscription}>   
           <Typography>
-              Scores, Soccer Results Standings and Chat
+              Scores Soccer Results Standings and Chat
           </Typography>
-          {/* <hr style={{ width: '100%'}}/> */}
+          {/* <hr style={{ width: '100%', size: "large"}}/> */}
           </Box>
           <IconButton
             edge="start"
@@ -109,7 +109,7 @@ export default function ProminentAppBar() {
                       <PersonOutlineIcon></PersonOutlineIcon>
                     </IconButton>      
             </Typography>
-            <Divider className={classes.divider} orientation="vertical" />
+            {/* <Divider className={classes.divider} orientation="vertical" /> */}
         </Toolbar>
       </AppBar>
     </div>

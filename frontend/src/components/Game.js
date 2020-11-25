@@ -12,6 +12,7 @@ import Date from 'react-moment';
 import Timestamp from 'react-moment';
 // import background from '/public.background.png';
 // import url from 'resources/url';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -173,20 +174,20 @@ export default function CenteredGrid(props) {
             {/* </Grid> */}
             
             <Grid item xs={15}>
-              <Paper className={classes.homeCoach}>Coach<br/>{hometeamCoach}</Paper>
+              <Paper className={classes.homeCoach}>Coach<Divider/><br/>{hometeamCoach}</Paper>
                   
             </Grid>
             
-             <Grid item xs={15}>
+             <Grid item lg={2}>
               <Paper className={classes.subsHome}>Substitutions{homeSubs}</Paper>
             </Grid>
                 {/* <Grid >
                   
                 </Grid> */}
-            <Grid item xs={15}>
-              <Paper className={classes.awayCoach}>Coach<br/>{awayteamCoach}</Paper>      
+            <Grid item lg={2}>
+              <Paper className={classes.awayCoach}>Coach<Divider/><br/>{awayteamCoach}</Paper>      
             </Grid>
-           <Grid item xs={15}>
+            <Grid item lg={3}>
               <Paper className={classes.subsAway}>Substitutions{awaySubs}</Paper>
             </Grid>           
           </Grid>

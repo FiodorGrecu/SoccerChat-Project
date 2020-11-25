@@ -51,7 +51,7 @@ class Account:
 
     @classmethod
     def login(cls, username, password):
-        """Will need to hash input password, and then return eithr a 
+        """Will need to hash input password, and then return either a 
         User instance or None
         """
         with sqlite3.connect(cls.dbpath) as conn:

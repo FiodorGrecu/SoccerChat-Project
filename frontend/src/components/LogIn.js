@@ -4,7 +4,7 @@ import { Box, Button, Link, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
-// import { green } from '@material-ui/core/colors';
+import { green, grey} from '@material-ui/core/colors';
 import Avatar from '@material-ui/core/Avatar';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Link as RouterLink } from 'react-router-dom';
@@ -125,9 +125,11 @@ function LogIn(props) {
                 <Button  className={classes.button} onClick={e => sendLogin()} color="#1A91DA" variant="contained">Log In</Button>
                 {isError && <p>Invalid Password or Username. Please try again.</p>}
                 <br></br>
-                <Link>Forgot Password?</Link>
+                {/* <Link>Forgot Password?</Link> */}
                 <p className={classes.or}>or</p>
-               <Link component={RouterLink} to='/signup'>Sign Up Here</Link>
+                <p style={{color: grey[600]}}> 
+                    If you are new user? <Link component={RouterLink} to='/signup'>Sign Up Here</Link>
+                </p>
             </Paper>           
             </Box>             
         </React.Fragment>

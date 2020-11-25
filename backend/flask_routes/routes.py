@@ -56,6 +56,7 @@ def new_user():
 @app.route('/api/countries', methods=["GET"])
 def display_countries():
     all_countries = Country.all_countries()
+    all_countries.save()
     return jsonify({'countries':all_countries})
 
 @app.route('/api/world_competitions/<country>/<season>', methods=["GET"])
@@ -66,6 +67,7 @@ def world_competitions(country, season):
 @app.route('/api/leagues_by_country/<country>/<season>', methods=["GET"])
 def leagues(country, season):
     leagues_by_country = League.leagues_from_all_countries(country, season)
+    leagues_by_country.save()
     return jsonify({'leagues': leagues_by_country})
 
 
@@ -74,6 +76,7 @@ def leagues(country, season):
 def last_5(num_games):
     # last_5 = Game.last_5(num_games)
     # last_5 = last5
+    last_5.save() 
     return jsonify({'fixtures': last_5})
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
@@ -86,6 +89,7 @@ def games_by_date(date):
 def one_game(fixture_id):
     # game = Game.game_by_fixture_id(fixture_id)
     game = onegame
+    game.save()
     return jsonify({'fixtures': game})
 
 @app.route('/api/game_stats/<fixture_id>', methods=["GET"])

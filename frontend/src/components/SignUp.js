@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
                
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
                 <br></br>
-                <p style={{color: grey[500]}}>Already registered? <Link component={RouterLink} to="login">Sign In</Link></p>
+                <p style={{color: grey[600]}}>Already registered? <Link component={RouterLink} to="login">Sign In</Link></p>
                 { isError && <p>Sign Up Error.</p> }
             </Paper>           
             </Box>             
