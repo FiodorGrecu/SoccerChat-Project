@@ -75,8 +75,8 @@ def leagues(country, season):
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
     # last_5 = Game.last_5(num_games)
-    # last_5 = last5
-    last_5.save() 
+    last_5 = last5
+    # last_5.save() 
     return jsonify({'fixtures': last_5})
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
@@ -89,7 +89,7 @@ def games_by_date(date):
 def one_game(fixture_id):
     # game = Game.game_by_fixture_id(fixture_id)
     game = onegame
-    game.save()
+    # game.save()
     return jsonify({'fixtures': game})
 
 @app.route('/api/game_stats/<fixture_id>', methods=["GET"])

@@ -139,7 +139,7 @@ class Game:
         #         "away_logo": a_t_logo}
         # pprint(data)
         return((data))
-        # pprint(((home_team, h_t_logo), (a_t_logo, away_team)))
+        
     
     @classmethod
     def games_by_date(cls, date):
