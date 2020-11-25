@@ -83,7 +83,9 @@ def schema(dbpath = DATAPATH):
         cursor.execute(""" 
         CREATE TABLE accounts (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
-            username VARCHAR(16) UNIQUE NOT NULL,
+            firstname VARCHAR,
+            lastname VARCHAR,
+            email VARCHAR,
             password_hash VARCHAR(128),
             user_key VARCHAR 
         );""")

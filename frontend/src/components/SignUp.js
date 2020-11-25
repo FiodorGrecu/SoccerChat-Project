@@ -82,11 +82,11 @@ const useStyles = makeStyles((theme) => ({
             'password': password
         })
         const configs = {
-            methods: "POST",
+            method: "POST",
             body: data,
             headers: {"Content-Type": "application/json"}
         };
-        const response = await fetch("http://localhost5000/api/sign_up", configs)
+        const response = await fetch("http://localhost:5000/api/sign_up", configs)
         const userData = await response.json();
 
         if (userData.session_id) {
@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
                 
                 <Input id="emailaddress" onChange={e => setEmail(e.target.value)} placeholder="Email Address"></Input>
                 
-                <Input id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
+                <Input type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
                
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
                 <br></br>

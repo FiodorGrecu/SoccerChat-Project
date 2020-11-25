@@ -46,11 +46,13 @@ def login():
 @app.route('/api/sign_up', methods=["POST"])
 def new_user():
     data = request.get_json()
-    key = Account.random_api_key()
-    new_account = Account(data.get('username'), data.get('password'), key, data.get('email'))
+    user_key = Account.random_api_key()
+    new_account = Account(data.get('firstname'), data.get('lastname'), 
+                         data.get('email'), data.get('password'), user_key)
     new_account._insert()
     return jsonify({'session_id': new_account.user_key,
-                        'username': new_account.username})
+                        'firstname': new_account.firstname,
+                        'lastname': new_account.lastname})
 
 
 @app.route('/api/countries', methods=["GET"])

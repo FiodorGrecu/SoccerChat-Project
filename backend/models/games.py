@@ -242,7 +242,7 @@ if __name__=='__main__':
     # h2h = Game.game_h2h(40,50)
     # last5 = Game.last5(5)
     # game_stats = Game.game_stats('592215')
-    game = Game.game_by_fixture_id("592215") 
+    game = Game.game_by_fixture_id("435") 
     pprint(game)
    
 

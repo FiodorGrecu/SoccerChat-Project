@@ -20,29 +20,29 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'aliceblue',
 
   },
-  paper: {
-    padding: theme.spacing(2),
-    paddingTop: theme.spacing(2),
-    textAlign: 'center',
-    color: '#525252',
-    // backgroundColor: "#F0E4C8"
-  },
-  homePlayerName: {
-    paddingLeft: theme.spacing(10),
-    width: theme.spacing(30),
-    height: theme.spacing(10),
-    paddingRight: 2,
-    fontSize: 1,
-    color: '#F0F8FF',
-  },
-  awayPlayerName: {
-    paddingLeft: theme.spacing(10),
-    width: theme.spacing(30),
-    height: theme.spacing(10),
-    paddingRight: theme.spacing(2),
-    fontSize: 1,
-    color: '#F0F8FF',
-  },
+  // paper: {
+  //   padding: theme.spacing(2),
+  //   paddingTop: theme.spacing(2),
+  //   textAlign: 'center',
+  //   color: '#525252',
+  //   // backgroundColor: "#F0E4C8"
+  // },
+  // homePlayersName: {
+  //   paddingLeft: theme.spacing(1),
+  //   width: theme.spacing(30),
+  //   height: theme.spacing(10),
+  //   paddingRight: 2,
+  //   fontSize: 1,
+  //   color: '#F0F8FF',
+  // },
+  // awayPlayersName: {
+  //   paddingLeft: theme.spacing(10),
+  //   width: theme.spacing(30),
+  //   height: theme.spacing(10),
+  //   paddingRight: theme.spacing(2),
+  //   fontSize: 1,
+  //   color: '#F0F8FF',
+  // },
 
 
   awaystartingXI: {
@@ -83,7 +83,7 @@ export default function CenteredGrid(props) {
       const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
       const data = await response.json();
       console.log(data);
-      if (data.fixtures.response) {
+      if (data.fixtures) {
         console.log(data.fixtures.response || null)
         setFixture(data.fixtures.response[0] || {})
       };
@@ -113,7 +113,7 @@ export default function CenteredGrid(props) {
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
     // <Grid item xs={5}>
-        <Paper className={classes.homePlayerName}>{player.player.name} {player.player.number}</Paper>
+        <Paper className={classes.homePlayersName}>{player.player.name} {player.player.number}</Paper>
     // </Grid>
     
   ));
@@ -126,13 +126,13 @@ export default function CenteredGrid(props) {
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
     // <Grid item xs={5}>
-        <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
+        <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
     // </Grid>
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
     // <Grid item xs={5}>
-      <Paper className={classes.paper}>{substitutes.player.name} {substitutes.player.number}</Paper>
+      <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
     // </Grid>
   ));
 
@@ -179,7 +179,7 @@ export default function CenteredGrid(props) {
             </Grid>
             
              <Grid item lg={2}>
-              <Paper className={classes.subsHome}>Substitutions{homeSubs}</Paper>
+              <Paper className={classes.awayStartingXI}>Substitutions{homeSubs}</Paper>
             </Grid>
                 {/* <Grid >
                   
@@ -188,7 +188,7 @@ export default function CenteredGrid(props) {
               <Paper className={classes.awayCoach}>Coach<Divider/><br/>{awayteamCoach}</Paper>      
             </Grid>
             <Grid item lg={3}>
-              <Paper className={classes.subsAway}>Substitutions{awaySubs}</Paper>
+              <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
             </Grid>           
           </Grid>
         </React.Fragment>
