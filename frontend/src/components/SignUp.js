@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
     // const [inputCheck, setInputCheck] = useState("undefined");
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
+    const [username, setUserName] = useState("");
     const [email, setEmail] = useState("");
     // const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -78,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
         const data = JSON.stringify({
             'firstname': firstname, 
             'lastname': lastname, 
+            'username': username, 
             'email': email, 
             'password': password
         })
@@ -108,8 +110,10 @@ const useStyles = makeStyles((theme) => ({
                 <Input id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
                 
                 <Input id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
+
+                <Input id="username" onChange={e => setUserName(e.target.value)} placeholder="Create User Name*"></Input>
                 
-                <Input id="emailaddress" onChange={e => setEmail(e.target.value)} placeholder="Email Address"></Input>
+                <Input id="email" onChange={e => setEmail(e.target.value)} placeholder="Email Address"></Input>
                 
                 <Input type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
                
