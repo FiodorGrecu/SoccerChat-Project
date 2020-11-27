@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: "center",
             textAlign: "center",
             paddingRight: 100,
-            paddingLeft: 400
+            paddingLeft: 490
         },
         or: {
             fontSize: 15,
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
             padding: '7px 32px',
             backgroundColor: "#1A91DA"
         },
-        signin: {
+        signup: {
            fontSize: 30, 
            fontFamily: 'Apple',
                      

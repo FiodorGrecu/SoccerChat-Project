@@ -35,7 +35,7 @@ import { Link as RouterLink } from 'react-router-dom';
             justifyContent: "center",
             textAlign: "center", 
             paddingRight: 100,
-            paddingLeft: 400,
+            paddingLeft: 490,
             border: 30
         },
         or: {
