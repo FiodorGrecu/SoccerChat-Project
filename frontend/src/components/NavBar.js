@@ -80,7 +80,7 @@ export default function ProminentAppBar() {
           <Typography>
               Scores Soccer Results Standings and Chat
           </Typography>
-          {/* <hr style={{ width: '100%', size: "large"}}/> */}
+          
           </Box>
           <IconButton
             edge="start"

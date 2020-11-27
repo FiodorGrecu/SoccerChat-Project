@@ -14,10 +14,11 @@ class Account:
     dbpath = DATAPATH
     tablename = "accounts"
 
-    def __init__(self, firstname, lastname, email, password_hash, user_key="", pk=None):
+    def __init__(self, firstname, lastname, username, email, password_hash, user_key="", pk=None):
         self.pk = pk
         self.firstname = firstname
         self.lastname = lastname 
+        self.username = username
         self.email = email
         self.password_hash = password_hash
         self.user_key = user_key      
@@ -32,10 +33,10 @@ class Account:
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""INSERT INTO {self.tablename} (
-                firstname, lastname, email, password_hash, user_key
+                firstname, lastname, username, email, password_hash, user_key
                 ) VALUES(?,?,?,?,?);"""
-            values = (self.firstname, self.lastname, self.email, 
-                        self.password_hash, self.user_key)
+            values = (self.firstname, self.lastname, self.username, 
+                        self.email, self.password_hash, self.user_key)
             cursor.execute(sql, values)
             return cursor.lastrowid
 

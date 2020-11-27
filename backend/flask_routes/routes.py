@@ -47,12 +47,14 @@ def login():
 def new_user():
     data = request.get_json()
     user_key = Account.random_api_key()
-    new_account = Account(data.get('firstname'), data.get('lastname'), 
-                         data.get('email'), data.get('password'), user_key)
+    new_account = Account(data.get('firstname'), data.get('lastname'),  
+                         data.get('username'), data.get('email'), data.get('password'), 
+                         user_key)
     new_account._insert()
     return jsonify({'session_id': new_account.user_key,
                         'firstname': new_account.firstname,
-                        'lastname': new_account.lastname})
+                        'lastname': new_account.lastname,
+                         'username':new_account.username})
 
 
 @app.route('/api/countries', methods=["GET"])
@@ -134,7 +136,7 @@ def save_chat():
 def get_chat(fixture_id):
     data = request.get_json()
     user_chat = Chat.get_chat(fixture_id)
-    return jsonify({"chat": user_chat})
+    return jsonify({"chat": user_chat, data})
 
 
 if __name__ == "__main__":

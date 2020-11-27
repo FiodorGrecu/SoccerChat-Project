@@ -85,6 +85,7 @@ def schema(dbpath = DATAPATH):
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             firstname VARCHAR,
             lastname VARCHAR,
+            username VARCHAR,
             email VARCHAR,
             password_hash VARCHAR(128),
             user_key VARCHAR 
