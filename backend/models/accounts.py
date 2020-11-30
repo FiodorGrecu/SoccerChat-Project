@@ -34,7 +34,7 @@ class Account:
             cursor = conn.cursor()
             sql = f"""INSERT INTO {self.tablename} (
                 firstname, lastname, username, email, password_hash, user_key
-                ) VALUES(?,?,?,?,?);"""
+                ) VALUES(?,?,?,?,?,?);"""
             values = (self.firstname, self.lastname, self.username, 
                         self.email, self.password_hash, self.user_key)
             cursor.execute(sql, values)
@@ -50,7 +50,7 @@ class Account:
             cursor = conn.cursor()
             sql = f"""UPDATE {self.tablename} SET username=?, password_hash=?,
                     user_key=? WHERE pk=?;"""
-            values = (self.password_hash, self.user_key, self.pk)
+            values = (self.username, self.password_hash, self.user_key, self.pk)
             cursor.execute(sql, values)
 
     @classmethod

@@ -47,8 +47,9 @@ def login():
 def new_user():
     data = request.get_json()
     user_key = Account.random_api_key()
+    hashed_password = Account.hash_password(data.get('password'))
     new_account = Account(data.get('firstname'), data.get('lastname'),  
-                         data.get('username'), data.get('email'), data.get('password'), 
+                         data.get('username'), data.get('email'), hashed_password, 
                          user_key)
     new_account._insert()
     return jsonify({'session_id': new_account.user_key,

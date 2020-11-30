@@ -35,7 +35,7 @@ import { Link as RouterLink } from 'react-router-dom';
             justifyContent: "center",
             textAlign: "center", 
             paddingRight: 100,
-            paddingLeft: 490,
+            paddingLeft: 400,
             border: 30
         },
         or: {
@@ -128,7 +128,7 @@ function LogIn(props) {
                 {/* <Link>Forgot Password?</Link> */}
                 <p className={classes.or}>or</p>
                 <p style={{color: grey[600]}}> 
-                    If you are new user? <Link component={RouterLink} to='/signup'>Sign Up Here</Link>
+                    If you are new user? <Link component={RouterLink} to='/chat'>Sign Up Here</Link>
                 </p>
             </Paper>           
             </Box>             

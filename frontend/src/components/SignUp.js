@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: "center",
             textAlign: "center",
             paddingRight: 100,
-            paddingLeft: 490
+            paddingLeft: 400
         },
         or: {
             fontSize: 15,

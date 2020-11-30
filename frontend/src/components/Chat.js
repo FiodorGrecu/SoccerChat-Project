@@ -5,6 +5,7 @@ import Icon from '@material-ui/core/Icon';
 import { MdSend } from "react-icons/md";
 // import Divider from 'material-ui/core/Divider';
 // import Typography from 'material-ui/core/Typography';
+import LogIn from './LogIn';
 
 
 
@@ -38,31 +39,40 @@ const useStyles = makeStyles((theme) => ({
 export default function Chat() {
   const classes = useStyles();
 
+  const gameId = 435;
+
+  function logOut() {
+    sessionStorage.clear();
+  }
+
   const session_id = sessionStorage.getItem("session_id");
 //   const [textInput, setTextInput] = useState("");
 //   const [inputs, setInputs] = useState([]); 
-  return (
-    <div>
-        <input  className={classes.textbox}>
-          
+  if (session_id) {     
+    return (
+      <div>
+        <input  className={classes.textbox}>         
         </input>
         <br></br>
       {/* <input onChange={event => setTextInput(event.target.value)}/> */}
 
       {/* <p>{textInput}</p> */}
-          {/* <Divider></Divider> */}
       <div className={classes.button}>
         <Button
             edge="end"
             variant="contained"
-            color="primary"
-            
+            color="primary"           
             endIcon={<MdSend>send</MdSend>}
-        >   
+            >   
         </Button>
+        <button onClick={logOut}>Log Out</button>
+            {/* endIcon={<MdSend >Log Out</MdSend>} */}
 
-      </div>
-      
+      </div>   
     </div>
-  );
+    );
+  } else {
+    return <LogIn/>
+  }
+
 }
