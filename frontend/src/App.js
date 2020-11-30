@@ -13,6 +13,7 @@ import SignUp from './components/SignUp';
 import Chat from './components/Chat';
 import Table from './components/Table';
 import Matches from './components/Matches';
+import Footer from './components/Footer';
 
 
 
@@ -63,7 +64,11 @@ function App() {
         {/* <Route path='/matches'>
           <Matches/>
         </Route> */}
-
+      <footer>
+        <div>
+          <Footer/>
+        </div>
+      </footer>
         
       </BrowserRouter>
       
