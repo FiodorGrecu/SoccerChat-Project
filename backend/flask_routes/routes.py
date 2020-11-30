@@ -136,7 +136,7 @@ def save_chat():
 def get_chat(fixture_id):
     data = request.get_json()
     user_chat = Chat.get_chat(fixture_id)
-    return jsonify({"chat": user_chat, data})
+    return jsonify({"chat": user_chat}, data)
 
 
 if __name__ == "__main__":
