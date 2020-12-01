@@ -70,8 +70,8 @@ const useStyles = makeStyles((theme) => ({
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
     const [username, setUserName] = useState("");
-    const [email, setEmail] = useState("");
     // const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);
 
