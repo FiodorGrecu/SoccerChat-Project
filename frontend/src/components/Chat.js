@@ -6,7 +6,7 @@ import { MdSend } from "react-icons/md";
 // import Divider from 'material-ui/core/Divider';
 // import Typography from 'material-ui/core/Typography';
 import LogIn from './LogIn';
-import Timestamp from 'react-time';
+import Timestamp from 'react-timestamp';
 import Chat from './Chat'
 
 
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function UserChat() {
+export default function UserChat({ user, setUser }) {
   const classes = useStyles();
 
   const gameId = 436;
@@ -72,21 +72,19 @@ export default function UserChat() {
     };
 
     const response = await fetch("http://localhost:5000/api/save_chat", configs)
-    const userData = await response.json();
-    
-
-
+    const chatData = await response.json();
   }
 
   function logOut() {
     sessionStorage.clear();
+    setUser({});
   }
 
-  const session_id = sessionStorage.getItem("session_id");
+  // const session_id = sessionStorage.getItem("session_id");
 //   const [textInput, setTextInput] = useState("");
 //   const [inputs, setInputs] = useState([]); 
-  if (userData.session_id) {     
-    sessionStorage.setItem("session_id", userData.session_id)
+  // if (userData.session_id) {     
+  //   sessionStorage.setItem("session_id", userData.session_id)
     return (
       <div>
         <button className={classes.signOutButton} onClick={logOut} >Log Out</button>
@@ -111,8 +109,8 @@ export default function UserChat() {
       </div>   
     </div>
     );
-  } else {
-    return <LogIn/>
-  }
+  // } else {
+  //   return <LogIn/>
+  // }
 
 }
