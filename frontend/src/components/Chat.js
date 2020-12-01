@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 150,
     
     width: 1000,
-    height: 300,
+    height: 50,
     // background: "transparent 90%"
   }
 
@@ -40,6 +40,7 @@ export default function Chat() {
   const classes = useStyles();
 
   const gameId = 435;
+  
 
   function logOut() {
     sessionStorage.clear();
@@ -51,6 +52,7 @@ export default function Chat() {
   if (session_id) {     
     return (
       <div>
+        <button className={classes.signOutButton} onClick={logOut} >Log Out</button><br/>
         <input  className={classes.textbox}>         
         </input>
         <br></br>
@@ -65,9 +67,7 @@ export default function Chat() {
             endIcon={<MdSend>send</MdSend>}
             >   
         </Button>
-        <button onClick={logOut}>Log Out</button>
-            {/* endIcon={<MdSend >Log Out</MdSend>} */}
-
+        
       </div>   
     </div>
     );
