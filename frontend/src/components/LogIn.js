@@ -67,7 +67,7 @@ import { Link as RouterLink } from 'react-router-dom';
           },
         }));
         
-function LogIn(props) {
+function LogIn({ setUser, setShowLogin }) {
     const classes = useStyles();
     // const [inputCheck, setInputCheck] = useState("undefined");
     const [username, setUsername] = useState("");
@@ -87,11 +87,13 @@ function LogIn(props) {
 
         const response = await fetch("http://localhost:5000/api/login", configs);
         const userData = await response.json();
+        console.log(userData);
         setIsError(false);
         // {"session_id":"9b74fea21bf01ef","username":"greg"}
         // save our session id in sessionStorage
         if (userData.session_id) {
             sessionStorage.setItem("session_id", userData.session_id);
+            setUser(userData);
             // can access these values any time in our app
             // through value = sessionStorage.getItem("session_id"); function
         } else {
@@ -128,7 +130,7 @@ function LogIn(props) {
                 {/* <Link>Forgot Password?</Link> */}
                 <p className={classes.or}>or</p>
                 <p style={{color: grey[600]}}> 
-                    If you are new user? <Link component={RouterLink} to='/chat'>Sign Up Here</Link>
+                    If you are new user? <Link component={RouterLink} onClick={e => setShowLogin(false)}>Sign Up Here</Link>
                 </p>
             </Paper>           
             </Box>             
