@@ -33,10 +33,10 @@ export default function ChatWithAuth() {
 
 const LoginOrSignup = ({setUser}) => {
   const [showLogin, setShowLogin] = useState(true);
-
+  console.log(setUser);
   return (
     <div>
-      { showLogin ? <LogIn setUser={setUser} setShowLogin={setShowLogin}/> : <SignUp/> }
+      { showLogin ? <LogIn setUser={setUser} setShowLogin={setShowLogin}/> : <SignUp setUser={setUser} setShowLogin={setShowLogin}/> }
     </div>
   )
 }

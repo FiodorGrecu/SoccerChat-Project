@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
         }
     }));
 
- function SignUp(props) {
+ function SignUp({ setUser, setShowLogin }) {
 
     const classes = useStyles();
     
@@ -92,7 +92,8 @@ const useStyles = makeStyles((theme) => ({
         const userData = await response.json();
 
         if (userData.session_id) {
-          sessionStorage.setItem("session_id", userData.session_id)  
+          sessionStorage.setItem("session_id", userData.session_id) 
+          setUser(userData);
         } else {
             setIsError(true);
             console.log(isError)
@@ -119,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
                
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
                 <br></br>
-                <p style={{color: grey[600]}}>Already registered? <Link component={RouterLink} to="login">Sign In</Link></p>
+                <p style={{color: grey[600]}}>Already registered? <Link component={RouterLink} onClick={e => setShowLogin(true)}>Sign In</Link></p>
                 { isError && <p>Sign Up Error.</p> }
             </Paper>           
             </Box>             

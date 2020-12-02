@@ -81,7 +81,7 @@ export default function ProminentAppBar() {
               Scores Soccer Results Standings and Chat
           </Typography>   
           </Box>
-          
+
           <IconButton  style={{ padding: 5,  color:"gray" }}>
             {/* <SportsSoccerIcon />             */}
           </IconButton>
@@ -91,11 +91,10 @@ export default function ProminentAppBar() {
             </Typography>
 
             <Typography className={classes.signin} variant="h8" noWrap edge="end">
-                    <Link style={{ padding: 20,  color:"gray"}} component={RouterLink} to="/login">Log In</Link>
-                    <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link> 
-                     <IconButton style={{fontSize:"large", color:"gray"}}> 
-                      <PersonOutlineIcon></PersonOutlineIcon>
-                    </IconButton>      
+                    {/* <Link style={{ padding: 20,  color:"gray"}} component={RouterLink} to="/login">Log In</Link> */}
+                    {/* <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link>  */}
+                     {/* <IconButton style={{fontSize:"large", color:"gray"}}>  */}
+                     {/*       */}
             </Typography>
             {/* <Divider className={classes.divider} orientation="vertical" /> */}
         </Toolbar>

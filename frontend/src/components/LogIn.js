@@ -74,7 +74,7 @@ function LogIn({ setUser, setShowLogin }) {
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);
     // api/login/
-
+    console.log(setUser, setShowLogin)
     async function sendLogin() {
         const data = JSON.stringify({'username': username, 'password': password});
         // create & send a POST request

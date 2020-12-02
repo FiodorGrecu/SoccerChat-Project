@@ -6,7 +6,6 @@ import { MdSend } from "react-icons/md";
 // import Divider from 'material-ui/core/Divider';
 // import Typography from 'material-ui/core/Typography';
 import LogIn from './LogIn';
-import Timestamp from 'react-timestamp';
 import Chat from './Chat'
 
 
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     paddingTop: 10,
     marginLeft: 150,
-    
+    size: 50,
     width: 1000,
     height: 50,
     // background: "transparent 90%"
@@ -45,24 +44,21 @@ export default function UserChat({ user, setUser }) {
 
   const gameId = 436;
   
-  const [time, setTime] = useState("");
-  const [username, setUserName] = useState("");
-  // const [account_id, setAccountId] = useState("");
-  const [account_id, setAccountId] = useState("");
-  const [game_id, setGameId] = useState("");
+  const [chats, setChats] = useState([]);
+  // const [game_id, setGameId] = useState(1);
   const [text, setText] = useState("");
   const [isError, setIsError] = useState(false);
   const [userData, setUserData] = useState({});
 
-  async function sendToOutput() {
+  async function saveMessage() {
     // const Timestamp = timestamp;
     // const output = await 
     const data = JSON.stringify({
-      'time': time,
+      'time': new Date().toString(),
       'text': text,
-      'username': username,
-      "account_id" : account_id,
-      "game_id" : game_id,
+      'username': user.username,
+      "account_id" : user.session_id,
+      "game_id" : gameId,
       // console.log(data)
     })
     const configs = {
@@ -73,6 +69,7 @@ export default function UserChat({ user, setUser }) {
 
     const response = await fetch("http://localhost:5000/api/save_chat", configs)
     const chatData = await response.json();
+    setChats(chatData.chat);
   }
 
   function logOut() {
@@ -90,6 +87,9 @@ export default function UserChat({ user, setUser }) {
         <button className={classes.signOutButton} onClick={logOut} >Log Out</button>
         
         <br/>
+        {/* <input  className={classes.messages}>         
+        </input> */}
+
         <input  className={classes.textbox}>         
         </input>
         <br></br>
@@ -98,7 +98,7 @@ export default function UserChat({ user, setUser }) {
       {/* <p>{textInput}</p> */}
       <div className={classes.button}>
         <Button
-            onClick={sendToOutput()}
+            onClick={saveMessage}
             edge="end"
             variant="contained"
             color="primary"           

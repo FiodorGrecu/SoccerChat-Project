@@ -131,13 +131,14 @@ def save_chat():
     data = request.get_json()
     chat = Chat(data.get('time'), data.get('text'), data.get('account_id'), data.get('game_id'))
     chat.save()
-    return jsonify({"chat": data})
+    new_chat = Chat.get_chat(data.get('game_id'))
+    return jsonify({"chat": new_chat})
 
-@app.route('/api/get_chat/<fixture_id>', methods=['POST'])
+@app.route('/api/get_chat/<fixture_id>', methods=['GET'])
 def get_chat(fixture_id):
     data = request.get_json()
-    user_chat = Chat.get_chat(fixture_id)
-    return jsonify({"chat": user_chat}, data)
+    new_chat = Chat.get_chat(fixture_id)
+    return jsonify({"chat": new_chat}, data)
 
 
 if __name__ == "__main__":
