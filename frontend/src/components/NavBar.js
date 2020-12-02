@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(5),
-    color: 'grey'
+    color: 'white'
   },
   toolbar: {
     minHeight: 130,
@@ -79,10 +79,9 @@ export default function ProminentAppBar() {
           <Box className={classes.appdiscription}>   
           <Typography>
               Scores Soccer Results Standings and Chat
-          </Typography>
-          
+          </Typography>   
           </Box>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             // color="secondary"
@@ -90,13 +89,11 @@ export default function ProminentAppBar() {
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
-
+          </IconButton> */}
+          
           <IconButton  style={{ padding: 5,  color:"gray" }}>
             {/* <SportsSoccerIcon />             */}
           </IconButton>
-
-            
 
             <Typography className={classes.title} variant="h3" noWrap>
                 SoccerChat
