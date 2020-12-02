@@ -81,15 +81,6 @@ export default function ProminentAppBar() {
               Scores Soccer Results Standings and Chat
           </Typography>   
           </Box>
-          {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            // color="secondary"
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton> */}
           
           <IconButton  style={{ padding: 5,  color:"gray" }}>
             {/* <SportsSoccerIcon />             */}
