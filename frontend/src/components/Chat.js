@@ -70,11 +70,18 @@ export default function UserChat({ user, setUser }) {
     const response = await fetch("http://localhost:5000/api/save_chat", configs)
     const chatData = await response.json();
     setChats(chatData.chat);
+    setText(chatData.text);
   }
 
   function logOut() {
     sessionStorage.clear();
     setUser({});
+  }
+  
+  const _handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      console.log('do validate');
+    }
   }
 
   // const session_id = sessionStorage.getItem("session_id");
@@ -98,6 +105,7 @@ export default function UserChat({ user, setUser }) {
       {/* <p>{textInput}</p> */}
       <div className={classes.button}>
         <Button
+            // onKeyDown={_handleKeyDown(saveMessage)}
             onClick={saveMessage}
             edge="end"
             variant="contained"
