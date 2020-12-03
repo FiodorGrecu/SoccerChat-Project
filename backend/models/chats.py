@@ -6,7 +6,7 @@ from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
-print(DATAPATH)
+# print(DATAPATH)
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 API_KEY = "804b1594a5msh69900911a788156p125a69jsna7c589797665"
 
@@ -88,6 +88,6 @@ class  Chat:
 if __name__ == '__main__':
 
 
-    user_chat = Chat.get_chat('592215')
-    
-    pprint(user_chat)
+    # user_chat = Chat.get_chat('592215')
+    getchat = Chat.get_chat('436')
+    pprint(getchat)

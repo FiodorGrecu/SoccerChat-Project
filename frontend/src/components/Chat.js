@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
@@ -50,7 +50,18 @@ export default function UserChat({ user, setUser }) {
   const [isError, setIsError] = useState(false);
   const [userData, setUserData] = useState({});
 
+  useEffect( () => {
+    async function getChats() {
+      const response = await fetch(`http://localhost:5000/api/get_chat/${gameId}`)
+      const chatData = await response.json();
+      console.log(chatData);
+      setChats(chatData.chat);
+    }  
+    getChats();
+  }, []);
+
   async function saveMessage() {
+    console.log(text, chats, isError, userData)
     // const Timestamp = timestamp;
     // const output = await 
     const data = JSON.stringify({
@@ -59,8 +70,9 @@ export default function UserChat({ user, setUser }) {
       'username': user.username,
       "account_id" : user.session_id,
       "game_id" : gameId,
-      // console.log(data)
     })
+    console.log(data)
+
     const configs = {
       method:"POST",
       body: data,
@@ -69,8 +81,10 @@ export default function UserChat({ user, setUser }) {
 
     const response = await fetch("http://localhost:5000/api/save_chat", configs)
     const chatData = await response.json();
+    console.log(chatData)
     setChats(chatData.chat);
-    setText(chatData.text);
+    // setText(chatData.text);
+    // console.log(chatData.text)
   }
 
   function logOut() {
@@ -96,11 +110,10 @@ export default function UserChat({ user, setUser }) {
         <br/>
         {/* <input  className={classes.messages}>         
         </input> */}
-
-        <input  className={classes.textbox}>         
-        </input>
+      
+        <input  className={classes.textbox} onChange={event => setText(event.target.value)}/> 
         <br></br>
-      {/* <input onChange={event => setTextInput(event.target.value)}/> */}
+      {/* <input /> */}
 
       {/* <p>{textInput}</p> */}
       <div className={classes.button}>
@@ -113,7 +126,7 @@ export default function UserChat({ user, setUser }) {
             endIcon={<MdSend>send</MdSend>}
             >   
         </Button>
-        
+      {chats.map(message => <p>{message[4]}</p>)}
       </div>   
     </div>
     );

@@ -14,6 +14,7 @@ import SignUp from './SignUp';
 
 export default function ChatWithAuth() {
   const [user, setUser] = useState({});
+  
 
   console.log(user);
 

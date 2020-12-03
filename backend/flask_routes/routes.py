@@ -129,6 +129,7 @@ def fixture_lineups(fixture_id):
 @app.route('/api/save_chat', methods=['POST'])
 def save_chat():
     data = request.get_json()
+    print(data)
     chat = Chat(data.get('time'), data.get('text'), data.get('account_id'), data.get('game_id'))
     chat.save()
     new_chat = Chat.get_chat(data.get('game_id'))
@@ -136,9 +137,9 @@ def save_chat():
 
 @app.route('/api/get_chat/<fixture_id>', methods=['GET'])
 def get_chat(fixture_id):
-    data = request.get_json()
+    # data = request.get_json()
     new_chat = Chat.get_chat(fixture_id)
-    return jsonify({"chat": new_chat}, data)
+    return jsonify({"chat": new_chat})
 
 
 if __name__ == "__main__":
