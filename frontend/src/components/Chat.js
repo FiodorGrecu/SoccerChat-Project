@@ -50,6 +50,9 @@ export default function UserChat({ user, setUser }) {
   const [isError, setIsError] = useState(false);
   const [userData, setUserData] = useState({});
 
+  
+
+
   useEffect( () => {
     async function getChats() {
       const response = await fetch(`http://localhost:5000/api/get_chat/${gameId}`)
@@ -126,7 +129,8 @@ export default function UserChat({ user, setUser }) {
             endIcon={<MdSend>send</MdSend>}
             >   
         </Button>
-      {chats.map(message => <p>{message[4]}</p>)}
+      
+      {chats.map(message => <p>{message[4]}</p>)} {chats.map(message => <p>{message[1]}</p>)}
       </div>   
     </div>
     );
