@@ -13,7 +13,9 @@ import Chat from './Chat';
 import SignUp from './SignUp';
 
 export default function ChatWithAuth() {
-  const [user, setUser] = useState({});
+  const savedData = sessionStorage.getItem('session_id');
+  const savedUser = JSON.parse(savedData)
+  const [user, setUser] = useState(savedUser || {});
   
 
   console.log(user);
@@ -37,7 +39,8 @@ const LoginOrSignup = ({setUser}) => {
   console.log(setUser);
   return (
     <div>
-      { showLogin ? <LogIn setUser={setUser} setShowLogin={setShowLogin}/> : <SignUp setUser={setUser} setShowLogin={setShowLogin}/> }
+      { showLogin ? <LogIn setUser={setUser} setShowLogin={setShowLogin}/> : 
+                    <SignUp setUser={setUser} setShowLogin={setShowLogin}/> }
     </div>
   )
 }

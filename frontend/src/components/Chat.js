@@ -7,6 +7,7 @@ import { MdSend } from "react-icons/md";
 // import Typography from 'material-ui/core/Typography';
 import LogIn from './LogIn';
 import Chat from './Chat'
+import Card from '@material-ui/core/Card';
 
 
 
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: 'aliceblue',
     width: '100%',
+
   },
 
   button: {
@@ -40,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     // flex: 1,
     marginTop: 10,
     marginLeft: 350,
-    color: 'white',
+    color: 'grey',
     fontSize: 15,
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
     fontWeight: "bold",
@@ -48,12 +50,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:'flex-start'
   },
   date: {
-    fontStyle: 'italic',
-    color: 'yellow',
+    // fontStyle: 'italic',
+    color: 'blue',
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
-    fontWeight: "bold",
-    fontSize: 15,
+    // fontWeight: "bold",
+    fontSize: 10,
   },
+  card: {
+    minWidth: 275,
+    margin: 220,
+    marginTop: 20,
+    backgroundColor: '#F0F8FF',
+  }
   
 
 
@@ -66,9 +74,10 @@ export default function UserChat({ user, setUser }) {
   
   const [chats, setChats] = useState([]);
   // const [game_id, setGameId] = useState(1);
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [isError, setIsError] = useState(false);
   const [userData, setUserData] = useState({});
+  
 
   
 
@@ -95,17 +104,16 @@ export default function UserChat({ user, setUser }) {
       "game_id" : gameId,
     })
     console.log(data)
-
     const configs = {
       method:"POST",
       body: data,
       headers: {"Content-Type": "application/json"}
     };
-
     const response = await fetch("http://localhost:5000/api/save_chat", configs)
     const chatData = await response.json();
     console.log(chatData)
     setChats(chatData.chat);
+    setText('');
     // setText(chatData.text);
     // console.log(chatData.text)
   }
@@ -115,9 +123,13 @@ export default function UserChat({ user, setUser }) {
     setUser({});
   }
   
+  function getTime(date) {
+    return new Date(date).toLocaleTimeString()
+  }
+
   const _handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      console.log('do validate');
+      saveMessage() 
     }
   }
 
@@ -134,7 +146,11 @@ export default function UserChat({ user, setUser }) {
         {/* <input  className={classes.messages}>         
         </input> */}
       
-        <input  className={classes.textbox} onChange={event => setText(event.target.value)}/> 
+        <input  className={classes.textbox} 
+                value={text} 
+                onChange={event => setText(event.target.value)} 
+                onKeyDown={_handleKeyDown} /> 
+
         <br></br>
       {/* <input /> */}
 
@@ -142,7 +158,7 @@ export default function UserChat({ user, setUser }) {
       <div className={classes.button}>
         <Button
             // onKeyDown={_handleKeyDown(saveMessage)}
-            onClick={saveMessage}
+            onClick={saveMessage} 
             edge="end"
             variant="contained"
             color="primary"           
@@ -150,7 +166,13 @@ export default function UserChat({ user, setUser }) {
             >   
         </Button>
       </div>
-      {chats.map(message => <p className={classes.text}>{message[4]} <p className={classes.date}>{message[1]}</p></p>)} 
+      <div>
+        <Card className={classes.card}>
+          {chats.map(message => <p className={classes.text}>{message[4]} 
+                                <span className={classes.date}>  {getTime  (message[1])}
+                                </span></p>)} 
+        </Card>
+      </div>
       {/* {chats.map(message => )}  */}
          {/* <p className={classes.date}>{message[1]}</p> */}
     </div>

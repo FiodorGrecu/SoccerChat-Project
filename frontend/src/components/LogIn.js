@@ -87,12 +87,13 @@ function LogIn({ setUser, setShowLogin }) {
 
         const response = await fetch("http://localhost:5000/api/login", configs);
         const userData = await response.json();
+
         console.log(userData);
         setIsError(false);
         // {"session_id":"9b74fea21bf01ef","username":"greg"}
         // save our session id in sessionStorage
         if (userData.session_id) {
-            sessionStorage.setItem("session_id", userData.session_id);
+            sessionStorage.setItem("session_id", JSON.stringify(userData));
             setUser(userData);
             // can access these values any time in our app
             // through value = sessionStorage.getItem("session_id"); function
