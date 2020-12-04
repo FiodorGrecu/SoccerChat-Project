@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 1050, 
   },
   signOutButton: {
-    position: "flex-end",
+    edge: "flex-end",
   },
 
   textbox: {
@@ -35,7 +35,14 @@ const useStyles = makeStyles((theme) => ({
     width: 1000,
     height: 50,
     // background: "transparent 90%"
+  },
+  messages: {
+    color: 'white',
+    fontFamily: 'Apple',
+    backgroundColor: 'transparent',
   }
+  
+
 
 }));
 
@@ -130,7 +137,7 @@ export default function UserChat({ user, setUser }) {
             >   
         </Button>
       
-      {chats.map(message => <p>{message[4]}</p>)} {chats.map(message => <p>{message[1]}</p>)}
+      {chats.map(message => <p className={classes.messages}>{message[4]} <p className={classes.date}>{message[1]}</p></p>)} 
       </div>   
     </div>
     );
