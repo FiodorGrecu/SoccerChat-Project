@@ -34,13 +34,26 @@ const useStyles = makeStyles((theme) => ({
     size: 50,
     width: 1000,
     height: 50,
-    // background: "transparent 90%"
+    
   },
-  messages: {
+  text: {
+    // flex: 1,
+    marginTop: 10,
+    marginLeft: 350,
     color: 'white',
-    fontFamily: 'Apple',
-    backgroundColor: 'transparent',
-  }
+    fontSize: 15,
+    fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
+    fontWeight: "bold",
+    alignItems:'center',
+    justifyContent:'flex-start'
+  },
+  date: {
+    fontStyle: 'italic',
+    color: 'yellow',
+    fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
+    fontWeight: "bold",
+    fontSize: 15,
+  },
   
 
 
@@ -136,9 +149,10 @@ export default function UserChat({ user, setUser }) {
             endIcon={<MdSend>send</MdSend>}
             >   
         </Button>
-      
-      {chats.map(message => <p className={classes.messages}>{message[4]} <p className={classes.date}>{message[1]}</p></p>)} 
-      </div>   
+      </div>
+      {chats.map(message => <p className={classes.text}>{message[4]} <p className={classes.date}>{message[1]}</p></p>)} 
+      {/* {chats.map(message => )}  */}
+         {/* <p className={classes.date}>{message[1]}</p> */}
     </div>
     );
   // } else {
