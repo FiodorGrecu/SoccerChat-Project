@@ -118,11 +118,12 @@ function LogIn({ setUser, setShowLogin }) {
                 <h3 className={classes.signin} > Sign In </h3>
                 <Input id="username" onChange={e => setUsername(e.target.value)} 
                        placeholder="Username or Email"
-                >Hey</Input>
+                ></Input>
                 <br/>
                 <Input id="password" type="password" 
                        onChange={e => setPassword(e.target.value)} 
                        placeholder="Password"
+                       label="Outlined" variant="outlined"
                 ></Input>
                 <br/>
                 <Button  className={classes.button} onClick={e => sendLogin()} color="#1A91DA" variant="contained">Log In</Button>

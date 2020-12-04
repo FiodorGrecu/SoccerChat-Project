@@ -8,6 +8,8 @@ import { MdSend } from "react-icons/md";
 import LogIn from './LogIn';
 import Chat from './Chat'
 import Card from '@material-ui/core/Card';
+import Input from '@material-ui/core/Input';
+
 
 
 
@@ -20,28 +22,31 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button: {
-    margin: theme.spacing(2),
+    margin: theme.spacing(1),
     marginLeft: 1050, 
+    marginTop: 10,
   },
   signOutButton: {
     edge: "flex-end",
   },
 
-  textbox: {
-    marginTop: 10,
-    backgroundColor: 'lightgrey',
+  input: {
+    marginTop: 5,
+    backgroundColor: 'aliceblue',
     justifyContent: 'center',
     paddingTop: 10,
-    marginLeft: 150,
+    marginLeft: 50,
     size: 50,
-    width: 1000,
-    height: 50,
+    width: 760,
+    height: 30,
+    fontSize: 20,
     
   },
   text: {
     // flex: 1,
+    borderRadius: 41,
     marginTop: 10,
-    marginLeft: 350,
+    marginLeft: 50,
     color: 'grey',
     fontSize: 15,
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
@@ -55,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
     // fontWeight: "bold",
     fontSize: 10,
+    marginLeft: 10,
   },
   card: {
     minWidth: 275,
@@ -143,31 +149,33 @@ export default function UserChat({ user, setUser }) {
         <button className={classes.signOutButton} onClick={logOut} >Log Out</button>
         
         <br/>
-        {/* <input  className={classes.messages}>         
-        </input> */}
-      
-        <input  className={classes.textbox} 
-                value={text} 
-                onChange={event => setText(event.target.value)} 
-                onKeyDown={_handleKeyDown} /> 
+      <Input label="Outlined" variant="outlined"></Input> <br></br>
+        
 
         <br></br>
       {/* <input /> */}
 
       {/* <p>{textInput}</p> */}
       <div className={classes.button}>
-        <Button
-            // onKeyDown={_handleKeyDown(saveMessage)}
-            onClick={saveMessage} 
-            edge="end"
-            variant="contained"
-            color="primary"           
-            endIcon={<MdSend>send</MdSend>}
-            >   
-        </Button>
+        
       </div>
       <div>
         <Card className={classes.card}>
+          
+          <input  className={classes.input} 
+                value={text} 
+                onChange={event => setText(event.target.value)} 
+                onKeyDown={_handleKeyDown} /> 
+        <Button
+              // onKeyDown={_handleKeyDown(saveMessage)}
+              onClick={saveMessage} 
+              edge="end"
+              variant="contained"
+              color="primary"           
+              endIcon={<MdSend>send</MdSend>}
+              >   
+          </Button>
+
           {chats.map(message => <p className={classes.text}>{message[4]} 
                                 <span className={classes.date}>  {getTime  (message[1])}
                                 </span></p>)} 
