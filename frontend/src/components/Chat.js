@@ -27,8 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   signOutButton: {
-    edge: "flex-end",
-
+    justifyContent: 'center',
+    width: '100%',
+    // marginLeft: 170, 
+    borderRadius: 4,
+    
   },
 
   input: {
@@ -41,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     width: 760,
     height: 30,
     fontSize: 20,
+    borderRadius: 4,
     // placeholder: 'Your text here'
   },
   text: {
@@ -147,7 +151,7 @@ export default function UserChat({ user, setUser }) {
 
     return (
       <div>
-        <button className={classes.signOutButton} onClick={logOut}>Log Out</button>
+        <Button variant="contained" color="primary" className={classes.signOutButton} onClick={logOut}>Log Out</Button>
         
         {/* <br/> */}
 
