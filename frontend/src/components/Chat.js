@@ -139,10 +139,18 @@ export default function UserChat({ user, setUser }) {
     return new Date(date).toLocaleTimeString()
   }
 
+  function getDay(date) {
+    return new Date(date).getDay()
+  }
+
   const _handleKeyDown = (e) => {
     if (e.key === "Enter") {
       saveMessage() 
     };
+    // const InputExampleFluid = () => (
+    //   <Input fluid icon='search' placeholder='Search...' />
+    // )
+
   }
 
     return (
@@ -180,7 +188,7 @@ export default function UserChat({ user, setUser }) {
           {/* <Divider /> */}
 
           {chats.map(message => <p className={classes.text}>{message[4]} 
-                                <span className={classes.date}>  {getTime(message[1])}
+                                <span className={classes.date}>  {getTime(message[1])} {getDay([3])}
                                 </span></p>)} 
         </Card>
       </div>
