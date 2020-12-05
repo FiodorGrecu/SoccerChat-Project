@@ -9,9 +9,7 @@ import LogIn from './LogIn';
 import Chat from './Chat'
 import Card from '@material-ui/core/Card';
 import Input from '@material-ui/core/Input';
-
-
-
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,11 +21,14 @@ const useStyles = makeStyles((theme) => ({
 
   button: {
     margin: theme.spacing(1),
-    marginLeft: 1050, 
-    marginTop: 10,
+    marginLeft: 170, 
+    marginTop: 2,
+    width: 500,
   },
+
   signOutButton: {
     edge: "flex-end",
+
   },
 
   input: {
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     width: 760,
     height: 30,
     fontSize: 20,
-    
+    // placeholder: 'Your text here'
   },
   text: {
     // flex: 1,
@@ -56,14 +57,15 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     // fontStyle: 'italic',
-    color: 'blue',
+    color: '#3C185C',
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
-    // fontWeight: "bold",
+    fontWeight: "bold",
     fontSize: 10,
     marginLeft: 10,
   },
   card: {
     minWidth: 275,
+    minHeight: 500,
     margin: 220,
     marginTop: 20,
     backgroundColor: '#F0F8FF',
@@ -136,26 +138,21 @@ export default function UserChat({ user, setUser }) {
   const _handleKeyDown = (e) => {
     if (e.key === "Enter") {
       saveMessage() 
-    }
+    };
+    // const InputExampleFluid = () => (
+    //   <Input fluid icon='search' placeholder='Search...' />
+    // )
+
   }
 
-  // const session_id = sessionStorage.getItem("session_id");
-//   const [textInput, setTextInput] = useState("");
-//   const [inputs, setInputs] = useState([]); 
-  // if (userData.session_id) {     
-  //   sessionStorage.setItem("session_id", userData.session_id)
     return (
       <div>
-        <button className={classes.signOutButton} onClick={logOut} >Log Out</button>
+        <button className={classes.signOutButton} onClick={logOut}>Log Out</button>
         
-        <br/>
-      <Input label="Outlined" variant="outlined"></Input> <br></br>
-        
+        {/* <br/> */}
 
-        <br></br>
       {/* <input /> */}
 
-      {/* <p>{textInput}</p> */}
       <div className={classes.button}>
         
       </div>
@@ -165,19 +162,25 @@ export default function UserChat({ user, setUser }) {
           <input  className={classes.input} 
                 value={text} 
                 onChange={event => setText(event.target.value)} 
-                onKeyDown={_handleKeyDown} /> 
+                onKeyDown={_handleKeyDown} 
+                
+                /> 
+        <Divider />
+                {/* <Input fluid icon='search' placeholder='Search...' /> */}
         <Button
-              // onKeyDown={_handleKeyDown(saveMessage)}
+              className={classes.button}
               onClick={saveMessage} 
               edge="end"
               variant="contained"
               color="primary"           
-              endIcon={<MdSend>send</MdSend>}
-              >   
+              endIcon={<MdSend>send</MdSend>} 
+              >
+
           </Button>
+          {/* <Divider /> */}
 
           {chats.map(message => <p className={classes.text}>{message[4]} 
-                                <span className={classes.date}>  {getTime  (message[1])}
+                                <span className={classes.date}>  {getTime(message[1])}
                                 </span></p>)} 
         </Card>
       </div>
