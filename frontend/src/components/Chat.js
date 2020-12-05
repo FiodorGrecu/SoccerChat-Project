@@ -143,10 +143,6 @@ export default function UserChat({ user, setUser }) {
     if (e.key === "Enter") {
       saveMessage() 
     };
-    // const InputExampleFluid = () => (
-    //   <Input fluid icon='search' placeholder='Search...' />
-    // )
-
   }
 
     return (
