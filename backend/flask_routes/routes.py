@@ -11,13 +11,12 @@ from models.last5 import last5
 from models.onegame import onegame
 
 
+
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 key =  "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"
 
 
 # key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
-
-
 
 app = Flask(__name__)
 CORS(app)
@@ -141,7 +140,10 @@ def get_chat(fixture_id):
     new_chat = Chat.get_chat(fixture_id)
     return jsonify({"chat": new_chat})
 
-
+@app.route('/api/table/<league_id>', methods=['GET'])
+def get_table(league_id):
+    table = Team.league_table(league_id)
+    return jsonify(table)
 
 if __name__ == "__main__":
     app.run()#debug=True)
