@@ -142,5 +142,6 @@ def get_chat(fixture_id):
     return jsonify({"chat": new_chat})
 
 
+
 if __name__ == "__main__":
     app.run()#debug=True)

@@ -124,20 +124,6 @@ class Game:
 
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
-        # team1_name = data['api']['teams'][0]['name']
-        # round = data['api']['teams'][0]
-        # round = data['api']['teams']
-        # pprint(data)
-        # home_team = data['api']['fixtures'][28]['homeTeam']['team_name']
-        # h_t_logo = data['api']['fixtures'][28]['homeTeam']['logo']
-        # away_team = data['api']['fixtures'][28]['awayTeam']['team_name']
-        # a_t_logo = data['api']['fixtures'][28]['awayTeam']['logo']
-        
-        # game1 = {"team_id": home_team, 
-        #         "home_logo": h_t_logo,  
-        #         "team_id": away_team, 
-        #         "away_logo": a_t_logo}
-        # pprint(data)
         return((data))
         
     

@@ -158,15 +158,13 @@ class Team:
 
     @classmethod
     def league_table(cls, league_id):
-        url = "https://api-football-beta.p.rapidapi.com/standings"
+        url = f"https://api-football-beta.p.rapidapi.com/standings"
 
-        querystring = {"season":"2020","league": league_id}
-
+        querystring = {"season":"2020","league": {league_id}}
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
             'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
             }
-
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
         return(data)
