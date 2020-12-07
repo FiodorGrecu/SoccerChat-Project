@@ -66,17 +66,8 @@ export default function CenteredGrid(props) {
 
   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
-  // let test = useParams();
-  // const gameNum = 436;
-  // console.log(test);
+
   const unixTimestamp = 1604752200;
-
-  // const date = new Date(1604752200).toLocaleDateString("en-US");
-
-  // const date = new Date(unixTimestamp*1000);
-  // const hours = date.getHours();
-  // const minutes = "0" + date.getMinutes();
-  // const time = hours + ":" + minutes.substr(-2);
 
   useEffect(() => {
     async function gameDetails() {
@@ -88,10 +79,7 @@ export default function CenteredGrid(props) {
         setFixture(data.fixtures.response[0] || {})
       };
     }
-    // if (gameNum) {
-    //   gameDetails();
-      
-    // }
+  
     gameDetails();
 
   }, [] )
