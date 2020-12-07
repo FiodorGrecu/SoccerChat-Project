@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import { Box } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,9 +50,8 @@ export default function SimplePaper() {
         </Paper>
         <Paper elevation={4} className={classes.paper6}>
             Team1 vs Team2
-        </Paper>
-
-     
+        </Paper>        
+        <Divider/>{/*it is funny hoe this creteds anothe paper*/}
      
     </div>
   );

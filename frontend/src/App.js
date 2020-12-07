@@ -15,11 +15,21 @@ import Table from './components/Table';
 import Matches from './components/Matches';
 import Footer from './components/Footer';
 import ChatSection from'./components/ChatSection';
+// import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
+
+
 
 
 function App() {
+
+  // const { containerProps, indicatorEl } = useLoading({
+  //   loading: true,
+  // });
+
   return (
+
     <div >
+    {/* <section {...containerProps}>{indicatorEl}</section>; */}
       <BrowserRouter>
         <header >
           <div>
@@ -75,5 +85,11 @@ function App() {
     </div>
   );
 }
+
+// ReactDOM.render(
+//   <LoaderProvider indicator={<BallTriangle width="50" />}>
+//     <App />
+//   </LoaderProvider>
+// );
 
 export default App;

@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: (500),
         fontSize: theme.spacing(2),
         fontFamily: "Helvetica",
-        backgroundColor: "#F0E4C8"
+        backgroundColor: "alicebue"
     },
     box: {
         paddingTop: theme.spacing(1.4),

@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
 
   button: {
     margin: theme.spacing(1),
-    marginLeft: 170, 
+    marginLeft: 200, 
     marginTop: 2,
-    width: 500,
+    width: '50%',
     // backgroundColor : '#3C185C',
     backgroundColor : "#1A91DA",
     
@@ -49,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
     width: 760,
     height: 30,
     fontSize: 20,
-    borderRadius: 4,
-    
+    // borderRadius: 4,
+    border: 'none'
   },
   text: {
     // flex: 1,
