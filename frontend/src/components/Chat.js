@@ -24,7 +24,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 170, 
     marginTop: 2,
     width: 500,
-    backgroundColor : '#3C185C'
+    // backgroundColor : '#3C185C',
+    backgroundColor : "#1A91DA",
+    
   },
 
   signOutButton: {
@@ -40,13 +42,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'aliceblue',
     justifyContent: 'center',
     paddingTop: 10,
-    marginLeft: 50,
+    marginLeft: 77,
+    // fontFamily: "Helvetica Neue",
+    
     size: 50,
     width: 760,
     height: 30,
     fontSize: 20,
     borderRadius: 4,
-    // placeholder: 'Your text here'
+    
   },
   text: {
     // flex: 1,
@@ -168,11 +172,11 @@ export default function UserChat({ user, setUser }) {
       <div>
         <Card className={classes.card}>
           
-          <input  className={classes.input} 
+          <Input  className={classes.input} 
                 value={text} 
                 onChange={event => setText(event.target.value)} 
                 onKeyDown={_handleKeyDown} 
-                
+                placeholder={"Your message here"}
                 /> 
         <Divider />
                 {/* <Input fluid icon='search' placeholder='Search...' /> */}
