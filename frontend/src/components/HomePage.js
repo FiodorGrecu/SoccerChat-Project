@@ -6,13 +6,15 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 
     root: {
-
+        // justifyContent: 'center',
+        // alignItems: 'center',
     },
     headerText: {
         color: 'white',
         fontFamily: 'Roboto',
         justifyContent: 'center',
-        marginLeft: 500,
+        alignItems: 'center',
+        marginLeft: 530,
         marginTop: 400,
     }
   
