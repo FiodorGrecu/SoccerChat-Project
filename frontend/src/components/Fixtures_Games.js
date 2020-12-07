@@ -90,16 +90,15 @@ export default function SimplePaper() {
     getFixtures();
   }, [] )
 
-
+  
   const output = fixtures.map(fixture =>(
-      <React.Fragment className={classes.reactFragment}>
-          {/* <p>Calendar</p> */}
+    <React.Fragment className={classes.reactFragment}>
           <Box className={classes.box} >
           <Grid container spacing={1}>
                 {/* <Divider/> */}
             <Grid sitem xs={3}>
               <Link to={`/game/${fixture.fixture_id}`}>
-                <Paper elevation={1} className={classes.paper} style={{alignSelf: 'flex-end'}}> 
+                <Paper elevation={10} className={classes.paper} style={{alignSelf: 'flex-end'}}> 
                       { fixture.homeTeam.team_name }
                       <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:3, paddingRight:3}}/>
                       <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
