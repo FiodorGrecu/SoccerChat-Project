@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+// import View from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import games from "./teams";
@@ -14,17 +15,21 @@ import Date from 'react-moment';
 // import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
+import { icons } from 'react-icons/lib';
 
 const useStyles = makeStyles((theme) => ({
   leftSide: {
-    // flexGrow: 1,
-    // flexDirection: 'row',
+    flex: 1,
+    flexDirection: 'row',
     backgroundColor: 'aliceblue',
-    direction: "column" ,
+    // direction: "column" ,
+    alignItems: 'flex-start !important'
   },
   rightSide: {
     // direction: "row",
-    // flexDirection: "row"
+    flex: 1,
+    flexDirection: "row",
+    alignItems: 'flex-end !important'
 
   },
 
@@ -134,7 +139,9 @@ export default function CenteredGrid(props) {
   return (
     <div className={classes.leftSide} >
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
-    
+    {/* <View style={{flex: 1, flexDirection: 'row'}}>
+      <View style={{flex:1, alignItems:'center'}} > */}
+
         <React.Fragment>
 
           <Grid container spacing={1}>
@@ -160,7 +167,7 @@ export default function CenteredGrid(props) {
             
             {/* <Grid item xs={2}>
                 <Paper className={classes.score}>Score</Paper>
-            </Grid> */}
+              </Grid> */}
 
             {/* <Grid item xs={5}>                 */}
               <Grid item xs={15}>
@@ -187,11 +194,15 @@ export default function CenteredGrid(props) {
             </Grid>           
           </Grid>
         </React.Fragment>
+      {/* </View> */}
+          {/* <View style={{flex:1, alignItems:'center'}} > */}
 
-        <div className={classes.rightSide} >
-                <ChatSection gameId={gameNum}/>
-        </div>
+          <div className={classes.rightSide} >
+                  <ChatSection gameId={gameNum}/>
+          </div>
+          {/* </View> */}
 
+      {/* </View> */}
     </div>
   );
 }
