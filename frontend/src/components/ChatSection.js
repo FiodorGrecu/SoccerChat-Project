@@ -12,7 +12,7 @@ import LogIn from './LogIn'
 import Chat from './Chat';
 import SignUp from './SignUp';
 
-export default function ChatWithAuth() {
+export default function ChatWithAuth({gameId}) {
   const savedData = sessionStorage.getItem('session_id');
   const savedUser = JSON.parse(savedData)
   const [user, setUser] = useState(savedUser || {});
@@ -23,7 +23,7 @@ export default function ChatWithAuth() {
   if (user.username) {
   return (
     <div>
-      <Chat user={user} setUser={setUser}/>
+      <Chat user={user} setUser={setUser}  gameId={gameId}/>
     </div>
   )} else {
     return (

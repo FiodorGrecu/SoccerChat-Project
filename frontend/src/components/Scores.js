@@ -51,7 +51,8 @@ export default function SimplePaper() {
         <Paper elevation={4} className={classes.paper6}>
             Team1 vs Team2
         </Paper>        
-        <Divider/>{/*it is funny hoe this creteds anothe paper*/}
+        {/* it is funny hoe this creteds anothe paper */}
+        <Divider/>  
      
     </div>
   );

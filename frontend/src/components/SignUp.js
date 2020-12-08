@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
         const userData = await response.json();
 
         if (userData.session_id) {
-          sessionStorage.setItem("session_id", userData.session_id) 
+          sessionStorage.setItem("session_id", JSON.stringify(userData)) 
           setUser(userData);
         } else {
             setIsError(true);

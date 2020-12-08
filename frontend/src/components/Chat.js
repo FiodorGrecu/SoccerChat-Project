@@ -14,8 +14,10 @@ import { Divider } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+
     backgroundColor: 'aliceblue',
     width: '100%',
+    // flexDirection: 'row'
 
   },
 
@@ -84,19 +86,17 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function UserChat({ user, setUser }) {
+export default function UserChat({ user, setUser, gameId }) {
   const classes = useStyles();
 
-  const gameId = 436;
-  
+  // const gameId = 436;
+
   const [chats, setChats] = useState([]);
   // const [game_id, setGameId] = useState(1);
   const [text, setText] = useState('');
+  
   const [isError, setIsError] = useState(false);
   const [userData, setUserData] = useState({});
-  
-
-  
 
 
   useEffect( () => {
@@ -166,9 +166,6 @@ export default function UserChat({ user, setUser }) {
 
       {/* <input /> */}
 
-      <div className={classes.button}>
-        
-      </div>
       <div>
         <Card className={classes.card}>
           
@@ -193,6 +190,7 @@ export default function UserChat({ user, setUser }) {
           {/* <Divider /> */}
 
           {chats.map(message => <p className={classes.text}>{message[4]} 
+                                {message[5]}
                                 <span className={classes.date}>  {getTime(message[1])} {getDay([3])}
                                 </span></p>)} 
         </Card>
@@ -201,8 +199,5 @@ export default function UserChat({ user, setUser }) {
          {/* <p className={classes.date}>{message[1]}</p> */}
     </div>
     );
-  // } else {
-  //   return <LogIn/>
-  // }
-
+  
 }

@@ -13,13 +13,21 @@ import Timestamp from 'react-moment';
 // import background from '/public.background.png';
 // import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
+import ChatSection from './ChatSection';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  leftSide: {
     // flexGrow: 1,
+    // flexDirection: 'row',
     backgroundColor: 'aliceblue',
+    // direction: "row"
+  },
+  rightSide: {
+    // direction: "row",
+    // flexDirection: "row"
 
   },
+
   // paper: {
   //   padding: theme.spacing(2),
   //   paddingTop: theme.spacing(2),
@@ -100,7 +108,7 @@ export default function CenteredGrid(props) {
 
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    // <Grid item xs={5}>
+    // <Grid item xs={5} direction={"column"} >
         <Paper className={classes.homePlayersName}>{player.player.name} {player.player.number}</Paper>
     // </Grid>
     
@@ -125,7 +133,7 @@ export default function CenteredGrid(props) {
   ));
 
   return (
-    <div className={classes.root}>
+    <div className={classes.leftSide} >
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
     
         <React.Fragment>
@@ -180,7 +188,11 @@ export default function CenteredGrid(props) {
             </Grid>           
           </Grid>
         </React.Fragment>
-    
+
+        <div className={classes.rightSide}>
+                <ChatSection gameId={gameNum}/>
+        </div>
+
     </div>
   );
 }
