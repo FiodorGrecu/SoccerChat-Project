@@ -9,7 +9,7 @@ import { Link } from '@material-ui/core';
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
 import Date from 'react-moment';
-import Timestamp from 'react-moment';
+
 // import background from '/public.background.png';
 // import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
@@ -70,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid(props) {
   const classes = useStyles();
 
-  // api/one_game/<fixture_id>
 
   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
