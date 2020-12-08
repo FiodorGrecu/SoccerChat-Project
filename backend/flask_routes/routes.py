@@ -129,7 +129,7 @@ def fixture_lineups(fixture_id):
 def save_chat():
     data = request.get_json()
     print(data)
-    chat = Chat(data.get('time'), data.get('text'), data.get('account_id'), data.get('game_id'))
+    chat = Chat(data.get('time'), data.get('text'), data.get('account_id'), data.get('game_id'), data.get('username'))
     chat.save()
     new_chat = Chat.get_chat(data.get('game_id'))
     return jsonify({"chat": new_chat})

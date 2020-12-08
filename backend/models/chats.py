@@ -16,12 +16,13 @@ class  Chat:
     tablename = "chats"
 
 
-    def __init__(self, timestamp, text, account_id, game_id, pk=None):
+    def __init__(self, timestamp, text, account_id, game_id, username, pk=None):
         self.pk = pk
         self.timestamp = timestamp 
         self.text = text
         self.account_id = account_id
         self.game_id = game_id
+        self.username = username
 
  # make a save function for permanent storage in the db
     # a load function that can load by id (Show_one func)
@@ -41,10 +42,10 @@ class  Chat:
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""INSERT INTO {self.tablename} (
-                timestamp, text, account_id, game_id
-                ) VALUES (?,?,?,?);"""
+                timestamp, text, account_id, game_id, username
+                ) VALUES (?,?,?,?,?);"""
             values = (self.timestamp, self.text, self.account_id, 
-                      self.game_id)
+                      self.game_id, self.username)
             cursor.execute(sql, values)
             self.pk = cursor.lastrowid
 

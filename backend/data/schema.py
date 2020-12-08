@@ -98,6 +98,7 @@ def schema(dbpath = DATAPATH):
             game_id INTEGER,
             account_id INTEGER,
             text VARCHAR,
+            username VARCHAR,
             FOREIGN KEY (account_id) REFERENCES accounts(pk)
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
