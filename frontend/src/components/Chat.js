@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button: {
-    margin: theme.spacing(1),
-    marginLeft: 200, 
+    // margin:0,
+    // marginLeft: 200, 
     marginTop: 2,
-    width: '50%',
+    width: '100%',
     // backgroundColor : '#3C185C',
     backgroundColor : "#1A91DA",
     
@@ -43,12 +43,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 5,
     backgroundColor: 'aliceblue',
     justifyContent: 'center',
-    paddingTop: 10,
-    marginLeft: 77,
+    // paddingTop: 10,
+    // marginLeft: 77,
     // fontFamily: "Helvetica Neue",
     
     size: 50,
-    width: 760,
+    width: '100%',
     height: 30,
     fontSize: 20,
     // borderRadius: 4,

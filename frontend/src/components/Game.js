@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-// import View from 'react';
+// import {View, Text, StyleSheet} from 'react-native';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import games from "./teams";
@@ -112,44 +112,46 @@ export default function CenteredGrid(props) {
 
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    // <Grid item xs={5} direction={"column"} >
+    <Grid item xs={5} direction={"column"} >
         <Paper className={classes.homePlayersName}>{player.player.name} {player.player.number}</Paper>
-    // </Grid>
+   </Grid>
     
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-    // <Grid item xs={5}>
+    <Grid item xs={5}>
         <Paper className={classes.awayPlayersName}>{player.player.name} {player.player.number}</Paper>
-    // </Grid>
+    </Grid>
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-    // <Grid item xs={5}>
+    <Grid item xs={5}>
         <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
-    // </Grid>
+    </Grid>
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-    // <Grid item xs={5}>
+    <Grid item xs={5}>
       <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
     // </Grid>
   ));
 
   return (
     //  this is inside the div but for now to try something else
-    <div className={classes.leftSide}>
+    // className={classes.leftSide}
+    <div style={{display:"flex" }} >
     {/* <div ref={(node) => {
       if (node) {
           node.style.setProperty('float', 'left', 'important');
       }
     }} > */}
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
-    {/* <View style={{flex: 1, flexDirection: 'row'}}>
-      <View style={{flex:1, alignItems:'center'}} > */}
-
-        <React.Fragment>
-
+    
+    {/* <View style={{flex: 1, flexDirection: 'row'}}> */}
+      {/* <View style={{flex:1, alignItems:'center'}} > */}
+        {/* <React.Fragment> */}
+{/* style={{flex:'50%'}} */}
+            <div  >       
           <Grid container spacing={1}>
                 {/* <img src={background} alt="Background" />; */}
                 <div className={classes.leagueName}>{leagueName}</div>
@@ -199,17 +201,15 @@ export default function CenteredGrid(props) {
               <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
             </Grid>           
           </Grid>
-        </React.Fragment>
+          </div>
+        {/* </React.Fragment> */}
       {/* </View> */}
-          {/* <View style={{flex:1, alignItems:'center'}} > */}
+          {/* // <View style={{flex:1, alignItems:'center'}} > */}
 
         {/*  so this has to go inside the div */}
-          <div className={classes.rightSide} >
-          {/* <div ref={(node) => {
-      if (node) {
-          node.style.setProperty('float', 'right', 'important');
-      }
-    }} > */}
+        {/* className={classes.rightSide} */}
+        {/* style={{flex:'50%'}} */}
+          <div style={{width:'30%'}} >
                   <ChatSection gameId={gameNum}/>
           </div>
           {/* </View> */}

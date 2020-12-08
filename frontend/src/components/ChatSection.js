@@ -38,7 +38,7 @@ const LoginOrSignup = ({setUser}) => {
   const [showLogin, setShowLogin] = useState(true);
   console.log(setUser);
   return (
-    <div>
+    <div >
       { showLogin ? <LogIn setUser={setUser} setShowLogin={setShowLogin}/> : 
                     <SignUp setUser={setUser} setShowLogin={setShowLogin}/> }
     </div>
