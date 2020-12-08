@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     // flexGrow: 1,
     // flexDirection: 'row',
     backgroundColor: 'aliceblue',
-    // direction: "row"
+    direction: "column" ,
   },
   rightSide: {
     // direction: "row",
@@ -189,7 +189,7 @@ export default function CenteredGrid(props) {
           </Grid>
         </React.Fragment>
 
-        <div className={classes.rightSide}>
+        <div className={classes.rightSide} >
                 <ChatSection gameId={gameNum}/>
         </div>
 
