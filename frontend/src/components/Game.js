@@ -137,7 +137,13 @@ export default function CenteredGrid(props) {
   ));
 
   return (
-    <div className={classes.leftSide} >
+    //  this is inside the div but for now to try something else
+    <div className={classes.leftSide}>
+    {/* <div ref={(node) => {
+      if (node) {
+          node.style.setProperty('float', 'left', 'important');
+      }
+    }} > */}
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
     {/* <View style={{flex: 1, flexDirection: 'row'}}>
       <View style={{flex:1, alignItems:'center'}} > */}
@@ -197,7 +203,13 @@ export default function CenteredGrid(props) {
       {/* </View> */}
           {/* <View style={{flex:1, alignItems:'center'}} > */}
 
+        {/*  so this has to go inside the div */}
           <div className={classes.rightSide} >
+          {/* <div ref={(node) => {
+      if (node) {
+          node.style.setProperty('float', 'right', 'important');
+      }
+    }} > */}
                   <ChatSection gameId={gameNum}/>
           </div>
           {/* </View> */}
