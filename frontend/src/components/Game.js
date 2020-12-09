@@ -18,57 +18,29 @@ import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 
 const useStyles = makeStyles((theme) => ({
-  leftSide: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'aliceblue',
-    // direction: "column" ,
-    alignItems: 'flex-start !important'
-  },
-  rightSide: {
-    // direction: "row",
-    flex: 1,
-    flexDirection: "row",
-    alignItems: 'flex-end !important'
-
+  
+  leagueName: {
+    color: '#be13aa',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 40,
+    fontFamily:'Roboto,sans-serif',
+    backgroundColor:'pink',
+    borderRadius: '10px',
   },
 
-  // paper: {
-  //   padding: theme.spacing(2),
-  //   paddingTop: theme.spacing(2),
-  //   textAlign: 'center',
-  //   color: '#525252',
-  //   // backgroundColor: "#F0E4C8"
-  // },
-  // homePlayersName: {
-  //   paddingLeft: theme.spacing(1),
-  //   width: theme.spacing(30),
-  //   height: theme.spacing(10),
-  //   paddingRight: 2,
-  //   fontSize: 1,
-  //   color: '#F0F8FF',
-  // },
-  // awayPlayersName: {
-  //   paddingLeft: theme.spacing(10),
-  //   width: theme.spacing(30),
-  //   height: theme.spacing(10),
-  //   paddingRight: theme.spacing(2),
-  //   fontSize: 1,
-  //   color: '#F0F8FF',
+  // homeStartingXI: {
+  //   display: 'flex',
+  //   justifyContent:'flex-end',
+  //   width: '50%',
   // },
 
+  // awayStartingXI: {
+  //   display: 'flex',
+  //   justifyContent:'flex-start'
+  // }
 
-  awaystartingXI: {
-    width: theme.spacing(10),
-
-  },
-  homestartingXI: {
-    width: theme.spacing(30),
-
-  },
-  score: {
-    color: 'purple'
-  }
+  
 
 }));
 
@@ -117,14 +89,14 @@ export default function CenteredGrid(props) {
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
     // <Grid item xs={5} direction={"column"} >
     // **********  All of this divs iside the grid were initialy Paper tags
-        <div className={classes.homePlayersName}> <hr width='90%'/> <Link> {player.player.name} {player.player.number}</Link></div>
+        <div className={classes.homePlayersName}> <hr width='98%'/> <Link> {player.player.name} {player.player.number}</Link></div>
   //  {/* </Grid> */}
     
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
     // <Grid item xs={5}>
-        <div className={classes.awayPlayersName}>{player.player.name} {player.player.number}</div>
+        <div className={classes.awayPlayersName}> <hr width='98%' /> <Link>{player.player.name} {player.player.number}</Link></div>
     // {/* </Grid> */}
   ));
 
@@ -152,31 +124,19 @@ export default function CenteredGrid(props) {
       {/* <View style={{flex:1, alignItems:'center'}} > */}
         {/* <React.Fragment> */}
 {/* style={{flex:'50%'}} */}
-            <div tyle={{width:'50%'}} >   
-
-          {/* <Grid container spacing={1}> */}
-                {/* <img src={background} alt="Background" />; */}
-                <div className={classes.leagueName}>{leagueName}</div>
-                {/* <Timestamp date={Date} options={{ includeDay: true, twentyFourHour: true }} />  */}
-                {/* <div className={classes.date}>{gameDate}</div> */}
+            <div style={{width:'70%'}} >   
+              <div slyle={{direction:'flex'}}>
+                <div className={classes.leagueName} style={{display:"flex"}} >{leagueName}  </div>
                 <div className={classes.leagueLogo}><img src={leagueLogo} style={{width:50, height:50, paddingLeft:2, paddingRight:2}}/></div>
-
+              </div>
                 {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
-                
-            
-            {/* <Grid item xs={5}>     */}
-              {/* <Grid item xs={15}> */}
-              <Paper className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</Paper>
-              {/* </Grid> */}
-            {/* </Grid> */}
-            
-            {/* <Grid item xs={2}>
-                <Paper className={classes.score}>Score</Paper>
-              </Grid> */}
-
-            {/* <Grid item xs={5}>                 */}
-              {/* <Grid item xs={15}> */}
-            <Paper className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</Paper>   
+              <div style={{display:'flex'}}>
+                {/* <div className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</div> */}
+                <div className={classes.homeStartingXI} style={{width:'50%'}}>{hometeamName} <img src={hometeamLogo} style={{width:'30px', height:'30px'}} /><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</div>
+                  <div className={classes.score}>Score</div>
+                <div className={classes.awayStartingXI} style={{width:'50%'}}><img src={awayteamLogo}  style={{width:'30px', height:'30px'}} />{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>   
+                {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
+              </div>
               {/* </Grid> */}
             {/* </Grid> */}
             
@@ -207,7 +167,7 @@ export default function CenteredGrid(props) {
         {/* className={classes.rightSide} */}
         {/* style={{flex:'50%'}} */}
         {/* <hr style={{width:'1', size:"500" }}/> */}
-          <div style={{width:'30%'}} >
+          <div style={{width:'30%', height:'1100px' }} >
                   <ChatSection gameId={gameNum}/>
           </div>
 
@@ -218,9 +178,6 @@ export default function CenteredGrid(props) {
 //   useEffect(() => {
 //     console.log(params);
 //   }, [params])
-
-//   console.log(params)
-//   // console.log(gameNum)
 //   return (
 //     <React.Fragment>
 //       <p>{params.id}</p>

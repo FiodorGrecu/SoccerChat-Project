@@ -14,7 +14,6 @@ import { Divider } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-
     backgroundColor: 'aliceblue',
     width: '100%',
     // flexDirection: 'row'
@@ -43,8 +42,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'aliceblue',
     justifyContent: 'center',
     // paddingTop: 10,
-    // marginLeft: 77,
-    
+    // marginLeft: 77, 
     size: 50,
     width: '100%',
     height: 30,
@@ -73,9 +71,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
   },
   card: {
-    minWidth: 275,
-    minHeight: 500,
-    margin: 220,
+    width: '100%',
+    // minHeight: 500,
+    height: 1000,
+    // margin: 220,
     marginTop: 20,
     backgroundColor: '#F0F8FF',
   }
