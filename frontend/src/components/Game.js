@@ -151,7 +151,7 @@ export default function CenteredGrid(props) {
       {/* <View style={{flex:1, alignItems:'center'}} > */}
         {/* <React.Fragment> */}
 {/* style={{flex:'50%'}} */}
-            <div  >       
+            <div tyle={{width:'50%'}} >       
           <Grid container spacing={1}>
                 {/* <img src={background} alt="Background" />; */}
                 <div className={classes.leagueName}>{leagueName}</div>
@@ -168,9 +168,9 @@ export default function CenteredGrid(props) {
                 
             
             {/* <Grid item xs={5}>     */}
-              <Grid item xs={15}>
+              {/* <Grid item xs={15}> */}
                 <Paper className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI{homePlayers}</Paper>
-              </Grid>
+              {/* </Grid> */}
             {/* </Grid> */}
             
             {/* <Grid item xs={2}>
