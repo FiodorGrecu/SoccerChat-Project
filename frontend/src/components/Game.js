@@ -29,16 +29,17 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '10px',
   },
 
-  // homeStartingXI: {
-  //   display: 'flex',
-  //   justifyContent:'flex-end',
-  //   width: '50%',
-  // },
+  homeStartingXI: {
+    direction: 'flex',
+    justifyContent:'flex-end',
+    width: '50%',
+  },
 
-  // awayStartingXI: {
-  //   display: 'flex',
-  //   justifyContent:'flex-start'
-  // }
+  awayStartingXI: {
+    direction: 'flex',
+    justifyContent:'flex-start',
+    width: '50%',
+  }
 
   
 
@@ -125,8 +126,8 @@ export default function CenteredGrid(props) {
         {/* <React.Fragment> */}
 {/* style={{flex:'50%'}} */}
             <div style={{width:'70%'}} >   
-              <div slyle={{direction:'flex'}}>
-                <div className={classes.leagueName} style={{display:"flex"}} >{leagueName}  </div>
+              <div slyle={{display:'flex'}}>
+                <div className={classes.leagueName} style={{direction:"flex"}} >{leagueName}  </div>
                 <div className={classes.leagueLogo}><img src={leagueLogo} style={{width:50, height:50, paddingLeft:2, paddingRight:2}}/></div>
               </div>
                 {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
@@ -137,31 +138,14 @@ export default function CenteredGrid(props) {
                 <div className={classes.awayStartingXI} style={{width:'50%'}}><img src={awayteamLogo}  style={{width:'30px', height:'30px'}} />{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>   
                 {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
               </div>
-              {/* </Grid> */}
-            {/* </Grid> */}
-            
-            {/* <Grid item xs={15}> */}
+
               <Paper className={classes.homeCoach}>Coach<Divider/><br/>{hometeamCoach}</Paper>
-                  
-            {/* </Grid> */}
-            
-             {/* <Grid item lg={2}> */}
               <Paper className={classes.awayStartingXI}>Substitutions{homeSubs}</Paper>
-            {/* </Grid> */}
-                {/* <Grid >
-                  
-                </Grid> */}
-            {/* <Grid item lg={2}> */}
+  
               <Paper className={classes.awayCoach}>Coach<Divider/><br/>{awayteamCoach}</Paper>      
-            {/* </Grid> */}
-            {/* <Grid item lg={3}> */}
               <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
-            {/* </Grid>            */}
-          {/* </Grid> */}
           </div>
         {/* </React.Fragment> */}
-      {/* </View> */}
-          {/* // <View style={{flex:1, alignItems:'center'}} > */}
 
         {/*  so this has to go inside the div */}
         {/* className={classes.rightSide} */}
