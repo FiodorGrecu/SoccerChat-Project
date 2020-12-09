@@ -178,28 +178,28 @@ export default function CenteredGrid(props) {
               </Grid> */}
 
             {/* <Grid item xs={5}>                 */}
-              <Grid item xs={15}>
+              {/* <Grid item xs={15}> */}
                 <Paper className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI{awayPlayers}</Paper>   
-              </Grid>
+              {/* </Grid> */}
             {/* </Grid> */}
             
-            <Grid item xs={15}>
+            {/* <Grid item xs={15}> */}
               <Paper className={classes.homeCoach}>Coach<Divider/><br/>{hometeamCoach}</Paper>
                   
-            </Grid>
+            {/* </Grid> */}
             
-             <Grid item lg={2}>
+             {/* <Grid item lg={2}> */}
               <Paper className={classes.awayStartingXI}>Substitutions{homeSubs}</Paper>
-            </Grid>
+            {/* </Grid> */}
                 {/* <Grid >
                   
                 </Grid> */}
-            <Grid item lg={2}>
+            {/* <Grid item lg={2}> */}
               <Paper className={classes.awayCoach}>Coach<Divider/><br/>{awayteamCoach}</Paper>      
-            </Grid>
-            <Grid item lg={3}>
+            {/* </Grid> */}
+            {/* <Grid item lg={3}> */}
               <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
-            </Grid>           
+            {/* </Grid>            */}
           </Grid>
           </div>
         {/* </React.Fragment> */}
@@ -213,16 +213,10 @@ export default function CenteredGrid(props) {
           <div style={{width:'30%'}} >
                   <ChatSection gameId={gameNum}/>
           </div>
-          {/* </View> */}
 
-      {/* </View> */}
     </div>
   );
 }
-
-// export default function Game() {
-//   // let { gameNum } = useParams();
-//   const params = useParams();
 
 //   useEffect(() => {
 //     console.log(params);
