@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: 200, 
     marginTop: 2,
     width: '100%',
-    // backgroundColor : '#3C185C',
     backgroundColor : "#1A91DA",
     
   },

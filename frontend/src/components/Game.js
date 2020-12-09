@@ -112,28 +112,28 @@ export default function CenteredGrid(props) {
 
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    <Grid item xs={5} direction={"column"} >
+    // <Grid item xs={5} direction={"column"} >
         <Paper className={classes.homePlayersName}>{player.player.name} {player.player.number}</Paper>
-   </Grid>
+  //  {/* </Grid> */}
     
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-    <Grid item xs={5}>
+    // <Grid item xs={5}>
         <Paper className={classes.awayPlayersName}>{player.player.name} {player.player.number}</Paper>
-    </Grid>
+    // {/* </Grid> */}
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-    <Grid item xs={5}>
+    // <Grid item xs={5}>
         <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
-    </Grid>
+    //* </Grid> */
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-    <Grid item xs={5}>
+    // <Grid item xs={5}>
       <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
-    // </Grid>
+     // </Grid>
   ));
 
   return (
@@ -209,6 +209,7 @@ export default function CenteredGrid(props) {
         {/*  so this has to go inside the div */}
         {/* className={classes.rightSide} */}
         {/* style={{flex:'50%'}} */}
+        {/* <hr style={{width:'1', size:"500" }}/> */}
           <div style={{width:'30%'}} >
                   <ChatSection gameId={gameNum}/>
           </div>
