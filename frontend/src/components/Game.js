@@ -30,12 +30,14 @@ const useStyles = makeStyles((theme) => ({
   },
 
   homeStartingXI: {
+    // display: 'flex',
     direction: 'flex',
     justifyContent:'flex-end',
     width: '50%',
   },
 
   awayStartingXI: {
+    // display: 'flex',
     direction: 'flex',
     justifyContent:'flex-start',
     width: '50%',
@@ -88,29 +90,21 @@ export default function CenteredGrid(props) {
   const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    // <Grid item xs={5} direction={"column"} >
+
     // **********  All of this divs iside the grid were initialy Paper tags
         <div className={classes.homePlayersName}> <hr width='98%'/> <Link> {player.player.name} {player.player.number}</Link></div>
-  //  {/* </Grid> */}
-    
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-    // <Grid item xs={5}>
         <div className={classes.awayPlayersName}> <hr width='98%' /> <Link>{player.player.name} {player.player.number}</Link></div>
-    // {/* </Grid> */}
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-    // <Grid item xs={5}>
         <div >{substitutes.player.name} {substitutes.player.number}</div>
-    //* </Grid> */
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-    // <Grid item xs={5}>
       <div >{substitutes.player.name} {substitutes.player.number}</div>
-     // </Grid>
   ));
 
   return (
@@ -127,7 +121,7 @@ export default function CenteredGrid(props) {
 {/* style={{flex:'50%'}} */}
             <div style={{width:'70%'}} >   
               <div slyle={{display:'flex'}}>
-                <div className={classes.leagueName} style={{direction:"flex"}} >{leagueName}  </div>
+                <div className={classes.leagueName}  >{leagueName}  </div>
                 <div className={classes.leagueLogo}><img src={leagueLogo} style={{width:50, height:50, paddingLeft:2, paddingRight:2}}/></div>
               </div>
                 {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
@@ -138,11 +132,13 @@ export default function CenteredGrid(props) {
                 <div className={classes.awayStartingXI} style={{width:'50%'}}><img src={awayteamLogo}  style={{width:'30px', height:'30px'}} />{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>   
                 {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
               </div>
-
-              <Paper className={classes.homeCoach}>Coach<Divider/><br/>{hometeamCoach}</Paper>
+              <div style={{display:'flex'}}>
+                <div className={classes.homeCoach} style={{width:'50%'}}>Coach<Divider/><br/>{hometeamCoach}</div>
+              </div>
               <Paper className={classes.awayStartingXI}>Substitutions{homeSubs}</Paper>
-  
-              <Paper className={classes.awayCoach}>Coach<Divider/><br/>{awayteamCoach}</Paper>      
+              <div style={{display:'flex'}}>
+                <div className={classes.awayCoach} style={{width:'50%'}}>Coach<Divider/><br/>{awayteamCoach}</div>
+              </div>
               <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
           </div>
         {/* </React.Fragment> */}
