@@ -111,28 +111,32 @@ export default function CenteredGrid(props) {
   const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
 
 
+  const homeTeamFormation = fixture.lineups && fixture.lineups[0].formation;
+  const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
+
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
     // <Grid item xs={5} direction={"column"} >
-        <Paper className={classes.homePlayersName}>{player.player.name} {player.player.number}</Paper>
+    // **********  All of this divs iside the grid were initialy Paper tags
+        <div className={classes.homePlayersName}> <hr width='90%'/> <Link> {player.player.name} {player.player.number}</Link></div>
   //  {/* </Grid> */}
     
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
     // <Grid item xs={5}>
-        <Paper className={classes.awayPlayersName}>{player.player.name} {player.player.number}</Paper>
+        <div className={classes.awayPlayersName}>{player.player.name} {player.player.number}</div>
     // {/* </Grid> */}
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
     // <Grid item xs={5}>
-        <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
+        <div >{substitutes.player.name} {substitutes.player.number}</div>
     //* </Grid> */
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
     // <Grid item xs={5}>
-      <Paper >{substitutes.player.name} {substitutes.player.number}</Paper>
+      <div >{substitutes.player.name} {substitutes.player.number}</div>
      // </Grid>
   ));
 
@@ -140,19 +144,17 @@ export default function CenteredGrid(props) {
     //  this is inside the div but for now to try something else
     // className={classes.leftSide}
     <div style={{display:"flex" }} >
-    {/* <div ref={(node) => {
-      if (node) {
-          node.style.setProperty('float', 'left', 'important');
-      }
-    }} > */}
+   
+ 
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
     
     {/* <View style={{flex: 1, flexDirection: 'row'}}> */}
       {/* <View style={{flex:1, alignItems:'center'}} > */}
         {/* <React.Fragment> */}
 {/* style={{flex:'50%'}} */}
-            <div tyle={{width:'50%'}} >       
-          <Grid container spacing={1}>
+            <div tyle={{width:'50%'}} >   
+
+          {/* <Grid container spacing={1}> */}
                 {/* <img src={background} alt="Background" />; */}
                 <div className={classes.leagueName}>{leagueName}</div>
                 {/* <Timestamp date={Date} options={{ includeDay: true, twentyFourHour: true }} />  */}
@@ -164,7 +166,7 @@ export default function CenteredGrid(props) {
             
             {/* <Grid item xs={5}>     */}
               {/* <Grid item xs={15}> */}
-                <Paper className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI{homePlayers}</Paper>
+              <Paper className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</Paper>
               {/* </Grid> */}
             {/* </Grid> */}
             
@@ -174,7 +176,7 @@ export default function CenteredGrid(props) {
 
             {/* <Grid item xs={5}>                 */}
               {/* <Grid item xs={15}> */}
-                <Paper className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI{awayPlayers}</Paper>   
+            <Paper className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:35, height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</Paper>   
               {/* </Grid> */}
             {/* </Grid> */}
             
@@ -195,7 +197,7 @@ export default function CenteredGrid(props) {
             {/* <Grid item lg={3}> */}
               <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
             {/* </Grid>            */}
-          </Grid>
+          {/* </Grid> */}
           </div>
         {/* </React.Fragment> */}
       {/* </View> */}
