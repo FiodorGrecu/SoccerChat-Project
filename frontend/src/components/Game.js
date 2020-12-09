@@ -155,11 +155,6 @@ export default function CenteredGrid(props) {
           <Grid container spacing={1}>
                 {/* <img src={background} alt="Background" />; */}
                 <div className={classes.leagueName}>{leagueName}</div>
-                {/* <Moment unix>{unixTimestamp}</Moment> */}
-                {/* <Moment unix>{time}</Moment> */}
-                {/* <Moment unix>{date}</Moment> */}
-
-                {/* <Moment unix>{date}</Moment> */}
                 {/* <Timestamp date={Date} options={{ includeDay: true, twentyFourHour: true }} />  */}
                 {/* <div className={classes.date}>{gameDate}</div> */}
                 <div className={classes.leagueLogo}><img src={leagueLogo} style={{width:50, height:50, paddingLeft:2, paddingRight:2}}/></div>

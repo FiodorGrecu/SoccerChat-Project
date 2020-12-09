@@ -44,13 +44,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     // paddingTop: 10,
     // marginLeft: 77,
-    // fontFamily: "Helvetica Neue",
     
     size: 50,
     width: '100%',
     height: 30,
     fontSize: 20,
-    // borderRadius: 4,
+    borderRadius: 4,
     border: 'none'
   },
   text: {
@@ -111,7 +110,6 @@ export default function UserChat({ user, setUser, gameId }) {
   async function saveMessage() {
     console.log(text, chats, isError, userData)
     // const Timestamp = timestamp;
-    // const output = await 
     const data = JSON.stringify({
       'time': new Date().toString(),
       'text': text,
