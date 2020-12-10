@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:'white',
     position: 'absolute',
     alignItems:'center',
+    paddingTop: '10px',
     bottom:'0px',
     width:'100%',
     height:'20%',
@@ -127,20 +128,22 @@ export default function CenteredGrid(props) {
    
  
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
-    
-    {/* <View style={{flex: 1, flexDirection: 'row'}}> */}
-      {/* <View style={{flex:1, alignItems:'center'}} > */}
-        {/* <React.Fragment> */}
-{/* style={{flex:'50%'}} */}
-
-
+  
             <div style={{width:'70%'}} >  
               <div className={classes.scoreSheet}>
                 <div slyle={{display:'flex'}}>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase'}}>{hometeamName} <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/></div>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase'}}>{awayteamName}<img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', display:'flex' }}>
+                      <div style={{width: '50%'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/></div>
+                      <div style={{width: '50%'}}> {hometeamName}</div>
+                  </div>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', display:'flex'}} >
+                      <div style={{width: '50%'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
+                      <div style={{width: '50%'}}>{awayteamName}</div>
+                  </div>
                   <div slyle={{position:'relative'}}>
-                    <div className={classes.venueArea}  ><span className={classes.leagueLogo} style={{paddingRight: '66%'}} ><img src={leagueLogo} style={{width:31, height:31}}/></span>{venue}</div>
+                    <div className={classes.venueArea}  ><span className={classes.leagueLogo} style={{paddingRight:'66%'}} >
+                      <img src={leagueLogo} style={{width:31, height:31}}/></span>{venue}
+                    </div>
                   </div>
                   
                 </div>
@@ -167,9 +170,6 @@ export default function CenteredGrid(props) {
                 </div>   
                 {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
               </div>
-              
-              
-              
               
           </div>
         {/* </React.Fragment> */}
