@@ -103,6 +103,9 @@ export default function CenteredGrid(props) {
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
+  const homeTeamScore = fixture.goals && fixture.goals.home;
+  const awayTeamScore = fixture.goals && fixture.goals.away;
+
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
 
     // **********  All of this divs iside the grid were initialy Paper tags
@@ -132,13 +135,15 @@ export default function CenteredGrid(props) {
             <div style={{width:'70%'}} >  
               <div className={classes.scoreSheet}>
                 <div slyle={{display:'flex'}}>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', display:'flex' }}>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase' }}>
                       <div style={{width: '50%'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/></div>
                       <div style={{width: '50%'}}> {hometeamName}</div>
+                      <div style={{color:'white', paddingRight:'10px'}}>{homeTeamScore}</div>
                   </div>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', display:'flex'}} >
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', }} >
                       <div style={{width: '50%'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
                       <div style={{width: '50%'}}>{awayteamName}</div>
+                      <div style={{color:'white'}}>{awayTeamScore}</div>
                   </div>
                   <div slyle={{position:'relative'}}>
                     <div className={classes.venueArea}  ><span className={classes.leagueLogo} style={{paddingRight:'66%'}} >
