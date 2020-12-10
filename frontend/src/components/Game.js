@@ -169,7 +169,6 @@ export default function CenteredGrid(props) {
                 <div className={classes.awayStartingXI} style={{width:'50%'}}><br/>Starting Lineup<br/>({awayTeamFormation}){awayPlayers}
                   <div style={{display:'flex'}}>
                     <div className={classes.awayCoach} style={{width:'50%'}}>Coach<Divider/><br/>{awayteamCoach}</div>
-
                   </div>
                   <Paper style={{width:'100%'}} className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
                 </div>   
@@ -186,7 +185,6 @@ export default function CenteredGrid(props) {
           <div style={{width:'30%', height:'1100px' }} >
                   <ChatSection gameId={gameNum}/>
           </div>
-
     </div>
   );
 }
