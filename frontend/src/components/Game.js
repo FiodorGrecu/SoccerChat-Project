@@ -18,32 +18,43 @@ import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 
 const useStyles = makeStyles((theme) => ({
+
+  scoreSheet:{
+    width: '98%',
+    height: '25%',
+    backgroundColor: 'black',
+    margin: '1%',
+    position: 'relative',
+  },
   
-  leagueName: {
-    color: '#be13aa',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 40,
+  venueArea: {
+    color: '#8e9cc5',
+    fontWeight: 'bold',
+    fontSize: '13.65px',
     fontFamily:'Roboto,sans-serif',
-    backgroundColor:'pink',
-    borderRadius: '10px',
+    backgroundColor:'white',
+    position: 'absolute',
+    alignItems:'center',
+    bottom:'0px',
+    width:'100%',
+    height:'20%',
   },
 
   homeStartingXI: {
-    // display: 'flex',
-    direction: 'flex',
+
     justifyContent:'flex-end',
-    width: '50%',
+    width: '100%',
+    // padding: '22px',
+    
   },
 
   awayStartingXI: {
-    // display: 'flex',
-    direction: 'flex',
-    justifyContent:'flex-start',
-    width: '50%',
-  }
 
-  
+    justifyContent:'flex-start',
+    width: '100%',
+   
+  },
+
 
 }));
 
@@ -89,6 +100,8 @@ export default function CenteredGrid(props) {
   const homeTeamFormation = fixture.lineups && fixture.lineups[0].formation;
   const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
 
+  const venue = fixture.lineups && fixture.fixture.venue.name;
+
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
 
     // **********  All of this divs iside the grid were initialy Paper tags
@@ -119,27 +132,45 @@ export default function CenteredGrid(props) {
       {/* <View style={{flex:1, alignItems:'center'}} > */}
         {/* <React.Fragment> */}
 {/* style={{flex:'50%'}} */}
-            <div style={{width:'70%'}} >   
-              <div slyle={{display:'flex'}}>
-                <div className={classes.leagueName}  >{leagueName}  </div>
-                <div className={classes.leagueLogo}><img src={leagueLogo} style={{width:50, height:50, paddingLeft:2, paddingRight:2}}/></div>
-              </div>
+
+
+            <div style={{width:'70%'}} >  
+              <div className={classes.scoreSheet}>
+                <div slyle={{display:'flex'}}>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase'}}>{hometeamName} <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/></div>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase'}}>{awayteamName}<img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
+                  <div slyle={{position:'relative'}}>
+                    <div className={classes.venueArea}  ><span className={classes.leagueLogo} style={{paddingRight: '66%'}} ><img src={leagueLogo} style={{width:31, height:31}}/></span>{venue}</div>
+                  </div>
+                  
+                </div>
+              </div> 
+              
                 {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
               <div style={{display:'flex'}}>
                 {/* <div className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</div> */}
-                <div className={classes.homeStartingXI} style={{width:'50%'}}>{hometeamName} <img src={hometeamLogo} style={{width:'30px', height:'30px'}} /><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</div>
+                <div className={classes.homeStartingXI} style={{width:'50%'}}><br/>Starting Lineup<br/>({homeTeamFormation}){homePlayers}
+                  <div style={{display:'flex'}}>
+                    <div className={classes.homeCoach} style={{width:'100%'}}>Coach<Divider/><br/>{hometeamCoach}</div>
+
+                  </div>
+                  <Paper  style={{width:'100%'}} className={classes.homeStartingXI}>Substitutions{homeSubs}</Paper>
+                </div>           
                   <div className={classes.score}>Score</div>
-                <div className={classes.awayStartingXI} style={{width:'50%'}}><img src={awayteamLogo}  style={{width:'30px', height:'30px'}} />{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>   
+
+                <div className={classes.awayStartingXI} style={{width:'50%'}}><br/>Starting Lineup<br/>({awayTeamFormation}){awayPlayers}
+                  <div style={{display:'flex'}}>
+                    <div className={classes.awayCoach} style={{width:'50%'}}>Coach<Divider/><br/>{awayteamCoach}</div>
+
+                  </div>
+                  <Paper style={{width:'100%'}} className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
+                </div>   
                 {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
               </div>
-              <div style={{display:'flex'}}>
-                <div className={classes.homeCoach} style={{width:'50%'}}>Coach<Divider/><br/>{hometeamCoach}</div>
-              </div>
-              <Paper className={classes.awayStartingXI}>Substitutions{homeSubs}</Paper>
-              <div style={{display:'flex'}}>
-                <div className={classes.awayCoach} style={{width:'50%'}}>Coach<Divider/><br/>{awayteamCoach}</div>
-              </div>
-              <Paper className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
+              
+              
+              
+              
           </div>
         {/* </React.Fragment> */}
 
