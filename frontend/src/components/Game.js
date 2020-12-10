@@ -135,14 +135,15 @@ export default function CenteredGrid(props) {
             <div style={{width:'70%'}} >  
               <div className={classes.scoreSheet}>
                 <div slyle={{display:'flex'}}>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase' }}>
-                      <div style={{width: '50%'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/></div>
-                      <div style={{width: '50%'}}> {hometeamName}</div>
-                      <div style={{color:'white', paddingRight:'10px'}}>{homeTeamScore}</div>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box", position: 'relative;' }}>
+                      <div style={{width: '50%', position: 'absolute', paddingLeft: '20%', paddingTop:'4%'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>                     
+                      <div style={{width: '50%',position: 'absolute', paddingTop:'2%'}}> {hometeamName}</div>
+                      <div style={{color:'white', paddingLeft:'6%',paddingTop:'7%' ,position: 'absolute',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</div>
+                      </div>
                   </div>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', }} >
-                      <div style={{width: '50%'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
-                      <div style={{width: '50%'}}>{awayteamName}</div>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase',position: 'relative;'  }} >
+                      <div style={{width: '50%',position: 'absolute'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
+                      <div style={{width: '50%' }}>{awayteamName}</div>
                       <div style={{color:'white'}}>{awayTeamScore}</div>
                   </div>
                   <div slyle={{position:'relative'}}>
