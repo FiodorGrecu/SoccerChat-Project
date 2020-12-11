@@ -28,19 +28,19 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   
-  venueArea: {
-    color: '#8e9cc5',
-    fontWeight: 'bold',
-    fontSize: '13.65px',
-    fontFamily:'Roboto,sans-serif',
-    backgroundColor:'white',
-    position: 'absolute',
-    alignItems:'center',
-    paddingTop: '10px',
-    bottom:'0px',
-    width:'100%',
-    height:'20%',
-  },
+  // venueArea: {
+  //   color: '#8e9cc5',
+  //   fontWeight: 'bold',
+  //   fontSize: '13.65px',
+  //   fontFamily:'Roboto,sans-serif',
+  //   backgroundColor:'white',
+  //   position: 'absolute',
+  //   alignItems:'center',
+  //   paddingTop: '10px',
+  //   bottom:'0px',
+  //   width:'100%',
+  //   height:'20%',
+  // },
 
   homeStartingXI: {
 
@@ -146,7 +146,7 @@ export default function CenteredGrid(props) {
                 <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
                 <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
                 <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
-                <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{awayTeamScore}</p>
+                <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>
 
                 </div>
               </div>
@@ -173,9 +173,18 @@ export default function CenteredGrid(props) {
                       </div>
                   </div> */}
 
-                  <div slyle={{position:'relative'}}>
-                    <div className={classes.venueArea}  ><span className={classes.leagueLogo} style={{paddingRight:'66%'}} >
-                      <img src={leagueLogo} style={{width:31, height:31}}/></span>{venue}
+                  <div style={{display:'flex', width:'100%', height:'20%' ,backgroundColor:'white', position:'absolute', bottom:'0px'}}>
+                    <div className={classes.venueArea}style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
+                      <img src={leagueLogo} style={{width:31, height:31 }} />
+                      {/* <span className={classes.leagueLogo} style={{paddingRight:'66%'}} ></span> */}
+                    </div>
+                    <div style={{ width:'50%', textAlign:'right', 
+                                  paddingTop:'20px', paddingRight:'2%', 
+                                  fontFamily: 'Roboto,sans-serif',
+                                  fontSize: '1rem', color: '#8e9cc5',
+                                  fontWeight: '550'}}>
+                      <p >{venue}</p>
+
                     </div>
                   </div>  
                 {/* </div> */}
