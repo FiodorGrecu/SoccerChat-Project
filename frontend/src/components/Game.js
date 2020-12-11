@@ -16,6 +16,7 @@ import Date from 'react-moment';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
+import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -128,48 +129,75 @@ export default function CenteredGrid(props) {
     //  this is inside the div but for now to try something else
     // className={classes.leftSide}
     <div style={{display:"flex" }} >
-   
- 
     {/* <img src={Background_pic} className="Background" alt="Stadium picture" /> */}
   
             <div style={{width:'70%'}} >  
-              <div className={classes.scoreSheet}>
+              <div className={classes.scoreSheet} slyle={{display:'flex'}}>
+              <div style={{display:'flex', width:'100%'}}>
+                <div style={{ width:'50%', backgroundColor:'blue', textAlign:'center'}}>
+                <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
+                <p>Hello</p>
+
+                </div>
+                <div style={{ width:'50%',backgroundColor:'green', textAlign:'center'}}>
+                <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
+                <p>Hello</p>
+
+                </div>
+              </div>
+
+                <div className={classes.date} style={{width: '100%', position: 'absolute', paddingLeft: '48%', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
+                
                 <div slyle={{display:'flex'}}>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box", position: 'relative;' }}>
-                      <div style={{width: '50%', position: 'absolute', paddingLeft: '20%', paddingTop:'4%'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>                     
-                      <div style={{width: '50%',position: 'absolute', paddingTop:'2%'}}> {hometeamName}</div>
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box" }}>
+                      <div style={{width: '50%', paddingLeft: '20%', paddingTop:'4%',backgroundColor:'gree'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>                     
+                      <div style={{width: '50%', paddingTop:'2%'}}> {hometeamName}</div>
                       <div style={{color:'white', paddingLeft:'6%',paddingTop:'7%' ,position: 'absolute',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</div>
                       </div>
                   </div>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase',position: 'relative;'  }} >
-                      <div style={{width: '50%',position: 'absolute'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/></div>
-                      <div style={{width: '50%' }}>{awayteamName}</div>
-                      <div style={{color:'white'}}>{awayTeamScore}</div>
+
+                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box" }}>
+                      <div style={{width: '50%', paddingLeft: '30%', paddingTop:'4%',backgroundColor:'grees'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>                     
+                      <div style={{width: '50%', paddingTop:'2%'}}> {awayteamName}</div>
+                      <div style={{color:'white', paddingLeft:'6%',paddingTop:'0%' ,position: 'absolute',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{awayTeamScore}</div>
+                      </div>
                   </div>
+
+                  {/* <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', textAlign:'center', boxSizing: "border-box", position: 'relative', backgroundColor:'green'}} >
+                      <div style={{position: 'absolute', paddingLeft: '70%', paddingTop:'4%',backgroundColor:'re'}}><img src={awayteamLogo} style={{width:'78px', height:'78px'}}/>
+                      <div style={{width: '50%',position: 'absolute', paddingTop:'5px',paddingLeft:'3%' }}>{awayteamName}</div>
+                      <div style={{width: '50%',position: 'absolute', paddingTop:'5px' }}>{awayteamName}</div>
+                      <div style={{color:'white', paddingLeft:'5%',paddingTop:'5%' ,position: 'absolute',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</div>
+                      </div>
+                  </div> */}
+
                   <div slyle={{position:'relative'}}>
                     <div className={classes.venueArea}  ><span className={classes.leagueLogo} style={{paddingRight:'66%'}} >
                       <img src={leagueLogo} style={{width:31, height:31}}/></span>{venue}
                     </div>
-                  </div>
-                  
+                  </div>  
                 </div>
+
               </div> 
               
                 {/* <Link style={{color:"white", padding:200}}>Home_Stats</Link> */}
               <div style={{display:'flex'}}>
                 {/* <div className={classes.homeStartingXI}>{hometeamName}<img src={hometeamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/><br/>Starting XI<br/>({homeTeamFormation}){homePlayers}</div> */}
-                <div className={classes.homeStartingXI} style={{width:'50%'}}><br/>Starting Lineup<br/>({homeTeamFormation}){homePlayers}
+                <div className={classes.homeStartingXI} style={{width:'50%'}}><br/>
+                      <div style={{color: '#516290',fontSize:'1rem', fontWeight:'500',}}>Starting Lineup</div><br/>
+                      <div style={{}}>({homeTeamFormation})</div>
+                      <div style={{}}>{homePlayers}</div>
+                 
                   <div style={{display:'flex'}}>
                     <div className={classes.homeCoach} style={{width:'100%'}}>Coach<Divider/><br/>{hometeamCoach}</div>
 
                   </div>
                   <Paper  style={{width:'100%'}} className={classes.homeStartingXI}>Substitutions{homeSubs}</Paper>
                 </div>           
-                  <div className={classes.score}>Score</div>
 
                 <div className={classes.awayStartingXI} style={{width:'50%'}}><br/>Starting Lineup<br/>({awayTeamFormation}){awayPlayers}
                   <div style={{display:'flex'}}>
-                    <div className={classes.awayCoach} style={{width:'50%'}}>Coach<Divider/><br/>{awayteamCoach}</div>
+                    <div className={classes.awayCoach} style={{width:'100%'}}>Coach<Divider/><br/>{awayteamCoach}</div>
                   </div>
                   <Paper style={{width:'100%'}} className={classes.awayStartingXI}>Substitutions{awaySubs}</Paper>
                 </div>   
