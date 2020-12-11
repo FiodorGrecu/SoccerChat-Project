@@ -134,34 +134,36 @@ export default function CenteredGrid(props) {
             <div style={{width:'70%'}} >  
               <div className={classes.scoreSheet} slyle={{display:'flex'}}>
               <div style={{display:'flex', width:'100%'}}>
-                <div style={{ width:'50%', backgroundColor:'blue', textAlign:'center'}}>
+                <div className={classes.date} style={{width: '100%', position: 'absolute', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
+              </div>
+              <div style={{display:'flex', width:'100%'}}>
+                <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
                 <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
-                <p>Hello</p>
+                <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
+                <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
 
                 </div>
-                <div style={{ width:'50%',backgroundColor:'green', textAlign:'center'}}>
-                <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
-                <p>Hello</p>
+                <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
+                <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
+                <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
+                <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{awayTeamScore}</p>
 
                 </div>
               </div>
-
-                <div className={classes.date} style={{width: '100%', position: 'absolute', paddingLeft: '48%', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
-                
-                <div slyle={{display:'flex'}}>
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box" }}>
+                {/* <div slyle={{display:'flex'}}> */}
+                  {/* <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box" }}>
                       <div style={{width: '50%', paddingLeft: '20%', paddingTop:'4%',backgroundColor:'gree'}}><img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>                     
                       <div style={{width: '50%', paddingTop:'2%'}}> {hometeamName}</div>
                       <div style={{color:'white', paddingLeft:'6%',paddingTop:'7%' ,position: 'absolute',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</div>
                       </div>
-                  </div>
+                  </div> */}
 
-                  <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box" }}>
+                  {/* <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', boxSizing: "border-box" }}>
                       <div style={{width: '50%', paddingLeft: '30%', paddingTop:'4%',backgroundColor:'grees'}}><img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>                     
                       <div style={{width: '50%', paddingTop:'2%'}}> {awayteamName}</div>
                       <div style={{color:'white', paddingLeft:'6%',paddingTop:'0%' ,position: 'absolute',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{awayTeamScore}</div>
                       </div>
-                  </div>
+                  </div> */}
 
                   {/* <div style={{color:'white', fontWeight: 'bold', textTransform: 'uppercase', textAlign:'center', boxSizing: "border-box", position: 'relative', backgroundColor:'green'}} >
                       <div style={{position: 'absolute', paddingLeft: '70%', paddingTop:'4%',backgroundColor:'re'}}><img src={awayteamLogo} style={{width:'78px', height:'78px'}}/>
@@ -176,7 +178,7 @@ export default function CenteredGrid(props) {
                       <img src={leagueLogo} style={{width:31, height:31}}/></span>{venue}
                     </div>
                   </div>  
-                </div>
+                {/* </div> */}
 
               </div> 
               
