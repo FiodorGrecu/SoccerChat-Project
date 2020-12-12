@@ -4,7 +4,7 @@ import os
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "soccerchat.db")
-print(DATAPATH)
+# print(DATAPATH)
 
 def schema(dbpath = DATAPATH):
     with sqlite3.connect(dbpath) as conn:
