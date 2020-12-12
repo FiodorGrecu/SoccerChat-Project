@@ -181,7 +181,6 @@ export default function CenteredGrid(props) {
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{hometeamCoach}</p>
                     </div>
                   </div>
-
                     <div className={classes.homeSubs} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}} >Substitutions</div>
                       {homeSubs}
                 </div> 
