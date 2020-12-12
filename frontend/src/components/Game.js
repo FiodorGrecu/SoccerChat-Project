@@ -158,7 +158,7 @@ export default function CenteredGrid(props) {
                                   <p >{venue}</p>
                     </div>
                   </div>  
-                  <div style={{backgroundColor:'red', display:'flex', width:'100%', height:'15%' }}>
+                  <div style={{backgroundColor:'red', display:'flex', width:'100%' }}>
                     <div style={{ display:'flex', width:'100%'}}>
                       <a style={{ color:'white' }}>Summary</a>
                       <a style={{  color:'white' }}>Statistict</a>
@@ -178,10 +178,12 @@ export default function CenteredGrid(props) {
                       </div>
                   <div style={{display:'flex'}}>
                     <div className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
-                      <p style={{paddingLeft: '10%',fontWeight:'500'}}>{hometeamCoach}</p>
+                      <p style={{paddingLeft: '5%',fontWeight:'500'}}>{hometeamCoach}</p>
                     </div>
                   </div>
-                  <div  style={{width:'100%',color: '#516290' }} className={classes.homeStartingXI}>Substitutions{homeSubs}</div>
+
+                    <div className={classes.homeSubs} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}} >Substitutions</div>
+                      {homeSubs}
                 </div> 
 
                 <div className={classes.awayStartingXI} style={{width:'50%'}}>
@@ -193,11 +195,12 @@ export default function CenteredGrid(props) {
                         {awayPlayers}
                       </div>
                   <div style={{display:'flex'}}>
-                    <div className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
-                      <p style={{paddingLeft: '10%',fontWeight:'500'}}>{awayteamCoach}</p>
+                    <div className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
+                      <p style={{paddingLeft: '5%',fontWeight:'500'}}>{awayteamCoach}</p>
                     </div>
                   </div>
-                  <div  style={{width:'100%',color: '#516290' }} className={classes.homeStartingXI}>Substitutions{awaySubs}</div>
+                  <div className={classes.awaySubs} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}} >Substitutions</div>
+                    {awaySubs}
                 </div> 
 
                 {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
