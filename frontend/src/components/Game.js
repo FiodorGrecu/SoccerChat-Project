@@ -110,7 +110,18 @@ export default function CenteredGrid(props) {
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
 
     // **********  All of this divs iside the grid were initialy Paper tags
-        <div className={classes.homePlayersName}> <hr width='100%'/> <p style={{paddingLeft:'10%'}}> {player.player.name} {player.player.number}</p></div>
+        <div className={classes.homePlayersName}> <hr width='100%'/> 
+          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+            <circle style={{backgroundColor: "#be13aa",width: '30px',height: "30px",borderRadius: '50%',display: 'inline-block',textAlign: 'center', margin: '2px', position:'relative',}}>
+              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+                width: '90px'}}>{player.player.number}
+              </span>
+            </circle>
+            <span style={{textAlign:'center', paddingLeft:'20px',paddingBottom:'20px', paddingTop:'2%'}}>{player.player.name}</span>
+          </div>
+        </div>
+          // <p style={{paddingLeft:'10%'}}>  
+          // // <span style={{paddingLeft: '2%',backgroundColor:'red', borderRadius:'2em', mozBorderRadius:'2%',webkitBorderRadius: '1em'}}></span></p>
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
@@ -205,6 +216,8 @@ export default function CenteredGrid(props) {
               </div>   
           </div>
         <div style={{width:'30%', height:'1100px' }} >
+          {/* <circle style={{backgroundColor: "#f00",width: '30px',height: "30px",borderRadius: '50%',display: 'inline-block',textAlign: 'center',margin: '2px', position:'relative'}}><span style={{position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+  width: '90px'}}>Wow</span></circle> */}
                 <ChatSection gameId={gameNum}/>
         </div>
     </div>
