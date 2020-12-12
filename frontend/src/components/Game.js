@@ -184,7 +184,6 @@ export default function CenteredGrid(props) {
                     <div className={classes.homeSubs} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}} >Substitutions</div>
                       {homeSubs}
                 </div> 
-
                 <div className={classes.awayStartingXI} style={{width:'50%'}}>
                       <div style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold'}}>
                         Starting Lineup
