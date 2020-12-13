@@ -149,44 +149,45 @@ export default function CenteredGrid(props) {
 
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
-            <div style={{width:'70%'}} >  
+            <div style={{width:'70%', position:'relative',}} >  
                 <div className={classes.scoreSheet} slyle={{display:'flex'}}>
-                <div style={{display:'flex', width:'100%'}}>
-                  <div className={classes.date} style={{width: '100%', position: 'absolute', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
-                </div>
+                  <div style={{display:'flex', width:'100%'}}>
+                    <div className={classes.date} style={{width: '100%', position: 'absolute', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
+                  </div>
 
-                <div style={{display:'flex', width:'100%'}}>
-                  <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                    <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
-                    <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
-                    <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
-                  </div>
-                  <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                    <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
-                    <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
-                    <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>
-                  </div>
-                </div>
-
-                  <div style={{display:'flex', width:'100%', height:'15%' ,backgroundColor:'white'}}>
-                    <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
-                      <img src={leagueLogo} style={{width:31, height:31 }} />
+                  <div style={{display:'flex', width:'100%'}}>
+                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
+                      <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
+                      <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
+                      <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
-                    <div style={{ width:'50%', textAlign:'right', 
-                                  paddingTop:'20px', paddingRight:'2%', 
-                                  fontFamily: 'Roboto,sans-serif',
-                                  fontSize: '1rem', color: '#8e9cc5',
-                                  fontWeight: '550'}}>
-                                  <p >{venue}</p>
-                    </div>
-                  </div>  
-                  <div style={{backgroundColor:'red', display:'flex', width:'100%' }}>
-                    <div style={{ display:'flex', width:'100%'}}>
-                      <a style={{ color:'white' }}>Summary</a>
-                      <a style={{  color:'white' }}>Statistict</a>
-                      <a style={{  color:'white' }}>Events</a>
+                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
+                      <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
+                      <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
+                      <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>
                     </div>
                   </div>
+                 
+                    <div style={{display:'flex', width:'100%', height:'15%' ,backgroundColor:'white', position:'absolute', bottom:'0'}}>
+                      <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
+                        <img src={leagueLogo} style={{width:31, height:31 }} />
+                      </div>
+                      <div style={{ width:'50%', textAlign:'right', 
+                                    paddingTop:'20px', paddingRight:'2%', 
+                                    fontFamily: 'Roboto,sans-serif',
+                                    fontSize: '1rem', color: '#8e9cc5',
+                                    fontWeight: '550'}}>
+                                    <p >{venue}</p>
+                      </div>
+                    </div>  
+                    <div style={{backgroundColor:'red', display:'flex', width:'100%' , position:'absolute', bottom:'0', }}>
+                      <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
+                        <a style={{ color:'white' }}>Summary</a>
+                        <a style={{  color:'white' }}>Statistict</a>
+                        <a style={{  color:'white' }}>Events</a>
+                      </div>
+                    </div>
+                
               </div> 
 
               <div style={{display:'flex'}}>
@@ -211,7 +212,7 @@ export default function CenteredGrid(props) {
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>
                       </Paper>
-                      <Paper style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}}>
+                      <Paper style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%'}}>
                         {awayPlayers}
                       </Paper>
                   <div style={{display:'flex'}}>
