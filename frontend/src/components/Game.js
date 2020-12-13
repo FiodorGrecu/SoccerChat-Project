@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 // import {View, Text, StyleSheet} from 'react-native';
+import Card from '@material-ui/core/Card'
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import games from "./teams";
@@ -117,19 +118,29 @@ export default function CenteredGrid(props) {
                 width: '90px'}}>{player.player.number}
               </span>
             </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingBottom:'20px', paddingTop:'2%'}}>{player.player.name}</span>
+            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
+            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
           </div>
         </div>
-          // <p style={{paddingLeft:'10%'}}>  
-          // // <span style={{paddingLeft: '2%',backgroundColor:'red', borderRadius:'2em', mozBorderRadius:'2%',webkitBorderRadius: '1em'}}></span></p>
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-        <div className={classes.awayPlayersName}> <hr width='100%' /> <p style={{paddingLeft:'10%'}}>{player.player.name} {player.player.number}</p></div>
+        // <div className={classes.awayPlayersName}> <hr width='100%' /> <p style={{paddingLeft:'5%'}}>{player.player.name} {player.player.number}</p></div>
+    <div className={classes.awayPlayersName}> <hr width='100%'/> 
+        <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+        <circle style={{backgroundColor: "grey",width: '30px',height: "30px",borderRadius: '50%',display: 'inline-block',textAlign: 'center', margin: '2px', position:'relative',}}>
+          <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+            width: '90px'}}>{player.player.number}
+          </span>
+        </circle>
+        <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
+        <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
+      </div> 
+    </div>
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-      <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+      <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
@@ -179,14 +190,14 @@ export default function CenteredGrid(props) {
               </div> 
 
               <div style={{display:'flex'}}>
-                <div className={classes.homeStartingXI} style={{width:'50%'}}>
-                      <div style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold'}}>
+                <div className={classes.homeStartingXI} style={{width:'50%', }}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
-                      </div>
-                      <div style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold'}}>
+                      </Paper>
+                      <Paper style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}}>
                         {homePlayers}
-                      </div>
+                      </Paper>
                   <div style={{display:'flex'}}>
                     <div className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{hometeamCoach}</p>
@@ -196,13 +207,13 @@ export default function CenteredGrid(props) {
                       {homeSubs}
                 </div> 
                 <div className={classes.awayStartingXI} style={{width:'50%'}}>
-                      <div style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold'}}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px'}}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>
-                      </div>
-                      <div style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold'}}>
+                      </Paper>
+                      <Paper style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}}>
                         {awayPlayers}
-                      </div>
+                      </Paper>
                   <div style={{display:'flex'}}>
                     <div className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{awayteamCoach}</p>
@@ -216,8 +227,6 @@ export default function CenteredGrid(props) {
               </div>   
           </div>
         <div style={{width:'30%', height:'1100px' }} >
-          {/* <circle style={{backgroundColor: "#f00",width: '30px',height: "30px",borderRadius: '50%',display: 'inline-block',textAlign: 'center',margin: '2px', position:'relative'}}><span style={{position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-  width: '90px'}}>Wow</span></circle> */}
                 <ChatSection gameId={gameNum}/>
         </div>
     </div>
