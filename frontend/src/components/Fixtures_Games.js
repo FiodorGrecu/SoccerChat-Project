@@ -154,7 +154,13 @@ export default function SimplePaper() {
    
 
     <div style={{ backgroundColor: 'aliceblue'}}>
-        <div style={{padding:'15%'}}>{outputLast5}</div>
+
+        <div style={{padding:'5%'}}>
+          <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',fontWeight:'bold' }}>Main Results</Paper>
+          {outputLast5}
+          <Link><Paper style={{textAlign:'right', height:'50px', paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif', fontWeight:'bold' }}>Show All > </Paper></Link>
+
+        </div>
     </div>
   );
 }
