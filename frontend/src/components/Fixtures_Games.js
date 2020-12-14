@@ -154,9 +154,6 @@ export default function SimplePaper() {
    
 
     <div style={{ backgroundColor: 'aliceblue'}}>
-      <div style={{ width: '100%', height:'400px', backgroundColor: 'pink', padding:'20px'}}>
-        
-      </div> 
         <div style={{padding:'15%'}}>{outputLast5}</div>
     </div>
   );
