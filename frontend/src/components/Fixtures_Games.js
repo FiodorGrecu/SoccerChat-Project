@@ -3,68 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { games as fixtures } from "./teams";
-import { Box, Divider, Grid } from '@material-ui/core';
-import { spacing } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography';
-// import { useState } from 'react';
-// import { typography } from '@material-ui/system';
-
-
 
 
 const useStyles = makeStyles((theme) => ({
 
-  // root: {
-    // display: 'flex',
-    // flexWrap: 'no-wrap',        
-    '& > *': {
-      // margin: ,
-      // justifyContent: 'center',
-      // paddingTop: theme.spacing(1),
-      // width: theme.spacing(11),
-      // height: theme.spacing(10),
-      // textAlign: 'center',
-      // backgroundColor: 'rgb(238, 238, 240)',
-
-    // },
-    
-  // },
-  // paper: {
-  //       width: theme.spacing(100),
-  //       height: theme.spacing(5),
-  //       padding: theme.spacing(1),
-  //       paddingRight: theme.spacing(2),
-  //       marginRight: theme.spacing(1),
-  //       color: '#525252',
-  //       marginTop: theme.spacing(1),
-  //       textAlign: 'center',
-  //       fontWeight: (500),
-  //       fontSize: theme.spacing(2),
-  //       fontFamily: "Helvetica",
-  //       backgroundColor: "alicebue"
-    },
-    // box: {
-    //     paddingTop: theme.spacing(1.4),
-    //     padding: theme.spacing(1.4),
-        // padding: 10,
-        // paddingLeft:220,
-    //     paddingLeft:theme.spacing(30),
-    //     marginTop: theme.spacing(-2.3),    
-    // },
-    // goalsHomeTeam: {
-    //   // paddingLeft:110,
-    //   paddingLeft: theme.spacing(20),
-    //   // alignSelf: 'flex-end',
-    //   paddingRight: theme.spacing(2),
-    //   // paddingRight:10,
-    // },
-    // goalsAwayTeam:{
-    //   paddingLeft: theme.spacing(2),
-    //   paddingRight: theme.spacing(20),
-    // },
-    // reactFragment: {
-    //   paddingRight:110,
-    // }
+  
   
    
 }));
