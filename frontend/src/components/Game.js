@@ -23,25 +23,25 @@ const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
     width: '98%',
-    height: '25%',
+    height: '15%',
     backgroundColor: 'black',
     margin: '1%',
     position: 'relative',
   },
   
-  // venueArea: {
-  //   color: '#8e9cc5',
-  //   fontWeight: 'bold',
-  //   fontSize: '13.65px',
-  //   fontFamily:'Roboto,sans-serif',
-  //   backgroundColor:'white',
-  //   position: 'absolute',
-  //   alignItems:'center',
-  //   paddingTop: '10px',
-  //   bottom:'0px',
-  //   width:'100%',
-  //   height:'20%',
-  // },
+  venueArea: {
+    color: '#8e9cc5',
+    fontWeight: 'bold',
+    fontSize: '13.65px',
+    fontFamily:'Roboto,sans-serif',
+    backgroundColor:'white',
+    position: 'absolute',
+    alignItems:'center',
+    paddingTop: '10px',
+    bottom:'0px',
+    width:'100%',
+    height:'20%',
+  },
 
   homeStartingXI: {
 
@@ -198,7 +198,7 @@ export default function CenteredGrid(props) {
                     <div className={classes.date} style={{width: '100%', position: 'absolute', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
                   </div>
 
-                  <div style={{display:'flex', width:'100%'}}>
+                  <div style={{display:'flex', width:'100%', height:'100%', backgroundColor:'pin',}}>
                     <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
                       <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
@@ -211,7 +211,7 @@ export default function CenteredGrid(props) {
                     </div>
                   </div>
                  
-                    <div style={{display:'flex', width:'100%', height:'15%' ,backgroundColor:'white', position:'absolute', bottom:'0'}}>
+                    <div style={{display:'flex', width:'100%', height:'20%' ,backgroundColor:'white', position:'absolute', bottom:'0'}}>
                       <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                         <img src={leagueLogo} style={{width:31, height:31 }} />
                       </div>
@@ -223,14 +223,15 @@ export default function CenteredGrid(props) {
                                     <p >{venue}</p>
                       </div>
                     </div>  
-                    <div style={{backgroundColor:'red', display:'flex', width:'100%' , position:'absolute', bottom:'0', }}>
+                
+                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:"10" , position:'absolute', bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <a style={{ color:'white' }}>Summary</a>
-                        <a style={{  color:'white' }}>Statistict</a>
-                        <a style={{  color:'white' }}>Events</a>
+                        <a style={{ color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem'}}>Lineups</a>
+                        <a style={{ color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Summary</a>
+                        <a style={{  color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Statistict</a>
+                        <a style={{  color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Events</a>
                       </div>
                     </div>
-                
               </div> 
 
               <div style={{display:'flex'}}>

@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     // marginLeft: 170, 
     borderRadius: 4,
+    backgroundColor:'#be13aa'
     
   },
 
