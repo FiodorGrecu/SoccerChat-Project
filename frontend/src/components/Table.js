@@ -8,36 +8,15 @@ import Typography from '@material-ui/core/Typography';
 import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  root: {
-    width: 475,
-    height: 475,
-    position: 'relative',
-    justifyContent: "center",
-    alignItems: 'center',
-    marginTop: 100,
-    marginLeft: 450
-
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+  
 });
 
-export default function SimpleCard() {
+export default function PLTable() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root}>
-     
-    </Card>
+    <div className={classes.root} style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+      <div></div>
+    </div>
   );
 }

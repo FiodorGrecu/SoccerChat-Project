@@ -29,34 +29,34 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   
-  venueArea: {
-    color: '#8e9cc5',
-    fontWeight: 'bold',
-    fontSize: '13.65px',
-    fontFamily:'Roboto,sans-serif',
-    backgroundColor:'white',
-    position: 'absolute',
-    alignItems:'center',
-    paddingTop: '10px',
-    bottom:'0px',
-    width:'100%',
-    height:'20%',
-  },
+  // venueArea: {
+  //   color: '#8e9cc5',
+  //   fontWeight: 'bold',
+  //   fontSize: '13.65px',
+  //   fontFamily:'Roboto,sans-serif',
+  //   backgroundColor:'white',
+  //   position: 'absolute',
+  //   alignItems:'center',
+  //   paddingTop: '10px',
+  //   bottom:'0px',
+  //   width:'100%',
+  //   height:'20%',
+  // },
 
-  homeStartingXI: {
+  // homeStartingXI: {
 
-    justifyContent:'flex-end',
-    width: '100%',
-    // padding: '22px',
+  //   justifyContent:'flex-end',
+  //   width: '100%',
+  //   // padding: '22px',
     
-  },
+  // },
 
-  awayStartingXI: {
+  // awayStartingXI: {
 
-    justifyContent:'flex-start',
-    width: '100%',
+  //   justifyContent:'flex-start',
+  //   width: '100%',
    
-  },
+  // },
 
 
 }));
@@ -108,8 +108,9 @@ export default function CenteredGrid(props) {
   const homeTeamScore = fixture.goals && fixture.goals.home;
   const awayTeamScore = fixture.goals && fixture.goals.away;
 
-  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
+  const date = fixture.fixture && fixture.fixture.date;
 
+  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
     // **********  All of this divs iside the grid were initialy Paper tags
         <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
@@ -188,14 +189,15 @@ export default function CenteredGrid(props) {
             <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
           </div>
         </div>
+        
   ));
-
+console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
-            <div style={{width:'70%', position:'relative',}} >  
+            <div style={{width:'70%', }} >  
                 <div className={classes.scoreSheet} slyle={{display:'flex'}}>
                   <div style={{display:'flex', width:'100%'}}>
-                    <div className={classes.date} style={{width: '100%', position: 'absolute', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>(Date)</div>
+                    <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date},(Date)</div>
                   </div>
 
                   <div style={{display:'flex', width:'100%', height:'100%', backgroundColor:'pin',}}>
@@ -211,7 +213,7 @@ export default function CenteredGrid(props) {
                     </div>
                   </div>
                  
-                    <div style={{display:'flex', width:'100%', height:'20%' ,backgroundColor:'white', position:'absolute', bottom:'0'}}>
+                    <div style={{display:'flex', width:'100%', height:'20%' ,backgroundColor:'white',  bottom:'0'}}>
                       <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                         <img src={leagueLogo} style={{width:31, height:31 }} />
                       </div>
@@ -224,15 +226,20 @@ export default function CenteredGrid(props) {
                       </div>
                     </div>  
                 
-                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:"10" , position:'absolute', bottom:'0', }}>
+                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:"10" ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
                         <a style={{ color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem'}}>Lineups</a>
-                        <a style={{ color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Summary</a>
-                        <a style={{  color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Statistict</a>
-                        <a style={{  color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Events</a>
+                        <a style={{ color:'white', color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Summary</a>
+                        <a style={{ color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Statistict</a>
+                        <a style={{ color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Events</a>
                       </div>
                     </div>
               </div> 
+
+{/* This here underneath is the line 197 */}
+            <div style={{width:'70%', }} >  
+
+              </div>
 
               <div style={{display:'flex'}}>
                 <div className={classes.homeStartingXI} style={{width:'50%', }}>

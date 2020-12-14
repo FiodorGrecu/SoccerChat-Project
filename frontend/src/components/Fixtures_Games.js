@@ -23,6 +23,8 @@ export default function SimplePaper() {
   const [fixtures, setFixtures] = useState([]);
   const numberGames = 5;
 
+  // const date = fixture.fixture && fixture.fixture.date;
+
   useEffect(() => {
 
     async function getFixtures() {
@@ -43,7 +45,9 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'10px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                { fixture.date }(date)</p>
+                {new Date(fixture.event_date).getHours()}
+
+                </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
@@ -79,7 +83,7 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'10px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                { fixture.date }(date)</p>
+                {  }(date)</p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
