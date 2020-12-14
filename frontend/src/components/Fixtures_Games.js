@@ -40,6 +40,10 @@ export default function SimplePaper() {
     <div className={classes.reactFragment} style={{width:'100%', }}>
       <Link to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
+          <p style={{textAlign:'left', paddingTop:'10px', paddingLeft:'10px',
+              fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
+              fontWeight:'bold',}}>
+                {fixture.date}(date)</p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
@@ -47,7 +51,6 @@ export default function SimplePaper() {
                   { fixture.homeTeam.team_name }</p>
             <img src={ fixture.homeTeam.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
-            <p>{fixture.date}</p>
           </div>
           <div style={{width:'10%', display:'flex', }}>
             <div style={{width:'50%', display:'flex',  textAlign:'right', paddingTop:'10px',  }}>
