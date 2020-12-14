@@ -117,36 +117,6 @@ export default function SimplePaper() {
           </div> 
         </Paper>
       </Link>
-          {/* <Box className={classes.box} >
-          <Grid container spacing={1}>
-                <Divider/>
-            <Grid sitem xs={3}>
-              <Link to={`/game/${fixture.fixture_id}`}>
-                <Paper elevation={10} className={classes.paper} style={{alignSelf: 'flex-end'}}> 
-                      { fixture.homeTeam.team_name }
-                      <img src={ fixture.homeTeam.logo } style={{width:26, height:26, paddingLeft:3, paddingRight:3}}/>
-                      <strong className={classes.goalsHomeTeam}>{ fixture.goalsAwayTeam }</strong>
-                      { fixture.event_date }
-                      {'  -  '}
-                      <strong className={classes.goalsAwayTeam}>{ fixture.goalsHomeTeam }</strong>
-                      <img src={ fixture.awayTeam.logo } style={{width:26, height:26, paddingLeft:3, paddingRight:3}}/>
-                    { fixture.awayTeam.team_name }
-                </Paper>                 
-              </Link>
-            </Grid>
-            <Grid>
-                <Link>
-                  <Paper elevation={3} className={classes.paper}> 
-                          {  fixture.homeTeam.team_name  } 
-                          <span className={fixture.logo}>{"(Logo)"}</span>
-                          <span style={{marginLeft:10, marginRight:10}}>{"  Time   "}</span> 
-                          <span className={fixture.logo}>{"(Logo)"}</span>
-                          {  fixture.awayTeam.team_name  }         
-                  </Paper>                 
-                </Link>
-            </Grid>
-          </Grid>
-          </Box> */}
       </div>
   ));
 
@@ -156,10 +126,18 @@ export default function SimplePaper() {
     <div style={{ backgroundColor: 'aliceblue'}}>
 
         <div style={{padding:'5%'}}>
-          <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',fontWeight:'bold' }}>Main Results</Paper>
+          <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
+                  fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',
+                  fontWeight:'bold' }}>
+                    Main Results
+          </Paper>
           {outputLast5}
-          <Link><Paper style={{textAlign:'right', height:'50px', paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif', fontWeight:'bold' }}>Show All > </Paper></Link>
-
+          <Link><Paper style={{textAlign:'right', height:'50px', 
+                  paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
+                  color:'grey',fontFamily:'Roboto,sans-serif', 
+                  fontWeight:'bold' }}>
+                    Show All > 
+          </Paper></Link>
         </div>
     </div>
   );
