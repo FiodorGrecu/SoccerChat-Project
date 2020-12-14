@@ -113,7 +113,13 @@ export default function CenteredGrid(props) {
     // **********  All of this divs iside the grid were initialy Paper tags
         <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",width: '30px',height: "30px",borderRadius: '50%',display: 'inline-block',textAlign: 'center', margin: '2px', position:'relative',}}>
+            <circle style={{backgroundColor: "#be13aa",
+            // <circle style={{backgroundColor: "#be13aa",
+                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
+                    // background: '-webkit-linear-gradient(top,  #CD0000 5%, #EEA9B8 84%,#FF1493 88%,#EE2C2C 90%)', /* Chrome10-25,Safari5.1-6 */
+                    width: '30px',height: "30px",borderRadius: '50%',
+                    display: 'inline-block',textAlign: 'center', margin: '2px', 
+                    position:'relative',}}>
               <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
                 width: '90px'}}>{player.player.number}
               </span>
@@ -128,7 +134,12 @@ export default function CenteredGrid(props) {
         // <div className={classes.awayPlayersName}> <hr width='100%' /> <p style={{paddingLeft:'5%'}}>{player.player.name} {player.player.number}</p></div>
     <div className={classes.awayPlayersName}> <hr width='100%'/> 
         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-        <circle style={{backgroundColor: "grey",width: '30px',height: "30px",borderRadius: '50%',display: 'inline-block',textAlign: 'center', margin: '2px', position:'relative',}}>
+        <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
+                        // background: '-webkit-linear-gradient(top,  #696969 25%, #BFBFBF 74%,#949494 88%,#7D7D7D 80%)', /* Chrome10-25,Safari5.1-6 */
+                        background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
+                        borderRadius: '50%',display: 'inline-block',
+                        textAlign: 'center', margin: '2px', 
+                        position:'relative',}}>
           <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
             width: '90px'}}>{player.player.number}
           </span>
@@ -140,11 +151,43 @@ export default function CenteredGrid(props) {
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-      <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+      // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+      <div className={classes.homePlayersName}> <hr width='100%'/> 
+          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+            <circle style={{backgroundColor: "#be13aa",
+                    background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
+                    width: '30px',height: "30px",borderRadius: '50%',
+                    display: 'inline-block',textAlign: 'center', 
+                    margin: '2px', position:'relative',}}>
+              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+                width: '90px'}}>{substitutes.player.number}
+              </span>
+            </circle>
+            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
+            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
+          </div>
+        </div>
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-      <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+      // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+      <div className={classes.homePlayersName}> <hr width='100%'/> 
+          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+            <circle style={{backgroundColor: 'grey',
+                    background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
+
+                    width: '30px',height: "30px",borderRadius: '50%',
+                    display: 'inline-block',textAlign: 'center', 
+                    margin: '2px', position:'relative',}}>
+
+              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+                width: '90px'}}>{substitutes.player.number}
+              </span>
+            </circle>
+            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
+            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
+          </div>
+        </div>
   ));
 
   return (
@@ -192,7 +235,7 @@ export default function CenteredGrid(props) {
 
               <div style={{display:'flex'}}>
                 <div className={classes.homeStartingXI} style={{width:'50%', }}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px' }}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
                       </Paper>
@@ -200,15 +243,16 @@ export default function CenteredGrid(props) {
                         {homePlayers}
                       </Paper>
                   <div style={{display:'flex'}}>
-                    <div className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
+                    <Paper className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'1%'}}>Coach<Divider/>
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{hometeamCoach}</p>
-                    </div>
+                    </Paper>
                   </div>
-                    <div className={classes.homeSubs} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}} >Substitutions</div>
-                      {homeSubs}
+                    <Paper className={classes.homeSubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}}>Substitutions
+                      <p >{homeSubs}</p>
+                    </Paper>
                 </div> 
                 <div className={classes.awayStartingXI} style={{width:'50%'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px'}}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%'}}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>
                       </Paper>
@@ -216,12 +260,13 @@ export default function CenteredGrid(props) {
                         {awayPlayers}
                       </Paper>
                   <div style={{display:'flex'}}>
-                    <div className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}}>Coach<Divider/>
+                    <Paper className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'1%'}}>Coach<Divider/>
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{awayteamCoach}</p>
-                    </div>
+                    </Paper>
                   </div>
-                  <div className={classes.awaySubs} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px'}} >Substitutions</div>
-                    {awaySubs}
+                  <Paper className={classes.awaySubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}} >Substitutions
+                    <p >{awaySubs}</p>
+                  </Paper>
                 </div> 
 
                 {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
