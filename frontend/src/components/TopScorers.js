@@ -48,33 +48,20 @@ export default function SimplePaper() {
   }, [] )
 
   const names = topScorers.map(player => (
-  <p>{player.player.name}</p>
+    <p><hr style={{}}></hr>{player.player.name}</p>
+    
   ))
 
 
   return (
     
     
-    <div className={classes.root} style={{display: "flex", width:'100%', height:'1000px', backgroundColor: "aliceblue",}}>
+    <div  style={{display: "flex",  }}>
         
-        <div style={{display:'flex', width:'100%', height:'10%' ,backgroundColor:'white',  bottom:'0'}}>
-          <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
-            {/* <img src={leagueLogo} style={{width:31, height:31 }} /> */}
-            <p>Premier League</p>
-          </div>
-          <div style={{ width:'50%', textAlign:'right', 
-                        paddingTop:'20px', paddingRight:'2%', 
-                        fontFamily: 'Roboto,sans-serif',
-                        fontSize: '1rem', color: '#8e9cc5',
-                        fontWeight: '550'}}>
-                        {/* <p >{venue}</p> */}
-                        <p>Logo Here</p>
-            </div>
+        
+        <div style={{width:'100%', display:'flex', }}>
+            <div style={{backgroundColor:'aqua', width:'100%', textAlign:'left', }}>{names}</div>
         </div>
-        {/* <div style={{display: "flex", width: '80%', }}>
-          General Standings (2020 - 2021)
-        </div> */}
-        <div>{names}</div>
      
     </div>
   );
