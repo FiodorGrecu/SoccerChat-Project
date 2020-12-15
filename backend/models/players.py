@@ -129,5 +129,5 @@ if __name__=='__main__':
 
 
     # lineups = Player.lineups_from_fixture('592215')
-    topscorers = Player.top_scorers('2020','39')
-    pprint(topscorers)
+    topscorers_lst = Player.top_scorers('2020','39')
+    pprint(topscorers_lst)

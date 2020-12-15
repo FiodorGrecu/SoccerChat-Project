@@ -9,6 +9,7 @@ from models.accounts import Account
 from flask_cors import CORS
 from models.last5 import last5
 from models.onegame import onegame
+from models.events import Event
 
 
 
@@ -84,10 +85,10 @@ def last_5(num_games):
     return jsonify({'fixtures': last_5})
 
 ####### TOP SCORERS
-@app.route('/api/topscorers/<season><league_id>', methods=[ "GET"])
+@app.route('/api/topscorers/<season>/<league_id>', methods=[ "GET"])
 def topscorers(season, league_id):
-    topscorers_list = Player.top_scorers(season,league_id)
-    return jsonify({'fixtures': topscorers_list})
+    topscorers_lst = Player.top_scorers(season,league_id)
+    return jsonify({'fixtures': topscorers_lst})
 
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
@@ -116,21 +117,21 @@ def game_h2h(team_id_1, team_id_2):
 @app.route('/api/team_by_id/<team_id>', methods=["GET"])
 def team_by_id(team_id):
     team = Team.team_by_id(team_id)
-    return jsonify({'teams': team})
+    return jsonify({'fixtures': team})
 
 # EVENTS
 
 @app.route('/api/game_events/<fixture_id>', methods=["GET"])
 def game_events(fixture_id):
-    events = Game.events_fixture_id(fixture_id)
-    return jsonify({"fixtures/events": events})
+    events = Event.events_fixture_id(fixture_id)
+    return jsonify({"fixtures": events})
 
 # PLAYERS 
 
 @app.route('/api/lineups/<fixture_id>', methods=['GET'])
 def fixture_lineups(fixture_id):
     lineups = Player.lineups_from_fixture(fixture_id)
-    return jsonify({"lineUps": lineups})
+    return jsonify({"fixtures": lineups})
 
 @app.route('/api/save_chat', methods=['POST'])
 def save_chat():

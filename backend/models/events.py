@@ -92,9 +92,9 @@ class Event:
 
     @classmethod
     def events_fixture_id(cls, fixture_id):
-        url = "https://api-football-beta.p.rapidapi.com/fixtures/events"
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures/events"
 
-        querystring = {"fixture": fixture_id}
+        querystring = {"fixture": {fixture_id}}
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
