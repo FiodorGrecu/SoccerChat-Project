@@ -88,7 +88,7 @@ def last_5(num_games):
 @app.route('/api/topscorers/<season>/<league_id>', methods=[ "GET"])
 def topscorers(season, league_id):
     topscorers_lst = Player.top_scorers(season,league_id)
-    return jsonify({'fixtures': topscorers_lst})
+    return jsonify({'scorers': topscorers_lst})
 
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
