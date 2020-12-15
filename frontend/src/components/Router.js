@@ -3,7 +3,7 @@ import { Route, useParams } from 'react-router-dom';
 import HomePage from '.components/HomePage';
 import FixturesGames from '.components/Fixtures_Games';
 import Game from './Game';
-import Scores from '.components/Scores';
+import TopScorers from '.components/TopScorers';
 import LogIn from '.components/LogIn';
 import SignUp from '.components/SignUp';
 import Table from '.components/Table';
@@ -22,7 +22,7 @@ export default function Router () {
             {/* <Route path="/matches" component={Matches}/> */}
             <Route path="/game/:id" component={Game}/>
             <Route path="/games" component={ExampleCompnents}/>
-            <Route path="/scores" component={Scores}/>
+            <Route path="/topscorers" component={TopScorers}/>
             <Route path="/login" component={LogIn}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/table" component={Table}/>

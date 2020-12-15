@@ -182,7 +182,7 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputNext5}
-          <Link><Paper style={{textAlign:'right', height:'50px', 
+          <Link ><Paper style={{textAlign:'right', height:'50px', 
                   paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                   color:'grey',fontFamily:'Roboto,sans-serif', 
                   fontWeight:'bold' }}>

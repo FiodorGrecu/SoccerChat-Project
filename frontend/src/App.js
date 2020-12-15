@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/HomePage';
 import Game from './components/Game';
 import FixtureGames from './components/Fixtures_Games';
-import Scores from './components/Scores';
+import TopScorers from './components/TopScorers';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 // import Chat from './components/Chat';
@@ -51,8 +51,8 @@ function App() {
           <FixtureGames/>  
         </Route>
 
-        <Route path='/scores'>
-          <Scores/>
+        <Route path='/topscorers'>
+          <TopScorers/>
         </Route>
 
         <Route path='/login'>

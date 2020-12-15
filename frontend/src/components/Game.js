@@ -176,7 +176,6 @@ export default function CenteredGrid(props) {
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
             <circle style={{backgroundColor: 'grey',
                     background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-
                     width: '30px',height: "30px",borderRadius: '50%',
                     display: 'inline-block',textAlign: 'center', 
                     margin: '2px', position:'relative',}}>
@@ -195,12 +194,12 @@ console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'70%', }} >  
-                <div className={classes.scoreSheet} slyle={{display:'flex'}}>
+                <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
                   <div style={{display:'flex', width:'100%'}}>
-                    <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date},(Date)</div>
+                    <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date}</div>
                   </div>
 
-                  <div style={{display:'flex', width:'100%', height:'100%', backgroundColor:'pin',}}>
+                  <div style={{display:'flex', width:'100%',  backgroundColor:'pin ',}}>
                     <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
                       <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
@@ -213,7 +212,7 @@ console.log(fixture)
                     </div>
                   </div>
                  
-                    <div style={{display:'flex', width:'100%', height:'20%' ,backgroundColor:'white',  bottom:'0'}}>
+                    <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
                       <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                         <img src={leagueLogo} style={{width:31, height:31 }} />
                       </div>
@@ -226,7 +225,7 @@ console.log(fixture)
                       </div>
                     </div>  
                 
-                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:"10" ,  bottom:'0', }}>
+                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
                         <a style={{ color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem'}}>Lineups</a>
                         <a style={{ color:'white', color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Summary</a>
@@ -237,12 +236,12 @@ console.log(fixture)
               </div> 
 
 {/* This here underneath is the line 197 */}
-            <div style={{width:'70%', }} >  
+            {/* <div style={{width:'70%', }} >  
 
-              </div>
+              </div> */}
 
-              <div style={{display:'flex'}}>
-                <div className={classes.homeStartingXI} style={{width:'50%', }}>
+              <div style={{display:'flex' }}>
+                <div style={{width:'50%', paddingTop:'12px'}}>
                       <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
@@ -259,7 +258,7 @@ console.log(fixture)
                       <p >{homeSubs}</p>
                     </Paper>
                 </div> 
-                <div className={classes.awayStartingXI} style={{width:'50%'}}>
+                <div  style={{width:'50%', paddingTop:'12px'}}>
                       <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%'}}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>

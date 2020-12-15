@@ -53,7 +53,7 @@ export default function ProminentAppBar() {
             <Link  style={{ padding: 25, color:"white"}} component={RouterLink} to="/home">Home</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/fixtures">Matches</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/game/435">Game</Link>
-            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/scores">Scores</Link>
+            <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/topscorers">Top Scorers</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/table">Table</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/chat">Chat</Link>
           </Typography>

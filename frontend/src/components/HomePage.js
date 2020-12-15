@@ -9,15 +9,7 @@ const useStyles = makeStyles((theme) => ({
         // justifyContent: 'center',
         // alignItems: 'center',
     },
-    headerText: {
-        layout: 'flex',
-        color: 'white',
-        fontFamily: 'Roboto',
-        justifyContent: 'center',
-        alignItems: 'center',
-        // marginLeft: 530,
-        // marginTop: 400,
-    }
+   
   
   }));
   

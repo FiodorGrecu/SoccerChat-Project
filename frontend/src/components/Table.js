@@ -15,7 +15,7 @@ export default function PLTable() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+    <div className={classes.root} style={{display:"flex", backgroundColor:'#EAF0F7' }} >
       <div></div>
     </div>
   );
