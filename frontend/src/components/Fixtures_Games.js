@@ -4,7 +4,9 @@ import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { games as fixtures } from "./teams";
 import Typography from '@material-ui/core/Typography';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import StarIcon from '@fortawesome/react-fontawesome';
+import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -42,11 +44,14 @@ export default function SimplePaper() {
     <div className={classes.reactFragment} style={{width:'100%', }}>
       <Link to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
-          <p style={{textAlign:'left', paddingTop:'10px', paddingLeft:'10px',
+          <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}><StarOutlineRoundedIcon /></span>
+          <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                {new Date(fixture.event_date).getHours()}
-
+              <span style={{width:'100%' , }}>
+                {new Date(fixture.event_date).getDay()}/
+                {new Date(fixture.event_date).getMonth()}/
+                {new Date(fixture.event_date).getFullYear()}</span>
                 </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
