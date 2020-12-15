@@ -5,7 +5,7 @@ from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "soccerchat.db")
-print(DATAPATH)
+# print(DATAPATH)
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 API_KEY = "804b1594a5msh69900911a788156p125a69jsna7c589797665"
 
@@ -112,16 +112,13 @@ class Player:
         return(data)
     
     @classmethod
-    def top_scorers(cls, season, league):
+    def top_scorers(cls, season, league_id):
         url = f"https://api-football-beta.p.rapidapi.com/players/topscorers"
-
-        querystring = {"season": season,"league": league}
-
+        querystring = {"season": {season},"league": {league_id}}
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
             'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
             }
-
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
         return(data)

@@ -5,7 +5,7 @@ from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
-print(DATAPATH)
+# print(DATAPATH)
 
 class Lineup:
     dbpath = DATAPATH

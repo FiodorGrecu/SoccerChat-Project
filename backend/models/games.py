@@ -161,7 +161,7 @@ class Game:
 
     @classmethod
     def game_stats(cls, fixture_id):
-        url = "https://api-football-beta.p.rapidapi.com/fixtures/statistics"
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures/statistics"
         
         querystring = {"fixture": fixture_id}
 
@@ -192,7 +192,7 @@ class Game:
     @classmethod
     def last_10(cls, num_games):
 
-        url = "https://api-football-beta.p.rapidapi.com/fixtures/rounds"
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures/rounds"
 
         querystring = {"season":"2020","league":"39"}
 
