@@ -30,7 +30,7 @@ export default function SimplePaper() {
   const classes = useStyles();
 
   const [topScorers, setScorers] = useState([]);
-
+  const [scorersTeam, setScoreresTeam] = useState([])
 
   useEffect(() => {
     async function gameDetails() {
@@ -48,8 +48,12 @@ export default function SimplePaper() {
   }, [] )
 
   const names = topScorers.map(player => (
-    <p><hr style={{}}></hr>{player.player.name}</p>
+    <p>{player.player.name}<hr style={{}}/></p>
     
+  ))
+
+  const teams = scorersTeam.map(player => (
+    <p>{player.statistics.team.name}</p>
   ))
 
 
@@ -62,7 +66,9 @@ export default function SimplePaper() {
         <div style={{width:'100%', display:'flex', }}>
             <div style={{backgroundColor:'aqua', width:'100%', textAlign:'left', }}>{names}</div>
         </div>
-     
+        <div>
+            <div>{teams}</div>
+        </div>
     </div>
   );
 }
