@@ -31,6 +31,11 @@ export default function SimplePaper() {
 
   const [topScorers, setScorers] = useState([]);
   const [scorersTeam, setScoreresTeam] = useState([])
+  const [scorersGoals, setScoreresGoals] = useState([])
+  const [scorersAssists, setScoreresAssists] = useState([])
+  const [scorersPensalties, setScoreresPenalties] = useState([])
+  const [scorersAppearences, setScoreresAppearences] = useState([])
+
 
   useEffect(() => {
     async function gameDetails() {
@@ -40,6 +45,11 @@ export default function SimplePaper() {
       if (data.scorers) {
         console.log(data.scorers.response || null)
         setScorers(data.scorers.response || [])
+        setScoreresTeam(data.scorers.response || [])
+        setScoreresGoals(data.scorers.response || [])
+        setScoreresAssists(data.scorers.response || [])
+        setScoreresPenalties(data.scorers.response || [])
+        setScoreresAppearences(data.scorers.response || [])
       };
     }
   
@@ -48,13 +58,25 @@ export default function SimplePaper() {
   }, [] )
 
   const names = topScorers.map(player => (
-    <p>{player.player.name}<hr style={{}}/></p>
-    
+    <p>{player.player.name}<hr style={{}}/></p>  
+  ))
+  const teams = scorersTeam.map(player => (
+    <p>{player.statistics[0].team.name}<hr style={{}}/></p>
+  ))
+  const goals = scorersGoals.map(player => (
+    <p>{player.statistics[0].goals.total}<hr style={{}}/></p>
+  ))
+  const assists = scorersAssists.map(player => (
+    <p>{player.statistics[0].goals.assists}<hr style={{}}/></p>
+  ))
+  const penalties = scorersAssists.map(player => (
+    <p>{player.statistics[0].penalty.scored}<hr style={{}}/></p>
+  ))
+  const appearences = scorersAssists.map(player => (
+    <p>{player.statistics[0].games.appearences}<hr style={{}}/></p>
   ))
 
-  const teams = scorersTeam.map(player => (
-    <p>{player.statistics.team.name}</p>
-  ))
+
 
 
   return (
@@ -63,12 +85,21 @@ export default function SimplePaper() {
     <div  style={{display: "flex",  }}>
         
         
-        <div style={{width:'100%', display:'flex', }}>
-            <div style={{backgroundColor:'aqua', width:'100%', textAlign:'left', }}>{names}</div>
+        <div style={{width:'100%', display:'flex', backgroundColor:'aqua', margin:'5%'}}>
+            <div>
+              Player
+              <div style={{paddingLeft:'50px'}}>{names}</div>
+            </div>
+            
+            <div style={{paddingLeft:'50px'}}>{teams}</div>
+            <div style={{paddingLeft:'50px'}}>{goals}</div>
+            <div style={{paddingLeft:'50px'}}>{assists}</div>
+            <div style={{paddingLeft:'50px'}}>{penalties}</div>
+            <div style={{paddingLeft:'50px'}}>{appearences}</div>
+
+
         </div>
-        <div>
-            <div>{teams}</div>
-        </div>
+        
     </div>
   );
 }
