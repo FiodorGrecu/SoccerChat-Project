@@ -107,9 +107,9 @@ export default function SimplePaper() {
     
     <div  style={{backgroundColor:'aliceblue',}}>
         <div style={{display: "flex", }}>
-          <div style={{ display:'flex' ,width:'100%',height:'50px',  }}>
+          <div style={{ display:'flex' ,width:'100%',height:'60px',  }}>
             <div style={{width:'50%',  alignItems:'flex-start',
-                  fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
+                  fontSize: '1rem', paddingLeft:'20px', paddingTop:'20px',
                   fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
                   fontWeight: 'bold', backgroundColor:'white'}}>
               {leagueName}League Name
@@ -118,7 +118,7 @@ export default function SimplePaper() {
               </span>
           </div>
             <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
-               <div style={{textAlign:'right',  }}> PL Logo{}</div>
+               <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> PL Logo{}</div>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function SimplePaper() {
                >
             <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
             <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
-            <Link><p style={{paddingRight:'20px' }}>Live</p></Link>
+            <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
             <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
             <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
           </div> 
