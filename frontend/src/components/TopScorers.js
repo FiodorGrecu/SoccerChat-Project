@@ -55,27 +55,6 @@ export default function SimplePaper() {
   }, [] )
 
   // async function
-
-  // const names = topScorers.map(player => (
-  //   <p>{player.player.name}
-      
-  //   </p>  
-  // ))
-  // const teams = scorersTeam.map(player => (
-  //   <p>{player.statistics[0].team.name}</p>
-  // ))
-  // const goals = scorersGoals.map(player => (
-  //   <p>{player.statistics[0].goals.total}</p>
-  // ))
-  // const assists = scorersAssists.map(player => (
-  //   <p>{player.statistics[0].goals.assists}</p>
-  // ))
-  // const penalties = scorersAssists.map(player => (
-  //   <p>{player.statistics[0].penalty.scored}</p>
-  // ))
-  // const appearences = scorersAssists.map(player => (
-  //   <p>{player.statistics[0].games.appearences}</p>
-  // ))
  
   const players = topScorers.map(player => (
   <div >
@@ -92,10 +71,11 @@ export default function SimplePaper() {
   </div>
   ))
   
-  const leagueName = topScorers.statistics && topScorers[0].statistics[0].league.name; 
+  const leagueName = topScorers[0] && topScorers[0].statistics[0].league.name; 
+  const leagueLogo = topScorers[0] && topScorers[0].statistics[0].league.logo; 
   console.log(leagueName)
 
-  const leagueLogo = topScorers.player && topScorers
+  // const leagueLogo = topScorers.player && topScorers
 
   // const _handleKeyDown = (e) => {
   //   if (e.color='red!important') {
@@ -118,7 +98,11 @@ export default function SimplePaper() {
               </span>
           </div>
             <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
-               <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> PL Logo{}</div>
+               <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> 
+               <img src={leagueLogo} style={{width:'34px', height:'34px'}}/>
+
+
+               </div>
             </div>
           </div>
         </div>
@@ -136,6 +120,16 @@ export default function SimplePaper() {
             <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
           </div> 
         </div>
+
+        <div style={{display: "flex", }}>
+          <div style={{display: "flex", width:'15%', height:'100px', 
+                backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px'}}>
+                  Standing Type 
+              <div>Top Scorers </div>
+          </div>
+          <div style={{display: "flex", }}>Season</div>
+        </div>
+
         <div style={{display: "flex", }}>
           <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
                 background:'white', marginTop:'50px', textAlign:'left',
