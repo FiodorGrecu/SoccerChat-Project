@@ -80,13 +80,13 @@ export default function SimplePaper() {
   const players = topScorers.map(player => (
   <div >
     <div style={{width:'100%', display:'flex',}}>
-          <span style={{paddingLeft:'50px',width:'16%'}}>{player.player.name}</span>
+          <span style={{paddingLeft:'50px',width:'16%'}}><Link>{player.player.name}</Link></span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].team.name}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.assists || 0 }</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].penalty.scored}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].games.appearences}</span>
-          
+          <StarOutlineRoundedIcon />
         </div>
         <hr style={{width:'100%'}}/>
   </div>
@@ -137,30 +137,24 @@ export default function SimplePaper() {
           </div> 
         </div>
         <div style={{display: "flex", }}>
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',background:'gold', marginTop:'50px', textAlign:'center',}}>
-            
-            <p style={{background:'green', width:'16%'}}>Player</p>
-            <p style={{background:'orange', width:'16%'}}>Team</p>
-            <p style={{background:'pink', width:'16%'}}>Goals</p>
-            <p style={{background:'red', width:'16%'}}>Assists</p>
-            <p style={{background:'brown', width:'16%'}}>Penalties</p>
-            <p style={{background:'green', width:'16%'}}>Appearences</p>
+          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+                background:'white', marginTop:'50px', textAlign:'left',
+                marginLeft:'5%', marginRight:'5%', marginBottom:'1px', 
+                paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
+                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
+            <p style={{ width:'16%',paddingLeft:'30px' }}>Player</p>
+            <p style={{ width:'16%',paddingLeft:'30px'}}>Team</p>
+            <p style={{ width:'16%',paddingLeft:'30px'}}>Goals</p>
+            <p style={{ width:'16%', }}>Assists</p>
+            <p style={{ width:'16%', }}>Penalties</p>
+            <p style={{ width:'16%', }}>Appearences</p>
           </div> 
         </div>
-          <Paper style={{  margin:'5%', color:'#516290', }}>
-            {players}
-          </Paper>
-
-        <div style={{width:'100%', display:'flex', backgroundColor:'aqua'}}>
-
-            {/* <div style={{paddingLeft:'50px',width:'16%'}}>{names}</div>
-            <div style={{paddingLeft:'50px',width:'16%'}}>{teams}</div>
-            <div style={{paddingLeft:'50px',width:'16%'}}>{goals}</div>
-            <div style={{paddingLeft:'50px',width:'16%'}}>{assists}</div>
-            <div style={{paddingLeft:'50px',width:'16%'}}>{penalties}</div>
-            <div style={{paddingLeft:'50px',}}>{appearences}</div> */}
-
-        </div>
+          <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
+            <div style={{fontSize: '0.9rem', paddingLeft:'20px',paddingRight:'20px', paddingTop:'13px',
+                  fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
+                  fontWeight: 'bold', }}>{players}</div>
+          </div>
         
     </div>
   );
