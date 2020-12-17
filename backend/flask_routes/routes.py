@@ -10,6 +10,7 @@ from flask_cors import CORS
 from models.last5 import last5
 from models.onegame import onegame
 from models.events import Event
+from models.top_scorers import top_scorers
 
 
 
@@ -87,7 +88,8 @@ def last_5(num_games):
 ####### TOP SCORERS
 @app.route('/api/topscorers/<season>/<league_id>', methods=[ "GET"])
 def topscorers(season, league_id):
-    topscorers_lst = Player.top_scorers(season,league_id)
+    # topscorers_lst = Player.top_scorers(season,league_id)
+    topscorers_lst = top_scorers
     return jsonify({'scorers': topscorers_lst})
 
 
