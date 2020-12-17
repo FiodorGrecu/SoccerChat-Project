@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import { Box, Divider } from "@material-ui/core";
+import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
+import { Link } from '@material-ui/core';
+// import './styles.css';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -30,7 +34,10 @@ export default function SimplePaper() {
   const classes = useStyles();
 
   const [topScorers, setScorers] = useState([]);
-
+  // const [leagueName, setLeagueName] = useState([]);
+  const [color, setColor] = useState('');
+  
+ 
   useEffect(() => {
     async function gameDetails() {
       const response = await fetch(`http://localhost:5000/api/topscorers/2020/${39}`);
@@ -39,12 +46,15 @@ export default function SimplePaper() {
       if (data.scorers) {
         console.log(data.scorers.response || null)
         setScorers(data.scorers.response || [])
+        
       };
     }
   
     gameDetails();
 
   }, [] )
+
+  // async function
 
   // const names = topScorers.map(player => (
   //   <p>{player.player.name}
@@ -81,30 +91,54 @@ export default function SimplePaper() {
         <hr style={{width:'100%'}}/>
   </div>
   ))
+  
+  const leagueName = topScorers.statistics && topScorers[0].statistics[0].league.name; 
+  console.log(leagueName)
 
+  const leagueLogo = topScorers.player && topScorers
 
-
+  // const _handleKeyDown = (e) => {
+  //   if (e.color='red!important') {
+      
+  //   };
+  // }
   return (
   
     
-    <div  style={{}}>
+    <div  style={{backgroundColor:'aliceblue',}}>
         <div style={{display: "flex", }}>
           <div style={{ display:'flex' ,width:'100%',height:'50px',  }}>
-            <div style={{width:'50%',backgroundColor:'yellow',  alignItems:'flex-start'}}>Premier League</div>
-            <div style={{width:'50%',backgroundColor:'pink' ,alignItems:'flex-end'}}> PL Logo</div>
+            <div style={{width:'50%',  alignItems:'flex-start',
+                  fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
+                  fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
+                  fontWeight: 'bold', backgroundColor:'white'}}>
+              {leagueName}League Name
+              <span style={{color:'grey', paddingLeft:'5px',color: '#8e9cc5'}}>
+              <StarOutlineRoundedIcon />
+              </span>
+          </div>
+            <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
+               <div style={{textAlign:'right',  }}> PL Logo{}</div>
+            </div>
           </div>
         </div>
         <div style={{display: "flex",  }}>
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',background:'gold', justifyContent:'flex-end', paddingTop:'15px'}}>
-            <p style={{background:'green',paddingRight:'10px' }}>Summary</p>
-            <p style={{background:'orange', paddingRight:'10px'}}>Standings</p>
-            <p style={{background:'pink', paddingRight:'10px'}}>Live</p>
-            <p style={{background:'red', paddingRight:'10px'}}>Fixtures</p>
-            <p style={{background:'brown', paddingRight:'10px'}}>Results</p>
+          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+               justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
+               fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
+               fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
+               backgroundColor:'white'}}
+               >
+            <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
+            <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
+            <Link><p style={{paddingRight:'20px' }}>Live</p></Link>
+            <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
+            <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
           </div> 
         </div>
         <div style={{display: "flex", }}>
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',background:'gold', marginTop:'50px'}}>
+          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',background:'gold', marginTop:'50px', textAlign:'center',}}>
+            
             <p style={{background:'green', width:'16%'}}>Player</p>
             <p style={{background:'orange', width:'16%'}}>Team</p>
             <p style={{background:'pink', width:'16%'}}>Goals</p>
@@ -113,9 +147,9 @@ export default function SimplePaper() {
             <p style={{background:'green', width:'16%'}}>Appearences</p>
           </div> 
         </div>
-          <div style={{  margin:'5%', color:'#516290',}}>
+          <Paper style={{  margin:'5%', color:'#516290', }}>
             {players}
-          </div>
+          </Paper>
 
         <div style={{width:'100%', display:'flex', backgroundColor:'aqua'}}>
 
