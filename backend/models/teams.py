@@ -5,7 +5,7 @@ from pprint import pprint
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
-print(DATAPATH)
+# print(DATAPATH)
 API_BASE = "https://api-football-beta.p.rapidapi.com"
 API_KEY = "804b1594a5msh69900911a788156p125a69jsna7c589797665"
 
@@ -81,10 +81,6 @@ class Team:
 
     @classmethod
     def select_one(cls, where_clause):
-    #     # select one entry from our database, based on criteria passed 
-    #     # to our function as a string of the format "WHERE <clause here>"
-    #     # select_one("WHERE team pk=12 or 1 or whatever")
-    #     # "SELECT * FROM listings " + where_clause
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""SELECT * FROM {cls.tablename} WHERE {where_clause};"""      

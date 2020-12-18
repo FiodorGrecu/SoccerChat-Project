@@ -11,6 +11,7 @@ from models.last5 import last5
 from models.onegame import onegame
 from models.events import Event
 from models.top_scorers import top_scorers
+from models.table import table
 
 
 
@@ -152,7 +153,8 @@ def get_chat(fixture_id):
 
 @app.route('/api/table/<league_id>', methods=['GET'])
 def get_table(league_id):
-    table = Team.league_table(league_id)
+    # table = Team.league_table(league_id)
+    table = table.py
     return jsonify(table)
 
 if __name__ == "__main__":
