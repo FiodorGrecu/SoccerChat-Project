@@ -5,7 +5,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Divider } from '@material-ui/core';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 
@@ -43,7 +42,7 @@ export default function PLTable() {
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'aqua'}}>{team.all.goals.against}:{team.all.goals.for}</span>
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'pink'}}>{team.points}</span>
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'gold'}}>{team.form}</span>
-          {/* <StarOutlineRoundedIcon /> */}
+          <StarOutlineRoundedIcon />
         </div>
         <hr style={{width:'100%'}}/>
   </div>
