@@ -14,19 +14,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center ",
     // this weird symbols are the paper for some reason
     "& > *": {
-      // margin: theme.spacing(3),
-      // width: theme.spacing(39),
-      // height: theme.spacing(25),
-      // textAlign: "center",     
-      
-      // padding: 70,
-      // fontWeight: (700),
 
     },
-    // paper1: {
-    //   margin: 30,
-    //   color: 'red'
-    // }
+   
   }
 }));
 

@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import { Divider } from '@material-ui/core';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
+
+
 const useStyles = makeStyles({
   
 });
@@ -31,19 +33,23 @@ export default function PLTable() {
   const teamsTable =  teams.league && teams.league.standings[0].map(team => (
     <div >
     <div style={{width:'100%', display:'flex',}}>
-  <span style={{paddingLeft:'50px',width:'16%'}}>{team.team.name}</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>1</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>2</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>3</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>4</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>5</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>6</span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>7</span>
+          <span style={{paddingLeft:'10px',width:'3%', backgroundColor:'aquamarine'}}>{team.rank}</span>
+          <span style={{paddingLeft:'10px',width:'250px',backgroundColor:'green'}}><span style={{paddingRight:'5px'}}><img src={ team.team.logo } style={{width:28, height:28, 
+                }}/></span >{team.team.name}</span>
+          <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'pink'}}>1</span>
+          <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightblue'}}>2</span>
+          <span style={{paddingLeft:'50px',width:'98px'}}>3</span>
+          <span style={{paddingLeft:'50px',width:'98px'}}>4</span>
+          <span style={{paddingLeft:'50px',width:'98px'}}>5</span>
+          <span style={{paddingLeft:'50px',width:'98px'}}>6</span>
+          <span style={{paddingLeft:'50px',width:'140px'}}>7</span>
           {/* <StarOutlineRoundedIcon /> */}
         </div>
         <hr style={{width:'100%'}}/>
   </div>
   ))
+
+
 
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
@@ -53,7 +59,7 @@ export default function PLTable() {
               fontSize: '1rem', paddingLeft:'20px', paddingTop:'20px',
               fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
               fontWeight: 'bold', backgroundColor:'white'}}>
-          League Name
+          {teams.league ? teams.league.name : 'League Name'}
           <span style={{color:'grey', paddingLeft:'5px',color: '#8e9cc5'}}>
           <StarOutlineRoundedIcon />
           </span>
@@ -61,9 +67,9 @@ export default function PLTable() {
         <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
            <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> 
            {/* <img src={leagueLogo} style={{width:'34px', height:'34px'}}/> */}
-
-
            </div>
+           <img src={ teams.league && teams.league.logo } style={{width:26, height:26, 
+                display:'inline-block',}}/>
         </div>
       </div>
     </div>
@@ -86,23 +92,31 @@ export default function PLTable() {
       <div style={{display: "flex", width:'15%', height:'100px', 
             backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px'}}>
               Standing Type 
-          <div>Top Scorers </div>
+          <select>
+            <option value='topScorers'>Top Scorers</option> 
+            <option value='Standings'>Standings</option> 
+            <option value='liveStandings'>Top Scorers</option> 
+            <option>Top Scorers</option> 
+          </select>
       </div>
       <div style={{display: "flex", }}>Season</div>
     </div>
 
     <div style={{display: "flex", }}>
-      <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+      <div style={{ display:'flex' ,width:'100%',
             background:'white', marginTop:'50px', textAlign:'left',
             marginLeft:'5%', marginRight:'5%', marginBottom:'1px', 
             paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
             fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
-        <p style={{ width:'16%',paddingLeft:'30px' }}>Player</p>
-        <p style={{ width:'16%',paddingLeft:'30px'}}>Team</p>
-        <p style={{ width:'16%',paddingLeft:'30px'}}>Goals</p>
-        <p style={{ width:'16%', }}>Assists</p>
-        <p style={{ width:'16%', }}>Penalties</p>
-        <p style={{ width:'16%', }}>Appearences</p>
+        <p style={{ paddingLeft:'10px',width:'3%',backgroundColor:'aquamarine' }}>#</p>
+        <p style={{ paddingLeft:'10px',width:'370px',backgroundColor:'green' }}>Team</p>
+        <p style={{ width:'16%',backgroundColor:'pink' }}>Played</p>
+        <p style={{ width:'16%',backgroundColor:'lightblue'}}>Won</p>
+        <p style={{ width:'16%', }}>Drawn</p>
+        <p style={{ width:'16%', }}>Lost</p>
+        <p style={{ width:'16%', }}>Goals</p>
+        <p style={{ width:'16%', }}>Points</p>
+        <p style={{ width:'16%', }}>Last 5</p>
       </div> 
     </div>
       <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
