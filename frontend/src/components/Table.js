@@ -38,11 +38,11 @@ export default function PLTable() {
                 }}/></span >{team.team.name}</span>
           <span style={{paddingLeft:'20px',width:'98px',backgroundColor:'pink'}}>{team.all.played}</span>
               <span style={{paddingLeft:'20px',width:'98px',backgroundColor:'lightblue'}}>{team.all.win}</span>
-          <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightgreen'}}>3</span>
-          <span style={{paddingLeft:'50px',width:'98px'}}>4</span>
-          <span style={{paddingLeft:'50px',width:'98px'}}>5</span>
-          <span style={{paddingLeft:'50px',width:'98px'}}>6</span>
-          <span style={{paddingLeft:'50px',width:'140px'}}>7</span>
+              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightgreen'}}>{team.all.draw}</span>
+              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightgrey'}}>{team.all.lose}</span>
+              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'aqua'}}>{team.all.goals.against}:{team.all.goals.for}</span>
+              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'pink'}}>{team.points}</span>
+              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'gold'}}>{team.form}</span>
           {/* <StarOutlineRoundedIcon /> */}
         </div>
         <hr style={{width:'100%'}}/>
