@@ -36,9 +36,9 @@ export default function PLTable() {
           <span style={{paddingLeft:'10px',width:'3%', backgroundColor:'aquamarine'}}>{team.rank}</span>
           <span style={{paddingLeft:'10px',width:'250px',backgroundColor:'green'}}><span style={{paddingRight:'5px'}}><img src={ team.team.logo } style={{width:28, height:28, 
                 }}/></span >{team.team.name}</span>
-          <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'pink'}}>1</span>
-          <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightblue'}}>2</span>
-          <span style={{paddingLeft:'50px',width:'98px'}}>3</span>
+          <span style={{paddingLeft:'20px',width:'98px',backgroundColor:'pink'}}>{team.all.played}</span>
+              <span style={{paddingLeft:'20px',width:'98px',backgroundColor:'lightblue'}}>{team.all.win}</span>
+          <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightgreen'}}>3</span>
           <span style={{paddingLeft:'50px',width:'98px'}}>4</span>
           <span style={{paddingLeft:'50px',width:'98px'}}>5</span>
           <span style={{paddingLeft:'50px',width:'98px'}}>6</span>
@@ -65,11 +65,11 @@ export default function PLTable() {
           </span>
       </div>
         <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
-           <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> 
-           {/* <img src={leagueLogo} style={{width:'34px', height:'34px'}}/> */}
-           </div>
-           <img src={ teams.league && teams.league.logo } style={{width:26, height:26, 
+           <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'10px' }}> 
+              <img src={ teams.league && teams.league.logo } style={{width:42, height:42, 
                 display:'inline-block',}}/>
+           </div>
+            
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@ export default function PLTable() {
       <div style={{display: "flex", width:'15%', height:'100px', 
             backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px'}}>
               Standing Type 
-          <select>
+          <select >
             <option value='topScorers'>Top Scorers</option> 
             <option value='Standings'>Standings</option> 
             <option value='liveStandings'>Top Scorers</option> 
@@ -109,10 +109,10 @@ export default function PLTable() {
             paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
             fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
         <p style={{ paddingLeft:'10px',width:'3%',backgroundColor:'aquamarine' }}>#</p>
-        <p style={{ paddingLeft:'10px',width:'370px',backgroundColor:'green' }}>Team</p>
-        <p style={{ width:'16%',backgroundColor:'pink' }}>Played</p>
-        <p style={{ width:'16%',backgroundColor:'lightblue'}}>Won</p>
-        <p style={{ width:'16%', }}>Drawn</p>
+        <p style={{ paddingLeft:'10px',width:'300px',backgroundColor:'green' }}>Team</p>
+        <p style={{ width:'13%',backgroundColor:'pink', paddingLeft:'20px' }}>Played</p>
+        <p style={{ width:'98px',backgroundColor:'lightblue'}}>Won</p>
+        <p style={{ width:'17%',backgroundColor:'lightgreen' }}>Drawn</p>
         <p style={{ width:'16%', }}>Lost</p>
         <p style={{ width:'16%', }}>Goals</p>
         <p style={{ width:'16%', }}>Points</p>
