@@ -39,7 +39,7 @@ export default function PLTable() {
               <span style={{paddingLeft:'20px',width:'98px',backgroundColor:'lightblue'}}>{team.all.win}</span>
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightgreen'}}>{team.all.draw}</span>
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'lightgrey'}}>{team.all.lose}</span>
-              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'aqua'}}>{team.all.goals.against}:{team.all.goals.for}</span>
+              <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'aqua'}}>{team.goalsDiff}</span>
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'pink'}}>{team.points}</span>
               <span style={{paddingLeft:'20px',width:'130px',backgroundColor:'gold'}}>{team.form}</span>
           <StarOutlineRoundedIcon />
