@@ -7,9 +7,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
+// import Style from 'style-it';
 
 
 const useStyles = makeStyles({
+  
+  
   
 });
 
@@ -18,6 +21,7 @@ export default function PLTable() {
   const classes = useStyles();
 
   const [teams, setTeams] = useState([]);
+  // const [color, setColor] = useState("")
 
   useEffect( () => {
     async function getPLTable() {
@@ -48,8 +52,6 @@ export default function PLTable() {
   </div>
   ))
 
-
-
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
     <div style={{display: "flex", }}>
@@ -72,15 +74,19 @@ export default function PLTable() {
         </div>
       </div>
     </div>
-    <div style={{display: "flex",  }}>
-      <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+    <div  style={{display: "flex",  }}>
+      <div className={classes.links} style={{paddingLeft:'50px', display:'flex' ,width:'100%',
            justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
            fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
            fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
-           backgroundColor:'white'}}
+           backgroundColor:'white', }}
+          //  onMouseEnter={() => setColor('red')}
+          //  onMouseLeave={() => setColor('')}
            >
-        <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
-        <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
+        
+        <p style={{paddingRight:'20px', }}>Summary</p>
+
+        <Link ><p style={{paddingRight:'20px', hover:{color:'red'} }}>Standings</p></Link>
         <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
         <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
         <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
