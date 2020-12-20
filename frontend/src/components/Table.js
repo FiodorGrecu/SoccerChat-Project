@@ -104,7 +104,24 @@ export default function PLTable() {
             <option>Top Scorers</option> 
           </select>
       </div>
-      <div style={{display: "flex", }}>Season</div>
+      <div style={{display: "flex", width:'15%', height:'100px', 
+            backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px' }}>
+              Season
+          <select >
+            <option value='topScorers'>2020-2021</option> 
+            <option value='topScorers'>2019-2020</option> 
+            <option value='topScorers'>2018-2019</option> 
+            <option value='topScorers'>2017-2018</option> 
+            <option value='topScorers'>2016-2017</option> 
+            <option value='topScorers'>2015-2016</option> 
+            <option value='topScorers'>2014-2015</option> 
+            <option value='topScorers'>2013-2014</option> 
+            <option value='topScorers'>2012-2013</option> 
+            <option value='topScorers'>2011-2012</option> 
+            <option value='topScorers'>2010-2011</option> 
+            
+          </select>
+      </div>
     </div>
 
     <div style={{display: "flex", }}>
