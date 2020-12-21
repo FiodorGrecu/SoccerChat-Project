@@ -54,6 +54,7 @@ export default function PLTable() {
   </div>
   ))
 
+
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
     <div style={{display: "flex", }}>
@@ -155,15 +156,28 @@ export default function PLTable() {
         <p style={{ width:'178px' ,backgroundColor:'lightgree', paddingLeft:''}}>Last 5</p>
       </div> 
     </div>
-      <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
-        <div style={{fontSize: '0.9rem', paddingLeft:'20px',paddingRight:'20px', paddingTop:'13px',
-              fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
-  fontWeight: 'bold', }}>{teamsTable}</div>
+    <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
+      <div style={{fontSize: '0.9rem', paddingLeft:'20px',paddingRight:'20px', paddingTop:'13px',
+            fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
+            fontWeight: 'bold', }}>
+            {teamsTable}
       </div>
-      <div >
-        <div style={{backgroundColor:'#0094E5', width:'10px', height:'10px'}}><span >description</span></div>
-        <div style={{backgroundColor:'#0094E5'}}>description</div>
-        <div style={{backgroundColor:'#0094E5'}}>description</div>
+    </div>
+      <div style={{ backgroundColor:''}}>
+        <div style={{backgroundColor:'#0094E5', width:'20px',
+             height:'20px',marginLeft:'65px', display:'flex',
+             }}>
+          <span style={{paddingLeft:'30px'}}>
+            {teams.league ? teams.league.description : 'Team description'}Lala</span>
+        </div>
+        <div style={{backgroundColor:'yellow', width:'20px', 
+              height:'20px',marginLeft:'65px', marginTop:'10px',}}>
+          <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span>
+        </div>
+        <div style={{backgroundColor:'lightgreen', width:'20px', 
+              height:'20px',marginLeft:'65px',marginTop:'10px',}}>
+          <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span>
+        </div> 
       </div>
       
 </div>
