@@ -94,10 +94,10 @@ class League:
         return False
 
     @classmethod
-    def all_leagues(cls):
-        url = "https://api-football-v1.p.rapidapi.com/v2/leagues"
+    def all_leagues(cls, season, country):
+        url = f"https://api-football-v1.p.rapidapi.com/v2/leagues"
 
-        querystring = {"season": "2020", "country": "England"}
+        querystring = {"season": {season}, "country": {country}}
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",

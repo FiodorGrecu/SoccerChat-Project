@@ -154,8 +154,8 @@ def get_chat(fixture_id):
 @app.route('/api/table/<league_id>', methods=['GET'])
 def get_table(league_id):
     # table = Team.league_table(league_id)
-    table1 = table.py
-    return jsonify(table1)
+    table_fake = table
+    return jsonify(table_fake)
 
 if __name__ == "__main__":
     app.run()#debug=True)
