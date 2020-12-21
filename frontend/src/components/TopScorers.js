@@ -82,7 +82,7 @@ export default function SimplePaper() {
                   fontSize: '1rem', paddingLeft:'20px', paddingTop:'20px',
                   fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
                   fontWeight: 'bold', backgroundColor:'white'}}>
-              {leagueName}League Name
+              {leagueName}
               <span style={{color:'grey', paddingLeft:'5px',color: '#8e9cc5'}}>
               <StarOutlineRoundedIcon />
               </span>
@@ -111,18 +111,53 @@ export default function SimplePaper() {
           </div> 
         </div>
 
-        <div style={{display: "flex", }}>
-          <div style={{display: "flex", width:'15%', height:'100px', 
-                backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px'}}>
-                  Standing Type 
-              <div>Top Scorers </div>
+        <div style={{display: "flex" ,}}>
+      <div style={{ textAlign:'left', width:'219px', height:'63px', 
+            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
+            margin: '40px', marginLeft:'70px', borderRadius:'2%',
+            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
+          <div style={{width:'95%', }}>
+            <span style={{ width:"95%", }}>Standing Type</span>
           </div>
-          <div style={{display: "flex", }}>Season</div>
+          <div style={{display: "flex", paddingTop:'2px'}}>
+            <select style={{ width:"95%", fontWeight:'bold',
+                    color:'#0094e5', border:'none'}}>
+              <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
+              <option value='Standings'>Live Standings</option> 
+              <option value='liveStandings'>Top Scorers</option> 
+            </select>
+          </div>
+      </div>
+      <div style={{textAlign:'left', width:'219px', height:'63px', 
+            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
+            margin: '40px', marginLeft:'20px', borderRadius:'2%',
+            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
+        <div style={{width:'95%', }}>
+          <span style={{ width:"95%", }}>Season</span>
         </div>
+        <div >     
+          <select style={{ width:"95%", fontWeight:'bold',
+                    color:'#0094e5', border:'none'}}>
+            <option value='topScorers_2020'>2020/2021</option> 
+            <option value='topScorers_2019'>2019/2020</option> 
+            <option value='topScorers_2018'>2018/2019</option> 
+            <option value='topScorers_2017'>2017/2018</option> 
+            <option value='topScorers_2016'>2016/2017</option> 
+            <option value='topScorers_2015'>2015/2016</option> 
+            <option value='topScorers_2014'>2014/2015</option> 
+            <option value='topScorers_2013'>2013/2014</option> 
+            <option value='topScorers_2012'>2012/2013</option> 
+            <option value='topScorers_2011'>2011/2012</option> 
+            <option value='topScorers_2010'>2010/2011</option> 
+          </select>
+        </div>  
+      </div>
+    </div>
 
+        
         <div style={{display: "flex", }}>
           <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
-                background:'white', marginTop:'50px', textAlign:'left',
+                background:'white', marginTop:'13px', textAlign:'left',
                 marginLeft:'5%', marginRight:'5%', marginBottom:'1px', 
                 paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                 fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       

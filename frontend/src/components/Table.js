@@ -112,7 +112,7 @@ export default function PLTable() {
       </div>
       <div style={{textAlign:'left', width:'219px', height:'63px', 
             backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
-            margin: '40px', marginLeft:'70px', borderRadius:'2%',
+            margin: '40px', marginLeft:'20px', borderRadius:'2%',
             textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
         <div style={{width:'95%', }}>
           <span style={{ width:"95%", }}>Season</span>
@@ -143,14 +143,14 @@ export default function PLTable() {
             paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
             fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
         <p style={{ paddingLeft:'10px',width:'3%',backgroundColor:'aquamarine' }}>#</p>
-        <p style={{ paddingLeft:'10px',width:'300px',backgroundColor:'green' }}>Team</p>
-        <p style={{ width:'13%',backgroundColor:'pink', paddingLeft:'20px' }}>Played</p>
-        <p style={{ width:'98px',backgroundColor:'lightblue'}}>Won</p>
-        <p style={{ width:'17%',backgroundColor:'lightgreen' }}>Drawn</p>
-        <p style={{ width:'16%', }}>Lost</p>
-        <p style={{ width:'16%', }}>Goals</p>
-        <p style={{ width:'16%', }}>Points</p>
-        <p style={{ width:'16%', }}>Last 5</p>
+        <p style={{ paddingLeft:'10px',width:'250px',backgroundColor:'green' }}>Team</p>
+        <p style={{ width:'108px',backgroundColor:'pink', paddingLeft:'25px' }}>Played</p>
+        <p style={{ width:'108px',backgroundColor:'lightblue', paddingLeft:'10px'}}>Won</p>
+        <p style={{ width:'108px',backgroundColor:'green', paddingLeft:'20px' }}>Drawn</p>
+        <p style={{ width:'108px',backgroundColor:'lightgreen', paddingLeft:'10px' }}>Lost</p>
+        <p style={{ width:'108px',backgroundColor:'gold'}}>Goals</p>
+        <p style={{ width:'108px',backgroundColor:'#0094e5' }}>Points</p>
+        <p style={{ width:'108px' ,backgroundColor:'lightgreen'}}>Last 5</p>
       </div> 
     </div>
       <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
