@@ -53,7 +53,7 @@ export default function PLTable() {
         <hr style={{width:'100%'}}/>
   </div>
   ))
-
+const descriptionChampions = teams.league && teams.league.description;
 
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
@@ -153,7 +153,7 @@ export default function PLTable() {
         <p style={{ width:'98px',backgroundColor:'lightgree', paddingLeft:'10px' }}>Lost</p>
         <p style={{ width:'98px',backgroundColor:'gol'}}>Goals</p>
         <p style={{ width:'128px',backgroundColor:'#0094e' }}>Points</p>
-        <p style={{ width:'178px' ,backgroundColor:'lightgree', paddingLeft:''}}>Last 5</p>
+        <p style={{ width:'178px' ,backgroundColor:'lightgree', paddingLeft:'40px'}}>Last 5</p>
       </div> 
     </div>
     <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
@@ -166,16 +166,20 @@ export default function PLTable() {
       <div style={{ backgroundColor:''}}>
         <div style={{backgroundColor:'#0094E5', width:'20px',
              height:'20px',marginLeft:'65px', display:'flex',
-             }}>
+             borderRadius:'2px'}}>
           <span style={{paddingLeft:'30px'}}>
             {teams.league ? teams.league.description : 'Team description'}Lala</span>
         </div>
-        <div style={{backgroundColor:'yellow', width:'20px', 
-              height:'20px',marginLeft:'65px', marginTop:'10px',}}>
-          <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span>
+        <div style={{backgroundColor:'#1175A8', width:'20px', 
+              height:'20px',marginLeft:'65px', marginTop:'10px',
+              borderRadius:'2px'}}>
+          {/* <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span> */}
+          {/* <span style={{paddingLeft:'30px'}}>{descriptionChampions}Lala</span> */}
+          <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.standings[0].description : 'Team promotion'}Lala</span>
         </div>
-        <div style={{backgroundColor:'lightgreen', width:'20px', 
-              height:'20px',marginLeft:'65px',marginTop:'10px',}}>
+        <div style={{backgroundColor:'#9E1F3E', width:'20px', 
+              height:'20px',marginLeft:'65px',marginTop:'10px',
+              borderRadius:'2px'}}>
           <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span>
         </div> 
       </div>
