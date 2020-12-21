@@ -38,7 +38,10 @@ export default function PLTable() {
     <div style={{width:'100%', display:'flex',}}>
           <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarin'}}>{team.rank}</span>
           {/* <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'blue'}}>{team.description}</span> */}
-          <span style={{paddingLeft:'10px',width:'290px',backgroundColor:'gree'}}><span style={{paddingRight:'5px'}}><img src={ team.team.logo } style={{width:28, height:28, 
+          <span style={{paddingLeft:'10px',width:'290px',backgroundColor:'gree'}}>
+            <span style={{paddingRight:'5px'}}>
+            <img src={ team.team.logo } 
+                  style={{width:28, height:28, 
                 }}/>
           </span >{team.team.name}</span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.all.played}</span>

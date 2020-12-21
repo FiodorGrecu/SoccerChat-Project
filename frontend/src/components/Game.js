@@ -227,10 +227,26 @@ console.log(fixture)
                 
                     <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <a style={{ color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem'}}>Lineups</a>
-                        <a style={{ color:'white', color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Summary</a>
-                        <a style={{ color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Statistict</a>
-                        <a style={{ color:'white',color:'white', color:'white',fontWeight: 'bold',fontSize:' 1rem' }}>Events</a>
+                        <a style={{ color:'white', color:'white',
+                                    fontWeight: 'bold',fontSize:'1rem', 
+                                    paddingTop:'10px'}}>
+                              Lineups      
+                        </a>
+                        <a style={{ color:'white', color:'white',
+                                    fontWeight: 'bold',fontSize:'1rem', 
+                                    paddingTop:'10px'}}>
+                              Summary      
+                        </a>
+                        <a style={{ color:'white', color:'white',
+                                    fontWeight: 'bold',fontSize:'1rem', 
+                                    paddingTop:'10px'}}>
+                              Statistics      
+                        </a>
+                        <a style={{ color:'white', color:'white',
+                                    fontWeight: 'bold',fontSize:'1rem', 
+                                    paddingTop:'10px'}}>
+                              Events      
+                        </a>
                       </div>
                     </div>
               </div> 
@@ -241,7 +257,7 @@ console.log(fixture)
               </div> */}
 
               <div style={{display:'flex' }}>
-                <div style={{width:'50%', paddingTop:'12px'}}>
+                <div style={{width:'50%', paddingTop:'20px'}}>
                       <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
@@ -258,7 +274,7 @@ console.log(fixture)
                       <p >{homeSubs}</p>
                     </Paper>
                 </div> 
-                <div  style={{width:'50%', paddingTop:'12px'}}>
+                <div  style={{width:'50%', paddingTop:'20px'}}>
                       <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%'}}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>

@@ -157,12 +157,11 @@ export default function UserChat({ user, setUser, gameId }) {
 
     return (
       <div>
-        <Button variant="contained" color="primary" className={classes.signOutButton} onClick={logOut}>Log Out</Button>
-        
-        {/* <br/> */}
-
-      {/* <input /> */}
-
+        <Button variant="contained" color="primary" 
+                className={classes.signOutButton} 
+                onClick={logOut}>
+                  Log Out
+        </Button>
       <div>
         <Card className={classes.card}>
           
