@@ -36,18 +36,18 @@ export default function PLTable() {
   const teamsTable =  teams.league && teams.league.standings[0].map(team => (
     <div >
     <div style={{width:'100%', display:'flex',}}>
-          <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarine'}}>{team.rank}</span>
+          <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarin'}}>{team.rank}</span>
           {/* <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'blue'}}>{team.description}</span> */}
-          <span style={{paddingLeft:'10px',width:'290px',backgroundColor:'green'}}><span style={{paddingRight:'5px'}}><img src={ team.team.logo } style={{width:28, height:28, 
+          <span style={{paddingLeft:'10px',width:'290px',backgroundColor:'gree'}}><span style={{paddingRight:'5px'}}><img src={ team.team.logo } style={{width:28, height:28, 
                 }}/>
           </span >{team.team.name}</span>
-          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pink'}}>{team.all.played}</span>
-          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightblue'}}>{team.all.win}</span>
-          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightgreen'}}>{team.all.draw}</span>
-          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightgrey'}}>{team.all.lose}</span>
-          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'aqua'}}>{team.goalsDiff}</span>
-          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pink'}}>{team.points}</span>
-          <span style={{paddingLeft:'40px',width:'170px',backgroundColor:'gold', letterSpacing:'10px'}}>{team.form}</span>
+          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.all.played}</span>
+          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightblu'}}>{team.all.win}</span>
+          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightgree'}}>{team.all.draw}</span>
+          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightgre'}}>{team.all.lose}</span>
+          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'aqu'}}>{team.goalsDiff}</span>
+          <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.points}</span>
+          <span style={{paddingLeft:'40px',width:'170px',backgroundColor:'gol', letterSpacing:'10px'}}>{team.form}</span>
           <StarOutlineRoundedIcon  />
         </div>
         <hr style={{width:'100%'}}/>
@@ -145,14 +145,14 @@ export default function PLTable() {
             paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
             fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
         <p style={{ paddingLeft:'10px',width:'3%' }}>#</p>
-        <p style={{ paddingLeft:'10px',width:'290px',backgroundColor:'green' }}>Team</p>
-        <p style={{ width:'98px',backgroundColor:'pink', paddingLeft:'25px' }}>Played</p>
-        <p style={{ width:'98px',backgroundColor:'lightblue', paddingLeft:'10px'}}>Won</p>
-        <p style={{ width:'98px',backgroundColor:'green', paddingLeft:'20px' }}>Drawn</p>
-        <p style={{ width:'98px',backgroundColor:'lightgreen', paddingLeft:'10px' }}>Lost</p>
-        <p style={{ width:'98px',backgroundColor:'gold'}}>Goals</p>
-        <p style={{ width:'128px',backgroundColor:'#0094e5' }}>Points</p>
-        <p style={{ width:'178px' ,backgroundColor:'lightgreen', paddingLeft:''}}>Last 5</p>
+        <p style={{ paddingLeft:'10px',width:'290px',backgroundColor:'gree' }}>Team</p>
+        <p style={{ width:'98px',backgroundColor:'pin', paddingLeft:'25px' }}>Played</p>
+        <p style={{ width:'98px',backgroundColor:'lightblu', paddingLeft:'20px'}}>Won</p>
+        <p style={{ width:'98px',backgroundColor:'gree', paddingLeft:'20px' }}>Drawn</p>
+        <p style={{ width:'98px',backgroundColor:'lightgree', paddingLeft:'10px' }}>Lost</p>
+        <p style={{ width:'98px',backgroundColor:'gol'}}>Goals</p>
+        <p style={{ width:'128px',backgroundColor:'#0094e' }}>Points</p>
+        <p style={{ width:'178px' ,backgroundColor:'lightgree', paddingLeft:''}}>Last 5</p>
       </div> 
     </div>
       <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
