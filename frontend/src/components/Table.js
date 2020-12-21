@@ -20,6 +20,7 @@ export default function PLTable() {
   const classes = useStyles();
 
   const [teams, setTeams] = useState([]);
+  // const table = table.py
   // const [color, setColor] = useState("")
 
   useEffect( () => {
@@ -93,35 +94,38 @@ export default function PLTable() {
     </div>
 
     <div style={{display: "flex" ,}}>
-      <div style={{ textAlign:'left', display: "flex", width:'209px', height:'63px', 
-            backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px',
+      <div style={{ textAlign:'left', width:'219px', height:'63px', 
+            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
             margin: '40px', marginLeft:'70px', borderRadius:'2%',
-            textTransform:'uppercase', }}>
-          <span style={{ width:"100%",}}>Standing Type</span>
-          <div style={{display: "flex"}}>
-          <select style={{ width:"100%", height:"50%", }}>
-            <option value='topScorers'>General Standings</option> 
-            <option value='Standings'>Standings</option> 
-            <option value='liveStandings'>Top Scorers</option> 
-          </select>
+            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
+          <div style={{width:'95%', }}>
+            <span style={{ width:"95%", }}>Standing Type</span>
+          </div>
+          <div style={{display: "flex", paddingTop:'2px'}}>
+            <select style={{ width:"95%", fontWeight:'bold',
+                    color:'#0094e5', border:'none'}}>
+              <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
+              <option value='Standings'>Live Standings</option> 
+              <option value='liveStandings'>Top Scorers</option> 
+            </select>
           </div>
       </div>
-      <div style={{display: "flex", width:'209px', height:'63px', 
+      <div style={{display: "flex", width:'219px', height:'63px', 
             backgroundColor:'grey',paddingTop:'10px',paddingLeft:'10px', 
             margin: '40px'}}>
               Season
           <select >
-            <option value='topScorers_2020'>2020-2021</option> 
-            <option value='topScorers_2019'>2019-2020</option> 
-            <option value='topScorers_2018'>2018-2019</option> 
-            <option value='topScorers_2017'>2017-2018</option> 
-            <option value='topScorers_2016'>2016-2017</option> 
-            <option value='topScorers_2015'>2015-2016</option> 
-            <option value='topScorers_2014'>2014-2015</option> 
-            <option value='topScorers_2013'>2013-2014</option> 
-            <option value='topScorers_2012'>2012-2013</option> 
-            <option value='topScorers_2011'>2011-2012</option> 
-            <option value='topScorers_2010'>2010-2011</option> 
+            <option value='topScorers_2020'>2020/2021</option> 
+            <option value='topScorers_2019'>2019/2020</option> 
+            <option value='topScorers_2018'>2018/2019</option> 
+            <option value='topScorers_2017'>2017/2018</option> 
+            <option value='topScorers_2016'>2016/2017</option> 
+            <option value='topScorers_2015'>2015/2016</option> 
+            <option value='topScorers_2014'>2014/2015</option> 
+            <option value='topScorers_2013'>2013/2014</option> 
+            <option value='topScorers_2012'>2012/2013</option> 
+            <option value='topScorers_2011'>2011/2012</option> 
+            <option value='topScorers_2010'>2010/2011</option> 
             
           </select>
       </div>
