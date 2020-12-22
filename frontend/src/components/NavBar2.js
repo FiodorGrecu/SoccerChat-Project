@@ -49,7 +49,7 @@ export default function ProminentAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-          <Typography className={classes.links} variant="h6" noWrap edge="left">
+          <Typography className={classes.links} variant="h6" Wrap edge="left">
             <Link  style={{ padding: 25, color:"white"}} component={RouterLink} to="/home">Home</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/fixtures">Matches</Link>
             <Link  style={{ padding: 70, color:"white"}} component={RouterLink} to="/game/435">Game</Link>
