@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-// import {View, Text, StyleSheet} from 'react-native';
-import Card from '@material-ui/core/Card'
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import games from "./teams";
 import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
@@ -15,7 +12,6 @@ import Moment from 'react-moment';
 import Date from 'react-moment';
 
 // import background from '/public.background.png';
-// import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
@@ -229,11 +225,11 @@ console.log(fixture)
                 
                     <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <a style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Summary      
-                        </a>
+                        </Link>
 
                         <Link style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
@@ -241,7 +237,7 @@ console.log(fixture)
                               Lineups      
                         </Link >
                         
-                        <Link style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/statistics" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Statistics      

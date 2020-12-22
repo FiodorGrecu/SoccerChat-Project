@@ -15,7 +15,8 @@ import Table from './components/Table';
 import Matches from './components/Matches';
 import Footer from './components/Footer';
 import ChatSection from'./components/ChatSection';
-import Statistics from '.components/Statistics';
+import Statistics  from './components/Statistics';
+import Events  from './components/Events';
 
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
@@ -59,6 +60,10 @@ function App() {
 
         <Route path='/statistics'>
           <Statistics/>           
+        </Route>
+
+        <Route path='/events'>
+          <Events/>           
         </Route>
 
         <Route path='/login'>

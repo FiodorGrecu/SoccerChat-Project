@@ -259,7 +259,7 @@ console.log(fixture)
               </div> 
 
               <div style={{display:'flex' }}>
-                <h1 style={{paddingTop:'40%'}} >Hi! I am your statistics Page</h1>
+                <h1 style={{paddingTop:'40%'}} >Hi! I am your events Page</h1>
 
               </div>   
           </div>
