@@ -9,9 +9,7 @@ import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 
 
-const useStyles = makeStyles({
-  
-  
+const useStyles = makeStyles({ 
   
 });
 
@@ -20,8 +18,6 @@ export default function PLTable() {
   const classes = useStyles();
 
   const [teams, setTeams] = useState([]);
-  // const table = table.py
-  // const [color, setColor] = useState("")
 
 
   useEffect( () => {

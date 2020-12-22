@@ -10,8 +10,6 @@ import Table from '.components/Table';
 import Chat from '.components/Chat';
 import Matches from '.components/Matches';
 
-
-
 export default function Router () {
     return (
         <div>
