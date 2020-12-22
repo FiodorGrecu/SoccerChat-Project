@@ -37,23 +37,26 @@ export default function PLTable() {
   function Form({formString}) {
     const letterColor = {'W':'#23D24A', 'D': '#8B91A0', 'L':'#E72652'};
     const formBackground = [...formString].map(letter => (
-      <span style={{backgroundColor:letterColor[letter]}}>{letter}</span>
+      <span style={{backgroundColor:letterColor[letter], margin:'1px',
+                    borderRadius:'3px', width:'5px', height:'5px'}}>{letter}</span>
     ));
 
     return (
-      <span style={{paddingLeft:'40px',width:'170px',backgroundColor:'gold', letterSpacing:'10px'}}>
-        {formBackground}
-      </span>
+    
+      <div style={{display:'flex'}}>
+        <span style={{paddingLeft:'20px', paddingTop:'5px', width:'170px',
+                   color:'white', fontSize:'0.6rem',
+                  justifyContent:'center',}}>
+          {formBackground}
+        </span>
+      </div>
     )
-  }
-  
-  
+  } 
   const teamsTable =  teams.league && teams.league.standings[0].map(team => (
     <div >
     <div style={{width:'100%', display:'flex',}}>
           <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarine'}}>{team.rank}</span>
-          {/* <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'blue'}}>{team.description}</span> */}
-          <span style={{paddingLeft:'10px',width:'290px',backgroundColor:'gree'}}>
+          <span style={{paddingLeft:'10px',width:'290px',}}>
             <span style={{paddingRight:'5px'}}>
             <img src={ team.team.logo } 
                   style={{width:28, height:28, 
@@ -173,7 +176,7 @@ const descriptionChampions = teams.league && teams.league.description;
         <p style={{ width:'98px',backgroundColor:'lightgree', paddingLeft:'10px' }}>Lost</p>
         <p style={{ width:'98px',backgroundColor:'gol'}}>Goals</p>
         <p style={{ width:'128px',backgroundColor:'#0094e' }}>Points</p>
-        <p style={{ width:'178px' ,backgroundColor:'lightgree', paddingLeft:'40px'}}>Last 5</p>
+        <p style={{ width:'153px' ,backgroundColor:'lightgree', paddingLeft:'20px'}}>Last 5</p>
       </div> 
     </div>
     <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
