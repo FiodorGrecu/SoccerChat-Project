@@ -241,7 +241,7 @@ console.log(fixture)
                               Lineups      
                         </Link >
                         
-                        <Link style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/statistics" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Statistics      

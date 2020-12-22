@@ -15,6 +15,8 @@ import Table from './components/Table';
 import Matches from './components/Matches';
 import Footer from './components/Footer';
 import ChatSection from'./components/ChatSection';
+import Statistics from '.components/Statistics';
+
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
 
@@ -52,7 +54,11 @@ function App() {
         </Route>
 
         <Route path='/topscorers'>
-          <TopScorers/>
+          <TopScorers/>            
+        </Route>
+
+        <Route path='/statistics'>
+          <Statistics/>           
         </Route>
 
         <Route path='/login'>
