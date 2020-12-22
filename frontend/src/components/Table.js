@@ -23,6 +23,7 @@ export default function PLTable() {
   // const table = table.py
   // const [color, setColor] = useState("")
 
+
   useEffect( () => {
     async function getPLTable() {
       const response = await fetch(`http://localhost:5000/api/table/${39}`)
@@ -33,10 +34,24 @@ export default function PLTable() {
     getPLTable();
   }, []);
 
+  function Form({formString}) {
+    const letterColor = {'W':'#23D24A', 'D': '#8B91A0', 'L':'#E72652'};
+    const formBackground = [...formString].map(letter => (
+      <span style={{backgroundColor:letterColor[letter]}}>{letter}</span>
+    ));
+
+    return (
+      <span style={{paddingLeft:'40px',width:'170px',backgroundColor:'gold', letterSpacing:'10px'}}>
+        {formBackground}
+      </span>
+    )
+  }
+  
+  
   const teamsTable =  teams.league && teams.league.standings[0].map(team => (
     <div >
     <div style={{width:'100%', display:'flex',}}>
-          <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarin'}}>{team.rank}</span>
+          <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarine'}}>{team.rank}</span>
           {/* <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'blue'}}>{team.description}</span> */}
           <span style={{paddingLeft:'10px',width:'290px',backgroundColor:'gree'}}>
             <span style={{paddingRight:'5px'}}>
@@ -50,9 +65,11 @@ export default function PLTable() {
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightgre'}}>{team.all.lose}</span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'aqu'}}>{team.goalsDiff}</span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.points}</span>
-          <span style={{paddingLeft:'40px',width:'170px',backgroundColor:'gol', letterSpacing:'10px'}}>{team.form}</span>
+          <Form formString={team.form} />
+
           <StarOutlineRoundedIcon  />
         </div>
+      
         <hr style={{width:'100%'}}/>
   </div>
   ))
@@ -166,27 +183,32 @@ const descriptionChampions = teams.league && teams.league.description;
             {teamsTable}
       </div>
     </div>
-      <div style={{ backgroundColor:''}}>
-        <div style={{backgroundColor:'#0094E5', width:'20px',
-             height:'20px',marginLeft:'65px', display:'flex',
-             borderRadius:'2px'}}>
-          <span style={{paddingLeft:'30px'}}>
-            {teams.league ? teams.league.description : 'Team description'}Lala</span>
+      <div  style={{ backgroundColor:''}}>
+        <div style={{display:'flex'}}>
+          <div style={{backgroundColor:'#0094E5', width:'20px', 
+              height:'20px', borderRadius:'2px',marginLeft:'65px',marginTop:'10px'}}>             
+          </div>
+          <span style={{paddingLeft:'30px',marginTop:'10px',
+                      fontFamily:'Roboto,sans-serif',color: '#8e9cc5',fontWeight: 'bold'}}>
+              {teams.league ? teams.league.standings[0][0].description : 'Team promotion'}</span>
         </div>
-        <div style={{backgroundColor:'#1175A8', width:'20px', 
-              height:'20px',marginLeft:'65px', marginTop:'10px',
-              borderRadius:'2px'}}>
-          {/* <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span> */}
-          {/* <span style={{paddingLeft:'30px'}}>{descriptionChampions}Lala</span> */}
-          <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.standings[0].description : 'Team promotion'}Lala</span>
+        <div style={{display:'flex'}}>
+          <div style={{backgroundColor:'#1175A8', width:'20px', 
+              height:'20px', borderRadius:'2px',marginLeft:'65px',marginTop:'10px'}}>             
+          </div>
+          <span style={{paddingLeft:'30px',marginTop:'10px',
+                      fontFamily:'Roboto,sans-serif',color: '#8e9cc5',fontWeight: 'bold'}}>
+              {teams.league ? teams.league.standings[0][4].description : 'Team promotion'}</span>
         </div>
-        <div style={{backgroundColor:'#9E1F3E', width:'20px', 
-              height:'20px',marginLeft:'65px',marginTop:'10px',
-              borderRadius:'2px'}}>
-          <span style={{paddingLeft:'30px'}}>{teams.league ? teams.league.description : 'Team description'}Lala</span>
-        </div> 
-      </div>
-      
+        <div style={{display:'flex'}}>
+          <div style={{backgroundColor:'#9E1F3E', width:'20px', 
+              height:'20px', borderRadius:'2px',marginLeft:'65px',marginTop:'10px'}}>             
+          </div>
+          <span style={{paddingLeft:'30px',marginTop:'10px',
+                      fontFamily:'Roboto,sans-serif',color: '#8e9cc5',fontWeight: 'bold'}}>
+              {teams.league ? teams.league.standings[0][17].description : 'Team promotion'}</span>
+        </div>
+      </div>     
 </div>
   );
 }
