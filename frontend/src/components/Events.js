@@ -13,13 +13,13 @@ import { Link as RouterLink } from 'react-router-dom';
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
 import Date from 'react-moment';
-
 // import background from '/public.background.png';
 // import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
+import LeagueBar from './LeagueNameBar'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -195,7 +195,22 @@ export default function CenteredGrid(props) {
 console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
-            <div style={{width:'70%', }} >  
+        <div style={{width:'100%', }} > 
+            <LeagueBar/>
+            {/* <div style={{width:'100%' }}>
+                <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+                    justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
+                    fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
+                    fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
+                    backgroundColor:'white'}}
+                    >
+                    <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
+                    <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
+                    <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
+                    <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
+                    <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
+                </div> 
+            </div> */}
                 <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
                   <div style={{display:'flex', width:'100%'}}>
                     <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date}</div>
@@ -230,7 +245,7 @@ console.log(fixture)
                       </div>
                     </div>  
                 
-                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
+                    {/* <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
                         <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
@@ -255,17 +270,18 @@ console.log(fixture)
                               Chat     
                         </Link>
                       </div>
-                    </div>
+                    </div> */}
               </div> 
 
               <div style={{display:'flex' }}>
                 <h1 style={{paddingTop:'40%'}} >Hi! I am your events Page</h1>
+                <div></div>
 
               </div>   
           </div>
-        <div style={{width:'30%', height:'1100px' }} >
+        {/* <div style={{width:'30%', height:'1100px' }} >
                 <ChatSection gameId={gameNum}/>
-        </div>
+        </div> */}
     </div>
   );
 }
