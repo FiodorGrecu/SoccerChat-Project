@@ -9,11 +9,10 @@ import games from "./teams";
 import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
-
+import Chart from "react-apexcharts";
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
 import Date from 'react-moment';
-
 // import background from '/public.background.png';
 // import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
@@ -203,17 +202,19 @@ console.log(fixture)
 
                   <div style={{display:'flex', width:'100%',  backgroundColor:'black ',}}>
                     <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                      <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
+                        <Chart  type='donut' series={[45,55]} options={{chart: { type: 'donut'}}} responsive={{breakpoint: 80, options:{chart:{width:100}}}}/>
+                      {/* <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
-                      <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
+                      <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p> */}
                     </div>
-                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                      <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
+                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}} >
+                        <Chart type='donut' series={[45,55]} options={{chart: { type: 'donut'}}}/>
+                      {/* <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',
                                 fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>
                                     {awayTeamScore}
-                        </p>
+                        </p> */}
                     </div>
                   </div>
                  
@@ -232,11 +233,11 @@ console.log(fixture)
                 
                     <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <a style={{ color:'white', color:'white',
+                        <Link  component={RouterLink} to="/summary" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Summary      
-                        </a>
+                        </Link>
 
                         <Link style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 

@@ -232,13 +232,13 @@ console.log(fixture)
                 
                     <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <a style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Summary      
-                        </a>
+                        </Link>
 
-                        <Link style={{ color:'white', color:'white',
+                        <Link  style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Lineups      
@@ -249,11 +249,11 @@ console.log(fixture)
                                     paddingTop:'10px'}}>
                               Statistics      
                         </Link>
-                        <a style={{ color:'white', color:'white',
+                        <Link style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Chat     
-                        </a>
+                        </Link>
                       </div>
                     </div>
               </div> 
