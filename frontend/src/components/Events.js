@@ -138,13 +138,18 @@ console.log(fixture)
                    <span>{event.assist.name}</span>
                 </div>
             
-
             )
-        } else if (event.type === 'subst'){
+        } else if (event.type === 'subst') {
             return (
                 <div>
                     <span>{}</span>
                     <p>Substitution</p>
+                </div>
+            )
+        } else if(event.type === 'Card') {
+            return (
+                <div>
+                    <p>Yellow or Red card</p>
                 </div>
             )
         }
