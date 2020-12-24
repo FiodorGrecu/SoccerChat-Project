@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     height: '15%',
     backgroundColor: 'black',
     margin: '1%',
-    position: 'relative',
+    // position: 'relative',
   },
   
   // venueArea: {
@@ -68,6 +68,7 @@ export default function CenteredGrid(props) {
 
 
   const [fixture, setFixture] = useState({});
+//   const [events, setEvents] = useState({});
   const { gameNum } = useParams();
 
   const unixTimestamp = 1604752200;
@@ -95,82 +96,16 @@ export default function CenteredGrid(props) {
   const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
   const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
 
-  const hometeamCoach = fixture.lineups && fixture.lineups[0].coach.name;
-  const awayteamCoach = fixture.lineups && fixture.lineups[1].coach.name;
 
   const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
   const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
-
-
-  const homeTeamFormation = fixture.lineups && fixture.lineups[0].formation;
-  const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
   const homeTeamScore = fixture.goals && fixture.goals.home;
   const awayTeamScore = fixture.goals && fixture.goals.away;
 
-  const date = fixture.fixture && fixture.fixture.date;
-
-  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    // **********  All of this divs iside the grid were initialy Paper tags
-        <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",
-            // <circle style={{backgroundColor: "#be13aa",
-                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-                    // background: '-webkit-linear-gradient(top,  #CD0000 5%, #EEA9B8 84%,#FF1493 88%,#EE2C2C 90%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', margin: '2px', 
-                    position:'relative',}}>
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{player.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-          </div>
-        </div>
-  ));
-  
-  const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-        // <div className={classes.awayPlayersName}> <hr width='100%' /> <p style={{paddingLeft:'5%'}}>{player.player.name} {player.player.number}</p></div>
-    <div className={classes.awayPlayersName}> <hr width='100%'/> 
-        <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-        <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
-                        // background: '-webkit-linear-gradient(top,  #696969 25%, #BFBFBF 74%,#949494 88%,#7D7D7D 80%)', /* Chrome10-25,Safari5.1-6 */
-                        background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-                        borderRadius: '50%',display: 'inline-block',
-                        textAlign: 'center', margin: '2px', 
-                        position:'relative',}}>
-          <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-            width: '90px'}}>{player.player.number}
-          </span>
-        </circle>
-        <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-        <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-      </div> 
-    </div>
-  ));
-
-  const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-      // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-      <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",
-                    background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', 
-                    margin: '2px', position:'relative',}}>
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-          </div>
-        </div>
-  ));
+  const date = fixture.fixture && fixture.fixture.date;  
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
       // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
@@ -193,96 +128,93 @@ export default function CenteredGrid(props) {
         
   ));
 console.log(fixture)
+    function renderEvent(event) {
+        if (event.type === 'Goal') {
+            return (
+                <div>
+                  <span>{event.time.elapsed}</span>
+                    <span> Goal </span>
+                   <span>{event.player.name}</span>
+                   <span>{event.assist.name}</span>
+                </div>
+            
+
+            )
+        } else if (event.type === 'subst'){
+            return (
+
+                <p>Substitution</p>
+            )
+        }
+            
+        
+
+    }
+
+  const events = fixture.events && fixture.events.map(renderEvent)  
+//   <div>
+//       <div>{event.time.elapsed}</div>
+//       <div>{event.player.name}</div>
+//       {event.assist.name}
+//       {event.detail}
+//     </div>
+  
+  
+
+
+
+
+
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
         <div style={{width:'100%', }} > 
             <LeagueBar/>
-            {/* <div style={{width:'100%' }}>
-                <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
-                    justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
-                    fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
-                    fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
-                    backgroundColor:'white'}}
-                    >
-                    <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
-                    <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
-                    <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
-                    <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
-                    <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
-                </div> 
-            </div> */}
-                <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
-                  <div style={{display:'flex', width:'100%'}}>
+            <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
+                <div style={{display:'flex', width:'100%'}}>
                     <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date}</div>
-                  </div>
+                </div>
 
-                  <div style={{display:'flex', width:'100%',  backgroundColor:'black ',}}>
+                <div style={{display:'flex', width:'100%',  backgroundColor:'black ',}}>
                     <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                      <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
-                      <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
-                      <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
+                        <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
+                        <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
+                        <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
                     <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                      <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
-                      <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
-                      <p style={{color:'white',fontWeight: 'bold',
+                        <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
+                        <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
+                        <p style={{color:'white',fontWeight: 'bold',
                                 fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>
                                     {awayTeamScore}
                         </p>
                     </div>
-                  </div>
-                 
-                    <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
-                      <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
-                        <img src={leagueLogo} style={{width:31, height:31 }} />
-                      </div>
-                      <div style={{ width:'50%', textAlign:'right', 
-                                    paddingTop:'20px', paddingRight:'2%', 
-                                    fontFamily: 'Roboto,sans-serif',
-                                    fontSize: '1rem', color: '#8e9cc5',
-                                    fontWeight: '550'}}>
-                                    <p >{venue}</p>
-                      </div>
-                    </div>  
+                </div>
                 
-                    {/* <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
-                      <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Summary      
-                        </Link>
-
-                        <Link  style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Lineups      
-                        </Link >
-                        
-                        <Link component={RouterLink} to="/statistics" style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Statistics      
-                        </Link>
-                        <Link style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Chat     
-                        </Link>
-                      </div>
-                    </div> */}
-              </div> 
-
-              <div style={{display:'flex' }}>
-                <h1 style={{paddingTop:'40%'}} >Hi! I am your events Page</h1>
-                <div></div>
-
-              </div>   
+                <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
+                    <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
+                    <img src={leagueLogo} style={{width:31, height:31 }} />
+                    </div>
+                    <div style={{ width:'50%', textAlign:'right', 
+                                paddingTop:'20px', paddingRight:'2%', 
+                                fontFamily: 'Roboto,sans-serif',
+                                fontSize: '1rem', color: '#8e9cc5',
+                                fontWeight: '550'}}>
+                                <p >{venue}</p>
+                    </div>
+                </div>                     
+            </div> 
+            <div style={{paddingTop:'20px'}}>
+                <div style={{width:'100%', paddingTop:'200px',backgroundColor:'white', 
+                        textAlign:'center'}}>{events}</div>
+                {/* <div style={{width:'100%'}}>Events</div> */}
+            </div>       
           </div>
+          
         {/* <div style={{width:'30%', height:'1100px' }} >
                 <ChatSection gameId={gameNum}/>
         </div> */}
     </div>
+    
   );
 }
 
