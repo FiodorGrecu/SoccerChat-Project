@@ -19,7 +19,8 @@ import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
-import LeagueBar from './LeagueNameBar'
+import LeagueBar from './LeagueNameBar';
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -133,6 +134,7 @@ console.log(fixture)
             return (
                 <div>
                   <span>{event.time.elapsed}</span>
+                  <SportsSoccerIcon/>
                     <span> Goal </span>
                    <span>{event.player.name}</span>
                    <span>{event.assist.name}</span>
