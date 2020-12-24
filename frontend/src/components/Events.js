@@ -142,7 +142,9 @@ console.log(fixture)
         } else if (event.type === 'subst') {
             return (
                 <div>
-                    <span>{}</span>
+                  <div>{event.time.elapsed}</div>
+                  <span>{event.player.name}</span>
+
                     <p>Substitution</p>
                 </div>
             )

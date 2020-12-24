@@ -24,7 +24,6 @@ export default function LeagueBar() {
   const classes = useStyles();
 
   const [topScorers, setScorers] = useState([]);
-  // const [leagueName, setLeagueName] = useState([]);
   const [color, setColor] = useState('');
   
  
