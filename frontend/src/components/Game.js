@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     height: '15%',
     backgroundColor: 'black',
     margin: '1%',
-    // position: 'relative',
+    position: 'relative',
   },
   
   // venueArea: {

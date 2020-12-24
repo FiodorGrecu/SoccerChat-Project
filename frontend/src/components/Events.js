@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     height: '15%',
     backgroundColor: 'black',
     margin: '1%',
-    // position: 'relative',
+    position: 'relative',
   },
   
   // venueArea: {
@@ -142,8 +142,10 @@ console.log(fixture)
             )
         } else if (event.type === 'subst'){
             return (
-                
-                <p>Substitution</p>
+                <div>
+                    <span>{}</span>
+                    <p>Substitution</p>
+                </div>
             )
         }
             
@@ -159,12 +161,6 @@ console.log(fixture)
 //       {event.detail}
 //     </div>
   
-  
-
-
-
-
-
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
         <div style={{width:'100%', }} > 
@@ -190,7 +186,7 @@ console.log(fixture)
                     </div>
                 </div>
                 
-                <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'blue',  bottom:'0',}}>
+                <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
                     <div className={classes.leagueLogo} style={{ width:'50%', 
                             textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                     <img src={leagueLogo} style={{width:31, height:31 }} />
@@ -206,8 +202,10 @@ console.log(fixture)
             </div> 
             <div style={{paddingTop:'20px'}}>
                 <div style={{width:'100%'}}>Events</div> 
-                <div style={{width:'100%', paddingTop:'200px',backgroundColor:'white', 
-                        textAlign:'center'}}>{events}</div>
+                <div style={{width:'100%', paddingTop:'200px',backgroundColor:'F4F4F4', 
+                        textAlign:'center',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '1rem', color: '#8e9cc5',
+                        fontWeight: '550' }}>{events}</div>
             </div>       
           </div>
           

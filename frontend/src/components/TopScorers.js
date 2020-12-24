@@ -90,8 +90,6 @@ export default function SimplePaper() {
             <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
                <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> 
                <img src={leagueLogo} style={{width:'34px', height:'34px'}}/>
-
-
                </div>
             </div>
           </div>
