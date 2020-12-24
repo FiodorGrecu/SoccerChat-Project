@@ -142,7 +142,7 @@ console.log(fixture)
             )
         } else if (event.type === 'subst'){
             return (
-
+                
                 <p>Substitution</p>
             )
         }
@@ -190,8 +190,9 @@ console.log(fixture)
                     </div>
                 </div>
                 
-                <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
-                    <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
+                <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'blue',  bottom:'0',}}>
+                    <div className={classes.leagueLogo} style={{ width:'50%', 
+                            textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                     <img src={leagueLogo} style={{width:31, height:31 }} />
                     </div>
                     <div style={{ width:'50%', textAlign:'right', 
@@ -204,9 +205,9 @@ console.log(fixture)
                 </div>                     
             </div> 
             <div style={{paddingTop:'20px'}}>
+                <div style={{width:'100%'}}>Events</div> 
                 <div style={{width:'100%', paddingTop:'200px',backgroundColor:'white', 
                         textAlign:'center'}}>{events}</div>
-                {/* <div style={{width:'100%'}}>Events</div> */}
             </div>       
           </div>
           
