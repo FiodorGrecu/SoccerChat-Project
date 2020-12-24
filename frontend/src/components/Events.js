@@ -136,7 +136,7 @@ console.log(fixture)
                   <span>{event.time.elapsed}</span>
                   <SportsSoccerIcon/>
                     <span> Goal </span>
-                   <span>{event.player.name}</span>
+                   <span style={{paddingLeft:'200px'}}>{event.player.name}</span>
                    <span>{event.assist.name}</span>
                 </div>
             
