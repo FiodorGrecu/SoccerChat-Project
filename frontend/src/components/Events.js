@@ -110,14 +110,20 @@ console.log(fixture)
                 <div>
                   <div>{event.time.elapsed}</div>
                   <span>{event.player.name}</span>
+                  <span>{event.assist.name}</span>
+                  {/* <span>{event.detail}</span> */}
 
+                  
                     <p>Substitution</p>
                 </div>
             )
         } else if(event.type === 'Card') {
             return (
                 <div>
-                    <p>Yellow or Red card</p>
+                    <span>{event.time.elapsed}</span>
+                    <span>{event.player.name}</span>
+                    <span><span style={{width:'5px', height:'8px', backgroundColor:'yellow'}}>1</span></span>
+                    
                 </div>
             )
         }
