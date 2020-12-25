@@ -21,6 +21,8 @@ import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
 import LeagueBar from './LeagueNameBar';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 const useStyles = makeStyles((theme) => ({
 

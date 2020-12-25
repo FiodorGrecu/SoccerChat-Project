@@ -43,7 +43,6 @@ export default function LeagueBar() {
 
   }, [] )
 
-  // async function
  
   const players = topScorers.map(player => (
   <div >
