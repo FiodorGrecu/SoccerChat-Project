@@ -100,7 +100,9 @@ console.log(fixture)
                   <span>{event.time.elapsed}</span>
                   <SportsSoccerIcon/>
                     <span> Goal </span>
-                   <span style={{paddingLeft:'200px'}}>{event.player.name}</span>
+                   <span style={{paddingLeft:'200px'}}>
+                     {event.player.name}
+                   </span>
                    <span>{event.assist.name}</span>
                 </div>
             
@@ -122,7 +124,9 @@ console.log(fixture)
                 <div>
                     <span>{event.time.elapsed}</span>
                     <span>{event.player.name}</span>
-                    <span><span style={{width:'5px', height:'8px', backgroundColor:'yellow'}}>1</span></span>
+                    <span><span style={{width:'5px', height:'8px', backgroundColor:'yellow'}}>
+                      1
+                    </span></span>
                     
                 </div>
             )
