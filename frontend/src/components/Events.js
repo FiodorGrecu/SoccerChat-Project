@@ -15,7 +15,9 @@ import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { FaStopwatch } from "react-icons/fa";
-// import { IoTabletPortraitOutline }   from "react-icons/io5";
+import { IoTabletPortraitOutline } from "react-icons/fa";
+// import { IoTabletPortraitOutline } from "react-icons/io5";
+// import { IoTabletPortraitOutline } from "react-icons/io5";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -80,15 +82,16 @@ console.log(fixture)
         if (event.type === 'Goal') {
             return (
                 <div>
-                  <div style={{}}>
+                  <div >
                     {event.time.elapsed}'                    
                     {/* <span >{event.player.name}</span>b */}
                   </div>
-                  <SportsSoccerIcon/>
-                   <span style={{paddingLeft:'200p'}}>
+                   <span style={{paddingRight:'10px'}}>({event.assist.name})</span>
+                   <span style={{paddingRight:'10px'}}>
                      {event.player.name}
                    </span>
-                   <span style={{paddingLeft:'10px'}}>({event.assist.name})</span>
+                   Goooal !!!
+                  <SportsSoccerIcon style={{color:'black',paddingLeft:'5px' }}/>
                   <hr style={{width:'96%'}}/>
                 </div>
 
@@ -114,6 +117,7 @@ console.log(fixture)
         } else if(event.type === 'Card') {
             return (
                 <div>
+                  {/* <IoTabletPortraitOutline/> */}
                     <div>{event.time.elapsed}'</div>
                     <span>{event.player.name}</span>
                     <span>
@@ -129,18 +133,9 @@ console.log(fixture)
                 </div>
             )
         }
-            
-        
-
     }
 
   const events = fixture.events && fixture.events.map(renderEvent)  
-//   <div>
-//       <div>{event.time.elapsed}</div>
-//       <div>{event.player.name}</div>
-//       {event.assist.name}
-//       {event.detail}
-//     </div>
   
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
