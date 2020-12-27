@@ -185,7 +185,7 @@ const descriptionChampions = teams.league && teams.league.description;
       <div  style={{ backgroundColor:''}}>
         <div style={{display:'flex'}}>
           <div style={{backgroundColor:'#0094E5', width:'20px', 
-              height:'20px', borderRadius:'2px',marginLeft:'65px',marginTop:'10px'}}>             
+              height:'20px', borderRadius:'2px',marginLeft:'67px',marginTop:'10px'}}>             
           </div>
           <span style={{paddingLeft:'30px',marginTop:'10px',
                       fontFamily:'Roboto,sans-serif',color: '#8e9cc5',fontWeight: 'bold'}}>
@@ -193,7 +193,7 @@ const descriptionChampions = teams.league && teams.league.description;
         </div>
         <div style={{display:'flex'}}>
           <div style={{backgroundColor:'#1175A8', width:'20px', 
-              height:'20px', borderRadius:'2px',marginLeft:'65px',marginTop:'10px'}}>             
+              height:'20px', borderRadius:'2px',marginLeft:'67px',marginTop:'10px'}}>             
           </div>
           <span style={{paddingLeft:'30px',marginTop:'10px',
                       fontFamily:'Roboto,sans-serif',color: '#8e9cc5',fontWeight: 'bold'}}>
@@ -201,7 +201,7 @@ const descriptionChampions = teams.league && teams.league.description;
         </div>
         <div style={{display:'flex'}}>
           <div style={{backgroundColor:'#9E1F3E', width:'20px', 
-              height:'20px', borderRadius:'2px',marginLeft:'65px',marginTop:'10px'}}>             
+              height:'20px', borderRadius:'2px',marginLeft:'67px',marginTop:'10px'}}>             
           </div>
           <span style={{paddingLeft:'30px',marginTop:'10px',
                       fontFamily:'Roboto,sans-serif',color: '#8e9cc5',fontWeight: 'bold'}}>

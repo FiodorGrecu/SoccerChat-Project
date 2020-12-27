@@ -21,8 +21,10 @@ export default function HomePage() {
     
     return (
         <div className={classes.headerText}>
+           
             <h1 >Premier League</h1>
             {/* <img style={{backgroundColor: 'transparent'}} src={Background_pic} className="Background" alt="Stadium picture" /> */}
         </div>
+
     )
 };

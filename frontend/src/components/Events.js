@@ -97,14 +97,15 @@ console.log(fixture)
         if (event.type === 'Goal') {
             return (
                 <div>
-                  <span>{event.time.elapsed}</span>
+                  <div>{event.time.elapsed}</div>
                   <SportsSoccerIcon/>
-                    <span> Goal </span>
-                   <span style={{paddingLeft:'200px'}}>
+                    {/* <span> Goal </span> */}
+                   <span style={{paddingLeft:'200p'}}>
                      {event.player.name}
                    </span>
                    <span>{event.assist.name}</span>
                 </div>
+
             
             )
         } else if (event.type === 'subst') {
@@ -113,20 +114,21 @@ console.log(fixture)
                   <div>{event.time.elapsed}</div>
                   <span>{event.player.name}</span>
                   <span>{event.assist.name}</span>
-                  {/* <span>{event.detail}</span> */}
-
-                  
-                    <p>Substitution</p>
+                    {/* <p>Substitution</p> */}
                 </div>
             )
         } else if(event.type === 'Card') {
             return (
                 <div>
-                    <span>{event.time.elapsed}</span>
+                    <div>{event.time.elapsed}</div>
                     <span>{event.player.name}</span>
-                    <span><span style={{width:'5px', height:'8px', backgroundColor:'yellow'}}>
-                      1
-                    </span></span>
+                    <span>
+                      <span style={{width:'10px', height:'33px', backgroundColor:'yellow', marginLeft:'10px'}}>
+                      <span style={{width:'20px', 
+                         height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
+                      </span>
+                      </span>
+                    </span>
                     
                 </div>
             )
@@ -184,11 +186,13 @@ console.log(fixture)
                 </div>                     
             </div> 
             <div style={{paddingTop:'20px'}}>
-                <div style={{width:'100%'}}>Events</div> 
-                <div style={{width:'100%', paddingTop:'200px',backgroundColor:'F4F4F4', 
+                <div style={{width:'100%', paddingTop:'200px',}}>Events</div> 
+                <div style={{width:'100%', paddingTop:'20px',backgroundColor:'F4F4F4', 
                         textAlign:'center',fontFamily: 'Roboto,sans-serif',
                         fontSize: '1rem', color: '#8e9cc5',
-                        fontWeight: '550' }}>{events}</div>
+                        fontWeight: '550' }}>
+                          {events}
+                  </div>
             </div>       
           </div>
           
