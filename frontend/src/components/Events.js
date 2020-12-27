@@ -72,38 +72,22 @@ export default function CenteredGrid(props) {
 
   const date = fixture.fixture && fixture.fixture.date;  
 
-  const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-      // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-      <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: 'grey',
-                    background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', 
-                    margin: '2px', position:'relative',}}>
 
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-          </div>
-        </div>
-        
-  ));
 console.log(fixture)
     function renderEvent(event) {
         if (event.type === 'Goal') {
             return (
                 <div>
-                  <div>{event.time.elapsed}</div>
+                  <div style={{}}>
+                    {event.time.elapsed}'                    
+                    {/* <span >{event.player.name}</span>b */}
+                  </div>
                   <SportsSoccerIcon/>
-                    {/* <span> Goal </span> */}
                    <span style={{paddingLeft:'200p'}}>
                      {event.player.name}
                    </span>
-                   <span>{event.assist.name}</span>
+                   <span style={{paddingLeft:'10px'}}>({event.assist.name})</span>
+                  <hr style={{width:'96%'}}/>
                 </div>
 
             
@@ -111,24 +95,33 @@ console.log(fixture)
         } else if (event.type === 'subst') {
             return (
                 <div>
-                  <div>{event.time.elapsed}</div>
-                  <span>{event.player.name}</span>
-                  <span>{event.assist.name}</span>
+                  <div style={{}}>{event.time.elapsed}'</div>
+                  <span>
+                    <span>
+                    <span style={{color:'#e72652', textAlign:'right'}}><ArrowDropDownIcon/></span>
+                    {event.assist.name}
+                  </span>
+                    <span style={{color:'#23d24a'}}><ArrowDropUpIcon/></span>
+                    {event.player.name}
+                   </span>
+                    {/* <span style={{paddingLeft:'50px'}}>{event.team.name}</span>                   */}
+                  <hr style={{width:'96%'}}/>
                     {/* <p>Substitution</p> */}
                 </div>
             )
         } else if(event.type === 'Card') {
             return (
                 <div>
-                    <div>{event.time.elapsed}</div>
+                    <div>{event.time.elapsed}'</div>
                     <span>{event.player.name}</span>
                     <span>
-                      <span style={{width:'10px', height:'33px', backgroundColor:'yellow', marginLeft:'10px'}}>
+                      <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
                       <span style={{width:'20px', 
                          height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
                       </span>
                       </span>
                     </span>
+                         <hr style={{width:'96%'}}/>
                     
                 </div>
             )
@@ -185,13 +178,23 @@ console.log(fixture)
                     </div>
                 </div>                     
             </div> 
-            <div style={{paddingTop:'20px'}}>
-                <div style={{width:'100%', paddingTop:'200px',}}>Events</div> 
-                <div style={{width:'100%', paddingTop:'20px',backgroundColor:'F4F4F4', 
-                        textAlign:'center',fontFamily: 'Roboto,sans-serif',
-                        fontSize: '1rem', color: '#8e9cc5',
-                        fontWeight: '550' }}>
-                          {events}
+            <div style={{}}>
+                <div style={{display:'flex', marginTop:'200px',marginLeft:'10%',marginRight:'10%'}}>
+                  <div style={{width:'100%',height:'50px',backgroundColor:'white', 
+                        textAlign:'center', 
+                        fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
+                        color: '#8e9cc5',fontWeight: '550', paddingTop:'10px' }}>
+                          Events              
+                  </div> 
+                </div> 
+                <div style={{display:'flex',marginLeft:'10%',marginRight:'10%', marginTop:'1px'}}>
+                  <div style={{width:'100%', paddingTop:'20px',backgroundColor:'white', 
+                          textAlign:'center',fontFamily: 'Roboto,sans-serif',
+                          fontSize: '1rem', color: '#8e9cc5',
+                          fontWeight: '550' }}>
+                            {events}
+                          
+                    </div>
                   </div>
             </div>       
           </div>
