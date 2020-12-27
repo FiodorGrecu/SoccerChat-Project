@@ -14,6 +14,8 @@ import LeagueBar from './LeagueNameBar';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import { FaStopwatch } from "react-icons/fa";
+// import { IoTabletPortraitOutline }   from "react-icons/io5";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -115,6 +117,7 @@ console.log(fixture)
                     <div>{event.time.elapsed}'</div>
                     <span>{event.player.name}</span>
                     <span>
+                      {/* <IoTabletPortraitOutline/> */}
                       <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
                       <span style={{width:'20px', 
                          height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
@@ -183,8 +186,9 @@ console.log(fixture)
                   <div style={{width:'100%',height:'50px',backgroundColor:'white', 
                         textAlign:'center', 
                         fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
-                        color: '#8e9cc5',fontWeight: '550', paddingTop:'10px' }}>
-                          Events              
+                        color: '#8e9cc5',fontWeight: '550', paddingTop:'5px' }}>
+                          Events  
+                          <div><FaStopwatch/></div>             
                   </div> 
                 </div> 
                 <div style={{display:'flex',marginLeft:'10%',marginRight:'10%', marginTop:'1px'}}>
@@ -192,6 +196,8 @@ console.log(fixture)
                           textAlign:'center',fontFamily: 'Roboto,sans-serif',
                           fontSize: '1rem', color: '#8e9cc5',
                           fontWeight: '550' }}>
+                 
+
                             {events}
                           
                     </div>
