@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
 
 
 const useStyles = makeStyles({ 
@@ -126,9 +127,9 @@ const descriptionChampions = teams.league && teams.league.description;
           <div style={{display: "flex", paddingTop:'2px'}}>
             <select style={{ width:"95%", fontWeight:'bold',
                     color:'#0094e5', border:'none'}}>
-              <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
+              <option component={RouterLink} to="/table" style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
               <option value='Standings'>Live Standings</option> 
-              <option value='liveStandings'>Top Scorers</option> 
+              <option component={RouterLink} to="/topscorers" value='liveStandings'>Top Scorers</option> 
             </select>
           </div>
       </div>

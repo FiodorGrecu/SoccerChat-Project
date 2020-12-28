@@ -44,7 +44,9 @@ export default function SimplePaper() {
 
   }, [] )
 
-  // async function
+  // function onSelect() {
+
+  // }
  
   const players = topScorers.map(player => (
   <div >
@@ -121,7 +123,7 @@ export default function SimplePaper() {
             <select style={{ width:"95%", fontWeight:'bold',
                     color:'#0094e5', border:'none'}}>
               <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
-              <option value='Standings'>Live Standings</option> 
+              <option value='Standings' >Live Standings</option> 
               <option value='liveStandings'>Top Scorers</option> 
             </select>
           </div>
