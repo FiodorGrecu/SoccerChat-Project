@@ -127,7 +127,7 @@ const descriptionChampions = teams.league && teams.league.description;
           <div style={{display: "flex", paddingTop:'2px'}}>
             <select style={{ width:"95%", fontWeight:'bold',
                     color:'#0094e5', border:'none'}}>
-              <option component={RouterLink} to="/table" style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
+              <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
               <option value='Standings'>Live Standings</option> 
               <option component={RouterLink} to="/topscorers" value='liveStandings'>Top Scorers</option> 
             </select>

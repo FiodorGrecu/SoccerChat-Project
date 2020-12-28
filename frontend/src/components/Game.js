@@ -110,13 +110,10 @@ export default function CenteredGrid(props) {
   const date = fixture.fixture && fixture.fixture.date;
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    // **********  All of this divs iside the grid were initialy Paper tags
         <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
             <circle style={{backgroundColor: "#be13aa",
-            // <circle style={{backgroundColor: "#be13aa",
-                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-                    // background: '-webkit-linear-gradient(top,  #CD0000 5%, #EEA9B8 84%,#FF1493 88%,#EE2C2C 90%)', /* Chrome10-25,Safari5.1-6 */
+                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)',
                     width: '30px',height: "30px",borderRadius: '50%',
                     display: 'inline-block',textAlign: 'center', margin: '2px', 
                     position:'relative',}}>
@@ -131,12 +128,10 @@ export default function CenteredGrid(props) {
   ));
   
   const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-        // <div className={classes.awayPlayersName}> <hr width='100%' /> <p style={{paddingLeft:'5%'}}>{player.player.name} {player.player.number}</p></div>
     <div className={classes.awayPlayersName}> <hr width='100%'/> 
         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
         <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
-                        // background: '-webkit-linear-gradient(top,  #696969 25%, #BFBFBF 74%,#949494 88%,#7D7D7D 80%)', /* Chrome10-25,Safari5.1-6 */
-                        background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
+                        background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', 
                         borderRadius: '50%',display: 'inline-block',
                         textAlign: 'center', margin: '2px', 
                         position:'relative',}}>
@@ -261,36 +256,36 @@ console.log(fixture)
 
               <div style={{display:'flex' }}>
                 <div style={{width:'50%', paddingTop:'20px'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%' }}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'2%' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
                       </Paper>
-                      <Paper style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}}>
+                      <Paper style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}}>
                         {homePlayers}
                       </Paper>
                   <div style={{display:'flex'}}>
-                    <Paper className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'1%'}}>Coach<Divider/>
+                    <Paper className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'2%'}}>Coach<Divider/>
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{hometeamCoach}</p>
                     </Paper>
                   </div>
-                    <Paper className={classes.homeSubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}}>Substitutions
+                    <Paper className={classes.homeSubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}}>Substitutions
                       <p >{homeSubs}</p>
                     </Paper>
                 </div> 
                 <div  style={{width:'50%', paddingTop:'20px'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'1%'}}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'2%'}}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>
                       </Paper>
-                      <Paper style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%'}}>
+                      <Paper style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%'}}>
                         {awayPlayers}
                       </Paper>
                   <div style={{display:'flex'}}>
-                    <Paper className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'1%'}}>Coach<Divider/>
+                    <Paper className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'2%'}}>Coach<Divider/>
                       <p style={{paddingLeft: '5%',fontWeight:'500'}}>{awayteamCoach}</p>
                     </Paper>
                   </div>
-                  <Paper className={classes.awaySubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'1%',}} >Substitutions
+                  <Paper className={classes.awaySubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}} >Substitutions
                     <p >{awaySubs}</p>
                   </Paper>
                 </div> 
