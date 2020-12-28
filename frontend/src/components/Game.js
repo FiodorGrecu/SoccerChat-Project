@@ -10,12 +10,13 @@ import { Link as RouterLink } from 'react-router-dom';
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
 import Date from 'react-moment';
-
 // import background from '/public.background.png';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
+import LeagueBar from './LeagueNameBar';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -190,6 +191,8 @@ export default function CenteredGrid(props) {
   ));
 console.log(fixture)
   return (
+  <div style={{width:'100%', }}>
+        <LeagueBar/>
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'70%', }} >  
                 <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
@@ -231,7 +234,7 @@ console.log(fixture)
                               Summary      
                         </Link>
 
-                        <Link style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Lineups      
@@ -242,11 +245,11 @@ console.log(fixture)
                                     paddingTop:'10px'}}>
                               Statistics      
                         </Link>
-                        <a style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Chat     
-                        </a>
+                        </Link>
                       </div>
                     </div>
               </div> 
@@ -299,6 +302,7 @@ console.log(fixture)
                 <ChatSection gameId={gameNum}/>
         </div>
     </div>
+  </div>
   );
 }
 

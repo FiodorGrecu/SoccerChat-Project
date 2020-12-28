@@ -177,7 +177,7 @@ console.log(fixture)
                 </div>                     
             </div> 
             <div style={{}}>
-                <div style={{display:'flex', marginTop:'200px',marginLeft:'10%',marginRight:'10%'}}>
+                <div style={{display:'flex', marginTop:'100px',marginLeft:'10%',marginRight:'10%'}}>
                   <div style={{width:'100%',height:'50px',backgroundColor:'white', 
                         textAlign:'center', 
                         fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
@@ -191,8 +191,6 @@ console.log(fixture)
                           textAlign:'center',fontFamily: 'Roboto,sans-serif',
                           fontSize: '1rem', color: '#8e9cc5',
                           fontWeight: '550' }}>
-                 
-
                             {events}
                           
                     </div>

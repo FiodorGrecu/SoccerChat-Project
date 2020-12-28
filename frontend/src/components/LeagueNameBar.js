@@ -4,7 +4,8 @@ import Paper from "@material-ui/core/Paper";
 import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
-// import './styles.css';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -72,8 +73,8 @@ export default function LeagueBar() {
   // }
   return (
   
-    
     <div  style={{backgroundColor:'aliceblue',}}>
+      
         <div style={{display: "flex", }}>
           <div style={{ display:'flex' ,width:'100%',height:'60px',  }}>
             <div style={{width:'50%',  alignItems:'flex-start',
@@ -100,7 +101,7 @@ export default function LeagueBar() {
                backgroundColor:'white'}}
                >
             <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
-            <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
+            <Link component={RouterLink} to="/table"><p style={{paddingRight:'20px' }}>Standings</p></Link>
             <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
             <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
             <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
@@ -150,26 +151,6 @@ export default function LeagueBar() {
       </div>
     </div> */}
 
-        
-        {/* <div style={{display: "flex", }}>
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
-                background:'white', marginTop:'13px', textAlign:'left',
-                marginLeft:'5%', marginRight:'5%', marginBottom:'1px', 
-                paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
-                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
-            <p style={{ width:'16%',paddingLeft:'30px' }}>Player</p>
-            <p style={{ width:'16%',paddingLeft:'30px'}}>Team</p>
-            <p style={{ width:'16%',paddingLeft:'30px'}}>Goals</p>
-            <p style={{ width:'16%', }}>Assists</p>
-            <p style={{ width:'16%', }}>Penalties</p>
-            <p style={{ width:'16%', }}>Appearences</p>
-          </div> 
-        </div> */}
-          {/* <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
-            <div style={{fontSize: '0.9rem', paddingLeft:'20px',paddingRight:'20px', paddingTop:'13px',
-                  fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
-                  fontWeight: 'bold', }}>{players}</div>
-          </div> */}
         
     </div>
   );
