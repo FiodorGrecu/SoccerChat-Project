@@ -64,12 +64,6 @@ export default function LeagueBar() {
   const leagueLogo = topScorers[0] && topScorers[0].statistics[0].league.logo; 
   console.log(leagueName)
 
-  // const leagueLogo = topScorers.player && topScorers
-
-  // const _handleKeyDown = (e) => {
-  //   if (e.color='red!important') {
-      
-  //   };
   // }
   return (
   
