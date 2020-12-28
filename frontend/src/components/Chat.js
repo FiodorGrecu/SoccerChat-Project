@@ -30,16 +30,16 @@ const useStyles = makeStyles((theme) => ({
   },
 
   signOutButton: {
+    marginTop:'3%',
     justifyContent: 'center',
     width: '100%',
-    // marginLeft: 170, 
     borderRadius: 4,
     backgroundColor:'#be13aa'
     
   },
 
   input: {
-    marginTop: 5,
+    marginTop: 1,
     backgroundColor: 'aliceblue',
     justifyContent: 'center',
     // paddingTop: 10,
@@ -51,18 +51,18 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     border: 'none'
   },
-  text: {
-    // flex: 1,
-    borderRadius: 41,
-    marginTop: 10,
-    marginLeft: 50,
-    color: 'grey',
-    fontSize: 15,
-    fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
-    fontWeight: "bold",
-    alignItems:'center',
-    justifyContent:'flex-start'
-  },
+  // text: {
+  //   // flex: 1,
+  //   borderRadius: 41,
+  //   marginTop: 10,
+  //   marginLeft: 50,
+  //   color: 'grey',
+  //   fontSize: 15,
+  //   fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
+  //   fontWeight: "bold",
+  //   alignItems:'center',
+  //   justifyContent:'flex-start'
+  // },
   date: {
     // fontStyle: 'italic',
     color: '#3C185C',
@@ -183,12 +183,12 @@ export default function UserChat({ user, setUser, gameId }) {
               >
 
           </Button>
-          {/* <Divider /> */}
-
-          {chats.map(message => <p className={classes.text}>{message[4]} 
-                                {message[5]}
-                                <span className={classes.date}>  {getTime(message[1])} {getDay([3])}
-                                </span></p>)} 
+          {chats.map(message => <span className={classes.text}>
+            <div style={{color:'green'}}>{message[5]} <span style={{paddingLeft:'10px'}}>{getTime(message[1])}</span></div>
+            <div style={{color:'red'}}>{message[4]}</div> 
+            
+            {/* {getDay([3])} */}
+            </span>)} 
         </Card>
       </div>
       {/* {chats.map(message => )}  */}
