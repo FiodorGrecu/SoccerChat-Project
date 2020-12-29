@@ -138,7 +138,9 @@ export default function UserChat({ user, setUser, gameId }) {
   }
   
   function getTime(date) {
-    return new Date(date).toLocaleTimeString()
+    const time = new Date();
+    return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    // return new Date(date).toLocaleTimeString([], hour='2-digit', minute='2-digit')
   }
 
   function getDay(date) {
@@ -184,16 +186,16 @@ export default function UserChat({ user, setUser, gameId }) {
 
           </Button>
           {chats.map(message => <span className={classes.text}>
-            <div style={{color:'green'}}>{message[5]} 
-              <span style={{paddingLeft:'10px'}}>
-                <span >{getDay(message[1])}</span>
+            <div style={{fontFamily:'Roboto,sans-serif',color: 'grey[700]',
+                          fontWeight: 'bold', paddingLeft:'20px',paddingTop:'20px'
+                           }}>
+                {message[5]} 
+              <span style={{paddingLeft:'10px',fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: '600', }}>
+                <span style={{}}>{getDay(message[1])}</span>
                 <span style={{paddingLeft:'10px'}}>{getTime(message[1])}</span>
               </span>
             </div>
-            <div style={{color:'red'}}>{message[4]}</div> 
-            
-            
-            {/* {getDay([3])} */}
+            <div style={{fontFamily:'Roboto,sans-serif',color: 'grey[400]',fontWeight: '400', paddingLeft:'30px', }}>{message[4]}</div>    
             </span>)} 
         </Card>
       </div>
