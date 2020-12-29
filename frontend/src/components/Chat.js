@@ -142,7 +142,7 @@ export default function UserChat({ user, setUser, gameId }) {
   }
 
   function getDay(date) {
-    return new Date(date).getDay()
+    return new Date(date).toLocaleDateString()
   }
 
   const _handleKeyDown = (e) => {
@@ -184,8 +184,14 @@ export default function UserChat({ user, setUser, gameId }) {
 
           </Button>
           {chats.map(message => <span className={classes.text}>
-            <div style={{color:'green'}}>{message[5]} <span style={{paddingLeft:'10px'}}>{getTime(message[1])}</span></div>
+            <div style={{color:'green'}}>{message[5]} 
+              <span style={{paddingLeft:'10px'}}>
+                <span >{getDay(message[1])}</span>
+                <span style={{paddingLeft:'10px'}}>{getTime(message[1])}</span>
+              </span>
+            </div>
             <div style={{color:'red'}}>{message[4]}</div> 
+            
             
             {/* {getDay([3])} */}
             </span>)} 
