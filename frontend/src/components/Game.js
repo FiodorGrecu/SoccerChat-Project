@@ -16,6 +16,8 @@ import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
 import LeagueBar from './LeagueNameBar';
+// import { BiCalendar } from "react-icons/bs";
+import { FaCalendarAlt } from "react-icons/fa";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -109,6 +111,16 @@ export default function CenteredGrid(props) {
 
   const date = fixture.fixture && fixture.fixture.date;
 
+  // function getTime(date) {
+  //   const date = Date();
+  //   return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  //   // return new Date(date).toLocaleTimeString([], hour='2-digit', minute='2-digit')
+  // }
+  function getDay(date) {
+    return new Date(date).toLocaleDateString()
+  }
+
+
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
         <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
@@ -192,7 +204,14 @@ console.log(fixture)
             <div style={{width:'70%', }} >  
                 <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
                   <div style={{display:'flex', width:'100%'}}>
-                    <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date}</div>
+                    <div className={classes.date} style={{width: '100%', 
+                          textAlign:'center', paddingTop:'2%', color:'white',
+                          fontWeight: 'bold'}}>
+                            <span style={{ color:'grey' }}><FaCalendarAlt /></span>
+                            <span style={{paddingLeft:'10px', }}>{date}</span>
+                            {/* <BiCalendar/> */}
+                            {/* {getTime} */}
+                    </div>
                   </div>
 
                   <div style={{display:'flex', width:'100%',  backgroundColor:'pin ',}}>
