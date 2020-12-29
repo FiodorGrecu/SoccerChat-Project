@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
 
   input: {
     marginTop: 1,
-    backgroundColor: 'aliceblue',
-    justifyContent: 'center',
+    backgroundColor: 'white',
+    // justifyContent: 'center',
     // paddingTop: 10,
     // marginLeft: 77, 
     size: 50,
@@ -73,11 +73,11 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: '100%',
-    // minHeight: 500,
-    height: 1000,
-    // margin: 220,
+    
+    minHeight: 1000,
+    margin: 1,
     marginTop: 20,
-    backgroundColor: '#F0F8FF',
+    backgroundColor: 'white',
   }
   
 
@@ -165,7 +165,7 @@ export default function UserChat({ user, setUser, gameId }) {
                   Log Out
         </Button>
       <div>
-        <Card className={classes.card}>
+        <div className={classes.card}>
           
           <Input  className={classes.input} 
                 value={text} 
@@ -190,14 +190,18 @@ export default function UserChat({ user, setUser, gameId }) {
                           fontWeight: 'bold', paddingLeft:'20px',paddingTop:'20px'
                            }}>
                 {message[5]} 
-              <span style={{paddingLeft:'10px',fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: '600', }}>
+              <span style={{paddingLeft:'10px',fontFamily:'Roboto,sans-serif',
+                          color: 'grey',fontWeight: '600', }}>
                 <span style={{}}>{getDay(message[1])}</span>
                 <span style={{paddingLeft:'10px'}}>{getTime(message[1])}</span>
               </span>
             </div>
-            <div style={{fontFamily:'Roboto,sans-serif',color: 'grey[400]',fontWeight: '400', paddingLeft:'30px', }}>{message[4]}</div>    
+            <div style={{fontFamily:'Roboto,sans-serif',color: 'grey[400]',
+                          fontWeight: '400', paddingLeft:'30px', }}>
+                            {message[4]}
+            </div>    
             </span>)} 
-        </Card>
+        </div>
       </div>
       {/* {chats.map(message => )}  */}
          {/* <p className={classes.date}>{message[1]}</p> */}
