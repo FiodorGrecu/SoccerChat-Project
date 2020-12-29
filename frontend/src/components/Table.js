@@ -38,6 +38,13 @@ export default function PLTable() {
                     borderRadius:'3px', width:'5px', height:'5px'}}>{letter}</span>
     ));
 
+  // function RankColor({rankString}) {
+  //   const numberRankColor = {['1','2','3','4']:'#23D24A', '5': '#8B91A0', ['6','7','8','9','10','11','12','13','14','15','16','17']:'white', ['18','19','20']:'#E72652'};
+  //   const numberBackground = [...rankString].map(number => (
+  //     <span style={{backgroundColor:letterColor[number], margin:'1px',
+  //                   borderRadius:'3px', width:'5px', height:'5px'}}>{number}</span>
+  //   ));
+
     return (
     
       <div style={{display:'flex'}}>
@@ -53,12 +60,14 @@ export default function PLTable() {
     <div >
     <div style={{width:'100%', display:'flex',}}>
           <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarine'}}>{team.rank}</span>
+          {/* <span style={{paddingLeft:'10px',width:'34px', }}><RankColor/></span> */}
           <span style={{paddingLeft:'10px',width:'290px',}}>
             <span style={{paddingRight:'5px'}}>
             <img src={ team.team.logo } 
                   style={{width:28, height:28, 
                 }}/>
-          </span >{team.team.name}</span>
+            </span >{team.team.name}
+          </span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.all.played}</span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightblu'}}>{team.all.win}</span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightgree'}}>{team.all.draw}</span>
