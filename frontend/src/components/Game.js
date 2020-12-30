@@ -9,7 +9,6 @@ import { Link as RouterLink } from 'react-router-dom';
 
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
-import Date from 'react-moment';
 // import background from '/public.background.png';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
@@ -18,6 +17,7 @@ import { grey } from '@material-ui/core/colors';
 import LeagueBar from './LeagueNameBar';
 // import { BiCalendar } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
+import { FaRegClock } from "react-icons/fa";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -111,14 +111,19 @@ export default function CenteredGrid(props) {
 
   const date = fixture.fixture && fixture.fixture.date;
 
-  // function getTime(date) {
-  //   const date = Date();
-  //   return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-  //   // return new Date(date).toLocaleTimeString([], hour='2-digit', minute='2-digit')
-  // }
-  function getDay(date) {
-    return new Date(date).toLocaleDateString()
+  function getTime(date) {
+    if (date) {
+      const time = new Date(date);
+    return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', });
+    } else {
+      return undefined;
+    }
+
   }
+  function getDay(date) {
+       return new Date(date).toLocaleDateString()
+    }
+   
 
 
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
@@ -203,24 +208,35 @@ console.log(fixture)
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'70%', }} >  
                 <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
-                  <div style={{display:'flex', width:'100%'}}>
+                  <div style={{display:'flex', width:'100%',}}>
                     <div className={classes.date} style={{width: '100%', 
                           textAlign:'center', paddingTop:'2%', color:'white',
                           fontWeight: 'bold'}}>
-                            <span style={{ color:'grey' }}><FaCalendarAlt /></span>
-                            <span style={{paddingLeft:'10px', }}>{date}</span>
+                            <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span>
+                            <span style={{paddingRight:'20px', }}>{getDay(date)}</span>
+                            <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span>
+                            <span style={{ }}>{getTime(date)}</span>
                             {/* <BiCalendar/> */}
                             {/* {getTime} */}
                     </div>
                   </div>
 
-                  <div style={{display:'flex', width:'100%',  backgroundColor:'pin ',}}>
-                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
+                  <div style={{display:'flex', width:'100%',}}>
+                    <div style={{ width:'40%', textAlign:'center', paddingTop:'3%', }}>
                       <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
-                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
+                    <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
+                      <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
+                        <div style={{backgroundColor:'yellow'}}>Score at Half time</div>
+                          <div style={{ display:'flex'}}> 
+                            <div style={{width:'50%', backgroundColor:'coral'}}>5</div>
+                            <div style={{width:'50%', backgroundColor:'cadetblue'}}>5</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ width:'40%', textAlign:'center', paddingTop:'3%'}}>
                       <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>

@@ -86,6 +86,7 @@ console.log(fixture)
                     {event.time.elapsed}'                    
                     {/* <span >{event.player.name}</span>b */}
                   </div>
+                  <div></div>
                    <span style={{paddingRight:'10px'}}>({event.assist.name})</span>
                    <span style={{paddingRight:'10px'}}>
                      {event.player.name}
@@ -115,7 +116,8 @@ console.log(fixture)
                 </div>
             )
         } else if(event.type === 'Card') {
-            return (
+            if (event.detail === 'Yellow Card') {
+              return (
                 <div>
                   {/* <IoTabletPortraitOutline/> */}
                     <div>{event.time.elapsed}'</div>
@@ -130,9 +132,28 @@ console.log(fixture)
                     </span>
                          <hr style={{width:'96%'}}/>
                     
-                </div>
-            )
-        }
+                </div> 
+              )
+            } else if (event.detail === 'Red Card') {
+              return (
+                <div>
+                  {/* <IoTabletPortraitOutline/> */}
+                    <div>{event.time.elapsed}'</div>
+                    <span>{event.player.name}</span>
+                    <span>
+                      {/* <IoTabletPortraitOutline/> */}
+                      <span style={{width:'10px', height:'33px', backgroundColor:'red', marginLeft:'10px'}}>
+                      <span style={{width:'20px', 
+                         height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
+                      </span>
+                      </span>
+                    </span>
+                         <hr style={{width:'96%'}}/>
+                    
+                </div> 
+              )
+            }
+        } 
     }
 
   const events = fixture.events && fixture.events.map(renderEvent)  
