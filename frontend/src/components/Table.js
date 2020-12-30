@@ -45,7 +45,7 @@ const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white',
     const letterColor = {'W':'#23D24A', 'D': '#8B91A0', 'L':'#E72652'};
     const formBackground = [...formString].map(letter => (
       <span style={{backgroundColor:letterColor[letter], margin:'2px',
-                    borderRadius:'3px', fontSize:'14px', padding:'2px'}}>{letter}</span>
+                    borderRadius:'3px', fontSize:'14px', paddingLeft:'7px',paddingRight:'5px', paddingTop:'2px', textAlign:'center'}}>{letter}</span>
     ));
 
   
@@ -86,7 +86,7 @@ const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white',
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.points}</span>
           <Form formString={team.form} />
 
-          <StarOutlineRoundedIcon  />
+          <StarOutlineRoundedIcon style={{marginLeft:'20px'}} />
         </div>
       
         <hr style={{width:'100%'}}/>
