@@ -109,6 +109,9 @@ export default function CenteredGrid(props) {
   const homeTeamScore = fixture.goals && fixture.goals.home;
   const awayTeamScore = fixture.goals && fixture.goals.away;
 
+  const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
+  const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
+
   const date = fixture.fixture && fixture.fixture.date;
 
   function getTime(date) {
@@ -231,8 +234,8 @@ console.log(fixture)
                       <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
                         <div style={{backgroundColor:'yellow'}}>Score at Half time</div>
                           <div style={{ display:'flex'}}> 
-                            <div style={{width:'50%', backgroundColor:'coral'}}>5</div>
-                            <div style={{width:'50%', backgroundColor:'cadetblue'}}>5</div>
+                            <div style={{width:'50%', backgroundColor:'coral', paddingLeft:'30px',color:'#778899',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreH}</div>
+                            <div style={{width:'50%', backgroundColor:'cadetblue', paddingRight:'30px',color:'#778899',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreA}</div>
                         </div>
                       </div>
                     </div>

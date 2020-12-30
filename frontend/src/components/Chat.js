@@ -139,7 +139,7 @@ export default function UserChat({ user, setUser, gameId }) {
   
   function getTime(data) {
     const time = new Date(data);
-    return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit' });
     // return new Date(date).toLocaleTimeString([], hour='2-digit', minute='2-digit')
   }
 
