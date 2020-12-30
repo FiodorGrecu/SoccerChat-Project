@@ -35,9 +35,11 @@ export default function PLTable() {
 
 
 
- const numberRankColor = {'1':'#23D24A', '2':'#23D24A', '3':'#23D24A', '4':'#23D24A', 
-               '5':'#8B91A0', '18':'#E72652', '19':'#E72652', '20':'#E72652'};
+ const numberRankBgrColor = {'1':'#0094E5', '2':'#0094E5', '3':'#0094E5', '4':'#0094E5', 
+               '5':'#1175A8', '18':'#9E213F', '19':'#9E213F', '20':'#9E213F'};
 
+const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white', 
+'5':'white', '18':'white', '19':'white', '20':'white'};
 
   function Form({formString}) {
     const letterColor = {'W':'#23D24A', 'D': '#8B91A0', 'L':'#E72652'};
@@ -68,8 +70,7 @@ export default function PLTable() {
   const teamsTable =  teams.league && teams.league.standings[0].map(team => (
     <div >
     <div style={{width:'100%', display:'flex',}}>
-          <span style={{paddingLeft:'10px',width:'34px', backgroundColor: numberRankColor[team.rank] }}>{team.rank}</span>
-          {/* <span style={{paddingLeft:'10px',width:'34px', }}><RankColor/></span> */}
+          <span style={{paddingLeft:'10px',paddingTop:'5px', width:'34px', height:'30px' ,backgroundColor: numberRankBgrColor[team.rank], color: numberRanckColor[team.rank] }}>{team.rank}</span>
           <span style={{paddingLeft:'10px',width:'290px',}}>
             <span style={{paddingRight:'5px'}}>
             <img src={ team.team.logo } 
