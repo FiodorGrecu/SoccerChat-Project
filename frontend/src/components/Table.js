@@ -19,31 +19,40 @@ export default function PLTable() {
   const classes = useStyles();
 
   const [teams, setTeams] = useState([]);
+  const [season, setSeason] = useState("2020");
+  // const [season, setSeason] = useState("2020");
 
 
   useEffect( () => {
     async function getPLTable() {
-      const response = await fetch(`http://localhost:5000/api/table/${39}`)
+      const response = await fetch(`http://localhost:5000/api/table/${season}/${39}`)
       const data = await response.json();
       console.log(data);
       setTeams(data.response[0] || []);
     }  
     getPLTable();
-  }, []);
+  }, [season]);
+
+
+
+ const numberRankColor = {'1':'#23D24A', '2':'#23D24A', '3':'#23D24A', '4':'#23D24A', 
+               '5':'#8B91A0', '18':'#E72652', '19':'#E72652', '20':'#E72652'};
+
 
   function Form({formString}) {
     const letterColor = {'W':'#23D24A', 'D': '#8B91A0', 'L':'#E72652'};
     const formBackground = [...formString].map(letter => (
-      <span style={{backgroundColor:letterColor[letter], margin:'1px',
-                    borderRadius:'3px', width:'5px', height:'5px'}}>{letter}</span>
+      <span style={{backgroundColor:letterColor[letter], margin:'2px',
+                    borderRadius:'3px', fontSize:'14px', padding:'2px'}}>{letter}</span>
     ));
 
-  // function RankColor({rankString}) {
-  //   const numberRankColor = {['1','2','3','4']:'#23D24A', '5': '#8B91A0', ['6','7','8','9','10','11','12','13','14','15','16','17']:'white', ['18','19','20']:'#E72652'};
-  //   const numberBackground = [...rankString].map(number => (
-  //     <span style={{backgroundColor:letterColor[number], margin:'1px',
-  //                   borderRadius:'3px', width:'5px', height:'5px'}}>{number}</span>
-  //   ));
+  
+   
+   
+    // const numberBackground = [...rankString].map(number => (
+      // <span style={{backgroundColor:letterColor[number], margin:'1px',
+      //               borderRadius:'3px', width:'5px', height:'5px'}}>{number}</span>
+    
 
     return (
     
@@ -59,7 +68,7 @@ export default function PLTable() {
   const teamsTable =  teams.league && teams.league.standings[0].map(team => (
     <div >
     <div style={{width:'100%', display:'flex',}}>
-          <span style={{paddingLeft:'10px',width:'34px', backgroundColor:'aquamarine'}}>{team.rank}</span>
+          <span style={{paddingLeft:'10px',width:'34px', backgroundColor: numberRankColor[team.rank] }}>{team.rank}</span>
           {/* <span style={{paddingLeft:'10px',width:'34px', }}><RankColor/></span> */}
           <span style={{paddingLeft:'10px',width:'290px',}}>
             <span style={{paddingRight:'5px'}}>
@@ -150,19 +159,19 @@ const descriptionChampions = teams.league && teams.league.description;
           <span style={{ width:"95%", }}>Season</span>
         </div>
         <div >     
-          <select style={{ width:"95%", fontWeight:'bold',
+          <select onChange={e => (setSeason(e.target.value)) } style={{ width:"95%", fontWeight:'bold',
                     color:'#0094e5', border:'none'}}>
-            <option value='topScorers_2020'>2020/2021</option> 
-            <option value='topScorers_2019'>2019/2020</option> 
-            <option value='topScorers_2018'>2018/2019</option> 
-            <option value='topScorers_2017'>2017/2018</option> 
-            <option value='topScorers_2016'>2016/2017</option> 
-            <option value='topScorers_2015'>2015/2016</option> 
-            <option value='topScorers_2014'>2014/2015</option> 
-            <option value='topScorers_2013'>2013/2014</option> 
-            <option value='topScorers_2012'>2012/2013</option> 
-            <option value='topScorers_2011'>2011/2012</option> 
-            <option value='topScorers_2010'>2010/2011</option> 
+            <option value='2020'>2020/2021</option> 
+            <option value='2019'>2019/2020</option> 
+            <option value='2018'>2018/2019</option> 
+            <option value='2017'>2017/2018</option> 
+            <option value='2016'>2016/2017</option> 
+            <option value='2015'>2015/2016</option> 
+            <option value='2014'>2014/2015</option> 
+            <option value='2013'>2013/2014</option> 
+            <option value='2012'>2012/2013</option> 
+            <option value='2011'>2011/2012</option> 
+            <option value='2010'>2010/2011</option> 
           </select>
         </div>  
       </div>

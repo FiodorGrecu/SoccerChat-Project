@@ -230,12 +230,12 @@ console.log(fixture)
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
-                    <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
-                      <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
-                        <div style={{backgroundColor:'yellow'}}>Score at Half time</div>
+                    <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blu'}}>
+                      <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
+                        <div style={{backgroundColor:'yello', color: "gray"}}>Score at Half time</div>
                           <div style={{ display:'flex'}}> 
-                            <div style={{width:'50%', backgroundColor:'coral', paddingLeft:'30px',color:'#778899',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreH}</div>
-                            <div style={{width:'50%', backgroundColor:'cadetblue', paddingRight:'30px',color:'#778899',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreA}</div>
+                            <div style={{width:'50%', backgroundColor:'coral', paddingLeft:'30px',color:'#77889',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreH}</div>
+                            <div style={{width:'50%', backgroundColor:'cadetblue', paddingRight:'30px',color:'#77889',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreA}</div>
                         </div>
                       </div>
                     </div>
