@@ -234,8 +234,14 @@ console.log(fixture)
                       <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
                         <div style={{backgroundColor:'yello', color: "gray"}}>Score at Half time</div>
                           <div style={{ display:'flex'}}> 
-                            <div style={{width:'50%', backgroundColor:'coral', paddingLeft:'30px',color:'#77889',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreH}</div>
-                            <div style={{width:'50%', backgroundColor:'cadetblue', paddingRight:'30px',color:'#77889',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>{halfTimeScoreA}</div>
+                            <div style={{width:'50%', paddingLeft:'30px',
+                                  color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                                    {halfTimeScoreH}
+                            </div>
+                            <div style={{width:'50%', paddingRight:'30px',
+                                  color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                                      {halfTimeScoreA}
+                            </div>
                         </div>
                       </div>
                     </div>
