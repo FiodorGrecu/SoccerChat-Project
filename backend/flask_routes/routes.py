@@ -151,9 +151,9 @@ def get_chat(fixture_id):
     new_chat = Chat.get_chat(fixture_id)
     return jsonify({"chat": new_chat})
 
-@app.route('/api/table/<league_id>', methods=['GET'])
-def get_table(league_id):
-    # table = Team.league_table(league_id)
+@app.route('/api/table/<season>/<league_id>', methods=['GET'])
+def get_table(season, league_id):
+    # table = Team.league_table(season, league_id)
     table_fake = table
     return jsonify(table_fake)
 
