@@ -93,8 +93,11 @@ console.log(fixture)
                    </span>
                    Goooal !!!
                   <SportsSoccerIcon style={{color:'black',paddingLeft:'5px' }}/>
+                  {/* {teams.away.name} */}Z
+                  {/* {teams.away.name} */}Z
                   <hr style={{width:'96%'}}/>
                 </div>
+
 
             
             )
