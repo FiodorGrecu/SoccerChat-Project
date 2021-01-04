@@ -6,7 +6,7 @@ import games from "./teams";
 import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
-
+import LineUps from './LineUps';
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Moment from 'react-moment';
 // import background from '/public.background.png';
@@ -30,35 +30,6 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   
-  // venueArea: {
-  //   color: '#8e9cc5',
-  //   fontWeight: 'bold',
-  //   fontSize: '13.65px',
-  //   fontFamily:'Roboto,sans-serif',
-  //   backgroundColor:'white',
-  //   position: 'absolute',
-  //   alignItems:'center',
-  //   paddingTop: '10px',
-  //   bottom:'0px',
-  //   width:'100%',
-  //   height:'20%',
-  // },
-
-  // homeStartingXI: {
-
-  //   justifyContent:'flex-end',
-  //   width: '100%',
-  //   // padding: '22px',
-    
-  // },
-
-  // awayStartingXI: {
-
-  //   justifyContent:'flex-start',
-  //   width: '100%',
-   
-  // },
-
 
 }));
 
@@ -94,15 +65,8 @@ export default function CenteredGrid(props) {
   const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
   const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
 
-  const hometeamCoach = fixture.lineups && fixture.lineups[0].coach.name;
-  const awayteamCoach = fixture.lineups && fixture.lineups[1].coach.name;
-
   const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
   const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
-
-
-  const homeTeamFormation = fixture.lineups && fixture.lineups[0].formation;
-  const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
@@ -273,17 +237,18 @@ console.log(fixture)
                 
                     <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
+                        <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
+                                    fontWeight: 'bold',fontSize:'1rem', 
+                                    paddingTop:'10px'}}>
+                              Lineups      
+                        </Link >
                         <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Summary      
                         </Link>
 
-                        <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Lineups      
-                        </Link >
+                        
                         
                         <Link component={RouterLink} to="/statistics" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
@@ -298,53 +263,11 @@ console.log(fixture)
                       </div>
                     </div>
               </div> 
-
-{/* This here underneath is the line 197 */}
-            {/* <div style={{width:'70%', }} >  
-
-              </div> */}
-
-              <div style={{display:'flex' }}>
-                <div style={{width:'50%', paddingTop:'20px'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'2%' }}>
-                        Starting Lineup
-                        <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
-                      </Paper>
-                      <Paper style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}}>
-                        {homePlayers}
-                      </Paper>
-                  <div style={{display:'flex'}}>
-                    <Paper className={classes.homeCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'2%'}}>Coach<Divider/>
-                      <p style={{paddingLeft: '5%',fontWeight:'500'}}>{hometeamCoach}</p>
-                    </Paper>
-                  </div>
-                    <Paper className={classes.homeSubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}}>Substitutions
-                      <p >{homeSubs}</p>
-                    </Paper>
-                </div> 
-                <div  style={{width:'50%', paddingTop:'20px'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'2%'}}>
-                        Starting Lineup
-                        <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>
-                      </Paper>
-                      <Paper style={{color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%'}}>
-                        {awayPlayers}
-                      </Paper>
-                  <div style={{display:'flex'}}>
-                    <Paper className={classes.awayCoach} style={{width:'100%',color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', paddingTop:'40px', margin:'2%'}}>Coach<Divider/>
-                      <p style={{paddingLeft: '5%',fontWeight:'500'}}>{awayteamCoach}</p>
-                    </Paper>
-                  </div>
-                  <Paper className={classes.awaySubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}} >Substitutions
-                    <p >{awaySubs}</p>
-                  </Paper>
-                </div> 
-
-                {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
-              </div>   
+          <LineUps fixture={fixture} />
+                
           </div>
         <div style={{width:'30%', height:'1100px' }} >
-                <ChatSection gameId={gameNum}/>
+          <ChatSection gameId={gameNum} />
         </div>
     </div>
   </div>

@@ -87,7 +87,7 @@ console.log(fixture)
                     {/* <span >{event.player.name}</span>b */}
                   </div>
                   <div></div>
-                   <span style={{paddingRight:'10px'}}>({event.assist.name})</span>
+                   <span style={{paddingRight:'10px'}}>{event.assist.name &&`(${event.assist.name})` }</span>
                    <span style={{paddingRight:'10px'}}>
                      {event.player.name}
                    </span>

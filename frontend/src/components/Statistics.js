@@ -239,7 +239,7 @@ console.log(fixture)
                               Summary      
                         </Link>
 
-                        <Link style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Lineups      
@@ -250,11 +250,11 @@ console.log(fixture)
                                     paddingTop:'10px'}}>
                               Statistics      
                         </Link>
-                        <a style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Chat     
-                        </a>
+                        </Link>
                       </div>
                     </div>
               </div> 
