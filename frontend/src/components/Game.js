@@ -117,7 +117,7 @@ export default function CenteredGrid(props) {
   function getTime(date) {
     if (date) {
       const time = new Date(date);
-    return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', });
+    return time.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit',  });
     } else {
       return undefined;
     }
