@@ -112,12 +112,16 @@ export default function CenteredGrid(props) {
   const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
   const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
 
+  const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
+  // console.log(halfTimeStatus)
+
   const date = fixture.fixture && fixture.fixture.date;
 
   function getTime(date) {
     if (date) {
       const time = new Date(date);
-    return time.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit',  });
+      // If I want PM or AM change the 'en-GB' to 'en-US'
+    return time.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit',  }); 
     } else {
       return undefined;
     }
@@ -230,9 +234,11 @@ console.log(fixture)
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
+                    {/* Score at half time */}
                     <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blu'}}>
                       <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
-                        <div style={{backgroundColor:'yello', color: "gray"}}>Score at Half time</div>
+                        {/* <div style={{backgroundColor:'yello', color: "white"}}>{halfTimeStatus}</div> */}
+                        <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
                           <div style={{ display:'flex'}}> 
                             <div style={{width:'50%', paddingLeft:'30px',
                                   color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
