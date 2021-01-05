@@ -36,10 +36,7 @@ export default function CenteredGrid(props) {
 
 
   const [fixture, setFixture] = useState({});
-//   const [events, setEvents] = useState({});
   const { gameNum } = useParams();
-
-  const unixTimestamp = 1604752200;
 
   useEffect(() => {
     async function gameDetails() {
@@ -56,28 +53,8 @@ export default function CenteredGrid(props) {
 
   }, [] )
 
-  const gameDate = fixture.fixture && fixture.fixture.date;
-  
-  const leagueName = fixture.league && fixture.league.name;
-  const leagueLogo = fixture.league && fixture.league.logo;
-  
-  const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
-  const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
-
-
-  const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
-
-  const venue = fixture.lineups && fixture.fixture.venue.name;
-
-  const homeTeamScore = fixture.goals && fixture.goals.home;
-  const awayTeamScore = fixture.goals && fixture.goals.away;
-
-  const date = fixture.fixture && fixture.fixture.date;  
-
-
 console.log(fixture)
-    function renderEvent(event) {
+    function RenderEvent(event) {
         if (event.type === 'Goal') {
             return (
                 <div>
@@ -163,7 +140,7 @@ console.log(fixture)
         } 
     }
 
-  const events = fixture.events && fixture.events.map(renderEvent)  
+  const events = fixture.events && fixture.events.map(RenderEvent)  
   
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
@@ -171,24 +148,23 @@ console.log(fixture)
             <LeagueBar/>
             <GameSectionScoreCheet fixture={fixture}/>
             <div style={{}}>
-                <div style={{display:'flex', marginTop:'50px',marginLeft:'10%',marginRight:'10%'}}>
-                  <div style={{width:'100%',height:'50px',backgroundColor:'white', 
-                        textAlign:'center', 
-                        fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
-                        color: '#8e9cc5',fontWeight: '550', paddingTop:'5px' }}>
-                          Events  
-                          <div><FaStopwatch/></div>             
-                  </div> 
+              <div style={{display:'flex', marginTop:'50px',marginLeft:'10%',marginRight:'10%'}}>
+                <div style={{width:'100%',height:'50px',backgroundColor:'white', 
+                      textAlign:'center', 
+                      fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
+                      color: '#8e9cc5',fontWeight: '550', paddingTop:'5px' }}>
+                        Events  
+                        <div ><FaStopwatch/></div>             
                 </div> 
-                <div style={{display:'flex',marginLeft:'10%',marginRight:'10%', marginTop:'1px'}}>
-                  <div style={{width:'100%', paddingTop:'20px',backgroundColor:'white', 
-                          textAlign:'center',fontFamily: 'Roboto,sans-serif',
-                          fontSize: '1rem', color: '#8e9cc5',
-                          fontWeight: '550' }}>
-                            {events}
-                          
-                    </div>
-                  </div>
+              </div> 
+              <div style={{display:'flex',marginLeft:'10%',marginRight:'10%', marginTop:'1px'}}>
+                <div style={{width:'100%', paddingTop:'20px',backgroundColor:'white', 
+                        textAlign:'center',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '1rem', color: '#8e9cc5',
+                        fontWeight: '550' }}>
+                          {events}                  
+                </div>
+              </div>
             </div>       
           </div>
           
