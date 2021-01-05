@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { games as fixtures } from "./teams";
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import StarIcon from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import LeagueBar from './LeagueNameBar';
 
