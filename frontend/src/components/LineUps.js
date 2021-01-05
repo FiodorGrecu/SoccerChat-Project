@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function LineUps({fixture}) {
+export default function LineUps({ fixture }) {
   const classes = useStyles();
   
   const hometeamCoach = fixture.lineups && fixture.lineups[0].coach.name;

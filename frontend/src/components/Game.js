@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Route, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import games from "./teams";
@@ -19,7 +19,7 @@ import { FaRegClock } from "react-icons/fa";
 import LeagueBar from './LeagueNameBar';
 import LineUps from './LineUps';
 import GameSectionScoreCheet from './GameSectionScoreCheet';
-
+import Events from './Events';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -98,81 +98,81 @@ export default function CenteredGrid(props) {
    
 
 
-  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-        <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",
-                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)',
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', margin: '2px', 
-                    position:'relative',}}>
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{player.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-          </div>
-        </div>
-  ));
+  // const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
+  //       <div className={classes.homePlayersName}> <hr width='100%'/> 
+  //         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+  //           <circle style={{backgroundColor: "#be13aa",
+  //                     background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)',
+  //                   width: '30px',height: "30px",borderRadius: '50%',
+  //                   display: 'inline-block',textAlign: 'center', margin: '2px', 
+  //                   position:'relative',}}>
+  //             <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+  //               width: '90px'}}>{player.player.number}
+  //             </span>
+  //           </circle>
+  //           <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
+  //           <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
+  //         </div>
+  //       </div>
+  // ));
   
-  const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-    <div className={classes.awayPlayersName}> <hr width='100%'/> 
-        <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-        <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
-                        background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', 
-                        borderRadius: '50%',display: 'inline-block',
-                        textAlign: 'center', margin: '2px', 
-                        position:'relative',}}>
-          <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-            width: '90px'}}>{player.player.number}
-          </span>
-        </circle>
-        <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-        <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-      </div> 
-    </div>
-  ));
+  // const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
+  //   <div className={classes.awayPlayersName}> <hr width='100%'/> 
+  //       <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+  //       <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
+  //                       background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', 
+  //                       borderRadius: '50%',display: 'inline-block',
+  //                       textAlign: 'center', margin: '2px', 
+  //                       position:'relative',}}>
+  //         <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+  //           width: '90px'}}>{player.player.number}
+  //         </span>
+  //       </circle>
+  //       <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
+  //       <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
+  //     </div> 
+  //   </div>
+  // ));
 
-  const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-      // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-      <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",
-                    background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', 
-                    margin: '2px', position:'relative',}}>
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-          </div>
-        </div>
-  ));
+  // const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
+  //     // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+  //     <div className={classes.homePlayersName}> <hr width='100%'/> 
+  //         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+  //           <circle style={{backgroundColor: "#be13aa",
+  //                   background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
+  //                   width: '30px',height: "30px",borderRadius: '50%',
+  //                   display: 'inline-block',textAlign: 'center', 
+  //                   margin: '2px', position:'relative',}}>
+  //             <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+  //               width: '90px'}}>{substitutes.player.number}
+  //             </span>
+  //           </circle>
+  //           <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
+  //           <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
+  //         </div>
+  //       </div>
+  // ));
 
-  const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-      // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-      <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: 'grey',
-                    background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', 
-                    margin: '2px', position:'relative',}}>
+  // const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
+  //     // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+  //     <div className={classes.homePlayersName}> <hr width='100%'/> 
+  //         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
+  //           <circle style={{backgroundColor: 'grey',
+  //                   background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
+  //                   width: '30px',height: "30px",borderRadius: '50%',
+  //                   display: 'inline-block',textAlign: 'center', 
+  //                   margin: '2px', position:'relative',}}>
 
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-          </div>
-        </div>
+  //             <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
+  //               width: '90px'}}>{substitutes.player.number}
+  //             </span>
+  //           </circle>
+  //           <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
+  //           <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
+  //         </div>
+  //       </div>
         
-  ));
+  // ));
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
@@ -240,7 +240,7 @@ console.log(fixture)
                                     paddingTop:'10px'}}>
                               Lineups      
                         </Link >
-                        <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to={`/game/${gameNum}/events`} style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Summary      
@@ -253,22 +253,39 @@ console.log(fixture)
                                     paddingTop:'10px'}}>
                               Statistics      
                         </Link>
-                        <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
+                        <Link component={RouterLink} to={`/game/${gameNum}/chat`} style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
                                     paddingTop:'10px'}}>
                               Chat     
                         </Link>
                       </div>
                     </div>
-              </div> 
-          <LineUps fixture={fixture} />
-                
+              </div>
+            <Route exact path="/game/:gameId">
+              <LineUps fixture={fixture} />
+            </Route>
+            <Route path="/game/:gameId/events">
+              <Events fixture={fixture}/>
+            </Route >
+            <Route path="/game/:gameId/chat">
+              <ChatSection gameId={gameNum} />
+            </Route>
           </div>
         <div style={{width:'30%', height:'1100px' }} >
-          <ChatSection gameId={gameNum} />
+          {/* <ChatSection gameId={gameNum} /> */}
         </div>
     </div>
   </div>
   );
 }
+
+
+
+
+
+// <Game /> // holds all the data, passes to children
+
+//     ==> <GameHeader />   ||    <StatisticsHeader />
+
+//     ==> <Lineups/> || <Chat /> || <Events /> || <StatisticsBody/>
 

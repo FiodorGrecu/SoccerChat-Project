@@ -23,27 +23,27 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function CenteredGrid(props) {
+export default function CenteredGrid({ fixture }) {
   const classes = useStyles();
 
 
-  const [fixture, setFixture] = useState({});
-  const { gameNum } = useParams();
+  // const [fixture, setFixture] = useState({});
+  // const { gameNum } = useParams();
 
-  useEffect(() => {
-    async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-      const data = await response.json();
-      console.log(data);
-      if (data.fixtures) {
-        console.log(data.fixtures.response || null)
-        setFixture(data.fixtures.response[0] || {})
-      };
-    }
+  // useEffect(() => {
+  //   async function gameDetails() {
+  //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
+  //     const data = await response.json();
+  //     console.log(data);
+  //     if (data.fixtures) {
+  //       console.log(data.fixtures.response || null)
+  //       setFixture(data.fixtures.response[0] || {})
+  //     };
+  //   }
   
-    gameDetails();
+  //   gameDetails();
 
-  }, [] )
+  // }, [] )
 
 console.log(fixture)
     function RenderEvent(event) {
@@ -137,8 +137,8 @@ console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
         <div style={{width:'100%', }} > 
-            <LeagueBar/>
-            <GameSectionScoreCheet fixture={fixture}/>
+            {/* <LeagueBar/>
+            <GameSectionScoreCheet fixture={fixture}/> */}
             <div style={{}}>
               <div style={{display:'flex', marginTop:'50px',marginLeft:'10%',marginRight:'10%'}}>
                 <div style={{width:'100%',height:'50px',backgroundColor:'white', 
