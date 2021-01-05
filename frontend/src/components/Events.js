@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-// import {View, Text, StyleSheet} from 'react-native';
-import Grid from '@material-ui/core/Grid';
 import { Link as RouterLink } from 'react-router-dom';
-
-// import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Date from 'react-moment';
-import ChatSection from './ChatSection';
-import { icons } from 'react-icons/lib';
-import { grey } from '@material-ui/core/colors';
 import LeagueBar from './LeagueNameBar';
 import GameSectionScoreCheet from './GameSectionScoreCheet';
-
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';

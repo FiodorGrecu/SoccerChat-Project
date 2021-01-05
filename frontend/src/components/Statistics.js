@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-// import {View, Text, StyleSheet} from 'react-native';
-import Card from '@material-ui/core/Card'
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import games from "./teams";
-import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import Chart from "react-apexcharts";
-// import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
-import Moment from 'react-moment';
-import Date from 'react-moment';
-// import background from '/public.background.png';
-// import url from 'resources/url';
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
-import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -29,35 +17,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '1%',
     position: 'relative',
   },
-  
-  // venueArea: {
-  //   color: '#8e9cc5',
-  //   fontWeight: 'bold',
-  //   fontSize: '13.65px',
-  //   fontFamily:'Roboto,sans-serif',
-  //   backgroundColor:'white',
-  //   position: 'absolute',
-  //   alignItems:'center',
-  //   paddingTop: '10px',
-  //   bottom:'0px',
-  //   width:'100%',
-  //   height:'20%',
-  // },
-
-  // homeStartingXI: {
-
-  //   justifyContent:'flex-end',
-  //   width: '100%',
-  //   // padding: '22px',
-    
-  // },
-
-  // awayStartingXI: {
-
-  //   justifyContent:'flex-start',
-  //   width: '100%',
-   
-  // },
 
 
 }));
