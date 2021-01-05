@@ -11,13 +11,12 @@ import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
 import LeagueBar from './LeagueNameBar';
+import GameSectionScoreCheet from './GameSectionScoreCheet';
+
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { FaStopwatch } from "react-icons/fa";
-import { IoTabletPortraitOutline } from "react-icons/fa";
-// import { IoTabletPortraitOutline } from "react-icons/io5";
-// import { IoTabletPortraitOutline } from "react-icons/io5";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -170,43 +169,9 @@ console.log(fixture)
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
         <div style={{width:'100%', }} > 
             <LeagueBar/>
-            <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
-                <div style={{display:'flex', width:'100%'}}>
-                    <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date}</div>
-                </div>
-
-                <div style={{display:'flex', width:'100%',  backgroundColor:'black ',}}>
-                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                        <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
-                        <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
-                        <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
-                    </div>
-                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-                        <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
-                        <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
-                        <p style={{color:'white',fontWeight: 'bold',
-                                fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>
-                                    {awayTeamScore}
-                        </p>
-                    </div>
-                </div>
-                
-                <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
-                    <div className={classes.leagueLogo} style={{ width:'50%', 
-                            textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
-                    <img src={leagueLogo} style={{width:31, height:31 }} />
-                    </div>
-                    <div style={{ width:'50%', textAlign:'right', 
-                                paddingTop:'20px', paddingRight:'2%', 
-                                fontFamily: 'Roboto,sans-serif',
-                                fontSize: '1rem', color: '#8e9cc5',
-                                fontWeight: '550'}}>
-                                <p >{venue}</p>
-                    </div>
-                </div>                     
-            </div> 
+            <GameSectionScoreCheet fixture={fixture}/>
             <div style={{}}>
-                <div style={{display:'flex', marginTop:'100px',marginLeft:'10%',marginRight:'10%'}}>
+                <div style={{display:'flex', marginTop:'50px',marginLeft:'10%',marginRight:'10%'}}>
                   <div style={{width:'100%',height:'50px',backgroundColor:'white', 
                         textAlign:'center', 
                         fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 

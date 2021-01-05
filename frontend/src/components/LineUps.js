@@ -8,7 +8,6 @@ import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 
 // import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
-
 import Divider from '@material-ui/core/Divider';
 import { grey } from '@material-ui/core/colors';
 import LeagueBar from './LeagueNameBar';
@@ -29,37 +28,11 @@ const useStyles = makeStyles((theme) => ({
 export default function LineUps({fixture}) {
   const classes = useStyles();
   
-
-  const gameDate = fixture.fixture && fixture.fixture.date;
-  
-  const leagueName = fixture.league && fixture.league.name;
-  const leagueLogo = fixture.league && fixture.league.logo;
-  
-  const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
-  const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
-
   const hometeamCoach = fixture.lineups && fixture.lineups[0].coach.name;
   const awayteamCoach = fixture.lineups && fixture.lineups[1].coach.name;
 
-  const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
-
-
   const homeTeamFormation = fixture.lineups && fixture.lineups[0].formation;
   const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
-
-  const venue = fixture.lineups && fixture.fixture.venue.name;
-
-  const homeTeamScore = fixture.goals && fixture.goals.home;
-  const awayTeamScore = fixture.goals && fixture.goals.away;
-
-  const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
-  const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
-
-  const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
-  // console.log(halfTimeStatus)
-
-  const date = fixture.fixture && fixture.fixture.date;
 
   function getTime(date) {
     if (date) {
