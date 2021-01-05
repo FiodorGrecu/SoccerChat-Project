@@ -93,7 +93,7 @@ console.log(fixture)
                    </span>
                    Goooal !!!
                   <SportsSoccerIcon style={{color:'black',paddingLeft:'5px' }}/>
-                  <span style={{paddingLeft:'10px'}}>{event.team.name}</span>
+                  <span style={{paddingLeft:'10px', color:'#be13aa'}}>{event.team.name}</span>
                   <hr style={{width:'96%'}}/>
                 </div>
 
@@ -112,7 +112,7 @@ console.log(fixture)
                     <span style={{color:'#23d24a'}}><ArrowDropUpIcon/></span>
                     {event.player.name}
                     {/* <span>Arsenal</span> */}
-                  <span style={{paddingLeft:'10px'}}>{event.team.name}</span>
+                  <span style={{paddingLeft:'10px',color:'#be13aa'}}>{event.team.name}</span>
 
                    </span>
                     {/* <span style={{paddingLeft:'50px'}}>{event.team.name}</span>                   */}
@@ -135,7 +135,7 @@ console.log(fixture)
                       </span>
                       </span>
                     </span>
-                    <span style={{paddingLeft:'10px'}}>{event.team.name}</span>
+                    <span style={{paddingLeft:'10px', color:'#be13aa'}}>{event.team.name}</span>
 
                          <hr style={{width:'96%'}}/>
                     
