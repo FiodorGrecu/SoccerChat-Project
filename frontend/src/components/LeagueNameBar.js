@@ -81,8 +81,8 @@ export default function LeagueBar() {
               </span>
           </div>
             <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
-               <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> 
-               <img src={leagueLogo} style={{width:'34px', height:'34px'}}/>
+               <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'10px' }}> 
+               <img src={leagueLogo} style={{width:'42px', height:'42px'}}/>
                </div>
             </div>
           </div>

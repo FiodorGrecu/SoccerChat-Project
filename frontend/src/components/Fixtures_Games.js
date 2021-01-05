@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import StarIcon from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
+import LeagueBar from './LeagueNameBar';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -157,10 +158,8 @@ export default function SimplePaper() {
   ));
 
   return (
-   
-
     <div style={{ backgroundColor: 'aliceblue'}}>
-
+    <LeagueBar/>
         <div style={{padding:'5%'}}>
           <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
                   fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',

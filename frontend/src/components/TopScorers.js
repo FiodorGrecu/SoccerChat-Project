@@ -5,6 +5,8 @@ import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 // import './styles.css';
+import LeagueBar from './LeagueNameBar';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -78,39 +80,7 @@ export default function SimplePaper() {
   
     
     <div  style={{backgroundColor:'aliceblue',}}>
-        <div style={{display: "flex", }}>
-          <div style={{ display:'flex' ,width:'100%',height:'60px',  }}>
-            <div style={{width:'50%',  alignItems:'flex-start',
-                  fontSize: '1rem', paddingLeft:'20px', paddingTop:'20px',
-                  fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
-                  fontWeight: 'bold', backgroundColor:'white'}}>
-              {leagueName}
-              <span style={{color:'grey', paddingLeft:'5px',color: '#8e9cc5'}}>
-              <StarOutlineRoundedIcon />
-              </span>
-          </div>
-            <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
-               <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'20px' }}> 
-               <img src={leagueLogo} style={{width:'34px', height:'34px'}}/>
-               </div>
-            </div>
-          </div>
-        </div>
-        <div style={{display: "flex",  }}>
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
-               justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
-               fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
-               fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
-               backgroundColor:'white'}}
-               >
-            <Link  ><p style={{paddingRight:'20px'}}>Summary</p></Link>
-            <Link><p style={{paddingRight:'20px' }}>Standings</p></Link>
-            <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
-            <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
-            <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
-          </div> 
-        </div>
-
+      <LeagueBar/>
         <div style={{display: "flex" ,}}>
       <div style={{ textAlign:'left', width:'219px', height:'63px', 
             backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
