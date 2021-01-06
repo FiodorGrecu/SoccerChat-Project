@@ -57,6 +57,9 @@ export default function CenteredGrid(props) {
 console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+
+            <div>{solution(A)}</div>
+
             <div style={{width:'70%', }} >  
                 <div className={classes.scoreSheet} slyle={{display:'flex'}}>
                   <div style={{display:'flex', width:'100%'}}>
