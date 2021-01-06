@@ -51,18 +51,18 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     border: 'none'
   },
-  // text: {
-  //   // flex: 1,
-  //   borderRadius: 41,
-  //   marginTop: 10,
-  //   marginLeft: 50,
-  //   color: 'grey',
-  //   fontSize: 15,
-  //   fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
-  //   fontWeight: "bold",
-  //   alignItems:'center',
-  //   justifyContent:'flex-start'
-  // },
+  text: {
+    // flex: 1,
+    borderRadius: 41,
+    marginTop: '100px',
+    marginLeft: 500,
+    color: 'grey',
+    fontSize: 15,
+    fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
+    fontWeight: "bold",
+    alignItems:'center',
+    // justifyContent:'flex-start'
+  },
   date: {
     // fontStyle: 'italic',
     color: '#3C185C',
@@ -90,7 +90,6 @@ export default function UserChat({ user, setUser, gameId }) {
   // const gameId = 436;
 
   const [chats, setChats] = useState([]);
-  // const [game_id, setGameId] = useState(1);
   const [text, setText] = useState('');
   
   const [isError, setIsError] = useState(false);
@@ -185,10 +184,11 @@ export default function UserChat({ user, setUser, gameId }) {
               >
 
           </Button>
+          <div>
           {chats.map(message => <span className={classes.text}>
             <div style={{fontFamily:'Roboto,sans-serif',color: 'grey[700]',
-                          fontWeight: 'bold', paddingLeft:'20px',paddingTop:'20px'
-                           }}>
+                          fontWeight: 'bold', paddingLeft:'20px',paddingTop:'20px',
+                          }}>
                 {message[5]} 
               <span style={{paddingLeft:'10px',fontFamily:'Roboto,sans-serif',
                           color: 'grey',fontWeight: '600', }}>
@@ -201,10 +201,9 @@ export default function UserChat({ user, setUser, gameId }) {
                             {message[4]}
             </div>    
             </span>)} 
+           </div> 
         </div>
       </div>
-      {/* {chats.map(message => )}  */}
-         {/* <p className={classes.date}>{message[1]}</p> */}
     </div>
     );
   

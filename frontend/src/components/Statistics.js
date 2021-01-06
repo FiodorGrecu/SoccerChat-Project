@@ -49,112 +49,16 @@ export default function CenteredGrid(props) {
   
   const leagueName = fixture.league && fixture.league.name;
   const leagueLogo = fixture.league && fixture.league.logo;
-  
-  const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
-  const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
-
-  const hometeamCoach = fixture.lineups && fixture.lineups[0].coach.name;
-  const awayteamCoach = fixture.lineups && fixture.lineups[1].coach.name;
-
-  const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
-
-
-  const homeTeamFormation = fixture.lineups && fixture.lineups[0].formation;
-  const awayTeamFormation = fixture.lineups && fixture.lineups[1].formation;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
-  const homeTeamScore = fixture.goals && fixture.goals.home;
-  const awayTeamScore = fixture.goals && fixture.goals.away;
-
   const date = fixture.fixture && fixture.fixture.date;
 
-  const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-    // **********  All of this divs iside the grid were initialy Paper tags
-        <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",
-            // <circle style={{backgroundColor: "#be13aa",
-                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-                    // background: '-webkit-linear-gradient(top,  #CD0000 5%, #EEA9B8 84%,#FF1493 88%,#EE2C2C 90%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', margin: '2px', 
-                    position:'relative',}}>
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{player.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-          </div>
-        </div>
-  ));
-  
-  const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-        // <div className={classes.awayPlayersName}> <hr width='100%' /> <p style={{paddingLeft:'5%'}}>{player.player.name} {player.player.number}</p></div>
-    <div className={classes.awayPlayersName}> <hr width='100%'/> 
-        <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-        <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
-                        // background: '-webkit-linear-gradient(top,  #696969 25%, #BFBFBF 74%,#949494 88%,#7D7D7D 80%)', /* Chrome10-25,Safari5.1-6 */
-                        background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-                        borderRadius: '50%',display: 'inline-block',
-                        textAlign: 'center', margin: '2px', 
-                        position:'relative',}}>
-          <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-            width: '90px'}}>{player.player.number}
-          </span>
-        </circle>
-        <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-        <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-      </div> 
-    </div>
-  ));
-
-  const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-      // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-      <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: "#be13aa",
-                    background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', 
-                    margin: '2px', position:'relative',}}>
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-          </div>
-        </div>
-  ));
-
-  const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-      // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-      <div className={classes.homePlayersName}> <hr width='100%'/> 
-          <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-            <circle style={{backgroundColor: 'grey',
-                    background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-                    width: '30px',height: "30px",borderRadius: '50%',
-                    display: 'inline-block',textAlign: 'center', 
-                    margin: '2px', position:'relative',}}>
-
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
-              </span>
-            </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-            <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-          </div>
-        </div>
-        
-  ));
 console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'70%', }} >  
-                <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
+                <div className={classes.scoreSheet} slyle={{display:'flex'}}>
                   <div style={{display:'flex', width:'100%'}}>
                     <div className={classes.date} style={{width: '100%', textAlign:'center', paddingTop:'2%', color:'white',fontWeight: 'bold'}}>{date}</div>
                   </div>
@@ -223,9 +127,9 @@ console.log(fixture)
 
               </div>   
           </div>
-        <div style={{width:'30%', height:'1100px' }} >
+        {/* <div style={{width:'30%', height:'1100px' }} >
                 <ChatSection gameId={gameNum}/>
-        </div>
+        </div> */}
     </div>
   );
 }

@@ -95,82 +95,6 @@ export default function CenteredGrid(props) {
   function getDay(date) {
        return new Date(date).toLocaleDateString()
     }
-   
-
-
-  // const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
-  //       <div className={classes.homePlayersName}> <hr width='100%'/> 
-  //         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-  //           <circle style={{backgroundColor: "#be13aa",
-  //                     background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)',
-  //                   width: '30px',height: "30px",borderRadius: '50%',
-  //                   display: 'inline-block',textAlign: 'center', margin: '2px', 
-  //                   position:'relative',}}>
-  //             <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-  //               width: '90px'}}>{player.player.number}
-  //             </span>
-  //           </circle>
-  //           <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-  //           <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-  //         </div>
-  //       </div>
-  // ));
-  
-  // const awayPlayers = fixture.lineups && fixture.lineups[1].startXI.map(player => (
-  //   <div className={classes.awayPlayersName}> <hr width='100%'/> 
-  //       <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-  //       <circle style={{backgroundColor: "grey",width: '30px',height: "30px",
-  //                       background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', 
-  //                       borderRadius: '50%',display: 'inline-block',
-  //                       textAlign: 'center', margin: '2px', 
-  //                       position:'relative',}}>
-  //         <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-  //           width: '90px'}}>{player.player.number}
-  //         </span>
-  //       </circle>
-  //       <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
-  //       <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
-  //     </div> 
-  //   </div>
-  // ));
-
-  // const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-  //     // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-  //     <div className={classes.homePlayersName}> <hr width='100%'/> 
-  //         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-  //           <circle style={{backgroundColor: "#be13aa",
-  //                   background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)', /* Chrome10-25,Safari5.1-6 */
-  //                   width: '30px',height: "30px",borderRadius: '50%',
-  //                   display: 'inline-block',textAlign: 'center', 
-  //                   margin: '2px', position:'relative',}}>
-  //             <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-  //               width: '90px'}}>{substitutes.player.number}
-  //             </span>
-  //           </circle>
-  //           <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-  //           <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-  //         </div>
-  //       </div>
-  // ));
-
-  // const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-  //     // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
-  //     <div className={classes.homePlayersName}> <hr width='100%'/> 
-  //         <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
-  //           <circle style={{backgroundColor: 'grey',
-  //                   background: '-webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%)', /* Chrome10-25,Safari5.1-6 */
-  //                   width: '30px',height: "30px",borderRadius: '50%',
-  //                   display: 'inline-block',textAlign: 'center', 
-  //                   margin: '2px', position:'relative',}}>
-
-  //             <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-  //               width: '90px'}}>{substitutes.player.number}
-  //             </span>
-  //           </circle>
-  //           <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{substitutes.player.name}</span><br/>
-  //           <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{substitutes.player.pos}</p>
-  //         </div>
-  //       </div>
         
   // ));
 console.log(fixture)
@@ -198,22 +122,22 @@ console.log(fixture)
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
                     {/* Score at half time */}
-                    <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blu'}}>
-                      <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
-                        {/* <div style={{backgroundColor:'yello', color: "white"}}>{halfTimeStatus}</div> */}
-                        <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
-                          <div style={{ display:'flex'}}> 
-                            <div style={{width:'50%', paddingLeft:'30px',
-                                  color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                                    {halfTimeScoreH}
-                            </div>
-                            <div style={{width:'50%', paddingRight:'30px',
-                                  color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                                      {halfTimeScoreA}
-                            </div>
+                      <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
+                        <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
+                          {/* <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div>  */}
+                          <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
+                            <div style={{ display:'flex'}}> 
+                              <div style={{width:'50%', paddingLeft:'30px',
+                                    color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                                      {halfTimeScoreH}
+                              </div>
+                              <div style={{width:'50%', paddingRight:'30px',
+                                    color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                                        {halfTimeScoreA}
+                              </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
                     <div style={{ width:'40%', textAlign:'center', paddingTop:'3%'}}>
                       <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
