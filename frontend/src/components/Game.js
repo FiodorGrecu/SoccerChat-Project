@@ -116,29 +116,29 @@ console.log(fixture)
                     </div>
                   </div>
                   <div style={{display:'flex', width:'100%',}}>
-                    <div style={{ width:'40%', textAlign:'center', paddingTop:'3%', }}>
+                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%', }}>
                       <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
                     </div>
                     {/* Score at half time */}
-                      <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
-                        <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
-                          {/* <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div>  */}
-                          <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
-                            <div style={{ display:'flex'}}> 
-                              <div style={{width:'50%', paddingLeft:'30px',
-                                    color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                                      {halfTimeScoreH}
-                              </div>
-                              <div style={{width:'50%', paddingRight:'30px',
-                                    color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                                        {halfTimeScoreA}
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                    <div style={{ width:'40%', textAlign:'center', paddingTop:'3%'}}>
+                                {/* <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
+                                  <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
+                                    <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div> 
+                                    <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
+                                      <div style={{ display:'flex'}}> 
+                                        <div style={{width:'50%', paddingLeft:'30px',
+                                              color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                                                {halfTimeScoreH}
+                                        </div>
+                                        <div style={{width:'50%', paddingRight:'30px',
+                                              color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                                                  {halfTimeScoreA}
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div> */}
+                    <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
                       <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
                       <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
                       <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>

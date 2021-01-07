@@ -3,8 +3,11 @@ import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
-import { FaCalendarAlt } from "react-icons/fa";
-import { FaRegClock } from "react-icons/fa";
+import Chart from "react-apexcharts";
+import Divider from '@material-ui/core/Divider';
+import ChatSection from './ChatSection';
+import { icons } from 'react-icons/lib';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -19,12 +22,14 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function GameSection(props) {
+export default function CenteredGrid(props) {
   const classes = useStyles();
 
 
   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
+
+  const unixTimestamp = 1604752200;
 
   useEffect(() => {
     async function gameDetails() {
@@ -78,17 +83,22 @@ export default function GameSection(props) {
   function getDay(date) {
        return new Date(date).toLocaleDateString()
     }
-
+        
+  // ));
+console.log(fixture)
   return (
-    <div style={{width:'100%', }} >  
+  <div style={{width:'100%', }}>
+    <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+              {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
+                
         <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
           <div style={{display:'flex', width:'100%',}}>
             <div className={classes.date} style={{width: '100%', 
                   textAlign:'center', paddingTop:'2%', color:'white',
                   fontWeight: 'bold'}}>
-                    <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span>
+                    {/* <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span> */}
                     <span style={{paddingRight:'20px', }}>{getDay(date)}</span>
-                    <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span>
+                    {/* <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span> */}
                     <span style={{ }}>{getTime(date)}</span>
             </div>
           </div>
@@ -99,22 +109,24 @@ export default function GameSection(props) {
               <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
             </div>
             {/* Score at half time */}
-            <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blu'}}>
-              <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
-                {/* <div style={{backgroundColor:'yello', color: "white"}}>{halfTimeStatus}</div> */}
-                <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
-                  <div style={{ display:'flex'}}> 
-                    <div style={{width:'50%', paddingLeft:'30px',
-                          color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                            {halfTimeScoreH}
-                    </div>
-                    <div style={{width:'50%', paddingRight:'30px',
-                          color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                              {halfTimeScoreA}
-                    </div>
-                </div>
-              </div>
-            </div>
+                        <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
+                          <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
+                            {/* <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div>  */}
+                            <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
+                              <div style={{ display:'flex'}}> 
+                                <div style={{width:'50%', paddingLeft:'30px',
+                                      color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
+                                      backgroundColor:'red', }}>
+                                        {halfTimeScoreH}
+                                </div>
+                                <div style={{width:'50%', paddingRight:'30px',
+                                      color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
+                                      backgroundColor:'green', }}>
+                                          {halfTimeScoreA}
+                                </div>
+                            </div>
+                          </div>
+                        </div>
             <div style={{ width:'40%', textAlign:'center', paddingTop:'3%'}}>
               <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
               <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
@@ -142,7 +154,7 @@ export default function GameSection(props) {
                             paddingTop:'10px'}}>
                       Lineups      
                 </Link >
-                <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
+                <Link component={RouterLink} to={`/game/${gameNum}/events`} style={{ color:'white', color:'white',
                             fontWeight: 'bold',fontSize:'1rem', 
                             paddingTop:'10px'}}>
                       Summary      
@@ -155,15 +167,41 @@ export default function GameSection(props) {
                             paddingTop:'10px'}}>
                       Statistics      
                 </Link>
-                <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
+                <Link component={RouterLink} to={`/game/${gameNum}/chat`} style={{ color:'white', color:'white',
                             fontWeight: 'bold',fontSize:'1rem', 
                             paddingTop:'10px'}}>
                       Chat     
                 </Link>
               </div>
             </div>
-      </div> 
+      </div>
+    </div>
+
+     <div className={classes.AttackingStats} style={{display:'flex', width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0'}}>
+        <div style={{display:'flex', }}>
+          <div style={{backgroundColor:'yellow', width:'100%'}}>Attacking Stats</div>
+          <div style={{backgroundColor:'green', }}>first bar
+              <div style={{backgroundColor:'#AEECFF'}}>second bar</div>
+              <div style={{backgroundColor:'#7CFC00'}}>third bar</div>
+              <div style={{backgroundColor:'#FFC0CB'}}>fourth bar</div>
+              <div style={{backgroundColor:'#7B68EE'}}>fifth bar</div>
+              <div style={{backgroundColor:'#EE82EE'}}>sixth bar</div>
+            </div>
+        </div>
+          
+     </div>
+
   </div>
   );
 }
+
+
+
+
+
+// <Game /> // holds all the data, passes to children
+
+//     ==> <GameHeader />   ||    <StatisticsHeader />
+
+//     ==> <Lineups/> || <Chat /> || <Events /> || <StatisticsBody/>
 
