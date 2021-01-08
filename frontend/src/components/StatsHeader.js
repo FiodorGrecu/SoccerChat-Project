@@ -179,64 +179,68 @@ console.log(fixture)
     
     <div style={{ display:'flex', marginTop:'30px'}}>
       {/* Attacking stats */}
-      <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'white', marginLeft:'15px', marginRight:'15px',}}>
-          <div style={{ width:'100%', textAlign:'center', }}>
-            <div style={{width:'100%', height:'35px', margin:'auto', 
+      <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'white', marginLeft:'15px', marginRight:'15px',marginBottom:'20px'}}>
+          <div style={{ width:'100%', textAlign:'center', marginBottom:'40px' }}>
+            <div style={{width:'100%', height:'35px', margin:'auto',
                     textAlign:'left',fontFamily: 'Roboto,sans-serif',
                     fontSize: '1rem', color: '#8e9cc5',fontWeight: '550',paddingTop:'20px'}}>
               <span style={{paddingLeft:'20px', }}>Attacking Stats</span>
             </div>
             <hr style={{width:'100%'}}></hr>
+
             {/* First row and it's bar */}
             <div style={{ width:'90%', margin:'auto', }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>5</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>Shots On Target</span>
-                {/* <span style={{backgroundColor:'red', width:'33%',}}></span> */}
-                <span style={{backgroundColor:'#E9967A', width:'33%',float:'right', textAlign:'right'}}>2</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>5</span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots On Target</span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>2</span>
             </div>
-            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
-                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#d7dff7', width:'70%', marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:'30%',}}>?</span>
             </div>
+
             {/* Second row and it's bar */}
-            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
-                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
-                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
-                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
+                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>4</span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots Off Target</span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>12</span>
             </div>
-            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
-                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#d7dff7', width:'20%', marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:'80%',}}>?</span>
             </div>
+
             {/* Third row and it's bar */}
-            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
-                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
-                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
-                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
+                <span style={{width:'20%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>8</span>
+                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Total Shots (including blocked shots)</span>
+                <span style={{ width:'20%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>15</span>
             </div>
-            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
-                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#d7dff7', width:'35%', marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:'65%',}}>?</span>
             </div>
+
             {/* Fourth row and it's bar */}
-            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
-                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
-                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
-                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
+                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>2</span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots Inside The Box</span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>9</span>
             </div>
-            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
-                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#d7dff7', width:'15%', marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:'85%',}}>?</span>
             </div>
+
             {/* Fifth row and it's bar */}
-            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
-                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
-                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
-                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
+                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>5</span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots Outside The Box</span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>6</span>
             </div>
-            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
-                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#d7dff7', width:'45%', marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:'55%',}}>?</span>
             </div>
           </div>    
       </div> {/*  Parent div of Attacking Stats */}
