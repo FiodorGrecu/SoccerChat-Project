@@ -177,18 +177,22 @@ console.log(fixture)
       </div>
     </div>
     
-    <div style={{ display:'flex'}}>
+    <div style={{ display:'flex', marginTop:'30px'}}>
       {/* Attacking stats */}
-      <div className={classes.AttackingStats} style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0'}}>
+      <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'white', marginLeft:'15px', marginRight:'15px',}}>
           <div style={{ width:'100%', textAlign:'center', }}>
-            <div style={{backgroundColor:'yellow', width:'90%', margin:'auto', textAlign:'left'}}>
-              <span >Attacking Stats</span>
+            <div style={{width:'100%', height:'35px', margin:'auto', 
+                    textAlign:'left',fontFamily: 'Roboto,sans-serif',
+                    fontSize: '1rem', color: '#8e9cc5',fontWeight: '550',paddingTop:'20px'}}>
+              <span style={{paddingLeft:'20px', }}>Attacking Stats</span>
             </div>
+            <hr style={{width:'100%'}}></hr>
             {/* First row and it's bar */}
-            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
-                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
-                <span style={{backgroundColor:'red', width:'33%',}}>Shots On Target</span>
-                <span style={{backgroundColor:'#E9967A', width:'33%',float:'right'}}>third bar</span>
+            <div style={{ width:'90%', margin:'auto', }}>
+                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>5</span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>Shots On Target</span>
+                {/* <span style={{backgroundColor:'red', width:'33%',}}></span> */}
+                <span style={{backgroundColor:'#E9967A', width:'33%',float:'right', textAlign:'right'}}>2</span>
             </div>
             <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
                 <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
@@ -238,8 +242,8 @@ console.log(fixture)
       </div> {/*  Parent div of Attacking Stats */}
 
         {/* Defending stats  div */}
-      <div style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0'}}>
-          <div style={{ width:'100%', textAlign:'center', }}>
+      <div style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0', marginLeft:'15px', marginRight:'15px',}}>
+          <div style={{ width:'100%', textAlign:'center'}}>
             <div style={{backgroundColor:'yellow', width:'90%', margin:'auto', textAlign:'left'}}>
               <span >Defending Stats</span>
             </div>
