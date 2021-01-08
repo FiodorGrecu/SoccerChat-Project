@@ -68,7 +68,7 @@ export default function CenteredGrid(props) {
   const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
   // console.log(halfTimeStatus)
 
-  const date = fixture.fixture && fixture.fixture.date;
+  const date = fixture.fixture && fixture.fixture.date; 
 
   function getTime(date) {
     if (date) {
@@ -176,21 +176,126 @@ console.log(fixture)
             </div>
       </div>
     </div>
-
-     <div className={classes.AttackingStats} style={{display:'flex', width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0'}}>
-        <div style={{display:'flex', }}>
-          <div style={{backgroundColor:'yellow', width:'100%'}}>Attacking Stats</div>
-          <div style={{backgroundColor:'green', }}>first bar
-              <div style={{backgroundColor:'#AEECFF'}}>second bar</div>
-              <div style={{backgroundColor:'#7CFC00'}}>third bar</div>
-              <div style={{backgroundColor:'#FFC0CB'}}>fourth bar</div>
-              <div style={{backgroundColor:'#7B68EE'}}>fifth bar</div>
-              <div style={{backgroundColor:'#EE82EE'}}>sixth bar</div>
+    
+    <div style={{ display:'flex'}}>
+      {/* Attacking stats */}
+      <div className={classes.AttackingStats} style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0'}}>
+          <div style={{ width:'100%', textAlign:'center', }}>
+            <div style={{backgroundColor:'yellow', width:'90%', margin:'auto', textAlign:'left'}}>
+              <span >Attacking Stats</span>
             </div>
-        </div>
-          
-     </div>
+            {/* First row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots On Target</span>
+                <span style={{backgroundColor:'#E9967A', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Second row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Third row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Fourth row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Fifth row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+          </div>    
+      </div> {/*  Parent div of Attacking Stats */}
 
+        {/* Defending stats  div */}
+      <div style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'#5F9EA0'}}>
+          <div style={{ width:'100%', textAlign:'center', }}>
+            <div style={{backgroundColor:'yellow', width:'90%', margin:'auto', textAlign:'left'}}>
+              <span >Defending Stats</span>
+            </div>
+            {/* First row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots On Target</span>
+                <span style={{backgroundColor:'#E9967A', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Second row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Third row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Fourth row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+            {/* Fifth row and it's bar */}
+            <div style={{backgroundColor:'green', width:'90%', margin:'auto', }}>
+                <span style={{backgroundColor:'azure', width:'33%', float:'left'}}>first bar</span>
+                <span style={{backgroundColor:'red', width:'33%',}}>Shots Off Target</span>
+                <span style={{backgroundColor:'#63B8FF', width:'33%',float:'right'}}>third bar</span>
+            </div>
+            <div style={{backgroundColor:'gray', width:'90%', margin:'auto',display:'flex' }}>
+                <span style={{backgroundColor:'#BA55D3', width:'50%', }}>first bar</span>
+                <span style={{backgroundColor:'#7CFC00', width:'50%',}}>third bar</span>
+            </div>
+          </div>    
+      </div> {/*  Parent closing div of Defending Stats */}
+    </div>
   </div>
   );
 }
