@@ -70,6 +70,23 @@ export default function CenteredGrid(props) {
 
   const date = fixture.fixture && fixture.fixture.date; 
 
+  // Charts data f
+  const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value;
+  const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value;
+  
+  const homeShotsOffTarget = fixture.statistics && fixture.statistics[0].statistics[1].value;
+  const awayShotsOffTarget = fixture.statistics && fixture.statistics[1].statistics[1].value;
+  
+  const homeTotalShots = fixture.statistics && fixture.statistics[0].statistics[2].value;
+  const awayTotalShots = fixture.statistics && fixture.statistics[1].statistics[2].value;
+  
+  const homeShotsInsideBox = fixture.statistics && fixture.statistics[0].statistics[4].value;
+  const awayShotsInsideBox = fixture.statistics && fixture.statistics[1].statistics[4].value;
+  
+  const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
+  const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
+
+
   function getTime(date) {
     if (date) {
       const time = new Date(date);
@@ -109,24 +126,24 @@ console.log(fixture)
               <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
             </div>
             {/* Score at half time */}
-                        <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
-                          <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
-                            {/* <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div>  */}
-                            <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
-                              <div style={{ display:'flex'}}> 
-                                <div style={{width:'50%', paddingLeft:'30px',
-                                      color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
-                                      backgroundColor:'red', }}>
-                                        {halfTimeScoreH}
-                                </div>
-                                <div style={{width:'50%', paddingRight:'30px',
-                                      color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
-                                      backgroundColor:'green', }}>
-                                          {halfTimeScoreA}
-                                </div>
-                            </div>
-                          </div>
+                <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
+                  <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
+                    {/* <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div>  */}
+                    <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
+                      <div style={{ display:'flex'}}> 
+                        <div style={{width:'50%', paddingLeft:'30px',
+                              color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
+                              backgroundColor:'red', }}>
+                                {halfTimeScoreH}
                         </div>
+                        <div style={{width:'50%', paddingRight:'30px',
+                              color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
+                              backgroundColor:'green', }}>
+                                  {halfTimeScoreA}
+                        </div>
+                    </div>
+                  </div>
+                </div>
             <div style={{ width:'40%', textAlign:'center', paddingTop:'3%'}}>
               <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
               <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
@@ -180,71 +197,151 @@ console.log(fixture)
     {/* The two stats charts parent div (line 181 to 315) */}
     <div style={{ display:'flex', marginTop:'30px'}}>
       {/* Attacking stats */}
-      <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'white', marginLeft:'15px', marginRight:'15px',marginBottom:'20px'}}>
-          <div style={{ width:'100%', textAlign:'center', marginBottom:'40px' }}>
+      <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',
+              backgroundColor:'white', marginLeft:'15px', marginRight:'15px',
+              marginBottom:'20px'}}>
+          <div style={{ width:'100%', textAlign:'center', marginBottom:'40px'}}>
             <div style={{width:'100%', height:'35px', margin:'auto',
                     textAlign:'left',fontFamily: 'Roboto,sans-serif',
-                    fontSize: '1rem', color: '#8e9cc5',fontWeight: '550',paddingTop:'20px'}}>
-              <span style={{paddingLeft:'20px', }}>Attacking Stats</span>
+                    fontSize: '1rem', color: '#8e9cc5',fontWeight: '550',
+                    paddingTop:'20px'}}>
+              <span style={{paddingLeft:'20px',}}>
+                Attacking Stats
+              </span>
             </div>
             <hr style={{width:'100%'}}></hr>
 
             {/* First row and it's bar */}
             <div style={{ width:'90%', margin:'auto', }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>5</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots On Target</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>2</span>
+              <span style={{width:'33%', float:'left', textAlign:'left',
+                      fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
+                      color: 'gray',fontWeight: 'bold'}}>
+                {homeShotsOnTarget}
+              </span>
+              <span style={{width:'33%', float:'left',fontFamily:'Roboto,sans-serif',
+                      fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                Shots On Target        
+              </span>
+              <span style={{ width:'33%',float:'right', textAlign:'right',
+                      fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                      color: 'gray',fontWeight: 'bold'}}>
+                {awayShotsOnTarget}
+              </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'70%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'30%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeShotsOnTarget /
+                  (homeShotsOnTarget + awayShotsOnTarget)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayShotsOnTarget / 
+                  (homeShotsOnTarget + awayShotsOnTarget)* 100}%`,height:'20px',}}>
+                </span>
             </div>
 
             {/* Second row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>4</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots Off Target</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>12</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {homeShotsOffTarget}
+                </span>
+                <span style={{width:'33%',float:'left',fontFamily:'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                    Shots Off Target
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayShotsOffTarget}
+                  </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'20%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'80%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeShotsOffTarget /
+                  (homeShotsOffTarget + awayShotsOffTarget)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayShotsOffTarget /
+                  (homeShotsOffTarget + awayShotsOffTarget)* 100}%`,height:'20px'}}>
+                </span>
             </div>
 
             {/* Third row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
-                <span style={{width:'20%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>8</span>
-                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Total Shots (including blocked shots)</span>
-                <span style={{ width:'20%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>15</span>
+                <span style={{width:'20%', float:'left', textAlign:'left',
+                        fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {homeTotalShots}
+                </span>
+                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                          Total Shots (including blocked shots)
+                </span>
+                <span style={{ width:'20%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayTotalShots}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'35%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'65%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeTotalShots /
+                  (homeTotalShots + awayTotalShots)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayTotalShots /
+                  (homeTotalShots + awayTotalShots)* 100}%`,height:'20px'}}>
+                </span>
             </div>
 
             {/* Fourth row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>2</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots Inside The Box</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>9</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {homeShotsInsideBox}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                    Shots Inside The Box
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayShotsInsideBox}    
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'15%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'85%', color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeShotsInsideBox /
+                  (homeShotsInsideBox + awayShotsInsideBox)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayShotsInsideBox /
+                  (homeShotsInsideBox + awayShotsInsideBox)* 100}%`, height:'20px'}}>
+                </span>
             </div>
 
             {/* Fifth row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>5</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Shots Outside The Box</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>6</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {homeShotsOutsideBox}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                          Shots Outside The Box
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayShotsOutsideBox}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'45%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'55%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeShotsOutsideBox /
+                  (homeShotsOutsideBox + awayShotsOutsideBox)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayShotsOutsideBox /
+                  (homeShotsOutsideBox + awayShotsOutsideBox)* 100}%`,height:'20px'}}>
+                </span>
             </div>
           </div>    
-      </div> {/*  Parent div of Attacking Stats */}
+      </div> {/*  Parent closing div of Attacking Stats */}
 
       {/* Defending Stats */}
       <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',backgroundColor:'white', marginLeft:'15px', marginRight:'15px',marginBottom:'20px'}}>
@@ -378,7 +475,7 @@ console.log(fixture)
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
                 <span style={{backgroundColor:'#d7dff7', width:'30%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'70%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#516290', width:'70%', height:'20px',color:'#516290'}}></span>
             </div>
 
             {/* Second row and it's bar */}
