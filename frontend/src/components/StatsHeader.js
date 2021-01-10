@@ -88,6 +88,18 @@ export default function CenteredGrid(props) {
  
   const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value;
   const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value;
+  
+  const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
+  const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
+  
+  const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value;
+  const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value;
+  
+  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value;
+  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value;
+  
+  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value;
+  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value;
 
 
   function getTime(date) {
@@ -375,53 +387,113 @@ console.log(fixture)
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
                 <span style={{backgroundColor:'#d7dff7', width:`${homeBlockedShots /
-                  (homeBlockedShots + awayBlockedShots)* 100}%`, marginRight:'1px'}}></span>
+                  (homeBlockedShots + awayBlockedShots)* 100}%`, marginRight:'1px'}}>
+                </span>
                 <span style={{backgroundColor:'#516290', width:`${awayBlockedShots /
-                  (homeBlockedShots + awayBlockedShots)* 100}%`,height:'20px'}}></span>
+                  (homeBlockedShots + awayBlockedShots)* 100}%`,height:'20px'}}>
+                </span>
             </div>
 
             {/* Second row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>4</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Goalkeeper Saves</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>5</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {homeGoalkeeperSaves}    
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Goalkeeper Saves
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayGoalkeeperSaves}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'45%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'55%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeGoalkeeperSaves /
+                  (homeGoalkeeperSaves + awayGoalkeeperSaves)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayGoalkeeperSaves /
+                  (homeGoalkeeperSaves + awayGoalkeeperSaves)* 100}%`,height:'20px'}}></span>
             </div>
 
             {/* Third row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
-                <span style={{width:'20%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>8</span>
-                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Fouls</span>
-                <span style={{ width:'20%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>15</span>
+                <span style={{width:'20%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {homeFouls}
+                </span>
+                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Fouls
+                  </span>
+                <span style={{ width:'20%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayFouls}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'35%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'65%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeFouls /
+                  (homeFouls + awayFouls)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayFouls /
+                  (homeFouls + awayFouls)* 100}%`,height:'20px'}}>
+                </span>
             </div>
 
             {/* Fourth row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>1</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Yellow Cards</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>3</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {homeYellowCards}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Yellow Cards
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayYellowCards}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'25%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'75%', color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeYellowCards /
+                  (homeYellowCards + awayYellowCards)* 100}%`, marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:`${awayYellowCards /
+                  (homeYellowCards + awayYellowCards)* 100}%`, height:'20px'}}></span>
             </div>
 
             {/* Fifth row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>-</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Red Cards</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>-</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {homeRedCards || '0'}
+                      {/* {homeRedCards } */}
+                        </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Red Cards
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayRedCards || '0'}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff', width:'45%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#51629', width:'55%',color:'#516290'}}>?</span> {/* What do I do here???*/}
+                <span style={{backgroundColor:'#d7dff', width:`${homeRedCards /
+                  (homeYellowCards + awayYellowCards)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#51629', width:`${awayRedCards /
+                  (homeYellowCards + awayYellowCards)* 100}%`,height:'20px'}}>
+                </span> {/* What do I do here??? (hight fixes the issue)*/}
             </div>
           </div>    
       </div> {/*  Parent closing  div of Defending Stats */}
