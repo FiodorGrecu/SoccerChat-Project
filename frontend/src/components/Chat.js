@@ -90,6 +90,7 @@ export default function UserChat({ user, setUser, gameId }) {
   // const gameId = 436;
 
   const [chats, setChats] = useState([]);
+  // const [game_id, setGameId] = useState(1);
   const [text, setText] = useState('');
   
   const [isError, setIsError] = useState(false);
@@ -204,6 +205,7 @@ export default function UserChat({ user, setUser, gameId }) {
            </div> 
         </div>
       </div>
+
     </div>
     );
   

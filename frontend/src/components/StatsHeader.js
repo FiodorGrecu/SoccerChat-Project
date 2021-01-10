@@ -85,6 +85,9 @@ export default function CenteredGrid(props) {
   
   const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
   const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
+ 
+  const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value;
+  const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value;
 
 
   function getTime(date) {
@@ -355,13 +358,26 @@ console.log(fixture)
 
             {/* First row and it's bar */}
             <div style={{ width:'90%', margin:'auto', }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>2</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Blocked Shots</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>4</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {homeBlockedShots}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                  Blocked Shots
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayBlockedShots}    
+                  </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'350%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'63%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeBlockedShots /
+                  (homeBlockedShots + awayBlockedShots)* 100}%`, marginRight:'1px'}}></span>
+                <span style={{backgroundColor:'#516290', width:`${awayBlockedShots /
+                  (homeBlockedShots + awayBlockedShots)* 100}%`,height:'20px'}}></span>
             </div>
 
             {/* Second row and it's bar */}
