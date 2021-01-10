@@ -100,6 +100,13 @@ export default function CenteredGrid(props) {
   
   const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value;
   const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value;
+  
+  const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
+  const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
+  
+  const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value;
+  const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value;
+
 
 
   function getTime(date) {
@@ -508,17 +515,30 @@ console.log(fixture)
                     fontSize: '1rem', color: '#8e9cc5',fontWeight: '550',paddingTop:'20px'}}>
               <span style={{paddingLeft:'20px', }}>Team Play Stats</span>
             </div>
-            <hr style={{width:'100%'}}></hr>
-
+              <hr style={{width:'100%'}}></hr>
             {/* First row and it's bar */}
             <div style={{ width:'90%', margin:'auto', }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>275</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Total Passes</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>750</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {homeTotalPasses}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Total Passes
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayTotalPasses}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'30%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'70%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeTotalPasses /
+                      (homeTotalPasses + awayTotalPasses)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayTotalPasses /
+                      (homeTotalPasses + awayTotalPasses)* 100}%`,height:'20px'}}></span>
             </div>
 
             {/* Second row and it's bar */}
