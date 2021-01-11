@@ -37,8 +37,3 @@
 #             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
 #             'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
 #             }
-
-#         response = requests.request("GET", url, headers=headers)
-#         data = response.json()
-#         logo = data['api']['teams'][0]['logo']
-#         pprint(logo)
