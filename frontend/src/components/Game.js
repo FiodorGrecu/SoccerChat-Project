@@ -20,6 +20,8 @@ import LeagueBar from './LeagueNameBar';
 import LineUps from './LineUps';
 import GameSectionScoreCheet from './GameSectionScoreCheet';
 import Events from './Events';
+import StatsBar from './StatsTopBar';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -100,7 +102,7 @@ export default function CenteredGrid(props) {
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
-        <LeagueBar/>
+        <StatsBar/>
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'70%', }} > 
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
