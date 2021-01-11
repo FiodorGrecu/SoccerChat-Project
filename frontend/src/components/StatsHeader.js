@@ -106,8 +106,16 @@ export default function CenteredGrid(props) {
   
   const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value;
   const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value;
-
-
+  
+  const homePassesAcuracy = fixture.statistics && fixture.statistics[0].statistics[15].value.slice(0,-1);
+  const awayPassesAcuracy = fixture.statistics && fixture.statistics[1].statistics[15].value.slice(0,-1);
+  
+  // const homePassesAcuracyWidth = fixture.statistics && fixture.statistics[0].statistics[15].value;
+  // const awayPassesAcuracyWidth = fixture.statistics && fixture.statistics[1].statistics[15].value;
+  
+  const homeBallPossession = fixture.statistics && fixture.statistics[0].statistics[9].value.slice(0,-1);
+  const awayBallPossession = fixture.statistics && fixture.statistics[1].statistics[9].value.slice(0,-1);
+  // console.log(homeBallPossession)
 
   function getTime(date) {
     if (date) {
@@ -543,24 +551,51 @@ console.log(fixture)
 
             {/* Second row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>200</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Passes Acurate</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>550</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {homePassesAcurate}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                    Passes Acurate
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayPassesAcurate}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'28%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'72%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homePassesAcurate /
+                      (homePassesAcurate + awayPassesAcurate)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayPassesAcurate /
+                      (homePassesAcurate + awayPassesAcurate)* 100}%`,height:'20px'}}>
+                </span>
             </div>
 
             {/* Third row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
-                <span style={{width:'20%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>40</span>
-                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Passes Acuracy %</span>
-                <span style={{ width:'20%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>80</span>
+                <span style={{width:'20%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {homePassesAcuracy}
+                </span>
+                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Passes Acuracy %
+                </span>
+                <span style={{ width:'20%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayPassesAcuracy}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'40%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'60%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homePassesAcuracy}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayPassesAcuracy}%`,height:'20px'}}></span>
             </div>            
           </div>    
       </div> {/*  Parent closing div of Team Play Stats */}
@@ -577,13 +612,28 @@ console.log(fixture)
 
             {/* First row and it's bar */}
             <div style={{ width:'90%', margin:'auto', }}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>29</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Ball Possession %</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>71</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                   {homeBallPossession}
+                   {/* {awayBallPossession} */}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                    Ball Possession %
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayBallPossession}
+                    {/* {homeBallPossession} */}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'30%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'70%', height:'20px',color:'#516290'}}></span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeBallPossession}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290' ,width:`${awayBallPossession}%`, height:'20px',}}>
+                </span>
             </div>
 
             {/* Second row and it's bar */}
