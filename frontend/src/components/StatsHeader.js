@@ -160,6 +160,15 @@ console.log(fixture)
                   <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
                     {/* <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div>  */}
                     <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
+                    {/* <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                          <span style={{backgroundColor:'#d7dff7', width:`${homePassesAcurate /
+                                (homePassesAcurate + awayPassesAcurate)* 100}%`, marginRight:'1px'}}>
+                          </span>
+                          <span style={{backgroundColor:'#516290', width:`${awayPassesAcurate /
+                                (homePassesAcurate + awayPassesAcurate)* 100}%`,height:'20px'}}>
+                          </span>
+                      </div> */}
+                      
                       <div style={{ display:'flex'}}> 
                         <div style={{width:'50%', paddingLeft:'30px',
                               color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem',
