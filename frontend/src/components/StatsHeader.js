@@ -7,6 +7,7 @@ import Chart from "react-apexcharts";
 import Divider from '@material-ui/core/Divider';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
+import StatsBar from './StatsTopBar';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -117,6 +118,13 @@ export default function CenteredGrid(props) {
   const awayBallPossession = fixture.statistics && fixture.statistics[1].statistics[9].value.slice(0,-1);
   // console.log(homeBallPossession)
 
+  const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value;
+  const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value;
+  
+  const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value;
+  const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value;
+
+
   function getTime(date) {
     if (date) {
       const time = new Date(date);
@@ -135,6 +143,7 @@ export default function CenteredGrid(props) {
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
+      <StatsBar/>
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
                 
@@ -647,24 +656,54 @@ console.log(fixture)
 
             {/* Second row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                <span style={{width:'33%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>4</span>
-                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Corner Kicks</span>
-                <span style={{ width:'33%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>12</span>
+                <span style={{width:'33%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                     {homeCornerKicks}
+                </span>
+                <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Corner Kicks
+                </span>
+                <span style={{ width:'33%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                      {awayCornerKicks}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'20%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'80%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeCornerKicks /
+                      (homeCornerKicks + awayCornerKicks)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayCornerKicks /
+                      (homeCornerKicks + awayCornerKicks)* 100}%`,height:'20px'}}>
+                </span>
             </div>
 
             {/* Third row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
-                <span style={{width:'20%', float:'left', textAlign:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>8</span>
-                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>Offsides</span>
-                <span style={{ width:'20%',float:'right', textAlign:'right',fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',color: 'gray',fontWeight: 'bold'}}>3</span>
+                <span style={{width:'20%', float:'left', textAlign:'left',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                     {homeOffsides}
+                </span>
+                <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                      Offsides
+                </span>
+                <span style={{ width:'20%',float:'right', textAlign:'right',
+                        fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                        color: 'gray',fontWeight: 'bold'}}>
+                    {awayOffsides || '0'}
+                </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:'80%', marginRight:'1px'}}></span>
-                <span style={{backgroundColor:'#516290', width:'20%',color:'#516290'}}>?</span>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeOffsides /
+                      (homeOffsides + awayOffsides)* 100}%`, marginRight:'1px'}}>
+                </span>
+                <span style={{backgroundColor:'#516290', width:`${awayOffsides /
+                      (homeOffsides + awayOffsides)* 100}%`,height:'20px'}}>
+                </span>
             </div>
           </div>    
       </div> {/*  Parent closing div of General Stats */}
