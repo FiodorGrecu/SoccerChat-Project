@@ -625,7 +625,7 @@ console.log(fixture)
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
                         color: 'gray',fontWeight: 'bold'}}>
                    {homeBallPossession}
-                   {/* {awayBallPossession} */}
+                    {/* {awayBallPossession} */}
                 </span>
                 <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
                         fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
