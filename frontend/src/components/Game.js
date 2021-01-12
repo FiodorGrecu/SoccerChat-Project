@@ -147,31 +147,33 @@ console.log(fixture)
                       {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}
                       
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly',height:'100%', alignItems:'center', }}>
-                        <div style={{width:'25%',  }}>
-                          <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
-                            <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
-                            <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
-                            <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
-                          </svg>
+                        <div style={{width:'30%',  }}>
+                        <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
+                          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
+                          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
+
+                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="50 50" stroke-dashoffset="75"></circle>
+                        </svg>
                           {/* <div style={{backgroundColor:'#AEECFF',color:'white', height:'100px', }}>Left Donut</div> */}
                         </div>
-                        <div style={{width:'50%' }}>
-                        <div style={{ width:'100%', textAlign:'center', marginBottom:'40px'}}>
+                        <div style={{width:'40%' }}>
+                        <div style={{ width:'100%', textAlign:'center', marginBottom:'10px'}}>
 
                           {/* First row and it's bar */}
                           <div style={{ width:'90%', margin:'auto', }}>
-                            <span style={{width:'33%', float:'left', textAlign:'left',
+                            <span style={{width:'20%', float:'left', textAlign:'left',
                                     fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
-                                    color: 'gray',fontWeight: 'bold'}}>
+                                    color: 'white',fontWeight: 'bold'}}>
                               {homeBallPossession}
                             </span>
-                            <span style={{width:'33%', float:'left',fontFamily:'Roboto,sans-serif',
-                                    fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                            <span style={{width:'60%', float:'left',fontFamily:'Roboto,sans-serif',
+                                    fontSize: '0.9rem',color: 'white',fontWeight: '500',
+                                    fontWeight: 'bold'}}>
                               Ball Possession %  
                             </span>
-                            <span style={{ width:'33%',float:'right', textAlign:'right',
+                            <span style={{ width:'20%',float:'right', textAlign:'right',
                                     fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
-                                    color: 'gray',fontWeight: 'bold'}}>
+                                    color: 'white',fontWeight: 'bold'}}>
                               {awayBallPossession}
                             </span>
                           </div>
@@ -183,66 +185,74 @@ console.log(fixture)
                           </div>
 
                           {/* Second row and it's bar */}
-                          <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
-                              <span style={{width:'33%', float:'left', textAlign:'left',
+                          <div style={{ width:'90%', margin:'auto', paddingTop:'10px'}}>
+                              <span style={{width:'20%', float:'left', textAlign:'left',
                                       fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
-                                      color: 'gray',fontWeight: 'bold'}}>
-                                  {homeShotsOffTarget}
+                                      color: 'white',fontWeight: 'bold'}}>
+                                  {homePassesAcuracy}
                               </span>
-                              <span style={{width:'33%',float:'left',fontFamily:'Roboto,sans-serif',
-                                      fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
-                                  Shots Off Target
+                              <span style={{width:'60%',float:'left',fontFamily:'Roboto,sans-serif',
+                                      fontSize: '0.9rem',color: 'white',fontWeight: '500',
+                                      fontWeight:'bold'}}>
+                                  Passes Accuracy %
                               </span>
-                              <span style={{ width:'33%',float:'right', textAlign:'right',
+                              <span style={{ width:'20%',float:'right', textAlign:'right',
                                       fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
-                                      color: 'gray',fontWeight: 'bold'}}>
-                                  {awayShotsOffTarget}
+                                      color: 'white',fontWeight: 'bold'}}>
+                                  {awayPassesAcuracy}
                                 </span>
                           </div>
                           <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                              <span style={{backgroundColor:'#d7dff7', width:`${homeShotsOffTarget /
-                                (homeShotsOffTarget + awayShotsOffTarget)* 100}%`, marginRight:'1px'}}>
+                              <span style={{backgroundColor:'#516290', width:`${homePassesAcuracy}%`, marginRight:'1px'}}>
                               </span>
-                              <span style={{backgroundColor:'#516290', width:`${awayShotsOffTarget /
-                                (homeShotsOffTarget + awayShotsOffTarget)* 100}%`,height:'20px'}}>
+                              <span style={{backgroundColor:'#CE4B99', width:`${awayPassesAcuracy}%`,height:'10px'}}>
                               </span>
                           </div>
 
                           {/* Third row and it's bar */}
-                          <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
+                          <div style={{ width:'90%', margin:'auto', paddingTop:'10px' }}>
                               <span style={{width:'20%', float:'left', textAlign:'left',
                                       fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
-                                      color: 'gray',fontWeight: 'bold'}}>
-                                  {homeTotalShots}
+                                      color: 'white',fontWeight: 'bold'}}>
+                                  {homeCornerKicks}
                               </span>
                               <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
-                                      fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
-                                        Total Shots (including blocked shots)
+                                      fontSize: '0.9rem',color: 'white',fontWeight: '500',
+                                      fontWeight:'bold'}}>
+                                    Corner Kicks
                               </span>
                               <span style={{ width:'20%',float:'right', textAlign:'right',
                                       fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
-                                      color: 'gray',fontWeight: 'bold'}}>
-                                  {awayTotalShots}
+                                      color: 'white',fontWeight: 'bold'}}>
+                                  {awayCornerKicks}
                               </span>
                           </div>
                           <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                              <span style={{backgroundColor:'#d7dff7', width:`${homeTotalShots /
-                                (homeTotalShots + awayTotalShots)* 100}%`, marginRight:'1px'}}>
+                              <span style={{backgroundColor:'#516290', width:`${homeCornerKicks /
+                                (homeCornerKicks + awayCornerKicks)* 100}%`, marginRight:'1px'}}>
                               </span>
-                              <span style={{backgroundColor:'#516290', width:`${awayTotalShots /
-                                (homeTotalShots + awayTotalShots)* 100}%`,height:'20px'}}>
+                              <span style={{backgroundColor:'#CE4B99', width:`${awayCornerKicks /
+                                (homeCornerKicks + awayCornerKicks)* 100}%`,height:'10px'}}>
                               </span>
                           </div>
-                          
-                        
-                        </div>
+                                           
+                         </div>
                           {/* <div style={{backgroundColor:'#C0FF3E' ,color:'white',height:'100px',}}>Middle Section</div> */}
                         </div>
-                        <div style={{width:'25%', textAlign:'center', }}>
-                        <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
-                          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
-                          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
-                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
+                        <div style={{width:'30%', textAlign:'center', }}>
+                        <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
+                          <circle class="donut-hole" cx="21" cy="21" 
+                                    r="15.91549430918954" fill="#black">
+                          </circle>
+                          <circle class="donut-ring" cx="21" cy="21" 
+                                    r="15.91549430918954" fill="transparent" 
+                                    stroke="#516290" stroke-width="3">            
+                          </circle>
+                          <circle class="donut-segment" cx="21" cy="21" 
+                                    r="15.91549430918954" fill="transparent" 
+                                    stroke="#ce4b99" stroke-width="3" 
+                                    stroke-dasharray="50 50" stroke-dashoffset="25">
+                          </circle>
                         </svg>
                             {/* <div style={{backgroundColor:'pink',color:'white',height:'200px', borderRadius:'100%'}}>Right Donut</div> */}
                         </div>
