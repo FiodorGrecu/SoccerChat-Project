@@ -3,11 +3,6 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
 import { MdSend } from "react-icons/md";
-// import Divider from 'material-ui/core/Divider';
-// import Typography from 'material-ui/core/Typography';
-import LogIn from './LogIn';
-import Chat from './Chat'
-import Card from '@material-ui/core/Card';
 import Input from '@material-ui/core/Input';
 import { Divider } from '@material-ui/core';
 
@@ -151,9 +146,6 @@ export default function UserChat({ user, setUser, gameId }) {
     if (e.key === "Enter") {
       saveMessage() 
     };
-    // const InputExampleFluid = () => (
-    //   <Input fluid icon='search' placeholder='Search...' />
-    // )
 
   }
 
@@ -183,8 +175,7 @@ export default function UserChat({ user, setUser, gameId }) {
               color="primary"           
               endIcon={<MdSend>send</MdSend>} 
               >
-
-          </Button>
+        </Button>
           <div>
           {chats.map(message => <span className={classes.text}>
             <div style={{fontFamily:'Roboto,sans-serif',color: 'grey[700]',
