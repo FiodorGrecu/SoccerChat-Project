@@ -93,7 +93,46 @@ console.log(fixture)
                   <Switch>
                     <Route path="/game/:gameId/statistics">
                       {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}
-                      <h3>Stats Page</h3>
+                      
+                      <div style={{display:'flex', width:'100%',justifyContent:'space-evenly',height:'100%', alignItems:'center', }}>
+                        <div style={{width:'30%',  }}>
+                        <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
+                          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
+                          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
+                        </svg>
+                          {/* <div style={{backgroundColor:'#AEECFF',color:'white', height:'100px', }}>Left Donut</div> */}
+                        </div>
+                        <div style={{width:'30%' }}>
+                          <div >
+                          <div style={{ margin:'auto', }}>
+                            <span style={{width:'33%', float:'left', textAlign:'left',
+                                    fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
+                                    color: 'gray',fontWeight: 'bold'}}>
+                              {/* {homeShotsOnTarget} */}hello
+                            </span>
+                            <span style={{width:'33%', float:'left',fontFamily:'Roboto,sans-serif',
+                                    fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                              Shots On Target        
+                            </span>
+                            <span style={{ width:'33%',float:'right', textAlign:'right',
+                                    fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                                    color: 'gray',fontWeight: 'bold'}}>
+                              {/* {awayShotsOnTarget} */}hello2
+                            </span>
+                          </div>
+                          </div>
+                          <div style={{backgroundColor:'#C0FF3E' ,color:'white',height:'100px',}}>Middle Section</div>
+                        </div>
+                        <div style={{width:'30%', textAlign:'center', }}>
+                        <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
+                          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
+                          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
+                        </svg>
+                            {/* <div style={{backgroundColor:'pink',color:'white',height:'200px', borderRadius:'100%'}}>Right Donut</div> */}
+                        </div>
+                      </div>
                     </Route>
                     <Route path="/game/:gameId/">
                       <GameHeader fixture={fixture}/>

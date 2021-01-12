@@ -137,7 +137,6 @@ export default function StatsBar(props) {
                 (<span>{halfTimeScoreH}</span>
                 <span> - </span>
                 <span>{halfTimeScoreA}</span>)
-               {/* <img src={leagueLogo} style={{width:'42px', height:'42px'}}/> */}
                </div>
             </div> {/* End Half time score div */}
           </div>
