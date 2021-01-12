@@ -36,6 +36,24 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   
+  chartText: {
+    /*font: 16px/1.4em "Montserrat", Arial, sans-serif;*/
+    fill:" green",
+    mozTransform: 'translateY(0.5em)',
+    msTransform: 'translateY(0.25em)',
+    transform: 'translateY(0.25em)',
+    webkitTransform: 'translateY(0.25em)'
+  },
+  
+  chartNumber: {
+    fontSize: '1.5em',
+    lineHeight: '1',
+    textAnchor: 'middle',
+    mozTransform: 'translateY(-0.25em)',
+    msTransform: 'translateY(0.25em)',
+    webkitTransform: 'translateY(0.25em)',
+    transform: 'translateY(-0.25em)',
+  }
 
 }));
 
@@ -119,6 +137,13 @@ export default function CenteredGrid(props) {
   const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value;
   const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value;
 
+  const homeShootingAccuracy = homeShotsOnTarget / (homeShotsOnTarget + homeShotsOffTarget) * 100;
+  const awayShootingAccuracy = awayShotsOnTarget / (awayShotsOnTarget + awayShotsOffTarget) * 100;
+
+  // const homeShootingAccuracy = Math.floor(homeShootingAccuracy);
+  console.log(Math.floor(homeShootingAccuracy))
+  console.log(awayShootingAccuracy)
+
   function getTime(date) {
     if (date) {
       const time = new Date(date);
@@ -148,11 +173,19 @@ console.log(fixture)
                       
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly',height:'100%', alignItems:'center', }}>
                         <div style={{width:'30%',  }}>
+                            <h3>{}</h3>
                         <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
                           <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
                           <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
-
                           <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="50 50" stroke-dashoffset="75"></circle>
+                          <g class="chartTex">
+                            <text  x="30%" y="60%" class="chartNumber" stroke="#ce4b99">
+                              {Math.floor(homeShootingAccuracy)}
+                            </text>
+                            <text x="70%" y="60%" class="chartLabel " stroke="#ce4b99">
+                              %
+                            </text>
+                          </g>
                         </svg>
                           {/* <div style={{backgroundColor:'#AEECFF',color:'white', height:'100px', }}>Left Donut</div> */}
                         </div>
