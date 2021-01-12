@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: 'aliceblue',
     width: '100%',
+    // marginTop: '40px',
+
     // flexDirection: 'row'
 
   },
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     // margin:0,
     // marginLeft: 200, 
-    marginTop: 2,
+    // marginTop: '50px',
     width: '100%',
     backgroundColor : "#1A91DA",
     
@@ -150,7 +152,7 @@ export default function UserChat({ user, setUser, gameId }) {
   }
 
     return (
-      <div>
+      <div style={{marginTop:'95px', marginLeft:'10px' , marginRight:'10px'}}>
         <Button variant="contained" color="primary" 
                 className={classes.signOutButton} 
                 onClick={logOut}>

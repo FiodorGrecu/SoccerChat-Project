@@ -144,7 +144,7 @@ console.log(fixture)
                 <div style={{width:'100%',backgroundColor:'white', 
                       textAlign:'center', 
                       fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
-                      color: '#8e9cc5',fontWeight: '550', paddingTop:'5px' }}>
+                      color: '#8e9cc5',fontWeight: '550', marginTop:'45px', paddingTop:'20px' }}>
                         Events  
                         <div ><FaStopwatch/></div>             
                 </div> 

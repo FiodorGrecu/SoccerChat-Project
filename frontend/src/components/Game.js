@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   
   chartText: {
     /*font: 16px/1.4em "Montserrat", Arial, sans-serif;*/
-    fill:" green",
+    // fill:" green",
     mozTransform: 'translateY(0.5em)',
     msTransform: 'translateY(0.25em)',
     transform: 'translateY(0.25em)',
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   
   chartNumber: {
-    fontSize: '1.5em',
+    fontSize: '10px',
     lineHeight: '1',
     textAnchor: 'middle',
     mozTransform: 'translateY(-0.25em)',
@@ -177,12 +177,13 @@ console.log(fixture)
                         <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
                           <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
                           <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
-                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="50 50" stroke-dashoffset="75"></circle>
-                          <g class="chartTex">
-                            <text  x="30%" y="60%" class="chartNumber" stroke="#ce4b99">
+                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
+                          <g className={classes.chartText}>
+                            <text  x="30%" y="60%" className={classes.chartNumber} stroke="#ce4b99">
                               {Math.floor(homeShootingAccuracy)}
                             </text>
-                            <text x="70%" y="60%" class="chartLabel " stroke="#ce4b99">
+                            {/* <text x="70%" y="60%" style={classes.chartLabel} stroke="#ce4b99"> */}
+                            <text x="70%" y="60%" stroke="#ce4b99">
                               %
                             </text>
                           </g>
