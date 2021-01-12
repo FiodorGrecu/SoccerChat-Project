@@ -67,6 +67,58 @@ export default function CenteredGrid(props) {
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
+  const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value;
+  const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value;
+  
+  const homeShotsOffTarget = fixture.statistics && fixture.statistics[0].statistics[1].value;
+  const awayShotsOffTarget = fixture.statistics && fixture.statistics[1].statistics[1].value;
+  
+  const homeTotalShots = fixture.statistics && fixture.statistics[0].statistics[2].value;
+  const awayTotalShots = fixture.statistics && fixture.statistics[1].statistics[2].value;
+  
+  const homeShotsInsideBox = fixture.statistics && fixture.statistics[0].statistics[4].value;
+  const awayShotsInsideBox = fixture.statistics && fixture.statistics[1].statistics[4].value;
+  
+  const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
+  const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
+ 
+  const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value;
+  const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value;
+  
+  const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
+  const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
+  
+  const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value;
+  const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value;
+  
+  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value;
+  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value;
+  
+  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value;
+  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value;
+  
+  const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
+  const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
+  
+  const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value;
+  const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value;
+  
+  const homePassesAcuracy = fixture.statistics && fixture.statistics[0].statistics[15].value.slice(0,-1);
+  const awayPassesAcuracy = fixture.statistics && fixture.statistics[1].statistics[15].value.slice(0,-1);
+  
+  // const homePassesAcuracyWidth = fixture.statistics && fixture.statistics[0].statistics[15].value;
+  // const awayPassesAcuracyWidth = fixture.statistics && fixture.statistics[1].statistics[15].value;
+  
+  const homeBallPossession = fixture.statistics && fixture.statistics[0].statistics[9].value.slice(0,-1);
+  const awayBallPossession = fixture.statistics && fixture.statistics[1].statistics[9].value.slice(0,-1);
+  // console.log(homeBallPossession)
+
+  const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value;
+  const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value;
+  
+  const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value;
+  const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value;
+
   function getTime(date) {
     if (date) {
       const time = new Date(date);
@@ -95,36 +147,98 @@ console.log(fixture)
                       {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}
                       
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly',height:'100%', alignItems:'center', }}>
-                        <div style={{width:'30%',  }}>
-                        <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
-                          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
-                          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
-                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
-                        </svg>
+                        <div style={{width:'25%',  }}>
+                          <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
+                            <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
+                            <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+                            <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
+                          </svg>
                           {/* <div style={{backgroundColor:'#AEECFF',color:'white', height:'100px', }}>Left Donut</div> */}
                         </div>
-                        <div style={{width:'30%' }}>
-                          <div >
-                          <div style={{ margin:'auto', }}>
+                        <div style={{width:'50%' }}>
+                        <div style={{ width:'100%', textAlign:'center', marginBottom:'40px'}}>
+
+                          {/* First row and it's bar */}
+                          <div style={{ width:'90%', margin:'auto', }}>
                             <span style={{width:'33%', float:'left', textAlign:'left',
                                     fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
                                     color: 'gray',fontWeight: 'bold'}}>
-                              {/* {homeShotsOnTarget} */}hello
+                              {homeBallPossession}
                             </span>
                             <span style={{width:'33%', float:'left',fontFamily:'Roboto,sans-serif',
                                     fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
-                              Shots On Target        
+                              Ball Possession %  
                             </span>
                             <span style={{ width:'33%',float:'right', textAlign:'right',
                                     fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
                                     color: 'gray',fontWeight: 'bold'}}>
-                              {/* {awayShotsOnTarget} */}hello2
+                              {awayBallPossession}
                             </span>
                           </div>
+                          <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                              <span style={{backgroundColor:'#516290', width:`${homeBallPossession}%`, marginRight:'1px'}}>
+                              </span>
+                              <span style={{backgroundColor:'#CE4B99', width:`${awayBallPossession}%`,height:'10px',}}>
+                              </span>
                           </div>
-                          <div style={{backgroundColor:'#C0FF3E' ,color:'white',height:'100px',}}>Middle Section</div>
+
+                          {/* Second row and it's bar */}
+                          <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
+                              <span style={{width:'33%', float:'left', textAlign:'left',
+                                      fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                                      color: 'gray',fontWeight: 'bold'}}>
+                                  {homeShotsOffTarget}
+                              </span>
+                              <span style={{width:'33%',float:'left',fontFamily:'Roboto,sans-serif',
+                                      fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                                  Shots Off Target
+                              </span>
+                              <span style={{ width:'33%',float:'right', textAlign:'right',
+                                      fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                                      color: 'gray',fontWeight: 'bold'}}>
+                                  {awayShotsOffTarget}
+                                </span>
+                          </div>
+                          <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                              <span style={{backgroundColor:'#d7dff7', width:`${homeShotsOffTarget /
+                                (homeShotsOffTarget + awayShotsOffTarget)* 100}%`, marginRight:'1px'}}>
+                              </span>
+                              <span style={{backgroundColor:'#516290', width:`${awayShotsOffTarget /
+                                (homeShotsOffTarget + awayShotsOffTarget)* 100}%`,height:'20px'}}>
+                              </span>
+                          </div>
+
+                          {/* Third row and it's bar */}
+                          <div style={{ width:'90%', margin:'auto', paddingTop:'20px' }}>
+                              <span style={{width:'20%', float:'left', textAlign:'left',
+                                      fontFamily:'Roboto,sans-serif',fontSize: '0.9rem',
+                                      color: 'gray',fontWeight: 'bold'}}>
+                                  {homeTotalShots}
+                              </span>
+                              <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
+                                      fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
+                                        Total Shots (including blocked shots)
+                              </span>
+                              <span style={{ width:'20%',float:'right', textAlign:'right',
+                                      fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
+                                      color: 'gray',fontWeight: 'bold'}}>
+                                  {awayTotalShots}
+                              </span>
+                          </div>
+                          <div style={{width:'90%', margin:'auto',display:'flex' }}>
+                              <span style={{backgroundColor:'#d7dff7', width:`${homeTotalShots /
+                                (homeTotalShots + awayTotalShots)* 100}%`, marginRight:'1px'}}>
+                              </span>
+                              <span style={{backgroundColor:'#516290', width:`${awayTotalShots /
+                                (homeTotalShots + awayTotalShots)* 100}%`,height:'20px'}}>
+                              </span>
+                          </div>
+                          
+                        
                         </div>
-                        <div style={{width:'30%', textAlign:'center', }}>
+                          {/* <div style={{backgroundColor:'#C0FF3E' ,color:'white',height:'100px',}}>Middle Section</div> */}
+                        </div>
+                        <div style={{width:'25%', textAlign:'center', }}>
                         <svg width="75%" height="75%" viewBox="0 0 42 42" class="donut">
                           <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="black"></circle>
                           <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
