@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
     width: '98%',
-    height: '16%',
+    height: '250px',
     backgroundColor: 'black',
     margin: '1%',
     position: 'relative',
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   
   chartText: {
     fontFamily: ' sans-serif', 
-    fontSize:'4px',
+    fontSize:'6px',
     // paddingLeft:'500px',
     fill:" green",
     mozTransform: 'translateY(0.5em)',
@@ -153,22 +153,23 @@ console.log(fixture)
   <div style={{width:'100%', }}>
         <StatsBar/>
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
-            <div style={{width:'70%', }} > 
+            <div style={{width:'100%', }} > 
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
                 <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
                   <Switch>
                     <Route path="/game/:gameId/statistics">
                       {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}
                       
-                      <div style={{display:'flex', width:'100%',justifyContent:'space-evenly',height:'100%', alignItems:'center', }}>
+                      <div style={{display:'flex', width:'100%',justifyContent:'space-evenly', alignItems:'center', }}>
                         <div style={{width:'30%',  }}>
                             <h3></h3>
-                        <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
+                            <p style={{color:'white'}}>Shooting Acuracy</p>
+                        <svg width='200px' height='200px' viewBox="0 0 42 42" class="donut">
                           <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
                           <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
                           <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
                           <g className={classes.chartText}>
-                            <text>Shooting Acuracy</text>
+                            
                             <text  x="45%" y="55%" className={classes.chartNumber} stroke="#ce4b99">
                               {Math.floor(homeShootingAccuracy)}
                             </text>
@@ -260,7 +261,6 @@ console.log(fixture)
                           </div>
                                            
                          </div>
-                          {/* <div style={{backgroundColor:'#C0FF3E' ,color:'white',height:'100px',}}>Middle Section</div> */}
                         </div>
                         <div style={{width:'30%', textAlign:'center', }}>
                         <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
@@ -277,7 +277,6 @@ console.log(fixture)
                                     stroke-dasharray="50 50" stroke-dashoffset="25">
                           </circle>
                         </svg>
-                            {/* <div style={{backgroundColor:'pink',color:'white',height:'200px', borderRadius:'100%'}}>Right Donut</div> */}
                         </div>
                       </div>
                     </Route>
@@ -285,6 +284,7 @@ console.log(fixture)
                       <GameHeader fixture={fixture}/>
                     </Route>
                   </Switch>
+            </div>
                     <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
                       <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                         <img src={leagueLogo} style={{width:31, height:31 }} />
@@ -297,7 +297,12 @@ console.log(fixture)
                                     <p >{venue}</p>
                       </div>
                     </div>  
-                
+          {/* The bar of links that needs to be either converted into its own component or deleted */}
+                                      {/*         |           */}
+                                      {/*         |           */}
+                                      {/*         |           */}
+                                      {/*         |           */}
+                                      {/* n       V           */}
                     <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
                         <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
@@ -325,7 +330,6 @@ console.log(fixture)
                         </Link>
                       </div>
                     </div>
-              </div>
             <Route exact path="/game/:gameId">
               <LineUps fixture={fixture} />
             </Route>
