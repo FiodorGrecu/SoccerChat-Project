@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     // margin:0,
     // marginLeft: 200, 
-    // marginTop: '50px',
+    marginTop: '2px',
     width: '100%',
     backgroundColor : "#1A91DA",
     
@@ -70,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: '100%',
-    
     minHeight: 1000,
     margin: 1,
     marginTop: 20,
