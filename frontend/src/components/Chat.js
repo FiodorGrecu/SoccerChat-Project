@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   signOutButton: {
-    marginTop:'3%',
+    marginTop:'25px',
     justifyContent: 'center',
     width: '100%',
     borderRadius: 4,
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   input: {
-    marginTop: 1,
+    // marginTop: 1,
     backgroundColor: 'white',
     // justifyContent: 'center',
     // paddingTop: 10,
@@ -51,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
   text: {
     // flex: 1,
     borderRadius: 41,
-    marginTop: '100px',
-    marginLeft: 500,
+    marginTop: '10px',
+    // marginLeft: 500,
     color: 'grey',
     fontSize: 15,
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
@@ -151,7 +151,7 @@ export default function UserChat({ user, setUser, gameId }) {
   }
 
     return (
-      <div style={{marginTop:'95px', marginLeft:'10px' , marginRight:'10px'}}>
+      <div style={{marginTop:'5px', marginLeft:'1%' , marginRight:'1%'}}>
         <Button variant="contained" color="primary" 
                 className={classes.signOutButton} 
                 onClick={logOut}>

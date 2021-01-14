@@ -107,7 +107,7 @@ export default function StatsBody({ fixture }) {
   <div style={{width:'100%', }}>
     {/* Below here is the Stats Body component */}
     {/* The two stats charts parent div (line 181 to 315) */}
-    <div style={{ display:'flex', marginTop:'115px'}}>
+    <div style={{ display:'flex', marginTop:'25px'}}>
       {/* Attacking stats */}
       <div  style={{ width:'50%',  justifyContent:'center', alignItems:'center',
               backgroundColor:'white', marginLeft:'15px', marginRight:'15px',

@@ -140,7 +140,7 @@ console.log(fixture)
             {/* <LeagueBar/> */}
             {/* <GameSectionScoreCheet fixture={fixture}/> */}
             <div >
-              <div style={{display:'flex', marginTop:'50px',marginLeft:'10%',marginRight:'10%'}}>
+              <div style={{display:'flex',marginLeft:'10%',marginRight:'10%'}}>
                 <div style={{width:'100%',backgroundColor:'white', 
                       textAlign:'center', 
                       fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 

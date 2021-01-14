@@ -23,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
     width: '98%',
-    height: '250px',
+    height: '350px',
     backgroundColor: 'black',
-    margin: '1%',
+    marginLeft: '1%',
+    marginRight: '1%',
     position: 'relative',
   },
   
@@ -155,32 +156,35 @@ console.log(fixture)
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'100%', }} > 
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
-                <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
+                <div className={classes.scoreSheet} slyle={{display:'flex',}}>
                   <Switch>
                     <Route path="/game/:gameId/statistics">
                       {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}
                       
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly', alignItems:'center', }}>
-                        <div style={{width:'30%',  }}>
-                            <h3></h3>
-                            <p style={{color:'white'}}>Shooting Acuracy</p>
-                        <svg width='200px' height='200px' viewBox="0 0 42 42" class="donut">
-                          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
-                          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
-                          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
-                          <g className={classes.chartText}>
-                            
-                            <text  x="45%" y="55%" className={classes.chartNumber} stroke="#ce4b99">
-                              {Math.floor(homeShootingAccuracy)}
-                            </text>
-                            <text x="70%" y="54%" className={classes.chartLabel} stroke="#ce4b99">                        
-                              %
-                            </text>
-                          </g>
-                        </svg>
+                        <div style={{width:'33.333%', textAlign:'center'}}>
+                            <p style={{color:'white', 
+                                fontFamily:'sans-serif',paddingTop:'10px',
+                                fontSize: '0.9rem',fontWeight: 'bolder', 
+                                textTransform:'uppercase',fontSize: '1.2rem', 
+                                letterSpacing:'1px'}}>Shooting Accuracy</p>
+                            <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
+                              <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
+                              <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
+                              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#BE14AA" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
+                              <g className={classes.chartText}>
+                                
+                                <text  x="45%" y="60%" className={classes.chartNumber} stroke="#BE14AA">
+                                  {Math.floor(homeShootingAccuracy)}
+                                </text>
+                                <text x="70%" y="62%" className={classes.chartLabel} stroke="#BE14AA">                        
+                                  %
+                                </text>
+                              </g>
+                            </svg>
                           {/* <div style={{backgroundColor:'#AEECFF',color:'white', height:'100px', }}>Left Donut</div> */}
                         </div>
-                        <div style={{width:'40%' }}>
+                        <div style={{width:'33.333%' }}>
                         <div style={{ width:'100%', textAlign:'center', marginBottom:'10px'}}>
 
                           {/* First row and it's bar */}
@@ -204,7 +208,7 @@ console.log(fixture)
                           <div style={{width:'90%', margin:'auto',display:'flex' }}>
                               <span style={{backgroundColor:'#516290', width:`${homeBallPossession}%`, marginRight:'1px'}}>
                               </span>
-                              <span style={{backgroundColor:'#CE4B99', width:`${awayBallPossession}%`,height:'10px',}}>
+                              <span style={{backgroundColor:'#BE14AA', width:`${awayBallPossession}%`,height:'10px',}}>
                               </span>
                           </div>
 
@@ -229,7 +233,7 @@ console.log(fixture)
                           <div style={{width:'90%', margin:'auto',display:'flex' }}>
                               <span style={{backgroundColor:'#516290', width:`${homePassesAcuracy}%`, marginRight:'1px'}}>
                               </span>
-                              <span style={{backgroundColor:'#CE4B99', width:`${awayPassesAcuracy}%`,height:'10px'}}>
+                              <span style={{backgroundColor:'#BE14AA', width:`${awayPassesAcuracy}%`,height:'10px'}}>
                               </span>
                           </div>
 
@@ -255,28 +259,33 @@ console.log(fixture)
                               <span style={{backgroundColor:'#516290', width:`${homeCornerKicks /
                                 (homeCornerKicks + awayCornerKicks)* 100}%`, marginRight:'1px'}}>
                               </span>
-                              <span style={{backgroundColor:'#CE4B99', width:`${awayCornerKicks /
+                              <span style={{backgroundColor:'#BE14AA', width:`${awayCornerKicks /
                                 (homeCornerKicks + awayCornerKicks)* 100}%`,height:'10px'}}>
                               </span>
                           </div>
                                            
                          </div>
                         </div>
-                        <div style={{width:'30%', textAlign:'center', }}>
-                        <svg width="65%" height="65%" viewBox="0 0 42 42" class="donut">
-                          <circle class="donut-hole" cx="21" cy="21" 
-                                    r="15.91549430918954" fill="#black">
-                          </circle>
-                          <circle class="donut-ring" cx="21" cy="21" 
-                                    r="15.91549430918954" fill="transparent" 
-                                    stroke="#516290" stroke-width="3">            
-                          </circle>
-                          <circle class="donut-segment" cx="21" cy="21" 
-                                    r="15.91549430918954" fill="transparent" 
-                                    stroke="#ce4b99" stroke-width="3" 
-                                    stroke-dasharray="50 50" stroke-dashoffset="25">
-                          </circle>
-                        </svg>
+                        <div style={{width:'33.333%', textAlign:'center', }}>
+                        <p style={{color:'white', 
+                                fontFamily:'sans-serif',paddingTop:'10px',
+                                fontSize: '0.9rem',fontWeight: 'bolder', 
+                                textTransform:'uppercase',fontSize: '1.2rem', 
+                                letterSpacing:'1px'}}>Shooting Accuracy</p>
+                            <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
+                              <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
+                              <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#BE14AA" stroke-width="3"></circle>
+                              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
+                              <g className={classes.chartText}>
+                                
+                                <text  x="45%" y="60%" className={classes.chartNumber} stroke="#BE14AA">
+                                  {Math.floor(awayShootingAccuracy)}
+                                </text>
+                                <text x="70%" y="62%" className={classes.chartLabel} stroke="#BE14AA">                        
+                                  %
+                                </text>
+                              </g>
+                            </svg>
                         </div>
                       </div>
                     </Route>
@@ -285,7 +294,7 @@ console.log(fixture)
                     </Route>
                   </Switch>
             </div>
-                    <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
+                    <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white', marginLeft:'1%', marginRight:'10%'}}>
                       <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                         <img src={leagueLogo} style={{width:31, height:31 }} />
                       </div>
@@ -303,7 +312,7 @@ console.log(fixture)
                                       {/*         |           */}
                                       {/*         |           */}
                                       {/* n       V           */}
-                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
+                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  marginLeft:'1%', marginRight:'1%',}}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
                         <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
