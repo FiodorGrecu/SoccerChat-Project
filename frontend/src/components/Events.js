@@ -136,7 +136,7 @@ console.log(fixture)
   
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
-        <div style={{width:'100%', }} > 
+        <div style={{width:'100%', marginBottom:'10px'}} > 
             {/* <LeagueBar/> */}
             {/* <GameSectionScoreCheet fixture={fixture}/> */}
             <div >
@@ -144,7 +144,7 @@ console.log(fixture)
                 <div style={{width:'100%',backgroundColor:'white', 
                       textAlign:'center', 
                       fontFamily: 'Roboto,sans-serif',fontSize: '1rem', 
-                      color: '#8e9cc5',fontWeight: '550', marginTop:'45px', paddingTop:'20px' }}>
+                      color: '#8e9cc5',fontWeight: '550', marginTop:'25px', paddingTop:'20px' }}>
                         Events  
                         <div ><FaStopwatch/></div>             
                 </div> 

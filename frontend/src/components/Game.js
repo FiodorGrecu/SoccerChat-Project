@@ -165,9 +165,11 @@ console.log(fixture)
                         <div style={{width:'33.333%', textAlign:'center'}}>
                             <p style={{color:'white', 
                                 fontFamily:'sans-serif',paddingTop:'10px',
-                                fontSize: '0.9rem',fontWeight: 'bolder', 
+                                fontSize: '0.9rem',fontWeight: '900', 
                                 textTransform:'uppercase',fontSize: '1.2rem', 
-                                letterSpacing:'1px'}}>Shooting Accuracy</p>
+                                letterSpacing:'1px'}}>
+                              Shooting Accuracy
+                            </p>
                             <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
                               <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
                               <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
