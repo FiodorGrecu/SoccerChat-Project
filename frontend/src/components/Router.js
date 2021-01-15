@@ -11,6 +11,7 @@ import Chat from '.components/Chat';
 import Matches from '.components/Matches';
 import Statistics from '.components/Statistics';
 import Events from '.components/Events';
+import H2H from '.components/H2H';
 
 export default function Router () {
     return (
@@ -29,6 +30,7 @@ export default function Router () {
             <Route path="/chat" component={Chat}/>
             <Route path="/statistics" component={Statistics}/>
             <Route path="/events" component={Events}/>
+            <Route path="/h2h" component={H2H}/>
         </div>
         )
         

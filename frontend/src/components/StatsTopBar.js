@@ -151,7 +151,7 @@ export default function StatsBar(props) {
             <Link component={RouterLink} to={`/game/${gameNum}/events`} ><p style={{paddingRight:'20px'}}>Summary</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`} ><p style={{paddingRight:'20px' }}>Statistics</p></Link>
             <Link component={RouterLink} to="/game/436"><p style={{paddingRight:'20px', }}>Lineups</p></Link>
-            <Link><p style={{paddingRight:'20px' }}>H2H</p></Link>
+            <Link component={RouterLink} to="/h2h/40/50"><p style={{paddingRight:'20px' }}>H2H</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/chat`}><p style={{paddingRight:'20px' }}>Chat</p></Link>
           </div> 
         </div>

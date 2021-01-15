@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import ChatSection from'./components/ChatSection';
 import Statistics  from './components/Statistics';
 import Events  from './components/Events';
+import H2H from './components/H2H';
 
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
@@ -80,6 +81,10 @@ function App() {
 
         <Route path='/chat'>
           <ChatSection/>
+        </Route>
+
+        <Route path='/h2h'>
+          <H2H/>
         </Route>
 
         {/* <Route path='/matches'>
