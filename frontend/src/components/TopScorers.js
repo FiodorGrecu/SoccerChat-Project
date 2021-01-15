@@ -55,8 +55,9 @@ export default function SimplePaper() {
   const players = topScorers.map(player => (
   <div >
     <div style={{width:'100%', display:'flex',}}>
-          <img style={{paddingLeft:'50px',width:'16%'}} src={player.statistics[0].league.flag}/>
-          <span style={{paddingLeft:'50px',width:'16%'}}><Link>{player.player.name}</Link></span>
+          <span style={{paddingLeft:'0px',width:'35px'}}>
+            <img style={{width:28, height:28}} src={player.statistics[0].league.flag}/></span>
+          <span style={{paddingLeft:'0px',width:'16%'}}><Link>{player.player.name}</Link></span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].team.name}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.assists || 0 }</span>
