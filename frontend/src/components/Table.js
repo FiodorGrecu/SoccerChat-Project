@@ -35,7 +35,7 @@ export default function PLTable() {
 
 
 
- const numberRankBgrColor = {'1':'#0094E5', '2':'#0094E5', '3':'#0094E5', '4':'#0094E5', 
+const numberRankBgrColor = {'1':'#0094E5', '2':'#0094E5', '3':'#0094E5', '4':'#0094E5', 
                '5':'#1175A8', '18':'#9E213F', '19':'#9E213F', '20':'#9E213F'};
 
 const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white', 
@@ -45,7 +45,10 @@ const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white',
     const letterColor = {'W':'#23D24A', 'D': '#8B91A0', 'L':'#E72652'};
     const formBackground = [...formString].map(letter => (
       <span style={{backgroundColor:letterColor[letter], margin:'2px',
-                    borderRadius:'3px', fontSize:'14px', paddingLeft:'7px',paddingRight:'5px', paddingTop:'2px', textAlign:'center'}}>{letter}</span>
+                    borderRadius:'3px', fontSize:'14px', paddingLeft:'7px',
+                    paddingRight:'5px', paddingTop:'2px', textAlign:'center',}}>
+            {letter}
+      </span>
     ));
 
   
@@ -127,7 +130,6 @@ const descriptionChampions = teams.league && teams.league.description;
            >
         
         <Link><p style={{paddingRight:'20px', }}>Summary</p></Link>
-
         <Link ><p style={{paddingRight:'20px', hover:{color:'red'} }}>Standings</p></Link>
         <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
         <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
@@ -185,14 +187,14 @@ const descriptionChampions = teams.league && teams.league.description;
             paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
             fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
         <p style={{ paddingLeft:'10px',width:'3%' }}>#</p>
-        <p style={{ paddingLeft:'10px',width:'290px',backgroundColor:'gree' }}>Team</p>
-        <p style={{ width:'98px',backgroundColor:'pin', paddingLeft:'25px' }}>Played</p>
-        <p style={{ width:'98px',backgroundColor:'lightblu', paddingLeft:'20px'}}>Won</p>
-        <p style={{ width:'98px',backgroundColor:'gree', paddingLeft:'20px' }}>Drawn</p>
-        <p style={{ width:'98px',backgroundColor:'lightgree', paddingLeft:'10px' }}>Lost</p>
-        <p style={{ width:'98px',backgroundColor:'gol'}}>Goals</p>
-        <p style={{ width:'128px',backgroundColor:'#0094e' }}>Points</p>
-        <p style={{ width:'153px' ,backgroundColor:'lightgree', paddingLeft:'20px'}}>Last 5</p>
+        <p style={{ paddingLeft:'10px',width:'290px'}}>Team</p>
+        <p style={{ width:'98px', paddingLeft:'25px' }}>Played</p>
+        <p style={{ width:'98px', paddingLeft:'20px'}}>Won</p>
+        <p style={{ width:'98px', paddingLeft:'20px' }}>Drawn</p>
+        <p style={{ width:'98px', paddingLeft:'10px' }}>Lost</p>
+        <p style={{ width:'98px'}}>Goals</p>
+        <p style={{ width:'128px' }}>Points</p>
+        <p style={{ width:'153px' ,paddingLeft:'20px'}}>Last 5</p>
       </div> 
     </div>
     <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
