@@ -115,20 +115,7 @@ export default function SimplePaper() {
                     Show All > 
           </Paper></Link>
         </div>
-        {/* <div style={{padding:'5%'}}>
-          <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
-                  fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',
-                  fontWeight:'bold' }}>
-                    Main Results
-          </Paper>
-          {outputNext5}
-          <Link ><Paper style={{textAlign:'right', height:'50px', 
-                  paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
-                  color:'grey',fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'bold' }}>
-                    Show All > 
-          </Paper></Link>
-        </div> */}
+        
     </div>
   );
 }
