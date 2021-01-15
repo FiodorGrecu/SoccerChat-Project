@@ -54,8 +54,9 @@ export default function SimplePaper() {
               <span style={{width:'100%' , }}>
                 <span style={{padding:'2px'}}>{new Date(fixture.event_date).getDay()}</span>/
                 <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span></span>
-                </p>
+                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span>
+              </span>
+            </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 

@@ -49,10 +49,13 @@ export default function SimplePaper() {
   // function onSelect() {
 
   // }
+
+
  
   const players = topScorers.map(player => (
   <div >
     <div style={{width:'100%', display:'flex',}}>
+          <img style={{paddingLeft:'50px',width:'16%'}} src={player.statistics[0].league.flag}/>
           <span style={{paddingLeft:'50px',width:'16%'}}><Link>{player.player.name}</Link></span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].team.name}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
@@ -142,7 +145,8 @@ export default function SimplePaper() {
           <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>
             <div style={{fontSize: '0.9rem', paddingLeft:'20px',paddingRight:'20px', paddingTop:'13px',
                   fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
-                  fontWeight: 'bold', }}>{players}</div>
+                  fontWeight: 'bold', }}>{players}
+            </div>
           </div>
         
     </div>
