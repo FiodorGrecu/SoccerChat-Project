@@ -29,6 +29,7 @@ export default function SimplePaper() {
 
   useEffect(() => {
 
+    // fetch(`https://localhost:5000/api/h2h/${team_id_1}/${team_id_1}`);
     async function getFixtures() {
       const response = await fetch(`http://localhost:5000/api/last/${numberGames}`);
       const data =  await response.json();
