@@ -105,6 +105,7 @@ export default function SimplePaper() {
           <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
                   fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',
                   fontWeight:'bold' }}>
+            <StarOutlineRoundedIcon />
                  Date 
           </Paper>
           {outputLast5}
