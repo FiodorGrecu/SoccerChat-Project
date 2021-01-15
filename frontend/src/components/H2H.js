@@ -28,16 +28,16 @@ export default function SimplePaper() {
 
     
     async function getFixtures() {
-      const response = await fetch(`https://localhost:5000/api/h2h/${40}/${50}`);
+      const response = await fetch(`http://localhost:5000/api/h2h/${40}/${50}`);
       const data =  await response.json();
       console.log(data.fixtures.api.fixtures)
-      setFixtures(data.fixtures.api.fixtures)
+      setFixtures(data.fixtures.api.fixtures.reverse())
     }
     getFixtures();
   }, [] )
 
   
-  const outputLast5 = fixtures.map(fixture =>(
+  const outputLast5 = fixtures.reverse().map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
       <Link to={`/game/${fixture.fixture_id}`}>

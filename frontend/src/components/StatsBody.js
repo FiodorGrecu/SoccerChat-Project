@@ -549,7 +549,7 @@ export default function StatsBody({ fixture }) {
                 <span style={{width:'20%', float:'left', textAlign:'left',
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
                         color: 'gray',fontWeight: 'bold'}}>
-                     {homeOffsides}
+                     {homeOffsides || '0'}
                 </span>
                 <span style={{width:'60%', float:'left',fontFamily: 'Roboto,sans-serif',
                         fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>

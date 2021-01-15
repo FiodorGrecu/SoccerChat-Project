@@ -71,6 +71,7 @@ export default function CenteredGrid(props) {
 
   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
+  // const gameNum = '592177';
 
   const unixTimestamp = 1604752200;
 

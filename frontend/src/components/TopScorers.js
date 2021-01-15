@@ -56,7 +56,7 @@ export default function SimplePaper() {
   <div >
     <div style={{width:'100%', display:'flex',}}>
           <span style={{paddingLeft:'0px',width:'35px'}}>
-            <img style={{width:25, height:20}} src={player.statistics[0].league.flag}/></span>
+            <img style={{width:30, height:30}} src={player.player.photo}/></span>
           <span style={{paddingLeft:'0px',width:'16%'}}><Link>{player.player.name}</Link></span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].team.name}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
