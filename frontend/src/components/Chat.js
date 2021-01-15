@@ -151,7 +151,7 @@ export default function UserChat({ user, setUser, gameId }) {
   }
 
     return (
-      <div style={{marginTop:'5px', marginLeft:'1%' , marginRight:'1%'}}>
+      <div style={{ marginLeft:'1%' , marginRight:'1%'}}>
         <Button variant="contained" color="primary" 
                 className={classes.signOutButton} 
                 onClick={logOut}>

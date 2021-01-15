@@ -127,9 +127,12 @@ export default function LineUps({ fixture }) {
   ));
 console.log(fixture)
   return (
-              <div style={{display:'flex' }}>
-                <div style={{width:'50%', paddingTop:'20px'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'2%' }}>
+              <div style={{display:'flex', marginTop:'25px'}}>
+                <div style={{width:'50%', paddingTop:'0px'}}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', 
+                            fontWeight:'600',paddingLeft:'5%',fontWeight:'bold', 
+                            height:'60px', marginLeft:'2%',marginRight:'2%',
+                            paddingTop:'20px' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({homeTeamFormation})</span>
                       </Paper>
@@ -145,8 +148,11 @@ console.log(fixture)
                       <p >{homeSubs}</p>
                     </Paper>
                 </div> 
-                <div  style={{width:'50%', paddingTop:'20px'}}>
-                      <Paper style={{color: '#516290',fontSize:'1.2rem', fontWeight:'600',paddingLeft:'5%', fontWeight:'bold', height:'60px', margin:'2%'}}>
+                <div  style={{width:'50%',}}>
+                      <Paper style={{color: '#516290',fontSize:'1.2rem', 
+                            fontWeight:'600',paddingLeft:'5%', fontWeight:'bold',
+                             height:'60px', marginLeft:'2%', marginRight:'2%',
+                             paddingTop:'20px' }}>
                         Starting Lineup
                         <span style={{paddingLeft:'5px'}}>({awayTeamFormation})</span>
                       </Paper>

@@ -296,7 +296,7 @@ console.log(fixture)
                     </Route>
                   </Switch>
             </div>
-                    <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white', marginLeft:'1%', marginRight:'10%'}}>
+                    <div style={{display:'flex', width:'98%', height:'50px' ,backgroundColor:'white', marginLeft:'1%', marginRight:'1%'}}>
                       <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
                         <img src={leagueLogo} style={{width:31, height:31 }} />
                       </div>
@@ -314,7 +314,7 @@ console.log(fixture)
                                       {/*         |           */}
                                       {/*         |           */}
                                       {/* n       V           */}
-                    <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  marginLeft:'1%', marginRight:'1%',}}>
+                    {/* <div style={{backgroundColor:'black', display:'flex', width:'98%',height:'50px' ,  marginLeft:'1%', marginRight:'1%',}}>
                       <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
                         <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
                                     fontWeight: 'bold',fontSize:'1rem', 
@@ -340,7 +340,8 @@ console.log(fixture)
                               Chat     
                         </Link>
                       </div>
-                    </div>
+                    </div> */}
+
             <Route exact path="/game/:gameId">
               <LineUps fixture={fixture} />
             </Route>
