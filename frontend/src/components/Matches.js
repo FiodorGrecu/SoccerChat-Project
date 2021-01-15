@@ -12,7 +12,7 @@ import { blue } from '@material-ui/core/colors';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    width: '100%',
+    // width: '100%',
     maxWidth: 360,
     // backgroundColor: theme.palette.background.paper,
     backgroundColor: 'aliceblue',
