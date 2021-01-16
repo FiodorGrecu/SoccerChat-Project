@@ -28,15 +28,20 @@ export default function SimplePaper() {
 
     
     async function getFixtures() {
-      const response = await fetch(`http://localhost:5000/api/h2h/${40}/${50}`);
+      const response = await fetch(`http://localhost:5000/api/h2h/${40}/${33}`);
       const data =  await response.json();
       console.log(data.fixtures.api.fixtures)
       setFixtures(data.fixtures.api.fixtures.reverse())
     }
     getFixtures();
   }, [] )
+  const date = fixtures.fixture && fixtures.fixture.event_date;
 
-  
+
+  function getDay(date) {
+    return new Date(date).toLocaleDateString()
+ }
+
   const outputLast5 = fixtures.reverse().map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
@@ -48,10 +53,12 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
+                {/* <span>{getDay()}</span> */}
               <span style={{width:'100%' , }}>
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getDay()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span></span>
+                <span style={{padding:'2px'}}>{new Date(fixture.event_date).toLocaleDateString()}</span>
+                {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/ */}
+                {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span> */}
+             </span>
             </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
