@@ -118,9 +118,9 @@ export default function StatsBar(props) {
             </div>
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', justifyContent:'center',paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
-                <span style={{paddingRight:'5px'}}>{halfTimeScoreH}</span>
+                <span style={{paddingRight:'5px'}}>{homeTeamScore}</span>
                 <span> - </span>
-                <span style={{paddingLeft:'5px'}}>{halfTimeScoreA}</span>
+                <span style={{paddingLeft:'5px'}}>{awayTeamScore}</span>
             </div>
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white',paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
@@ -146,8 +146,7 @@ export default function StatsBar(props) {
                justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
-               backgroundColor:'white'}}
-               >
+               backgroundColor:'white'}}>
             <Link component={RouterLink} to={`/game/${gameNum}/events`} ><p style={{paddingRight:'20px'}}>Summary</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`} ><p style={{paddingRight:'20px' }}>Statistics</p></Link>
             <Link component={RouterLink} to="/game/436"><p style={{paddingRight:'20px', }}>Lineups</p></Link>

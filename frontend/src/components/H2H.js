@@ -37,7 +37,7 @@ export default function SimplePaper() {
   }, [] )
   const date = fixtures.fixture && fixtures.fixture.event_date;
 
-
+//   ("0" + this.getDate()).slice(-2)
   function getDay(date) {
     return new Date(date).toLocaleDateString()
  }
@@ -53,9 +53,11 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                {/* <span>{getDay()}</span> */}
+                <span>{getDay(fixture.event_date)}</span>
               <span style={{width:'100%' , }}>
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).toLocaleDateString()}</span>
+              {/* var str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date); */}
+                {/* <span style={{padding:'2px'}}>{new Intl.DateTimeFormat('en-US',{month:'2-digit', day:'2-digit',year:'numeric'}).format(fixture.event_date)}</span> */}
+                {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date)}</span> */}
                 {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/ */}
                 {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span> */}
              </span>
@@ -108,19 +110,8 @@ export default function SimplePaper() {
     <div style={{ backgroundColor: 'aliceblue'}}>
     {/* <LeagueBar/> */}
     <StatsBar/>
-        <div style={{padding:'5%'}}>
-          <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
-                  fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',
-                  fontWeight:'bold' }}>
-            <StarOutlineRoundedIcon />
-                 Date 
-          </Paper>
+        <div style={{padding:'2%', marginTop:'25px'}}>
           {outputLast5}
-          <Link><Paper style={{textAlign:'right', height:'50px', 
-                  paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
-                  color:'grey',fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'bold' }}>
-          </Paper></Link>
         </div>
         
     </div>
