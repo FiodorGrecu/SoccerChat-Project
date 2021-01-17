@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
-import { games as fixtures } from "./teams";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import LeagueBar from './LeagueNameBar';
@@ -20,13 +19,11 @@ export default function SimplePaper() {
   // api/last/<num_games>
 
   const [fixtures, setFixtures] = useState([]);
-  const numberGames = 5;
 
   // const date = fixture.fixture && fixture.fixture.date;
 
   useEffect(() => {
 
-    
     async function getFixtures() {
       const response = await fetch(`http://localhost:5000/api/h2h/${40}/${33}`);
       const data =  await response.json();
@@ -92,7 +89,8 @@ export default function SimplePaper() {
               </p>
             </div>
           </div>
-          <div style={{width: '50%', textAlign:'left', paddingTop:'10px', paddingLeft:'5%'}}>
+          <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
+                    paddingLeft:'5%'}}>
             <img src={ fixture.awayTeam.logo } style={{width:26, height:26, 
                   display:'inline-block', }}/>
             <p style={{display:'inline-block', paddingLeft:'10px', fontSize:'1rem',
@@ -108,12 +106,10 @@ export default function SimplePaper() {
 
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
-    {/* <LeagueBar/> */}
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
           {outputLast5}
         </div>
-        
     </div>
   );
 }
