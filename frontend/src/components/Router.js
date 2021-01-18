@@ -31,6 +31,8 @@ export default function Router () {
             <Route path="/statistics" component={Statistics}/>
             <Route path="/events" component={Events}/>
             <Route path="/h2h" component={H2H}/>
+            <Route path="/upcoming_fixtures" component={AllUpcomingFixtures}/>
+            <Route path="/past_fixtures" component={AllPastFixtures}/>
         </div>
         )
         

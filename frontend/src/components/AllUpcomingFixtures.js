@@ -59,7 +59,7 @@ export default function SimplePaper() {
                 {/* <span>{getDay(date)}</span> */}
                 {/* <span>{myDateString}</span> */}
               <span style={{width:'100%' , }}>
-              {/* const str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date); */}
+              {/* var str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date); */}
                 {/* <span style={{padding:'2px'}}>{new Intl.DateTimeFormat('en-US',{month:'2-digit', day:'2-digit',year:'numeric'}).format(fixture.event_date)}</span> */}
                 {/* {(date.getMonth() < 9 ? '0': '') + (date.getMonth()+1)} */}
 
@@ -117,7 +117,8 @@ export default function SimplePaper() {
     <div style={{ backgroundColor: 'aliceblue'}}>
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
-          {outputLast5}
+          <h1>All Upcoming Fixtures Component</h1>
+          {/* {outputLast5} */}
         </div>
     </div>
   );

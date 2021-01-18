@@ -18,6 +18,8 @@ import ChatSection from'./components/ChatSection';
 import Statistics  from './components/Statistics';
 import Events  from './components/Events';
 import H2H from './components/H2H';
+import AllUpcomingFixtures from './components/AllUpcomingFixtures';
+import AllPastFixtures from './components/AllPastFixtures';
 
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
@@ -83,8 +85,17 @@ function App() {
           <ChatSection/>
         </Route>
 
+
         <Route path='/h2h'>
           <H2H/>
+        </Route>
+       
+        <Route path='/upcoming_fixtures'>
+          <AllUpcomingFixtures/>
+        </Route>
+
+        <Route path='/past_fixtures'>
+          <AllPastFixtures/>
         </Route>
 
         {/* <Route path='/matches'>

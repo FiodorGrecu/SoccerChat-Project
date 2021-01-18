@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { games as fixtures } from "./teams";
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import LeagueBar from './LeagueNameBar';
+// import AllUpcomingFixtures from './components/AllUpcomingFixtures';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -168,12 +171,14 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputLast5}
-          <Link><Paper style={{textAlign:'right', height:'50px', 
-                  paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
-                  color:'grey',fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'bold' }}>
-                    Show All > 
-          </Paper></Link>
+          <Link component={RouterLink} to={'upcoming_fixtures'} >
+            <Paper style={{textAlign:'right', height:'50px', 
+                    paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
+                    color:'grey',fontFamily:'Roboto,sans-serif', 
+                    fontWeight:'bold' }}>
+                      Show All > 
+            </Paper>
+          </Link>
         </div>
         <div style={{padding:'5%'}}>
           <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
