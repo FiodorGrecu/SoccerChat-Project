@@ -12,6 +12,7 @@ from models.onegame import onegame
 from models.events import Event
 from models.top_scorers import top_scorers
 from models.table import table
+from models.H2H import H2H
 
 
 
@@ -114,7 +115,8 @@ def game_stats(fixture_id):
 
 @app.route('/api/h2h/<team_id_1>/<team_id_2>', methods=["GET"])
 def game_h2h(team_id_1, team_id_2):
-    h2h = Game.game_h2h(team_id_1, team_id_2)
+    # h2h = Game.game_h2h(team_id_1, team_id_2)
+    h2h = H2H
     return jsonify({"fixtures": h2h})    
 
 @app.route('/api/team_by_id/<team_id>', methods=["GET"])

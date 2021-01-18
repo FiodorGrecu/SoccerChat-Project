@@ -224,12 +224,12 @@ if __name__=='__main__':
     
 
     # games_by_date = Game.games_by_date("2020-11-07")
-    # h2h = Game.game_h2h(40,50)
+    h2h = Game.game_h2h(40,50)
     # last5 = Game.last5(5)
     # game_stats = Game.game_stats('435')
     # game = Game.game_by_fixture_id("592177") 
-    game = Game.game_by_fixture_id("435") 
-    pprint(game)
+    # game = Game.game_by_fixture_id("435") 
+    pprint(h2h)
    
 
  
