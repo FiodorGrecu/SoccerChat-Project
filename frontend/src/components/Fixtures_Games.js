@@ -171,12 +171,12 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputLast5}
-          <Link component={RouterLink} to={'upcoming_fixtures'} >
+          <Link  >
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-                      Show All > 
+                <p component={RouterLink} to="/upcoming_fixtures" > Show All > </p>
             </Paper>
           </Link>
         </div>
@@ -187,12 +187,14 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputNext5}
-          <Link ><Paper style={{textAlign:'right', height:'50px', 
-                  paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
-                  color:'grey',fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'bold' }}>
-                    Show All > 
-          </Paper></Link>
+          <Link >
+            <Paper style={{textAlign:'right', height:'50px', 
+                    paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
+                    color:'grey',fontFamily:'Roboto,sans-serif', 
+                    fontWeight:'bold' }}>
+                Show All > 
+            </Paper>
+          </Link>
         </div>
     </div>
   );

@@ -27,8 +27,7 @@ export default function CenteredGrid(props) {
     const [fixture, setFixture] = useState({});
     const { gameNum } = useParams();
   
-    const unixTimestamp = 1604752200;
-  
+
     useEffect(() => {
       async function gameDetails() {
         const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);

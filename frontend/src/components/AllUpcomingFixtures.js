@@ -118,7 +118,7 @@ export default function SimplePaper() {
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
           <h1>All Upcoming Fixtures Component</h1>
-          {/* {outputLast5} */}
+          {outputLast5}
         </div>
     </div>
   );
