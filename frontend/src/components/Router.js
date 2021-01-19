@@ -12,6 +12,8 @@ import Matches from '.components/Matches';
 import Statistics from '.components/Statistics';
 import Events from '.components/Events';
 import H2H from '.components/H2H';
+import AllUpcomingFixtures from '.components/AllUpcomingFixtures';
+import AllPastFixtures from '.components/AllPastFixtures';
 
 export default function Router () {
     return (

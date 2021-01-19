@@ -117,7 +117,8 @@ export default function SimplePaper() {
     <div style={{ backgroundColor: 'aliceblue'}}>
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
-          {outputLast5}
+            <h1>All PAst Fixtures Component</h1>
+          {/* {outputLast5} */}
         </div>
     </div>
   );
