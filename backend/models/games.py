@@ -189,7 +189,7 @@ class Game:
         return(data)
 
     @classmethod
-    def last_10(cls, num_games):
+    def rounds_of_league(cls,):
 
         url = f"https://api-football-beta.p.rapidapi.com/fixtures/rounds"
 
@@ -229,7 +229,6 @@ class Game:
                         "from": "2020-09-12",
                         "to": "2021-05-23"}
                         
-
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
             'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
@@ -246,11 +245,12 @@ if __name__=='__main__':
     # games_by_date = Game.games_by_date("2020-11-07")
     # h2h = Game.game_h2h(40,50)
     # last5 = Game.last5(5)
+    rounds = Game.rounds_of_league()
     # game_stats = Game.game_stats('435')
     # game = Game.game_by_fixture_id("592177") 
     # game = Game.game_by_fixture_id("435") 
-    fixtures_left = Game.all_fixtures(524, 28)
-    pprint(fixtures_left)
+    # fixtures_left = Game.all_fixtures(524, 28)
+    pprint(rounds)
    
 
  
