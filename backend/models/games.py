@@ -220,16 +220,37 @@ class Game:
         data = response.json()
         return(data)
 
+    @classmethod
+    def all_fixtures(cls, league_id, number):
+        url = f"https://api-football-v1.p.rapidapi.com/v2/fixtures/league/{league_id}/last/{number}"
+        # url = f"https://api-football-beta.p.rapidapi.com/fixtures"
+
+        querystring = {"timezone":"Europe/London", 
+                        "from": "2020-09-12",
+                        "to": "2021-05-23"}
+                        
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+
+        pprint(data)
+
 if __name__=='__main__':
     
 
     # games_by_date = Game.games_by_date("2020-11-07")
-    h2h = Game.game_h2h(40,50)
+    # h2h = Game.game_h2h(40,50)
     # last5 = Game.last5(5)
     # game_stats = Game.game_stats('435')
     # game = Game.game_by_fixture_id("592177") 
     # game = Game.game_by_fixture_id("435") 
-    pprint(h2h)
+    fixtures_left = Game.all_fixtures(524, 28)
+    pprint(fixtures_left)
    
 
  
