@@ -131,7 +131,7 @@ export default function GameSection(props) {
                             fontFamily: 'Roboto,sans-serif',
                             fontSize: '1rem', color: '#8e9cc5',
                             fontWeight: '550'}}>
-                            <p >{venue}</p>
+                            {/* <p >{venue}</p> */}
               </div>
             </div>  
         
@@ -158,7 +158,7 @@ export default function GameSection(props) {
                 <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
                             fontWeight: 'bold',fontSize:'1rem', 
                             paddingTop:'10px'}}>
-                      Chat     
+                      {/* Chat      */}
                 </Link>
               </div>
             </div>

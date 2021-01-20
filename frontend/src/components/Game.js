@@ -306,7 +306,12 @@ console.log(fixture)
                                     fontFamily: 'Roboto,sans-serif',
                                     fontSize: '1rem', color: '#8e9cc5',
                                     fontWeight: '550'}}>
-                                    <p >{venue}</p>
+                                    {/* <p >{venue}</p> */}
+                          <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
+                            <span style={{width:'20px', 
+                                    height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
+                            </span>
+                          </span>
                       </div>
                     </div>  
           {/* The bar of links that needs to be either converted into its own component or deleted */}
@@ -315,33 +320,6 @@ console.log(fixture)
                                       {/*         |           */}
                                       {/*         |           */}
                                       {/* n       V           */}
-                    {/* <div style={{backgroundColor:'black', display:'flex', width:'98%',height:'50px' ,  marginLeft:'1%', marginRight:'1%',}}>
-                      <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                        <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Lineups      
-                        </Link >
-                        <Link component={RouterLink} to={`/game/${gameNum}/events`} style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Summary      
-                        </Link>
-
-                        
-                        
-                        <Link component={RouterLink} to={`/game/${gameNum}/statistics`} style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Statistics      
-                        </Link>
-                        <Link component={RouterLink} to={`/game/${gameNum}/chat`} style={{ color:'white', color:'white',
-                                    fontWeight: 'bold',fontSize:'1rem', 
-                                    paddingTop:'10px'}}>
-                              Chat     
-                        </Link>
-                      </div>
-                    </div> */}
 
             <Route exact path="/game/:gameId">
               <LineUps fixture={fixture} />

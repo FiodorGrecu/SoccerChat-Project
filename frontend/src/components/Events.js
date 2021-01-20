@@ -96,11 +96,10 @@ console.log(fixture)
                     <div>{event.time.elapsed}'</div>
                     <span>{event.player.name}</span>
                     <span>
-                      {/* <IoTabletPortraitOutline/> */}
                       <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
-                      <span style={{width:'20px', 
-                         height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
-                      </span>
+                        <span style={{width:'20px', 
+                                height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
+                        </span>
                       </span>
                     </span>
                     <span style={{paddingLeft:'10px', color:'#be13aa'}}>{event.team.name}</span>
@@ -154,7 +153,7 @@ console.log(fixture)
                         textAlign:'center',fontFamily: 'Roboto,sans-serif',
                         fontSize: '1rem', color: '#8e9cc5',
                         fontWeight: '550' }}>
-                          {events}                  
+                    {events}                  
                 </div>
               </div>
             </div>       
