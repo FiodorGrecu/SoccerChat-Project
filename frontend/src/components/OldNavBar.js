@@ -6,7 +6,6 @@ import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import ChatSection from './ChatSection';
 import { icons } from 'react-icons/lib';
-import { grey } from '@material-ui/core/colors';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import LeagueBar from './LeagueNameBar';

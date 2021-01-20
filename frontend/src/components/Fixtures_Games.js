@@ -171,12 +171,12 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputLast5}
-          <Link  >
+          <Link   to="/upcoming_fixtures" >
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-                <p component={RouterLink} to="/upcoming_fixtures" > Show All > </p>
+                Show All >
             </Paper>
           </Link>
         </div>
