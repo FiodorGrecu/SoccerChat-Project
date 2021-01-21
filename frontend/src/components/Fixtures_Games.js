@@ -186,12 +186,12 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputNext5}
-          <Link >
+          <Link to="/past_fixtures">
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-                Show All > 
+                <span>Show All</span> <span style={{color:'purple'}}> > </span> 
             </Paper>
           </Link>
         </div>

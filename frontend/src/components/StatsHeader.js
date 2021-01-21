@@ -152,7 +152,10 @@ console.log(fixture)
                 textAlign:'center', paddingTop:'2%', color:'white',
                 fontWeight: 'bold'}}>
                   {/* <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span> */}
-                  <span style={{paddingRight:'20px', }}>{getDay(date)}</span>
+                  {/* <span style={{paddingRight:'20px', }}>{getDay(date)}</span> */}
+                  <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US',
+                     {day:'2-digit', month:'2-digit', year:'numeric'})}
+                  </span>
                   {/* <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span> */}
                   <span style={{ }}>{getTime(date)}</span>
           </div>

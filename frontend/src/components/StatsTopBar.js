@@ -46,12 +46,7 @@ export default function StatsBar(props) {
     }, [] )
 
   const gameDate = fixture.fixture && fixture.fixture.date;
-
-  function getDay(gameDate) {
-    return new Date(gameDate).toLocaleDateString()
- }
-     
-  
+       
   const leagueName = fixture.league && fixture.league.name;
   const leagueLogo = fixture.league && fixture.league.logo;
   
@@ -105,7 +100,9 @@ export default function StatsBar(props) {
               <span style={{color:'grey', paddingRight:'5px',color: '#8e9cc5'}}>
               <StarOutlineRoundedIcon />
               </span>
-              {getDay(gameDate)}
+              <span>{new Date(gameDate).toLocaleDateString('en-US',
+                     {day:'2-digit', month:'2-digit', year:'numeric'})}
+              </span>
             </div> {/* End date div*/ }
 
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 

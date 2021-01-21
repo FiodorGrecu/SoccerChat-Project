@@ -76,7 +76,8 @@ export default function GameSection(props) {
 
   }
   function getDay(date) {
-       return new Date(date).toLocaleDateString()
+       return new Date(date).toLocaleDateString('en-US',
+       {day:'2-digit', month:'2-digit', year:'numeric'})
     }
 
   return (
@@ -86,8 +87,9 @@ export default function GameSection(props) {
             <div className={classes.date} style={{width: '100%', 
                   textAlign:'center', paddingTop:'2%', color:'white',
                   fontWeight: 'bold'}}>
-                    <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span>
+                    {/* <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span> */}
                     <span style={{paddingRight:'20px', }}>{getDay(date)}</span>
+                   
                     <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span>
                     <span style={{ }}>{getTime(date)}</span>
             </div>
