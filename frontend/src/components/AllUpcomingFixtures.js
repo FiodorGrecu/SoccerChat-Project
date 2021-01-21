@@ -58,7 +58,16 @@ export default function SimplePaper() {
                 display:'inline-block',}}/>
           </div>
           <div style={{width:'10%', display:'flex', backgroundColor:'grey',}}>
-            <span></span>
+          <div style={{paddingTop:'15px', paddingLeft:'20px'}}>
+            {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
+                    {hour:'2-digit', minute:'2-digit'})}
+          </div>
+
+
+{/* 
+    This is the score below but because the fixture hasn't started yet I will 
+              place the time of the game scheduled. */}
+
               {/* <div style={{width:'50%', display:'flex',  textAlign:'right', 
                     paddingTop:'10px',  }}>
                 <p style={{textAlign:'right', fontSize:'16px', 

@@ -175,7 +175,7 @@ export default function SimplePaper() {
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-                Show All >
+               <span>Show All</span> <span style={{color:'#BE14AA'}}> > </span> 
             </Paper>
           </Link>
         </div>
@@ -191,7 +191,7 @@ export default function SimplePaper() {
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-                <span>Show All</span> <span style={{color:'purple'}}> > </span> 
+                <span>Show All</span> <span style={{color:'#BE14AA'}}> > </span> 
             </Paper>
           </Link>
         </div>
