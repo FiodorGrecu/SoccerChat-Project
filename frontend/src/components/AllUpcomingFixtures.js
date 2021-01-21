@@ -38,6 +38,7 @@ export default function SimplePaper() {
     <div className={classes.reactFragment} style={{width:'100%', }}>
       <Link to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
+          {/* <div>Main</div> */}
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
             <StarOutlineRoundedIcon />
           </span>
@@ -56,27 +57,28 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'10%', display:'flex', }}>
-            <div style={{width:'50%', display:'flex',  textAlign:'right', 
-                  paddingTop:'10px',  }}>
-              <p style={{textAlign:'right', fontSize:'16px', 
-                  fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
-                    {/* Home Team's Goal */}
-                  { fixture.goals.home } 
-              </p>
-            </div>
-            <div style={{width:'12%',display:'flex'}}>
-              <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-              fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
-              </p>
-            </div>
-            <div style={{width:'50%',display:'flex',}}>
-              <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
-                    {/* Away Team's Goal */}
-                    { fixture.goals.away }
-              </p>
-            </div>
+          <div style={{width:'10%', display:'flex', backgroundColor:'grey',}}>
+            <span></span>
+              {/* <div style={{width:'50%', display:'flex',  textAlign:'right', 
+                    paddingTop:'10px',  }}>
+                <p style={{textAlign:'right', fontSize:'16px', 
+                    fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
+                      Home Team's Goal
+                    { fixture.goals.home } 
+                </p>
+              </div>
+              <div style={{width:'12%',display:'flex'}}>
+                  <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
+                      fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' : '}
+                  </p>
+              </div>
+              <div style={{width:'50%',display:'flex',}}>
+                <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
+                    fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
+                      Away Team's Goal
+                      { fixture.goals.away }
+                </p>
+              </div> */}
           </div>
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
                     paddingLeft:'5%'}}>
@@ -96,6 +98,7 @@ export default function SimplePaper() {
     <div style={{ backgroundColor: 'aliceblue'}}>
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
+          <div  style={{backgroundColor:'pink', }}>Main</div>
           {outputAllFixtures}
         </div>
     </div>

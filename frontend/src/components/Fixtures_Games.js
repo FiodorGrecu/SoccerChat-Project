@@ -55,9 +55,9 @@ export default function SimplePaper() {
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
               <span style={{width:'100%' , }}>
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getDay()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span>
+                <span style={{padding:'2px'}}>{new Date(fixture.event_date).toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numeric'})}</span>
+                {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/ */}
+                {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span> */}
               </span>
             </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
@@ -171,6 +171,7 @@ export default function SimplePaper() {
                     Main Results
           </Paper>
           {outputLast5}
+          {/* component={RouterLink} */}
           <Link   to="/upcoming_fixtures" >
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
