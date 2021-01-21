@@ -20,34 +20,18 @@ export default function SimplePaper() {
 
   const [fixtures, setFixtures] = useState([]);
 
-  // const date = fixture.fixture && fixture.fixture.date;
-
   useEffect(() => {
 
     async function getFixtures() {
-      // const response = await fetch(`http://localhost:5000/api/h2h/${40}/${33}`);
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
       const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-21/2021-06-30`);
       const data =  await response.json();
-      // console.log(data.fixtures.api.fixtures)
       console.log(data)
-      // setFixtures(data.fixtures.response[0].reverse())
       setFixtures(data.fixtures.response)
     }
     getFixtures();
   }, [] )
 
-  const date = fixtures.fixture && fixtures.fixture.date;
-//   const date = new Date(fixtures.fixture && fixtures.fixture.event_date);
-  // const dateresult = date.toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numerical'});
-  //   const str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(fixtures.fixture && fixtures.fixture.event_date);
-  
-  
-  //   ("0" + this.getDate()).slice(-2)
-//   function getDay(date) {
-    // return new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date);
-    // return new Date(date);
-//  }
 
   const outputAllFixtures = fixtures.map(fixture =>(
     
@@ -61,15 +45,7 @@ export default function SimplePaper() {
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
                 <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numeric'})}</span>
-                {/* <span>{myDateString}</span> */}
               <span style={{width:'100%' , }}>
-              {/* var str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date); */}
-                {/* <span style={{padding:'2px'}}>{new Intl.DateTimeFormat('en-US',{month:'2-digit', day:'2-digit',year:'numeric'}).format(fixture.event_date)}</span> */}
-                {/* {(date.getMonth() < 9 ? '0': '') + (date.getMonth()+1)} */}
-
-                {/* <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).getDay()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).getMonth()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).getFullYear()}</span> */}
              </span>
             </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
@@ -116,13 +92,10 @@ export default function SimplePaper() {
       </Link>
       </div>
   ));
-//   
-
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
-          <h1>All Upcoming Fixtures Component</h1>
           {outputAllFixtures}
         </div>
     </div>
