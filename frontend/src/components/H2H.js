@@ -33,17 +33,6 @@ export default function SimplePaper() {
     getFixtures();
   }, [] )
 
-  const date = fixtures.fixture && fixtures.fixture.event_date;
-//   const date = new Date(fixtures.fixture && fixtures.fixture.event_date);
-//   const dateresult = date.toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numerical'});
-  //   const str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(fixtures.fixture && fixtures.fixture.event_date);
-  
-  
-  //   ("0" + this.getDate()).slice(-2)
-  function getDay(date) {
-    // return new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date);
-    return new Date(date).toLocaleDateString()
- }
 
   const outputLast5 = fixtures.reverse().map(fixture =>(
     
@@ -56,18 +45,10 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                <span>{getDay(fixture.event_date)}</span>
-                {/* <span>{myDateString}</span> */}
-              <span style={{width:'100%' , }}>
-              {/* const str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date); */}
-                {/* <span style={{padding:'2px'}}>{new Intl.DateTimeFormat('en-US',{month:'2-digit', day:'2-digit',year:'numeric'}).format(fixture.event_date)}</span> */}
-                {/* {(date.getMonth() < 9 ? '0': '') + (date.getMonth()+1)} */}
-
-                {/* <span style={{padding:'2px'}}>{new Date(fixture.event_date).getDay()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span> */}
-             </span>
-            </p>
+              <span>{new Date(fixture.event_date).toLocaleDateString('en-US',
+                     {day:'2-digit', month:'2-digit', year:'numeric'})}
+              </span>
+          </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
