@@ -25,17 +25,21 @@ export default function SimplePaper() {
   useEffect(() => {
 
     async function getFixtures() {
-      const response = await fetch(`http://localhost:5000/api/h2h/${40}/${33}`);
+      // const response = await fetch(`http://localhost:5000/api/h2h/${40}/${33}`);
+      // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
+      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-21/2021-06-30`);
       const data =  await response.json();
-      console.log(data.fixtures.api.fixtures)
-      setFixtures(data.fixtures.api.fixtures.reverse())
+      // console.log(data.fixtures.api.fixtures)
+      console.log(data)
+      // setFixtures(data.fixtures.response[0].reverse())
+      setFixtures(data.fixtures.response)
     }
     getFixtures();
   }, [] )
 
-  const date = fixtures.fixture && fixtures.fixture.event_date;
+  const date = fixtures.fixture && fixtures.fixture.date;
 //   const date = new Date(fixtures.fixture && fixtures.fixture.event_date);
-//   const dateresult = date.toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numerical'});
+  // const dateresult = date.toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numerical'});
   //   const str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(fixtures.fixture && fixtures.fixture.event_date);
   
   
@@ -45,7 +49,7 @@ export default function SimplePaper() {
     // return new Date(date);
 //  }
 
-  const outputLast5 = fixtures.reverse().map(fixture =>(
+  const outputAllFixtures = fixtures.map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
       <Link to={`/game/${fixture.fixture_id}`}>
@@ -56,24 +60,24 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                {/* <span>{getDay(date)}</span> */}
+                <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numeric'})}</span>
                 {/* <span>{myDateString}</span> */}
               <span style={{width:'100%' , }}>
               {/* var str = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(date); */}
                 {/* <span style={{padding:'2px'}}>{new Intl.DateTimeFormat('en-US',{month:'2-digit', day:'2-digit',year:'numeric'}).format(fixture.event_date)}</span> */}
                 {/* {(date.getMonth() < 9 ? '0': '') + (date.getMonth()+1)} */}
 
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getDay()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getMonth()}</span>/
-                <span style={{padding:'2px'}}>{new Date(fixture.event_date).getFullYear()}</span>
+                {/* <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).getDay()}</span>/
+                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).getMonth()}</span>/
+                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).getFullYear()}</span> */}
              </span>
             </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
                 fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif'}}>
-                  { fixture.homeTeam.team_name }</p>
-            <img src={ fixture.homeTeam.logo } style={{width:26, height:26, 
+                  { fixture.teams.home.name }</p>
+            <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
           <div style={{width:'10%', display:'flex', }}>
@@ -82,7 +86,7 @@ export default function SimplePaper() {
               <p style={{textAlign:'right', fontSize:'16px', 
                   fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
                     {/* Home Team's Goal */}
-                  { fixture.goalsHomeTeam } 
+                  { fixture.goals.home } 
               </p>
             </div>
             <div style={{width:'12%',display:'flex'}}>
@@ -94,19 +98,20 @@ export default function SimplePaper() {
               <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                   fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
                     {/* Away Team's Goal */}
-                    { fixture.goalsAwayTeam }
+                    { fixture.goals.away }
               </p>
             </div>
           </div>
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
                     paddingLeft:'5%'}}>
-            <img src={ fixture.awayTeam.logo } style={{width:26, height:26, 
+            <img src={ fixture.teams.away.logo } style={{width:26, height:26, 
                   display:'inline-block', }}/>
             <p style={{display:'inline-block', paddingLeft:'10px', fontSize:'1rem',
                   color:'grey', fontFamily:'Roboto,sans-serif', paddingLeft:'10px' }}>
-                  { fixture.awayTeam.team_name }
+                  { fixture.teams.away.name }
             </p>
           </div> 
+      {/* <hr/> */}
         </Paper>
       </Link>
       </div>
@@ -118,7 +123,7 @@ export default function SimplePaper() {
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
           <h1>All Upcoming Fixtures Component</h1>
-          {outputLast5}
+          {outputAllFixtures}
         </div>
     </div>
   );
