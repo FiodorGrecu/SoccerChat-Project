@@ -175,13 +175,29 @@ class Game:
 
     @classmethod
     def last_5(cls, num_games):
-        url = f"https://api-football-v1.p.rapidapi.com/v2/fixtures/league/2/last/{num_games}"
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures"
 
-        querystring = {"timezone":"Europe/London"}
+        querystring = {"last":"5","league":"39","season":"2020"}
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
-            'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+
+        return(data)
+
+    @classmethod
+    def next_5(cls, num_games):
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures"
+
+        querystring = {"league":"39","season":"2020","next":"5"}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
             }
 
         response = requests.request("GET", url, headers=headers, params=querystring)
@@ -237,20 +253,41 @@ class Game:
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
 
-        pprint(data)
+        return(data)
+
+    @classmethod
+    def all_upcoming_fixtures(cls, league_id, season, from_date, to_date):
+
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures"
+
+        querystring = {"to":to_date,"league":league_id, "season":season,"from":from_date}
+        # querystring = {"to":'2021-06-30',"league":'39', "season":'2020',"from":'2021-01-19'}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+
+        return(data)
 
 if __name__=='__main__':
     
 
     # games_by_date = Game.games_by_date("2020-11-07")
     # h2h = Game.game_h2h(40,50)
-    # last5 = Game.last5(5)
-    rounds = Game.rounds_of_league()
+    # last5 = Game.last_5(5)
+    next5 = Game.next_5(5)
+    # rounds = Game.rounds_of_league()
     # game_stats = Game.game_stats('435')
     # game = Game.game_by_fixture_id("592177") 
     # game = Game.game_by_fixture_id("435") 
     # fixtures_left = Game.all_fixtures(524, 28)
-    pprint(rounds)
+    # next_fixtures = Game.next_fixtures()
+    # rest_games = Game.all_upcoming_fixtures(39, 2020, '2020-09-12','2021-01-21' ) 
+    pprint(next5)
    
 
  

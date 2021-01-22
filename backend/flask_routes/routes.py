@@ -8,6 +8,7 @@ from models.chats import Chat
 from models.accounts import Account
 from flask_cors import CORS
 from models.last5 import last5
+from models.next5 import next5
 from models.onegame import onegame
 from models.events import Event
 from models.top_scorers import top_scorers
@@ -82,10 +83,20 @@ def leagues(country, season):
 #### GAMES/GAME
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
-    # last_5 = Game.last_5(num_games)
-    last_5 = last5
+    last_5 = Game.last_5(num_games)
+    # last_5 = last5
     # last_5.save() 
     return jsonify({'fixtures': last_5})
+
+
+@app.route('/api/next/<num_games>', methods=["GET"])
+def next_5(num_games):
+    # next5 = Game.next_5(num_games)
+    next5 = next5
+    # last_5.save() 
+    return jsonify({'fixtures': next5})
+
+
 
 ####### TOP SCORERS
 @app.route('/api/topscorers/<season>/<league_id>', methods=[ "GET"])
@@ -117,7 +128,13 @@ def game_stats(fixture_id):
 def game_h2h(team_id_1, team_id_2):
     # h2h = Game.game_h2h(team_id_1, team_id_2)
     h2h = H2H
-    return jsonify({"fixtures": h2h})    
+    return jsonify({"fixtures": h2h})   
+
+# http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-19/2021-06-30
+@app.route('/api/upcoming_fixt/<league_id>/<season>/<from_date>/<to_date>', methods=["GET"])
+def upcoming_fixt(league_id, season, from_date, to_date):
+    upcoming_fixt = Game.all_upcoming_fixtures(league_id, season, from_date, to_date)
+    return jsonify({"fixtures":upcoming_fixt})
 
 @app.route('/api/team_by_id/<team_id>', methods=["GET"])
 def team_by_id(team_id):
