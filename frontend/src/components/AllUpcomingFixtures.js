@@ -45,7 +45,9 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numeric'})}</span>
+                <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US', 
+                    {day:'2-digit', month:'2-digit', year:'numeric'})}    
+                </span>
               <span style={{width:'100%' , }}>
              </span>
             </p>
@@ -58,7 +60,7 @@ export default function SimplePaper() {
                 display:'inline-block',}}/>
           </div>
           <div style={{width:'10%', display:'flex', backgroundColor:'grey',}}>
-          <div style={{paddingTop:'15px', paddingLeft:'20px'}}>
+          <div style={{paddingTop:'15px', paddingLeft:'33px'}}>
             {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
                     {hour:'2-digit', minute:'2-digit'})}
           </div>
