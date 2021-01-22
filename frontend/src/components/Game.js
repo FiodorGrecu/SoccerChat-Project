@@ -12,11 +12,14 @@ import { FaRegClock } from "react-icons/fa";
 import LeagueBar from './LeagueNameBar';
 import LineUps from './LineUps';
 import GameSectionScoreCheet from './GameSectionScoreCheet';
+import GameSectionScoreCheetBottomStats from './GameSectionScoreCheetBottomStats';
+import GameSectionScoreCheetBottomVenue from './GameSectionScoreCheetBottomVenue';
 import Events from './Events';
 import StatsBar from './StatsTopBar';
 import StatsBody from './StatsBody';
 import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -297,9 +300,11 @@ console.log(fixture)
                     </Route>
                   </Switch>
             </div>
-              <div style={{display:'flex', width:'98%', height:'50px',
+                <GameSectionScoreCheetBottomStats/>
+                <GameSectionScoreCheetBottomVenue/>
+              {/* <div style={{display:'flex', width:'98%', height:'50px',
                   backgroundColor:'white', marginLeft:'1%', marginRight:'1%'}}>
-              {/* HOME Yellow Card  and Red Cards*/}
+              HOME Yellow Card  and Red Cards
               <div style={{ width:'33.333%', textAlign:'left', 
                       paddingTop:'5px', paddingRight:'2%', 
                       fontFamily: 'Roboto,sans-serif',
@@ -326,7 +331,7 @@ console.log(fixture)
                       </span>
                     </span>
                 </div>
-          {/* Area in the middle of the Stats bottom bar  */}
+          Area in the middle of the Stats bottom bar 
                 <div style={{ width:'33.333%', textAlign:'left', paddingTop:'10px', 
                         paddingLeft:'2%',fontFamily: 'Roboto,sans-serif',
                         fontSize: '1rem',fontWeight: '550'}} >
@@ -338,13 +343,13 @@ console.log(fixture)
                         {awayFouls}
                   </span>
                 </div>
-          {/* AWAY Yellow Card  and Red Cards*/}
+          AWAY Yellow Card  and Red Cards
                 <div style={{ width:'33.333%', textAlign:'right', 
                               paddingTop:'5px', paddingRight:'2%', 
                               fontFamily: 'Roboto,sans-serif',
                               fontSize: '1rem',
                               fontWeight: '550'}}>
-                              {/* <p >{venue}</p> */}
+                              <p >{venue}</p>
                     <span>Cards</span>
                     <span style={{fontFamily:'Apple', fontSize:'20px', 
                             paddingLeft:'10px', paddingTop:'20px',}}>
@@ -366,7 +371,7 @@ console.log(fixture)
                       </span>
                     </span>
                 </div>
-              </div>  
+              </div>   */}
           {/* The bar of links that needs to be either converted into its own component or deleted */}
                                       {/*         |           */}
                                       {/*         |           */}

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function GameSection(props) {
+export default function GameSectionScoreCheetBottomVenue(props) {
   const classes = useStyles();
 
 
@@ -40,30 +40,58 @@ export default function GameSection(props) {
     gameDetails();
 
   }, [] )
-
-  const gameDate = fixture.fixture && fixture.fixture.date;
-  
-  const leagueName = fixture.league && fixture.league.name;
   const leagueLogo = fixture.league && fixture.league.logo;
-  
-  const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
-  const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
-
-  const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
-  const homeTeamScore = fixture.goals && fixture.goals.home;
-  const awayTeamScore = fixture.goals && fixture.goals.away;
+  const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value;
+  const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value;
+  
+  const homeShotsOffTarget = fixture.statistics && fixture.statistics[0].statistics[1].value;
+  const awayShotsOffTarget = fixture.statistics && fixture.statistics[1].statistics[1].value;
+  
+  const homeTotalShots = fixture.statistics && fixture.statistics[0].statistics[2].value;
+  const awayTotalShots = fixture.statistics && fixture.statistics[1].statistics[2].value;
+  
+  const homeShotsInsideBox = fixture.statistics && fixture.statistics[0].statistics[4].value;
+  const awayShotsInsideBox = fixture.statistics && fixture.statistics[1].statistics[4].value;
+  
+  const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
+  const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
+ 
+  const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value;
+  const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value;
+  
+  const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
+  const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
+  
+  const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value;
+  const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value;
+  
+  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value || '0'; 
+  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value || '0';
+  
+  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value || '0';
+  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value || '0';
+  
+  const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
+  const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
+  
+  const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value;
+  const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value;
+  
+  const homePassesAcuracy = fixture.statistics && fixture.statistics[0].statistics[15].value.slice(0,-1);
+  const awayPassesAcuracy = fixture.statistics && fixture.statistics[1].statistics[15].value.slice(0,-1);
+  
+  const homeBallPossession = fixture.statistics && fixture.statistics[0].statistics[9].value.slice(0,-1);
+  const awayBallPossession = fixture.statistics && fixture.statistics[1].statistics[9].value.slice(0,-1);
+  // console.log(homeBallPossession)
 
-  const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
-  const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
-
-  const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
-  // console.log(halfTimeStatus)
-
-  const date = fixture.fixture && fixture.fixture.date;
+  const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value;
+  const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value;
+  
+  const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value;
+  const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value;
 
   function getTime(date) {
     if (date) {
@@ -83,27 +111,27 @@ export default function GameSection(props) {
   return (
     <div style={{width:'100%', }} >  
         <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
-          <div style={{display:'flex', width:'100%',}}>
+          {/* <div style={{display:'flex', width:'100%',}}>
             <div className={classes.date} style={{width: '100%', 
                   textAlign:'center', paddingTop:'2%', color:'white',
                   fontWeight: 'bold'}}>
-                    {/* <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span> */}
+                    <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span>
                     <span style={{paddingRight:'20px', }}>{getDay(date)}</span>
                    
                     <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span>
                     <span style={{ }}>{getTime(date)}</span>
             </div>
-          </div>
-          <div style={{display:'flex', width:'100%',}}>
+          </div> */}
+          {/* <div style={{display:'flex', width:'100%',}}>
             <div style={{ width:'40%', textAlign:'center', paddingTop:'3%', }}>
               <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
               <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
               <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
             </div>
-            {/* Score at half time */}
+            Score at half time
             <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blu'}}>
               <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pin',}}>
-                {/* <div style={{backgroundColor:'yello', color: "white"}}>{halfTimeStatus}</div> */}
+                <div style={{backgroundColor:'yello', color: "white"}}>{halfTimeStatus}</div>
                 <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
                   <div style={{ display:'flex'}}> 
                     <div style={{width:'50%', paddingLeft:'30px',
@@ -122,7 +150,7 @@ export default function GameSection(props) {
               <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
               <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>
             </div>
-          </div>
+          </div> */}
           
             <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',  bottom:'0',}}>
               <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
@@ -137,33 +165,9 @@ export default function GameSection(props) {
               </div>
             </div>  
         
-            <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
-              <div style={{ display:'flex', width:'100%', justifyContent:'space-evenly',}}>
-                <Link component={RouterLink} to="/game/436" style={{ color:'white', color:'white',
-                            fontWeight: 'bold',fontSize:'1rem', 
-                            paddingTop:'10px'}}>
-                      Lineups      
-                </Link >
-                <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
-                            fontWeight: 'bold',fontSize:'1rem', 
-                            paddingTop:'10px'}}>
-                      Summary      
-                </Link>
-
-                
-                
-                <Link component={RouterLink} to="/statistics" style={{ color:'white', color:'white',
-                            fontWeight: 'bold',fontSize:'1rem', 
-                            paddingTop:'10px'}}>
-                      Statistics      
-                </Link>
-                <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
-                            fontWeight: 'bold',fontSize:'1rem', 
-                            paddingTop:'10px'}}>
-                      {/* Chat      */}
-                </Link>
-              </div>
-            </div>
+            {/* <div style={{backgroundColor:'black', display:'flex', width:'100%',height:'50px' ,  bottom:'0', }}>
+              
+            </div> */}
       </div> 
   </div>
   );

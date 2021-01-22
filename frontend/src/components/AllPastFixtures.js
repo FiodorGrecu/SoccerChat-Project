@@ -57,16 +57,12 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'10%', display:'flex', backgroundColor:'grey',}}>
+          <div style={{width:'10%', display:'flex',}}>
           {/* <div style={{paddingTop:'15px', paddingLeft:'33px'}}>
             {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
                     {hour:'2-digit', minute:'2-digit'})}
           </div> */}
 
-
-{/* 
-    This is the score below but because the fixture hasn't started yet I will 
-              place the time of the game scheduled. */}
 
               <div style={{width:'50%', display:'flex',  textAlign:'right', 
                     paddingTop:'10px',  }}>
@@ -106,8 +102,12 @@ export default function SimplePaper() {
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
     <StatsBar/>
-        <div style={{padding:'2%', marginTop:'25px'}}>
-          <div  style={{backgroundColor:'pink', }}>Main</div>
+        <div style={{padding:'2%', marginTop:'25px' }}>
+          <div  style={{backgroundColor:'white',height:'50px',paddingTop:'20px',
+                    paddingLeft:'15px',fontSize:'1rem',
+                    color:'#161d35', fontFamily:'Roboto,sans-serif', fontWeight:'bold',}}>
+              Main
+          </div>
           {outputAllFixtures}
         </div>
     </div>

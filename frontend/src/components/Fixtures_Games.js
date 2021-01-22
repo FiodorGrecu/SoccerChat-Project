@@ -44,8 +44,8 @@ export default function SimplePaper() {
       console.log(data)
       console.log(data1)
       setNextFixtures(data.fixtures.response)
-      setLastFixtures(data1.fixtures.api.fixtures)
-      // setLastFixtures(data1.fixtures.response)
+      // setLastFixtures(data1.fixtures.api.fixtures)
+      setLastFixtures(data1.fixtures.response)
     }
     getFixtures();
   }, [] )
@@ -76,7 +76,12 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'10%', display:'flex', }}>
+
+          <div style={{paddingTop:'15px', paddingLeft:'33px'}}>
+            {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
+                    {hour:'2-digit', minute:'2-digit'})}
+          </div>
+          {/* <div style={{width:'10%', display:'flex', }}>
             <div style={{width:'50%', display:'flex',  textAlign:'right', 
                   paddingTop:'10px',  }}>
               <p style={{textAlign:'right', fontSize:'16px', 
@@ -95,7 +100,7 @@ export default function SimplePaper() {
                     { fixture.goals.away }
               </p>
             </div>
-          </div>
+          </div> */}
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', paddingLeft:'5%'}}>
             <img src={ fixture.teams.away.logo } style={{width:26, height:26, 
                   display:'inline-block', }}/>
@@ -129,8 +134,8 @@ export default function SimplePaper() {
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
                 fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif'}}>
-                  { fixture.homeTeam.team_name }</p>
-            <img src={ fixture.homeTeam.logo } style={{width:26, height:26, 
+                  { fixture.teams.home.name }</p>
+            <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
           <div style={{width:'10%', display:'flex', }}>
@@ -139,7 +144,7 @@ export default function SimplePaper() {
               <p style={{textAlign:'right', fontSize:'16px', 
                   fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
                     {/* Home Team's Goal */}
-                  { fixture.goalsHomeTeam } 
+                  { fixture.goals.home } 
               </p>
             </div>
             <div style={{width:'12%',display:'flex'}}>
@@ -151,16 +156,16 @@ export default function SimplePaper() {
               <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                   fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
                     {/* Away Team's Goal */}
-                    { fixture.goalsAwayTeam }
+                    { fixture.goals.away }
               </p>
             </div>
           </div>
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', paddingLeft:'5%'}}>
-            <img src={ fixture.awayTeam.logo } style={{width:26, height:26, 
+            <img src={ fixture.teams.away.logo } style={{width:26, height:26, 
                   display:'inline-block', }}/>
             <p style={{display:'inline-block', paddingLeft:'10px', fontSize:'1rem',
                   color:'grey', fontFamily:'Roboto,sans-serif', paddingLeft:'10px' }}>
-                  { fixture.awayTeam.team_name }
+                  { fixture.teams.away.name }
             </p>
           </div> 
         </Paper>
@@ -175,7 +180,7 @@ export default function SimplePaper() {
           <Paper style={{height:'50px', paddingLeft:'20px', paddingTop:'15px',
                   fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif',
                   fontWeight:'bold' }}>
-                    Main Results
+                    Main Matches
           </Paper>
           {outputNext5}
           {/* component={RouterLink} */}
@@ -197,7 +202,7 @@ export default function SimplePaper() {
           </Paper>
           {outputLast5}
           {/* component={RouterLink} */}
-          <Link   to="/upcoming_fixtures" >
+          <Link   to="/past_fixtures" >
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
