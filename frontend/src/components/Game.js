@@ -118,11 +118,11 @@ export default function CenteredGrid(props) {
   const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value;
   const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value;
   
-  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value;
-  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value;
+  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value || '0'; 
+  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value || '0';
   
-  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value;
-  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value;
+  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value || '0';
+  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value || '0';
   
   const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
   const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
@@ -297,23 +297,76 @@ console.log(fixture)
                     </Route>
                   </Switch>
             </div>
-                    <div style={{display:'flex', width:'98%', height:'50px' ,backgroundColor:'white', marginLeft:'1%', marginRight:'1%'}}>
-                      <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
-                        <img src={leagueLogo} style={{width:31, height:31 }} />
-                      </div>
-                      <div style={{ width:'50%', textAlign:'right', 
-                                    paddingTop:'20px', paddingRight:'2%', 
-                                    fontFamily: 'Roboto,sans-serif',
-                                    fontSize: '1rem', color: '#8e9cc5',
-                                    fontWeight: '550'}}>
-                                    {/* <p >{venue}</p> */}
-                          <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
-                            <span style={{width:'20px', 
-                                    height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
-                            </span>
-                          </span>
-                      </div>
-                    </div>  
+              <div style={{display:'flex', width:'98%', height:'50px',
+                  backgroundColor:'white', marginLeft:'1%', marginRight:'1%'}}>
+              {/* HOME Yellow Card  and Red Cards*/}
+              <div style={{ width:'33.333%', textAlign:'left', 
+                      paddingTop:'5px', paddingRight:'2%', 
+                      fontFamily: 'Roboto,sans-serif',
+                      fontSize: '1rem',
+                      fontWeight: '550', paddingLeft:'20px'}}>
+                    <span>Cards</span>
+                    <span style={{fontFamily:'Apple', fontSize:'20px', 
+                            paddingLeft:'10px', paddingTop:'20px',}}>
+                          {homeRedCards}
+                    </span>
+                    <span style={{width:'30px', height:'20px', 
+                            backgroundColor:'red', marginLeft:'10px'}}>
+                      <span style={{width:'20px', height:'20px',
+                              borderRadius:'2px',marginLeft:'10px',}}>             
+                      </span>
+                    </span>
+                    <span style={{fontFamily:'Apple', fontSize:'20px', paddingLeft:'10px'}}>
+                          {homeYellowCards}
+                    </span>
+                    <span style={{width:'10px', height:'30px', 
+                            backgroundColor:'#ffb822', marginLeft:'5px'}}>
+                      <span style={{width:'20px', 
+                              height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
+                      </span>
+                    </span>
+                </div>
+          {/* Area in the middle of the Stats bottom bar  */}
+                <div style={{ width:'33.333%', textAlign:'left', paddingTop:'10px', 
+                        paddingLeft:'2%',fontFamily: 'Roboto,sans-serif',
+                        fontSize: '1rem',fontWeight: '550'}} >
+                  <span style={{fontFamily:'Apple', fontSize:'20px',paddingRight:'150px'}}>
+                        {homeFouls}
+                  </span>
+                  <span style={{paddingRight:'50px'}}>Fouls</span>
+                  <span style={{fontFamily:'Apple', fontSize:'20px',paddingLeft:'100px'}}>
+                        {awayFouls}
+                  </span>
+                </div>
+          {/* AWAY Yellow Card  and Red Cards*/}
+                <div style={{ width:'33.333%', textAlign:'right', 
+                              paddingTop:'5px', paddingRight:'2%', 
+                              fontFamily: 'Roboto,sans-serif',
+                              fontSize: '1rem',
+                              fontWeight: '550'}}>
+                              {/* <p >{venue}</p> */}
+                    <span>Cards</span>
+                    <span style={{fontFamily:'Apple', fontSize:'20px', 
+                            paddingLeft:'10px', paddingTop:'20px',}}>
+                          {awayRedCards}
+                    </span>
+                    <span style={{width:'30px', height:'20px', backgroundColor:'red', 
+                            marginLeft:'10px'}}>
+                      <span style={{width:'20px', height:'20px', borderRadius:'2px',
+                            marginLeft:'10px',}}>             
+                      </span>
+                    </span>
+                    <span style={{fontFamily:'Apple', fontSize:'20px', paddingLeft:'10px'}}>
+                          {awayYellowCards}
+                    </span>
+                    <span style={{width:'10px', height:'30px', backgroundColor:'#ffb822', 
+                            marginLeft:'5px'}}>
+                      <span style={{width:'20px', 
+                              height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
+                      </span>
+                    </span>
+                </div>
+              </div>  
           {/* The bar of links that needs to be either converted into its own component or deleted */}
                                       {/*         |           */}
                                       {/*         |           */}
