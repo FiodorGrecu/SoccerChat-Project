@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
     width: '98%',
-    height: '350px',
+    // height: '350px',
     backgroundColor: 'black',
     marginLeft: '1%',
     marginRight: '1%',
@@ -163,8 +163,7 @@ console.log(fixture)
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
                   <Switch>
                     <Route path="/game/:gameId/statistics">
-                      {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}
-                      
+                      {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}   
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly', alignItems:'center', }}>
                         <div style={{width:'33.333%', textAlign:'center'}}>
                             <p style={{color:'white', 
@@ -294,14 +293,15 @@ console.log(fixture)
                             </svg>
                         </div>
                       </div>
+                      <GameSectionScoreCheetBottomStats/>
                     </Route>
+
                     <Route path="/game/:gameId/">
                       <GameHeader fixture={fixture}/>
+                      <GameSectionScoreCheetBottomVenue/>
                     </Route>
                   </Switch>
             </div>
-                <GameSectionScoreCheetBottomStats/>
-                <GameSectionScoreCheetBottomVenue/>
               {/* <div style={{display:'flex', width:'98%', height:'50px',
                   backgroundColor:'white', marginLeft:'1%', marginRight:'1%'}}>
               HOME Yellow Card  and Red Cards

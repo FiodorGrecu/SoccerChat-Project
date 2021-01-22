@@ -8,7 +8,7 @@ const GameHeader = ({fixture}) => {
 
     scoreSheet:{
       width: '98%',
-      height: '15%',
+      height: '333px',
       backgroundColor: 'black',
       margin: '1%',
       position: 'relative',
@@ -59,7 +59,7 @@ const GameHeader = ({fixture}) => {
     }
 
   return (
-      <div>
+      <div style={{height:'333px'}}>
         <div style={{display:'flex', width:'100%',}}>
           <div className={classes.date} style={{width: '100%', 
                 textAlign:'center', paddingTop:'2%', color:'white',
@@ -72,12 +72,12 @@ const GameHeader = ({fixture}) => {
         </div>
         <div style={{display:'flex', width:'100%',}}>
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%', }}>
-            <img src={hometeamLogo} style={{width:'74px', height:'74px'}}/>
+            <img src={hometeamLogo} style={{width:'80px', height:'80px'}}/>
             <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
             <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
           </div>
           {/* Score at half time */}
-                      {/* <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}>
+                      <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}> 
                         <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
                           <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div> 
                           <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
@@ -92,9 +92,9 @@ const GameHeader = ({fixture}) => {
                               </div>
                           </div>
                         </div>
-                      </div> */}
+                      </div> 
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
-            <img src={awayteamLogo} style={{width:'74px', height:'74px'}}/>
+            <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>
             <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
             <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>
           </div>

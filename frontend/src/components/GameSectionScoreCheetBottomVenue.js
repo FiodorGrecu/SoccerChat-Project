@@ -9,10 +9,10 @@ import { FaRegClock } from "react-icons/fa";
 const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
-    width: '98%',
-    height: '15%',
+    width: '100%',
+    // height: '15%',
     backgroundColor: 'black',
-    margin: '1%',
+    // margin: '1%',
     position: 'relative',
   },
   

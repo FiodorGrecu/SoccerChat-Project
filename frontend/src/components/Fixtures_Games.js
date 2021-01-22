@@ -77,7 +77,7 @@ export default function SimplePaper() {
                 display:'inline-block',}}/>
           </div>
 
-          <div style={{paddingTop:'15px', paddingLeft:'33px'}}>
+          <div style={{paddingTop:'15px', paddingLeft:'33px', backgroundColor:'#d7dff7',borderRadius:'10px', margin:'10px',}}>
             {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
                     {hour:'2-digit', minute:'2-digit'})}
           </div>

@@ -59,8 +59,8 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'10%', display:'flex', backgroundColor:'grey',}}>
-          <div style={{paddingTop:'15px', paddingLeft:'33px'}}>
+          <div style={{width:'5%', display:'flex', backgroundColor:'#d7dff7',borderRadius:'10px', margin:'10px',}}>
+          <div style={{paddingTop:'5px', paddingLeft:'7px', }}>
             {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
                     {hour:'2-digit', minute:'2-digit'})}
           </div>
