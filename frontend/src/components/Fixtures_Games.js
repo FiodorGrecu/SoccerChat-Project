@@ -28,7 +28,7 @@ export default function SimplePaper() {
   const [nextfixtures, setNextFixtures] = useState([]);
   const [lastfixtures, setLastFixtures] = useState([]);
   const numberGames = 5;
-  // const numberGames1 = 5;
+  const numberGames1 = 5;
   
 
   // const date = fixture.fixture && fixture.fixture.date;
@@ -38,7 +38,7 @@ export default function SimplePaper() {
     // fetch(`https://localhost:5000/api/h2h/${team_id_1}/${team_id_1}`);
     async function getFixtures() {
       const response = await fetch(`http://localhost:5000/api/next/${numberGames}`);
-      const response1 = await fetch(`http://localhost:5000/api/last/${numberGames}`);
+      const response1 = await fetch(`http://localhost:5000/api/last/${numberGames1}`);
       const data =  await response.json();
       const data1 =  await response1.json();
       console.log(data)
@@ -76,10 +76,14 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-
-          <div style={{paddingTop:'15px', paddingLeft:'33px', backgroundColor:'#d7dff7',borderRadius:'10px', margin:'10px',}}>
+          <div style={{width:'5%', display:'flex', 
+                backgroundColor:'#d7dff7',borderRadius:'10px', 
+                margin:'10px',}}>
+          <div style={{paddingTop:'5px', paddingLeft:'10px', backgroundColor:'#d7dff7',borderRadius:'10px', 
+                margin:'10px',}}>
             {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
                     {hour:'2-digit', minute:'2-digit'})}
+          </div>
           </div>
           {/* <div style={{width:'10%', display:'flex', }}>
             <div style={{width:'50%', display:'flex',  textAlign:'right', 

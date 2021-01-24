@@ -59,11 +59,13 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'5%', display:'flex', backgroundColor:'#d7dff7',borderRadius:'10px', margin:'10px',}}>
-          <div style={{paddingTop:'5px', paddingLeft:'7px', }}>
-            {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
-                    {hour:'2-digit', minute:'2-digit'})}
-          </div>
+          <div style={{width:'5%', display:'flex', 
+                backgroundColor:'#d7dff7',borderRadius:'10px', 
+                margin:'10px',}}>
+            <div style={{paddingTop:'5px', paddingLeft:'10px', }}>
+              {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
+                      {hour:'2-digit', minute:'2-digit'})}
+            </div>
 
 
 {/* 
@@ -109,7 +111,11 @@ export default function SimplePaper() {
     <div style={{ backgroundColor: 'aliceblue'}}>
     <StatsBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
-          <div  style={{backgroundColor:'pink', }}>Main</div>
+        <div  style={{backgroundColor:'white',height:'50px',paddingTop:'20px',
+                    paddingLeft:'15px',fontSize:'1rem',
+                    color:'#161d35', fontFamily:'Roboto,sans-serif', fontWeight:'bold',}}>
+              Main
+          </div>
           {outputAllFixtures}
         </div>
     </div>

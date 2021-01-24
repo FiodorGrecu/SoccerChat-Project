@@ -47,7 +47,7 @@ export default function CenteredGrid({fixture, gameNum}) {
 
   // }, [] )
 
-  const gameDate = fixture.fixture && fixture.fixture.date;
+  // const gameDate = fixture.fixture && fixture.fixture.date;
   
   const leagueName = fixture.league && fixture.league.name;
   const leagueLogo = fixture.league && fixture.league.logo;
