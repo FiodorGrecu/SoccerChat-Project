@@ -65,7 +65,9 @@ export default function SimplePaper() {
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
               <span style={{width:'100%' , }}>
-                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numeric'})}</span>
+                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).toLocaleDateString('en-US', 
+                      {day:'2-digit', month:'2-digit', year:'numeric'})}
+                </span>
               </span>
             </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
@@ -108,9 +110,9 @@ export default function SimplePaper() {
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
               <span style={{width:'100%' , }}>
-              <span style={{padding:'2px'}}>{new Date(fixture.event_date).toLocaleDateString('en-US', 
-                    {day:'2-digit', month:'2-digit', year:'numeric'})}
-              </span>
+              <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).toLocaleDateString('en-US', 
+                      {day:'2-digit', month:'2-digit', year:'numeric'})}
+                </span>
                 </span>
                 </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 

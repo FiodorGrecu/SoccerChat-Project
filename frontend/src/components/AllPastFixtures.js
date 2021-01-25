@@ -22,6 +22,7 @@ export default function SimplePaper() {
   useEffect(() => {
 
     async function getFixtures() {
+  // In order to change the fetch to the desire time frame change the dates
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2020-09-12}/${2021-01-21}`);
       const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-24`);
       const data =  await response.json();
@@ -44,9 +45,11 @@ export default function SimplePaper() {
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
-                <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US', {day:'2-digit', month:'2-digit', year:'numeric'})}</span>
-              <span style={{width:'100%' , }}>
-             </span>
+                <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US', 
+                    {day:'2-digit', month:'2-digit', year:'numeric'})}    
+                </span>              
+                <span style={{width:'100%' , }}>
+              </span>
             </p>
           <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
