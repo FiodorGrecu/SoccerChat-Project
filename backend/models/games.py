@@ -243,7 +243,7 @@ class Game:
 
         querystring = {"timezone":"Europe/London", 
                         "from": "2020-09-12",
-                        "to": "2021-05-23"}
+                        "to": "2021-06-23"}
                         
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
@@ -273,6 +273,24 @@ class Game:
 
         return(data)
 
+    @classmethod
+    def all_past_fixtures(cls, league_id, season, from_date, to_date):
+
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures"
+
+        querystring = {"to":to_date,"league":league_id,"season":season,"from":from_date}
+
+        headers = {
+            'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
+            'x-rapidapi-host': "api-football-beta.p.rapidapi.com"
+            }
+
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = response.json()
+
+        return(data)
+
+
 if __name__=='__main__':
     
 
@@ -286,8 +304,9 @@ if __name__=='__main__':
     # game = Game.game_by_fixture_id("435") 
     # fixtures_left = Game.all_fixtures(524, 28)
     # next_fixtures = Game.next_fixtures()
-    rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
-    pprint(rest_games)
+    # rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
+    past_games = Game.all_past_fixtures(39, 2020, '2020-09-12','2021-01-24' ) 
+    pprint(past_games)
    
 
  
