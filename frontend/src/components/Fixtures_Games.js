@@ -128,7 +128,7 @@ export default function SimplePaper() {
                   paddingTop:'10px',  }}>
               <p style={{textAlign:'right', fontSize:'16px', 
                   fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
-                    {/* Home Team's Goal */}
+                {/* Home Team's Goal */}
                   { fixture.goals.home } 
               </p>
             </div>
