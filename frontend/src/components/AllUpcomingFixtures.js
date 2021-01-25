@@ -24,7 +24,7 @@ export default function SimplePaper() {
 
     async function getFixtures() {
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-21/2021-06-30`);
+      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-24/2021-06-30`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures.response)
@@ -66,32 +66,6 @@ export default function SimplePaper() {
               {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
                       {hour:'2-digit', minute:'2-digit'})}
             </div>
-
-
-{/* 
-    This is the score below but because the fixture hasn't started yet I will 
-              place the time of the game scheduled. */}
-
-              {/* <div style={{width:'50%', display:'flex',  textAlign:'right', 
-                    paddingTop:'10px',  }}>
-                <p style={{textAlign:'right', fontSize:'16px', 
-                    fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
-                      Home Team's Goal
-                    { fixture.goals.home } 
-                </p>
-              </div>
-              <div style={{width:'12%',display:'flex'}}>
-                  <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-                      fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' : '}
-                  </p>
-              </div>
-              <div style={{width:'50%',display:'flex',}}>
-                <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
-                    fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
-                      Away Team's Goal
-                      { fixture.goals.away }
-                </p>
-              </div> */}
           </div>
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
                     paddingLeft:'5%'}}>

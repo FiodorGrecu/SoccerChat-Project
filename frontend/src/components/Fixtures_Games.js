@@ -79,32 +79,11 @@ export default function SimplePaper() {
           <div style={{width:'5%', display:'flex', 
                 backgroundColor:'#d7dff7',borderRadius:'10px', 
                 margin:'10px',}}>
-          <div style={{paddingTop:'5px', paddingLeft:'10px', backgroundColor:'#d7dff7',borderRadius:'10px', 
-                margin:'10px',}}>
-            {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
-                    {hour:'2-digit', minute:'2-digit'})}
+            <div style={{paddingTop:'5px', paddingLeft:'10px', }}>
+              {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
+                      {hour:'2-digit', minute:'2-digit'})}
+            </div>
           </div>
-          </div>
-          {/* <div style={{width:'10%', display:'flex', }}>
-            <div style={{width:'50%', display:'flex',  textAlign:'right', 
-                  paddingTop:'10px',  }}>
-              <p style={{textAlign:'right', fontSize:'16px', 
-                  fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
-                  { fixture.goals.home } 
-              </p>
-            </div>
-            <div style={{width:'12%',display:'flex'}}>
-              <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-              fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
-              </p>
-            </div>
-            <div style={{width:'50%',display:'flex',}}>
-              <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
-                    { fixture.goals.away }
-              </p>
-            </div>
-          </div> */}
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', paddingLeft:'5%'}}>
             <img src={ fixture.teams.away.logo } style={{width:26, height:26, 
                   display:'inline-block', }}/>
