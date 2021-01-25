@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
    
 }));
 
-
 export default function SimplePaper() {
   const classes = useStyles();
 
@@ -23,11 +22,11 @@ export default function SimplePaper() {
   useEffect(() => {
 
     async function getFixtures() {
-      // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2020-09-12}/${22021-01-21}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2020-09-12/2021-01-21`);
+      // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2020-09-12}/${2021-01-21}`);
+      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-24`);
       const data =  await response.json();
       console.log(data)
-      setFixtures(data.fixtures.response)
+      setFixtures(data.fixtures.response.reverse())
     }
     getFixtures();
   }, [] )
