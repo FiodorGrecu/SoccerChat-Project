@@ -1,5 +1,3 @@
-
-
 all_rest_fixtures = {'response': [{'fixture': {'date': '2021-01-27T19:30:00+00:00',
                            'id': 592331,
                            'periods': {'first': None, 'second': None},
