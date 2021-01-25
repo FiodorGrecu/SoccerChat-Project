@@ -279,15 +279,15 @@ if __name__=='__main__':
     # games_by_date = Game.games_by_date("2020-11-07")
     # h2h = Game.game_h2h(40,50)
     # last5 = Game.last_5(5)
-    next5 = Game.next_5(5)
+    # next5 = Game.next_5(5)
     # rounds = Game.rounds_of_league()
     # game_stats = Game.game_stats('435')
     # game = Game.game_by_fixture_id("592177") 
     # game = Game.game_by_fixture_id("435") 
     # fixtures_left = Game.all_fixtures(524, 28)
     # next_fixtures = Game.next_fixtures()
-    # rest_games = Game.all_upcoming_fixtures(39, 2020, '2020-09-12','2021-01-21' ) 
-    pprint(next5)
+    rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
+    pprint(rest_games)
    
 
  

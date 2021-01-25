@@ -1,7 +1,3 @@
-# next5 = {'errors': [],
-#                 'get': 'fixtures',
-#                 'paging': {'current': 1, 'total': 1},
-#                 'parameters': {'league': '39', 'next': '5', 'season': '2020'},
 next5 = {'response': [{'fixture': {'date': '2021-01-23T20:00:00+00:00',
                                         'id': 592241,
                                         'periods': {'first': None, 'second': None},
