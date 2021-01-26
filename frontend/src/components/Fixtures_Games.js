@@ -127,24 +127,25 @@ export default function SimplePaper() {
             <div style={{width:'50%', display:'flex',  textAlign:'right', 
                   paddingTop:'10px',  }}>
               <p style={{textAlign:'right', fontSize:'16px', 
-                  fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
+                  fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%', }}>
                 {/* Home Team's Goal */}
                   { fixture.goals.home } 
               </p>
             </div>
-            <div style={{width:'12%',display:'flex'}}>
-              
+
+            <div style={{width:'12%',display:'flex', textAlign:'center', position:'relative'}}>
                 {fixture.fixture.status.short === 'PST' ? 
-                <p style={{color:'red',fontFamily:'Helvetica', 
-                    fontWeight:'600',paddingTop:'8px', paddingRight:'40px',}}> Postponed </p> 
+                <span style={{fontFamily:'Helvetica',
+                fontWeight:'600',paddingTop:'8px', position:'absolute', 
+                left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
+                fontStyle:'italic', color:'#BE14AA' }}> 
+                    Postponed 
+                </span> 
                       : 
                 <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-                fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}> - </p>
-                }
-              
-
-
+                fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}> - </p>}
             </div>
+
             <div style={{width:'50%',display:'flex',}}>
               <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                   fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>

@@ -24,7 +24,7 @@ export default function SimplePaper() {
     async function getFixtures() {
   // In order to change the fetch to the desire time frame change the dates
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2020-09-12}/${2021-01-21}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-24`);
+      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-26`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures.response.reverse())
@@ -59,13 +59,11 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
+          
+          
           <div style={{width:'10%', display:'flex',}}>
-          {/* <div style={{paddingTop:'15px', paddingLeft:'33px'}}>
-            {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
-                    {hour:'2-digit', minute:'2-digit'})}
-          </div> */}
 
-
+          <div style={{width:'90%', display:'flex', }}>
               <div style={{width:'50%', display:'flex',  textAlign:'right', 
                     paddingTop:'10px',  }}>
                 <p style={{textAlign:'right', fontSize:'16px', 
@@ -74,11 +72,19 @@ export default function SimplePaper() {
                     { fixture.goals.home } 
                 </p>
               </div>
-              <div style={{width:'12%',display:'flex'}}>
-                  <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-                      fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
-                  </p>
-              </div>
+
+              <div style={{width:'12%',display:'flex', textAlign:'center', position:'relative'}}>
+                {fixture.fixture.status.short === 'PST' ? 
+                <span style={{fontFamily:'Helvetica',
+                    fontWeight:'600',paddingTop:'8px', position:'absolute', 
+                    left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
+                    fontStyle:'italic', color:'#BE14AA' }}> 
+                    Postponed 
+                </span> 
+                      : 
+                <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
+                fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}> - </p>}
+            </div>
               <div style={{width:'50%',display:'flex',}}>
                 <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                     fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
@@ -86,6 +92,9 @@ export default function SimplePaper() {
                       { fixture.goals.away }
                 </p>
               </div>
+              </div>
+
+
           </div>
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
                     paddingLeft:'5%'}}>
