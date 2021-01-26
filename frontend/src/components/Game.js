@@ -9,7 +9,6 @@ import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
-import LeagueBar from './LeagueNameBar';
 import LineUps from './LineUps';
 import GameSectionScoreCheet from './GameSectionScoreCheet';
 import GameSectionScoreCheetBottomStats from './GameSectionScoreCheetBottomStats';

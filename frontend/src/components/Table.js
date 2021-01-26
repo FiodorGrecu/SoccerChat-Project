@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
+import LeagueBar from './LeagueNameBar';
+
 
 
 const useStyles = makeStyles({ 
@@ -99,44 +101,7 @@ const descriptionChampions = teams.league && teams.league.description;
 
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
-    <div style={{display: "flex", }}>
-      <div style={{ display:'flex' ,width:'100%',height:'60px',  }}>
-        <div style={{width:'50%',  alignItems:'flex-start',
-              fontSize: '1rem', paddingLeft:'20px', paddingTop:'20px',
-              fontFamily:'Roboto,sans-serif',color: '#8e9cc5',
-              fontWeight: 'bold', backgroundColor:'white'}}>
-          {teams.league ? teams.league.name : 'League Name'}
-          <span style={{color:'grey', paddingLeft:'5px',color: '#8e9cc5'}}>
-          <StarOutlineRoundedIcon />
-          </span>
-      </div>
-        <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white'}}>
-           <div style={{textAlign:'right', paddingRight:'20px', paddingTop:'10px' }}> 
-              <img src={ teams.league && teams.league.logo } style={{width:42, height:42, 
-                display:'inline-block',}}/>
-           </div>
-            
-        </div>
-      </div>
-    </div>
-    <div  style={{display: "flex",  }}>
-      <div className={classes.links} style={{paddingLeft:'50px', display:'flex' ,width:'100%',
-           justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
-           fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
-           fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
-           backgroundColor:'white', }}
-          //  onMouseEnter={() => setColor('red')}
-          //  onMouseLeave={() => setColor('')}
-           >
-        
-        <Link><p style={{paddingRight:'20px', }}>Summary</p></Link>
-        <Link ><p style={{paddingRight:'20px', hover:{color:'red'} }}>Standings</p></Link>
-        <Link><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
-        <Link><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
-        <Link><p style={{paddingRight:'20px' }}>Results</p></Link>
-      </div> 
-    </div>
-
+    <LeagueBar/>
     <div style={{display: "flex" ,}}>
       <div style={{ textAlign:'left', width:'219px', height:'63px', 
             backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',

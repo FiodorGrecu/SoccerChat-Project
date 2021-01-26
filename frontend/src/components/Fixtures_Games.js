@@ -56,7 +56,7 @@ export default function SimplePaper() {
   const outputNext5 = nextfixtures.map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
-      <Link to={`/game/${fixture.fixture_id}`}>
+      <Link to={`/game/${fixture.fixture.id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
             <StarOutlineRoundedIcon />
@@ -101,7 +101,7 @@ export default function SimplePaper() {
   const outputLast5 = lastfixtures.map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
-      <Link to={`/game/${fixture.fixture_id}`}>
+      <Link to={`/game/${fixture.fixture.id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
             <StarOutlineRoundedIcon />
@@ -133,9 +133,17 @@ export default function SimplePaper() {
               </p>
             </div>
             <div style={{width:'12%',display:'flex'}}>
-              <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-              fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
-              </p>
+              
+                {fixture.fixture.status.short === 'PST' ? 
+                <p style={{color:'red',fontFamily:'Helvetica', 
+                    fontWeight:'600',paddingTop:'8px', paddingRight:'40px',}}> Postponed </p> 
+                      : 
+                <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
+                fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}> - </p>
+                }
+              
+
+
             </div>
             <div style={{width:'50%',display:'flex',}}>
               <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 

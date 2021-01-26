@@ -38,8 +38,8 @@ const GameHeader = ({fixture}) => {
   const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
   const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
 
-  const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
-  // console.log(halfTimeStatus)
+  const halfTimeStatus = fixture.fixture && fixture.fixture.status.short;
+  console.log(halfTimeStatus)
 
   const date = fixture.fixture && fixture.fixture.date;
 
@@ -73,26 +73,44 @@ const GameHeader = ({fixture}) => {
         <div style={{display:'flex', width:'100%',}}>
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%', }}>
             <img src={hometeamLogo} style={{width:'80px', height:'80px'}}/>
-            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{hometeamName}</p>
-            <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem' }}>{homeTeamScore}</p>
+            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
+                letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>
+                  {hometeamName}
+            </p>
+            <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',
+                fontSize:' 2rem' }}>
+                  {homeTeamScore}
+            </p>
           </div>
           {/* Score at half time */}
-                      <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',backgroundColor:'blue'}}> 
-                        <div style={{ width:'70%', height:'25%', textAlign:'center', paddingTop:'3%', backgroundColor:'pink',}}>
-                          <div style={{backgroundColor:'yellow', color: "white"}}>{halfTimeStatus}</div> 
-                          <div style={{backgroundColor:'yellow', color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
-                            <div style={{ display:'flex'}}> 
-                              <div style={{width:'50%', paddingLeft:'30px',
-                                    color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                                      {halfTimeScoreH}
-                              </div>
-                              <div style={{width:'50%', paddingRight:'30px',
-                                    color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
-                                        {halfTimeScoreA}
-                              </div>
-                          </div>
-                        </div>
-                      </div> 
+          <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
+            <div style={{ width:'50%', height:'25%', textAlign:'center',}}>
+              {/* <div style={{backgroundColor:'yellow', color: "white", fontSize:'20px'}}>{halfTimeStatus}</div>  */}
+              <div style={{ color: "grey", 
+                paddingBottom:'1px',fontWeight: 'bold',
+                fontFamily:'Oswald,sansSerif',fontSize:' 1rem',}}>
+                  {/* Score at HT */}
+                  {/* {halfTimeStatus } */}
+                  {halfTimeStatus === 'FT' ? 
+                  <p style={{backgroundColor:'red', paddingTop:'5p'}}>
+                    <p style={{color:'white', letterSpacing:'1.5px'}}>FINISHED</p>
+                  </p> : 
+                    <p style={{backgroundColor:'red'}}>Live</p>}
+                  {/* {fixture.fixture.status.long} */}
+              </div>
+                <div style={{ display:'flex'}}> 
+                  <div style={{width:'50%', paddingLeft:'25px',
+                        color:'#889cba',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 19px' }}>
+                          {halfTimeScoreH}
+                  </div>
+                    <span style={{color:'#889cba', fontSize:'1rem'}}>{' : '}</span>
+                  <div style={{width:'50%', paddingRight:'25px',
+                        color:'#889cba',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 19px' }}>
+                            {halfTimeScoreA}
+                  </div>
+              </div>
+            </div>
+          </div> 
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
             <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>
             <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
