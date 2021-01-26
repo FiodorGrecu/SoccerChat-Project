@@ -84,7 +84,7 @@ export default function SimplePaper() {
   ));
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
-    <StatsBar/>
+    <LeagueBar/>
         <div style={{padding:'2%', marginTop:'25px'}}>
         <div  style={{backgroundColor:'white',height:'50px',paddingTop:'20px',
                     paddingLeft:'15px',fontSize:'1rem',
