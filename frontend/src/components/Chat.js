@@ -140,7 +140,8 @@ export default function UserChat({ user, setUser, gameId }) {
   }
 
   function getDay(date) {
-    return new Date(date).toLocaleDateString()
+    return new Date(date).toLocaleDateString('en-US',
+    {day:'2-digit', month:'2-digit', year:'numeric'})
   }
 
   const _handleKeyDown = (e) => {
