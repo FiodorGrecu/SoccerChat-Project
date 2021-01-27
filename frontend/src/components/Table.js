@@ -17,11 +17,11 @@ const useStyles = makeStyles({
 });
 
 
-export default function PLTable() {
+export default function PLTable({season}) {
   const classes = useStyles();
 
   const [teams, setTeams] = useState([]);
-  const [season, setSeason] = useState("2020");
+  // const [season, setSeason] = useState();
   // const [season, setSeason] = useState("2020");
 
 
@@ -53,13 +53,6 @@ const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white',
       </span>
     ));
 
-  
-   
-   
-    // const numberBackground = [...rankString].map(number => (
-      // <span style={{backgroundColor:letterColor[number], margin:'1px',
-      //               borderRadius:'3px', width:'5px', height:'5px'}}>{number}</span>
-    
 
     return (
     
@@ -101,32 +94,32 @@ const descriptionChampions = teams.league && teams.league.description;
 
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
-    <LeagueBar/>
-    <div style={{display: "flex" ,}}>
-      <div style={{ textAlign:'left', width:'219px', height:'63px', 
+    {/* <LeagueBar/> */}
+    {/* <div style={{display: "flex" ,}}> */}
+      {/* <div style={{ textAlign:'left', width:'219px', height:'63px', 
             backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
             margin: '40px', marginLeft:'70px', borderRadius:'2%',
             textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
           <div style={{width:'95%', }}>
             <span style={{ width:"95%", }}>Standing Type</span>
-          </div>
-          <div style={{display: "flex", paddingTop:'2px'}}>
+          </div> */}
+          {/* <div style={{display: "flex", paddingTop:'2px'}}>
             <select style={{ width:"95%", fontWeight:'bold',
                     color:'#0094e5', border:'none'}}>
               <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
               <option value='Standings'>Live Standings</option> 
-              <option component={RouterLink} to="/topscorers" value='liveStandings'>Top Scorers</option> 
+              <option component={RouterLink} to="/topscorers" >Top Scorers</option> 
             </select>
-          </div>
-      </div>
-      <div style={{textAlign:'left', width:'219px', height:'63px', 
+          </div> */}
+      {/* </div> */}
+      {/* <div style={{textAlign:'left', width:'219px', height:'63px', 
             backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
             margin: '40px', marginLeft:'20px', borderRadius:'2%',
             textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
         <div style={{width:'95%', }}>
           <span style={{ width:"95%", }}>Season</span>
-        </div>
-        <div >     
+        </div> */}
+        {/* <div >     
           <select onChange={e => (setSeason(e.target.value)) } style={{ width:"95%", fontWeight:'bold',
                     color:'#0094e5', border:'none'}}>
             <option value='2020'>2020/2021</option> 
@@ -141,9 +134,9 @@ const descriptionChampions = teams.league && teams.league.description;
             <option value='2011'>2011/2012</option> 
             <option value='2010'>2010/2011</option> 
           </select>
-        </div>  
-      </div>
-    </div>
+        </div>   */}
+      {/* </div>s */}
+    {/* </div> */}
 
     <div style={{display: "flex", }}>
       <div style={{ display:'flex' ,width:'100%',

@@ -20,6 +20,7 @@ import Events  from './components/Events';
 import H2H from './components/H2H';
 import AllUpcomingFixtures from './components/AllUpcomingFixtures';
 import AllPastFixtures from './components/AllPastFixtures';
+import TableView from './components/TableView';
 
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
@@ -96,6 +97,10 @@ function App() {
 
         <Route path='/past_fixtures'>
           <AllPastFixtures/>
+        </Route>
+
+        <Route path='/table_view'>
+          <TableView/>
         </Route>
 
         {/* <Route path='/matches'>

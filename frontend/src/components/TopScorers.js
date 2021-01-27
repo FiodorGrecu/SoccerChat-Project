@@ -22,17 +22,17 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SimplePaper() {
+export default function SimplePaper({season}) {
   const classes = useStyles();
 
   const [topScorers, setScorers] = useState([]);
   // const [leagueName, setLeagueName] = useState([]);
-  const [color, setColor] = useState('');
+  // const [color, setColor] = useState('');
   
  
   useEffect(() => {
     async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/topscorers/2020/${39}`);
+      const response = await fetch(`http://localhost:5000/api/topscorers/${season}/${39}`);
       const data = await response.json();
       console.log(data);
       if (data.scorers) {
@@ -55,10 +55,10 @@ export default function SimplePaper() {
   const players = topScorers.map(player => (
   <div >
     <div style={{width:'100%', display:'flex',}}>
-          <span style={{paddingLeft:'0px',width:'35px'}}>
+          <span style={{paddingLeft:'0px',width:'35px', }}>
             <img style={{width:30, height:30}} src={player.player.photo}/></span>
-          <span style={{paddingLeft:'0px',width:'16%'}}><Link>{player.player.name}</Link></span>
-          <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].team.name}</span>
+          <span style={{paddingLeft:'10px',width:'16%'}}><Link>{player.player.lastname}</Link></span>
+          <span style={{paddingLeft:'30px',width:'16%'}}>{player.statistics[0].team.name}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.assists || 0 }</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].penalty.scored}</span>
@@ -84,63 +84,18 @@ export default function SimplePaper() {
   
     
     <div  style={{backgroundColor:'aliceblue',}}>
-      <LeagueBar/>
-        <div style={{display: "flex" ,}}>
-      <div style={{ textAlign:'left', width:'219px', height:'63px', 
-            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
-            margin: '40px', marginLeft:'70px', borderRadius:'2%',
-            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
-          <div style={{width:'95%', }}>
-            <span style={{ width:"95%", }}>Standing Type</span>
-          </div>
-          <div style={{display: "flex", paddingTop:'2px'}}>
-            <select style={{ width:"95%", fontWeight:'bold',
-                    color:'#0094e5', border:'none'}}>
-              <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
-              <option value='Standings' >Live Standings</option> 
-              <option value='liveStandings'>Top Scorers</option> 
-            </select>
-          </div>
-      </div>
-      <div style={{textAlign:'left', width:'219px', height:'63px', 
-            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
-            margin: '40px', marginLeft:'20px', borderRadius:'2%',
-            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
-        <div style={{width:'95%', }}>
-          <span style={{ width:"95%", }}>Season</span>
-        </div>
-        <div >     
-          <select style={{ width:"95%", fontWeight:'bold',
-                    color:'#0094e5', border:'none'}}>
-            <option value='topScorers_2020'>2020/2021</option> 
-            <option value='topScorers_2019'>2019/2020</option> 
-            <option value='topScorers_2018'>2018/2019</option> 
-            <option value='topScorers_2017'>2017/2018</option> 
-            <option value='topScorers_2016'>2016/2017</option> 
-            <option value='topScorers_2015'>2015/2016</option> 
-            <option value='topScorers_2014'>2014/2015</option> 
-            <option value='topScorers_2013'>2013/2014</option> 
-            <option value='topScorers_2012'>2012/2013</option> 
-            <option value='topScorers_2011'>2011/2012</option> 
-            <option value='topScorers_2010'>2010/2011</option> 
-          </select>
-        </div>  
-      </div>
-    </div>
-
-        
         <div style={{display: "flex", }}>
           <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
                 background:'white', marginTop:'13px', textAlign:'left',
                 marginLeft:'5%', marginRight:'5%', marginBottom:'1px', 
                 paddingTop:'10px', fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                 fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', }}>       
-            <p style={{ width:'16%',paddingLeft:'30px' }}>Player</p>
-            <p style={{ width:'16%',paddingLeft:'30px'}}>Team</p>
-            <p style={{ width:'16%',paddingLeft:'30px'}}>Goals</p>
-            <p style={{ width:'16%', }}>Assists</p>
-            <p style={{ width:'16%', }}>Penalties</p>
-            <p style={{ width:'16%', }}>Appearences</p>
+            <p style={{ width:'16%',paddingLeft:'35px',}}>Player</p>
+            <p style={{ width:'16%',paddingLeft:'55px'}}>Team</p>
+            <p style={{ width:'16%',paddingLeft:'55px'}}>Goals</p>
+            <p style={{ width:'16%', paddingLeft:'45px'}}>Assists</p>
+            <p style={{ width:'16%', paddingLeft:'30px'}}>Penalties</p>
+            <p style={{ width:'16%', paddingLeft:'30px'}}>Appearences</p>
           </div> 
         </div>
           <div style={{  marginLeft:'5%', marginRight:'5%', color:'#516290', backgroundColor:'white' }}>

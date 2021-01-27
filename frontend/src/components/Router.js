@@ -14,6 +14,7 @@ import Events from '.components/Events';
 import H2H from '.components/H2H';
 import AllUpcomingFixtures from '.components/AllUpcomingFixtures';
 import AllPastFixtures from '.components/AllPastFixtures';
+import TableView from '.component/TableView';
 
 export default function Router () {
     return (
@@ -25,10 +26,11 @@ export default function Router () {
             {/* <Route path="/matches" component={Matches}/> */}
             <Route path="/game/:id" component={Game}/>
             <Route path="/games" component={ExampleCompnents}/>
-            <Route path="/topscorers" component={TopScorers}/>
             <Route path="/login" component={LogIn}/>
             <Route path="/signup" component={SignUp}/>
-            <Route path="/table" component={Table}/>
+            <Route path="/topscorers" component={TopScorers}/>
+            {/* <Route path="/table" component={Table}/> */}
+            <Route path="/table_view" component={TableView}/>
             <Route path="/chat" component={Chat}/>
             <Route path="/statistics" component={Statistics}/>
             <Route path="/events" component={Events}/>
