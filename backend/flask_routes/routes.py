@@ -10,6 +10,7 @@ from flask_cors import CORS
 from models.last5 import last5
 from models.next5 import next5
 from models.all_rest_fixtures import all_rest_fixtures
+from models.all_past_fixtures import all_past_fixtures
 from models.onegame import onegame
 from models.events import Event
 from models.top_scorers import top_scorers
@@ -106,6 +107,12 @@ def topscorers(season, league_id):
     topscorers_lst = top_scorers
     return jsonify({'scorers': topscorers_lst})
 
+@app.route('/api/table/<season>/<league_id>', methods=['GET'])
+def get_table(season, league_id):
+    # table = Team.league_table(season, league_id)
+    table = table
+    return jsonify(table)
+
 
 @app.route('/api/games_by_date/<date>', methods=["GET"])
 def games_by_date(date):
@@ -141,8 +148,8 @@ def upcoming_fixt(league_id, season, from_date, to_date):
 # http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-24
 @app.route('/api/past_fixt/<league_id>/<season>/<from_date>/<to_date>', methods=["GET"])
 def past_fixt(league_id, season, from_date, to_date):
-    past_fixt = Game.all_past_fixtures(league_id, season, from_date, to_date)
-    # upcoming_fixt = all_rest_fixtures
+    # past_fixt = Game.all_past_fixtures(league_id, season, from_date, to_date)
+    past_fixt = all_past_fixtures
     return jsonify({"fixtures":past_fixt})
 
 @app.route('/api/team_by_id/<team_id>', methods=["GET"])
@@ -179,11 +186,7 @@ def get_chat(fixture_id):
     new_chat = Chat.get_chat(fixture_id)
     return jsonify({"chat": new_chat})
 
-@app.route('/api/table/<season>/<league_id>', methods=['GET'])
-def get_table(season, league_id):
-    # table = Team.league_table(season, league_id)
-    table_fake = table
-    return jsonify(table_fake)
+
 
 if __name__ == "__main__":
     app.run()#debug=True)
