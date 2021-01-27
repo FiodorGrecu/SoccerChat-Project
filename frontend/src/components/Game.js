@@ -18,6 +18,7 @@ import StatsBar from './StatsTopBar';
 import StatsBody from './StatsBody';
 import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
+import LeagueNameBar from './LeagueNameBar';
 
 
 
@@ -156,6 +157,7 @@ console.log(fixture)
   return (
   <div style={{width:'100%', }}>
         <StatsBar/>
+        {/* <LeagueNameBar/> */}
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <div style={{width:'100%', }} > 
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
@@ -301,83 +303,7 @@ console.log(fixture)
                     </Route>
                   </Switch>
             </div>
-              {/* <div style={{display:'flex', width:'98%', height:'50px',
-                  backgroundColor:'white', marginLeft:'1%', marginRight:'1%'}}>
-              HOME Yellow Card  and Red Cards
-              <div style={{ width:'33.333%', textAlign:'left', 
-                      paddingTop:'5px', paddingRight:'2%', 
-                      fontFamily: 'Roboto,sans-serif',
-                      fontSize: '1rem',
-                      fontWeight: '550', paddingLeft:'20px'}}>
-                    <span>Cards</span>
-                    <span style={{fontFamily:'Apple', fontSize:'20px', 
-                            paddingLeft:'10px', paddingTop:'20px',}}>
-                          {homeRedCards}
-                    </span>
-                    <span style={{width:'30px', height:'20px', 
-                            backgroundColor:'red', marginLeft:'10px'}}>
-                      <span style={{width:'20px', height:'20px',
-                              borderRadius:'2px',marginLeft:'10px',}}>             
-                      </span>
-                    </span>
-                    <span style={{fontFamily:'Apple', fontSize:'20px', paddingLeft:'10px'}}>
-                          {homeYellowCards}
-                    </span>
-                    <span style={{width:'10px', height:'30px', 
-                            backgroundColor:'#ffb822', marginLeft:'5px'}}>
-                      <span style={{width:'20px', 
-                              height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
-                      </span>
-                    </span>
-                </div>
-          Area in the middle of the Stats bottom bar 
-                <div style={{ width:'33.333%', textAlign:'left', paddingTop:'10px', 
-                        paddingLeft:'2%',fontFamily: 'Roboto,sans-serif',
-                        fontSize: '1rem',fontWeight: '550'}} >
-                  <span style={{fontFamily:'Apple', fontSize:'20px',paddingRight:'150px'}}>
-                        {homeFouls}
-                  </span>
-                  <span style={{paddingRight:'50px'}}>Fouls</span>
-                  <span style={{fontFamily:'Apple', fontSize:'20px',paddingLeft:'100px'}}>
-                        {awayFouls}
-                  </span>
-                </div>
-          AWAY Yellow Card  and Red Cards
-                <div style={{ width:'33.333%', textAlign:'right', 
-                              paddingTop:'5px', paddingRight:'2%', 
-                              fontFamily: 'Roboto,sans-serif',
-                              fontSize: '1rem',
-                              fontWeight: '550'}}>
-                              <p >{venue}</p>
-                    <span>Cards</span>
-                    <span style={{fontFamily:'Apple', fontSize:'20px', 
-                            paddingLeft:'10px', paddingTop:'20px',}}>
-                          {awayRedCards}
-                    </span>
-                    <span style={{width:'30px', height:'20px', backgroundColor:'red', 
-                            marginLeft:'10px'}}>
-                      <span style={{width:'20px', height:'20px', borderRadius:'2px',
-                            marginLeft:'10px',}}>             
-                      </span>
-                    </span>
-                    <span style={{fontFamily:'Apple', fontSize:'20px', paddingLeft:'10px'}}>
-                          {awayYellowCards}
-                    </span>
-                    <span style={{width:'10px', height:'30px', backgroundColor:'#ffb822', 
-                            marginLeft:'5px'}}>
-                      <span style={{width:'20px', 
-                              height:'20px', borderRadius:'2px',marginLeft:'10px',}}>             
-                      </span>
-                    </span>
-                </div>
-              </div>   */}
-          {/* The bar of links that needs to be either converted into its own component or deleted */}
-                                      {/*         |           */}
-                                      {/*         |           */}
-                                      {/*         |           */}
-                                      {/*         |           */}
-                                      {/* n       V           */}
-
+          
             <Route exact path="/game/:gameId">
               <LineUps fixture={fixture} />
             </Route>

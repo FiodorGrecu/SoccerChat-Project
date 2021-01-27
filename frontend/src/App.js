@@ -41,7 +41,7 @@ function App() {
         <header >
           <div>
             <NavBar/>
-            <NavBar2/>
+            {/* <NavBar2/> */}
           </div>
         </header>
 

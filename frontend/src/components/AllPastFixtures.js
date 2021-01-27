@@ -78,7 +78,7 @@ export default function SimplePaper() {
                 <span style={{fontFamily:'Helvetica',
                     fontWeight:'600',paddingTop:'8px', position:'absolute', 
                     left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
-                    fontStyle:'italic', color:'#BE14AA' }}> 
+                    fontStyle:'italic', color:'grey' }}> 
                     Postponed 
                 </span> 
                       : 

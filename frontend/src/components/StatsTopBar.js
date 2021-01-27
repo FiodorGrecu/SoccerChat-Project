@@ -124,11 +124,17 @@ export default function StatsBar(props) {
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
-            <Link component={RouterLink} to={`/game/${gameNum}/events`} ><p style={{paddingRight:'20px'}}>Summary</p></Link>
+            {/* <Link component={RouterLink} to={`/game/${gameNum}/events`} ><p style={{paddingRight:'20px'}}>Summary</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`} ><p style={{paddingRight:'20px' }}>Statistics</p></Link>
             <Link component={RouterLink} to="/game/436"><p style={{paddingRight:'20px', }}>Lineups</p></Link>
             <Link component={RouterLink} to="/h2h/40/50"><p style={{paddingRight:'20px' }}>H2H</p></Link>
-            <Link component={RouterLink} to={`/game/${gameNum}/chat`}><p style={{paddingRight:'20px' }}>Chat</p></Link>
+            <Link component={RouterLink} to={`/game/${gameNum}/chat`}><p style={{paddingRight:'20px' }}>Chat</p></Link> */}
+
+            <Link component={RouterLink} to='/fixtures'><p style={{paddingRight:'20px'}}>Summary</p></Link>
+            <Link component={RouterLink} to="/table_view"><p style={{paddingRight:'20px' }}>Standings</p></Link>
+            <Link ><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
+            <Link component={RouterLink} to="/upcoming_fixtures"><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
+            <Link component={RouterLink} to="/past_fixtures"><p style={{paddingRight:'20px' }}>Results</p></Link>
           </div> 
         </div>
     </div>
