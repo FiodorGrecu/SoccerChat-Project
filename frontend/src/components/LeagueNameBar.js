@@ -95,7 +95,7 @@ export default function LeagueBar() {
                backgroundColor:'white'}}
                >
             <Link component={RouterLink} to='/fixtures'><p style={{paddingRight:'20px'}}>Summary</p></Link>
-            <Link component={RouterLink} to="/table"><p style={{paddingRight:'20px' }}>Standings</p></Link>
+            <Link component={RouterLink} to="/table_view"><p style={{paddingRight:'20px' }}>Standings</p></Link>
             <Link ><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
             <Link component={RouterLink} to="/upcoming_fixtures"><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
             <Link component={RouterLink} to="/past_fixtures"><p style={{paddingRight:'20px' }}>Results</p></Link>

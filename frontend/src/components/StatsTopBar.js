@@ -66,26 +66,6 @@ export default function StatsBar(props) {
 
   const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
  
-//   const players = topScorers.map(player => (
-//   <div >
-//     <div style={{width:'100%', display:'flex',}}>
-//           <span style={{paddingLeft:'50px',width:'16%'}}><Link>{player.player.name}</Link></span>
-//           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].team.name}</span>
-//           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
-//           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.assists || 0 }</span>
-//           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].penalty.scored}</span>
-//           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].games.appearences}</span>
-//           <StarOutlineRoundedIcon />
-//         </div>
-//         <hr style={{width:'100%'}}/>
-//   </div>
-//   ))
-  
-//   const leagueName = topScorers[0] && topScorers[0].statistics[0].league.name; 
-//   const leagueLogo = topScorers[0] && topScorers[0].statistics[0].league.logo; 
-//   console.log(leagueName)
-
-  // }
   return (
   
     <div  style={{backgroundColor:'aliceblue',}}>
