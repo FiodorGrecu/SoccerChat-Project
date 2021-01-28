@@ -18,7 +18,9 @@ import StatsBar from './StatsTopBar';
 import StatsBody from './StatsBody';
 import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
+import UpcomingGameHeader from './UpcomingGameHeader';
 import LeagueNameBar from './LeagueNameBar';
+
 
 
 
@@ -148,6 +150,9 @@ export default function CenteredGrid(props) {
 
   const homeShootingAccuracy = homeShotsOnTarget / (homeShotsOnTarget + homeShotsOffTarget) * 100;
   const awayShootingAccuracy = awayShotsOnTarget / (awayShotsOnTarget + awayShotsOffTarget) * 100;
+
+  const halfTimeStatus = fixture.fixture && fixture.fixture.status.short;
+
 
   console.log(Math.floor(homeShootingAccuracy))
   console.log(awayShootingAccuracy)
@@ -298,7 +303,8 @@ console.log(fixture)
                     </Route>
 
                     <Route path="/game/:gameId/">
-                      <GameHeader fixture={fixture}/>
+                      {halfTimeStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : <GameHeader fixture={fixture}/>}
+                      
                       <GameSectionScoreCheetBottomVenue/>
                     </Route>
                   </Switch>

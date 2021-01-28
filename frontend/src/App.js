@@ -40,7 +40,7 @@ function App() {
         <header >
           <div>
             <NavBar/>
-            <NavBar2/>
+            {/* <NavBar2/> */}
           </div>
         </header>
 
@@ -102,9 +102,6 @@ function App() {
           <TableView/>
         </Route>
 
-        {/* <Route path='/matches'>
-          <Matches/>
-        </Route> */}
       <footer>
         <div>
           <Footer/>
