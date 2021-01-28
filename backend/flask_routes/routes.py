@@ -16,7 +16,7 @@ from models.events import Event
 from models.top_scorers import top_scorers
 from models.table import table_fake
 from models.H2H import H2H
-
+from pprint import pprint
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
@@ -85,7 +85,7 @@ def leagues(country, season):
 #### GAMES/GAME
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
-    # last_5 = Game.last_5(num_games)
+    # last_5real = Game.last_5(num_games)
     last_5 = last5
     # last_5.save() 
     return jsonify({'fixtures': last_5})
@@ -93,9 +93,10 @@ def last_5(num_games):
 
 @app.route('/api/next/<num_games>', methods=["GET"])
 def next_5(num_games):
-    # next5 = Game.next_5(num_games)
+    # next_5real = Game.next_5(num_games)
     next_5 = next5
     # last_5.save() 
+    # pprint(next_5real)
     return jsonify({'fixtures': next_5})
 
 
