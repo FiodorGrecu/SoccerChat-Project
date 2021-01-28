@@ -36,12 +36,11 @@ function App() {
   return (
 
     <div >
-    {/* <section {...containerProps}>{indicatorEl}</section>; */}
       <BrowserRouter>
         <header >
           <div>
             <NavBar/>
-            {/* <NavBar2/> */}
+            <NavBar2/>
           </div>
         </header>
 
