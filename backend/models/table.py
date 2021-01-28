@@ -1,4 +1,4 @@
-table = {'errors': [],
+table_fake = {'errors': [],
         'get': 'standings',
         'paging': {'current': 1, 'total': 1},
         'parameters': {'league': '39', 'season': '2020'},

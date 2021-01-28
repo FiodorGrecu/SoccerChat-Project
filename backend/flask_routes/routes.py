@@ -14,7 +14,7 @@ from models.all_past_fixtures import all_past_fixtures
 from models.onegame import onegame
 from models.events import Event
 from models.top_scorers import top_scorers
-from models.table import table
+from models.table import table_fake
 from models.H2H import H2H
 
 
@@ -110,7 +110,7 @@ def topscorers(season, league_id):
 @app.route('/api/table/<season>/<league_id>', methods=['GET'])
 def get_table(season, league_id):
     # table = Team.league_table(season, league_id)
-    table = table
+    table = table_fake
     return jsonify(table)
 
 
