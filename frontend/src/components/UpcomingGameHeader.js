@@ -24,11 +24,11 @@ const GameHeader = ({fixture}) => {
   const leagueName = fixture.league && fixture.league.name;
   const leagueLogo = fixture.league && fixture.league.logo;
   
-  const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
-  const awayteamName = fixture.lineups && fixture.lineups[1].team.name;
+  const hometeamName = fixture.lineups && fixture.teams.home.name;
+  const awayteamName = fixture.lineups && fixture.teams.away.name;
 
-  const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
+  const hometeamLogo = fixture.lineups && fixture.teams.home.logo;
+  const awayteamLogo = fixture.lineups && fixture.teams.away.logo;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 

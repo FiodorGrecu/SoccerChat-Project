@@ -21,6 +21,7 @@ import H2H from './components/H2H';
 import AllUpcomingFixtures from './components/AllUpcomingFixtures';
 import AllPastFixtures from './components/AllPastFixtures';
 import TableView from './components/TableView';
+import Upcoming_OneGame from './components/Upcoming_OneGame';
 
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
@@ -49,7 +50,8 @@ function App() {
         </Route>
 
         <Route path='/game/:gameNum'>
-          <Game/>
+          {/* <Game/> */}
+          <Upcoming_OneGame/>
         </Route>
 
         <Route path='/fixtures'>
