@@ -128,7 +128,7 @@ export default function StatsBar(props) {
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
-            <Link component={RouterLink} to={'/fixtures'} ><p style={{paddingRight:'980px'}}>Back</p></Link>
+            <Link component={RouterLink} to={'/fixtures'}><p style={{paddingRight:'980px'}}>Back</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/events`} ><p style={{paddingRight:'20px'}}>Summary</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`} ><p style={{paddingRight:'20px' }}>Statistics</p></Link>
             <Link component={RouterLink} to="/game/436"><p style={{paddingRight:'20px', }}>Lineups</p></Link>
