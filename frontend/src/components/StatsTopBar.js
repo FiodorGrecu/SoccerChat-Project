@@ -123,12 +123,12 @@ export default function StatsBar(props) {
           </div>
         </div>
         <div style={{display: "flex",  }}>
-          <Link component={RouterLink} to={'/fixtures'} ><p style={{paddingLeft:'20px'}}>Back</p></Link>
           <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
                justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
+            <Link component={RouterLink} to={'/fixtures'} ><p style={{paddingRight:'980px'}}>Back</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/events`} ><p style={{paddingRight:'20px'}}>Summary</p></Link>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`} ><p style={{paddingRight:'20px' }}>Statistics</p></Link>
             <Link component={RouterLink} to="/game/436"><p style={{paddingRight:'20px', }}>Lineups</p></Link>

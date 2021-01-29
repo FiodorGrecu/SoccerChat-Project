@@ -95,7 +95,9 @@ const GameHeader = ({fixture}) => {
                   <p style={{backgroundColor:'red', paddingTop:'5p'}}>
                     <p style={{color:'white', letterSpacing:'1.5px'}}>FINISHED</p>
                   </p> : 
-                    <p style={{backgroundColor:'red'}}>Live</p>}
+                    <p style={{backgroundColor:'#23d24a'}}>
+                      <p style={{color:'white', letterSpacing:'1.5px'}}>LIVE</p>
+                    </p>}
                   {/* {fixture.fixture.status.long} */}
               </div>
                 <div style={{ display:'flex'}}> 

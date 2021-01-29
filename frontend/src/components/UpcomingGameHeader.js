@@ -85,7 +85,7 @@ const GameHeader = ({fixture}) => {
           {/* Score at half time */}
           <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
 
-          <h3 style={{color:'white'}}>Count down clock</h3>
+          <h3 style={{color:'white'}}>Countdown clock</h3>
             {/* <div style={{ width:'50%', height:'25%', textAlign:'center',}}>
               <div style={{ color: "grey", 
                 paddingBottom:'1px',fontWeight: 'bold',

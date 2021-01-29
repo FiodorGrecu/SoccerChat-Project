@@ -303,6 +303,7 @@ console.log(fixture)
                     </Route>
 
                     <Route path="/game/:gameId/">
+                      {/* <UpcomingGameHeader fixture={fixture}/> */}
                       {halfTimeStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : <GameHeader fixture={fixture}/>}
                       
                       <GameSectionScoreCheetBottomVenue/>
