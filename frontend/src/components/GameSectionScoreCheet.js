@@ -81,7 +81,7 @@ export default function GameSection(props) {
     }
 
   return (
-    <div style={{width:'100%', }} >  
+    <div style={{width:'100%', marginTop:'50px' }} >  
         <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
           <div style={{display:'flex', width:'100%',}}>
             <div className={classes.date} style={{width: '100%', 

@@ -15,6 +15,7 @@ import GameSectionScoreCheetBottomStats from './GameSectionScoreCheetBottomStats
 import GameSectionScoreCheetBottomVenue from './GameSectionScoreCheetBottomVenue';
 import Events from './Events';
 import StatsBar from './StatsTopBar';
+import StatsBarUpcoming from './StatsTopBarUpcoming';
 import StatsBody from './StatsBody';
 import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
@@ -33,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '1%',
     marginRight: '1%',
     position: 'relative',
+    borderTopLeftRadius:'5px',
+    borderTopRightRadius:'5px',
+
   },
   
   chartText: {
@@ -101,21 +105,14 @@ export default function CenteredGrid(props) {
 
   const halfTimeStatus = fixture.fixture && fixture.fixture.status.short;
 
-
-
-
-//   const leagueName = 
-
-//   console.log(Math.floor(homeShootingAccuracy))
-//   console.log(awayShootingAccuracy)
-
   // ));
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
-        <StatsBar/>
+        {/* <StatsBar/> */}
+        <StatsBarUpcoming/>
         {/* <LeagueNameBar/> */}
-    <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+    <div style={{display:"flex",backgroundColor:'#EAF0F7', paddingTop:'50px',  }} >
             <div style={{width:'100%', }} > 
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
@@ -127,7 +124,7 @@ console.log(fixture)
                       {halfTimeStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
                                                   <GameHeader fixture={fixture}/>}
                       
-                      {/* <GameSectionScoreCheetBottomVenue/> */}
+                      <GameSectionScoreCheetBottomVenue/>
                     </Route>
                   </Switch>
             </div>
@@ -137,7 +134,7 @@ console.log(fixture)
               {/* <LineUps fixture={fixture} /> */}
             </Route>
             <Route path="/game/:gameId/events">
-            <p> There are no lineups at this time </p>
+                    {/* Just the clock ticking  */}
 
               {/* <Events fixture={fixture}/> */}
             </Route >
@@ -145,7 +142,7 @@ console.log(fixture)
               <ChatSection gameId={gameNum} />
             </Route>
             <Route path="/game/:gameId/statistics">
-            <p> There are no lineups at this time </p>
+            <p> No statistics found </p>
 
               {/* <StatsBody fixture={fixture} /> */}
             </Route>

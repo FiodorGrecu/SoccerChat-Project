@@ -12,6 +12,7 @@ const GameHeader = ({fixture}) => {
       backgroundColor: 'black',
       margin: '1%',
       position: 'relative',
+      borderTopLeftRadius:'3px',
     },
     
   

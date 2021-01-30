@@ -163,7 +163,7 @@ console.log(fixture)
   <div style={{width:'100%', }}>
         <StatsBar/>
         {/* <LeagueNameBar/> */}
-    <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+    <div style={{display:"flex",backgroundColor:'#EAF0F7', marginTop:'50px' }} >
             <div style={{width:'100%', }} > 
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
