@@ -89,8 +89,8 @@ export default function StatsBar(props) {
               </span>
             </div> {/* End date div*/ }
 
-            <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 
-                    justifyContent:'flex-end', paddingTop:'20px',
+            <div style={{ display:'flex' ,width:'20%', backgroundColor:'pink', 
+                    justifyContent:'center', paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
                 <span style={{paddingRight:'5px',}}>{hometeamName}</span>
                 <span>
@@ -107,14 +107,9 @@ export default function StatsBar(props) {
                     </div>
                 </div>
           </div>
-            {/* <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', justifyContent:'center',paddingTop:'20px',
-                    fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
-                <span style={{paddingRight:'5px'}}>{homeTeamScore}</span>
-                <span> - </span>
-                <span style={{paddingLeft:'5px'}}>{awayTeamScore}</span>
-            </div> */}
-            <div style={{ display:'flex' ,width:'20%', backgroundColor:'white',paddingTop:'20px',
-                    fontFamily:'Roboto,sans-serif',fontWeight:'bold', paddingLeft:'20px'}}>
+            
+            <div style={{ display:'flex' ,width:'20%', backgroundColor:'pink',paddingTop:'20px',
+                    fontFamily:'Roboto,sans-serif',fontWeight:'bold', justifyContent:'center',}}>
                 <span>
                     <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/>
                 </span>
