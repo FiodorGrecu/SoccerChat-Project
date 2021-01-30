@@ -42,6 +42,7 @@ const GameHeader = ({fixture}) => {
   console.log(halfTimeStatus)
 
   const date = fixture.fixture && fixture.fixture.date;
+  console.log(date)
 
   function getTime(date) {
     if (date) {
@@ -57,6 +58,8 @@ const GameHeader = ({fixture}) => {
        return new Date(date).toLocaleDateString('en-US',
        {day:'2-digit', month:'2-digit', year:'numeric'})
     }
+
+  const countDoWnDate = new Date(date).getTime();
 
   return (
       <div style={{height:'333px'}}>
@@ -85,7 +88,7 @@ const GameHeader = ({fixture}) => {
           {/* Score at half time */}
           <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
 
-          <h3 style={{color:'white'}}>Countdown clock</h3>
+          <h3 style={{color:'white'}}>{getDay(date)}</h3>
             {/* <div style={{ width:'50%', height:'25%', textAlign:'center',}}>
               <div style={{ color: "grey", 
                 paddingBottom:'1px',fontWeight: 'bold',

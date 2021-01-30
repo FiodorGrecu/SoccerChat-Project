@@ -130,11 +130,11 @@ console.log(fixture)
             </div>
           
             <Route exact path="/game/:gameId">
-                <p> There are no lineups at this time </p>
+                <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> There are no lineups at this time </p>
               {/* <LineUps fixture={fixture} /> */}
             </Route>
             <Route path="/game/:gameId/events">
-                    {/* Just the clock ticking  */}
+                <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}>No events yet</p>
 
               {/* <Events fixture={fixture}/> */}
             </Route >
@@ -142,7 +142,7 @@ console.log(fixture)
               <ChatSection gameId={gameNum} />
             </Route>
             <Route path="/game/:gameId/statistics">
-            <p> No statistics found </p>
+            <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> No statistics found </p>
 
               {/* <StatsBody fixture={fixture} /> */}
             </Route>

@@ -46,29 +46,12 @@ export default function StatsBar(props) {
     }, [] )
 
   const gameDate = fixture.fixture && fixture.fixture.date;
-       
-  const leagueName = fixture.league && fixture.league.name;
-  const leagueLogo = fixture.league && fixture.league.logo;
-  
-  // const hometeamName = fixture.teams && fixture.teams.home.name;
-  // const awayteamName = fixture.teams && fixture.teams.away.name;
+
   const hometeamName = fixture.lineups && fixture.teams.home.name;
   const awayteamName = fixture.lineups && fixture.teams.away.name;
 
   const hometeamLogo = fixture.teams && fixture.teams.home.logo;
   const awayteamLogo = fixture.teams && fixture.teams.away.logo;
-  // const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  // const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
-
-  const venue = fixture.lineups && fixture.fixture.venue.name;
-
-  const homeTeamScore = fixture.goals && fixture.goals.home;
-  const awayTeamScore = fixture.goals && fixture.goals.away;
-
-  const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
-  const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
-
-  const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
  
   return (
   
@@ -89,7 +72,7 @@ export default function StatsBar(props) {
               </span>
             </div> {/* End date div*/ }
 
-            <div style={{ display:'flex' ,width:'20%', backgroundColor:'pink', 
+            <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 
                     justifyContent:'center', paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
                 <span style={{paddingRight:'5px',}}>{hometeamName}</span>
@@ -97,18 +80,18 @@ export default function StatsBar(props) {
                     <img src={hometeamLogo} style={{width:'28px', height:'28px', }}/>
                 </span>
             </div>
-            <div style={{display:'flex', backgroundColor:'white', paddingTop:'10px'}}>
-                <div style={{width:'60px', height:'33px', display:'flex', 
-                    backgroundColor:'#d7dff7',borderRadius:'7px', 
+            <div style={{display:'flex', backgroundColor:'white', paddingTop:'8px'}}>
+                <div style={{width:'45px', height:'25px', display:'flex', 
+                    backgroundColor:'#d7dff7',borderRadius:'4px', 
                     margin:'9px',}}>
-                    <div style={{paddingTop:'7px', paddingLeft:'10px', }}>
+                    <div style={{paddingTop:'3px', paddingLeft:'6px', }}>
                     {new Date(gameDate).toLocaleTimeString('en-GB', 
                             {hour:'2-digit', minute:'2-digit'})}
                     </div>
                 </div>
           </div>
             
-            <div style={{ display:'flex' ,width:'20%', backgroundColor:'pink',paddingTop:'20px',
+            <div style={{ display:'flex' ,width:'20%', backgroundColor:'white',paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold', justifyContent:'center',}}>
                 <span>
                     <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/>
@@ -118,12 +101,7 @@ export default function StatsBar(props) {
 
             {/* Half time score div div */}
             <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white', }}>
-               {/* <div style={{textAlign:'right', paddingRight:'20px', 
-                      paddingTop:'20px',color: '#8e9cc5', fontWeight:'bold' }}>
-                (<span>{halfTimeScoreH}</span>
-                <span> - </span>
-                <span>{halfTimeScoreA}</span>)
-               </div> */}
+              
             </div> {/* End Half time score div */}
           </div>
         </div>
@@ -134,12 +112,7 @@ export default function StatsBar(props) {
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
-                 
-                   {/* <span style={{ float:'left'}}>
-                     <Link style={{justifyLeft:'left'}}>Back</Link> 
-                     </span>
-                     onMouseOver={{cursor:'pointer', color:'red'}}
-                 */}
+                
             <Link component={RouterLink} to={'/fixtures'} >
               <p style={{paddingRight:'980px', }}>Back</p>
             </Link>
