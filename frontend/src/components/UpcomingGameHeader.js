@@ -59,7 +59,17 @@ const GameHeader = ({fixture}) => {
        {day:'2-digit', month:'2-digit', year:'numeric'})
     }
 
-  const countDoWnDate = new Date(date).getTime();
+  const countDownDate = new Date(fixture.fixture.date).getTime();
+  const myFunc = setInterval(function () {
+      const now = new Date().getTime();
+      const timeleft = countDownDate - now;
+
+      const days = Math.floor(timeleft /(1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeleft % (1000 * 60 * 60 )) / (1000 * 60));
+      const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+  }, 1000)
+
 
   return (
       <div style={{height:'333px'}}>
@@ -88,7 +98,8 @@ const GameHeader = ({fixture}) => {
           {/* Score at half time */}
           <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
 
-          <h3 style={{color:'white'}}>{getDay(date)}</h3>
+            {/* <h3 style={{color:'white'}}>{days}</h3> */}
+            <h3 style={{color:'white'}}>{countDownDate}</h3>
             {/* <div style={{ width:'50%', height:'25%', textAlign:'center',}}>
               <div style={{ color: "grey", 
                 paddingBottom:'1px',fontWeight: 'bold',
