@@ -12,11 +12,13 @@ from models.next5 import next5
 from models.all_rest_fixtures import all_rest_fixtures
 from models.all_past_fixtures import all_past_fixtures
 from models.onegame import onegame
+from models.upcoming_onegame import upcoming_onegame
 from models.events import Event
 from models.top_scorers import top_scorers
 from models.table import table_fake
 from models.H2H import H2H
 from pprint import pprint
+
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
@@ -93,11 +95,11 @@ def last_5(num_games):
 
 @app.route('/api/next/<num_games>', methods=["GET"])
 def next_5(num_games):
-    # next_5real = Game.next_5(num_games)
-    next_5 = next5
+    next_5real = Game.next_5(num_games)
+    # next_5 = next5
     # last_5.save() 
     # pprint(next_5real)
-    return jsonify({'fixtures': next_5})
+    return jsonify({'fixtures': next_5real})
 
 
 
@@ -124,8 +126,9 @@ def games_by_date(date):
 @app.route('/api/one_game/<fixture_id>', methods=['GET'])
 def one_game(fixture_id):
     # game = Game.game_by_fixture_id(fixture_id)
-    game = onegame
-    # game.save()
+    game = upcoming_onegame
+    # game = onegame
+    # # game.save()
     return jsonify({'fixtures': game})
 
 @app.route('/api/game_stats/<fixture_id>', methods=["GET"])
