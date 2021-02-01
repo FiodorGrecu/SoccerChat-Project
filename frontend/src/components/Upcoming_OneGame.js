@@ -99,6 +99,9 @@ export default function CenteredGrid(props) {
 
   }, [] )
 
+
+
+
   const leagueLogo = fixture.league && fixture.league.logo;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
