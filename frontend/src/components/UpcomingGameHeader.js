@@ -70,6 +70,7 @@ const GameHeader = ({fixture}) => {
       const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
   }, 1000)
 
+  console.log(myFunc)
 
   return (
       <div style={{height:'333px'}}>
@@ -99,29 +100,11 @@ const GameHeader = ({fixture}) => {
           <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
 
             {/* <h3 style={{color:'white'}}>{days}</h3> */}
-            <h3 style={{color:'white'}}>{countDownDate}</h3>
-            {/* <div style={{ width:'50%', height:'25%', textAlign:'center',}}>
-              <div style={{ color: "grey", 
-                paddingBottom:'1px',fontWeight: 'bold',
-                fontFamily:'Oswald,sansSerif',fontSize:' 1rem',}}>
-                  {halfTimeStatus === 'FT' ? 
-                  <p style={{backgroundColor:'red', paddingTop:'5p'}}>
-                    <p style={{color:'white', letterSpacing:'1.5px'}}>FINISHED</p>
-                  </p> : 
-                    <p style={{backgroundColor:'red'}}>Live</p>}
-              </div>
-                <div style={{ display:'flex'}}> 
-                  <div style={{width:'50%', paddingLeft:'25px',
-                        color:'#889cba',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 19px' }}>
-                          {halfTimeScoreH}
-                  </div>
-                    <span style={{color:'#889cba', fontSize:'1rem'}}>{' : '}</span>
-                  <div style={{width:'50%', paddingRight:'25px',
-                        color:'#889cba',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 19px' }}>
-                            {halfTimeScoreA}
-                  </div>
-              </div> */}
-            {/* </div> */}
+            <h3 style={{color:'white'}}>{myFunc}</h3>
+            {/* <h3 style={{color:'white'}}>{countDownDate}</h3> */}
+            {/* + <span style={{color:'white'}}>{days}</span> + {hours} */}
+
+            
           </div> 
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
             <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>

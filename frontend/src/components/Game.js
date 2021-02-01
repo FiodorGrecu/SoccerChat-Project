@@ -151,7 +151,7 @@ export default function CenteredGrid(props) {
   const homeShootingAccuracy = homeShotsOnTarget / (homeShotsOnTarget + homeShotsOffTarget) * 100;
   const awayShootingAccuracy = awayShotsOnTarget / (awayShotsOnTarget + awayShotsOffTarget) * 100;
 
-  const halfTimeStatus = fixture.fixture && fixture.fixture.status.short;
+  const gameStatus = fixture.fixture && fixture.fixture.status.short;
 
 
   console.log(Math.floor(homeShootingAccuracy))
@@ -304,9 +304,9 @@ console.log(fixture)
 
                     <Route path="/game/:gameId/">
                       {/* <UpcomingGameHeader fixture={fixture}/> */}
-                      {halfTimeStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
-                                                  <GameHeader fixture={fixture}/>}
-                      
+                      <GameHeader fixture={fixture}/>
+                      {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
+                                                  <GameHeader fixture={fixture}/>}    
                       <GameSectionScoreCheetBottomVenue/>
                     </Route>
                   </Switch>

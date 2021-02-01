@@ -106,7 +106,7 @@ export default function CenteredGrid(props) {
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
-  const halfTimeStatus = fixture.fixture && fixture.fixture.status.short;
+  const gameStatus = fixture.fixture && fixture.fixture.status.short;
 
   // ));
 console.log(fixture)
@@ -124,9 +124,8 @@ console.log(fixture)
 
                     <Route path="/game/:gameId/">
                       {/* <UpcomingGameHeader fixture={fixture}/> */}
-                      {halfTimeStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
-                                                  <GameHeader fixture={fixture}/>}
-                      
+                      {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
+                                                  <GameHeader fixture={fixture}/>}                     
                       <GameSectionScoreCheetBottomVenue/>
                     </Route>
                   </Switch>
