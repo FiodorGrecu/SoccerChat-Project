@@ -18,6 +18,9 @@ const GameHeader = ({fixture}) => {
   }));
   
   const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [days, setDays] = useState(0);
 
 
   const classes = useStyles();
@@ -67,14 +70,14 @@ const GameHeader = ({fixture}) => {
       const now = new Date().getTime();
       const timeleft = countDownDate - now;
 
-      const days = Math.floor(timeleft /(1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeleft % (1000 * 60 * 60 )) / (1000 * 60));
-      const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+      setDays(Math.floor(timeleft /(1000 * 60 * 60 * 24)));
+      setHours(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      setMinutes(Math.floor((timeleft % (1000 * 60 * 60 )) / (1000 * 60)));
+    //   const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
       setSeconds(Math.floor((timeleft % (1000 * 60)) / 1000));
   }, 1000)
 
-  console.log(myFunc)
+//   console.log(myFunc)
 
   return (
       <div style={{height:'333px'}}>
@@ -101,10 +104,25 @@ const GameHeader = ({fixture}) => {
             </p>
           </div>
           {/* Score at half time */}
-          <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
+          <div style={{display:'flex', width:'30%',  justifyContent:'center', alignItems:'center', backgroundColor:'pink',}}> 
 
             {/* <h3 style={{color:'white'}}>{days}</h3> */}
-            <h3 style={{color:'white'}}>{seconds}</h3>
+            {/* <div style={{color:'white', fontWeight: 'bold',fontFamily:'Oswald,sansSerif', width:'100%',
+                    fontSize:'25px'}}> */}
+                        <div style={{display:'flex', width:'25%',}}>
+                            <span>{days}:
+                                <div style={{fontSize:'5px',width:'20%'}}>Days</div>
+                            </span>
+                        </div>
+                        <div style={{display:'flex', width:'25%',}}>
+                            <span>{hours}:
+                                <div style={{fontSize:'5px',width:'20%'}}>hours</div>
+                            </span>
+                        </div>
+                        {hours}:
+                        {minutes}:
+                        {seconds}
+            {/* </div> */}
             {/* <h3 style={{color:'white'}}>{countDownDate}</h3> */}
             {/* + <span style={{color:'white'}}>{days}</span> + {hours} */}
 
