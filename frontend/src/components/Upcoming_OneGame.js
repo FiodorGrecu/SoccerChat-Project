@@ -74,30 +74,30 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function CenteredGrid(props) {
+export default function CenteredGrid( {fixture} ) {
   const classes = useStyles();
 
 
-  const [fixture, setFixture] = useState({});
+//   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
   // const gameNum = '592177';
 
-  const unixTimestamp = 1604752200;
+//   const unixTimestamp = 1604752200;
 
-  useEffect(() => {
-    async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-      const data = await response.json();
-      console.log(data);
-      if (data.fixtures) {
-        console.log(data.fixtures.response || null)
-        setFixture(data.fixtures.response[0] || {})
-      };
-    }
+//   useEffect(() => {
+//     async function gameDetails() {
+//       const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
+//       const data = await response.json();
+//       console.log(data);
+//       if (data.fixtures) {
+//         console.log(data.fixtures.response || null)
+//         setFixture(data.fixtures.response[0] || {})
+//       };
+//     }
   
-    gameDetails();
+//     gameDetails();
 
-  }, [] )
+//   }, [] )
 
 
 
@@ -123,9 +123,9 @@ console.log(fixture)
                 
 
                     <Route path="/game/:gameId/">
-                      {/* <UpcomingGameHeader fixture={fixture}/> */}
-                      {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
-                                                  <GameHeader fixture={fixture}/>}                     
+                      <UpcomingGameHeader fixture={fixture}/>
+                      {/* {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
+                                                  <GameHeader fixture={fixture}/>}                      */}
                       <GameSectionScoreCheetBottomVenue/>
                     </Route>
                   </Switch>

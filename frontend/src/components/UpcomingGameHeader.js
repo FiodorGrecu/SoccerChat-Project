@@ -17,6 +17,9 @@ const GameHeader = ({fixture}) => {
   
   }));
   
+  const [seconds, setSeconds] = useState(0);
+
+
   const classes = useStyles();
   
   const gameDate = fixture.fixture && fixture.fixture.date;
@@ -68,6 +71,7 @@ const GameHeader = ({fixture}) => {
       const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeleft % (1000 * 60 * 60 )) / (1000 * 60));
       const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+      setSeconds(Math.floor((timeleft % (1000 * 60)) / 1000));
   }, 1000)
 
   console.log(myFunc)
@@ -100,7 +104,7 @@ const GameHeader = ({fixture}) => {
           <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
 
             {/* <h3 style={{color:'white'}}>{days}</h3> */}
-            <h3 style={{color:'white'}}>{myFunc}</h3>
+            <h3 style={{color:'white'}}>{seconds}</h3>
             {/* <h3 style={{color:'white'}}>{countDownDate}</h3> */}
             {/* + <span style={{color:'white'}}>{days}</span> + {hours} */}
 

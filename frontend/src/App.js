@@ -22,6 +22,7 @@ import AllUpcomingFixtures from './components/AllUpcomingFixtures';
 import AllPastFixtures from './components/AllPastFixtures';
 import TableView from './components/TableView';
 import Upcoming_OneGame from './components/Upcoming_OneGame';
+import GameByStatus from  './components/GameByStatus';
 
 // import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
@@ -51,7 +52,8 @@ function App() {
 
         <Route path='/game/:gameNum'>
           {/* <Game/> */}
-          <Upcoming_OneGame/>
+          {/* <Upcoming_OneGame/> */}
+          <GameByStatus />
         </Route>
 
         <Route path='/fixtures'>
