@@ -104,29 +104,34 @@ const GameHeader = ({fixture}) => {
             </p>
           </div>
           {/* Score at half time */}
-          <div style={{display:'flex', width:'30%',  justifyContent:'center', alignItems:'center', backgroundColor:'pink',}}> 
+          <div style={{display:'flex', width:'30%',  justifyContent:'center', alignItems:'center',paddingTop:'50px'}}> 
 
             {/* <h3 style={{color:'white'}}>{days}</h3> */}
             {/* <div style={{color:'white', fontWeight: 'bold',fontFamily:'Oswald,sansSerif', width:'100%',
                     fontSize:'25px'}}> */}
-                        <div style={{display:'flex', width:'25%',}}>
-                            <span>{days}:
-                                <div style={{fontSize:'5px',width:'20%'}}>Days</div>
+                    {/* <div > */}
+                        <div style={{display:'flex', width:'14%',justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'white' }}>{days} 
+                                <span style={{paddingTop:'50px'}}>:</span>
+                                <div style={{fontSize:'7px', }}>Days</div>
                             </span>
                         </div>
-                        <div style={{display:'flex', width:'25%',}}>
-                            <span>{hours}:
-                                <div style={{fontSize:'5px',width:'20%'}}>hours</div>
+                        <div style={{display:'flex', width:'14%', justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'white'}}>{hours} <span >:</span>
+                                <div style={{fontSize:'7px',}}>Hours</div>
                             </span>
                         </div>
-                        {hours}:
-                        {minutes}:
-                        {seconds}
-            {/* </div> */}
-            {/* <h3 style={{color:'white'}}>{countDownDate}</h3> */}
-            {/* + <span style={{color:'white'}}>{days}</span> + {hours} */}
-
-            
+                        <div style={{display:'flex', width:'16%', justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'white'}}>{minutes} <span >:</span>
+                                <div style={{fontSize:'7px', textAlign:'center'}}>Mins</div>
+                            </span>
+                        </div> 
+                        <div style={{display:'flex', width:'14%', justifyContent:'flex-end'}}>
+                            <span style={{fontSize:'25px', color:'white'}}>{seconds}
+                                <div style={{fontSize:'7px',textAlign:'center'}}>Secs</div>
+                            </span>
+                        </div>
+                        {/* </div> */}
           </div> 
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
             <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>
