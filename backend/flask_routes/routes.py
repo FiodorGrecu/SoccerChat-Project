@@ -169,7 +169,6 @@ def game_events(fixture_id):
     return jsonify({"fixtures": events})
 
 # PLAYERS 
-
 @app.route('/api/lineups/<fixture_id>', methods=['GET'])
 def fixture_lineups(fixture_id):
     lineups = Player.lineups_from_fixture(fixture_id)
