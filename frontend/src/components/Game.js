@@ -14,6 +14,7 @@ import GameSectionScoreCheet from './GameSectionScoreCheet';
 import GameSectionScoreCheetBottomStats from './GameSectionScoreCheetBottomStats';
 import GameSectionScoreCheetBottomVenue from './GameSectionScoreCheetBottomVenue';
 import Events from './Events';
+import H2H from './H2H';
 import StatsBar from './StatsTopBar';
 import StatsBody from './StatsBody';
 import StatsHeader from './StatsHeader';
@@ -70,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function CenteredGrid({fixture}) {
+export default function CenteredGrid({ fixture} ) {
   const classes = useStyles();
 
 
@@ -161,7 +162,7 @@ export default function CenteredGrid({fixture}) {
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
-        <StatsBar/>
+        <StatsBar fixture={fixture}/>
         {/* <LeagueNameBar/> */}
     <div style={{display:"flex",backgroundColor:'#EAF0F7', marginTop:'50px' }} >
             <div style={{width:'100%', }} > 
@@ -323,6 +324,9 @@ console.log(fixture)
             </Route>
             <Route path="/game/:gameId/statistics">
               <StatsBody fixture={fixture} />
+            </Route>
+            <Route path="/game/:gameId/h2h">
+              <H2H fixture={fixture} />
             </Route>
           </div>
         {/* <div style={{width:'30%', height:'1100px' }} >  */}

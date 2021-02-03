@@ -3,40 +3,17 @@ import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-
-  scoreSheet:{
-    // width: '100%',
-    // height: '15%',
-    // backgroundColor: 'black',
-    // margin: '1%',
-    // position: 'relative',
-    
-  },
   
 
 }));
 
-export default function GameSectionScoreCheetBottomVenue(props) {
+export default function GameSectionScoreCheetBottomVenue( {fixture} ) {
   const classes = useStyles();
 
 
-  const [fixture, setFixture] = useState({});
+  // const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
 
-  useEffect(() => {
-    async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-      const data = await response.json();
-      console.log(data);
-      if (data.fixtures) {
-        console.log(data.fixtures.response || null)
-        setFixture(data.fixtures.response[0] || {})
-      };
-    }
-  
-    gameDetails();
-
-  }, [] )
   
   const leagueLogo = fixture.league && fixture.league.logo;
   const venue = fixture.lineups && fixture.fixture.venue.name;

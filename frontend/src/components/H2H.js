@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import LeagueBar from './LeagueNameBar';
 import StatsBar from './StatsTopBar';
+import StatsTopBarUpcoming from './StatsTopBarUpcoming';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function SimplePaper() {
+export default function SimplePaper( {fixture} ) {
   const classes = useStyles();
 
   // api/last/<num_games>
@@ -25,7 +26,7 @@ export default function SimplePaper() {
   useEffect(() => {
 
     async function getFixtures() {
-      const response = await fetch(`http://localhost:5000/api/h2h/${40}/${33}`);
+      const response = await fetch(`http://localhost:5000/api/h2h/${fixture.teams.home.id}/${fixture.teams.away.id}`);
       const data =  await response.json();
       console.log(data.fixtures.api.fixtures)
       setFixtures(data.fixtures.api.fixtures.reverse())
@@ -37,6 +38,7 @@ export default function SimplePaper() {
   const outputLast5 = fixtures.reverse().map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
+      {/* <Link to={`/game/${fixture.fixture_id}`}> */}
       <Link to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
@@ -96,7 +98,9 @@ export default function SimplePaper() {
 
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
-    <StatsBar/>
+    
+    {/* <StatsBar/> */}
+    {/* <StatsTopBarUpcoming/> */}
         <div style={{padding:'2%', marginTop:'25px'}}>
           {outputLast5}
         </div>

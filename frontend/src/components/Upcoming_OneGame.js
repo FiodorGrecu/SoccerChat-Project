@@ -21,6 +21,7 @@ import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
 import UpcomingGameHeader from './UpcomingGameHeader';
 import LeagueNameBar from './LeagueNameBar';
+import H2H from './H2H';
 
 
 
@@ -143,11 +144,16 @@ console.log(fixture)
             <Route path="/game/:gameId/chat">
               <ChatSection gameId={gameNum} />
             </Route>
+            <Route path="/game/:gameId/h2h">
+              <H2H fixture={fixture} />
+            </Route>
+
             <Route path="/game/:gameId/statistics">
             <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> No statistics found </p>
 
               {/* <StatsBody fixture={fixture} /> */}
             </Route>
+
           </div>
         {/* <div style={{width:'30%', height:'1100px' }} >  */}
           {/* <Statistics /> */}

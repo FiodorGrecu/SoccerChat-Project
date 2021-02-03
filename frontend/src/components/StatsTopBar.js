@@ -23,27 +23,27 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function StatsBar(props) {
+export default function StatsBar( {fixture} ) {
     const classes = useStyles();
   
   
-    const [fixture, setFixture] = useState({});
+    // const [fixture, setFixture] = useState({});
     const { gameNum } = useParams();
   
-    useEffect(() => {
-      async function gameDetails() {
-        const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-        const data = await response.json();
-        console.log(data);
-        if (data.fixtures) {
-          console.log(data.fixtures.response || null)
-          setFixture(data.fixtures.response[0] || {})
-        };
-      }
+    // useEffect(() => {
+    //   async function gameDetails() {
+    //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
+    //     const data = await response.json();
+    //     console.log(data);
+    //     if (data.fixtures) {
+    //       console.log(data.fixtures.response || null)
+    //       setFixture(data.fixtures.response[0] || {})
+    //     };
+    //   }
     
-      gameDetails();
+    //   gameDetails();
   
-    }, [] )
+   
 
   const gameDate = fixture.fixture && fixture.fixture.date;
        
@@ -144,10 +144,10 @@ export default function StatsBar(props) {
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`}>
               <p style={{paddingRight:'20px' }}>Statistics</p>
             </Link>
-            <Link component={RouterLink} to="/game/436">
+            <Link component={RouterLink} to={`/game/${gameNum}`}>
               <p style={{paddingRight:'20px', }}>Lineups</p>
             </Link>
-            <Link component={RouterLink} to="/h2h/40/50">
+            <Link component={RouterLink} to={`/game/${gameNum}/h2h`}>
               <p style={{paddingRight:'20px'}}>H2H</p>
             </Link>
             <Link component={RouterLink} to={`/game/${gameNum}/chat`}>
