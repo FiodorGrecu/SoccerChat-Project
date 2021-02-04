@@ -24,7 +24,7 @@ export default function SimplePaper() {
     async function getFixtures() {
   // In order to change the fetch to the desire time frame change the dates
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2020-09-12}/${2021-01-21}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-26`);
+      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-02-02`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures.response.reverse())

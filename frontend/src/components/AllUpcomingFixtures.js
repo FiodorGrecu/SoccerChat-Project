@@ -24,7 +24,7 @@ export default function SimplePaper() {
 
     async function getFixtures() {
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-24/2021-06-30`);
+      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-02-02/2021-06-30`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures.response)
@@ -84,7 +84,7 @@ export default function SimplePaper() {
   ));
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
-    <LeagueBar/>
+    <LeagueBar />
         <div style={{padding:'2%', marginTop:'25px'}}>
         <div  style={{backgroundColor:'white',height:'50px',paddingTop:'20px',
                     paddingLeft:'15px',fontSize:'1rem',
