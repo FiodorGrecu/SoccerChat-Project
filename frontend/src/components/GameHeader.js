@@ -3,7 +3,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import { makeStyles } from '@material-ui/core/styles';
 
-const GameHeader = ({fixture}) => {
+const GameHeader = ( {fixture} ) => {
   const useStyles = makeStyles((theme) => ({
 
     scoreSheet:{

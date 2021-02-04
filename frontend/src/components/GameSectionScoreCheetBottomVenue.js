@@ -10,19 +10,19 @@ const useStyles = makeStyles((theme) => ({
 export default function GameSectionScoreCheetBottomVenue( {fixture} ) {
   const classes = useStyles();
 
-
   // const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
 
   
   const leagueLogo = fixture.league && fixture.league.logo;
   const venue = fixture.lineups && fixture.fixture.venue.name;
+console.log(leagueLogo)
 
   return (
     <div style={{width:'100%', }} >  
-        <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
+        <div slyle={{display:'flex', marginBottom:'100px'}}>
             <div style={{display:'flex', width:'100%', height:'50px' ,backgroundColor:'white',}}>
-              <div className={classes.leagueLogo} style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}  >
+              <div style={{ width:'50%', textAlign:'left', paddingTop:'10px', paddingLeft:'2%'}}>
                 <img src={leagueLogo} style={{width:31, height:31 }} />
               </div>
               <div style={{ width:'50%', textAlign:'right', 

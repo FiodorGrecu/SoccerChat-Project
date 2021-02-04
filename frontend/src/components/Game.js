@@ -300,7 +300,7 @@ console.log(fixture)
                             </svg>
                         </div>
                       </div>
-                      <GameSectionScoreCheetBottomStats/>
+                      <GameSectionScoreCheetBottomStats fixture={fixture}/>
                     </Route>
 
                     <Route path="/game/:gameId/">
@@ -308,7 +308,7 @@ console.log(fixture)
                       <GameHeader fixture={fixture}/>
                       {/* {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
                                                   <GameHeader fixture={fixture}/>}     */}
-                      <GameSectionScoreCheetBottomVenue/>
+                      <GameSectionScoreCheetBottomVenue fixture={fixture}/>
                     </Route>
                   </Switch>
             </div>

@@ -37,7 +37,7 @@ export default function SimplePaper() {
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
       <Link to={`/game/${fixture.fixture_id}`}>
-      {/* <div>{fixture.league.round}</div> */}
+      <div>{fixture.league.round}</div>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           {/* <div>Main</div> */}
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>

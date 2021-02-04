@@ -114,7 +114,7 @@ console.log(fixture)
   return (
   <div style={{width:'100%', }}>
         {/* <StatsBar/> */}
-        <StatsBarUpcoming/>
+        <StatsBarUpcoming fixture={fixture}/>
         {/* <LeagueNameBar/> */}
     <div style={{display:"flex",backgroundColor:'#EAF0F7', paddingTop:'50px',  }} >
             <div style={{width:'100%', }} > 
@@ -122,12 +122,11 @@ console.log(fixture)
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
                   <Switch>
                 
-
                     <Route path="/game/:gameId/">
-                      <UpcomingGameHeader fixture={fixture}/>
-                      {/* {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
-                                                  <GameHeader fixture={fixture}/>}                      */}
-                      <GameSectionScoreCheetBottomVenue/>
+                      {/* <UpcomingGameHeader fixture={fixture}/> */}
+                      {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
+                                                  <GameHeader fixture={fixture}/>}                     
+                      <GameSectionScoreCheetBottomVenue fixture={fixture}/>
                     </Route>
                   </Switch>
             </div>
