@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
@@ -29,36 +26,15 @@ export default function StatsBar( {fixture} ) {
   
     // const [fixture, setFixture] = useState({});
     const { gameNum } = useParams();
-  
-    // useEffect(() => {
-    //   async function gameDetails() {
-    //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-    //     const data = await response.json();
-    //     console.log(data);
-    //     if (data.fixtures) {
-    //       console.log(data.fixtures.response || null)
-    //       setFixture(data.fixtures.response[0] || {})
-    //     };
-    //   }
-    
-    //   gameDetails();
-  
    
 
   const gameDate = fixture.fixture && fixture.fixture.date;
        
-  const leagueName = fixture.league && fixture.league.name;
-  const leagueLogo = fixture.league && fixture.league.logo;
-  
-  // const hometeamName = fixture.teams && fixture.teams.home.name;
-  // const awayteamName = fixture.teams && fixture.teams.away.name;
   const hometeamName = fixture.lineups && fixture.teams.home.name;
   const awayteamName = fixture.lineups && fixture.teams.away.name;
 
   const hometeamLogo = fixture.teams && fixture.teams.home.logo;
   const awayteamLogo = fixture.teams && fixture.teams.away.logo;
-  // const hometeamLogo = fixture.lineups && fixture.lineups[0].team.logo;
-  // const awayteamLogo = fixture.lineups && fixture.lineups[1].team.logo;
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 

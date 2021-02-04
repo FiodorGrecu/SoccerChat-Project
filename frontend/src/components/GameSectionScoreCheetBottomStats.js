@@ -19,27 +19,27 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function GameSectionScoreCheetBottomStats(props) {
+export default function GameSectionScoreCheetBottomStats( {fixture} ) {
   const classes = useStyles();
 
 
-  const [fixture, setFixture] = useState({});
+  // const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
 
-  useEffect(() => {
-    async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-      const data = await response.json();
-      console.log(data);
-      if (data.fixtures) {
-        console.log(data.fixtures.response || null)
-        setFixture(data.fixtures.response[0] || {})
-      };
-    }
+  // useEffect(() => {
+  //   async function gameDetails() {
+  //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
+  //     const data = await response.json();
+  //     console.log(data);
+  //     if (data.fixtures) {
+  //       console.log(data.fixtures.response || null)
+  //       setFixture(data.fixtures.response[0] || {})
+  //     };
+  //   }
   
-    gameDetails();
+  //   gameDetails();
 
-  }, [] )
+  // }, [] )
 
   const leagueLogo = fixture.league && fixture.league.logo;
 

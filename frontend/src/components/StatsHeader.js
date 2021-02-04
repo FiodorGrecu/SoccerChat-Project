@@ -143,7 +143,7 @@ export default function CenteredGrid({fixture, gameNum}) {
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
-      <StatsBar/>
+      <StatsBar fixture={fixture}/>
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
               {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}       
       <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>

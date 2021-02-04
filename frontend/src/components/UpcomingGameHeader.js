@@ -113,22 +113,22 @@ const GameHeader = ({fixture}) => {
                         <div style={{display:'flex', width:'14%',justifyContent:'flex-end',}}>
                             <span style={{fontSize:'25px', color:'white' }}>{days} 
                                 <span style={{paddingTop:'50px'}}>:</span>
-                                <div style={{fontSize:'7px', }}>Days</div>
+                                <div style={{fontSize:'10px', }}>Days</div>
                             </span>
                         </div>
-                        <div style={{display:'flex', width:'14%', justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'white'}}>{hours} <span >:</span>
-                                <div style={{fontSize:'7px',}}>Hours</div>
+                        <div style={{display:'flex', width:'17%', justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'white', paddingLeft:'10px'}}>{hours} <span >:</span>
+                                <div style={{fontSize:'10px',}}>Hours</div>
                             </span>
                         </div>
                         <div style={{display:'flex', width:'16%', justifyContent:'flex-end',}}>
                             <span style={{fontSize:'25px', color:'white'}}>{minutes} <span >:</span>
-                                <div style={{fontSize:'7px', textAlign:'center'}}>Mins</div>
+                                <div style={{fontSize:'10px', textAlign:'center'}}>Mins</div>
                             </span>
                         </div> 
                         <div style={{display:'flex', width:'14%', justifyContent:'flex-end'}}>
                             <span style={{fontSize:'25px', color:'white'}}>{seconds}
-                                <div style={{fontSize:'7px',textAlign:'center'}}>Secs</div>
+                                <div style={{fontSize:'10px',textAlign:'center'}}>Secs</div>
                             </span>
                         </div>
                         {/* </div> */}

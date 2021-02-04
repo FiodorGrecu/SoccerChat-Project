@@ -83,25 +83,6 @@ export default function CenteredGrid( {fixture} ) {
   const { gameNum } = useParams();
   // const gameNum = '592177';
 
-//   const unixTimestamp = 1604752200;
-
-//   useEffect(() => {
-//     async function gameDetails() {
-//       const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-//       const data = await response.json();
-//       console.log(data);
-//       if (data.fixtures) {
-//         console.log(data.fixtures.response || null)
-//         setFixture(data.fixtures.response[0] || {})
-//       };
-//     }
-  
-//     gameDetails();
-
-//   }, [] )
-
-
-
 
   const leagueLogo = fixture.league && fixture.league.logo;
 

@@ -155,8 +155,8 @@ export default function CenteredGrid({ fixture} ) {
   const gameStatus = fixture.fixture && fixture.fixture.status.short;
 
 
-  console.log(Math.floor(homeShootingAccuracy))
-  console.log(awayShootingAccuracy)
+  // console.log(Math.floor(homeShootingAccuracy))
+  // console.log(awayShootingAccuracy)
 
   // ));
 console.log(fixture)
