@@ -318,14 +318,14 @@ if __name__=='__main__':
     # next5 = Game.next_5(5)
     # rounds = Game.rounds_of_league()
     # game_stats = Game.game_stats('435')
-    game = Game.game_by_fixture_id("592345") 
+    # game = Game.game_by_fixture_id("592345") 
     # game = Game.game_by_fixture_id("435") 
     # fixtures_left = Game.all_fixtures(524, 28)
     # next_fixtures = Game.next_fixtures()
-    # rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
+    rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
     # past_games = Game.all_past_fixtures(39, 2020, '2020-09-12','2021-01-24' ) 
     # live_games = Game.all_live_games()
-    pprint(game)
+    pprint(rest_games)
    
 
  

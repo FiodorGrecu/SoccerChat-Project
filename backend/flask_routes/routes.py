@@ -101,8 +101,6 @@ def next_5(num_games):
     # pprint(next_5real)
     return jsonify({'fixtures': next_5real})
 
-
-
 ####### TOP SCORERS
 @app.route('/api/topscorers/<season>/<league_id>', methods=[ "GET"])
 def topscorers(season, league_id):
