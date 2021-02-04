@@ -17,6 +17,8 @@ for f in fix_list:
 
 
 # pprint(output)
+pprint(last_round)
+pprint(f)
 
 
 
