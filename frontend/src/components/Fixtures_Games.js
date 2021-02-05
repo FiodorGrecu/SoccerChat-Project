@@ -26,11 +26,9 @@ export default function SimplePaper() {
   const numberGames1 = 5;
   
 
-  // const date = fixture.fixture && fixture.fixture.date;
 
   useEffect(() => {
 
-    // fetch(`https://localhost:5000/api/h2h/${team_id_1}/${team_id_1}`);
     async function getFixtures() {
       const response = await fetch(`http://localhost:5000/api/next/${numberGames}`);
       const response1 = await fetch(`http://localhost:5000/api/last/${numberGames1}`);
@@ -39,14 +37,10 @@ export default function SimplePaper() {
       console.log(data)
       console.log(data1)
       setNextFixtures(data.fixtures.response)
-      // setLastFixtures(data1.fixtures.api.fixtures)
       setLastFixtures(data1.fixtures.response)
     }
     getFixtures();
   }, [] )
-
-
-
   
   const outputNext5 = nextfixtures.map(fixture =>(
     
@@ -60,7 +54,8 @@ export default function SimplePaper() {
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
               <span style={{width:'100%' , }}>
-                <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).toLocaleDateString('en-US', 
+                <span style={{padding:'2px'}}>
+                  {new Date(fixture.fixture.date).toLocaleDateString('en-US', 
                       {day:'2-digit', month:'2-digit', year:'numeric'})}
                 </span>
               </span>
@@ -73,8 +68,8 @@ export default function SimplePaper() {
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'5%', display:'flex', 
-                backgroundColor:'#d7dff7',borderRadius:'10px', 
+          <div style={{width:'70px', display:'flex', 
+                backgroundColor:'#d7dff7',borderRadius:'5px', 
                 margin:'10px',}}>
             <div style={{paddingTop:'5px', paddingLeft:'10px', }}>
               {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 
@@ -105,7 +100,8 @@ export default function SimplePaper() {
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',
               fontWeight:'bold',}}>
               <span style={{width:'100%' , }}>
-              <span style={{padding:'2px'}}>{new Date(fixture.fixture.date).toLocaleDateString('en-US', 
+              <span style={{padding:'2px'}}>
+                {new Date(fixture.fixture.date).toLocaleDateString('en-US', 
                       {day:'2-digit', month:'2-digit', year:'numeric'})}
                 </span>
                 </span>
@@ -137,15 +133,17 @@ export default function SimplePaper() {
                     Postponed 
                 </span> 
                       : 
-                <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-                fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}> - </p>}
+                <p style={{textAlign:'right', fontSize:'20px', 
+                      fontFamily:'Helvetica', fontWeight:'600',
+                      paddingTop:'8px', paddingRight:'40px', }}> - </p>}
             </div>
 
             <div style={{width:'50%',display:'flex',}}>
-              <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
-                  fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
-                    {/* Away Team's Goal */}
-                    { fixture.goals.away }
+              <p style={{display:'inline-block', fontSize:'16px', 
+                  fontFamily:'Roboto,sans-serif', fontWeight:'600',
+                  textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
+                {/* Away Team's Goal */}
+                  { fixture.goals.away }
               </p>
             </div>
           </div>
