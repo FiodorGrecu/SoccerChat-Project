@@ -1,7 +1,9 @@
-from all_rest_fixtures import all_rest_fixtures
+# from all_rest_fixtures import all_rest_fixtures
+from all_past_fixtures import all_past_fixtures
 from pprint import pprint
 
-fix_list = all_rest_fixtures.get("response")
+# fix_list = all_rest_fixtures.get("response")
+fix_list = all_past_fixtures.get("response")
 
 output = []
 
@@ -53,4 +55,4 @@ example = [
             {"game 1": "game data"},
             {"game 1": "game data"}
         ]}]
-pprint(example)
+# pprint(example)

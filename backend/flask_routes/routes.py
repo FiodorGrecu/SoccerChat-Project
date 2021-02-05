@@ -10,8 +10,9 @@ from flask_cors import CORS
 from models.last5 import last5
 from models.next5 import next5
 from models.all_rest_fixtures import all_rest_fixtures
-from models.new_fake_all_rest import new_rest_fixt
 from models.all_past_fixtures import all_past_fixtures
+from models.new_fake_all_rest import new_rest_fixt
+from models.new_fake_all_past import new_past_fixt
 from models.onegame import onegame
 from models.upcoming_onegame import upcoming_onegame
 from models.events import Event
@@ -154,7 +155,8 @@ def upcoming_fixt(league_id, season, from_date, to_date):
 @app.route('/api/past_fixt/<league_id>/<season>/<from_date>/<to_date>', methods=["GET"])
 def past_fixt(league_id, season, from_date, to_date):
     # past_fixt = Game.all_past_fixtures(league_id, season, from_date, to_date)
-    past_fixt = all_past_fixtures
+    # past_fixt = all_past_fixtures
+    past_fixt = new_past_fixt
     return jsonify({"fixtures":past_fixt})
 
 @app.route('/api/team_by_id/<team_id>', methods=["GET"])

@@ -330,8 +330,18 @@ class Game:
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
 
-        return(data)
-
+        fix_list = data.get("response")
+        print(fix_list)
+        output = []
+        last_round = None
+        for f in fix_list:
+            current_round = f["league"]["round"]
+            if not last_round == current_round:
+                output.append({"round": f["league"]["round"], "games": []})
+                print(f["league"]["round"])
+            output[-1]["games"].append(f)
+            last_round = f["league"]["round"]
+        return(output)
 
 if __name__=='__main__':
     
@@ -347,7 +357,9 @@ if __name__=='__main__':
     # fixtures_left = Game.all_fixtures(524, 28)
     # next_fixtures = Game.next_fixtures()
     # rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
-    new_output = Game.all_upcoming_fixtures(39,2020, '2021-01-24','2021-06-30')
+    # new_output = Game.all_upcoming_fixtures(39,2020, '2021-01-24','2021-06-30')
+    new_output = Game.all_upcoming_fixtures(39,2020, '2020-09-12','2021-02-02')
+    # past_games = Game.all_past_fixtures(39, 2020, '2020-09-12','2021-01-24' ) 
     # past_games = Game.all_past_fixtures(39, 2020, '2020-09-12','2021-01-24' ) 
     # live_games = Game.all_live_games()
 
