@@ -27,17 +27,22 @@ export default function SimplePaper() {
       const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-02-02/2021-06-30`);
       const data =  await response.json();
       console.log(data)
-      setFixtures(data.fixtures.response)
+      setFixtures(data.fixtures)
     }
     getFixtures();
   }, [] )
 
 
-  const outputAllFixtures = fixtures.map(fixture =>(
+  const outputAllFixtures = fixtures.map(round =>(
     
-    <div className={classes.reactFragment} style={{width:'100%', }}>
-      <Link to={`/game/${fixture.fixture_id}`}>
-      <div>{fixture.league.round}</div>
+    <div>
+        <div style={{textAlign:'center', paddingLeft:'120px', fontSize:'1.1rem',
+                color:'grey', fontFamily:'Roboto,sans-serif', fontWeight:'bold' }}>
+          {round.round.replace("Regular Season", "Round")}
+        </div>
+        {round.games.map(fixture => (
+          <div className={classes.reactFragment} style={{width:'100%', }}>
+          <Link to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           {/* <div>Main</div> */}
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
@@ -80,6 +85,8 @@ export default function SimplePaper() {
       {/* <hr/> */}
         </Paper>
       </Link>
+      </div>
+    ))}
       </div>
   ));
   return (

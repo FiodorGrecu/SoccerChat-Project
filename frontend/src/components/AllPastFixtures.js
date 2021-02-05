@@ -27,16 +27,22 @@ export default function SimplePaper() {
       const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-02-02`);
       const data =  await response.json();
       console.log(data)
-      setFixtures(data.fixtures.response.reverse())
+      setFixtures(data.fixtures.reverse())
     }
     getFixtures();
   }, [] )
 
 
-  const outputAllFixtures = fixtures.map(fixture =>(
-    
-    <div className={classes.reactFragment} style={{width:'100%', }}>
-      <Link to={`/game/${fixture.fixture_id}`}>
+  const outputAllFixtures = fixtures.map(round =>(
+    <div>
+        <div style={{textAlign:'center', paddingLeft:'120px', fontSize:'1.1rem',
+                color:'grey', fontFamily:'Roboto,sans-serif', fontWeight:'bold' }}>
+          {round.round.replace("Regular Season", "Round")}
+        </div>
+      {round.games.map(fixture =>(
+        <div className={classes.reactFragment} style={{width:'100%', }}>
+        
+        <Link to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           {/* <div>Main</div> */}
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
@@ -76,9 +82,9 @@ export default function SimplePaper() {
               <div style={{width:'12%',display:'flex', textAlign:'center', position:'relative'}}>
                 {fixture.fixture.status.short === 'PST' ? 
                 <span style={{fontFamily:'Helvetica',
-                    fontWeight:'600',paddingTop:'8px', position:'absolute', 
-                    left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
-                    fontStyle:'italic', color:'grey' }}> 
+                fontWeight:'600',paddingTop:'8px', position:'absolute', 
+                left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
+                fontStyle:'italic', color:'grey' }}> 
                     Postponed 
                 </span> 
                       : 
@@ -109,6 +115,8 @@ export default function SimplePaper() {
         </Paper>
       </Link>
       </div>
+      ))}
+    </div>
   ));
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
