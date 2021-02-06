@@ -16,13 +16,27 @@ export default function SimplePaper() {
   // api/last/<num_games>
 
   const [fixtures, setFixtures] = useState([]);
+  // const now = new Date().getTime();
+  // const now = new Date();
+  // let today = new Date().toLocaleDateString('en-GB',
+  // {year:'numeric', month:'2-digit',day:'2-digit'})
+
+const today = new Date();
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const day = today.getDate();
+
+function fixDigit(val){
+  return val.toString().length === 1 ? "0" + val : val;
+}
+console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
 
   useEffect(() => {
 
     async function getFixtures() {
   // In order to change the fetch to the desire time-frame change the dates
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2020-09-12}/${2021-01-21}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-02-02`);
+      const response = await fetch(`http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/${year}-${fixDigit(month)}-${fixDigit(day)}`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures.reverse())

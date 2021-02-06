@@ -133,6 +133,7 @@ const GameHeader = ({fixture}) => {
                         </div>
                         {/* </div> */}
           </div> 
+          
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
             <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>
             <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
