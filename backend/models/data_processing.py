@@ -22,8 +22,6 @@ for f in fix_list:
 pprint(last_round)
 pprint(f)
 
-
-
 example = [
     {"round": "Round 2",
      "games": 
