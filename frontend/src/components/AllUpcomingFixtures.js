@@ -20,11 +20,21 @@ export default function SimplePaper() {
 
   const [fixtures, setFixtures] = useState([]);
 
+  const today = new Date();
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const day = today.getDate();
+
+function fixDigit(val){
+  return val.toString().length === 1 ? "0" + val : val;
+}
+console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
+
   useEffect(() => {
 
     async function getFixtures() {
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-02-02/2021-06-30`);
+      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/${year}-${fixDigit(month)}-${fixDigit(day)}/2021-06-30`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures)
@@ -38,7 +48,7 @@ export default function SimplePaper() {
     <div>
         <div style={{textAlign:'center', paddingLeft:'120px', fontSize:'1.1rem',
                 color:'grey', fontFamily:'Roboto,sans-serif', fontWeight:'bold' }}>
-          {round.round.replace("Regular Season", "Round")}
+          {round.round.replace("Regular Season", "Round")} 
         </div>
         {round.games.map(fixture => (
           <div className={classes.reactFragment} style={{width:'100%', }}>
@@ -46,7 +56,7 @@ export default function SimplePaper() {
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           {/* <div>Main</div> */}
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
-            <StarOutlineRoundedIcon />
+            <StarOutlineRoundedIcon /> 
           </span>
           <p style={{textAlign:'left', paddingTop:'12px', paddingLeft:'10px',
               fontSize:'1rem', color:'#ADADAD',fontFamily:'Roboto,sans-serif',

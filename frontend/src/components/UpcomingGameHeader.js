@@ -73,7 +73,6 @@ const GameHeader = ({fixture}) => {
       setDays(Math.floor(timeleft /(1000 * 60 * 60 * 24)));
       setHours(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
       setMinutes(Math.floor((timeleft % (1000 * 60 * 60 )) / (1000 * 60)));
-    //   const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
       setSeconds(Math.floor((timeleft % (1000 * 60)) / 1000));
   }, 1000)
 
@@ -104,30 +103,29 @@ const GameHeader = ({fixture}) => {
             </p>
           </div>
           {/* Score at half time */}
-          <div style={{display:'flex', width:'30%',  justifyContent:'center', alignItems:'center',paddingTop:'50px'}}> 
-
-            {/* <h3 style={{color:'white'}}>{days}</h3> */}
-            {/* <div style={{color:'white', fontWeight: 'bold',fontFamily:'Oswald,sansSerif', width:'100%',
-                    fontSize:'25px'}}> */}
+          <div style={{display:'flex', width:'30%',  justifyContent:'center', 
+                  alignItems:'center',paddingTop:'50px' ,color:'grey'}}> 
+            
                     {/* <div > */}
-                        <div style={{display:'flex', width:'14%',justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'white' }}>{days} 
+                        <div style={{display:'flex', width:'20%',justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'grey' }}>{days} 
                                 <span style={{paddingTop:'50px'}}>:</span>
+                                {/* <hr style={{fontSize:'45px', color:'grey' }}></hr> */}
                                 <div style={{fontSize:'10px', }}>Days</div>
                             </span>
                         </div>
-                        <div style={{display:'flex', width:'17%', justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'white', paddingLeft:'10px'}}>{hours} <span >:</span>
+                        <div style={{display:'flex', width:'20%', justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'grey' , paddingLeft:'10px'}}>{hours} <span >:</span>
                                 <div style={{fontSize:'10px',}}>Hours</div>
                             </span>
                         </div>
-                        <div style={{display:'flex', width:'16%', justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'white'}}>{minutes} <span >:</span>
+                        <div style={{display:'flex', width:'20%', justifyContent:'flex-end',}}>
+                            <span style={{fontSize:'25px', color:'grey' }}>{minutes} <span >:</span>
                                 <div style={{fontSize:'10px', textAlign:'center'}}>Mins</div>
                             </span>
                         </div> 
-                        <div style={{display:'flex', width:'14%', justifyContent:'flex-end'}}>
-                            <span style={{fontSize:'25px', color:'white'}}>{seconds}
+                        <div style={{display:'flex', width:'20%', justifyContent:'flex-end'}}>
+                            <span style={{fontSize:'25px', color:'grey' }}>{seconds}
                                 <div style={{fontSize:'10px',textAlign:'center'}}>Secs</div>
                             </span>
                         </div>
@@ -136,8 +134,15 @@ const GameHeader = ({fixture}) => {
           
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
             <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>
-            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>{awayteamName}</p>
-            <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 2rem'}}>{awayTeamScore}</p>
+            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
+                letterSpacing: '1px',textTransform: 'uppercase', 
+                paddingTop:'10px'}}>
+                  {awayteamName}
+            </p>
+            <p style={{color:'white',fontWeight:'bold', fontFamily:'Oswald,sansSerif',
+                  fontSize:' 2rem'}}>
+                    {awayTeamScore}
+            </p>
           </div>
         </div>
       </div>
