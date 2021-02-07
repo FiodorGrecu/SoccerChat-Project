@@ -27,29 +27,6 @@ export default function CenteredGrid({fixture, gameNum}) {
   const classes = useStyles();
 
 
-  // const [fixture, setFixture] = useState({});
-  // const { gameNum } = useParams();
-
-  // const unixTimestamp = 1604752200;
-
-  // useEffect(() => {
-  //   async function gameDetails() {
-  //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-  //     const data = await response.json();
-  //     console.log(data);
-  //     if (data.fixtures) {
-  //       console.log(data.fixtures.response || null)
-  //       setFixture(data.fixtures.response[0] || {})
-  //     };
-  //   }
-  
-  //   gameDetails();
-
-  // }, [] )
-
-  // const gameDate = fixture.fixture && fixture.fixture.date;
-  
-  const leagueName = fixture.league && fixture.league.name;
   const leagueLogo = fixture.league && fixture.league.logo;
   
   const hometeamName = fixture.lineups && fixture.lineups[0].team.name;
@@ -151,8 +128,6 @@ console.log(fixture)
           <div className={classes.date} style={{width: '100%', 
                 textAlign:'center', paddingTop:'2%', color:'white',
                 fontWeight: 'bold'}}>
-                  {/* <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span> */}
-                  {/* <span style={{paddingRight:'20px', }}>{getDay(date)}</span> */}
                   <span>{new Date(fixture.fixture.date).toLocaleDateString('en-US',
                      {day:'2-digit', month:'2-digit', year:'numeric'})}
                   </span>

@@ -106,11 +106,6 @@ export default function StatsBar( {fixture} ) {
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
                  
-                   {/* <span style={{ float:'left'}}>
-                     <Link style={{justifyLeft:'left'}}>Back</Link> 
-                     </span>
-                     onMouseOver={{cursor:'pointer', color:'red'}}
-                 */}
             <Link component={RouterLink} to={'/fixtures'} >
               <p style={{paddingRight:'980px', }}>Back</p>
             </Link>

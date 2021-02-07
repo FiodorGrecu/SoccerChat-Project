@@ -59,9 +59,6 @@ console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
             <StatsHeader/>
-        {/* <div style={{width:'30%', height:'1100px' }} >
-                <ChatSection gameId={gameNum}/>
-        </div> */}
     </div>
   );
 }

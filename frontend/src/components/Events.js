@@ -136,8 +136,6 @@ console.log(fixture)
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
         <div style={{width:'100%', marginBottom:'10px'}} > 
-            {/* <LeagueBar/> */}
-            {/* <GameSectionScoreCheet fixture={fixture}/> */}
             <div >
               <div style={{display:'flex',marginLeft:'10%',marginRight:'10%'}}>
                 <div style={{width:'100%',backgroundColor:'white', 
@@ -159,9 +157,6 @@ console.log(fixture)
             </div>       
           </div>
           
-        {/* <div style={{width:'30%', height:'1100px' }} >
-                <ChatSection gameId={gameNum}/>
-        </div> */}
     </div>
     
   );
