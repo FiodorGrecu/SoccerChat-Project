@@ -16,10 +16,6 @@ export default function SimplePaper() {
   // api/last/<num_games>
 
   const [fixtures, setFixtures] = useState([]);
-  // const now = new Date().getTime();
-  // const now = new Date();
-  // let today = new Date().toLocaleDateString('en-GB',
-  // {year:'numeric', month:'2-digit',day:'2-digit'})
 
 const today = new Date();
 const year = today.getFullYear();
@@ -43,7 +39,6 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
     }
     getFixtures();
   }, [] )
-
 
   const outputAllFixtures = fixtures.map(round =>(
     <div>
