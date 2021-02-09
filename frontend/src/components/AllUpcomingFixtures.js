@@ -34,7 +34,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
 
     async function getFixtures() {
       // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
-      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/${year}-${fixDigit(month)}-${fixDigit(day)}/2021-06-30`);
+      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/${year}-${fixDigit(month)}-${fixDigit(day)}/2041-06-30`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures)
@@ -52,7 +52,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
         </div>
         {round.games.map(fixture => (
           <div className={classes.reactFragment} style={{width:'100%', }}>
-          <Link to={`/game/${fixture.fixture_id}`}>
+          <Link to={`/game/${fixture.fixture.id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           {/* <div>Main</div> */}
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>

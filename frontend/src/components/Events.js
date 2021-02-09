@@ -51,8 +51,10 @@ console.log(fixture)
             return (
                 <div>
                   <div >
-                    {event.time.elapsed}'                    
+                    {/* {event.time.elapsed}'                     */}
                     {/* <span >{event.player.name}</span>b */}
+                  <div>{event.time.extra ? `${event.time.elapsed} + ${event.time.extra}` : event.time.elapsed }' </div> 
+
                   </div>
                   <div></div>
                    <span style={{paddingRight:'10px'}}>{event.assist.name &&`(${event.assist.name})` }</span>
@@ -71,7 +73,9 @@ console.log(fixture)
         } else if (event.type === 'subst') {
             return (
                 <div>
-                  <div style={{}}>{event.time.elapsed}'</div>
+                  {/* <div style={{}}>{event.time.elapsed}'</div> */}
+                  {/* <div>{event.time.elapsed}' </div>  */}
+                  <div>{event.time.extra ? `${event.time.elapsed} + ${event.time.extra}` : event.time.elapsed }' </div> 
                   <span>
                     <span>
                     <span style={{color:'#e72652', textAlign:'right'}}><ArrowDropDownIcon/></span>
@@ -93,7 +97,9 @@ console.log(fixture)
               return (
                 <div>
                   {/* <IoTabletPortraitOutline/> */}
-                    <div>{event.time.elapsed}'</div>
+                    {/* <div>{event.time.elapsed}'</div> */}
+                  <div>{event.time.extra ? `${event.time.elapsed} + ${event.time.extra}` : event.time.elapsed }' </div> 
+
                     <span>{event.player.name}</span>
                     <span>
                       <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
@@ -112,7 +118,9 @@ console.log(fixture)
               return (
                 <div>
                   {/* <IoTabletPortraitOutline/> */}
-                    <div>{event.time.elapsed}'</div>
+                    {/* <div>{event.time.elapsed}'</div> */}
+                  <div>{event.time.extra ? `${event.time.elapsed} + ${event.time.extra}` : event.time.elapsed }' </div> 
+
                     <span>{event.player.name}</span>
                     <span>
                       {/* <IoTabletPortraitOutline/> */}

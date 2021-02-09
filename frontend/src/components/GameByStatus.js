@@ -23,7 +23,7 @@ export default function CenteredGrid(props) {
   
     gameDetails();
 
-  }, [] )
+  }, [gameNum] )
 
 
   const gameStatus = fixture.fixture && fixture.fixture.status.short;

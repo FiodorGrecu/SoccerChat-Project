@@ -43,8 +43,8 @@ export default function StatsBody({ fixture }) {
   const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
   const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
  
-  const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value;
-  const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value;
+  const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value || 0;
+  const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value || 0;
   
   const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
   const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
@@ -55,8 +55,9 @@ export default function StatsBody({ fixture }) {
   const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value;
   const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value;
   
-  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value;
-  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value;
+  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value || 0;
+  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value || 0;
+  console.log(homeRedCards, awayRedCards)
   
   const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
   const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
@@ -347,7 +348,7 @@ export default function StatsBody({ fixture }) {
                 <span style={{width:'33%', float:'left', textAlign:'left',
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
                         color: 'gray',fontWeight: 'bold'}}>
-                      {homeRedCards || '0'}
+                      {homeRedCards }
                       {/* {homeRedCards } */}
                         </span>
                 <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
@@ -357,15 +358,15 @@ export default function StatsBody({ fixture }) {
                 <span style={{ width:'33%',float:'right', textAlign:'right',
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
                         color: 'gray',fontWeight: 'bold'}}>
-                      {awayRedCards || '0'}
+                      {awayRedCards }
                 </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff', width:`${homeRedCards /
-                  (homeYellowCards + awayYellowCards)* 100}%`, marginRight:'1px'}}>
+                <span style={{backgroundColor:'#d7dff7', width:`${homeRedCards /
+                  (homeRedCards + awayRedCards)* 100}%`, marginRight:'1px'}}>
                 </span>
-                <span style={{backgroundColor:'#51629', width:`${awayRedCards /
-                  (homeYellowCards + awayYellowCards)* 100}%`,height:'20px'}}>
+                <span style={{backgroundColor:'#516290', width:`${awayRedCards /
+                  (homeRedCards + awayRedCards)* 100}%`,height:'20px'}}>
                 </span> {/* What do I do here??? (hight fixes the issue)*/}
             </div>
           </div>    
