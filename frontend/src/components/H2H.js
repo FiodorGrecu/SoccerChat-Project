@@ -4,15 +4,14 @@ import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
-import LeagueBar from './LeagueNameBar';
 import StatsBar from './StatsTopBar';
 import StatsTopBarUpcoming from './StatsTopBarUpcoming';
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 
 const useStyles = makeStyles((theme) => ({
 
    
 }));
-
 
 export default function SimplePaper( {fixture} ) {
   const classes = useStyles();
@@ -27,12 +26,14 @@ export default function SimplePaper( {fixture} ) {
       console.log(data.fixtures.api.fixtures)
       setFixtures(data.fixtures.api.fixtures.reverse())
     }
-    getFixtures();
+    // getFixtures();
+
+  setTimeout(getFixtures, 1000);
 
   }, [] )
 
 
-  const allH2HGAmes = fixtures.reverse().map(fixture =>(
+  const allH2HGames = fixtures.reverse().map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
       {/* <Link to={`/game/${fixture.fixture_id}`}> */}
@@ -95,12 +96,14 @@ export default function SimplePaper( {fixture} ) {
 
   return (
     <div style={{ backgroundColor: 'aliceblue'}}>
-    
+    { fixture.fixture ?
+      <div style={{padding:'2%', marginTop:'25px'}}>
+      {allH2HGames}
+    </div>
+     : 
+      <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/>}
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}
-        <div style={{padding:'2%', marginTop:'25px'}}>
-          {allH2HGAmes}
-        </div>
     </div>
   );
 }

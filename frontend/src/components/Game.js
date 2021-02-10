@@ -107,11 +107,9 @@ console.log(fixture)
         {/* <LeagueNameBar/> */}
     <div style={{display:"flex",backgroundColor:'#EAF0F7', marginTop:'50px' }} >
             <div style={{width:'100%', }} > 
-              {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
                   <Switch>
                     <Route path="/game/:gameId/statistics">
-                      {/* <StatsHeader fixture={fixture} gameNum={gameNum}/> */}   
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly', alignItems:'center', }}>
                         <div style={{width:'33.333%', textAlign:'center'}}>
                             <p style={{color:'white', 
@@ -135,7 +133,6 @@ console.log(fixture)
                                 </text>
                               </g>
                             </svg>
-                          {/* <div style={{backgroundColor:'#AEECFF',color:'white', height:'100px', }}>Left Donut</div> */}
                         </div>
                         <div style={{width:'33.333%' }}>
                         <div style={{ width:'100%', textAlign:'center', marginBottom:'10px'}}>
