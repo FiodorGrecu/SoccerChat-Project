@@ -324,27 +324,10 @@ console.log(fixture)
                
                {/* <img src={Ball} /> */}
                <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/>
-            {/* <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/> */}
-          </div>
+              {/* <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/> */}
+            </div>
             }
-              {/* <div>
-                <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/>
-              </div> */}
-            {/* <Route exact path="/game/:gameId">
-              <LineUps fixture={fixture} />
-            </Route>
-            <Route path="/game/:gameId/events">
-              <Events fixture={fixture}/>
-            </Route >
-            <Route path="/game/:gameId/chat">
-              <ChatSection gameId={gameNum} />
-            </Route>
-            <Route path="/game/:gameId/statistics">
-              <StatsBody fixture={fixture} />
-            </Route>
-            <Route path="/game/:gameId/h2h">
-              <H2H fixture={fixture} />
-            </Route> */}
+            
           </div>
         {/* <div style={{width:'30%', height:'1100px' }} >  */}
           {/* <Statistics /> */}
