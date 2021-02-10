@@ -32,7 +32,7 @@ export default function SimplePaper( {fixture} ) {
   }, [] )
 
 
-  const outputLast5 = fixtures.reverse().map(fixture =>(
+  const allH2HGAmes = fixtures.reverse().map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
       {/* <Link to={`/game/${fixture.fixture_id}`}> */}
@@ -99,7 +99,7 @@ export default function SimplePaper( {fixture} ) {
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}
         <div style={{padding:'2%', marginTop:'25px'}}>
-          {outputLast5}
+          {allH2HGAmes}
         </div>
     </div>
   );

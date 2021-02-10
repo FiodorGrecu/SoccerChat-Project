@@ -82,45 +82,11 @@ export default function CenteredGrid({ fixture} ) {
   // const gameNum = '592177';
 
 
-  const leagueLogo = fixture.league && fixture.league.logo;
-
-  const venue = fixture.lineups && fixture.fixture.venue.name;
-
   const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value;
   const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value;
   
   const homeShotsOffTarget = fixture.statistics && fixture.statistics[0].statistics[1].value;
   const awayShotsOffTarget = fixture.statistics && fixture.statistics[1].statistics[1].value;
-  
-  const homeTotalShots = fixture.statistics && fixture.statistics[0].statistics[2].value;
-  const awayTotalShots = fixture.statistics && fixture.statistics[1].statistics[2].value;
-  
-  const homeShotsInsideBox = fixture.statistics && fixture.statistics[0].statistics[4].value;
-  const awayShotsInsideBox = fixture.statistics && fixture.statistics[1].statistics[4].value;
-  
-  const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
-  const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
- 
-  const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value;
-  const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value;
-  
-  const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
-  const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
-  
-  const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value;
-  const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value;
-  
-  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value || '0'; 
-  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value || '0';
-  
-  const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value || '0';
-  const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value || '0';
-  
-  const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
-  const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
-  
-  const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value;
-  const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value;
   
   const homePassesAcuracy = fixture.statistics && fixture.statistics[0].statistics[15].value.slice(0,-1);
   const awayPassesAcuracy = fixture.statistics && fixture.statistics[1].statistics[15].value.slice(0,-1);
@@ -132,21 +98,9 @@ export default function CenteredGrid({ fixture} ) {
   const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value;
   const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value;
   
-  const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value;
-  const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value;
-
   const homeShootingAccuracy = homeShotsOnTarget / (homeShotsOnTarget + homeShotsOffTarget) * 100;
   const awayShootingAccuracy = awayShotsOnTarget / (awayShotsOnTarget + awayShotsOffTarget) * 100;
 
-  const gameStatus = fixture.fixture && fixture.fixture.status.short;
-  
-  
-  
-
-  // console.log(Math.floor(homeShootingAccuracy))
-  // console.log(awayShootingAccuracy)
-
-  // ));
 console.log(fixture)
   return (
   <div style={{width:'100%', }}>
@@ -275,7 +229,9 @@ console.log(fixture)
                             <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
                               <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
                               <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#BE14AA" stroke-width="3"></circle>
-                              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
+                              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" 
+                                  fill="transparent" stroke="#516290" 
+                                  stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
                               <g className={classes.chartText}>
                                 
                                 <text  x="45%" y="60%" className={classes.chartNumber} stroke="#BE14AA">
@@ -323,23 +279,14 @@ console.log(fixture)
             <div > 
                
                {/* <img src={Ball} /> */}
-               <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/>
-              {/* <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/> */}
+               {/* <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/> */}
+              <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/>
             </div>
             }
             
           </div>
-        {/* <div style={{width:'30%', height:'1100px' }} >  */}
-          {/* <Statistics /> */}
-        {/* </div> */}
     </div>
   </div>
   );
 }
-
-// <Game /> // holds all the data, passes to children
-
-//     ==> <GameHeader />   ||    <StatisticsHeader />
-
-//     ==> <Lineups/> || <Chat /> || <Events /> || <StatisticsBody/>
 
