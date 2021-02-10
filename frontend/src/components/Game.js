@@ -93,7 +93,6 @@ export default function CenteredGrid({ fixture} ) {
   
   const homeBallPossession = fixture.statistics && fixture.statistics[0].statistics[9].value.slice(0,-1);
   const awayBallPossession = fixture.statistics && fixture.statistics[1].statistics[9].value.slice(0,-1);
-  // console.log(homeBallPossession)
 
   const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value;
   const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value;
