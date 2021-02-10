@@ -17,11 +17,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SimplePaper( {fixture} ) {
   const classes = useStyles();
 
-  // api/last/<num_games>
-
   const [fixtures, setFixtures] = useState([]);
-
-  // const date = fixture.fixture && fixture.fixture.date;
 
   useEffect(() => {
 
@@ -32,6 +28,7 @@ export default function SimplePaper( {fixture} ) {
       setFixtures(data.fixtures.api.fixtures.reverse())
     }
     getFixtures();
+
   }, [] )
 
 

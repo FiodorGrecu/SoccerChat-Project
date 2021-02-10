@@ -21,6 +21,8 @@ import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
 import UpcomingGameHeader from './UpcomingGameHeader';
 import LeagueNameBar from './LeagueNameBar';
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+// import Ball from 'https://icons.veryicon.com/png/Sport/Soccer%20Worldcup%202010/Soccer%20ball.png';
 
 
 
@@ -79,22 +81,6 @@ export default function CenteredGrid({ fixture} ) {
   const { gameNum } = useParams();
   // const gameNum = '592177';
 
-  // const unixTimestamp = 1604752200;
-
-  // useEffect(() => {
-  //   async function gameDetails() {
-  //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-  //     const data = await response.json();
-  //     console.log(data);
-  //     if (data.fixtures) {
-  //       console.log(data.fixtures.response || null)
-  //       setFixture(data.fixtures.response[0] || {})
-  //     };
-  //   }
-  
-  //   gameDetails();
-
-  // }, [] )
 
   const leagueLogo = fixture.league && fixture.league.logo;
 
@@ -153,7 +139,9 @@ export default function CenteredGrid({ fixture} ) {
   const awayShootingAccuracy = awayShotsOnTarget / (awayShotsOnTarget + awayShotsOffTarget) * 100;
 
   const gameStatus = fixture.fixture && fixture.fixture.status.short;
-
+  
+  
+  
 
   // console.log(Math.floor(homeShootingAccuracy))
   // console.log(awayShootingAccuracy)
@@ -312,8 +300,10 @@ console.log(fixture)
                     </Route>
                   </Switch>
             </div>
-          
-            <Route exact path="/game/:gameId">
+    
+            { fixture.fixture ?  
+            <div>
+             <Route exact path="/game/:gameId">
               <LineUps fixture={fixture} />
             </Route>
             <Route path="/game/:gameId/events">
@@ -327,7 +317,34 @@ console.log(fixture)
             </Route>
             <Route path="/game/:gameId/h2h">
               <H2H fixture={fixture} />
+            </Route> 
+            </div>
+            : 
+            <div > 
+               
+               {/* <img src={Ball} /> */}
+               <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/>
+            {/* <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/> */}
+          </div>
+            }
+              {/* <div>
+                <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/>
+              </div> */}
+            {/* <Route exact path="/game/:gameId">
+              <LineUps fixture={fixture} />
             </Route>
+            <Route path="/game/:gameId/events">
+              <Events fixture={fixture}/>
+            </Route >
+            <Route path="/game/:gameId/chat">
+              <ChatSection gameId={gameNum} />
+            </Route>
+            <Route path="/game/:gameId/statistics">
+              <StatsBody fixture={fixture} />
+            </Route>
+            <Route path="/game/:gameId/h2h">
+              <H2H fixture={fixture} />
+            </Route> */}
           </div>
         {/* <div style={{width:'30%', height:'1100px' }} >  */}
           {/* <Statistics /> */}

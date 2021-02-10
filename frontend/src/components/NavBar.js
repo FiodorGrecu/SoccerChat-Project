@@ -89,7 +89,7 @@ export default function ProminentAppBar() {
           </Box>
 
           <IconButton  style={{ padding: 5,  color:"gray" }}>
-            {/* <SportsSoccerIcon />             */}
+            <SportsSoccerIcon />            
           </IconButton>
 
             <Typography className={classes.title} variant="h3" noWrap>

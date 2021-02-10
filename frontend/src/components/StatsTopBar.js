@@ -107,7 +107,7 @@ export default function StatsBar( {fixture} ) {
                backgroundColor:'white'}}>
                  
             <Link component={RouterLink} to={'/fixtures'} >
-              <p style={{paddingRight:'1239px', }}>Back</p>
+              <p style={{marginRight:'1239px', }}>Back</p>
             </Link>
             <Link component={RouterLink} to={`/game/${gameNum}/events`}>
               <p style={{paddingRight:'20px'}}>Summary</p>

@@ -21,7 +21,10 @@ export default function CenteredGrid(props) {
       };
     }
   
-    gameDetails();
+    // gameDetails();
+
+    setTimeout(gameDetails, 2000);
+
 
   }, [gameNum] )
 

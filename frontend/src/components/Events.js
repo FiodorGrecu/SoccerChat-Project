@@ -10,6 +10,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { FaStopwatch } from "react-icons/fa";
 
+
 const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
@@ -25,25 +26,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CenteredGrid( {fixture} ) {
   const classes = useStyles();
-
-
-  // const [fixture, setFixture] = useState({});
-  // const { gameNum } = useParams();
-
-  // useEffect(() => {
-  //   async function gameDetails() {
-  //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-  //     const data = await response.json();
-  //     console.log(data);
-  //     if (data.fixtures) {
-  //       console.log(data.fixtures.response || null)
-  //       setFixture(data.fixtures.response[0] || {})
-  //     };
-  //   }
-  
-  //   gameDetails();
-
-  // }, [] )
 
 console.log(fixture)
     function RenderEvent(event) {
@@ -66,9 +48,7 @@ console.log(fixture)
                   <span style={{paddingLeft:'10px', color:'#be13aa'}}>{event.team.name}</span>
                   <hr style={{width:'96%'}}/>
                 </div>
-
-
-            
+          
             )
         } else if (event.type === 'subst') {
             return (
@@ -110,8 +90,7 @@ console.log(fixture)
                     </span>
                     <span style={{paddingLeft:'10px', color:'#be13aa'}}>{event.team.name}</span>
 
-                         <hr style={{width:'96%'}}/>
-                    
+                         <hr style={{width:'96%'}}/>                    
                 </div> 
               )
             } else if (event.detail === 'Red Card') {
@@ -143,6 +122,7 @@ console.log(fixture)
   
   return (
     <div style={{display:"flex",backgroundColor:'#EAF0F7' }} >
+    {/* <SportsSoccerIcon/> */}
         <div style={{width:'100%', marginBottom:'10px'}} > 
             <div >
               <div style={{display:'flex',marginLeft:'10%',marginRight:'10%'}}>
