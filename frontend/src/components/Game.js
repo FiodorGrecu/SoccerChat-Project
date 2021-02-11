@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import './Game.css';
 import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import ChatSection from './ChatSection';
-import { icons } from 'react-icons/lib';
 import { grey } from '@material-ui/core/colors';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
@@ -17,7 +17,7 @@ import Events from './Events';
 import H2H from './H2H';
 import StatsBar from './StatsTopBar';
 import StatsBody from './StatsBody';
-import StatsHeader from './StatsHeader';
+
 import GameHeader from './GameHeader';
 import UpcomingGameHeader from './UpcomingGameHeader';
 import LeagueNameBar from './LeagueNameBar';
@@ -69,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     msTransform: 'translateX(0.77em)',
     webkitTransform: 'translateY(0.95em)',
     transform: 'translateY(-0.55em)',
+  },
+  Icon: {
+
   }
 
 }));
@@ -272,11 +275,12 @@ console.log(fixture)
             </Route> 
             </div>
             : 
-            <div > 
-               
+            <div style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}>  
                {/* <img src={Ball} /> */}
                {/* <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/> */}
-              <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/>
+              
+              <SportsSoccerIcon className={"Icon"} style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}/>
+              <p style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}>Loading</p>
             </div>
             }
             

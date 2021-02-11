@@ -28,7 +28,7 @@ export default function SimplePaper( {fixture} ) {
     }
     // getFixtures();
 
-  setTimeout(getFixtures, 1000);
+  setTimeout(getFixtures, 20000);
 
   }, [] )
 
