@@ -280,7 +280,7 @@ console.log(fixture)
                {/* <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/> */}
               
               <SportsSoccerIcon className={"Icon"} style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}/>
-              <p style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}>Loading</p>
+              <p style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}>Loading...</p>
             </div>
             }
             
