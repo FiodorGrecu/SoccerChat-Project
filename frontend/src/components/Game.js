@@ -279,8 +279,8 @@ console.log(fixture)
                {/* <img src={Ball} /> */}
                {/* <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/> */}
               
-              <SportsSoccerIcon className={"Icon"} style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}/>
-              <p style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}>Loading...</p>
+              <SportsSoccerIcon className={"Icon"} style={{}}/>
+              <p style={{fontSize:'10px', margin:'auto', display:'flex', height:'40px'}}>Loading...</p>
             </div>
             }
             
