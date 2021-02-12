@@ -1,7 +1,11 @@
 .BarLinks {
   color: #000;
-	:hover {
-		color: #ed1212;
-		cursor: pointer;
-	}
+  
 }
+.BarLinks :hover {
+		color: #9512ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all .2s ease;
+    }
+

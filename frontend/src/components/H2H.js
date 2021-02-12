@@ -29,7 +29,7 @@ export default function SimplePaper( {fixture} ) {
     }
     // getFixtures();
 
-  setTimeout(getFixtures, 4000);
+  setTimeout(getFixtures, 1000);
 
   }, [] )
   
@@ -74,7 +74,7 @@ export default function SimplePaper( {fixture} ) {
 
             <div style={{width:'12%',display:'flex', textAlign:'center',  position:'relative'}}>
               {/* { fixture.status.short === "NS" ?  */}
-              { fixture.elapsed === 0 ? 
+              {/* { fixture.elapsed === 0 ? 
                 <span style={{fontSize:'16px', fontFamily:'Helvetica', backgroundColor:'pink',
                         fontWeight:'600',paddingLeft:'10px', paddingTop:'20px', 
                         fontStyle:'italic', textAlign:'left', color:'grey',}}>
@@ -84,10 +84,10 @@ export default function SimplePaper( {fixture} ) {
                 <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
                     fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}>
                    -
-                </p>}
-              {/* <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
+                </p>} */}
+              <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
                   fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
-              </p> */}
+              </p>
             </div>
 
             <div style={{width:'50%',display:'flex',}}>

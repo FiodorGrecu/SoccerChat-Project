@@ -107,11 +107,12 @@ export default function StatsBar( {fixture} ) {
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
                  
-            <Link component={RouterLink} to={'/fixtures'} >
-              <p style={{marginRight:'989px', }}>Back</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}/events`}>
-              <p style={{paddingRight:'20px'}}>Summary</p>
+            <RouterLink className={"BarLinks"} to={'/fixtures'} >
+              <p className={"BarLinks"} style={{paddingLeft:'10px', }}>Back</p>
+            </RouterLink>
+            <span style={{margin:'auto', }}></span>
+            <Link className={"BarLinks"} component={RouterLink} to={`/game/${gameNum}/events`}>
+              <p style={{paddingRight:'10px'}}>Summary</p>
             </Link>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`}>
               <p style={{paddingRight:'20px' }}>Statistics</p>
