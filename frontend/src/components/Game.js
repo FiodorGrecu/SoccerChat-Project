@@ -275,13 +275,18 @@ console.log(fixture)
             </Route> 
             </div>
             : 
-            <div style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}}>  
+            <div style={{ display:'flex',}}>  
                {/* <img src={Ball} /> */}
                {/* <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/> */}
-              
-              <SportsSoccerIcon className={"Icon"} style={{}}/>
-              <p style={{fontSize:'10px', margin:'auto', display:'flex', height:'40px'}}>Loading...</p>
+              <div style={{margin:'auto'}}>
+                <SportsSoccerIcon className={"Icon"} 
+                    style={{fontSize:'50px', margin:'auto', height:'40px',
+                    marginTop:'60px', color:"#516290"}}/>
+              </div>
+              {/* <div className={"Loading"} style={{fontSize:'50px', margin:'auto', display:'flex', height:'40px'}}>Loading...</div> */}
+                {/* <div><hr style={{width:'200px', fontWeight:'bold'}}/></div> */}
             </div>
+            
             }
             
           </div>

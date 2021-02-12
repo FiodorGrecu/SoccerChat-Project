@@ -30,7 +30,7 @@ console.log(leagueLogo)
                             fontFamily: 'Roboto,sans-serif',
                             fontSize: '1rem', color: '#8e9cc5',
                             fontWeight: '550'}}>
-                          <p >{venue}</p>
+                          <p>{venue}</p>
               </div>
             </div>  
       </div> 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Game.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
@@ -28,7 +29,7 @@ export default function SimplePaper( {fixture} ) {
     }
     // getFixtures();
 
-  setTimeout(getFixtures, 20000);
+  setTimeout(getFixtures, 2000);
 
   }, [] )
 
@@ -95,13 +96,11 @@ export default function SimplePaper( {fixture} ) {
 //   
 
   return (
-    <div style={{ backgroundColor: 'aliceblue'}}>
-    { fixture.fixture ?
+    <div style={{ backgroundColor: 'aliceblue', }}>
+    
       <div style={{padding:'2%', marginTop:'25px'}}>
-      {allH2HGames}
-    </div>
-     : 
-      <SportsSoccerIcon style={{fontSize:'60px', margin:'auto', display:'flex', height:'400px'}}/>}
+        { fixtures.length > 0 ? allH2HGames : <SportsSoccerIcon className={"Icon"}  style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px', color:"#516290"}}/>}
+      </div>
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}
     </div>

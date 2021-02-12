@@ -73,7 +73,7 @@ const GameHeader = ( {fixture} ) => {
         </div>
         <div style={{display:'flex', width:'100%',}}>
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%', }}>
-           {fixture.fixture && <img src={hometeamLogo} style={{width:'80px', height:'80px'}}/> }
+            <img src={hometeamLogo} style={{width:'80px', height:'80px'}}/>
             <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
                 letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>
                   {hometeamName}

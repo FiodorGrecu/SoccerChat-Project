@@ -70,7 +70,7 @@ export default function StatsBar( {fixture} ) {
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
                 <span style={{paddingRight:'5px',}}>{hometeamName}</span>
                 <span>
-                    <img src={hometeamLogo} style={{width:'28px', height:'28px',}}/>
+                {fixture.fixture && <img src={hometeamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
             </div>
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', justifyContent:'center',paddingTop:'20px',
@@ -82,7 +82,7 @@ export default function StatsBar( {fixture} ) {
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white',paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
                 <span>
-                    <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/>
+                {fixture.fixture && <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
                 <span style={{paddingLeft:'5px'}}>{awayteamName}</span>
             </div>

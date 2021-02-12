@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch, useParams } from 'react-router-dom';
 import Game from './Game';
 import Upcoming_OneGame from './Upcoming_OneGame';
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+
 
 
 
@@ -23,7 +25,7 @@ export default function CenteredGrid(props) {
   
     // gameDetails();
 
-    setTimeout(gameDetails, 20000);
+    setTimeout(gameDetails, 2000);
 
 
   }, [gameNum] )
@@ -31,10 +33,21 @@ export default function CenteredGrid(props) {
 
   const gameStatus = fixture.fixture && fixture.fixture.status.short;
   
+
+
   if (gameStatus === 'NS') {
     return <Upcoming_OneGame fixture={fixture}/>
+  } else if (gameStatus === undefined) {
+    return (
+      <div  style={{}}>
+      <div style={{display:'flex'}}>
+        <SportsSoccerIcon className={"Icon"} 
+          style={{fontSize:'50px', margin:'auto', height:'40px',
+          marginTop:'60px', color:"#516290", marginTop:'300px'}}/> 
+      </div>
+      <div><hr style={{color:'green', width:'200px'}}></hr></div>
+      </div>)
   } else {
     return <Game fixture={fixture}/>
-  }
-
+      }
 }
