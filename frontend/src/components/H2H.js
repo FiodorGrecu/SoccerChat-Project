@@ -29,7 +29,7 @@ export default function SimplePaper( {fixture} ) {
     }
     // getFixtures();
 
-  setTimeout(getFixtures, 5000);
+  setTimeout(getFixtures, 1000);
 
   }, [] )
 
@@ -50,20 +50,22 @@ export default function SimplePaper( {fixture} ) {
                      {day:'2-digit', month:'2-digit', year:'numeric'})}
               </span>
           </p>
-          <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
-               paddingRight:'5%'}}>
+          {/* Home Team Name  */}
+          <div style={{width: '40%',  textAlign:'right', paddingTop:'10px', 
+               paddingRight:'5%',}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
                 fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif'}}>
-                  { fixture.homeTeam.team_name }</p>
+              { fixture.homeTeam.team_name }
+            </p>
             <img src={ fixture.homeTeam.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'10%', display:'flex', }}>
+         {/* Middle part (Score)*/}
+          <div style={{width:'10%', display:'flex',}}>
             <div style={{width:'50%', display:'flex',  textAlign:'right', 
                   paddingTop:'10px',  }}>
               <p style={{textAlign:'right', fontSize:'16px', 
                   fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
-                    {/* Home Team's Goal */}
                   { fixture.goalsHomeTeam } 
               </p>
             </div>
@@ -75,13 +77,13 @@ export default function SimplePaper( {fixture} ) {
             <div style={{width:'50%',display:'flex',}}>
               <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                   fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
-                    {/* Away Team's Goal */}
-                    { fixture.goalsAwayTeam }
+                { fixture.goalsAwayTeam }
               </p>
             </div>
           </div>
+        {/* Right Side (AwayTeam)  */}
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
-                    paddingLeft:'5%'}}>
+                    paddingLeft:'5%',}}>
             <img src={ fixture.awayTeam.logo } style={{width:26, height:26, 
                   display:'inline-block', }}/>
             <p style={{display:'inline-block', paddingLeft:'10px', fontSize:'1rem',
@@ -103,7 +105,6 @@ export default function SimplePaper( {fixture} ) {
         <SportsSoccerIcon className={"Icon"} 
          style={{fontSize:'90px', margin:'auto', display:'flex', height:'40px',
           color:"#516290", marginTop:"70px",  textShadow:"2px 4px 6px orange", }}/>}
-          {/* <hr style={{color:'green', width:'200px'}}/> */}
       </div>
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}
