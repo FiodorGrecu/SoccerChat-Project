@@ -67,27 +67,27 @@ export default function SimplePaper( {fixture} ) {
             <div style={{width:'50%', display:'flex',  textAlign:'right', 
                   paddingTop:'10px',  }}>
               <p style={{textAlign:'right', fontSize:'16px', 
-                  fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}>
+                  fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%', }}>
                   { fixture.goalsHomeTeam } 
               </p>
             </div>
 
-            <div style={{width:'12%',display:'flex'}}>
-              {/* { fixture.fixture.statusShort === "NS" ? 
-                <span style={{fontFamily:'Helvetica',
-                fontWeight:'600',paddingTop:'8px', position:'absolute', 
-                left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
-                fontStyle:'italic', color:'grey' }}> 
-                    Upcoming 
-                </span> 
-                :
+            <div style={{width:'12%',display:'flex', textAlign:'center',  position:'relative'}}>
+              {/* { fixture.status.short === "NS" ?  */}
+              { fixture.elapsed === 0 ? 
+                <span style={{fontSize:'16px', fontFamily:'Helvetica', backgroundColor:'pink',
+                        fontWeight:'600',paddingLeft:'10px', paddingTop:'20px', 
+                        fontStyle:'italic', textAlign:'left',}}>
+                  Upcoming
+                </span>
+                    :
                 <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
                     fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}>
-                   - 
-                </p>} */}
-              <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
+                   -
+                </p>}
+              {/* <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
                   fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
-              </p>
+              </p> */}
             </div>
 
             <div style={{width:'50%',display:'flex',}}>
