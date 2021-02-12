@@ -29,7 +29,7 @@ export default function SimplePaper( {fixture} ) {
     }
     // getFixtures();
 
-  setTimeout(getFixtures, 1000);
+  setTimeout(getFixtures, 4000);
 
   }, [] )
   
@@ -77,7 +77,7 @@ export default function SimplePaper( {fixture} ) {
               { fixture.elapsed === 0 ? 
                 <span style={{fontSize:'16px', fontFamily:'Helvetica', backgroundColor:'pink',
                         fontWeight:'600',paddingLeft:'10px', paddingTop:'20px', 
-                        fontStyle:'italic', textAlign:'left',}}>
+                        fontStyle:'italic', textAlign:'left', color:'grey',}}>
                   Upcoming
                 </span>
                     :
@@ -119,8 +119,8 @@ export default function SimplePaper( {fixture} ) {
       <div style={{padding:'2%', marginTop:'25px'}}>
         { fixtures.length > 0 ? allH2HGames : 
         <SportsSoccerIcon className={"Icon"} 
-         style={{fontSize:'90px', margin:'auto', display:'flex', height:'40px',
-          color:"#516290", marginTop:"70px",  textShadow:"2px 4px 6px orange", }}/>}
+         style={{fontSize:'90px', marginLeft:'50%', display:'flex', height:'40px',
+          color:"#516290", marginTop:"70px", }}/>}
       </div>
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}

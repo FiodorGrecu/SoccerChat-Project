@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
+import './StatsTopBar.css';
 
 
 
@@ -100,14 +101,14 @@ export default function StatsBar( {fixture} ) {
         </div>
         <div style={{display: "flex",  }}>
           
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+          <div className={"BarLinks"}  style={{paddingLeft:'50px', display:'flex' ,width:'100%',
                justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
                  
             <Link component={RouterLink} to={'/fixtures'} >
-              <p style={{marginRight:'939px', }}>Back</p>
+              <p style={{marginRight:'989px', }}>Back</p>
             </Link>
             <Link component={RouterLink} to={`/game/${gameNum}/events`}>
               <p style={{paddingRight:'20px'}}>Summary</p>
