@@ -45,7 +45,7 @@ export default function CenteredGrid(props) {
           style={{fontSize:'50px', margin:'auto', height:'40px',
           marginTop:'60px', color:"#516290", marginTop:'300px'}}/> 
       </div>
-      <div><hr style={{color:'green', width:'200px'}}></hr></div>
+      {/* <div><hr style={{color:'green', width:'200px'}}></hr></div> */}
       </div>)
   } else {
     return <Game fixture={fixture}/>

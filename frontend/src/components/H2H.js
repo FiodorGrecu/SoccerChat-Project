@@ -29,7 +29,7 @@ export default function SimplePaper( {fixture} ) {
     }
     // getFixtures();
 
-  setTimeout(getFixtures, 2000);
+  setTimeout(getFixtures, 5000);
 
   }, [] )
 
@@ -96,10 +96,14 @@ export default function SimplePaper( {fixture} ) {
 //   
 
   return (
-    <div style={{ backgroundColor: 'aliceblue', }}>
+    <div style={{ }}>
     
       <div style={{padding:'2%', marginTop:'25px'}}>
-        { fixtures.length > 0 ? allH2HGames : <SportsSoccerIcon className={"Icon"}  style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px', color:"#516290"}}/>}
+        { fixtures.length > 0 ? allH2HGames : 
+        <SportsSoccerIcon className={"Icon"} 
+         style={{fontSize:'90px', margin:'auto', display:'flex', height:'40px',
+          color:"#516290", marginTop:"70px",  textShadow:"2px 4px 6px orange", }}/>}
+          {/* <hr style={{color:'green', width:'200px'}}/> */}
       </div>
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}
