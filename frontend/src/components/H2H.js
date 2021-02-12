@@ -32,7 +32,9 @@ export default function SimplePaper( {fixture} ) {
   setTimeout(getFixtures, 1000);
 
   }, [] )
-
+  
+  const status = fixture.fixture.status.short;
+  console.log(status)
 
   const allH2HGames = fixtures.reverse().map(fixture =>(
     
@@ -69,11 +71,25 @@ export default function SimplePaper( {fixture} ) {
                   { fixture.goalsHomeTeam } 
               </p>
             </div>
+
             <div style={{width:'12%',display:'flex'}}>
+              {/* { fixture.fixture.statusShort === "NS" ? 
+                <span style={{fontFamily:'Helvetica',
+                fontWeight:'600',paddingTop:'8px', position:'absolute', 
+                left:'50%', top:'30%', transform: 'translate(-60%, -40%)', 
+                fontStyle:'italic', color:'grey' }}> 
+                    Upcoming 
+                </span> 
+                :
+                <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
+                    fontWeight:'600', paddingTop:'8px', paddingRight:'40px', }}>
+                   - 
+                </p>} */}
               <p style={{textAlign:'right', fontSize:'20px', fontFamily:'Helvetica', 
-              fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
+                  fontWeight:'600', paddingTop:'8px', paddingRight:'40px' }}>{' - '}
               </p>
             </div>
+
             <div style={{width:'50%',display:'flex',}}>
               <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                   fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
