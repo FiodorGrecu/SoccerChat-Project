@@ -111,9 +111,9 @@ export default function StatsBar( {fixture} ) {
               <p className={"BarLinks"} style={{paddingLeft:'10px', }}>Back</p>
             </RouterLink>
             <span style={{margin:'auto', }}></span>
-            <Link className={"BarLinks"} component={RouterLink} to={`/game/${gameNum}/events`}>
-              <p style={{paddingRight:'10px'}}>Summary</p>
-            </Link>
+            <RouterLink className={"BarLinks"}  to={`/game/${gameNum}/events`}>
+              <p className={"BarLinks"} style={{paddingRight:'10px'}}>Summary</p>
+            </RouterLink>
             <Link component={RouterLink} to={`/game/${gameNum}/statistics`}>
               <p style={{paddingRight:'20px' }}>Statistics</p>
             </Link>
