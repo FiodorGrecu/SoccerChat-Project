@@ -25,7 +25,7 @@ export default function CenteredGrid(props) {
   
     // gameDetails();
 
-    setTimeout(gameDetails, 1000);
+    setTimeout(gameDetails, 5000);
 
 
   }, [gameNum] )
@@ -42,10 +42,10 @@ export default function CenteredGrid(props) {
       <div  style={{}}>
       <div style={{display:'flex'}}>
         <SportsSoccerIcon className={"Icon"} 
-          style={{fontSize:'50px', margin:'auto', height:'40px',
+          style={{fontSize:'50px', marginLeft:'50%', height:'40px',
           marginTop:'60px', color:"#516290", marginTop:'300px'}}/> 
       </div>
-      <div ><hr style={{color:'green', width:'200px', borderTop:'2px solid green' }}></hr></div>
+      {/* <div ><hr style={{color:'green', width:'200px', borderTop:'2px solid green' }}></hr></div> */}
       </div>)
   } else {
     return <Game fixture={fixture}/>

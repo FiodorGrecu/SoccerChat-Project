@@ -7,10 +7,16 @@
         cursor: pointer;
         text-decoration: none;
         transition: all .2s ease;
-        line-height: 1;
+        transition-property: color;
+        transition-duration: .3s;
+        transition-timing-function:'ease';
+        transition-delay: 0s;
+        /* line-height: 1; */
     }
 
-/* .BarLinks  */
+.BarLinks :visited {
+    color:'blue'
+}
 
 /* .BarLinks  */
 

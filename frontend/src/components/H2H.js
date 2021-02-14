@@ -121,7 +121,9 @@ export default function SimplePaper( {fixture} ) {
         <SportsSoccerIcon className={"Icon"} 
          style={{fontSize:'90px', marginLeft:'50%', display:'flex', height:'40px',
           color:"#516290", marginTop:"70px", }}/>}
+      {/* <div ><hr style={{color:'green', width:'200px', borderTop:'2px solid green' }}></hr></div> */}
       </div>
+
     {/* <StatsBar/> */}
     {/* <StatsTopBarUpcoming/> */}
     </div>
