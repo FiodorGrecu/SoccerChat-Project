@@ -69,7 +69,7 @@ export default function StatsBar( {fixture} ) {
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 
                     justifyContent:'flex-end', paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
-                <span style={{paddingRight:'5px',}}>{hometeamName}</span>
+                <RouterLink  className={"TeamName"}><span className={"TeamNme"} style={{paddingRight:'5px',}}>{hometeamName}</span></RouterLink> 
                 <span>
                 {fixture.fixture && <img src={hometeamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
@@ -114,17 +114,17 @@ export default function StatsBar( {fixture} ) {
             <RouterLink className={"BarLinks"}  to={`/game/${gameNum}/events`}>
               <p className={"BarLinks"} style={{paddingRight:'10px'}}>Summary</p>
             </RouterLink>
-            <Link component={RouterLink} to={`/game/${gameNum}/statistics`}>
-              <p style={{paddingRight:'20px' }}>Statistics</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}`}>
-              <p style={{paddingRight:'20px', }}>Lineups</p>
-            </Link>
+            <RouterLink to={`/game/${gameNum}/statistics`}>
+              <p className={"BarLinks"} style={{paddingRight:'20px' }}>Statistics</p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} component={RouterLink} to={`/game/${gameNum}`}>
+              <p className={"BarLinks"} className={"BarLinks"} style={{paddingRight:'20px', }}>Lineups</p>
+            </RouterLink>
             <Link component={RouterLink} to={`/game/${gameNum}/h2h`}>
-              <p style={{paddingRight:'20px'}}>H2H</p>
+              <p className={"BarLinks"} style={{paddingRight:'20px'}}>H2H</p>
             </Link>
             <Link component={RouterLink} to={`/game/${gameNum}/chat`}>
-              <p style={{paddingRight:'20px'}}>Chat</p>
+              <p className={"BarLinks"} style={{paddingRight:'20px'}}>Chat</p>
             </Link>
           </div> 
         </div>
