@@ -91,18 +91,18 @@ def leagues(country, season):
 @app.route('/api/last/<num_games>', methods=["GET"])
 def last_5(num_games):
     # last_5real = Game.last_5(num_games)
-    last_5 = last5
+    last_5real = last5
     # last_5.save() 
-    return jsonify({'fixtures': last_5})
+    return jsonify({'fixtures': last_5real})
 
 
 @app.route('/api/next/<num_games>', methods=["GET"])
 def next_5(num_games):
     # next_5real = Game.next_5(num_games)
-    next_5 = next5
-    # last_5.save() 
+    next_5real = next5
+    # next_5real.save() 
 
-    return jsonify({'fixtures': next_5})
+    return jsonify({'fixtures': next_5real})
 
 ####### TOP SCORERS
 @app.route('/api/topscorers/<season>/<league_id>', methods=[ "GET"])
@@ -139,8 +139,8 @@ def game_stats(fixture_id):
 
 @app.route('/api/h2h/<team_id_1>/<team_id_2>', methods=["GET"])
 def game_h2h(team_id_1, team_id_2):
-    # h2h = Game.game_h2h(team_id_1, team_id_2)
-    h2h = H2H
+    h2h = Game.game_h2h(team_id_1, team_id_2)
+    # h2h = H2H
     return jsonify({"fixtures": h2h})   
 
 # http://127.0.0.1:5000/api/upcoming_fixt/39/2020/2021-01-19/2021-06-30
@@ -155,7 +155,6 @@ def upcoming_fixt(league_id, season, from_date, to_date):
 @app.route('/api/past_fixt/<league_id>/<season>/<from_date>/<to_date>', methods=["GET"])
 def past_fixt(league_id, season, from_date, to_date):
     # past_fixt = Game.all_past_fixtures(league_id, season, from_date, to_date)
-
     # past_fixt = all_past_fixtures
     past_fixt = new_past_fixt
     return jsonify({"fixtures":past_fixt})

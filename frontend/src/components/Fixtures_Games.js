@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Fixture_Games.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
@@ -171,12 +172,12 @@ export default function SimplePaper() {
           </Paper>
           {outputNext5}
           {/* component={RouterLink} */}
-          <Link   to="/upcoming_fixtures" >
+          <Link style={{textDecoration:'none'}}   to="/upcoming_fixtures" >
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-               <span>Show All</span> <span style={{color:'#BE14AA'}}> > </span> 
+               <span>Show All</span> <span className={"Arrow"}> > </span> 
             </Paper>
           </Link>
         </div>
@@ -189,12 +190,12 @@ export default function SimplePaper() {
           </Paper>
           {outputLast5}
           {/* component={RouterLink} */}
-          <Link   to="/past_fixtures" >
+          <Link style={{textDecoration:'none'}} to="/past_fixtures" >
             <Paper style={{textAlign:'right', height:'50px', 
                     paddingRight:'20px', paddingTop:'15px',fontSize:'1rem', 
                     color:'grey',fontFamily:'Roboto,sans-serif', 
                     fontWeight:'bold' }}>
-               <span>Show All</span> <span style={{color:'#BE14AA'}}> > </span> 
+               <span >Show All</span> <span className={"Arrow"}> > </span> 
             </Paper>
           </Link>
         </div>
