@@ -69,7 +69,11 @@ export default function StatsBar( {fixture} ) {
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 
                     justifyContent:'flex-end', paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
-                <RouterLink  className={"TeamName"}><span className={"TeamName"} style={{paddingRight:'5px',}}>{hometeamName}</span></RouterLink> 
+                <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
+                  <span className={"TeamName"} style={{paddingRight:'5px',}}>
+                    {hometeamName}
+                  </span>
+                </RouterLink> 
                 <span>
                 {fixture.fixture && <img src={hometeamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
@@ -85,7 +89,9 @@ export default function StatsBar( {fixture} ) {
                 <span>
                 {fixture.fixture && <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
-                <span style={{paddingLeft:'5px'}}>{awayteamName}</span>
+                <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
+                  <span className={"TeamName"} style={{paddingLeft:'5px'}}>{awayteamName}</span>
+                </RouterLink>
             </div>
 
             {/* Half time score div div */}

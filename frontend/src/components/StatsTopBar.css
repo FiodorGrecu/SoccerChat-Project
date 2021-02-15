@@ -21,7 +21,7 @@
 /* .BarLinks  */
 
 .TeamName {
-    color: black;
+    color: gray;
     font-family: Roboto, sans-serif;
 }
 .TeamName :hover {
