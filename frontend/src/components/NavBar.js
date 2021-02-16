@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBar.css';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -88,8 +89,8 @@ export default function ProminentAppBar() {
           </Typography>   
           </Box>
 
-          <IconButton  style={{ padding: 5,  color:"gray" }}>
-            <SportsSoccerIcon />            
+          <IconButton  style={{ padding: 5,  color:"white" }}>
+            <SportsSoccerIcon className={"BarIcon"} />            
           </IconButton>
 
             <Typography className={classes.title} variant="h3" noWrap>

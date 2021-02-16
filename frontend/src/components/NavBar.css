@@ -1,0 +1,19 @@
+
+@media (prefers-reduced-motion: no-preference) {
+    .BarIcon {
+    /* animation: App-logo-spin infinite 3s linear; */
+    animation: App-logo-spin 3s infinite;
+   }
+ }
+
+ @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* .BarIcon {
+      color:"white !important"
+  } */
