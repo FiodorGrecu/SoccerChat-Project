@@ -27,8 +27,8 @@ export default function ChatWithAuth({gameId}) {
     </div>
   )} else {
     return (
-      <div>
-        <LoginOrSignup setUser={setUser}/>
+      <div style={{ width:"100%", display:"flex"}}>
+        <LoginOrSignup  setUser={setUser}/>
       </div>
     )
   }
@@ -38,7 +38,7 @@ const LoginOrSignup = ({setUser}) => {
   const [showLogin, setShowLogin] = useState(true);
   console.log(setUser);
   return (
-    <div >
+    <div style={{margin:"auto"}}>
       { showLogin ? <LogIn setUser={setUser} setShowLogin={setShowLogin}/> : 
                     <SignUp setUser={setUser} setShowLogin={setShowLogin}/> }
     </div>

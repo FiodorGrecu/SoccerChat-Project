@@ -113,7 +113,7 @@ export default function StatsBar( {fixture} ) {
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
                  
-            <RouterLink className={"BarLinks"} to={'/fixtures'} >
+            <RouterLink className={"BarLinks"}  to={'/fixtures'} >
               <p className={"BarLinks"} style={{paddingLeft:'10px', }}>Back</p>
             </RouterLink>
             <span style={{margin:'auto', }}></span>

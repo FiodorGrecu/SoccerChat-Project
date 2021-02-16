@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
 
         paper: {
             padding: theme.spacing (5),    
-            margin: theme.spacing (5),
-            marginTop: 30,
-            paddingTop: 75,
+            // margin: theme.spacing (5),
+            // marginTop: 30,
+            // paddingTop: 75,
             alignItems:'center',
             justifyContent: "center",
             width: 350,
@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
         },
         box: {
             padding: theme.spacing (5),
-            margin: theme.spacing (5),
-            alignItems:'center',
-            justifyContent: "center",
+            // margin: theme.spacing (5),
+            // alignItems:'center',
+            // justifyContent: "center",
             textAlign: "center",
-            paddingRight: 100,
-            paddingLeft: 400
+            // paddingRight: 100,
+            // paddingLeft: 400
         },
         or: {
             fontSize: 15,

@@ -13,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         flexDirection: "column",
-        // background: url('/Users/Work/Desktop/MyProject/frontend/public/Crl069AXgAEUE51.jpg') !important;
+        // background: url('/Users/Work/Desktop/MyProject/frontend/public/Crl069AXgAEUE51.jpg'),
 
     },
     paper: {
         padding: theme.spacing(5),
-        margin: theme.spacing(5),
+        // margin: theme.spacing(5),
         alignItems: 'center',
         justifyContent: "center",
         width: 350,
@@ -28,12 +28,12 @@ const useStyles = makeStyles((theme) => ({
     },
     box: {
         padding: theme.spacing(5),
-        margin: theme.spacing(5),
-        alignItems: 'center',
-        justifyContent: "center",
+        // // margin: theme.spacing(5),
+        // alignItems: 'center',
+        // justifyContent: "center",
         textAlign: "center",
-        paddingRight: 100,
-        paddingLeft: 400,
+        // paddingRight: 100,
+        // paddingLeft: 400,
         border: 30
     },
     or: {
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 40,
     },
 }));
+
 
 function LogIn({ setUser, setShowLogin }) {
     const classes = useStyles();
@@ -106,6 +107,11 @@ function LogIn({ setUser, setShowLogin }) {
             // sessionStorage.setState(userData.session_id)
         }
     }
+    function _onSubmit(e) {
+        e.preventDefault();
+        sendLogin();
+        console.log("worked")
+    }
 
     return (
         <React.Fragment justify="center">
@@ -115,23 +121,32 @@ function LogIn({ setUser, setShowLogin }) {
                         {/* <LockOutlinedIcon /> */}
                     </Avatar>
                     <h3 className={classes.signin} > Sign In </h3>
-                    <Input id="username" onChange={e => setUsername(e.target.value)}
-                        placeholder="Username or Email"
-                    ></Input>
-                    <br />
-                    <Input id="password" type="password"
-                        onChange={e => setPassword(e.target.value)}
-                        placeholder="Password"
-                        label="Outlined" variant="outlined"
-                    ></Input>
-                    <br />
-                    <Button className={classes.button} onClick={e => sendLogin()} color="#1A91DA" variant="contained">Log In</Button>
+                    <form onSubmit={_onSubmit}>
+                        <Input id="username" onChange={e => setUsername(e.target.value)}
+                            placeholder="Username or Email"
+                        ></Input>
+                        <br />
+                        <Input id="password" type="password"
+                            onChange={e => setPassword(e.target.value)}
+                            placeholder="Password"
+                            label="Outlined" variant="outlined"
+                        ></Input>
+                        <br />
+                        <Button type={"submit"} className={classes.button} 
+                            onClick={e => sendLogin()} color="#1A91DA" 
+                            variant="contained">Log In
+                        </Button>
+                    </form>
                     {isError && <p>Invalid Password or Username. Please try again.</p>}
                     <br></br>
                     {/* <Link>Forgot Password?</Link> */}
                     <p className={classes.or}>or</p>
                     <p style={{ color: grey[600] }}>
-                        If you are new user? <Link component={RouterLink} onClick={e => setShowLogin(false)}>Sign Up Here</Link>
+                        If you are new user? 
+                        <Link component={RouterLink} 
+                            onClick={e => setShowLogin(false)}>
+                                Sign Up Here
+                        </Link>
                     </p>
                 </Paper>
             </Box>

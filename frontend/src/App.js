@@ -86,7 +86,7 @@ function App() {
         </Route>
 
         <Route path='/chat'>
-          <ChatSection/>
+          <ChatSection />
         </Route>
 
 
