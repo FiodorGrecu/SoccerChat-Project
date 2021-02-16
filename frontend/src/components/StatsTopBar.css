@@ -11,11 +11,14 @@
         transition-duration: .3s;
         transition-timing-function:'ease';
         transition-delay: 0s;
-        /* line-height: 1; */
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
     }
-
-.BarLinks :visited {
-    color:'blue'
+.BarLinks :active {
+    color:'#BE14AA'
+}
+.BarLinks :focus {
+    color:'#BE14AA'
 }
 
 /* .BarLinks  */
