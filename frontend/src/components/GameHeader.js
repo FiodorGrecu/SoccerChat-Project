@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import { makeStyles } from '@material-ui/core/styles';
+import './StatsTopBar.css';
+
 
 const GameHeader = ( {fixture} ) => {
   const useStyles = makeStyles((theme) => ({
@@ -74,7 +76,7 @@ const GameHeader = ( {fixture} ) => {
         <div style={{display:'flex', width:'100%',}}>
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%', }}>
             <img src={hometeamLogo} style={{width:'80px', height:'80px'}}/>
-            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
+            <p className={"TeamName"} style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
                 letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>
                   {hometeamName}
             </p>

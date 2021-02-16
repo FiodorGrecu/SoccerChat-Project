@@ -5,6 +5,7 @@ import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
+import './StatsTopBar.css';
 
 
 
@@ -94,7 +95,7 @@ export default function LeagueBar() {
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}
                >
-            <Link component={RouterLink} to='/fixtures'><p style={{paddingRight:'20px'}}>Summary</p></Link>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to='/fixtures'><p className={"BarLinks"} style={{paddingRight:'20px',}}>Summary</p></RouterLink>
             <Link component={RouterLink} to="/table_view"><p style={{paddingRight:'20px' }}>Standings</p></Link>
             <Link ><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
             <Link component={RouterLink} to="/upcoming_fixtures"><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
