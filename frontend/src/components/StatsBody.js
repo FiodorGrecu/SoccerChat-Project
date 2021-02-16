@@ -49,10 +49,10 @@ export default function StatsBody({ fixture }) {
   const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
   const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
   
-  const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value;
-  const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value;
+  const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value || 0;
+  const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value || 0;
   
-  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value;
+  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value ;
   const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value;
   
   const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value || 0;
@@ -68,18 +68,15 @@ export default function StatsBody({ fixture }) {
   const homePassesAcuracy = fixture.statistics && fixture.statistics[0].statistics[15].value.slice(0,-1);
   const awayPassesAcuracy = fixture.statistics && fixture.statistics[1].statistics[15].value.slice(0,-1);
   
-  // const homePassesAcuracyWidth = fixture.statistics && fixture.statistics[0].statistics[15].value;
-  // const awayPassesAcuracyWidth = fixture.statistics && fixture.statistics[1].statistics[15].value;
   
   const homeBallPossession = fixture.statistics && fixture.statistics[0].statistics[9].value.slice(0,-1);
   const awayBallPossession = fixture.statistics && fixture.statistics[1].statistics[9].value.slice(0,-1);
-  // console.log(homeBallPossession)
 
-  const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value;
-  const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value;
+  const homeCornerKicks = fixture.statistics && fixture.statistics[0].statistics[7].value || 0;
+  const awayCornerKicks = fixture.statistics && fixture.statistics[1].statistics[7].value || 0;
   
-  const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value;
-  const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value;
+  const homeOffsides = fixture.statistics && fixture.statistics[0].statistics[8].value || 0;
+  const awayOffsides = fixture.statistics && fixture.statistics[1].statistics[8].value || 0;
 
   return (
   <div style={{width:'100%', }}>
