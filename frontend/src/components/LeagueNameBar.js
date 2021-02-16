@@ -96,10 +96,10 @@ export default function LeagueBar() {
                backgroundColor:'white'}}
                >
             <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to='/fixtures'><p className={"BarLinks"} style={{paddingRight:'20px',}}>Summary</p></RouterLink>
-            <Link component={RouterLink} to="/table_view"><p style={{paddingRight:'20px' }}>Standings</p></Link>
-            <Link ><p style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></Link>
-            <Link component={RouterLink} to="/upcoming_fixtures"><p style={{paddingRight:'20px' }}>Fixtures</p></Link>
-            <Link component={RouterLink} to="/past_fixtures"><p style={{paddingRight:'20px' }}>Results</p></Link>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to="/table_view"><p className={"BarLinks"} style={{paddingRight:'20px' }}>Standings</p></RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} ><p className={"BarLinks"} style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to="/upcoming_fixtures"><p className={"BarLinks"} style={{paddingRight:'20px' }}>Fixtures</p></RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to="/past_fixtures"><p className={"BarLinks"} style={{paddingRight:'20px' }}>Results</p></RouterLink>
           </div> 
         </div>
     </div>
