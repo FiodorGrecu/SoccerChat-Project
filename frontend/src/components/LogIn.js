@@ -6,7 +6,7 @@ import Input from '@material-ui/core/Input';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-
+// import LockOutlinedIcon from 'material-ui/LockOutlinedIcon'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         width: 350,
         height: 450,
-        backgroundColor: "#F0E4C8",
+        // backgroundColor: "#F0E4C8",
+        backgroundColor: '#E8E8E8',
 
     },
     box: {
@@ -55,7 +56,8 @@ const useStyles = makeStyles((theme) => ({
     },
     signin: {
         fontSize: 30,
-        fontFamily: 'Apple',
+        fontFamily: 'Roboto,sans-serif',
+        fontWeight:'bold'
     },
     avatar: {
         margin: theme.spacing(2),
@@ -98,7 +100,7 @@ function LogIn({ setUser, setShowLogin }) {
             // through value = sessionStorage.getItem("session_id"); function
         } else {
             setIsError(true);
-            console.log()
+            console.log(isError)
             // show the user a message saying login failed
             // will involve saving an error state
             // and having a <p> tag render if there's an error
@@ -117,7 +119,6 @@ function LogIn({ setUser, setShowLogin }) {
             <Box className={classes.box}>
                 <Paper elevation={10} className={classes.paper}>
                     <Avatar className={classes.avatar}>
-                        {/* <LockOutlinedIcon /> */}
                     </Avatar>
                     <h3 className={classes.signin} > Sign In </h3>
                     <form onSubmit={_onSubmit}>
@@ -135,8 +136,8 @@ function LogIn({ setUser, setShowLogin }) {
                             onClick={e => sendLogin()} color="#1A91DA" 
                             variant="contained">Log In
                         </Button>
-                    </form>
                     {isError && <p>Invalid Password or Username. Please try again.</p>}
+                    </form>
                     <br></br>
                     {/* <Link>Forgot Password?</Link> */}
                     <p className={classes.or}>or</p>

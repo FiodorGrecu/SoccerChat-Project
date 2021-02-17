@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     alignSelf: 'flex-end',
     color: 'white',
+    fontWeight:"bold"
   },
 
   links: {

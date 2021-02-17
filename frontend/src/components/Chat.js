@@ -11,15 +11,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: 'aliceblue',
     width: '100%',
-    // marginTop: '40px',
-
-    // flexDirection: 'row'
-
   },
 
   button: {
-    // margin:0,
-    // marginLeft: 200, 
     marginTop: '2px',
     width: '100%',
     backgroundColor : "#1A91DA",
@@ -36,11 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   input: {
-    // marginTop: 1,
     backgroundColor: 'white',
-    // justifyContent: 'center',
-    // paddingTop: 10,
-    // marginLeft: 77, 
     size: 50,
     width: '100%',
     height: 30,
@@ -49,19 +39,15 @@ const useStyles = makeStyles((theme) => ({
     border: 'none'
   },
   text: {
-    // flex: 1,
     borderRadius: 41,
     marginTop: '10px',
-    // marginLeft: 500,
     color: 'grey',
     fontSize: 15,
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
     fontWeight: "bold",
     alignItems:'center',
-    // justifyContent:'flex-start'
   },
   date: {
-    // fontStyle: 'italic',
     color: '#3C185C',
     fontFamily: 'lucida granden, tahoma, verdana, arial, sansSerif',  
     fontWeight: "bold",
@@ -124,8 +110,6 @@ export default function UserChat({ user, setUser, gameId }) {
     console.log(chatData)
     setChats(chatData.chat);
     setText('');
-    // setText(chatData.text);
-    // console.log(chatData.text)
   }
 
   function logOut() {
@@ -136,7 +120,6 @@ export default function UserChat({ user, setUser, gameId }) {
   function getTime(data) {
     const time = new Date(data);
     return time.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit' });
-    // return new Date(date).toLocaleTimeString([], hour='2-digit', minute='2-digit')
   }
 
   function getDay(date) {
@@ -165,7 +148,7 @@ export default function UserChat({ user, setUser, gameId }) {
                 value={text} 
                 onChange={event => setText(event.target.value)} 
                 onKeyDown={_handleKeyDown} 
-                placeholder={"Your message here"}
+                placeholder={"What are your thoughts...?"}
                 /> 
         <Divider />
                 {/* <Input fluid icon='search' placeholder='Search...' /> */}
@@ -175,8 +158,7 @@ export default function UserChat({ user, setUser, gameId }) {
               edge="end"
               variant="contained"
               color="primary"           
-              endIcon={<MdSend>send</MdSend>} 
-              >
+              endIcon={<MdSend>send</MdSend>}>     
         </Button>
           <div>
           {chats.map(message => <span className={classes.text}>

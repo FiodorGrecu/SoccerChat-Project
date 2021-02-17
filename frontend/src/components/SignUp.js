@@ -6,6 +6,8 @@ import { green, grey } from '@material-ui/core/colors';
 import { Redirect } from 'react-router-dom';
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Link as RouterLink } from 'react-router-dom';
+import Avatar from '@material-ui/core/Avatar';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: "center",
             width: 350,
             height: 450,
-            backgroundColor: "#F0E4C8",
+            // backgroundColor: "#F0E4C8",
+            // backgroundColor: "#E8E8E8'",
+            backgroundColor: "#E8E8E8",
         },
         box: {
             padding: theme.spacing (5),
@@ -51,8 +55,16 @@ const useStyles = makeStyles((theme) => ({
         },
         signup: {
            fontSize: 30, 
-           fontFamily: 'Apple',            
+           fontFamily: 'Roboto,sans-serif',    
+            fontWeight:'bold'        
         }, 
+        avatar: {
+            margin: theme.spacing(2),
+            marginLeft: 109,
+            backgroundColor: theme.palette.secondary.main,
+            justifyContent: 'center',
+            fontSize: 40,
+        },
         
     }));
 
@@ -93,35 +105,31 @@ const useStyles = makeStyles((theme) => ({
             console.log(isError)
         }
     }
-
     function _onSubmit(e) {
         e.preventDefault();
         sendSignUp();
-        console.log("You're in")
+        console.log("worked")
     }
-
 
     return (
         <React.Fragment className={classes.reactfragment}>
             <Box className={classes.box}>
-            <Paper elevation={10} className={classes.paper}>           
+            <Paper elevation={10} className={classes.paper}> 
+                <Avatar className={classes.avatar}>
+                </Avatar>          
                 <h3 className={classes.signup}> Sign Up </h3>
                 <form onSubmit={_onSubmit}>
                 <Input id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
-                
                 <Input id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
-
                 <Input id="username" onChange={e => setUserName(e.target.value)} placeholder="Create User Name*"></Input>
-                
-                <Input id="email" onChange={e => setEmail(e.target.value)} placeholder="Email Address"></Input>
-                
-                <Input type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
-               
+                <Input id="email" onChange={e => setEmail(e.target.value)} placeholder="Email Address*"></Input>         
+                <Input type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password*"></Input>
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
-                </form>
-                <br></br>
-                <p style={{color: grey[600]}}>Already registered? <Link component={RouterLink} onClick={e => setShowLogin(true)}>Sign In</Link></p>
                 { isError && <p>Sign Up Error.</p> }
+                <br></br>
+                <p style={{color: grey[600]}}>Already registered? 
+                <Link component={RouterLink} onClick={e => setShowLogin(true)}>Sign In</Link></p>
+                </form>
             </Paper>           
             </Box>             
         </React.Fragment>
