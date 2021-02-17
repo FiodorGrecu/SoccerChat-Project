@@ -51,15 +51,9 @@ const useStyles = makeStyles((theme) => ({
         },
         signup: {
            fontSize: 30, 
-           fontFamily: 'Apple',
-                     
+           fontFamily: 'Apple',            
         }, 
-        facebookIcon: {
-            color: "blue"
-        }, 
-        twitterIcon: {
-            color: "#1A91DA"
-        }
+        
     }));
 
  function SignUp({ setUser, setShowLogin }) {
@@ -98,16 +92,21 @@ const useStyles = makeStyles((theme) => ({
             setIsError(true);
             console.log(isError)
         }
-        // let inputUsername = document.getElementById("username");
-        // let inputPassword = document.getElementById('password');
-        // inputUsername.value = "";
-        // inputPassword.value = "";
     }
+
+    function _onSubmit(e) {
+        e.preventDefault();
+        sendSignUp();
+        console.log("You're in")
+    }
+
+
     return (
         <React.Fragment className={classes.reactfragment}>
             <Box className={classes.box}>
             <Paper elevation={10} className={classes.paper}>           
                 <h3 className={classes.signup}> Sign Up </h3>
+                <form onSubmit={_onSubmit}>
                 <Input id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
                 
                 <Input id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
@@ -119,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
                 <Input type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password"></Input>
                
                 <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
+                </form>
                 <br></br>
                 <p style={{color: grey[600]}}>Already registered? <Link component={RouterLink} onClick={e => setShowLogin(true)}>Sign In</Link></p>
                 { isError && <p>Sign Up Error.</p> }

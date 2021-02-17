@@ -90,7 +90,6 @@ function LogIn({ setUser, setShowLogin }) {
 
         console.log(userData);
         setIsError(false);
-        // {"session_id":"9b74fea21bf01ef","username":"greg"}
         // save our session id in sessionStorage
         if (userData.session_id) {
             sessionStorage.setItem("session_id", JSON.stringify(userData));
