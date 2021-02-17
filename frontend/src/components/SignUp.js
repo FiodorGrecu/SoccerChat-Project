@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
             width: 350,
             height: 450,
             // backgroundColor: "#F0E4C8",
-            // backgroundColor: "#E8E8E8'",
+            // backgroundColor: "white",
             backgroundColor: "#E8E8E8",
         },
         box: {
@@ -76,41 +76,46 @@ const useStyles = makeStyles((theme) => ({
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
     const [username, setUserName] = useState("");
-    // const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);
 
     async function sendSignUp() {
-        const data = JSON.stringify({
-            'firstname': firstname, 
-            'lastname': lastname, 
-            'username': username, 
-            'email': email, 
-            'password': password
-        })
-        const configs = {
-            method: "POST",
-            body: data,
-            headers: {"Content-Type": "application/json"}
-        };
-        const response = await fetch("http://localhost:5000/api/sign_up", configs)
-        const userData = await response.json();
+        if (firstname && lastname && username && email && password) {
 
-        if (userData.session_id) {
-          sessionStorage.setItem("session_id", JSON.stringify(userData)) 
-          setUser(userData);
-        } else {
-            setIsError(true);
+            const data = JSON.stringify({
+                'firstname': firstname, 
+                'lastname': lastname, 
+                'username': username, 
+                'email': email, 
+                'password': password
+            })
+            const configs = {
+                method: "POST",
+                body: data,
+                headers: {"Content-Type": "application/json"}
+            };
+            const response = await fetch("http://localhost:5000/api/sign_up", configs)
+            const userData = await response.json();
+
+            if (userData.session_id) {
+            sessionStorage.setItem("session_id", JSON.stringify(userData)) 
+            setUser(userData);
+            } else {
+                setIsError(true);
+                console.log(isError)
+            }
+        
+        }else {
+            setIsError(true)
             console.log(isError)
-        }
+        };
     }
     function _onSubmit(e) {
         e.preventDefault();
         sendSignUp();
         console.log("worked")
     }
-
     return (
         <React.Fragment className={classes.reactfragment}>
             <Box className={classes.box}>
@@ -118,18 +123,18 @@ const useStyles = makeStyles((theme) => ({
                 <Avatar className={classes.avatar}>
                 </Avatar>          
                 <h3 className={classes.signup}> Sign Up </h3>
-                <form onSubmit={_onSubmit}>
-                <Input id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
-                <Input id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
-                <Input id="username" onChange={e => setUserName(e.target.value)} placeholder="Create User Name*"></Input>
-                <Input id="email" onChange={e => setEmail(e.target.value)} placeholder="Email Address*"></Input>         
-                <Input type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password*"></Input>
-                <Button  className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
-                { isError && <p>Sign Up Error.</p> }
+                <form  onSubmit={_onSubmit}>
+                <Input required id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
+                <Input required id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
+                <Input required id="username" onChange={e => setUserName(e.target.value)} placeholder="Create User Name*"></Input>
+                <Input required id="email" onChange={e => setEmail(e.target.value)} placeholder="Email Address*"></Input>         
+                <Input required type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password*"></Input>
+                <Button type={"submit"} className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
+                {isError && <p >Please check all the fields and try again</p>}
+                </form>
                 <br></br>
                 <p style={{color: grey[600]}}>Already registered? 
                 <Link component={RouterLink} onClick={e => setShowLogin(true)}>Sign In</Link></p>
-                </form>
             </Paper>           
             </Box>             
         </React.Fragment>

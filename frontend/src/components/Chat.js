@@ -78,20 +78,22 @@ export default function UserChat({ user, setUser, gameId }) {
   const [isError, setIsError] = useState(false);
   const [userData, setUserData] = useState({});
 
+  async function getChats() {
+    const response = await fetch(`http://localhost:5000/api/get_chat/${gameId}`)
+    const chatData = await response.json();
+    console.log(chatData);
+    setChats(chatData.chat);
+  }  
+  // setInterval(getChats, 7000);
 
   useEffect( () => {
-    async function getChats() {
-      const response = await fetch(`http://localhost:5000/api/get_chat/${gameId}`)
-      const chatData = await response.json();
-      console.log(chatData);
-      setChats(chatData.chat);
-    }  
     getChats();
   }, []);
 
+
+
   async function saveMessage() {
     console.log(text, chats, isError, userData)
-    // const Timestamp = timestamp;
     const data = JSON.stringify({
       'time': new Date().toString(),
       'text': text,
@@ -100,6 +102,7 @@ export default function UserChat({ user, setUser, gameId }) {
       "game_id" : gameId,
     })
     console.log(data)
+    
     const configs = {
       method:"POST",
       body: data,
