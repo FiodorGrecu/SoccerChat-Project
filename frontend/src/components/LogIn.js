@@ -129,8 +129,8 @@ function LogIn({ setUser, setShowLogin }) {
                         <Input id="password" type="password"
                             onChange={e => setPassword(e.target.value)}
                             placeholder="Password"
-                            label="Outlined" variant="outlined"
-                        ></Input>
+                            label="Outlined" variant="outlined">
+                        </Input>
                         <br />
                         <Button type={"submit"} className={classes.button} 
                             onClick={e => sendLogin()} color="#1A91DA" 

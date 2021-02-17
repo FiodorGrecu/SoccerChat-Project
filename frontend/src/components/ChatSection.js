@@ -16,8 +16,6 @@ export default function ChatWithAuth({gameId}) {
   const savedData = sessionStorage.getItem('session_id');
   const savedUser = JSON.parse(savedData)
   const [user, setUser] = useState(savedUser || {});
-  
-
   console.log(user);
 
   if (user.username) {

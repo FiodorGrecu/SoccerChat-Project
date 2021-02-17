@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
         <React.Fragment className={classes.reactfragment}>
             <Box className={classes.box}>
             <Paper elevation={10} className={classes.paper}>           
-                <h3 className={classes.signup} > Sign Up </h3>
+                <h3 className={classes.signup}> Sign Up </h3>
                 <Input id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
                 
                 <Input id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
