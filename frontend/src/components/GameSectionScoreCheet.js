@@ -147,7 +147,7 @@ export default function GameSection(props) {
                 <Link component={RouterLink} to="/events" style={{ color:'white', color:'white',
                             fontWeight: 'bold',fontSize:'1rem', 
                             paddingTop:'10px'}}>
-                      Summary      
+                      Summary     
                 </Link>
 
                 

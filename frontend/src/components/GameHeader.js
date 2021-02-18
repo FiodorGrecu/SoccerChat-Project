@@ -89,21 +89,16 @@ const GameHeader = ( {fixture} ) => {
           </div>
           {/* Score at half time */}
           <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
-            <div style={{ width:'50%', height:'25%', textAlign:'center',}}>
-              {/* <div style={{backgroundColor:'yellow', color: "white", fontSize:'20px'}}>{halfTimeStatus}</div>  */}
+            <div style={{ width:'100px', height:'25%', textAlign:'center'}}>
               <div style={{ color: "grey", 
                 paddingBottom:'1px',fontWeight: 'bold',
                 fontFamily:'Oswald,sansSerif',fontSize:' 1rem',}}>
                   {/* Score at HT */}
-                  {/* {halfTimeStatus } */}
-                  {halfTimeStatus === 'FT' ? 
-                  <p style={{backgroundColor:'red', paddingTop:'5p'}}>
-                    <p style={{color:'white', letterSpacing:'1.5px'}}>FINISHED</p>
-                  </p> : 
-                    <p style={{backgroundColor:'#23d24a'}}>
-                      <p style={{color:'white', letterSpacing:'1.5px'}}>LIVE</p>
-                    </p>}
-                  {/* {fixture.fixture.status.long} */}
+                   {halfTimeStatus === 'FT' ? 
+                    <p style={{color:'white', letterSpacing:'1.5px', backgroundColor:'red', paddingTop:'5px'}}>FINISHED</p>
+                  :  
+                      <p style={{backgroundColor:'#23d24a', color:'white', letterSpacing:'1.5px'}}>LIVE</p>
+                  } 
               </div>
                 <div style={{ display:'flex'}}> 
                   <div style={{width:'50%', paddingLeft:'25px',

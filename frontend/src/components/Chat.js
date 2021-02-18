@@ -88,6 +88,10 @@ export default function UserChat({ user, setUser, gameId }) {
 
   useEffect( () => {
     getChats();
+    const interval = setInterval(() => {
+      getChats();
+    }, 4000);
+    return () => clearInterval(interval);
   }, []);
 
 
