@@ -33,7 +33,7 @@ export default function StatsBar( {fixture} ) {
        
   const hometeamName = fixture.lineups && fixture.teams.home.name;
   const awayteamName = fixture.lineups && fixture.teams.away.name;
-
+console.log(awayteamName, hometeamName)
   const hometeamLogo = fixture.teams && fixture.teams.home.logo;
   const awayteamLogo = fixture.teams && fixture.teams.away.logo;
 
@@ -69,11 +69,11 @@ export default function StatsBar( {fixture} ) {
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 
                     justifyContent:'flex-end', paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
-                <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
-                  <span className={"TeamName"} style={{paddingRight:'5px',}}>
-                    {hometeamName}
-                  </span>
-                </RouterLink> 
+                  <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
+                    <span className={"TeamName"} style={{paddingRight:'5px',}}>
+                      {hometeamName}
+                    </span>
+                  </RouterLink> 
                 <span>
                 {fixture.fixture && <img src={hometeamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
