@@ -46,7 +46,7 @@ export default function SimplePaper() {
   const outputNext5 = nextfixtures.map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
-      <Link to={`/game/${fixture.fixture.id}`}>
+      <Link style={{textDecoration:"none"}}  to={`/game/${fixture.fixture.id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
             <StarOutlineRoundedIcon />
@@ -92,7 +92,7 @@ export default function SimplePaper() {
   const outputLast5 = lastfixtures.map(fixture =>(
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
-      <Link to={`/game/${fixture.fixture.id}`}>
+      <Link style={{textDecoration:"none"}} to={`/game/${fixture.fixture.id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
             <StarOutlineRoundedIcon />

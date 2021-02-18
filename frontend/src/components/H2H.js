@@ -40,7 +40,7 @@ export default function SimplePaper( {fixture} ) {
     
     <div className={classes.reactFragment} style={{width:'100%', }}>
       {/* <Link to={`/game/${fixture.fixture_id}`}> */}
-      <Link to={`/game/${fixture.fixture_id}`}>
+      <Link style={{textDecoration:"none"}}  to={`/game/${fixture.fixture_id}`}>
         <Paper style={{width: '100%', height:'50px', display:'flex',}} >
           <span style={{color:'grey', paddingTop:'10px', paddingLeft:'10px'}}>
             <StarOutlineRoundedIcon />
