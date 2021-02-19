@@ -1,0 +1,14 @@
+.TeamNameUpcoming {
+    color: white;
+    font-family: Roboto, sans-serif;
+}
+.TeamNameUpcoming :hover {
+    color: #BE14AA;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s ease;
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function:'ease';
+    transition-delay: 0s;
+}

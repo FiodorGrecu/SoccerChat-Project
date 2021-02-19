@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import { makeStyles } from '@material-ui/core/styles';
+import { Link as RouterLink } from 'react-router-dom';
+import './UpcomingGameHeader.css';
+
 
 const GameHeader = ({fixture}) => {
   const useStyles = makeStyles((theme) => ({
@@ -93,9 +96,9 @@ const GameHeader = ({fixture}) => {
         <div style={{display:'flex', width:'100%',}}>
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%', }}>
             <img src={hometeamLogo} style={{width:'80px', height:'80px'}}/>
-            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
+            <p className={"TeamNameUpcoming"} style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
                 letterSpacing: '1px',textTransform: 'uppercase', paddingTop:'10px'}}>
-                  {hometeamName}
+                <RouterLink className={"TeamNameUpcoming"}>{hometeamName}</RouterLink>  
             </p>
             <p style={{color:'white',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',
                 fontSize:' 2rem' }}>
@@ -134,10 +137,10 @@ const GameHeader = ({fixture}) => {
           
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>
             <img src={awayteamLogo} style={{width:'80px', height:'80px'}}/>
-            <p style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
+            <p className={"TeamNameUpcoming"} style={{color:'white',fontWeight: 'bold',fontSize: '.8125rem',
                 letterSpacing: '1px',textTransform: 'uppercase', 
                 paddingTop:'10px'}}>
-                  {awayteamName}
+                <RouterLink className={"TeamNameUpcoming"}>{awayteamName}</RouterLink>  
             </p>
             <p style={{color:'white',fontWeight:'bold', fontFamily:'Oswald,sansSerif',
                   fontSize:' 2rem'}}>
