@@ -27,8 +27,8 @@ export default function GameSectionScoreCheetBottomStats( {fixture} ) {
   return (
     <div style={{width:'100%',}}>  
         <div className={classes.scoreSheet} slyle={{display:'flex', marginBottom:'100px'}}>
-      <div style={{display:'flex', width:'100%', height:'50px',
-            backgroundColor:'white', marginLeft:'%', marginRight:'1%'}}>
+        <div style={{display:'flex', width:'100%', height:'50px',
+            backgroundColor:'white', marginRight:'1%'}}>
         {/* HOME Yellow Card  and Red Cards*/}
         <div style={{ width:'450px', textAlign:'left', 
                 paddingTop:'5px', paddingRight:'2%', 
@@ -57,14 +57,14 @@ export default function GameSectionScoreCheetBottomStats( {fixture} ) {
               </span>
           </div>
     {/* Area in the middle of the Stats bottom bar  */}
-          <div style={{ width:'450px', textAlign:'left', paddingTop:'5px', 
-                  paddingLeft:'2%',fontFamily: 'Roboto,sans-serif',
-                  fontSize: '1rem',fontWeight: '550'}} >
-            <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px',paddingRight:'150px'}}>
+          <div style={{ width:'450px', paddingTop:'5px', 
+                fontFamily: 'Roboto,sans-serif', 
+                fontSize: '1rem',fontWeight: '550'}}>
+            <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px'}}>
                   {homeFouls}
             </span>
-            <span style={{paddingRight:'50px'}}>Fouls</span>
-            <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px',paddingLeft:'100px'}}>
+            <span style={{ }}>Fouls</span>
+            <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px',}}>
                   {awayFouls}
             </span>
           </div>
@@ -74,7 +74,6 @@ export default function GameSectionScoreCheetBottomStats( {fixture} ) {
                         fontFamily: 'Roboto,sans-serif',
                         fontSize: '1rem', backgroundColor:'pink',
                         fontWeight: '550', justifyContent:"flex-end",}}>
-                        {/* <p >{venue}</p> */}
               <span >Cards</span>
               <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px', 
                       paddingLeft:'10px', paddingTop:'20px',}}>

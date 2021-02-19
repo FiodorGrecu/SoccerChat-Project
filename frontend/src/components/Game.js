@@ -123,11 +123,21 @@ console.log(fixture)
                               Shooting Accuracy
                             </p>
                             <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
-                              <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
-                              <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#516290" stroke-width="3"></circle>
-                              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#BE14AA" stroke-width="3" stroke-dasharray={`${homeShootingAccuracy} ${100 - homeShootingAccuracy}`} stroke-dashoffset="75"></circle>
+                              <circle class="donut-hole" cx="21" cy="21" 
+                                  r="15.91549430918954" fill="#black">
+                              </circle>
+                              <circle class="donut-ring" cx="21" cy="21" 
+                                  r="15.91549430918954" fill="transparent" 
+                                  stroke="#516290" stroke-width="3">
+                              </circle>
+                              <circle class="donut-segment" cx="21" cy="21" 
+                                  r="15.91549430918954" fill="transparent" 
+                                  stroke="#BE14AA" stroke-width="3" 
+                                  stroke-dasharray={`${homeShootingAccuracy} 
+                                  ${100 - homeShootingAccuracy}`} 
+                                  stroke-dashoffset="75">
+                              </circle>
                               <g className={classes.chartText}>
-                                
                                 <text  x="45%" y="60%" className={classes.chartNumber} stroke="#BE14AA">
                                   {Math.floor(homeShootingAccuracy)}
                                 </text>
@@ -247,10 +257,7 @@ console.log(fixture)
                     </Route>
 
                     <Route path="/game/:gameId/">
-                      {/* <UpcomingGameHeader fixture={fixture}/> */}
                       <GameHeader fixture={fixture}/>
-                      {/* {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
-                                                  <GameHeader fixture={fixture}/>}     */}
                       <GameSectionScoreCheetBottomVenue fixture={fixture}/>
                     </Route>
                   </Switch>

@@ -107,7 +107,7 @@ export default function GameSection(props) {
                 <div style={{ color: "grey", paddingBottom:'10px',fontWeight: 'bold',fontFamily:'Oswald,sansSerif',fontSize:' 1rem'}}>Score at HT</div>
                   <div style={{ display:'flex'}}> 
                     <div style={{width:'50%', paddingLeft:'30px',
-                          color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem' }}>
+                          color:'white',fontWeight: 'bold',fontFamily:'Oswald',fontSize:' 1rem', }}>
                             {halfTimeScoreH}
                     </div>
                     <div style={{width:'50%', paddingRight:'30px',
