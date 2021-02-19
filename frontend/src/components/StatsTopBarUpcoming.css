@@ -1,0 +1,39 @@
+.BarLinks {
+    color:#696769;
+    
+  }
+  .BarLinks :hover {
+  /* p :hover { */
+      color: #BE14AA;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .2s ease;
+      transition-property: color;
+      transition-duration: .3s;
+      transition-timing-function:'ease';
+      transition-delay: 0s;
+      }
+  .BarLinks :active {
+      color:'#BE14AA'
+  }
+  .BarLinks :focus {
+      color:'#BE14AA'
+  }
+  
+  /* .BarLinks  */
+  
+  .TeamName {
+      color: gray;
+      font-family: Roboto, sans-serif;
+  }
+  .TeamName :hover {
+      color: #BE14AA;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .2s ease;
+      transition-property: color;
+      transition-duration: .3s;
+      transition-timing-function:'ease';
+      transition-delay: 0s;
+  }
+  

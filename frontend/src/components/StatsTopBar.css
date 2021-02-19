@@ -12,8 +12,6 @@
     transition-duration: .3s;
     transition-timing-function:'ease';
     transition-delay: 0s;
-    /* border-bottom-width: 3px; */
-    /* border-bottom-style: solid; */
     }
 .BarLinks :active {
     color:'#BE14AA'

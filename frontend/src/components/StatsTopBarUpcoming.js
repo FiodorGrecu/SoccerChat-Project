@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
+import './StatsTopBarUpcoming.css';
 
 
 
@@ -30,21 +30,6 @@ export default function StatsBar( {fixture} ) {
     // const [fixture, setFixture] = useState({});
     const { gameNum } = useParams();
   
-    // useEffect(() => {
-    //   async function gameDetails() {
-    //     const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-    //     const data = await response.json();
-    //     console.log(data);
-    //     if (data.fixtures) {
-    //       console.log(data.fixtures.response || null)
-    //       setFixture(data.fixtures.response[0] || {})
-    //     };
-    //   }
-    
-    //   gameDetails();
-  
-    // }, [] )
-
   const gameDate = fixture.fixture && fixture.fixture.date;
 
   const hometeamName = fixture.lineups && fixture.teams.home.name;
@@ -75,7 +60,11 @@ export default function StatsBar( {fixture} ) {
             <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', 
                     justifyContent:'center', paddingTop:'20px',
                     fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
-                <span style={{paddingRight:'5px',}}>{hometeamName}</span>
+                <RouterLink style={{textDecoration:'none',}} className={"TeamName"}>
+                    <span className={"TeamName"} style={{paddingRight:'5px',}}>
+                      {hometeamName}
+                    </span>
+                  </RouterLink> 
                 <span>
                     <img src={hometeamLogo} style={{width:'28px', height:'28px', }}/>
                 </span>
@@ -96,7 +85,11 @@ export default function StatsBar( {fixture} ) {
                 <span>
                     <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/>
                 </span>
-                <span style={{paddingLeft:'5px'}}>{awayteamName}</span>
+                <RouterLink style={{textDecoration:'none',}} className={"TeamName"}>
+                    <span className={"TeamName"} style={{paddingLeft:'5px',}}>
+                      {awayteamName}
+                    </span>
+                  </RouterLink> 
             </div>
 
             {/* Half time score div div */}
@@ -107,31 +100,32 @@ export default function StatsBar( {fixture} ) {
         </div>
         <div style={{display: "flex",  }}>
           
-          <div style={{paddingLeft:'50px', display:'flex' ,width:'100%',
+        <div className={"BarLinks"}  style={{paddingLeft:'50px', display:'flex' ,width:'100%',
                justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
                fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}>
-                
-            <Link component={RouterLink} to={'/fixtures'} >
-              <p style={{paddingRight:'980px', }}>Back</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}/events`}>
-              <p style={{paddingRight:'20px'}}>Summary</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}/statistics`}>
-              <p style={{paddingRight:'20px' }}>Statistics</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}`}>
-              <p style={{paddingRight:'20px', }}>Lineups</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}/h2h`}>
-              <p style={{paddingRight:'20px'}}>H2H</p>
-            </Link>
-            <Link component={RouterLink} to={`/game/${gameNum}/chat`}>
-              <p style={{paddingRight:'20px'}}>Chat</p>
-            </Link>
-          </div> 
+                 
+            <RouterLink className={"BarLinks"}  to={'/fixtures'} >
+              <p className={"BarLinks"} style={{paddingLeft:'10px', }}>Back</p>
+            </RouterLink>
+            <span style={{margin:'auto', }}></span>
+            <RouterLink className={"BarLinks"}  to={`/game/${gameNum}/events`}>
+              <p className={"BarLinks"} style={{paddingRight:'10px'}}>Summary</p>
+            </RouterLink>
+            <RouterLink to={`/game/${gameNum}/statistics`}>
+              <p className={"BarLinks"} style={{paddingRight:'20px' }}>Statistics</p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} to={`/game/${gameNum}`}>
+              <p className={"BarLinks"} className={"BarLinks"} style={{paddingRight:'20px', }}>Lineups</p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} to={`/game/${gameNum}/h2h`}>
+              <p className={"BarLinks"} style={{paddingRight:'20px'}}>H2H</p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} to={`/game/${gameNum}/chat`}>
+              <p className={"BarLinks"} style={{paddingRight:'20px'}}>Chat</p>
+            </RouterLink>
+          </div>
         </div>
     </div>
   );
