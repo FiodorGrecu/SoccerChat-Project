@@ -6,7 +6,6 @@ import {games as fixtures} from "./teams";
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import ChatSection from './ChatSection';
-import { grey } from '@material-ui/core/colors';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import LineUps from './LineUps';
@@ -17,12 +16,10 @@ import Events from './Events';
 import H2H from './H2H';
 import StatsBar from './StatsTopBar';
 import StatsBody from './StatsBody';
-
 import GameHeader from './GameHeader';
 import UpcomingGameHeader from './UpcomingGameHeader';
 import LeagueNameBar from './LeagueNameBar';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
-// import Ball from 'https://icons.veryicon.com/png/Sport/Soccer%20Worldcup%202010/Soccer%20ball.png';
 
 
 
@@ -283,19 +280,13 @@ console.log(fixture)
             </div>
             : 
             <div style={{ display:'flex',}}>  
-               {/* <img src={Ball} /> */}
-               {/* <img src="/images/Soccer ball.png" style={{fontSize:'60px', margin:'auto', display:'flex', height:'40px'}} alt=""/> */}
               <div style={{margin:'auto'}}>
                 <SportsSoccerIcon className={"Icon"} 
                     style={{fontSize:'50px', margin:'auto', height:'40px',
                     marginTop:'60px', color:"#516290"}}/>
               </div>
-              {/* <div className={"Loading"} style={{fontSize:'50px', margin:'auto', display:'flex', height:'40px'}}>Loading...</div> */}
-                {/* <div><hr style={{width:'200px', fontWeight:'bold'}}/></div> */}
             </div>
-            
             }
-            
           </div>
     </div>
   </div>

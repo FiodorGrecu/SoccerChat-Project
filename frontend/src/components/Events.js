@@ -48,7 +48,6 @@ console.log(fixture)
                   <span style={{paddingLeft:'10px', color:'#be13aa'}}>{event.team.name}</span>
                   <hr style={{width:'96%'}}/>
                 </div>
-          
             )
         } else if (event.type === 'subst') {
             return (

@@ -130,5 +130,4 @@ const GameHeader = ( {fixture} ) => {
       </div>
   )
 }
-
 export default GameHeader;

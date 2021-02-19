@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-// import { Link } from '@material-ui/core';
-// import { Link as RouterLink } from 'react-router-dom';
-// import Chart from "react-apexcharts";
-// import Divider from '@material-ui/core/Divider';
-// import ChatSection from './ChatSection';
-// import { icons } from 'react-icons/lib';
-// import StatsBar from './StatsTopBar';
+
 
 
 const useStyles = makeStyles((theme) => ({
