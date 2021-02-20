@@ -4,7 +4,6 @@ import Paper from "@material-ui/core/Paper";
 import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
-// import './styles.css';
 import LeagueBar from './LeagueNameBar';
 
 
@@ -28,7 +27,6 @@ export default function SimplePaper({ season }) {
   const [topScorers, setScorers] = useState([]);
   // const [year, setYear] = useState( season );
   // const [leagueName, setLeagueName] = useState([]);
-  // const [color, setColor] = useState('');
   
  
   useEffect(() => {
@@ -46,11 +44,6 @@ export default function SimplePaper({ season }) {
     gameDetails();
 
   }, [season] )
-
-  // function onSelect() {
-
-  // }
-
 
  
   const players = topScorers.map(player => (
@@ -74,13 +67,7 @@ export default function SimplePaper({ season }) {
   const leagueLogo = topScorers[0] && topScorers[0].statistics[0].league.logo; 
   console.log(leagueName)
 
-  // const leagueLogo = topScorers.player && topScorers
 
-  // const _handleKeyDown = (e) => {
-  //   if (e.color='red!important') {
-      
-  //   };
-  // }
   return (
   
     
