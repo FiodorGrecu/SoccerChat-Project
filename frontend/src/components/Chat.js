@@ -90,7 +90,7 @@ export default function UserChat({ user, setUser, gameId }) {
     getChats();
     const interval = setInterval(() => {
       getChats();
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
