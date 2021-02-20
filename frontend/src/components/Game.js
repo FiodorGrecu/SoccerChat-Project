@@ -105,7 +105,7 @@ console.log(fixture)
   <div style={{width:'100%', }}>
         <StatsBar fixture={fixture}/>
         {/* <LeagueNameBar/> */}
-    <div style={{display:"flex",backgroundColor:'#EAF0F7', marginTop:'50px' }} >
+    <div style={{display:"flex",backgroundColor:'#EAF0F7', paddingTop:'50px' }} >
             <div style={{width:'100%', }} > 
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
                   <Switch>

@@ -28,15 +28,15 @@ export default function PLTable() {
   // const [season, setSeason] = useState("2020");
 
 
-  useEffect( () => {
-    async function getPLTable() {
-      const response = await fetch(`http://localhost:5000/api/table/${season}/${39}`)
-      const data = await response.json();
-      console.log(data);
-      setTeams(data.response[0] || []);
-    }  
-    getPLTable();
-  }, [season]);
+  // useEffect( () => {
+  //   async function getPLTable() {
+  //     const response = await fetch(`http://localhost:5000/api/table/${season}/${39}`)
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setTeams(data.response[0] || []);
+  //   }  
+  //   getPLTable();
+  // }, [season]);
 
 
 

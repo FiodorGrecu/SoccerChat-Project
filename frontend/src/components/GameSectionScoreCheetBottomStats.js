@@ -33,7 +33,7 @@ export default function GameSectionScoreCheetBottomStats( {fixture} ) {
         <div style={{ width:'450px', textAlign:'left', 
                 paddingTop:'5px', paddingRight:'2%', 
                 fontFamily: 'Roboto,sans-serif',
-                fontSize: '1rem', backgroundColor:'pink',
+                fontSize: '1rem', 
                 fontWeight: '550', paddingLeft:'20px'}}>
               <span>Cards</span>
               <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px', 
@@ -57,14 +57,14 @@ export default function GameSectionScoreCheetBottomStats( {fixture} ) {
               </span>
           </div>
     {/* Area in the middle of the Stats bottom bar  */}
-          <div style={{ width:'450px', paddingTop:'5px', 
-                fontFamily: 'Roboto,sans-serif', 
+          <div style={{ width:'100%', paddingTop:'5px', 
+                fontFamily: 'Roboto,sans-serif',
                 fontSize: '1rem',fontWeight: '550'}}>
-            <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px'}}>
+            <span  style={{display:'inline-block', width:'33%', textAlign:'center', fontFamily:'Roboto,sans-serif', fontSize:'20px', marginRight:'auto' }}>
                   {homeFouls}
             </span>
-            <span style={{ }}>Fouls</span>
-            <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px',}}>
+            <span style={{display:'inline-block', width:'33%',textAlign:'center',  margin:"auto"}}>Fouls</span>
+            <span style={{display:'inline-block', width:'33%' , textAlign:'center', fontFamily:'Roboto,sans-serif', fontSize:'20px',}}>
                   {awayFouls}
             </span>
           </div>
@@ -72,7 +72,7 @@ export default function GameSectionScoreCheetBottomStats( {fixture} ) {
           <div style={{ width:'450px', textAlign:'right', 
                         paddingTop:'5px', paddingRight:'2%', 
                         fontFamily: 'Roboto,sans-serif',
-                        fontSize: '1rem', backgroundColor:'pink',
+                        fontSize: '1rem', 
                         fontWeight: '550', justifyContent:"flex-end",}}>
               <span >Cards</span>
               <span style={{fontFamily:'Roboto,sans-serif', fontSize:'20px', 

@@ -22,10 +22,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SimplePaper({season}) {
+export default function SimplePaper({ season }) {
   const classes = useStyles();
 
   const [topScorers, setScorers] = useState([]);
+  // const [year, setYear] = useState( season );
   // const [leagueName, setLeagueName] = useState([]);
   // const [color, setColor] = useState('');
   
@@ -44,7 +45,7 @@ export default function SimplePaper({season}) {
   
     gameDetails();
 
-  }, [] )
+  }, [season] )
 
   // function onSelect() {
 

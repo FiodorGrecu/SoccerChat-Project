@@ -88,9 +88,9 @@ const GameHeader = ( {fixture} ) => {
             </p>
           </div>
           {/* Score at half time */}
-          <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center'}}> 
+          <div style={{display:'flex', width:'20%',  justifyContent:'center', alignItems:'center',paddingTop:"50px",}}> 
             <div style={{ width:'100px', height:'25%', textAlign:'center'}}>
-              <div style={{ color: "grey", 
+              <div style={{  color: "grey", 
                 paddingBottom:'1px',fontWeight: 'bold',
                 fontFamily:'Oswald,sansSerif',fontSize:' 1rem',}}>
                   {/* Score at HT */}
