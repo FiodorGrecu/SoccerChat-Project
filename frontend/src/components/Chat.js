@@ -69,10 +69,7 @@ const useStyles = makeStyles((theme) => ({
 export default function UserChat({ user, setUser, gameId }) {
   const classes = useStyles();
 
-  // const gameId = 436;
-
   const [chats, setChats] = useState([]);
-  // const [game_id, setGameId] = useState(1);
   const [text, setText] = useState('');
   
   const [isError, setIsError] = useState(false);
@@ -84,7 +81,6 @@ export default function UserChat({ user, setUser, gameId }) {
     console.log(chatData);
     setChats(chatData.chat);
   }  
-  // setInterval(getChats, 7000);
 
   useEffect( () => {
     getChats();
