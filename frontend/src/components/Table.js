@@ -9,6 +9,7 @@ import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import LeagueBar from './LeagueNameBar';
+import './StatsTopBar.css';
 
 
 
@@ -74,7 +75,11 @@ const numberRanckColor = {'1':'white', '2':'white', '3':'white', '4':'white',
             <img src={ team.team.logo } 
                   style={{width:28, height:28, 
                 }}/>
-            </span >{team.team.name}
+            </span >
+            
+            <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
+                  <span className={"TeamName"} style={{paddingLeft:'5px'}}>{team.team.name}</span>
+            </RouterLink>
           </span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'pin'}}>{team.all.played}</span>
           <span style={{paddingLeft:'40px',width:'98px',backgroundColor:'lightblu'}}>{team.all.win}</span>
@@ -94,49 +99,6 @@ const descriptionChampions = teams.league && teams.league.description;
 
   return (
     <div  style={{backgroundColor:'aliceblue',}}>
-    {/* <LeagueBar/> */}
-    {/* <div style={{display: "flex" ,}}> */}
-      {/* <div style={{ textAlign:'left', width:'219px', height:'63px', 
-            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
-            margin: '40px', marginLeft:'70px', borderRadius:'2%',
-            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
-          <div style={{width:'95%', }}>
-            <span style={{ width:"95%", }}>Standing Type</span>
-          </div> */}
-          {/* <div style={{display: "flex", paddingTop:'2px'}}>
-            <select style={{ width:"95%", fontWeight:'bold',
-                    color:'#0094e5', border:'none'}}>
-              <option style={{fontWeight:'bold'}} value='topScorers'>General Standings</option> 
-              <option value='Standings'>Live Standings</option> 
-              <option component={RouterLink} to="/topscorers" >Top Scorers</option> 
-            </select>
-          </div> */}
-      {/* </div> */}
-      {/* <div style={{textAlign:'left', width:'219px', height:'63px', 
-            backgroundColor:'white',paddingTop:'10px',paddingLeft:'10px',
-            margin: '40px', marginLeft:'20px', borderRadius:'2%',
-            textTransform:'uppercase', fontWeight:'bold' ,color: '#8e9cc5'}}>
-        <div style={{width:'95%', }}>
-          <span style={{ width:"95%", }}>Season</span>
-        </div> */}
-        {/* <div >     
-          <select onChange={e => (setSeason(e.target.value)) } style={{ width:"95%", fontWeight:'bold',
-                    color:'#0094e5', border:'none'}}>
-            <option value='2020'>2020/2021</option> 
-            <option value='2019'>2019/2020</option> 
-            <option value='2018'>2018/2019</option> 
-            <option value='2017'>2017/2018</option> 
-            <option value='2016'>2016/2017</option> 
-            <option value='2015'>2015/2016</option> 
-            <option value='2014'>2014/2015</option> 
-            <option value='2013'>2013/2014</option> 
-            <option value='2012'>2012/2013</option> 
-            <option value='2011'>2011/2012</option> 
-            <option value='2010'>2010/2011</option> 
-          </select>
-        </div>   */}
-      {/* </div>s */}
-    {/* </div> */}
 
     <div style={{display: "flex", }}>
       <div style={{ display:'flex' ,width:'100%',
