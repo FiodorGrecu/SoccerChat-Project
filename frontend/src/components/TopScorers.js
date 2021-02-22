@@ -5,6 +5,7 @@ import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import LeagueBar from './LeagueNameBar';
+import './StatsTopBar.css';
 
 
 

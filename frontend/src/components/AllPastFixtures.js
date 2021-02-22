@@ -38,6 +38,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
     getFixtures();
   }, [] )
 
+
   const outputAllFixtures = fixtures.map(round =>(
     <div>
         <div style={{textAlign:'center', paddingLeft:'120px', fontSize:'1.1rem',

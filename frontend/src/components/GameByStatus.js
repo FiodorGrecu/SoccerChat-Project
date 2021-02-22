@@ -33,8 +33,6 @@ export default function CenteredGrid(props) {
 
   const gameStatus = fixture.fixture && fixture.fixture.status.short;
   
-
-
   if (gameStatus === 'NS') {
     return <Upcoming_OneGame fixture={fixture}/>
   } else if (gameStatus === undefined) {
@@ -45,7 +43,6 @@ export default function CenteredGrid(props) {
           style={{fontSize:'50px', marginLeft:'50%', height:'40px',
           marginTop:'60px', color:"#516290", marginTop:'300px'}}/> 
       </div>
-      {/* <div ><hr style={{color:'green', width:'200px', borderTop:'2px solid green' }}></hr></div> */}
       </div>)
   } else {
     return <Game fixture={fixture}/>

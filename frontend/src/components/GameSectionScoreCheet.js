@@ -19,27 +19,9 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function GameSection(props) {
+export default function GameSection( {fixture} ) {
   const classes = useStyles();
 
-
-  const [fixture, setFixture] = useState({});
-  const { gameNum } = useParams();
-
-  useEffect(() => {
-    async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/one_game/${gameNum}`);
-      const data = await response.json();
-      console.log(data);
-      if (data.fixtures) {
-        console.log(data.fixtures.response || null)
-        setFixture(data.fixtures.response[0] || {})
-      };
-    }
-  
-    gameDetails();
-
-  }, [] )
 
   const gameDate = fixture.fixture && fixture.fixture.date;
   
@@ -61,7 +43,6 @@ export default function GameSection(props) {
   const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
 
   const halfTimeStatus = fixture.fixture && fixture.fixture.status.long;
-  // console.log(halfTimeStatus)
 
   const date = fixture.fixture && fixture.fixture.date;
 
@@ -149,9 +130,6 @@ export default function GameSection(props) {
                             paddingTop:'10px'}}>
                       Summary     
                 </Link>
-
-                
-                
                 <Link component={RouterLink} to="/statistics" style={{ color:'white', color:'white',
                             fontWeight: 'bold',fontSize:'1rem', 
                             paddingTop:'10px'}}>
@@ -160,7 +138,6 @@ export default function GameSection(props) {
                 <Link component={RouterLink} to="/chat" style={{ color:'white', color:'white',
                             fontWeight: 'bold',fontSize:'1rem', 
                             paddingTop:'10px'}}>
-                      {/* Chat      */}
                 </Link>
               </div>
             </div>
