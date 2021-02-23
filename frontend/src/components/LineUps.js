@@ -41,9 +41,7 @@ export default function LineUps({ fixture }) {
   function getDay(date) {
        return new Date(date).toLocaleDateString()
     }
-   
-
-
+  
   const homePlayers = fixture.lineups && fixture.lineups[0].startXI.map(player =>(
         <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
