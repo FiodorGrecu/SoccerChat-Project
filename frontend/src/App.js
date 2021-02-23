@@ -24,19 +24,13 @@ import TableView from './components/TableView';
 import Upcoming_OneGame from './components/Upcoming_OneGame';
 import GameByStatus from  './components/GameByStatus';
 
-// import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
 
 
 
 function App() {
 
-  // const { containerProps, indicatorEl } = useLoading({
-  //   loading: true,
-  // });
-
   return (
-
     <div >
       <BrowserRouter>
         <header >
@@ -89,7 +83,6 @@ function App() {
           <ChatSection />
         </Route>
 
-
         <Route path='/h2h'>
           <H2H/>
         </Route>
@@ -117,11 +110,5 @@ function App() {
     </div>
   );
 }
-
-// ReactDOM.render(
-//   <LoaderProvider indicator={<BallTriangle width="50" />}>
-//     <App />
-//   </LoaderProvider>
-// );
 
 export default App;

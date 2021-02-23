@@ -4,26 +4,20 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box'
-import { blue } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    // width: '100%',
     maxWidth: 360,
-    // backgroundColor: theme.palette.background.paper,
     backgroundColor: 'aliceblue',
-    alignItems: 'flex-end'
-    
+    alignItems: 'flex-end' 
   },
   thebox1: {
     alignItems: 'center',
     justifySelf: 'flex-end',
     padding: 10,
-    // backgroundColor: "blue"
   }
 }));
 
@@ -44,10 +38,7 @@ export default function ListDividers() {
     getFixtures();
   }, [] )
 
-
-
   return (
-    // <React.Fragment  >
     <Box className={classes.thebox1}>
         <List component="nav" className={classes.root} aria-label="mailbox folders" >
         <ListItem button>
@@ -66,6 +57,5 @@ export default function ListDividers() {
         </ListItem>
         </List>
     </Box>
-    // </React.Fragment>
   );
 }
