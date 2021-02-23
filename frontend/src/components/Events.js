@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function CenteredGrid( {fixture} ) {
+export default function CenteredGrid( { fixture } ) {
   const classes = useStyles();
 
 console.log(fixture)

@@ -24,3 +24,20 @@
     70% { transform: translate(-50%, -150%) rotate(-15deg); }
     100% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
 }
+
+
+
+.ShootingTeamName {
+  color: gray;
+  font-family: Roboto, sans-serif;
+}
+.ShootingTeamName :hover {
+  color: #BE14AA;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .2s ease;
+  transition-property: color;
+  transition-duration: .3s;
+  transition-timing-function:'ease';
+  transition-delay: 0s;
+}

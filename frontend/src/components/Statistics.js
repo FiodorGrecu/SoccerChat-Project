@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from '@material-ui/core';
-import { Link as RouterLink } from 'react-router-dom';
-import Chart from "react-apexcharts";
-import Divider from '@material-ui/core/Divider';
-import ChatSection from './ChatSection';
-import { icons } from 'react-icons/lib';
 import StatsHeader from './StatsHeader';
 
 const useStyles = makeStyles((theme) => ({
@@ -18,8 +12,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '1%',
     position: 'relative',
   },
-
-
 }));
 
 export default function CenteredGrid(props) {
@@ -28,8 +20,6 @@ export default function CenteredGrid(props) {
 
   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
-
-  const unixTimestamp = 1604752200;
 
   useEffect(() => {
     async function gameDetails() {

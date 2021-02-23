@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
   },
   chartLabel: {
     fontSize: '7px',
-    // textTransform: "uppercase",
     textAnchor: 'middle',
     fontWeight:'normal',
     mozTransform: 'translateY(0.em)',
@@ -76,11 +75,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid({ fixture } ) {
   const classes = useStyles();
 
-
-  // const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
-  // const gameNum = '592177';
-
 
   const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value;
   const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value;
@@ -112,13 +107,15 @@ console.log(fixture)
                     <Route path="/game/:gameId/statistics">
                       <div style={{display:'flex', width:'100%',justifyContent:'space-evenly', alignItems:'center', }}>
                         <div style={{width:'33.333%', textAlign:'center'}}>
-                            <p style={{color:'white', 
-                                fontFamily:'sans-serif',paddingTop:'10px',
-                                fontSize: '0.9rem',fontWeight: '900', 
-                                textTransform:'uppercase',fontSize: '1.2rem', 
-                                letterSpacing:'1px'}}>
-                              Shooting Accuracy
-                            </p>
+                            {/* <RouterLink style={{textDecoration:'none'}} className={"ShootingTeamName"}> */}
+                              <p className={"ShootingTeamName"} style={{color:'white', 
+                                  fontFamily:'sans-serif',paddingTop:'10px',
+                                  fontSize: '0.9rem',fontWeight: '900', 
+                                  textTransform:'uppercase',fontSize: '1.2rem', 
+                                  letterSpacing:'1px'}}>
+                                Shooting Accuracy
+                              </p>
+                            {/* </RouterLink> */}
                             <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
                               <circle class="donut-hole" cx="21" cy="21" 
                                   r="15.91549430918954" fill="#black">
