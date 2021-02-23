@@ -54,7 +54,8 @@ export default function LineUps({ fixture }) {
         <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
             <circle style={{backgroundColor: "#be13aa",
-                      background: '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)',
+                      background: 
+                      '-webkit-linear-gradient(top, rgba(255,48,25,1) 0%,rgba(207,4,4,1) 58%)',
                     width: '30px',height: "30px",borderRadius: '50%',
                     display: 'inline-block',textAlign: 'center', margin: '2px', 
                     position:'relative',}}>
@@ -62,7 +63,11 @@ export default function LineUps({ fixture }) {
                 width: '90px'}}>{player.player.number}
               </span>
             </circle>
-            <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px', }}>{player.player.name}</span><br/>
+            <span style={{textAlign:'center', paddingLeft:'20px',
+                    paddingTop:'10px'}}>
+              {player.player.name} 
+            </span>
+            <br/> 
             <p style={{color:'grey', paddingLeft:'10px',paddingTop:'10px'}}>{player.player.pos}</p>
           </div>
         </div>
@@ -87,7 +92,6 @@ export default function LineUps({ fixture }) {
   ));
 
   const homeSubs = fixture.lineups && fixture.lineups[0].substitutes.map(substitutes => (
-      // <div className={classes.homeSubsName}><hr width='100%'/> <p style={{paddingLeft:'5%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
       <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
             <circle style={{backgroundColor: "#be13aa",
@@ -106,7 +110,7 @@ export default function LineUps({ fixture }) {
   ));
 
   const awaySubs = fixture.lineups && fixture.lineups[1].substitutes.map(substitutes => (
-      // <div className={classes.awaySubsName}><hr width='100%'/> <p style={{paddingLeft:'10%'}}>{substitutes.player.name} {substitutes.player.number}</p></div>
+
       <div className={classes.homePlayersName}> <hr width='100%'/> 
           <div style={{width:'100%', display:'flex', paddingLeft:'5%'}}>
             <circle style={{backgroundColor: 'grey',
@@ -168,7 +172,6 @@ console.log(fixture)
                     <p >{awaySubs}</p>
                   </Paper>
                 </div> 
-                {/* <div className={classes.awayStartingXI}><img src={awayteamLogo} style={{width:'50%', height:35, paddingLeft:2, paddingRight:2}}/>{awayteamName}<br/>StartingXI<br/>({awayTeamFormation}){awayPlayers}</div>    */}
               </div>   
   );
 }

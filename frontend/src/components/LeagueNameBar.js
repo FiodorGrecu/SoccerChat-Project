@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function LeagueBar() {
+export default function LeagueBar( { fixture } ) {
   const classes = useStyles();
 
   const [topScorers, setScorers] = useState([]);
@@ -63,7 +63,7 @@ export default function LeagueBar() {
   
   const leagueName = topScorers[0] && topScorers[0].statistics[0].league.name; 
   const leagueLogo = topScorers[0] && topScorers[0].statistics[0].league.logo; 
-  console.log(leagueName)
+  // console.log(leagueName)
 
   // }
   return (
@@ -95,11 +95,36 @@ export default function LeagueBar() {
                fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
                backgroundColor:'white'}}
                >
-            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to='/fixtures'><p className={"BarLinks"} style={{paddingRight:'20px',}}>Summary</p></RouterLink>
-            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to="/table_view"><p className={"BarLinks"} style={{paddingRight:'20px' }}>Standings</p></RouterLink>
-            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} ><p className={"BarLinks"} style={{paddingRight:'20px', textTransform:'uppercase'}}>Live</p></RouterLink>
-            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to="/upcoming_fixtures"><p className={"BarLinks"} style={{paddingRight:'20px' }}>Fixtures</p></RouterLink>
-            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} to="/past_fixtures"><p className={"BarLinks"} style={{paddingRight:'20px' }}>Results</p></RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} 
+                to='/fixtures'>
+                  <p className={"BarLinks"} style={{paddingRight:'20px',}}>
+                    Summary
+                  </p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} 
+                to="/table_view">
+                  <p className={"BarLinks"} style={{paddingRight:'20px' }}>
+                    Standings
+                  </p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}}>
+                <p className={"BarLinks"} 
+                  style={{paddingRight:'20px', textTransform:'uppercase'}}>
+                    Live
+                </p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} 
+                to="/upcoming_fixtures">
+                  <p className={"BarLinks"} style={{paddingRight:'20px' }}>
+                    Fixtures
+                  </p>
+            </RouterLink>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}} 
+                to="/past_fixtures">
+                  <p className={"BarLinks"} style={{paddingRight:'20px' }}>
+                    Results
+                  </p>
+              </RouterLink>
           </div> 
         </div>
     </div>
