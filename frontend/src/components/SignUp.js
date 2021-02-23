@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import { green, grey } from '@material-ui/core/colors';
 import { Redirect } from 'react-router-dom';
-// import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Link as RouterLink } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 
@@ -21,25 +20,15 @@ const useStyles = makeStyles((theme) => ({
 
         paper: {
             padding: theme.spacing (5),    
-            // margin: theme.spacing (5),
-            // marginTop: 30,
-            // paddingTop: 75,
             alignItems:'center',
             justifyContent: "center",
             width: 350,
             height: 450,
-            // backgroundColor: "#F0E4C8",
-            // backgroundColor: "white",
             backgroundColor: "#E8E8E8",
         },
         box: {
             padding: theme.spacing (5),
-            // margin: theme.spacing (5),
-            // alignItems:'center',
-            // justifyContent: "center",
             textAlign: "center",
-            // paddingRight: 100,
-            // paddingLeft: 400
         },
         or: {
             fontSize: 15,
@@ -71,8 +60,7 @@ const useStyles = makeStyles((theme) => ({
  function SignUp({ setUser, setShowLogin }) {
 
     const classes = useStyles();
-    
-    // const [inputCheck, setInputCheck] = useState("undefined");
+
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
     const [username, setUserName] = useState("");
@@ -124,21 +112,43 @@ const useStyles = makeStyles((theme) => ({
                 </Avatar>          
                 <h3 className={classes.signup}> Sign Up </h3>
                 <form  onSubmit={_onSubmit}>
-                <Input required id="firstname" onChange={e => setFirstName(e.target.value)} placeholder="First Name*"></Input>
-                <Input required id="lastname" onChange={e => setLastName(e.target.value)} placeholder="Last Name*"></Input>
-                <Input required id="username" onChange={e => setUserName(e.target.value)} placeholder="Create User Name*"></Input>
-                <Input required id="email" onChange={e => setEmail(e.target.value)} placeholder="Email Address*"></Input>         
-                <Input required type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password*"></Input>
-                <Button type={"submit"} className={classes.button} onClick={e => sendSignUp()} color="primary">Sign Up</Button>
-                {isError && <p >Please check all the fields and try again</p>}
+                    <Input required id="firstname" 
+                        onChange={e => setFirstName(e.target.value)} 
+                        placeholder="First Name*">
+                    </Input>
+                    <Input required id="lastname" 
+                        onChange={e => setLastName(e.target.value)} 
+                        placeholder="Last Name*">
+                    </Input>
+                    <Input required id="username" 
+                        onChange={e => setUserName(e.target.value)} 
+                        placeholder="Create User Name*">
+                    </Input>
+                    <Input required id="email" 
+                        onChange={e => setEmail(e.target.value)} 
+                        placeholder="Email Address*">
+                    </Input>         
+                    <Input required type="password" id="password" 
+                        onChange={e => setPassword(e.target.value)} 
+                        placeholder="Password*">
+                    </Input>
+                    <Button type={"submit"} className={classes.button} 
+                        onClick={e => sendSignUp()} 
+                        color="primary">
+                        Sign Up
+                    </Button>
+                    {isError && <p >Please check all the fields and try again</p>}                                  
                 </form>
                 <br></br>
                 <p style={{color: grey[600]}}>Already registered? 
-                <Link component={RouterLink} onClick={e => setShowLogin(true)}>Sign In</Link></p>
+                    <Link component={RouterLink} 
+                            onClick={e => setShowLogin(true)}>
+                            Sign In
+                    </Link>
+                </p>
             </Paper>           
             </Box>             
         </React.Fragment>
     );
-
 }
 export default SignUp;
