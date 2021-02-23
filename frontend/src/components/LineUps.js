@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import games from "./teams";
 import {games as fixtures} from "./teams";
-import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
-
-// import Background_pic from '/Users/Work/Desktop/MyProject/frontend/src/components/background.png';
 import Divider from '@material-ui/core/Divider';
-import { grey } from '@material-ui/core/colors';
-import LeagueBar from './LeagueNameBar';
+
 
 const useStyles = makeStyles((theme) => ({
 
