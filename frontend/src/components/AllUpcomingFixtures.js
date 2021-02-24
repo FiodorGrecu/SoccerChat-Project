@@ -75,8 +75,8 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
             <img src={ fixture.teams.home.logo } style={{width:26, height:26, 
                 display:'inline-block',}}/>
           </div>
-          <div style={{width:'5%', display:'flex', 
-                backgroundColor:'#d7dff7',borderRadius:'10px', 
+          <div style={{width:'70px', display:'flex', 
+                backgroundColor:'#d7dff7',borderRadius:'5px', 
                 margin:'10px',}}>
             <div style={{paddingTop:'5px', paddingLeft:'10px', }}>
               {new Date(fixture.fixture.date).toLocaleTimeString('en-GB', 

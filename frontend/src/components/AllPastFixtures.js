@@ -62,7 +62,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
                 <span style={{width:'100%' , }}>
               </span>
             </p>
-          <div style={{width: '50%',  textAlign:'right', paddingTop:'10px', 
+          <div style={{width: '50%', textAlign:'right', paddingTop:'10px', 
                paddingRight:'5%'}}>
             <p style={{display:'inline-block', paddingRight:'10px', 
                 fontSize:'1rem', color:'grey',fontFamily:'Roboto,sans-serif'}}>
@@ -71,17 +71,18 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
                 display:'inline-block',}}/>
           </div>
           <div style={{width:'10%', display:'flex',}}>
-          <div style={{width:'90%', display:'flex', }}>
-              <div style={{width:'50%', display:'flex',  textAlign:'right', 
-                    paddingTop:'10px',  }}>
+            {/* Score Section of Code */}
+          <div style={{width:'90%', display:'flex',}}>
+              <div style={{width:'50px', display:'flex',  textAlign:'right', 
+                    paddingTop:'10px', backgroundColor:'pink',}}>
                 <p style={{textAlign:'right', fontSize:'16px', 
                     fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}> 
                     { fixture.goals.home } 
                 </p>
               </div>
 
-              <div style={{width:'12%',display:'flex', textAlign:'center', 
-                      position:'relative'}}>
+              <div style={{width:'10px',display:'flex', textAlign:'center', 
+                      position:'relative' , backgroundColor:"green"}}>
                 {fixture.fixture.status.short === 'PST' ? 
                 <span style={{fontFamily:'Helvetica',
                 fontWeight:'600',paddingTop:'8px', position:'absolute', 
@@ -95,15 +96,14 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
                    - 
                 </p>}
             </div>
-              <div style={{width:'50%',display:'flex',}}>
+              <div style={{width:'50px',display:'flex', backgroundColor:'pink',}}>
                 <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                     fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
                       { fixture.goals.away }
                 </p>
               </div>
               </div>
-
-
+            {/* END Score Section of Code */}
           </div>
           <div style={{width: '50%', textAlign:'left', paddingTop:'10px', 
                     paddingLeft:'5%'}}>
