@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
+import { Link as RouterLink } from 'react-router-dom';
 import { Link } from '@material-ui/core';
 import LeagueBar from './LeagueNameBar';
 import './StatsTopBar.css';
@@ -52,7 +53,11 @@ export default function SimplePaper({ season }) {
     <div style={{width:'100%', display:'flex',}}>
           <span style={{paddingLeft:'0px',width:'35px', }}>
             <img style={{width:30, height:30}} src={player.player.photo}/></span>
-          <span style={{paddingLeft:'10px',width:'16%'}}><Link>{player.player.lastname}</Link></span>
+          <span className={"TeamName"} style={{paddingLeft:'10px',width:'16%'}}>
+            <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
+              {player.player.lastname}
+            </RouterLink>
+          </span>
           <span style={{paddingLeft:'30px',width:'16%'}}>{player.statistics[0].team.name}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.total}</span>
           <span style={{paddingLeft:'50px',width:'16%'}}>{player.statistics[0].goals.assists || 0 }</span>

@@ -8,8 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
-// import { Gradient } from 'react-gradient';
-// import Divider from '@material-ui/core/Divider';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { Box } from '@material-ui/core';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
@@ -31,8 +29,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(1),
     backgroundColor: '#D61400', 
     background: '-webkit-linear-gradient(top,  rgba(0,0,0,0.65) 9%,rgba(0,0,0,0.65) 14%,rgba(0,0,0,0.09) 88%,rgba(0,0,0,0) 100%)', /* Chrome10-25,Safari5.1-6 */
-
-
+       
   },
 
   appdiscription: {
