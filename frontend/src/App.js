@@ -24,10 +24,6 @@ import TableView from './components/TableView';
 import Upcoming_OneGame from './components/Upcoming_OneGame';
 import GameByStatus from  './components/GameByStatus';
 
-
-
-
-
 function App() {
 
   return (

@@ -57,10 +57,10 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translateY(-0.25em)',
   },
   chartLabel: {
-    fontSize: '7px',
+    fontSize: '8px',
     textAnchor: 'middle',
-    fontWeight:'normal',
-    mozTransform: 'translateY(0.em)',
+    fontWeight:(100),
+    mozTransform: 'translateY(0.9em)',
     msTransform: 'translateY(0.77em)',
     msTransform: 'translateX(0.77em)',
     webkitTransform: 'translateY(0.95em)',

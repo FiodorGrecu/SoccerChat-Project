@@ -74,7 +74,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
             {/* Score Section of Code */}
           <div style={{width:'90%', display:'flex',}}>
               <div style={{width:'50px', display:'flex',  textAlign:'right', 
-                    paddingTop:'10px', backgroundColor:'pink',}}>
+                    paddingTop:'10px'}}>
                 <p style={{textAlign:'right', fontSize:'16px', 
                     fontFamily:'Roboto,sans-serif', fontWeight:'600',paddingLeft:'70%' }}> 
                     { fixture.goals.home } 
@@ -82,7 +82,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
               </div>
 
               <div style={{width:'10px',display:'flex', textAlign:'center', 
-                      position:'relative' , backgroundColor:"green"}}>
+                      position:'relative' }}>
                 {fixture.fixture.status.short === 'PST' ? 
                 <span style={{fontFamily:'Helvetica',
                 fontWeight:'600',paddingTop:'8px', position:'absolute', 
@@ -96,7 +96,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
                    - 
                 </p>}
             </div>
-              <div style={{width:'50px',display:'flex', backgroundColor:'pink',}}>
+              <div style={{width:'50px',display:'flex'}}>
                 <p style={{display:'inline-block', fontSize:'16px', fontFamily:'Roboto,sans-serif', 
                     fontWeight:'600',textAlign:'left', paddingTop:'10px',paddingRight:'7%' }}>
                       { fixture.goals.away }
