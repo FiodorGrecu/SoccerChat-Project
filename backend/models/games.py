@@ -110,7 +110,6 @@ class Game:
             cursor.execute(sql, values)
             return cursor.fetchone()
 
-    # I need an Endpoint that gives me one game
     @classmethod
     def game_h2h(cls, team_id_1=0, team_id_2=0):
         url = f"https://api-football-v1.p.rapidapi.com/v2/fixtures/h2h/{team_id_1}/{team_id_2}"
@@ -128,7 +127,7 @@ class Game:
     
     @classmethod
     def games_by_date(cls, date):
-        url = "https://api-football-beta.p.rapidapi.com/fixtures"
+        url = f"https://api-football-beta.p.rapidapi.com/fixtures"
 
         querystring = {"league":"39","season":"2020","date":{date}}
 
@@ -252,20 +251,6 @@ class Game:
 
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
-        
-        
-        # fix_list = data.get("response")
-        # output = []
-
-        # last_round = None
-
-        # for f in fix_list:
-        #     current_round = f["league"]["round"]
-        #     if not last_round == current_round:
-        #         output.append({"round": f["league"]["round"], "games": []})
-        #         # print(f["league"]["round"])
-        #     output[-1]["games"].append(f)
-        #     last_round = f["league"]["round"]
         return(data)
 
     @classmethod
@@ -298,12 +283,12 @@ class Game:
         return(output)
 
     @classmethod
-    def all_live_games(cls):
+    def all_live_games(cls, season):
         import requests
 
         url = f"https://api-football-beta.p.rapidapi.com/fixtures"
 
-        querystring = {"live":"all","season":"2020"}
+        querystring = {"live":"all","season":{season}}
 
         headers = {
             'x-rapidapi-key': "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5",
@@ -358,12 +343,12 @@ if __name__=='__main__':
     # next_fixtures = Game.next_fixtures()
     # rest_games = Game.all_upcoming_fixtures(39, 2020, '2021-01-24','2021-06-30' ) 
     # new_output = Game.all_upcoming_fixtures(39,2020, '2021-01-24','2021-06-30')
-    new_output = Game.all_upcoming_fixtures(39,2020, '2020-09-12','2021-02-02')
+    # new_output = Game.all_upcoming_fixtures(39,2020, '2020-09-12','2021-02-02')
     # past_games = Game.all_past_fixtures(39, 2020, '2020-09-12','2021-01-24' ) 
     # past_games = Game.all_past_fixtures(39, 2020, '2020-09-12','2021-01-24' ) 
-    # live_games = Game.all_live_games()
+    live_games = Game.all_live_games(2020)
 
-    pprint(new_output)
+    pprint(live_games)
    
 
  
