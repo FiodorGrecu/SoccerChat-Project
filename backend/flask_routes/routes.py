@@ -100,8 +100,6 @@ def last_5(num_games):
 def next_5(num_games):
     # next_5real = Game.next_5(num_games)
     next_5real = next5
-    # next_5real.save() 
-
     return jsonify({'fixtures': next_5real})
 
 ####### TOP SCORERS
@@ -129,7 +127,7 @@ def one_game(fixture_id):
     # game = Game.game_by_fixture_id(fixture_id)
     # game = upcoming_onegame
     game = onegame
-    # # game.save()
+    # game.save()
     return jsonify({'fixtures': game})
 
 @app.route('/api/game_stats/<fixture_id>', methods=["GET"])
