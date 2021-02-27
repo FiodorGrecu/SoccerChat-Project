@@ -1,3 +1,7 @@
+
+"""This file is to help me group the games into rounds 
+    in all of the leagues"""
+
 # from all_rest_fixtures import all_rest_fixtures
 from all_past_fixtures import all_past_fixtures
 from pprint import pprint
