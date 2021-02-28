@@ -111,9 +111,9 @@ const descriptionChampions = teams.league && teams.league.description;
         <p style={{ width:'98px', paddingLeft:'25px' }}>Played</p>
         <p style={{ width:'98px', paddingLeft:'20px'}}>Won</p>
         <p style={{ width:'98px', paddingLeft:'20px' }}>Drawn</p>
-        <p style={{ width:'98px', paddingLeft:'10px' }}>Lost</p>
-        <p style={{ width:'98px'}}>Goals</p>
-        <p style={{ width:'128px' }}>Points</p>
+        <p style={{ width:'98px', paddingLeft:'22px' }}>Lost</p>
+        <p style={{ width:'98px', paddingLeft:'15px'}}>Goals</p>
+        <p style={{ width:'128px' ,paddingLeft:'15px'}}>Points</p>
         <p style={{ width:'153px' ,paddingLeft:'20px'}}>Last 5</p>
       </div> 
     </div>
