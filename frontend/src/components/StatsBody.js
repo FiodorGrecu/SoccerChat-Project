@@ -45,8 +45,8 @@ export default function StatsBody({ fixture }) {
   const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value || 0;
   const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value || 0;
   
-  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value ;
-  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value;
+  const homeYellowCards = fixture.statistics && fixture.statistics[0].statistics[10].value || 0;
+  const awayYellowCards = fixture.statistics && fixture.statistics[1].statistics[10].value || 0;
   
   const homeRedCards = fixture.statistics && fixture.statistics[0].statistics[11].value || 0;
   const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value || 0;

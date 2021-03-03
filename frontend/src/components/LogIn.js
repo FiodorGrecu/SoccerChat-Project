@@ -118,11 +118,11 @@ function LogIn({ setUser, setShowLogin }) {
                     </form>
                     <br></br>
                     <p className={classes.or}>or</p>
-                    <p style={{ color: grey[600] }}>
+                    <p style={{ color: grey[600], paddingRight:"5px" }}>
                         If you are new user? 
                         <Link component={RouterLink} 
                             onClick={e => setShowLogin(false)}>
-                                Sign Up Here
+                                <span   style={{paddingRight:"5px" }}></span>Sign Up Here
                         </Link>
                     </p>
                 </Paper>

@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
             <Paper elevation={10} className={classes.paper}> 
                 <Avatar className={classes.avatar}>
                 </Avatar>          
-                <h3 className={classes.signup}> Sign Up </h3>
+                <h3 className={classes.signup}>Sign Up</h3>
                 <form  onSubmit={_onSubmit}>
                     <Input required id="firstname" 
                         onChange={e => setFirstName(e.target.value)} 
@@ -140,10 +140,10 @@ const useStyles = makeStyles((theme) => ({
                     {isError && <p >Please check all the fields and try again</p>}                                  
                 </form>
                 <br></br>
-                <p style={{color: grey[600]}}>Already registered? 
+                <p style={{color: grey[600], paddingRight:"5px"}}>Already registered? 
                     <Link component={RouterLink} 
                             onClick={e => setShowLogin(true)}>
-                            Sign In
+                            <span style={{paddingLeft:"5px"}}>Sign In</span>
                     </Link>
                 </p>
             </Paper>           
