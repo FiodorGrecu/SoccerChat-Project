@@ -63,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
   },
   chartLabel: {
     fontSize: '7px',
-    // textTransform: "uppercase",
     textAnchor: 'middle',
     fontWeight:'normal',
     mozTransform: 'translateY(0.em)',
@@ -78,11 +77,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid( {fixture} ) {
   const classes = useStyles();
 
-
-//   const [fixture, setFixture] = useState({});
   const { gameNum } = useParams();
-  // const gameNum = '592177';
-
 
   const leagueLogo = fixture.league && fixture.league.logo;
 
@@ -99,12 +94,10 @@ console.log(fixture)
         {/* <LeagueNameBar/> */}
     <div style={{display:"flex",backgroundColor:'#EAF0F7', paddingTop:'50px',  }} >
             <div style={{width:'100%', }} > 
-              {/* { showStats ? <StatisticsHeader fixture={fixture}/> : <GameHeader fixture={fixture}/> }  */}
                 <div className={classes.scoreSheet} slyle={{display:'flex',}}>
                   <Switch>
                 
                     <Route path="/game/:gameId/">
-                      {/* <UpcomingGameHeader fixture={fixture}/> */}
                       {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
                                                   <GameHeader fixture={fixture}/>}                     
                       <GameSectionScoreCheetBottomVenue fixture={fixture}/>
@@ -114,12 +107,9 @@ console.log(fixture)
           
             <Route exact path="/game/:gameId">
                 <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> There are no lineups at this time </p>
-              {/* <LineUps fixture={fixture} /> */}
             </Route>
             <Route path="/game/:gameId/events">
                 <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}>No events yet</p>
-
-              {/* <Events fixture={fixture}/> */}
             </Route >
             <Route path="/game/:gameId/chat">
               <ChatSection gameId={gameNum} />
@@ -127,25 +117,11 @@ console.log(fixture)
             <Route path="/game/:gameId/h2h">
               <H2H fixture={fixture} />
             </Route>
-
             <Route path="/game/:gameId/statistics">
             <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> No statistics found </p>
-
-              {/* <StatsBody fixture={fixture} /> */}
             </Route>
-
           </div>
-        {/* <div style={{width:'30%', height:'1100px' }} >  */}
-          {/* <Statistics /> */}
-        {/* </div> */}
     </div>
   </div>
   );
 }
-
-// <Game /> // holds all the data, passes to children
-
-//     ==> <GameHeader />   ||    <StatisticsHeader />
-
-//     ==> <Lineups/> || <Chat /> || <Events /> || <StatisticsBody/>
-
