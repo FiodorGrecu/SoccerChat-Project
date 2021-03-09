@@ -10,6 +10,6 @@ Web application that allows users to:
 * Access all Teams from a specific leagues
 * Access a single team(View Stats)
 * Access all Players()
-* Access a single player(View Stats)
+* Access a single player(View his Stats, Transfers, )
 * Post predictions about an event ()
 * Chat about the event ()
