@@ -87,9 +87,14 @@ const GameHeader = ({fixture}) => {
           <div className={classes.date} style={{width: '100%', 
                 textAlign:'center', paddingTop:'2%', color:'white',
                 fontWeight: 'bold'}}>
-                  <span style={{ color:'grey', paddingRight:'10px' }}><FaCalendarAlt /></span>
+                  <span style={{ color:'grey', paddingRight:'10px' }}>
+                    <FaCalendarAlt />
+                  </span>
                   <span style={{paddingRight:'20px', }}>{getDay(date)}</span>
-                  <span style={{ color:'grey', paddingRight:'10px', fontWeight:'bold' }}><FaRegClock/></span>
+                  <span style={{ color:'grey', paddingRight:'10px', 
+                          fontWeight:'bold' }}>
+                    <FaRegClock/>
+                  </span>
                   <span style={{ }}>{getTime(date)}</span>
           </div>
         </div>
@@ -106,33 +111,30 @@ const GameHeader = ({fixture}) => {
             </p>
           </div>
           {/* Score at half time */}
-          <div style={{display:'flex', width:'30%',  justifyContent:'center', 
+          <div style={{display:'flex', width:'400px',  justifyContent:'center', 
                   alignItems:'center',paddingTop:'50px' ,color:'grey'}}> 
-            
-                    {/* <div > */}
-                        <div style={{display:'flex', width:'20%',justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'grey' }}>{days} 
-                                <span style={{paddingTop:'50px'}}>:</span>
-                                {/* <hr style={{fontSize:'45px', color:'grey' }}></hr> */}
-                                <div style={{fontSize:'10px', }}>Days</div>
-                            </span>
-                        </div>
-                        <div style={{display:'flex', width:'20%', justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'grey' , paddingLeft:'10px'}}>{hours} <span >:</span>
-                                <div style={{fontSize:'10px',}}>Hours</div>
-                            </span>
-                        </div>
-                        <div style={{display:'flex', width:'20%', justifyContent:'flex-end',}}>
-                            <span style={{fontSize:'25px', color:'grey' }}>{minutes} <span >:</span>
-                                <div style={{fontSize:'10px', textAlign:'center'}}>Mins</div>
-                            </span>
-                        </div> 
-                        <div style={{display:'flex', width:'20%', justifyContent:'flex-end'}}>
-                            <span style={{fontSize:'25px', color:'grey' }}>{seconds}
-                                <div style={{fontSize:'10px',textAlign:'center'}}>Secs</div>
-                            </span>
-                        </div>
-                        {/* </div> */}
+              <div style={{display:'flex', width:'60px',justifyContent:'flex-end',}}>
+                  <span style={{fontSize:'25px', color:'grey' }}>{days} 
+                      <span style={{paddingTop:'50px'}}>:</span>
+                      <div style={{fontSize:'10px', }}>Days</div>
+                  </span>
+              </div>
+              <div style={{display:'flex', width:'60px', justifyContent:'flex-end',}}>
+                  <span style={{fontSize:'25px', color:'grey' , paddingLeft:'10px'}}>{hours} 
+                    <span >:</span>
+                    <div style={{fontSize:'10px',}}>Hours</div>
+                  </span>
+              </div>
+              <div style={{display:'flex', width:'60px', justifyContent:'flex-end',}}>
+                  <span style={{fontSize:'25px', color:'grey' }}>{minutes} <span >:</span>
+                      <div style={{fontSize:'10px', textAlign:'center'}}>Mins</div>
+                  </span>
+              </div> 
+              <div style={{display:'flex', width:'40px', justifyContent:'flex-end'}}>
+                  <span style={{fontSize:'25px', color:'grey' }}>{seconds}
+                      <div style={{fontSize:'10px',textAlign:'center'}}>Secs</div>
+                  </span>
+              </div>
           </div> 
           
           <div style={{ width:'50%', textAlign:'center', paddingTop:'3%'}}>

@@ -1,26 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {games as fixtures} from "./teams";
-import { Link } from '@material-ui/core';
-import { Link as RouterLink } from 'react-router-dom';
 import ChatSection from './ChatSection';
-import { icons } from 'react-icons/lib';
-import { grey } from '@material-ui/core/colors';
-import { FaCalendarAlt } from "react-icons/fa";
-import { FaRegClock } from "react-icons/fa";
-import LineUps from './LineUps';
-import GameSectionScoreCheet from './GameSectionScoreCheet';
-import GameSectionScoreCheetBottomStats from './GameSectionScoreCheetBottomStats';
 import GameSectionScoreCheetBottomVenue from './GameSectionScoreCheetBottomVenue';
-import Events from './Events';
-import StatsBar from './StatsTopBar';
 import StatsBarUpcoming from './StatsTopBarUpcoming';
-import StatsBody from './StatsBody';
-import StatsHeader from './StatsHeader';
 import GameHeader from './GameHeader';
 import UpcomingGameHeader from './UpcomingGameHeader';
-import LeagueNameBar from './LeagueNameBar';
 import H2H from './H2H';
 
 
@@ -30,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
   scoreSheet:{
     width: '98%',
-    // height: '350px',
     backgroundColor: 'black',
     marginLeft: '1%',
     marginRight: '1%',
@@ -38,12 +22,10 @@ const useStyles = makeStyles((theme) => ({
     borderTopLeftRadius:'5px',
     borderTopRightRadius:'5px',
 
-  },
-  
+  }, 
   chartText: {
     fontFamily: ' sans-serif', 
     fontSize:'6px',
-    // paddingLeft:'500px',
     fill:" green",
     mozTransform: 'translateY(0.5em)',
     msTransform: 'translateY(0.25em)',
@@ -92,24 +74,34 @@ console.log(fixture)
         {/* <StatsBar/> */}
         <StatsBarUpcoming fixture={fixture}/>
         {/* <LeagueNameBar/> */}
-    <div style={{display:"flex",backgroundColor:'#EAF0F7', paddingTop:'50px',  }} >
+    <div style={{display:"flex",backgroundColor:'#EAF0F7', paddingTop:'50px'}}>
             <div style={{width:'100%', }} > 
-                <div className={classes.scoreSheet} slyle={{display:'flex',}}>
+                <div className={classes.scoreSheet} slyle={{display:'flex'}}>
                   <Switch>
-                
                     <Route path="/game/:gameId/">
-                      {gameStatus === "NS" ? <UpcomingGameHeader fixture={fixture}/> : 
-                                                  <GameHeader fixture={fixture}/>}                     
-                      <GameSectionScoreCheetBottomVenue fixture={fixture}/>
+                      {gameStatus === "NS" 
+                          ? 
+                        <UpcomingGameHeader fixture={fixture}/> 
+                          :                           
+                        <GameHeader fixture={fixture}/>}                     
+                        <GameSectionScoreCheetBottomVenue fixture={fixture}/>
                     </Route>
                   </Switch>
             </div>
           
             <Route exact path="/game/:gameId">
-                <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> There are no lineups at this time </p>
+                <p style={{textAlign:'center', 
+                           color:'#6e7aa2', 
+                           paddingTop:'50px',}}> 
+                There are no lineups at this time 
+                </p>
             </Route>
             <Route path="/game/:gameId/events">
-                <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}>No events yet</p>
+                <p style={{textAlign:'center', 
+                           color:'#6e7aa2', 
+                           paddingTop:'50px',}}>
+                No events yet
+                </p>
             </Route >
             <Route path="/game/:gameId/chat">
               <ChatSection gameId={gameNum} />
@@ -118,7 +110,11 @@ console.log(fixture)
               <H2H fixture={fixture} />
             </Route>
             <Route path="/game/:gameId/statistics">
-            <p style={{textAlign:'center', color:'#6e7aa2', paddingTop:'50px',}}> No statistics found </p>
+            <p style={{textAlign:'center', 
+                       color:'#6e7aa2', 
+                       paddingTop:'50px',}}> 
+              No statistics found 
+            </p>
             </Route>
           </div>
     </div>
