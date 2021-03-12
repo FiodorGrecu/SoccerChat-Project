@@ -13,14 +13,6 @@ import { FaStopwatch } from "react-icons/fa";
 
 const useStyles = makeStyles((theme) => ({
 
-  scoreSheet:{
-    width: '98%',
-    height: '15%',
-    backgroundColor: 'black',
-    margin: '1%',
-    position: 'relative',
-  },
-  
 
 }));
 
@@ -33,10 +25,7 @@ console.log(fixture)
             return (
                 <div>
                   <div >
-                    {/* {event.time.elapsed}'                     */}
-                    {/* <span >{event.player.name}</span>b */}
                   <div>{event.time.extra ? `${event.time.elapsed} + ${event.time.extra}` : event.time.elapsed }' </div> 
-
                   </div>
                   <div></div>
                    <span style={{paddingRight:'10px'}}>{event.assist.name &&`(${event.assist.name})` }</span>
