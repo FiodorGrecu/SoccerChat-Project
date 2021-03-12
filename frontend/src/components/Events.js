@@ -68,7 +68,7 @@ console.log(fixture)
                     {/* <div>{event.time.elapsed}'</div> */}
                   <div>{event.time.extra ? `${event.time.elapsed} + ${event.time.extra}` : event.time.elapsed }' </div> 
 
-                    <span>{event.player.name}</span>
+                    <span >{event.player.name}</span>
                     <span>
                       <span style={{width:'10px', height:'33px', backgroundColor:'#ffb822', marginLeft:'10px'}}>
                         <span style={{width:'20px', 
