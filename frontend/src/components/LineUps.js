@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import {games as fixtures} from "./teams";
-import { Link as RouterLink } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 
 
 const useStyles = makeStyles((theme) => ({
 
-  scoreSheet:{
-    width: '98%',
-    height: '15%',
-    backgroundColor: 'black',
-    margin: '1%',
-    position: 'relative',
-  },
 }));
 
 export default function LineUps({ fixture }) {
@@ -109,9 +100,10 @@ export default function LineUps({ fixture }) {
                     width: '30px',height: "30px",borderRadius: '50%',
                     display: 'inline-block',textAlign: 'center', 
                     margin: '2px', position:'relative',}}>
-
-              <span style={{color:'white',position: 'absolute',top: '50%',transform: 'translate(-50%, -50%)',
-                width: '90px'}}>{substitutes.player.number}
+              <span style={{color:'white',position: 'absolute', 
+                      top: '50%',transform: 'translate(-50%, -50%)',
+                      width: '90px'}}>
+                  {substitutes.player.number}
               </span>
             </circle>
             <span style={{textAlign:'center', paddingLeft:'20px',paddingTop:'10px'}}>
