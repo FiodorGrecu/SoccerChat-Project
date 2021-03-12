@@ -147,12 +147,16 @@ console.log(fixture)
                         margin:'2%'}}>
                       Coach
                       <Divider/>
-                    <p style={{paddingLeft: '5%',fontWeight:'500'}}>
+                    <p style={{paddingLeft: '5%',fontWeight:'bold'}}>
                       {hometeamCoach}
                     </p>
                   </Paper>
                   </div>
-                  <Paper className={classes.homeSubs} style={{ color: '#516290',fontSize:'1rem', fontWeight:'400',paddingLeft:'1%',fontWeight:'bold', margin:'2%',}}>Substitutions
+                  <Paper className={classes.homeSubs} 
+                    style={{ color: '#516290',fontSize:'1rem', 
+                      fontWeight:'400',paddingLeft:'1%',
+                      fontWeight:'bold', margin:'2%',}}>
+                        Substitutions
                     <p >{homeSubs}</p>
                   </Paper>
                 </div> 
@@ -176,7 +180,7 @@ console.log(fixture)
                              margin:'2%'}}>
                         Coach
                       <Divider/>
-                      <p style={{paddingLeft: '5%',fontWeight:'500'}}>
+                      <p style={{paddingLeft: '5%',fontWeight:'bold'}}>
                         {awayteamCoach}
                       </p>
                     </Paper>
