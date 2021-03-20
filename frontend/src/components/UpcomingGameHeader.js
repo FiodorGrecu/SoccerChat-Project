@@ -44,9 +44,6 @@ const GameHeader = ({fixture}) => {
   const homeTeamScore = fixture.goals && fixture.goals.home;
   const awayTeamScore = fixture.goals && fixture.goals.away;
 
-  const halfTimeScoreH = fixture.score && fixture.score.halftime.home;
-  const halfTimeScoreA = fixture.score && fixture.score.halftime.away;
-
   const halfTimeStatus = fixture.fixture && fixture.fixture.status.short;
   console.log(halfTimeStatus)
 
@@ -78,8 +75,6 @@ const GameHeader = ({fixture}) => {
       setMinutes(Math.floor((timeleft % (1000 * 60 * 60 )) / (1000 * 60)));
       setSeconds(Math.floor((timeleft % (1000 * 60)) / 1000));
   }, 1000)
-
-//   console.log(myFunc)
 
   return (
       <div style={{height:'333px'}}>
