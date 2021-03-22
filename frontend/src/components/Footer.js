@@ -7,6 +7,8 @@ import Link from '@material-ui/core/Link';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 function Copyright() {
   return (
@@ -73,6 +75,16 @@ export default function StickyFooter() {
             <span style={{color:'#0B66C2', paddingLeft:'10px'}}>
               <Link color="inherit" href="https://www.linkedin.com/in/fiodorgrecu/">
                 <LinkedInIcon/>
+              </Link>
+            </span>  
+            <span style={{color:'red', paddingLeft:'10px'}}>
+              <Link color="inherit" href="https://www.linkedin.com/in/fiodorgrecu/">
+                <YouTubeIcon/>
+              </Link>
+            </span>  
+            <span style={{color:'black', paddingLeft:'10px'}}>
+              <Link color="inherit" href="https://www.instagram.com/">
+                <InstagramIcon/>
               </Link>
             </span>  
           </Typography>
