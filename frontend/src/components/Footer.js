@@ -4,7 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-
+import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 function Copyright() {
   return (
@@ -56,8 +58,24 @@ export default function StickyFooter() {
       </Container>
       <footer className={classes.footer}>
         <Container maxWidth="sm">
-          <Typography variant="body1">Contact me</Typography>
-          <i class="fab fa-github"></i>
+          <Typography variant="body1">
+            <span>Contact me</span> 
+            <span style={{color:'#648DAE', paddingLeft:'20px'}}>
+              <Link color="inherit" href="https://twitter.com/GrecuFiodor">
+                <TwitterIcon/>
+              </Link>
+            </span>  
+            <span style={{color:'black', paddingLeft:'10px'}}>
+              <Link color="inherit" href="https://github.com/FiodorGrecu">
+                <GitHubIcon/>
+              </Link>
+            </span>  
+            <span style={{color:'#0B66C2', paddingLeft:'10px'}}>
+              <Link color="inherit" href="https://www.linkedin.com/in/fiodorgrecu/">
+                <LinkedInIcon/>
+              </Link>
+            </span>  
+          </Typography>
           <Copyright />
         </Container>
       </footer>
