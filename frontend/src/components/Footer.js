@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary">
@@ -56,6 +57,7 @@ export default function StickyFooter() {
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">Contact me</Typography>
+          <i class="fab fa-github"></i>
           <Copyright />
         </Container>
       </footer>
