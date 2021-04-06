@@ -8,7 +8,7 @@
     text-decoration: none;
     transition: all .2s ease;
     transition-property: color;
-    transition-duration: .3s;
+    transition-duration: .4s;
     transition-timing-function:'ease';
-    transition-delay: 0s;
+    transition-delay: 0.5s;
 }

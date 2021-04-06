@@ -4,9 +4,6 @@ import Game from './Game';
 import Upcoming_OneGame from './Upcoming_OneGame';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 
-
-
-
 export default function CenteredGrid(props) {
 
   const [fixture, setFixture] = useState({});
@@ -26,7 +23,6 @@ export default function CenteredGrid(props) {
     setTimeout(gameDetails, 1000);
 
   }, [gameNum] )
-
 
   const gameStatus = fixture.fixture && fixture.fixture.status.short;
   
