@@ -115,7 +115,6 @@ def get_table(season, league_id):
     # table = table_fake
     return jsonify(table)
 
-
 @app.route('/api/games_by_date/<date>', methods=["GET"])
 def games_by_date(date):
     date = Game.games_by_date(date)
