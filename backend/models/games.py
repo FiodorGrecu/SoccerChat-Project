@@ -270,14 +270,14 @@ class Game:
         data = response.json()
  
         fix_list = data.get("response")
-        print(fix_list)
+        # print(fix_list)
         output = []
         last_round = None
         for f in fix_list:
             current_round = f["league"]["round"]
             if not last_round == current_round:
                 output.append({"round": f["league"]["round"], "games": []})
-                print(f["league"]["round"])
+                # print(f["league"]["round"])
             output[-1]["games"].append(f)
             last_round = f["league"]["round"]
         return(output)
@@ -316,14 +316,14 @@ class Game:
         data = response.json()
 
         fix_list = data.get("response")
-        print(fix_list)
+        # print(fix_list)
         output = []
         last_round = None
         for f in fix_list:
             current_round = f["league"]["round"]
             if not last_round == current_round:
                 output.append({"round": f["league"]["round"], "games": []})
-                print(f["league"]["round"])
+                # print(f["league"]["round"])
             output[-1]["games"].append(f)
             last_round = f["league"]["round"]
         return(output)
