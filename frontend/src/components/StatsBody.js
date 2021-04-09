@@ -21,26 +21,26 @@ export default function StatsBody({ fixture }) {
 
 
   // Charts data f
-  const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value;
-  const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value;
+  const homeShotsOnTarget = fixture.statistics && fixture.statistics[0].statistics[0].value || 0;
+  const awayShotsOnTarget = fixture.statistics && fixture.statistics[1].statistics[0].value || 0;
   
-  const homeShotsOffTarget = fixture.statistics && fixture.statistics[0].statistics[1].value;
-  const awayShotsOffTarget = fixture.statistics && fixture.statistics[1].statistics[1].value;
+  const homeShotsOffTarget = fixture.statistics && fixture.statistics[0].statistics[1].value || 0;
+  const awayShotsOffTarget = fixture.statistics && fixture.statistics[1].statistics[1].value || 0;
   
-  const homeTotalShots = fixture.statistics && fixture.statistics[0].statistics[2].value;
-  const awayTotalShots = fixture.statistics && fixture.statistics[1].statistics[2].value;
+  const homeTotalShots = fixture.statistics && fixture.statistics[0].statistics[2].value || 0;
+  const awayTotalShots = fixture.statistics && fixture.statistics[1].statistics[2].value || 0;
   
-  const homeShotsInsideBox = fixture.statistics && fixture.statistics[0].statistics[4].value;
-  const awayShotsInsideBox = fixture.statistics && fixture.statistics[1].statistics[4].value;
+  const homeShotsInsideBox = fixture.statistics && fixture.statistics[0].statistics[4].value || 0;
+  const awayShotsInsideBox = fixture.statistics && fixture.statistics[1].statistics[4].value || 0;
   
-  const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value;
-  const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value;
+  const homeShotsOutsideBox = fixture.statistics && fixture.statistics[0].statistics[5].value || 0;
+  const awayShotsOutsideBox = fixture.statistics && fixture.statistics[1].statistics[5].value|| 0;
  
   const homeBlockedShots = fixture.statistics && fixture.statistics[0].statistics[3].value || 0;
   const awayBlockedShots = fixture.statistics && fixture.statistics[1].statistics[3].value || 0;
   
-  const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value;
-  const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value;
+  const homeGoalkeeperSaves = fixture.statistics && fixture.statistics[0].statistics[12].value || 0;
+  const awayGoalkeeperSaves = fixture.statistics && fixture.statistics[1].statistics[12].value || 0;
   
   const homeFouls = fixture.statistics && fixture.statistics[0].statistics[6].value || 0;
   const awayFouls = fixture.statistics && fixture.statistics[1].statistics[6].value || 0;
@@ -52,11 +52,11 @@ export default function StatsBody({ fixture }) {
   const awayRedCards = fixture.statistics && fixture.statistics[1].statistics[11].value || 0;
   console.log(homeRedCards, awayRedCards)
   
-  const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value;
-  const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value;
+  const homeTotalPasses = fixture.statistics && fixture.statistics[0].statistics[13].value || 0;
+  const awayTotalPasses = fixture.statistics && fixture.statistics[1].statistics[13].value || 0;
   
-  const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value;
-  const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value;
+  const homePassesAcurate = fixture.statistics && fixture.statistics[0].statistics[14].value || 0;
+  const awayPassesAcurate = fixture.statistics && fixture.statistics[1].statistics[14].value || 0;
   
   const homePassesAcuracy = fixture.statistics && fixture.statistics[0].statistics[15].value.slice(0,-1);
   const awayPassesAcuracy = fixture.statistics && fixture.statistics[1].statistics[15].value.slice(0,-1);
