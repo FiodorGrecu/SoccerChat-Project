@@ -8,22 +8,18 @@ import LeagueBar from './LeagueNameBar';
 import StatsBar from './StatsTopBar';
 
 const useStyles = makeStyles((theme) => ({
-
+// This is where CSS goes if I need to refactor the code in this JS file
    
 }));
 
-
 export default function SimplePaper() {
   const classes = useStyles();
-
   // api/last/<num_games>
-
   const [fixtures, setFixtures] = useState([]);
-
   const today = new Date();
-const year = today.getFullYear();
-const month = today.getMonth() + 1;
-const day = today.getDate();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
 
 function fixDigit(val){
   return val.toString().length === 1 ? "0" + val : val;
@@ -31,9 +27,8 @@ function fixDigit(val){
 console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
 
   useEffect(() => {
-
     async function getFixtures() {
-      // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
+  // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
       const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/${year}-${fixDigit(month)}-${fixDigit(day)}/2041-06-30`);
       const data =  await response.json();
       console.log(data)
@@ -41,7 +36,6 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
     }
     getFixtures();
   }, [] )
-
 
   const outputAllFixtures = fixtures.map(round =>(
     
