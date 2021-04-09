@@ -43,7 +43,7 @@ export default function CenteredGrid(props) {
 
   const venue = fixture.lineups && fixture.fixture.venue.name;
 
-  const date = fixture.fixture && fixture.fixture.date;
+  // const date = fixture.fixture && fixture.fixture.date;
 
 console.log(fixture)
   return (
