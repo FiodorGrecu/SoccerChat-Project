@@ -232,7 +232,7 @@ export default function StatsBody({ fixture }) {
             </div>
             <hr style={{width:'100%'}}></hr>
 
-            {/* First row and it's bar */}
+       {/* First row and it's bar */}
             <div style={{ width:'90%', margin:'auto', }}>
                 <span style={{width:'33%', float:'left', textAlign:'left',
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
@@ -258,7 +258,7 @@ export default function StatsBody({ fixture }) {
                 </span>
             </div>
 
-            {/* Second row and it's bar */}
+      {/* Second row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
                 <span style={{width:'33%', float:'left', textAlign:'left',
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
@@ -339,7 +339,7 @@ export default function StatsBody({ fixture }) {
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
                         color: 'gray',fontWeight: 'bold'}}>
                       {homeRedCards }
-                      {/* {homeRedCards } */}
+        {/* {homeRedCards } */}
                         </span>
                 <span style={{width:'33%', float:'left',fontFamily: 'Roboto,sans-serif',
                         fontSize: '0.9rem',color: 'gray',fontWeight: '500'}}>
@@ -479,13 +479,17 @@ export default function StatsBody({ fixture }) {
                 </span>
             </div>
             <div style={{width:'90%', margin:'auto',display:'flex' }}>
-                <span style={{backgroundColor:'#d7dff7', width:`${homeBallPossession}%`, marginRight:'1px'}}>
+                <span style={{backgroundColor:'#d7dff7', 
+                              width:`${homeBallPossession}%`, 
+                              marginRight:'1px'}}>
                 </span>
-                <span style={{backgroundColor:'#516290' ,width:`${awayBallPossession}%`, height:'20px',}}>
+                <span style={{backgroundColor:'#516290', 
+                              width:`${awayBallPossession}%`, 
+                              height:'20px',}}>
                 </span>
             </div>
 
-            {/* Second row and it's bar */}
+        {/* Second row and it's bar */}
             <div style={{ width:'90%', margin:'auto', paddingTop:'20px'}}>
                 <span style={{width:'33%', float:'left', textAlign:'left',
                         fontFamily: 'Roboto,sans-serif',fontSize: '0.9rem',
