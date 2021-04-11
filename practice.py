@@ -36,14 +36,15 @@
 # squared = map(square, numbers)
 # print(list(squared))
 
-# from datetime import datetime
-
-# datetime.today().strftime('%Y-%m-%d')
-
 from datetime import datetime
 
-timestamp = 1601825400
-dt_object = datetime.fromtimestamp(timestamp)
+datetime.today().strftime('%Y-%m-%d')
+print(datetime.today())
 
-print("dt_object =", dt_object)
+# from datetime import datetime
+
+# timestamp = 1601825400
+# dt_object = datetime.fromtimestamp(timestamp)
+
+# print("dt_object =", dt_object)
 # print("type(dt_object) =", type(dt_object))
