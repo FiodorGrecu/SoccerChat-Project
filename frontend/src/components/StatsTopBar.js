@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { makeStyles } from "@material-ui/core/styles";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
-import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import './StatsTopBar.css';
-
-
 
 const useStyles = makeStyles((theme) => ({
 
@@ -15,9 +12,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center ",
     // this weird symbols are the paper for some reason
     "& > *": {
-
     },
-   
   }
 }));
 
