@@ -78,26 +78,43 @@ console.log(awayteamName, hometeamName)
                 {fixture.fixture && <img src={hometeamLogo} style={{width:'28px', height:'28px'}}/> }
                 </span>
             </div>
-            <div style={{ display:'flex' ,width:'20%', backgroundColor:'white', justifyContent:'center',paddingTop:'20px',
-                    fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
+            <div style={{ display:'flex' ,
+                          width:'20%', 
+                          backgroundColor:'white', 
+                          justifyContent:'center',
+                          paddingTop:'20px',
+                          fontFamily:'Roboto,sans-serif',
+                          fontWeight:'bold'}}>
                 <span style={{paddingRight:'5px'}}>{homeTeamScore}</span>
                 <span> - </span>
                 <span style={{paddingLeft:'5px'}}>{awayTeamScore}</span>
             </div>
-            <div style={{ display:'flex' ,width:'20%', backgroundColor:'white',paddingTop:'20px',
-                    fontFamily:'Roboto,sans-serif',fontWeight:'bold'}}>
+            <div style={{ display:'flex',
+                          width:'20%', 
+                          backgroundColor:'white',
+                          paddingTop:'20px',
+                          fontFamily:'Roboto,sans-serif',
+                          fontWeight:'bold'}}>
                 <span>
-                {fixture.fixture && <img src={awayteamLogo} style={{width:'28px', height:'28px'}}/> }
+                  {fixture.fixture && <img src={awayteamLogo} 
+                                      style={{width:'28px', height:'28px'}}/>}
                 </span>
                 <RouterLink style={{textDecoration:'none'}} className={"TeamName"}>
-                  <span className={"TeamName"} style={{paddingLeft:'5px'}}>{awayteamName}</span>
+                  <span className={"TeamName"} style={{paddingLeft:'5px'}}>
+                    {awayteamName}
+                  </span>
                 </RouterLink>
             </div>
 
             {/* Half time score div div */}
-            <div style={{width:'50%',alignItems:'flex-end',backgroundColor:'white', }}>
-               <div style={{textAlign:'right', paddingRight:'20px', 
-                      paddingTop:'20px',color: '#8e9cc5', fontWeight:'bold' }}>
+            <div style={{width:'50%',
+                         alignItems:'flex-end', 
+                         backgroundColor:'white'}}>
+               <div style={{textAlign:'right', 
+                            paddingRight:'20px', 
+                            paddingTop:'20px',
+                            color: '#8e9cc5', 
+                            fontWeight:'bold'}}>
                 (<span>{halfTimeScoreH}</span>
                 <span> - </span>
                 <span>{halfTimeScoreA}</span>)
@@ -107,31 +124,43 @@ console.log(awayteamName, hometeamName)
         </div>
         <div style={{display: "flex",  }}>
           
-          <div className={"BarLinks"}  style={{paddingLeft:'50px', display:'flex' ,width:'100%',
-               justifyContent:'flex-end', paddingTop:'15px', marginTop:'1px',
-               fontSize: '1rem', paddingLeft:'20px', paddingTop:'13px',
-               fontFamily:'Roboto,sans-serif',color: 'grey',fontWeight: 'bold', 
-               backgroundColor:'white'}}>
-                 
-            <RouterLink className={"BarLinks"}  to={'/fixtures'} >
-              <p className={"BarLinks"} style={{paddingLeft:'10px', }}>Back</p>
-            </RouterLink>
-            <span style={{margin:'auto', }}></span>
-            <RouterLink className={"BarLinks"}  to={`/game/${gameNum}/events`}>
-              <p className={"BarLinks"} style={{paddingRight:'10px'}}>Summary</p>
-            </RouterLink>
-            <RouterLink to={`/game/${gameNum}/statistics`}>
-              <p className={"BarLinks"} style={{paddingRight:'20px' }}>Statistics</p>
-            </RouterLink>
-            <RouterLink className={"BarLinks"} to={`/game/${gameNum}`}>
-              <p className={"BarLinks"} className={"BarLinks"} style={{paddingRight:'20px', }}>Lineups</p>
-            </RouterLink>
-            <RouterLink className={"BarLinks"} to={`/game/${gameNum}/h2h`}>
-              <p className={"BarLinks"} style={{paddingRight:'20px'}}>H2H</p>
-            </RouterLink>
-            <RouterLink className={"BarLinks"} to={`/game/${gameNum}/chat`}>
-              <p className={"BarLinks"} style={{paddingRight:'20px'}}>Chat</p>
-            </RouterLink>
+          <div className={"BarLinks"} 
+              style={{paddingLeft:'50px', 
+                      display:'flex',
+                      width:'100%',
+                      justifyContent:'flex-end', 
+                      paddingTop:'15px',
+                      marginTop:'1px',
+                      fontSize: '1rem', 
+                      paddingLeft:'20px', 
+                      paddingTop:'13px',
+                      fontFamily:'Roboto,sans-serif',
+                      color: 'grey',
+                      fontWeight: 'bold', 
+                      backgroundColor:'white'}}>
+
+              <RouterLink className={"BarLinks"} to={'/fixtures'}>
+                <p className={"BarLinks"} style={{paddingLeft:'10px'}}>Back</p>
+              </RouterLink>
+              <span style={{margin:'auto'}}></span>
+              <RouterLink className={"BarLinks"} to={`/game/${gameNum}/events`}>
+                <p className={"BarLinks"} 
+                  style={{paddingRight:'10px'}}>Summary</p>
+              </RouterLink>
+              <RouterLink to={`/game/${gameNum}/statistics`}>
+                <p className={"BarLinks"} 
+                  style={{paddingRight:'20px'}}>Statistics</p>
+              </RouterLink>
+              <RouterLink className={"BarLinks"} to={`/game/${gameNum}`}>
+                <p className={"BarLinks"} className={"BarLinks"} 
+                  style={{paddingRight:'20px', }}>Lineups</p>
+              </RouterLink>
+              <RouterLink className={"BarLinks"} to={`/game/${gameNum}/h2h`}>
+                <p className={"BarLinks"} style={{paddingRight:'20px'}}>H2H</p>
+              </RouterLink>
+              <RouterLink className={"BarLinks"} to={`/game/${gameNum}/chat`}>
+                <p className={"BarLinks"} style={{paddingRight:'20px'}}>Chat</p>
+              </RouterLink>
           </div> 
         </div>
     </div>
