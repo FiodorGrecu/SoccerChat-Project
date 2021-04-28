@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimplePaper() {
   const classes = useStyles();
-  // api/last/<num_games>
   const [fixtures, setFixtures] = useState([]);
   const today = new Date();
   const year = today.getFullYear();
