@@ -20,11 +20,9 @@ import H2H from './components/H2H';
 import AllUpcomingFixtures from './components/AllUpcomingFixtures';
 import AllPastFixtures from './components/AllPastFixtures';
 import TableView from './components/TableView';
-import Upcoming_OneGame from './components/Upcoming_OneGame';
 import GameByStatus from  './components/GameByStatus';
 
 function App() {
-
   return (
     <div >
       <BrowserRouter>
@@ -92,6 +90,10 @@ function App() {
 
         <Route path='/table_view'>
           <TableView/>
+        </Route>
+
+        <Route path='/live_games'>
+          <LiveGames/>
         </Route>
 
       <footer>
