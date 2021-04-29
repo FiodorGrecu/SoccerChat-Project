@@ -107,7 +107,8 @@ export default function LeagueBar( { fixture } ) {
                     Standings
                   </p>
             </RouterLink>
-            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}}>
+            <RouterLink className={"BarLinks"} style={{textDecoration:'none'}}
+                to="/live_games">
                 <p className={"BarLinks"} 
                   style={{paddingRight:'20px', textTransform:'uppercase'}}>
                     Live
