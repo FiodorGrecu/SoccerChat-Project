@@ -21,6 +21,8 @@ import AllUpcomingFixtures from './components/AllUpcomingFixtures';
 import AllPastFixtures from './components/AllPastFixtures';
 import TableView from './components/TableView';
 import GameByStatus from  './components/GameByStatus';
+import LiveGames from './components/LiveGames';
+
 
 function App() {
   return (
