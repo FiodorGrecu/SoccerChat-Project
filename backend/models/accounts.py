@@ -5,7 +5,6 @@ import random
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
-# print(DATAPATH)
 
 class Account:
 
@@ -20,6 +19,7 @@ class Account:
         self.email = email
         self.password_hash = password_hash
         self.user_key = user_key      
+
 
     def save(self):
         if self.pk:

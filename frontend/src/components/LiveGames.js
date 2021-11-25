@@ -27,7 +27,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
 
   useEffect(() => {
     async function getFixtures() {
-      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2020/${year}-${fixDigit(month)}-${fixDigit(day)}/2041-06-30`);
+      const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2021/${year}-${fixDigit(month)}-${fixDigit(day)}/2041-06-30`);
       const data =  await response.json();
       console.log(data)
       setFixtures(data.fixtures)

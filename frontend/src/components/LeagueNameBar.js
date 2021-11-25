@@ -31,7 +31,7 @@ export default function LeagueBar( { fixture } ) {
  
   useEffect(() => {
     async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/topscorers/2020/${39}`);
+      const response = await fetch(`http://localhost:5000/api/topscorers/2021/${39}`);
       const data = await response.json();
       console.log(data);
       if (data.scorers) {
