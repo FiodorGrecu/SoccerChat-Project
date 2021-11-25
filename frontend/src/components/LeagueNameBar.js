@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import { Box, Divider } from "@material-ui/core";
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import { Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
@@ -31,7 +29,7 @@ export default function LeagueBar( { fixture } ) {
  
   useEffect(() => {
     async function gameDetails() {
-      const response = await fetch(`http://localhost:5000/api/topscorers/2021/${39}`);
+      const response = await fetch(`http://localhost:5000/api/topscorers/2020/${39}`);
       const data = await response.json();
       console.log(data);
       if (data.scorers) {

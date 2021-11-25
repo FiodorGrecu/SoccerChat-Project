@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^7.2.1",
     "apexcharts": "^3.23.0",
     "bootstrap": "^4.5.3",
+    "glob-parent": "^6.0.2",
     "mdbreact": "^4.27.0",
     "moment": "^2.29.1",
     "react": "^16.13.1",
