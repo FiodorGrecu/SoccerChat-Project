@@ -184,7 +184,7 @@ def save_chat():
 
 @app.route('/api/get_chat/<fixture_id>', methods=['GET'])
 def get_chat(fixture_id):
-    # data = request.get_json()
+    # data = request.get_json() debugging note fro testing
     new_chat = Chat.get_chat(fixture_id)
     return jsonify({"chat": new_chat})
 
