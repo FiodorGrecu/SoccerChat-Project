@@ -61,7 +61,7 @@ export default function LeagueBar( { fixture } ) {
   
   const leagueName = topScorers[0] && topScorers[0].statistics[0].league.name; 
   const leagueLogo = topScorers[0] && topScorers[0].statistics[0].league.logo; 
-  // console.log(leagueName)
+  // console.log(leagueName) for localy testing purposes 
 
   // }
   return (
