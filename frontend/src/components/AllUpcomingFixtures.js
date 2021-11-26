@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import LeagueBar from './LeagueNameBar';
 import StatsBar from './StatsTopBar';
@@ -28,7 +27,7 @@ console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
 
   useEffect(() => {
     async function getFixtures() {
-  // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`);
+  // const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/${39}/${2020}/${2021/01/19}/${2021/06/30}`); The testing route.
       const response = await fetch(`http://127.0.0.1:5000/api/upcoming_fixt/39/2021/${year}-${fixDigit(month)}-${fixDigit(day)}/2041-06-30`);
       const data =  await response.json();
       console.log(data)
