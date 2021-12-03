@@ -102,7 +102,7 @@ def schema(dbpath = DATAPATH):
             FOREIGN KEY (account_id) REFERENCES accounts(pk)
             FOREIGN KEY (game_id) REFERENCES games(pk)
         );""")
-# Not sure the FOREIGN KEY FOR "standing/table" table can be
+
         cursor.execute("""
         CREATE TABLE tables (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
