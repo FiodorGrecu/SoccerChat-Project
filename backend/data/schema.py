@@ -129,13 +129,13 @@ def schema(dbpath = DATAPATH):
         
 # Not sure the FOREIGN KEY FOR "countries" table can be
 
-        # cursor.execute("""
-        # CREATE TABLE countries (
-        #     name VARCHAR,
-        #     code VARCHAR,
-        #     flag VARCHAR,
-        #     FOREIGN KEY (league_id) REFERENCES accounts(pk)
-        # );""")
+        cursor.execute("""
+        CREATE TABLE countries (
+            name VARCHAR,
+            code VARCHAR,
+            flag VARCHAR,
+            FOREIGN KEY (league_id) REFERENCES accounts(pk)
+        );""")
         
         # Have the home team and away team as columns for the games table
         # Chats foregn key should reference the games           

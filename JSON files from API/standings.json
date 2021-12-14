@@ -1,7 +1,7 @@
 {'errors': [],
  'get': 'standings',
  'paging': {'current': 1, 'total': 1},
- 'parameters': {'league': '39', 'season': '2020'},
+ 'parameters': {'league': '39', 'season': '2021'},
  'response': [{'league': {'country': 'England',
                           'flag': 'https://media.api-sports.io/flags/gb.svg',
                           'id': 39,
