@@ -40,12 +40,15 @@ class Account:
     # """Look up all Messages a User has executed"""
     # def my_messages(self):
     #     return Message.all_for_user(self.pk)
-    
+
     def _update(self):
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
-            sql = f"""UPDATE {self.tablename} SET username=?, password_hash=?,
-                    user_key=? WHERE pk=?;"""
+            sql = f"""UPDATE {self.tablename} SET 
+                    username=?, 
+                    password_hash=?,
+                    user_key=? 
+                    WHERE pk=?;"""
             values = (self.username, self.password_hash, self.user_key, self.pk)
             cursor.execute(sql, values)
 
