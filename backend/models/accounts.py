@@ -20,7 +20,6 @@ class Account:
         self.password_hash = password_hash
         self.user_key = user_key      
 
-
     def save(self):
         if self.pk:
             self._update()
@@ -38,11 +37,10 @@ class Account:
             cursor.execute(sql, values)
             return cursor.lastrowid
 
+    # """Look up all Messages a User has executed"""
     # def my_messages(self):
-    #     """Look up all Messages a User has executed
-    #     """
     #     return Message.all_for_user(self.pk)
-
+    
     def _update(self):
         with sqlite3.connect(self.dbpath) as conn:
             cursor = conn.cursor()
