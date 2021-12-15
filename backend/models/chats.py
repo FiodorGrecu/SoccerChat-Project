@@ -26,7 +26,7 @@ class  Chat:
         self.username = username
 
  # make a save function for permanent storage in the db
-    # a load function that can load by id (Show_one func)
+ # a load function that can load by id (Show_one func)
 
     def save(self):
         """Call _insert if the row does not exist in the database, otherwise
@@ -59,8 +59,12 @@ class  Chat:
             sql = f"""UPDATE {self.tablename} SET timestamp=?, text=?, 
                     account_id=?, game_id=? WHERE pk=?;"""
                     
-            values = (self.timestamp, self.text, self.account_id, self.game_id,
-                      self.pk)
+            values = (self.timestamp, 
+                      self.text, 
+                      self.account_id, 
+                      self.game_id,
+                      self.pk
+                      )
             cursor.execute(sql, values)
 
     @classmethod
@@ -77,7 +81,7 @@ class  Chat:
 
     @classmethod  
     def get_chat(cls, game_id):
-        # Perform a select staement WHERE game_id = provided game_id
+        # Perform a select statement WHERE game_id = provided game_id
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()
             sql = f"""SELECT * FROM {cls.tablename} WHERE game_id=?;"""
