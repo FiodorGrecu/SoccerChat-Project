@@ -100,3 +100,4 @@ class Account:
 
 if __name__ == "__main__":
     print(Account.hash_password("password"))
+    # print(Account.random_api_key(5))
