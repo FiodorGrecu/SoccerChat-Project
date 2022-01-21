@@ -21,7 +21,7 @@ export default function SimplePaper() {
   const day = today.getDate();
 
 function fixDigit(val){
-  return val.toString().length === 1 ? "0" + val : val;
+  return val.toString().length === 1 ? "0" + val : val; // <condition> ? <value1> : <value2> Ternery operator
 }
 console.log(`${year}-${fixDigit(month)}-${fixDigit(day)}`)
 
