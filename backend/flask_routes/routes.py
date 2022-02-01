@@ -25,8 +25,9 @@ from pprint import pprint
 
 
 API_BASE = "https://api-football-beta.p.rapidapi.com"
-key =  "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"
 
+# The original Key
+key =  "2c640065a3mshc7ce40d93c5d938p11e165jsndda02dd29bc5"  
 
 # key =  "804b1594a5msh69900911a788156p125a69jsna7c589797665"
 

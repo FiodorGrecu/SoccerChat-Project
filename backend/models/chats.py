@@ -92,6 +92,7 @@ class  Chat:
 
 if __name__ == '__main__':
 
+# The Belllow calls are for Testing purposes
 
     # user_chat = Chat.get_chat('592215')
     getchat = Chat.get_chat('436')
