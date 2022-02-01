@@ -4,7 +4,7 @@ import os
 
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "soccerchat.db")
-# print(DATAPATH)
+print(DATAPATH)
 
 def schema(dbpath = DATAPATH):
     with sqlite3.connect(dbpath) as conn:
@@ -18,6 +18,7 @@ def schema(dbpath = DATAPATH):
             logo VARCHAR,
             year_founded INTEGER,
             FOREIGN KEY (team_id) REFERENCES teams(team_id)
+
         );""")
 
         cursor.execute("""
@@ -123,18 +124,21 @@ def schema(dbpath = DATAPATH):
             name VARCHAR,
             competition_type VARCHAR,
             logo VARCHAR,
+            game_id INTEGER,
             country VARCHAR,
             FOREIGN KEY (league_id) REFERENCES accounts(pk)
+            FOREIGN KEY (game_id) REFERENCES accounts(pk)
         );""")
         
 # Not sure the FOREIGN KEY FOR "countries" table can be
 
         cursor.execute("""
         CREATE TABLE countries (
-            name VARCHAR,
-            code VARCHAR,
-            flag VARCHAR,
+            country_name VARCHAR,
+            country_code VARCHAR,
+            country_flag VARCHAR,
             FOREIGN KEY (league_id) REFERENCES accounts(pk)
+            FOREIGN KEY (game_id) REFERENCES accounts(pk)
         );""")
         
         # Have the home team and away team as columns for the games table
