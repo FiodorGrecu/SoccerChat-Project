@@ -151,8 +151,8 @@ def upcoming_fixt(league_id, season, from_date, to_date):
 # http://127.0.0.1:5000/api/past_fixt/39/2020/2020-09-12/2021-01-24
 @app.route('/api/past_fixt/<league_id>/<season>/<from_date>/<to_date>', methods=["GET"])
 def past_fixt(league_id, season, from_date, to_date):
-    past_fixt = Game.all_past_fixtures(league_id, season, from_date, to_date)
-    # past_fixt = all_past_fixtures
+    # past_fixt = Game.all_past_fixtures(league_id, season, from_date, to_date)
+    past_fixt = all_past_fixtures
     # past_fixt = new_past_fixt
     return jsonify({"fixtures":past_fixt})
 
