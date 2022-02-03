@@ -155,6 +155,7 @@ class Team:
     @classmethod
     def league_table(cls, season, league_id):
         url = f"https://api-football-beta.p.rapidapi.com/standings"
+    
 
         querystring = {"season":{season},"league": {league_id}}
         headers = {
@@ -169,5 +170,5 @@ if __name__=='__main__':
 
     # team = Team.team_by_id('34')
     # stat = Team.team_stat_by_date(2,33,"2019-12-19")
-    table = Team.league_table('2020','39')
+    table = Team.league_table('2021','39')
     pprint(table)

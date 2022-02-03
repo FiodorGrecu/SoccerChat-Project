@@ -70,7 +70,7 @@ def new_user():
                          'username':new_account.username})
 
 
-@app.route('/api/countries', methods=["GET"])
+@app.route('/api/countries/<season>', methods=["GET"])
 def display_countries():
     all_countries = Country.all_countries()
     all_countries.save()
@@ -192,4 +192,4 @@ def get_chat(fixture_id):
 
 
 if __name__ == "__main__":
-    app.run() #debug=True)
+    app.run() #debug=True
