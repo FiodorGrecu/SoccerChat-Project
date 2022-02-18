@@ -97,7 +97,6 @@ export default function ProminentAppBar() {
                     {/* <Link style={{ padding: 20,  color:"gray"}} component={RouterLink} to="/login">Log In</Link> */}
                     {/* <Link style={{ padding: 20,  color:"grey"}} component={RouterLink} to="/signup">Sign Up</Link>  */}
                      {/* <IconButton style={{fontSize:"large", color:"gray"}}>  */}
-                     {/*       */}
             </Typography>
             {/* <Divider className={classes.divider} orientation="vertical" /> */}
         </Toolbar>
