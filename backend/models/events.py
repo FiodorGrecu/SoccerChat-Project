@@ -77,7 +77,7 @@ class Event:
             row = cursor.fetchone()
             # database returns pk as the first thing ...needs to be the last thing
             row = row[1:] + row[:1]
-            # create the t=return object
+            # create the return object
             return cls(*row)
 
     @classmethod
@@ -107,5 +107,8 @@ class Event:
 
 if __name__=='__main__':
 
-    events = Event.events_fixture_id('592215')
+    # events = Event.events_fixture_id('592215')
+    # pprint(events)
+
+    events = Event.select_all()
     pprint(events)
