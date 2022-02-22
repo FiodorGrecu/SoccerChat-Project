@@ -41,7 +41,6 @@ function App() {
 
         <Route path='/game/:gameNum'>
           {/* <Game/> */}
-          {/* <Upcoming_OneGame/> */}
           <GameByStatus />
         </Route>
 
