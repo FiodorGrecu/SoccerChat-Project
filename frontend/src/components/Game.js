@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
   chartText: {
     fontFamily: ' sans-serif', 
     fontSize:'6px',
-    // paddingLeft:'500px',
     fill:" green",
     mozTransform: 'translateY(0.5em)',
     msTransform: 'translateY(0.25em)',
@@ -229,7 +228,9 @@ console.log(fixture)
                                 fontSize: '0.9rem',fontWeight: 'bolder', 
                                 textTransform:'uppercase',fontSize: '1.2rem', 
                                 letterSpacing:'1px'}}>Shooting Accuracy</p>
-                            <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut">
+                                          {/* /* Donut */ }
+                              <svg width='280px' height='280px' viewBox="0 0 42 42" class="donut"> 
+
                               <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#black"></circle>
                               <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#BE14AA" stroke-width="3"></circle>
                               <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" 
