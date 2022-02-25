@@ -107,8 +107,8 @@ class Event:
 
 if __name__=='__main__':
 
-    # events = Event.events_fixture_id('592215')
-    # pprint(events)
-
-    events = Event.select_all()
+    events = Event.events_fixture_id('592215')
     pprint(events)
+
+    # events = Event.select_all()
+    # pprint(events)
