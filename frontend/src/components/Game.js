@@ -141,6 +141,7 @@ console.log(fixture)
                             </svg>
                         </div>
                         <div style={{width:'33.333%' }}>
+                          
                         <div style={{ width:'100%', textAlign:'center', marginBottom:'10px'}}>
 
                           {/* First row and it's bar */}
