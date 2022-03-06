@@ -9,8 +9,6 @@ import LeagueBar from './LeagueNameBar';
 
 const useStyles = makeStyles((theme) => ({
 
-  
-  
    
 }));
 
@@ -201,3 +199,4 @@ export default function SimplePaper() {
     </div>
   );
 }
+ 
