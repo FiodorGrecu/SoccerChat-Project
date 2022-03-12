@@ -64,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translateY(-0.55em)',
   },
   Icon: {
-
   }
 
 }));
