@@ -1,7 +1,6 @@
 import sqlite3
 import os
 
-
 PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "soccerchat.db")
 print(DATAPATH)
@@ -143,6 +142,23 @@ def schema(dbpath = DATAPATH):
         
         # Have the home team and away team as columns for the games table
         # Chats foregn key should reference the games           
+
+        cursor.execute("""
+        CREATE TABLE game_bets (
+            pk INTEGER PRIMARY KEY AUTOINCREMENT,
+            game_schedule DATETIME,
+            league_id INTEGER,
+            teams VARCHAR,
+            round VARCHAR,
+            home_team_id VARCHAR,
+            away_team_id VARCHAR,
+            # FOREIGN KEY (home_team_id) REFERENCES teams(teams_id)
+            # FOREIGN KEY (away_team_id) REFERENCES teams(team_id)
+            # FOREIGN KEY (game_id) REFERENCES teams(pk)
+            # FOREIGN KEY (team_id) REFERENCES teams(pk)
+
+
+        );""")
 
 
 if __name__ == "__main__":
