@@ -144,7 +144,7 @@ def schema(dbpath = DATAPATH):
         # Chats foregn key should reference the games           
 
         cursor.execute("""
-        CREATE TABLE game_bets (
+        CREATE TABLE predictions (
             pk INTEGER PRIMARY KEY AUTOINCREMENT,
             game_schedule DATETIME,
             league_id INTEGER,
