@@ -340,6 +340,7 @@ def all_past_fixtures(cls, league_id, season, from_date, to_date):
         output[-1]["games"].append(f)
         last_round = f["league"]["round"]
     return(output)
+    
 if __name__=='__main__':
     
 
