@@ -57,6 +57,7 @@ class Message:
     @classmethod
     def select_all(cls):
     ## get all entries from our database
+    ## get all some particupar entries from our database
     ## SELECT * FROM tablename WHERE
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()          
