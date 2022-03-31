@@ -297,7 +297,6 @@ class Game:
 
         response = requests.request("GET", url, headers=headers, params=querystring)
         data = response.json()
-
         fix_list = data.get("response")
         # print(fix_list)
         output = []
