@@ -124,7 +124,6 @@ class Game:
         data = response.json()
         return((data))
         
-    
     @classmethod
     def games_by_date(cls, date):
         url = f"https://api-football-beta.p.rapidapi.com/fixtures"
@@ -155,7 +154,6 @@ class Game:
 
         data = response.json()
         return(data)
-
 
     @classmethod
     def game_stats(cls, fixture_id):
