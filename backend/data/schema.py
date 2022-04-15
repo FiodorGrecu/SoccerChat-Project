@@ -156,7 +156,6 @@ def schema(dbpath = DATAPATH):
             # FOREIGN KEY (away_team_id) REFERENCES teams(team_id)
             # FOREIGN KEY (game_id) REFERENCES teams(pk)
             # FOREIGN KEY (team_id) REFERENCES teams(pk)
-
         );""")
 
 
