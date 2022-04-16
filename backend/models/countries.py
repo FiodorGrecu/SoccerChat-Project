@@ -55,7 +55,7 @@ class Country:
     @classmethod
     def select_all(cls, where_clause):
     ## get all entries from our database
-    ## SELECT * FROM tablename WHERE
+    ### SELECT * FROM tablename WHERE
         with sqlite3.connect(cls.dbpath) as conn:
             cursor = conn.cursor()          
             sql = f""" SELECT * FROM {cls.tablename} WHERE {where_clause};"""  
