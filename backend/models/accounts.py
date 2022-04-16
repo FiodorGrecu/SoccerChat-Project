@@ -7,7 +7,6 @@ PATH = os.path.dirname(__file__)
 DATAPATH = os.path.join(PATH, "../data/soccerchat.db")
 
 class Account:
-
     dbpath = DATAPATH
     tablename = "accounts"
 

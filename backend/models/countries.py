@@ -98,8 +98,7 @@ class Country:
         data = response.json()
         return(data)
 
-if __name__=='__main__':
-     
+if __name__=='__main__':     
 
      countries = Country.all_countries()
      pprint(countries)

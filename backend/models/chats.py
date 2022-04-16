@@ -16,7 +16,6 @@ class  Chat:
     dbpath = DATAPATH
     tablename = "chats"
 
-
     def __init__(self, timestamp, text, account_id, game_id, username, pk=None):
         self.pk = pk
         self.timestamp = timestamp 
@@ -76,8 +75,6 @@ class  Chat:
             cursor.execute(sql, values)
             return True
         return False
-
-
 
     @classmethod  
     def get_chat(cls, game_id):
