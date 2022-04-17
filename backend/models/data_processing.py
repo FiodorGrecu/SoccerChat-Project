@@ -21,7 +21,7 @@ for f in fix_list:
     output[-1]["games"].append(f)
     last_round = f["league"]["round"]
 
-
+    
 # pprint(output)
 pprint(last_round)
 pprint(f)
