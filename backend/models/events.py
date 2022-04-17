@@ -111,4 +111,5 @@ if __name__=='__main__':
     pprint(events)
 
     # events = Event.select_all()
-    # pprint(events)
+    events = Event.select_one()
+    pprint(events)
